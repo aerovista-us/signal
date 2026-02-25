@@ -207,6 +207,33 @@
       background: linear-gradient(180deg, rgba(255,92,92,.14), rgba(0,0,0,.18));
     }
 
+    .trackRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .tbtn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+      color:rgba(243,241,230,.88);
+      padding:10px 10px;
+      border-radius: 16px;
+      cursor:pointer;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.01em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      min-height:44px;
+    }
+    .tbtn.active{
+      border-color: rgba(169,255,74,.35);
+      background: linear-gradient(180deg, rgba(169,255,74,.14), rgba(0,0,0,.14));
+      color: var(--text);
+    }
+
     .sliders{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -330,13 +357,19 @@
         <div class="overlay show" id="overlay">
           <div class="box">
             <h2>Tap to Broadcast</h2>
-            <p>Mobile browsers require a tap before audio can start.</p>
+            <p>Start the audio engine.</p>
             <button class="btn primary" id="btnStart">▶︎ START</button>
           </div>
         </div>
       </div>
 
       <div class="controls">
+        <!-- Track selector (both tracks visible) -->
+        <div class="trackRow">
+          <button class="tbtn active" id="t1">Track 1</button>
+          <button class="tbtn" id="t2">Track 2</button>
+        </div>
+
         <input class="seek" id="seek" type="range" min="0" max="1000" value="0" step="1" />
 
         <div class="row">
@@ -363,528 +396,4 @@
           </div>
         </div>
 
-        <div class="toggles">
-          <div class="toggle">
-            <span>FX</span>
-            <input id="fx" type="checkbox" />
-          </div>
-          <div class="toggle">
-            <span>RINGS</span>
-            <input id="rings" type="checkbox" checked />
-          </div>
-          <div class="toggle">
-            <span>SWAMP</span>
-            <input id="theme" type="checkbox" checked />
-          </div>
-        </div>
-
-        <div class="fileRow">
-          <input id="file" type="file" accept="audio/*" />
-          <button class="btn" id="btnShare" title="Copy link">⤴︎</button>
-        </div>
-
-        <audio id="audio" crossorigin="anonymous"></audio>
-      </div>
-    </div>
-  </div>
-
-<script>
-(() => {
-  const $ = (id) => document.getElementById(id);
-  const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
-  const fmtTime = (s) => {
-    if (!isFinite(s) || s <= 0) return "0:00";
-    const m = Math.floor(s / 60);
-    const r = Math.floor(s % 60);
-    return `${m}:${String(r).padStart(2,"0")}`;
-  };
-
-  // ✅ Your exact filenames
-  const PLAYLIST = [
-    "You Ain’t Static You Signal.mp3",
-    "You Ain’t Static You Signal 2.mp3"
-  ];
-
-  // Elements
-  const audio = $("audio");
-  const canvas = $("c");
-  const wrap = $("vizWrap");
-  const ctx = canvas.getContext("2d", { alpha:true });
-
-  const overlay = $("overlay");
-  const btnStart = $("btnStart");
-
-  const btnPlay = $("btnPlay");
-  const btnStop = $("btnStop");
-  const btnPrev = $("btnPrev");
-  const btnRew  = $("btnRew");
-  const btnFwd  = $("btnFwd");
-
-  const seek = $("seek");
-  const vol = $("vol");
-  const glow = $("glow");
-  const fx = $("fx");
-  const rings = $("rings");
-  const themeToggle = $("theme");
-  const file = $("file");
-  const btnShare = $("btnShare");
-
-  const tNow = $("tNow");
-  const tDur = $("tDur");
-  const statusText = $("statusText");
-  const trackTitle = $("trackTitle");
-  const trackSub = $("trackSub");
-  const trackIdx = $("trackIdx");
-  const volVal = $("volVal");
-  const glowVal = $("glowVal");
-
-  // Theme (simple toggle: SWAMP vs NOIR)
-  const themes = {
-    swamp: { a:[169,255,74], b:[255,208,106] },
-    noir:  { a:[120,255,220], b:[170,170,255] }
-  };
-  let theme = themes.swamp;
-
-  function applyTheme(){
-    theme = themeToggle.checked ? themes.swamp : themes.noir;
-  }
-  themeToggle.addEventListener("change", applyTheme);
-  applyTheme();
-
-  // Canvas sizing
-  function resize(){
-    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    const w = wrap.clientWidth;
-    const h = wrap.clientHeight;
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  new ResizeObserver(resize).observe(wrap);
-  window.addEventListener("resize", resize);
-
-  // WebAudio graph
-  let AC=null, src=null, analyser=null, gain=null;
-  let convolver=null, delay=null, feedback=null, wet=null, dry=null;
-
-  function ensureAudioContext(){
-    if (AC) return;
-    AC = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = AC.createAnalyser();
-    analyser.fftSize = 2048;
-
-    gain = AC.createGain();
-    gain.gain.value = parseFloat(vol.value);
-
-    dry = AC.createGain(); dry.gain.value = 1.0;
-    wet = AC.createGain(); wet.gain.value = 0.0;
-
-    convolver = AC.createConvolver();
-    convolver.buffer = makeImpulse(AC, 1.2, 2.6);
-
-    delay = AC.createDelay(2.0);
-    delay.delayTime.value = 0.18;
-
-    feedback = AC.createGain();
-    feedback.gain.value = 0.25;
-
-    delay.connect(feedback);
-    feedback.connect(delay);
-
-    wet.connect(convolver);
-    convolver.connect(delay);
-    delay.connect(analyser);
-
-    dry.connect(analyser);
-
-    analyser.connect(gain);
-    gain.connect(AC.destination);
-  }
-
-  function makeImpulse(ac, seconds=1.2, decay=2.8){
-    const rate = ac.sampleRate;
-    const length = rate * seconds;
-    const impulse = ac.createBuffer(2, length, rate);
-    for (let c=0; c<2; c++){
-      const ch = impulse.getChannelData(c);
-      for (let i=0; i<length; i++){
-        const t = i/length;
-        ch[i] = (Math.random()*2 - 1) * Math.pow(1 - t, decay);
-      }
-    }
-    return impulse;
-  }
-
-  function connectSource(){
-    ensureAudioContext();
-    if (src) { try{src.disconnect();}catch{} }
-    src = AC.createMediaElementSource(audio);
-    src.connect(dry);
-    src.connect(wet);
-  }
-
-  function setFX(on){
-    if (!dry || !wet) return;
-    const t = AC ? AC.currentTime : 0;
-    const targetWet = on ? 0.75 : 0.0;
-    const targetDry = on ? 0.65 : 1.0;
-    wet.gain.cancelScheduledValues(t);
-    dry.gain.cancelScheduledValues(t);
-    wet.gain.setTargetAtTime(targetWet, t, 0.06);
-    dry.gain.setTargetAtTime(targetDry, t, 0.06);
-  }
-
-  // Playlist state
-  let playlist = [...PLAYLIST];
-  let currentIndex = 0;
-  let playing = false;
-  let seeking = false;
-
-  function prettyName(filename){
-    return filename.replace(/\.mp3$/i,"");
-  }
-
-  async function loadTrack(idx, {autoplay=false}={}){
-    currentIndex = (idx + playlist.length) % playlist.length;
-    const filename = playlist[currentIndex];
-    const url = encodeURI(filename);
-
-    audio.src = url;
-    audio.load();
-
-    trackTitle.textContent = prettyName(filename);
-    trackSub.textContent = "SwampHop Mystic";
-    trackIdx.textContent = `${currentIndex+1} / ${playlist.length}`;
-
-    statusText.textContent = "LOADED";
-    ensureAudioContext();
-    connectSource();
-
-    if (autoplay){
-      await startAudio();
-      try{
-        await audio.play();
-        playing = true;
-        btnPlay.textContent = "⏸︎";
-        statusText.textContent = "LIVE";
-      }catch{
-        playing = false;
-        btnPlay.textContent = "▶︎";
-        statusText.textContent = "TAP ▶︎";
-      }
-    } else {
-      btnPlay.textContent = "▶︎";
-      playing = false;
-    }
-  }
-
-  async function startAudio(){
-    ensureAudioContext();
-    if (AC.state === "suspended") await AC.resume();
-    overlay.classList.remove("show");
-  }
-
-  // Overlay start
-  btnStart.addEventListener("click", async () => {
-    await startAudio();
-    // If nothing loaded yet, load first track without autoplay
-    if (!audio.src) await loadTrack(0, {autoplay:false});
-  });
-
-  // Controls
-  btnPlay.addEventListener("click", async () => {
-    if (!audio.src) await loadTrack(0, {autoplay:false});
-    await startAudio();
-
-    if (audio.paused){
-      try{
-        await audio.play();
-        playing = true;
-        btnPlay.textContent = "⏸︎";
-        statusText.textContent = "LIVE";
-      }catch{
-        statusText.textContent = "TAP AGAIN";
-      }
-    } else {
-      audio.pause();
-      playing = false;
-      btnPlay.textContent = "▶︎";
-      statusText.textContent = "PAUSED";
-    }
-  });
-
-  btnStop.addEventListener("click", () => {
-    if (!audio.src) return;
-    audio.pause();
-    audio.currentTime = 0;
-    playing = false;
-    btnPlay.textContent = "▶︎";
-    statusText.textContent = "STOP";
-  });
-
-  btnPrev.addEventListener("click", async () => {
-    await loadTrack(currentIndex - 1, {autoplay: true});
-  });
-
-  btnRew.addEventListener("click", () => {
-    if (!audio.src) return;
-    audio.currentTime = Math.max(0, audio.currentTime - 10);
-  });
-
-  btnFwd.addEventListener("click", () => {
-    if (!audio.src) return;
-    audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
-  });
-
-  // Sliders / toggles
-  vol.addEventListener("input", () => {
-    const v = parseFloat(vol.value);
-    volVal.textContent = Math.round(v*100) + "%";
-    if (gain) gain.gain.value = v;
-  });
-
-  glow.addEventListener("input", () => {
-    glowVal.textContent = Math.round(parseFloat(glow.value)*100) + "%";
-  });
-
-  fx.addEventListener("change", () => {
-    ensureAudioContext();
-    setFX(fx.checked);
-  });
-
-  // Upload (overrides current audio, keeps playlist buttons working)
-  file.addEventListener("change", async (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (!f) return;
-    const url = URL.createObjectURL(f);
-    audio.src = url;
-    audio.load();
-
-    trackTitle.textContent = f.name.replace(/\.[^.]+$/,"");
-    trackSub.textContent = "Uploaded";
-    statusText.textContent = "LOADED";
-    trackIdx.textContent = "—";
-
-    await startAudio();
-    connectSource();
-    try{
-      await audio.play();
-      playing = true;
-      btnPlay.textContent = "⏸︎";
-      statusText.textContent = "LIVE";
-    }catch{
-      playing = false;
-      btnPlay.textContent = "▶︎";
-      statusText.textContent = "TAP ▶︎";
-    }
-  });
-
-  // Seek/time
-  seek.addEventListener("input", () => {
-    if (!audio.duration) return;
-    seeking = true;
-    const pct = parseInt(seek.value,10)/1000;
-    tNow.textContent = fmtTime(pct * audio.duration);
-  });
-  seek.addEventListener("change", () => {
-    if (!audio.duration) return;
-    const pct = parseInt(seek.value,10)/1000;
-    audio.currentTime = pct * audio.duration;
-    seeking = false;
-  });
-
-  audio.addEventListener("loadedmetadata", () => {
-    tDur.textContent = fmtTime(audio.duration);
-  });
-
-  audio.addEventListener("timeupdate", () => {
-    if (!audio.duration) return;
-    if (!seeking){
-      tNow.textContent = fmtTime(audio.currentTime);
-      seek.value = String(Math.floor((audio.currentTime / audio.duration) * 1000));
-    }
-  });
-
-  audio.addEventListener("ended", () => {
-    playing = false;
-    btnPlay.textContent = "▶︎";
-    statusText.textContent = "END";
-  });
-
-  // Share (copies URL with audio file name)
-  btnShare.addEventListener("click", async () => {
-    const url = new URL(location.href);
-    const currentFile = playlist[currentIndex] || "";
-    if (currentFile) url.searchParams.set("audio", encodeURI(currentFile));
-    url.searchParams.set("title", trackTitle.textContent || "SwampHop Mystic");
-    try{
-      await navigator.clipboard.writeText(url.toString());
-      statusText.textContent = "COPIED";
-    }catch{
-      statusText.textContent = "NO CLIP";
-    }
-    setTimeout(()=> statusText.textContent = playing ? "LIVE" : "IDLE", 1000);
-  });
-
-  // Allow query param load (?audio=...)
-  const qs = new URLSearchParams(location.search);
-  const qAudio = qs.get("audio");
-  const qTitle = qs.get("title");
-  if (qTitle) trackTitle.textContent = qTitle;
-
-  if (qAudio){
-    // Try to match query to playlist; otherwise load as direct URL
-    const decoded = decodeURI(qAudio);
-    const idx = playlist.findIndex(x => x === decoded || encodeURI(x) === qAudio);
-    if (idx >= 0){
-      loadTrack(idx, {autoplay:false});
-    } else {
-      audio.src = qAudio;
-      audio.load();
-      trackTitle.textContent = qTitle || prettyName(decoded.split("/").pop());
-      trackSub.textContent = "Linked";
-      statusText.textContent = "LOADED";
-      trackIdx.textContent = "—";
-      ensureAudioContext();
-      connectSource();
-    }
-  } else {
-    // Preload first track (no autoplay)
-    loadTrack(0, {autoplay:false});
-  }
-
-  // Visualizer
-  const freqData = new Uint8Array(1024);
-  const timeData = new Uint8Array(2048);
-  let ringPhase = 0;
-
-  function rgba(rgb,a){ return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`; }
-
-  function draw(){
-    requestAnimationFrame(draw);
-    resize();
-
-    const W = wrap.clientWidth;
-    const H = wrap.clientHeight;
-
-    ctx.clearRect(0,0,W,H);
-
-    if (analyser){
-      analyser.getByteFrequencyData(freqData);
-      analyser.getByteTimeDomainData(timeData);
-    } else {
-      for (let i=0;i<freqData.length;i++) freqData[i]=0;
-      for (let i=0;i<timeData.length;i++) timeData[i]=128;
-    }
-
-    let sum=0;
-    for (let i=0;i<200;i++) sum+=freqData[i];
-    const energy = clamp(sum/(200*255), 0, 1);
-
-    // Mist
-    const g = ctx.createRadialGradient(W*0.5,H*0.44, 60, W*0.5,H*0.44, Math.max(W,H)*0.9);
-    g.addColorStop(0, rgba(theme.a, 0.10));
-    g.addColorStop(0.35, rgba(theme.b, 0.06));
-    g.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,W,H);
-
-    // Signal rings near top
-    if (rings.checked){
-      ringPhase += 0.011 + energy*0.02;
-      for (let i=0;i<5;i++){
-        const p = (ringPhase + i*0.18) % 1;
-        const r = 20 + p * Math.min(W,H) * 0.56;
-        const a = (1 - p) * (0.16 + energy*0.22) * parseFloat(glow.value);
-        ctx.strokeStyle = rgba(theme.a, a);
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(W*0.5, H*0.18, r, 0, Math.PI*2);
-        ctx.stroke();
-      }
-    }
-
-    // Center ring
-    const cx=W*0.5, cy=H*0.60;
-    const baseR = Math.min(W,H)*0.22;
-    const bars=120;
-    const rot = performance.now()*0.00012;
-
-    ctx.save();
-    ctx.translate(cx,cy);
-    ctx.rotate(rot);
-
-    ctx.shadowBlur = 26 * parseFloat(glow.value);
-    ctx.shadowColor = rgba(theme.a, 0.6);
-
-    for (let i=0;i<bars;i++){
-      const idx = Math.floor((i/bars) * 420);
-      const v = freqData[idx]/255;
-      const amp = (v*v) * (baseR*0.78);
-      const a = (i/bars)*Math.PI*2;
-      const r1=baseR;
-      const r2=baseR + 10 + amp;
-
-      const x1=Math.cos(a)*r1, y1=Math.sin(a)*r1;
-      const x2=Math.cos(a)*r2, y2=Math.sin(a)*r2;
-
-      const t=i/(bars-1);
-      const col=[
-        Math.round(theme.a[0]*(1-t)+theme.b[0]*t),
-        Math.round(theme.a[1]*(1-t)+theme.b[1]*t),
-        Math.round(theme.a[2]*(1-t)+theme.b[2]*t),
-      ];
-      ctx.strokeStyle = rgba(col, 0.22 + v*0.65);
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(x1,y1);
-      ctx.lineTo(x2,y2);
-      ctx.stroke();
-    }
-
-    ctx.shadowBlur=0;
-    ctx.fillStyle="rgba(0,0,0,.28)";
-    ctx.strokeStyle=rgba(theme.a, 0.22);
-    ctx.lineWidth=2;
-    ctx.beginPath();
-    ctx.arc(0,0, baseR*0.78, 0, Math.PI*2);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.fillStyle="rgba(243,241,230,.9)";
-    ctx.font="900 12px ui-sans-serif,system-ui";
-    ctx.textAlign="center";
-    ctx.fillText("SIGNAL CORE", 0, -3);
-    ctx.fillStyle="rgba(243,241,230,.65)";
-    ctx.font="900 10px ui-sans-serif,system-ui";
-    ctx.fillText(playing ? "LIVE" : "STANDBY", 0, 12);
-    ctx.restore();
-
-    // Wave line
-    const midY=H*0.60, padX=18;
-    ctx.lineWidth=2;
-    ctx.strokeStyle=rgba(theme.a, 0.62 * parseFloat(glow.value));
-    ctx.shadowBlur = 16 * parseFloat(glow.value);
-    ctx.shadowColor = rgba(theme.a, 0.55);
-
-    ctx.beginPath();
-    for (let x=0; x < W - padX*2; x++){
-      const i = Math.floor((x/(W - padX*2)) * (timeData.length-1));
-      const v = (timeData[i]-128)/128;
-      const y = midY + v * (32 + energy*44);
-      if (x===0) ctx.moveTo(padX+x,y);
-      else ctx.lineTo(padX+x,y);
-    }
-    ctx.stroke();
-    ctx.shadowBlur=0;
-  }
-
-  // Init
-  resize();
-  draw();
-})();
-</script>
-</body>
-</html>
+        <
