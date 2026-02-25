@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>You Ain’t Static… You Signal — SwampHop Mystic Player</title>
+  <meta name="theme-color" content="#0b1410" />
+  <style>
+    :root{
+      --bg:#070d0a;
+      --panel:rgba(6,12,8,.55);
+      --panel2:rgba(0,0,0,.35);
+      --text:#f3f1e6;
+      --muted:rgba(243,241,230,.75);
+      --accent:#a9ff4a;
+      --accent2:#ffd06a;
+      --danger:#ff5c5c;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+      --stroke: rgba(255,255,255,.09);
+      --stroke2: rgba(169,255,74,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background: radial-gradient(1200px 900px at 70% 25%, rgba(169,255,74,.08), transparent 55%),
+                  radial-gradient(900px 700px at 20% 80%, rgba(255,208,106,.07), transparent 55%),
+                  linear-gradient(180deg, #050805 0%, #070d0a 45%, #040806 100%);
+      overflow-x:hidden;
+    }
+    .bg{
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1200px 800px at 50% 40%, rgba(0,0,0,.10), rgba(0,0,0,.75)),
+        url("bg.png");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.06);
+      transform: scale(1.03);
+      z-index:-3;
+    }
+    .vignette{
+      position:fixed; inset:0;
+      background: radial-gradient(900px 650px at 50% 45%, rgba(0,0,0,0), rgba(0,0,0,.65) 72%, rgba(0,0,0,.82) 100%);
+      z-index:-2; pointer-events:none;
+    }
+    .grain{
+      position:fixed; inset:-20%;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      background-size: 420px 420px;
+      mix-blend-mode: overlay;
+      opacity:.22;
+      z-index:-1;
+      pointer-events:none;
+      animation: drift 10s linear infinite;
+    }
+    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-3%,2%,0)}}
+
+    .wrap{min-height:100%; display:grid; place-items:center; padding:22px;}
+    .shell{
+      width:min(980px, 94vw);
+      display:grid; gap:16px; padding:18px;
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, rgba(9,16,12,.55), rgba(0,0,0,.28));
+      border:1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .topbar{display:flex; gap:12px; align-items:center; justify-content:space-between;}
+    .brand{display:flex; gap:12px; align-items:center; min-width:0;}
+    .sigil{
+      width:44px; height:44px; border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, rgba(169,255,74,.25), transparent 55%),
+                  linear-gradient(180deg, rgba(255,208,106,.22), rgba(0,0,0,.25));
+      border:1px solid var(--stroke2);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      position:relative; overflow:hidden;
+    }
+    .sigil:before{
+      content:""; position:absolute; inset:-30%;
+      background: conic-gradient(from 0deg, rgba(169,255,74,.0), rgba(169,255,74,.35), rgba(255,208,106,.18), rgba(169,255,74,0));
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .titles{min-width:0; display:flex; flex-direction:column; gap:2px;}
+    .kicker{font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    h1{margin:0; font-size:18px; font-weight:750; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+    .actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+    .btn{
+      appearance:none; border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.18));
+      color:var(--text);
+      padding:10px 12px; border-radius:14px;
+      cursor:pointer; font-weight:650; letter-spacing:.01em;
+      display:inline-flex; align-items:center; gap:8px;
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(169,255,74,.33); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+    .btn.primary{
+      border-color: rgba(169,255,74,.35);
+      background: linear-gradient(180deg, rgba(169,255,74,.18), rgba(0,0,0,.18));
+      box-shadow: 0 10px 22px rgba(0,0,0,.25);
+    }
+    .btn.danger{
+      border-color: rgba(255,92,92,.35);
+      background: linear-gradient(180deg, rgba(255,92,92,.14), rgba(0,0,0,.18));
+    }
+    .btn small{opacity:.75; font-weight:700}
+
+    .stage{display:grid; grid-template-columns: 1.25fr .75fr; gap:14px; align-items:stretch;}
+    @media (max-width: 860px){ .stage{ grid-template-columns: 1fr; } }
+    .panel{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.18));
+      border:1px solid var(--stroke);
+      overflow:hidden; position:relative;
+    }
+
+    .vizCard{padding:14px; display:grid; gap:12px;}
+    .vizHeader{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
+    .trackMeta{display:flex; flex-direction:column; gap:4px; min-width:0;}
+    .trackTitle{font-size:16px; font-weight:800; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .trackSub{font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(169,255,74,.28);
+      background: rgba(0,0,0,.18);
+      color: rgba(243,241,230,.92);
+      font-weight:750; font-size:12px; white-space:nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(169,255,74,.7);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse{50%{transform:scale(1.45); opacity:.55}}
+
+    .vizWrap{
+      position:relative;
+      border-radius: 18px;
+      background: radial-gradient(600px 340px at 50% 40%, rgba(169,255,74,.10), rgba(0,0,0,.22));
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      min-height: 360px;
+    }
+    canvas{ display:block; width:100%; height:100%; }
+
+    .controls{
+      display:grid; gap:10px;
+      padding: 12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.14));
+    }
+    .row{display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+    .time{font-variant-numeric: tabular-nums; color: var(--muted); font-size:12px; min-width: 82px; text-align:center;}
+    .seek{width:100%; accent-color: var(--accent);}
+
+    .knobs{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+    .knob{
+      display:flex; gap:8px; align-items:center;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.16);
+    }
+    .knob label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:750;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+    .knob input[type="range"]{ width:140px; accent-color: var(--accent2); }
+    .knob input[type="checkbox"]{ width:16px; height:16px; accent-color: var(--accent); }
+
+    .side{padding:14px; display:grid; gap:12px;}
+    .hint{
+      font-size:13px; color:rgba(243,241,230,.85); line-height:1.45;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.08);
+      padding:12px; border-radius: 18px;
+    }
+    .hint b{color:var(--text)}
+    .fieldset{
+      display:grid; gap:8px;
+      padding:12px; border-radius: 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.14);
+    }
+    .fieldset .label{
+      font-size:12px; color:var(--muted);
+      letter-spacing:.18em; text-transform:uppercase; font-weight:800;
+    }
+    .file{display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+    input[type="file"]{max-width: 100%; color: var(--muted);}
+    .tiny{font-size:12px; color: var(--muted); line-height:1.35;}
+
+    .plist{
+      display:grid; gap:8px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+    }
+    .pitem{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:10px 12px;
+      background: rgba(0,0,0,.12);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      cursor:pointer;
+      user-select:none;
+    }
+    .pitem:last-child{border-bottom:none}
+    .pitem .name{font-weight:750; font-size:13px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+    .pitem .tag{font-size:12px; color:var(--muted); white-space:nowrap;}
+    .pitem.active{
+      background: linear-gradient(180deg, rgba(169,255,74,.12), rgba(0,0,0,.12));
+      outline:1px solid rgba(169,255,74,.18);
+    }
+
+    .footer{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; padding: 4px 6px 0; color: rgba(243,241,230,.55); font-size:12px;}
+    .link{color: rgba(169,255,74,.85); text-decoration:none; border-bottom:1px dashed rgba(169,255,74,.35);}
+  </style>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="shell">
+      <div class="topbar">
+        <div class="brand">
+          <div class="sigil" aria-hidden="true"></div>
+          <div class="titles">
+            <div class="kicker">SwampHop Mystic • Signal Broadcast</div>
+            <h1 id="pageTitle">You Ain’t Static… You Signal</h1>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnBack" title="Go back (history)">⟵ <small>BACK</small></button>
+          <button class="btn primary" id="btnFX" title="Toggle FX (reverb + delay)">✨ <small>FX</small></button>
+          <button class="btn" id="btnShare" title="Copy shareable URL">⤴︎ <small>SHARE</small></button>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="panel vizCard">
+          <div class="vizHeader">
+            <div class="trackMeta">
+              <div class="trackTitle" id="trackTitle">SwampHop Mystic</div>
+              <div class="trackSub" id="trackSub">Pick a track on the right — or upload audio</div>
+            </div>
+            <div class="badge"><span class="dot"></span><span id="statusText">IDLE SIGNAL</span></div>
+          </div>
+
+          <div class="vizWrap" id="vizWrap">
+            <canvas id="c"></canvas>
+          </div>
+
+          <div class="controls">
+            <input class="seek" id="seek" type="range" min="0" max="1000" value="0" step="1" />
+            <div class="row">
+              <div class="knobs">
+                <button class="btn primary" id="btnPlay">▶︎ PLAY</button>
+                <button class="btn" id="btnPrev">⟲ PREV</button>
+                <button class="btn" id="btnNext">NEXT ⟳</button>
+                <button class="btn danger" id="btnStop">■ STOP</button>
+              </div>
+
+              <div class="time">
+                <span id="tNow">0:00</span> / <span id="tDur">0:00</span>
+              </div>
+
+              <div class="knobs">
+                <div class="knob">
+                  <label for="vol">VOL</label>
+                  <input id="vol" type="range" min="0" max="1" value="0.9" step="0.01" />
+                </div>
+                <div class="knob">
+                  <label for="glow">GLOW</label>
+                  <input id="glow" type="range" min="0" max="1" value="0.75" step="0.01" />
+                </div>
+                <div class="knob">
+                  <label for="rings">RINGS</label>
+                  <input id="rings" type="checkbox" checked />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <audio id="audio" crossorigin="anonymous"></audio>
+        </div>
+
+        <div class="panel side">
+          <div class="hint">
+            <b>Folder layout:</b> keep these in the same folder:
+            <span class="tiny"><br>• <b>signal_player.html</b><br>• <b>bg.png</b><br>• your 2 mp3 files</span>
+            <br><br>
+            <b>Tip:</b> Track URLs are auto-encoded, so spaces are fine.
+          </div>
+
+          <div class="fieldset">
+            <div class="label">Playlist</div>
+            <div class="plist" id="plist"></div>
+            <div class="tiny">Click a track name to load it. Prev/Next cycles the list.</div>
+          </div>
+
+          <div class="fieldset">
+            <div class="label">Upload Audio</div>
+            <div class="file">
+              <input id="file" type="file" accept="audio/*" />
+              <button class="btn" id="btnLoadDemo" title="Loads a synthetic demo tone">🎛️ DEMO</button>
+            </div>
+          </div>
+
+          <div class="fieldset">
+            <div class="label">Visualizer Mode</div>
+            <div class="tiny">
+              • Center ring = frequency energy<br>
+              • Horizontal wave = time-domain signal<br>
+              • “Signal rings” pulse from the tower
+            </div>
+            <div class="row">
+              <button class="btn" id="btnThemeA">🌿 SWAMP</button>
+              <button class="btn" id="btnThemeB">🌙 NOIR</button>
+              <button class="btn" id="btnThemeC">🔥 LANTERN</button>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div>EchoVerse-ready • standalone HTML</div>
+            <div><a class="link" href="#" id="openHelp">How to deploy</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+  const fmtTime = (s) => {
+    if (!isFinite(s) || s <= 0) return "0:00";
+    const m = Math.floor(s / 60);
+    const r = Math.floor(s % 60);
+    return `${m}:${String(r).padStart(2,"0")}`;
+  };
+
+  // ✅ Your exact filenames (spaces OK)
+  const PLAYLIST = [
+    "You Ain’t Static You Signal.mp3",
+    "You Ain’t Static You Signal 2.mp3"
+  ];
+
+  // Elements
+  const audio = $("audio");
+  const canvas = $("c");
+  const wrap = $("vizWrap");
+  const ctx = canvas.getContext("2d", { alpha:true });
+
+  const btnPlay = $("btnPlay");
+  const btnStop = $("btnStop");
+  const btnPrev = $("btnPrev");
+  const btnNext = $("btnNext");
+  const btnFX = $("btnFX");
+  const btnShare = $("btnShare");
+  const btnBack = $("btnBack");
+  const file = $("file");
+  const seek = $("seek");
+  const vol = $("vol");
+  const glow = $("glow");
+  const ringsToggle = $("rings");
+
+  const tNow = $("tNow");
+  const tDur = $("tDur");
+  const statusText = $("statusText");
+  const trackTitle = $("trackTitle");
+  const trackSub = $("trackSub");
+  const pageTitle = $("pageTitle");
+
+  // Theme presets
+  const themes = {
+    swamp: { a:[169,255,74], b:[255,208,106], bgTint:[14,20,14] },
+    noir:  { a:[120,255,220], b:[170,170,255], bgTint:[10,12,18] },
+    lantern:{ a:[255,208,106], b:[169,255,74], bgTint:[22,14,10] },
+  };
+  let theme = themes.swamp;
+  function setTheme(key){
+    theme = themes[key] || themes.swamp;
+    document.body.style.background =
+      `radial-gradient(1200px 900px at 70% 25%, rgba(${theme.a[0]},${theme.a[1]},${theme.a[2]},.08), transparent 55%),
+       radial-gradient(900px 700px at 20% 80%, rgba(${theme.b[0]},${theme.b[1]},${theme.b[2]},.07), transparent 55%),
+       linear-gradient(180deg, rgb(${theme.bgTint[0]-6},${theme.bgTint[1]-10},${theme.bgTint[2]-6}) 0%, rgb(${theme.bgTint[0]},${theme.bgTint[1]},${theme.bgTint[2]}) 45%, rgb(${theme.bgTint[0]-8},${theme.bgTint[1]-12},${theme.bgTint[2]-8}) 100%)`;
+  }
+  $("btnThemeA").addEventListener("click", () => setTheme("swamp"));
+  $("btnThemeB").addEventListener("click", () => setTheme("noir"));
+  $("btnThemeC").addEventListener("click", () => setTheme("lantern"));
+
+  // Canvas sizing
+  function resize(){
+    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    const w = wrap.clientWidth;
+    const h = wrap.clientHeight;
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  new ResizeObserver(resize).observe(wrap);
+  window.addEventListener("resize", resize);
+
+  // WebAudio graph
+  let AC=null, src=null, analyser=null, gain=null;
+  let fxOn=false, convolver=null, delay=null, feedback=null, wet=null, dry=null;
+
+  function ensureAudioContext(){
+    if (AC) return;
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = AC.createAnalyser();
+    analyser.fftSize = 2048;
+
+    gain = AC.createGain();
+    gain.gain.value = parseFloat(vol.value);
+
+    dry = AC.createGain(); dry.gain.value = 1.0;
+    wet = AC.createGain(); wet.gain.value = 0.0;
+
+    convolver = AC.createConvolver();
+    convolver.buffer = makeImpulse(AC, 1.2, 2.6);
+
+    delay = AC.createDelay(2.0);
+    delay.delayTime.value = 0.18;
+
+    feedback = AC.createGain();
+    feedback.gain.value = 0.25;
+
+    delay.connect(feedback);
+    feedback.connect(delay);
+
+    wet.connect(convolver);
+    convolver.connect(delay);
+    delay.connect(analyser);
+
+    dry.connect(analyser);
+
+    analyser.connect(gain);
+    gain.connect(AC.destination);
+  }
+
+  function makeImpulse(ac, seconds=1.2, decay=2.8){
+    const rate = ac.sampleRate;
+    const length = rate * seconds;
+    const impulse = ac.createBuffer(2, length, rate);
+    for (let c=0; c<2; c++){
+      const ch = impulse.getChannelData(c);
+      for (let i=0; i<length; i++){
+        const t = i/length;
+        ch[i] = (Math.random()*2 - 1) * Math.pow(1 - t, decay);
+      }
+    }
+    return impulse;
+  }
+
+  function connectSource(){
+    ensureAudioContext();
+    if (src) { try{src.disconnect();}catch{} }
+    src = AC.createMediaElementSource(audio);
+    src.connect(dry);
+    src.connect(wet);
+  }
+
+  function setFX(on){
+    fxOn = !!on;
+    if (!dry || !wet) return;
+    const t = AC ? AC.currentTime : 0;
+    const targetWet = fxOn ? 0.75 : 0.0;
+    const targetDry = fxOn ? 0.65 : 1.0;
+    wet.gain.cancelScheduledValues(t);
+    dry.gain.cancelScheduledValues(t);
+    wet.gain.setTargetAtTime(targetWet, t, 0.06);
+    dry.gain.setTargetAtTime(targetDry, t, 0.06);
+    btnFX.classList.toggle("primary", fxOn);
+    btnFX.textContent = fxOn ? "✨ FX ON" : "✨ FX";
+  }
+
+  // Playlist UI + switching
+  let playlist = [...PLAYLIST];
+  let currentIndex = 0;
+
+  const plistEl = $("plist");
+
+  function prettyName(filename){
+    return filename.replace(/\.mp3$/i, "");
+  }
+
+  function renderPlaylist(){
+    plistEl.innerHTML = "";
+    playlist.forEach((name, idx) => {
+      const div = document.createElement("div");
+      div.className = "pitem" + (idx === currentIndex ? " active" : "");
+      div.innerHTML = `<div class="name">${prettyName(name)}</div><div class="tag">${idx+1}/${playlist.length}</div>`;
+      div.addEventListener("click", () => {
+        loadTrack(idx, { autoplay: true });
+      });
+      plistEl.appendChild(div);
+    });
+  }
+
+  async function loadTrack(idx, opts={autoplay:false}){
+    currentIndex = (idx + playlist.length) % playlist.length;
+    renderPlaylist();
+
+    const filename = playlist[currentIndex];
+    const url = encodeURI(filename); // ✅ keeps spaces safe
+    audio.src = url;
+    audio.load();
+
+    trackTitle.textContent = prettyName(filename);
+    pageTitle.textContent = prettyName(filename);
+    trackSub.textContent = `Track ${currentIndex+1} of ${playlist.length}`;
+    statusText.textContent = "SIGNAL LOADED";
+
+    ensureAudioContext();
+    connectSource();
+
+    if (opts.autoplay){
+      if (AC.state === "suspended") await AC.resume();
+      try{
+        await audio.play();
+        playing = true;
+        btnPlay.textContent = "⏸︎ PAUSE";
+        statusText.textContent = "BROADCASTING";
+      }catch{
+        playing = false;
+        btnPlay.textContent = "▶︎ PLAY";
+        statusText.textContent = "PRESS PLAY";
+      }
+    }
+  }
+
+  // Demo mode
+  let playing=false;
+  let demoNodes=null;
+
+  function loadDemoTone(){
+    ensureAudioContext();
+    if (src) { try{src.disconnect();}catch{} src=null; }
+    const osc = AC.createOscillator();
+    const lfo = AC.createOscillator();
+    const lfoGain = AC.createGain();
+    const wob = AC.createBiquadFilter();
+
+    osc.type = "sawtooth";
+    osc.frequency.value = 92;
+
+    wob.type = "lowpass";
+    wob.frequency.value = 420;
+    wob.Q.value = 1.2;
+
+    lfo.type = "sine";
+    lfo.frequency.value = 1.25;
+    lfoGain.gain.value = 220;
+
+    lfo.connect(lfoGain);
+    lfoGain.connect(wob.frequency);
+
+    osc.connect(wob);
+    wob.connect(dry);
+    wob.connect(wet);
+
+    osc.start();
+    lfo.start();
+
+    trackTitle.textContent = "Demo Signal (No File)";
+    pageTitle.textContent = "Demo Signal";
+    statusText.textContent = "DEMO BROADCAST";
+    trackSub.textContent = "Visualizer is live — click a playlist track anytime";
+
+    playing = true;
+    btnPlay.textContent = "⏸︎ PAUSE";
+    demoNodes = { osc, lfo, lfoGain, wob };
+  }
+
+  function stopDemo(){
+    if (!demoNodes) return;
+    try{ demoNodes.osc.stop(); }catch{}
+    try{ demoNodes.lfo.stop(); }catch{}
+    demoNodes = null;
+  }
+
+  // Controls
+  vol.addEventListener("input", () => { if (gain) gain.gain.value = parseFloat(vol.value); });
+
+  btnPlay.addEventListener("click", async () => {
+    ensureAudioContext();
+    if (AC.state === "suspended") await AC.resume();
+
+    if (demoNodes){
+      playing = !playing;
+      btnPlay.textContent = playing ? "⏸︎ PAUSE" : "▶︎ PLAY";
+      statusText.textContent = playing ? "DEMO BROADCAST" : "DEMO PAUSED";
+      dry.gain.value = playing ? (fxOn ? 0.65 : 1.0) : 0;
+      wet.gain.value = playing ? (fxOn ? 0.75 : 0.0) : 0;
+      return;
+    }
+
+    if (!audio.src){
+      statusText.textContent = "NO SIGNAL";
+      trackSub.textContent = "Pick a playlist track or upload audio";
+      return;
+    }
+
+    if (audio.paused){
+      try{
+        await audio.play();
+        playing = true;
+        btnPlay.textContent = "⏸︎ PAUSE";
+        statusText.textContent = "BROADCASTING";
+      }catch{
+        statusText.textContent = "PRESS PLAY AGAIN";
+      }
+    } else {
+      audio.pause();
+      playing = false;
+      btnPlay.textContent = "▶︎ PLAY";
+      statusText.textContent = "PAUSED";
+    }
+  });
+
+  btnStop.addEventListener("click", () => {
+    if (demoNodes){
+      stopDemo();
+      playing=false;
+      btnPlay.textContent="▶︎ PLAY";
+      statusText.textContent="IDLE SIGNAL";
+      tNow.textContent="0:00"; tDur.textContent="0:00"; seek.value=0;
+      return;
+    }
+    audio.pause();
+    audio.currentTime = 0;
+    playing=false;
+    btnPlay.textContent="▶︎ PLAY";
+    statusText.textContent="STOPPED";
+  });
+
+  btnPrev.addEventListener("click", () => {
+    if (demoNodes) return;
+    loadTrack(currentIndex - 1, { autoplay: playing || !audio.paused });
+  });
+
+  btnNext.addEventListener("click", () => {
+    if (demoNodes) return;
+    loadTrack(currentIndex + 1, { autoplay: playing || !audio.paused });
+  });
+
+  btnFX.addEventListener("click", () => { ensureAudioContext(); setFX(!fxOn); });
+
+  $("btnLoadDemo").addEventListener("click", async () => {
+    ensureAudioContext();
+    if (AC.state === "suspended") await AC.resume();
+    stopDemo();
+    loadDemoTone();
+  });
+
+  // Upload overrides playlist (keeps playlist available)
+  file.addEventListener("change", async (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    stopDemo();
+    const url = URL.createObjectURL(f);
+    audio.src = url;
+    audio.load();
+    trackTitle.textContent = f.name.replace(/\.[^.]+$/,"");
+    pageTitle.textContent = trackTitle.textContent;
+    trackSub.textContent = "Uploaded track";
+    statusText.textContent = "SIGNAL LOADED";
+    ensureAudioContext();
+    connectSource();
+  });
+
+  // Seek/time
+  let seeking=false;
+  seek.addEventListener("input", () => {
+    if (!audio.duration) return;
+    seeking=true;
+    const pct = parseInt(seek.value,10)/1000;
+    const t = pct * audio.duration;
+    tNow.textContent = fmtTime(t);
+  });
+  seek.addEventListener("change", () => {
+    if (!audio.duration) return;
+    const pct = parseInt(seek.value,10)/1000;
+    audio.currentTime = pct * audio.duration;
+    seeking=false;
+  });
+
+  audio.addEventListener("loadedmetadata", () => { tDur.textContent = fmtTime(audio.duration); });
+  audio.addEventListener("timeupdate", () => {
+    if (!audio.duration) return;
+    if (!seeking){
+      tNow.textContent = fmtTime(audio.currentTime);
+      seek.value = String(Math.floor((audio.currentTime / audio.duration) * 1000));
+    }
+  });
+  audio.addEventListener("ended", () => {
+    playing=false;
+    btnPlay.textContent="▶︎ PLAY";
+    statusText.textContent="SIGNAL ENDED";
+  });
+
+  // Back/share/help
+  btnBack.addEventListener("click", () => history.back());
+  btnShare.addEventListener("click", async () => {
+    const url = new URL(location.href);
+    // Keep it simple: share link to current file name
+    if (playlist[currentIndex]) url.searchParams.set("audio", encodeURI(playlist[currentIndex]));
+    url.searchParams.set("title", trackTitle.textContent || "SwampHop Mystic");
+    try{
+      await navigator.clipboard.writeText(url.toString());
+      statusText.textContent="LINK COPIED";
+    }catch{
+      statusText.textContent="COPY FAILED";
+    }
+    setTimeout(()=> statusText.textContent = playing ? "BROADCASTING" : "IDLE SIGNAL", 1200);
+  });
+
+  $("openHelp").addEventListener("click", (e) => {
+    e.preventDefault();
+    alert(
+`Deploy quick:
+
+Put these beside each other:
+- signal_player.html
+- bg.png
+- You Ain’t Static You Signal.mp3
+- You Ain’t Static You Signal 2.mp3
+
+Then open the HTML or host it (GitHub Pages works great).
+Spaces in filenames are fine.`
+    );
+  });
+
+  // Visualizer
+  const freqData = new Uint8Array(1024);
+  const timeData = new Uint8Array(2048);
+  let ringPhase=0;
+
+  function rgba(rgb,a){ return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`; }
+
+  function draw(){
+    requestAnimationFrame(draw);
+    resize();
+
+    const W = wrap.clientWidth;
+    const H = wrap.clientHeight;
+
+    ctx.clearRect(0,0,W,H);
+
+    if (analyser){
+      analyser.getByteFrequencyData(freqData);
+      analyser.getByteTimeDomainData(timeData);
+    } else {
+      for (let i=0;i<freqData.length;i++) freqData[i]=0;
+      for (let i=0;i<timeData.length;i++) timeData[i]=128;
+    }
+
+    let sum=0;
+    for (let i=0;i<200;i++) sum+=freqData[i];
+    const energy = clamp(sum/(200*255), 0, 1);
+
+    const g = ctx.createRadialGradient(W*0.5,H*0.46, 60, W*0.5,H*0.46, Math.max(W,H)*0.9);
+    g.addColorStop(0, rgba(theme.a, 0.10));
+    g.addColorStop(0.35, rgba(theme.b, 0.06));
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,W,H);
+
+    if (ringsToggle.checked){
+      ringPhase += 0.011 + energy*0.02;
+      for (let i=0;i<5;i++){
+        const p = (ringPhase + i*0.18) % 1;
+        const r = 20 + p * Math.min(W,H) * 0.55;
+        const a = (1 - p) * (0.16 + energy*0.22) * parseFloat(glow.value);
+        ctx.strokeStyle = rgba(theme.a, a);
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(W*0.5, H*0.18, r, 0, Math.PI*2);
+        ctx.stroke();
+      }
+    }
+
+    const cx=W*0.5, cy=H*0.58;
+    const baseR = Math.min(W,H)*0.20;
+    const bars=120;
+    const rot = performance.now()*0.00012;
+
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.rotate(rot);
+
+    ctx.shadowBlur = 28 * parseFloat(glow.value);
+    ctx.shadowColor = rgba(theme.a, 0.6);
+
+    for (let i=0;i<bars;i++){
+      const idx = Math.floor((i/bars) * 420);
+      const v = freqData[idx]/255;
+      const amp = (v*v) * (baseR*0.75);
+      const a = (i/bars)*Math.PI*2;
+      const r1=baseR;
+      const r2=baseR + 12 + amp;
+
+      const x1=Math.cos(a)*r1, y1=Math.sin(a)*r1;
+      const x2=Math.cos(a)*r2, y2=Math.sin(a)*r2;
+
+      const t=i/(bars-1);
+      const col=[
+        Math.round(theme.a[0]*(1-t)+theme.b[0]*t),
+        Math.round(theme.a[1]*(1-t)+theme.b[1]*t),
+        Math.round(theme.a[2]*(1-t)+theme.b[2]*t),
+      ];
+
+      ctx.strokeStyle = rgba(col, 0.22 + v*0.65);
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x1,y1);
+      ctx.lineTo(x2,y2);
+      ctx.stroke();
+    }
+
+    ctx.shadowBlur=0;
+    ctx.fillStyle="rgba(0,0,0,.28)";
+    ctx.strokeStyle=rgba(theme.a, 0.22);
+    ctx.lineWidth=2;
+    ctx.beginPath();
+    ctx.arc(0,0, baseR*0.78, 0, Math.PI*2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle="rgba(243,241,230,.92)";
+    ctx.font="700 13px ui-sans-serif,system-ui";
+    ctx.textAlign="center";
+    ctx.fillText("SIGNAL CORE", 0, -4);
+    ctx.fillStyle="rgba(243,241,230,.68)";
+    ctx.font="700 11px ui-sans-serif,system-ui";
+    ctx.fillText(playing ? "BROADCASTING" : "STANDBY", 0, 14);
+
+    ctx.restore();
+
+    const midY=H*0.58, padX=22;
+    ctx.lineWidth=2;
+    ctx.strokeStyle=rgba(theme.a, 0.62 * parseFloat(glow.value));
+    ctx.shadowBlur = 18 * parseFloat(glow.value);
+    ctx.shadowColor = rgba(theme.a, 0.55);
+
+    ctx.beginPath();
+    for (let x=0; x < W - padX*2; x++){
+      const i = Math.floor((x/(W - padX*2)) * (timeData.length-1));
+      const v = (timeData[i]-128)/128;
+      const y = midY + v * (34 + energy*46);
+      if (x===0) ctx.moveTo(padX+x,y);
+      else ctx.lineTo(padX+x,y);
+    }
+    ctx.stroke();
+    ctx.shadowBlur=0;
+  }
+
+  // Init
+  ensureAudioContext();
+  setFX(false);
+  resize();
+  renderPlaylist();
+  // Auto-load first track (no autoplay)
+  loadTrack(0, { autoplay:false });
+
+  draw();
+})();
+</script>
+</body>
+</html>
