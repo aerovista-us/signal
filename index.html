@@ -1,439 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>You Ain’t Static… You Signal — SwampHop Mystic</title>
-  <meta name="theme-color" content="#0b1410" />
-  <style>
-    :root{
-      --text:#f3f1e6;
-      --muted:rgba(243,241,230,.72);
-      --stroke:rgba(255,255,255,.10);
-      --stroke2:rgba(169,255,74,.22);
-      --accent:#a9ff4a;
-      --accent2:#ffd06a;
-      --danger:#ff5c5c;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 22px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background:#060a07;
-      overflow-x:hidden;
-    }
-
-    /* Background */
-    .bg{
-      position:fixed; inset:0;
-      background:
-        radial-gradient(1200px 800px at 50% 40%, rgba(0,0,0,.10), rgba(0,0,0,.78)),
-        url("bg.png");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05) contrast(1.06);
-      transform: scale(1.03);
-      z-index:-3;
-    }
-    .vignette{
-      position:fixed; inset:0;
-      background: radial-gradient(900px 650px at 50% 45%, rgba(0,0,0,0), rgba(0,0,0,.65) 72%, rgba(0,0,0,.84) 100%);
-      z-index:-2; pointer-events:none;
-    }
-    .grain{
-      position:fixed; inset:-20%;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
-      background-size: 420px 420px;
-      mix-blend-mode: overlay;
-      opacity:.22;
-      z-index:-1;
-      pointer-events:none;
-      animation: drift 10s linear infinite;
-    }
-    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-3%,2%,0)}}
-
-    /* One-column */
-    .wrap{
-      min-height:100%;
-      display:grid;
-      place-items:center;
-      padding: max(14px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
-    }
-    .card{
-      width:min(560px, 96vw);
-      border-radius: calc(var(--radius) + 8px);
-      background: linear-gradient(180deg, rgba(9,16,12,.58), rgba(0,0,0,.26));
-      border:1px solid var(--stroke);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
-    }
-
-    .head{
-      padding:14px 14px 10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      border-bottom:1px solid rgba(255,255,255,.07);
-      background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.04));
-    }
-    .left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
-    .sigil{
-      width:38px;height:38px;border-radius:14px;
-      background: radial-gradient(circle at 30% 30%, rgba(169,255,74,.25), transparent 55%),
-                  linear-gradient(180deg, rgba(255,208,106,.20), rgba(0,0,0,.25));
-      border:1px solid var(--stroke2);
-      box-shadow: 0 10px 25px rgba(0,0,0,.35);
-      position:relative; overflow:hidden;
-      flex:0 0 auto;
-    }
-    .sigil:before{
-      content:""; position:absolute; inset:-30%;
-      background: conic-gradient(from 0deg, rgba(169,255,74,0), rgba(169,255,74,.35), rgba(255,208,106,.18), rgba(169,255,74,0));
-      animation: spin 6s linear infinite;
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    .meta{min-width:0}
-    .title{
-      margin:0;
-      font-size:15px;
-      font-weight:850;
-      letter-spacing:.01em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .sub{
-      margin-top:3px;
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .right{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(169,255,74,.28);
-      background: rgba(0,0,0,.18);
-      font-weight:900;
-      font-size:12px;
-      white-space:nowrap;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 16px rgba(169,255,74,.7);
-      animation: pulse 1.6s ease-in-out infinite;
-    }
-    @keyframes pulse{50%{transform:scale(1.45); opacity:.55}}
-
-    .btn{
-      appearance:none;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.20));
-      color:var(--text);
-      padding:10px 10px;
-      border-radius: 16px;
-      cursor:pointer;
-      font-weight:950;
-      letter-spacing:.01em;
-      transition: transform .08s ease, border-color .2s ease, background .2s ease;
-      user-select:none;
-      min-height:44px;
-    }
-    .btn:active{ transform: scale(.99); }
-    .btn.primary{
-      border-color: rgba(169,255,74,.35);
-      background: linear-gradient(180deg, rgba(169,255,74,.18), rgba(0,0,0,.18));
-    }
-    .btn.danger{
-      border-color: rgba(255,92,92,.35);
-      background: linear-gradient(180deg, rgba(255,92,92,.14), rgba(0,0,0,.18));
-    }
-
-    .vizWrap{
-      position:relative;
-      height: clamp(360px, 52vh, 520px);
-      background: radial-gradient(600px 340px at 50% 40%, rgba(169,255,74,.10), rgba(0,0,0,.22));
-      border-bottom:1px solid rgba(255,255,255,.07);
-    }
-    canvas{ display:block; width:100%; height:100%; }
-
-    /* Tap-to-start */
-    .overlay{
-      position:absolute; inset:0;
-      display:grid; place-items:center;
-      background: radial-gradient(800px 600px at 50% 35%, rgba(169,255,74,.12), rgba(0,0,0,.72));
-      backdrop-filter: blur(6px);
-      opacity:0; pointer-events:none;
-      transition: opacity .2s ease;
-    }
-    .overlay.show{opacity:1; pointer-events:auto;}
-    .overlay .box{
-      width:min(320px, 86%);
-      padding:14px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.32);
-      text-align:center;
-      box-shadow: 0 16px 50px rgba(0,0,0,.5);
-    }
-    .overlay .box h2{margin:0 0 6px; font-size:16px; font-weight:950;}
-    .overlay .box p{margin:0 0 12px; font-size:12px; color:var(--muted); line-height:1.35;}
-    .overlay .box button{width:100%; min-height:46px; border-radius:16px;}
-
-    .controls{
-      padding:12px 12px 14px;
-      display:grid;
-      gap:10px;
-      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.22));
-    }
-
-    .trackRow{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    .tbtn{
-      appearance:none;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      color:rgba(243,241,230,.88);
-      padding:10px 10px;
-      border-radius: 16px;
-      cursor:pointer;
-      font-weight:950;
-      font-size:12px;
-      letter-spacing:.01em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      min-height:44px;
-    }
-    .tbtn.active{
-      border-color: rgba(169,255,74,.35);
-      background: linear-gradient(180deg, rgba(169,255,74,.14), rgba(0,0,0,.14));
-      color: var(--text);
-    }
-
-    .seek{
-      width:100%;
-      accent-color: var(--accent);
-      height: 28px;
-    }
-
-    .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .time{
-      font-variant-numeric: tabular-nums;
-      color: var(--muted);
-      font-size:12px;
-      white-space:nowrap;
-    }
-
-    .btnRow{
-      display:grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap:10px;
-    }
-
-    .sliders{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    .knob{
-      padding:10px 10px 8px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.14);
-    }
-    .knob label{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      font-size:12px;
-      color:var(--muted);
-      font-weight:950;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:6px;
-    }
-    .knob input[type="range"]{ width:100%; accent-color: var(--accent2); }
-
-    .toggles{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:10px;
-    }
-    .toggle{
-      padding:10px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.14);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      font-weight:950;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:11px;
-      color:var(--muted);
-    }
-    .toggle input{ width:18px; height:18px; accent-color: var(--accent); }
-
-    .themes{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:10px;
-    }
-
-    .fileRow{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:10px;
-      align-items:center;
-    }
-    input[type="file"]{ width:100%; color: var(--muted); }
-
-    .mini{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="vignette" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <div class="wrap">
-    <div class="card">
-      <div class="head">
-        <div class="left">
-          <div class="sigil" aria-hidden="true"></div>
-          <div class="meta">
-            <div class="title" id="pageTitle">You Ain’t Static… You Signal</div>
-            <div class="sub" id="trackSub">SwampHop Mystic</div>
-          </div>
-        </div>
-        <div class="right">
-          <button class="btn" id="btnFX" title="FX">✨</button>
-          <button class="btn" id="btnShare" title="Copy link">⤴︎</button>
-          <div class="pill"><span class="dot"></span><span id="statusText">IDLE</span></div>
-        </div>
-      </div>
-
-      <div class="vizWrap" id="vizWrap">
-        <canvas id="c"></canvas>
-        <div class="overlay show" id="overlay">
-          <div class="box">
-            <h2>Tap to Broadcast</h2>
-            <p>Start the audio engine.</p>
-            <button class="btn primary" id="btnStart">▶︎ START</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="controls">
-        <!-- Both tracks, always visible -->
-        <div class="trackRow">
-          <button class="tbtn active" id="t1" title="You Ain’t Static You Signal">You Ain’t Static…</button>
-          <button class="tbtn" id="t2" title="You Ain’t Static You Signal 2">You Signal 2</button>
-        </div>
-
-        <input class="seek" id="seek" type="range" min="0" max="1000" value="0" step="1" />
-
-        <div class="row">
-          <div class="time"><span id="tNow">0:00</span> / <span id="tDur">0:00</span></div>
-          <div class="time" id="trackIdx">1 / 2</div>
-        </div>
-
-        <div class="btnRow">
-          <button class="btn" id="btnPrev" title="Previous track">⟲</button>
-          <button class="btn" id="btnRew" title="-10s">«10</button>
-          <button class="btn primary" id="btnPlay" title="Play/Pause">▶︎</button>
-          <button class="btn" id="btnFwd" title="+10s">10»</button>
-          <button class="btn danger" id="btnStop" title="Stop">■</button>
-        </div>
-
-        <div class="sliders">
-          <div class="knob">
-            <label><span>VOL</span><span id="volVal">90%</span></label>
-            <input id="vol" type="range" min="0" max="1" value="0.9" step="0.01" />
-          </div>
-          <div class="knob">
-            <label><span>GLOW</span><span id="glowVal">75%</span></label>
-            <input id="glow" type="range" min="0" max="1" value="0.75" step="0.01" />
-          </div>
-        </div>
-
-        <div class="toggles">
-          <div class="toggle">
-            <span>RINGS</span>
-            <input id="rings" type="checkbox" checked />
-          </div>
-          <div class="toggle">
-            <span>FX</span>
-            <input id="fx" type="checkbox" />
-          </div>
-          <div class="toggle">
-            <span>DEMO</span>
-            <input id="demo" type="checkbox" />
-          </div>
-        </div>
-
-        <div class="themes">
-          <button class="btn" id="btnThemeA" title="Swamp">🌿</button>
-          <button class="btn" id="btnThemeB" title="Noir">🌙</button>
-          <button class="btn" id="btnThemeC" title="Lantern">🔥</button>
-        </div>
-
-        <div class="fileRow">
-          <input id="file" type="file" accept="audio/*" />
-          <button class="btn" id="btnClearUpload" title="Back to playlist">↺</button>
-        </div>
-
-        <audio id="audio" crossorigin="anonymous"></audio>
-      </div>
-    </div>
-  </div>
-
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);
-  const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
   const fmtTime = (s) => {
     if (!isFinite(s) || s <= 0) return "0:00";
     const m = Math.floor(s / 60);
@@ -441,248 +8,110 @@
     return `${m}:${String(r).padStart(2,"0")}`;
   };
 
-  // ✅ Both tracks (exact filenames)
-  const PLAYLIST = [
-    "You Ain’t Static You Signal.mp3",
-    "You Ain’t Static You Signal 2.mp3"
+  // ✅ BOTH tracks, with smart filename fallbacks
+  const TRACKS = [
+    {
+      label: "You Ain’t Static…",
+      title: "You Ain’t Static… You Signal",
+      candidates: [
+        "You Ain’t Static You Signal.mp3",
+        "You Ain't Static You Signal.mp3",
+        "You Aint Static You Signal.mp3",
+        "You_Aint_Static_You_Signal.mp3",
+        "You-Aint-Static-You-Signal.mp3"
+      ]
+    },
+    {
+      label: "You Signal 2",
+      title: "You Ain’t Static… You Signal 2",
+      candidates: [
+        "You Ain’t Static You Signal 2.mp3",
+        "You Ain't Static You Signal 2.mp3",
+        "You Aint Static You Signal 2.mp3",
+        "You_Aint_Static_You_Signal_2.mp3",
+        "You-Aint-Static-You-Signal-2.mp3"
+      ]
+    }
   ];
 
-  // Elements
+  // Elements (matches your existing IDs)
   const audio = $("audio");
-  const canvas = $("c");
-  const wrap = $("vizWrap");
-  const ctx = canvas.getContext("2d", { alpha:true });
-
-  const overlay = $("overlay");
-  const btnStart = $("btnStart");
-
   const btnPlay = $("btnPlay");
   const btnStop = $("btnStop");
   const btnPrev = $("btnPrev");
   const btnRew  = $("btnRew");
   const btnFwd  = $("btnFwd");
   const btnShare = $("btnShare");
-  const btnFX = $("btnFX");
-
-  const seek = $("seek");
-  const vol = $("vol");
-  const glow = $("glow");
-  const ringsToggle = $("rings");
-  const fxToggle = $("fx");
-  const demoToggle = $("demo");
-
-  const file = $("file");
-  const btnClearUpload = $("btnClearUpload");
-
-  const tNow = $("tNow");
-  const tDur = $("tDur");
-  const statusText = $("statusText");
+  const overlay = $("overlay");
+  const btnStart = $("btnStart");
   const pageTitle = $("pageTitle");
   const trackSub = $("trackSub");
   const trackIdx = $("trackIdx");
-  const volVal = $("volVal");
-  const glowVal = $("glowVal");
-
+  const statusText = $("statusText");
+  const tNow = $("tNow");
+  const tDur = $("tDur");
+  const seek = $("seek");
   const t1 = $("t1");
   const t2 = $("t2");
 
-  // Themes (same feel as your original)
-  const themes = {
-    swamp:  { a:[169,255,74],  b:[255,208,106], bg:[14,20,14] },
-    noir:   { a:[120,255,220], b:[170,170,255], bg:[10,12,18] },
-    lantern:{ a:[255,208,106], b:[169,255,74],  bg:[22,14,10] },
-  };
-  let theme = themes.swamp;
-
-  function setTheme(key){
-    theme = themes[key] || themes.swamp;
-    document.body.style.background =
-      `radial-gradient(1200px 900px at 70% 25%, rgba(${theme.a[0]},${theme.a[1]},${theme.a[2]},.08), transparent 55%),
-       radial-gradient(900px 700px at 20% 80%, rgba(${theme.b[0]},${theme.b[1]},${theme.b[2]},.07), transparent 55%),
-       linear-gradient(180deg, rgb(${theme.bg[0]-6},${theme.bg[1]-10},${theme.bg[2]-6}) 0%, rgb(${theme.bg[0]},${theme.bg[1]},${theme.bg[2]}) 45%, rgb(${theme.bg[0]-8},${theme.bg[1]-12},${theme.bg[2]-8}) 100%)`;
-  }
-  $("btnThemeA").addEventListener("click", () => setTheme("swamp"));
-  $("btnThemeB").addEventListener("click", () => setTheme("noir"));
-  $("btnThemeC").addEventListener("click", () => setTheme("lantern"));
-  setTheme("swamp");
-
-  // Canvas sizing
-  function resize(){
-    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    const w = wrap.clientWidth;
-    const h = wrap.clientHeight;
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  new ResizeObserver(resize).observe(wrap);
-  window.addEventListener("resize", resize);
-
-  // WebAudio graph (keeps your FX + analyser pipeline)
-  let AC=null, src=null, analyser=null, gain=null;
-  let fxOn=false, convolver=null, delay=null, feedback=null, wet=null, dry=null;
-
-  function ensureAudioContext(){
-    if (AC) return;
-    AC = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = AC.createAnalyser();
-    analyser.fftSize = 2048;
-
-    gain = AC.createGain();
-    gain.gain.value = parseFloat(vol.value);
-
-    dry = AC.createGain(); dry.gain.value = 1.0;
-    wet = AC.createGain(); wet.gain.value = 0.0;
-
-    convolver = AC.createConvolver();
-    convolver.buffer = makeImpulse(AC, 1.2, 2.6);
-
-    delay = AC.createDelay(2.0);
-    delay.delayTime.value = 0.18;
-
-    feedback = AC.createGain();
-    feedback.gain.value = 0.25;
-
-    delay.connect(feedback);
-    feedback.connect(delay);
-
-    wet.connect(convolver);
-    convolver.connect(delay);
-    delay.connect(analyser);
-
-    dry.connect(analyser);
-
-    analyser.connect(gain);
-    gain.connect(AC.destination);
-  }
-
-  function makeImpulse(ac, seconds=1.2, decay=2.8){
-    const rate = ac.sampleRate;
-    const length = rate * seconds;
-    const impulse = ac.createBuffer(2, length, rate);
-    for (let c=0; c<2; c++){
-      const ch = impulse.getChannelData(c);
-      for (let i=0; i<length; i++){
-        const t = i/length;
-        ch[i] = (Math.random()*2 - 1) * Math.pow(1 - t, decay);
-      }
-    }
-    return impulse;
-  }
-
-  function connectSource(){
-    ensureAudioContext();
-    if (src) { try{src.disconnect();}catch{} }
-    src = AC.createMediaElementSource(audio);
-    src.connect(dry);
-    src.connect(wet);
-  }
-
-  function setFX(on){
-    fxOn = !!on;
-    if (!dry || !wet) return;
-    const t = AC ? AC.currentTime : 0;
-    const targetWet = fxOn ? 0.75 : 0.0;
-    const targetDry = fxOn ? 0.65 : 1.0;
-    wet.gain.cancelScheduledValues(t);
-    dry.gain.cancelScheduledValues(t);
-    wet.gain.setTargetAtTime(targetWet, t, 0.06);
-    dry.gain.setTargetAtTime(targetDry, t, 0.06);
-    fxToggle.checked = fxOn;
-    btnFX.classList.toggle("primary", fxOn);
-    btnFX.textContent = fxOn ? "✨" : "✨";
-  }
-
-  async function startAudio(){
-    ensureAudioContext();
-    if (AC.state === "suspended") await AC.resume();
-    overlay.classList.remove("show");
-  }
-
-  // Playlist state
   let currentIndex = 0;
   let playing = false;
   let seeking = false;
-  let uploadMode = false;
-
-  // Demo tone (kept from your original)
-  let demoNodes = null;
-  function startDemo(){
-    ensureAudioContext();
-    stopDemo();
-    uploadMode = false;
-
-    if (src) { try{src.disconnect();}catch{} src=null; }
-
-    const osc = AC.createOscillator();
-    const lfo = AC.createOscillator();
-    const lfoGain = AC.createGain();
-    const wob = AC.createBiquadFilter();
-
-    osc.type = "sawtooth";
-    osc.frequency.value = 92;
-
-    wob.type = "lowpass";
-    wob.frequency.value = 420;
-    wob.Q.value = 1.2;
-
-    lfo.type = "sine";
-    lfo.frequency.value = 1.25;
-    lfoGain.gain.value = 220;
-
-    lfo.connect(lfoGain);
-    lfoGain.connect(wob.frequency);
-
-    osc.connect(wob);
-    wob.connect(dry);
-    wob.connect(wet);
-
-    osc.start();
-    lfo.start();
-
-    demoNodes = { osc, lfo };
-    playing = true;
-    btnPlay.textContent = "⏸︎";
-    statusText.textContent = "LIVE";
-    pageTitle.textContent = "Demo Signal";
-    trackSub.textContent = "SwampHop Mystic";
-    trackIdx.textContent = "—";
-  }
-  function stopDemo(){
-    if (!demoNodes) return;
-    try{ demoNodes.osc.stop(); }catch{}
-    try{ demoNodes.lfo.stop(); }catch{}
-    demoNodes = null;
-  }
-
-  function prettyName(filename){ return filename.replace(/\.mp3$/i,""); }
 
   function setTrackButtons(){
     t1.classList.toggle("active", currentIndex === 0);
     t2.classList.toggle("active", currentIndex === 1);
-    trackIdx.textContent = `${currentIndex+1} / ${PLAYLIST.length}`;
+    trackIdx.textContent = `${currentIndex+1} / ${TRACKS.length}`;
+    t1.textContent = TRACKS[0].label;
+    t2.textContent = TRACKS[1].label;
+  }
+
+  async function startAudio(){
+    overlay.classList.remove("show");
+  }
+
+  // Build a safe URL for a filename (handles unicode/spaces)
+  function urlFor(name){
+    // encode each segment, but keep slashes (if any)
+    return name.split("/").map(encodeURIComponent).join("/");
+  }
+
+  // Try each candidate until one exists
+  async function resolveCandidate(candidates){
+    for (const name of candidates){
+      const u = urlFor(name);
+      try{
+        // GitHub Pages supports GET; use a small-range request to avoid downloading all
+        const r = await fetch(u, { method:"GET", headers: { "Range":"bytes=0-1" } });
+        if (r.ok || r.status === 206) return u;
+      }catch{}
+    }
+    return null;
   }
 
   async function loadTrack(idx, {autoplay=false}={}){
-    stopDemo();
-    demoToggle.checked = false;
-
-    uploadMode = false;
-    currentIndex = (idx + PLAYLIST.length) % PLAYLIST.length;
+    currentIndex = (idx + TRACKS.length) % TRACKS.length;
     setTrackButtons();
 
-    const filename = PLAYLIST[currentIndex];
-    audio.src = encodeURI(filename);
+    const track = TRACKS[currentIndex];
+    statusText.textContent = "LOADING";
+
+    const resolved = await resolveCandidate(track.candidates);
+
+    if (!resolved){
+      statusText.textContent = "FILE MISSING";
+      pageTitle.textContent = track.title;
+      btnPlay.textContent = "▶︎";
+      playing = false;
+      return;
+    }
+
+    audio.src = resolved;
     audio.load();
 
-    pageTitle.textContent = prettyName(filename);
+    pageTitle.textContent = track.title;
     trackSub.textContent = "SwampHop Mystic";
     statusText.textContent = "LOADED";
-
-    ensureAudioContext();
-    connectSource();
 
     if (autoplay){
       await startAudio();
@@ -702,33 +131,15 @@
     }
   }
 
-  // Track buttons
-  t1.addEventListener("click", () => loadTrack(0, {autoplay:true}));
-  t2.addEventListener("click", () => loadTrack(1, {autoplay:true}));
-
-  // Tap-to-start overlay
+  // UI wiring
   btnStart.addEventListener("click", async () => {
     await startAudio();
-    if (!audio.src && !demoNodes) await loadTrack(0, {autoplay:false});
+    if (!audio.src) await loadTrack(0, {autoplay:false});
   });
 
-  // Main controls
   btnPlay.addEventListener("click", async () => {
+    if (!audio.src) await loadTrack(0, {autoplay:false});
     await startAudio();
-
-    if (demoNodes){
-      // pause/resume demo by gating dry/wet
-      playing = !playing;
-      btnPlay.textContent = playing ? "⏸︎" : "▶︎";
-      statusText.textContent = playing ? "LIVE" : "PAUSED";
-      dry.gain.value = playing ? (fxOn ? 0.65 : 1.0) : 0;
-      wet.gain.value = playing ? (fxOn ? 0.75 : 0.0) : 0;
-      return;
-    }
-
-    if (!audio.src){
-      await loadTrack(0, {autoplay:false});
-    }
 
     if (audio.paused){
       try{
@@ -748,15 +159,6 @@
   });
 
   btnStop.addEventListener("click", () => {
-    if (demoNodes){
-      stopDemo();
-      playing = false;
-      btnPlay.textContent = "▶︎";
-      statusText.textContent = "IDLE";
-      pageTitle.textContent = prettyName(PLAYLIST[currentIndex] || "You Ain’t Static… You Signal");
-      tNow.textContent = "0:00"; tDur.textContent = "0:00"; seek.value = 0;
-      return;
-    }
     if (!audio.src) return;
     audio.pause();
     audio.currentTime = 0;
@@ -765,72 +167,23 @@
     statusText.textContent = "STOP";
   });
 
-  btnPrev.addEventListener("click", () => loadTrack(currentIndex - 1, {autoplay:true}));
+  btnPrev.addEventListener("click", async () => loadTrack(currentIndex - 1, {autoplay:true}));
   btnRew.addEventListener("click", () => { if (audio.src) audio.currentTime = Math.max(0, audio.currentTime - 10); });
   btnFwd.addEventListener("click", () => { if (audio.src) audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10); });
 
-  // FX
-  fxToggle.addEventListener("change", () => { ensureAudioContext(); setFX(fxToggle.checked); });
-  btnFX.addEventListener("click", () => { ensureAudioContext(); setFX(!fxOn); });
+  t1.addEventListener("click", () => loadTrack(0, {autoplay:true}));
+  t2.addEventListener("click", () => loadTrack(1, {autoplay:true}));
 
-  // Sliders
-  vol.addEventListener("input", () => {
-    const v = parseFloat(vol.value);
-    volVal.textContent = Math.round(v*100) + "%";
-    if (gain) gain.gain.value = v;
-  });
-  glow.addEventListener("input", () => glowVal.textContent = Math.round(parseFloat(glow.value)*100) + "%");
-
-  // Demo toggle
-  demoToggle.addEventListener("change", async () => {
-    await startAudio();
-    if (demoToggle.checked) startDemo();
-    else {
-      stopDemo();
-      statusText.textContent = "IDLE";
-      btnPlay.textContent = "▶︎";
-      if (!uploadMode) loadTrack(currentIndex, {autoplay:false});
-    }
-  });
-
-  // Upload audio
-  file.addEventListener("change", async (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (!f) return;
-    await startAudio();
-    stopDemo();
-    demoToggle.checked = false;
-
-    uploadMode = true;
-    const url = URL.createObjectURL(f);
-    audio.src = url;
-    audio.load();
-
-    pageTitle.textContent = f.name.replace(/\.[^.]+$/,"");
-    trackSub.textContent = "SwampHop Mystic";
-    trackIdx.textContent = "—";
-    statusText.textContent = "LOADED";
-
-    ensureAudioContext();
-    connectSource();
-
+  btnShare.addEventListener("click", async () => {
+    const url = new URL(location.href);
+    url.searchParams.set("track", String(currentIndex));
     try{
-      await audio.play();
-      playing = true;
-      btnPlay.textContent = "⏸︎";
-      statusText.textContent = "LIVE";
+      await navigator.clipboard.writeText(url.toString());
+      statusText.textContent = "COPIED";
     }catch{
-      playing = false;
-      btnPlay.textContent = "▶︎";
-      statusText.textContent = "TAP ▶︎";
+      statusText.textContent = "NO CLIP";
     }
-  });
-
-  btnClearUpload.addEventListener("click", () => {
-    if (!uploadMode) return;
-    uploadMode = false;
-    file.value = "";
-    loadTrack(currentIndex, {autoplay:false});
+    setTimeout(()=> statusText.textContent = playing ? "LIVE" : "IDLE", 900);
   });
 
   // Seek/time
@@ -855,177 +208,16 @@
       seek.value = String(Math.floor((audio.currentTime / audio.duration) * 1000));
     }
   });
-  audio.addEventListener("ended", () => {
+  audio.addEventListener("ended", async () => {
     playing = false;
     btnPlay.textContent = "▶︎";
     statusText.textContent = "END";
   });
 
-  // Share
-  btnShare.addEventListener("click", async () => {
-    const url = new URL(location.href);
-    if (!uploadMode && PLAYLIST[currentIndex]) url.searchParams.set("audio", encodeURI(PLAYLIST[currentIndex]));
-    url.searchParams.set("title", pageTitle.textContent || "SwampHop Mystic");
-    try{
-      await navigator.clipboard.writeText(url.toString());
-      statusText.textContent = "COPIED";
-    }catch{
-      statusText.textContent = "NO CLIP";
-    }
-    setTimeout(()=> statusText.textContent = playing ? "LIVE" : "IDLE", 1000);
-  });
-
-  // Query param load (?audio=...)
-  const qs = new URLSearchParams(location.search);
-  const qAudio = qs.get("audio");
-  const qTitle = qs.get("title");
-  if (qTitle) pageTitle.textContent = qTitle;
-
-  if (qAudio){
-    const decoded = decodeURI(qAudio);
-    const idx = PLAYLIST.findIndex(x => x === decoded || encodeURI(x) === qAudio);
-    if (idx >= 0) loadTrack(idx, {autoplay:false});
-    else {
-      audio.src = qAudio;
-      audio.load();
-      pageTitle.textContent = qTitle || prettyName(decoded.split("/").pop());
-      trackSub.textContent = "SwampHop Mystic";
-      statusText.textContent = "LOADED";
-      trackIdx.textContent = "—";
-      ensureAudioContext();
-      connectSource();
-      setTrackButtons();
-    }
-  } else {
-    loadTrack(0, {autoplay:false});
-  }
-
-  // Visualizer
-  const freqData = new Uint8Array(1024);
-  const timeData = new Uint8Array(2048);
-  let ringPhase = 0;
-  function rgba(rgb,a){ return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`; }
-
-  function draw(){
-    requestAnimationFrame(draw);
-    resize();
-
-    const W = wrap.clientWidth;
-    const H = wrap.clientHeight;
-    ctx.clearRect(0,0,W,H);
-
-    if (analyser){
-      analyser.getByteFrequencyData(freqData);
-      analyser.getByteTimeDomainData(timeData);
-    } else {
-      for (let i=0;i<freqData.length;i++) freqData[i]=0;
-      for (let i=0;i<timeData.length;i++) timeData[i]=128;
-    }
-
-    let sum=0;
-    for (let i=0;i<200;i++) sum+=freqData[i];
-    const energy = clamp(sum/(200*255), 0, 1);
-
-    const g = ctx.createRadialGradient(W*0.5,H*0.44, 60, W*0.5,H*0.44, Math.max(W,H)*0.9);
-    g.addColorStop(0, rgba(theme.a, 0.10));
-    g.addColorStop(0.35, rgba(theme.b, 0.06));
-    g.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,W,H);
-
-    if (ringsToggle.checked){
-      ringPhase += 0.011 + energy*0.02;
-      for (let i=0;i<5;i++){
-        const p = (ringPhase + i*0.18) % 1;
-        const r = 20 + p * Math.min(W,H) * 0.56;
-        const a = (1 - p) * (0.16 + energy*0.22) * parseFloat(glow.value);
-        ctx.strokeStyle = rgba(theme.a, a);
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(W*0.5, H*0.18, r, 0, Math.PI*2);
-        ctx.stroke();
-      }
-    }
-
-    const cx=W*0.5, cy=H*0.60;
-    const baseR = Math.min(W,H)*0.22;
-    const bars=120;
-    const rot = performance.now()*0.00012;
-
-    ctx.save();
-    ctx.translate(cx,cy);
-    ctx.rotate(rot);
-
-    ctx.shadowBlur = 26 * parseFloat(glow.value);
-    ctx.shadowColor = rgba(theme.a, 0.6);
-
-    for (let i=0;i<bars;i++){
-      const idx = Math.floor((i/bars) * 420);
-      const v = freqData[idx]/255;
-      const amp = (v*v) * (baseR*0.78);
-      const a = (i/bars)*Math.PI*2;
-      const r1=baseR;
-      const r2=baseR + 10 + amp;
-
-      const x1=Math.cos(a)*r1, y1=Math.sin(a)*r1;
-      const x2=Math.cos(a)*r2, y2=Math.sin(a)*r2;
-
-      const t=i/(bars-1);
-      const col=[
-        Math.round(theme.a[0]*(1-t)+theme.b[0]*t),
-        Math.round(theme.a[1]*(1-t)+theme.b[1]*t),
-        Math.round(theme.a[2]*(1-t)+theme.b[2]*t),
-      ];
-      ctx.strokeStyle = rgba(col, 0.22 + v*0.65);
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(x1,y1);
-      ctx.lineTo(x2,y2);
-      ctx.stroke();
-    }
-
-    ctx.shadowBlur=0;
-    ctx.fillStyle="rgba(0,0,0,.28)";
-    ctx.strokeStyle=rgba(theme.a, 0.22);
-    ctx.lineWidth=2;
-    ctx.beginPath();
-    ctx.arc(0,0, baseR*0.78, 0, Math.PI*2);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.fillStyle="rgba(243,241,230,.9)";
-    ctx.font="900 12px ui-sans-serif,system-ui";
-    ctx.textAlign="center";
-    ctx.fillText("SIGNAL CORE", 0, -3);
-    ctx.fillStyle="rgba(243,241,230,.65)";
-    ctx.font="900 10px ui-sans-serif,system-ui";
-    ctx.fillText(playing ? "LIVE" : "STANDBY", 0, 12);
-    ctx.restore();
-
-    const midY=H*0.60, padX=18;
-    ctx.lineWidth=2;
-    ctx.strokeStyle=rgba(theme.a, 0.62 * parseFloat(glow.value));
-    ctx.shadowBlur = 16 * parseFloat(glow.value);
-    ctx.shadowColor = rgba(theme.a, 0.55);
-
-    ctx.beginPath();
-    for (let x=0; x < W - padX*2; x++){
-      const i = Math.floor((x/(W - padX*2)) * (timeData.length-1));
-      const v = (timeData[i]-128)/128;
-      const y = midY + v * (32 + energy*44);
-      if (x===0) ctx.moveTo(padX+x,y);
-      else ctx.lineTo(padX+x,y);
-    }
-    ctx.stroke();
-    ctx.shadowBlur=0;
-  }
-
-  // Init
-  resize();
+  // init
   setTrackButtons();
-  setFX(false);
-  draw();
+  const qs = new URLSearchParams(location.search);
+  const qTrack = parseInt(qs.get("track") || "0", 10);
+  loadTrack(Number.isFinite(qTrack) ? qTrack : 0, {autoplay:false});
 })();
 </script>
-</body>
-</html>
