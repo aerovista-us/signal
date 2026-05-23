@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The SIGNAL | An AeroVista Publication</title>
+  <meta name="description" content="The SIGNAL is the official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates." />
+  <style>
+    :root {
+      --bg: #07090d;
+      --bg-soft: #0d1118;
+      --panel: rgba(18, 24, 34, 0.82);
+      --panel-strong: rgba(25, 33, 46, 0.96);
+      --line: rgba(140, 180, 255, 0.16);
+      --text: #edf3ff;
+      --muted: #9aa8bd;
+      --muted-2: #718096;
+      --aero: #7dd3fc;
+      --signal: #c6f56a;
+      --amber: #facc15;
+      --danger: #fb7185;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 32rem),
+        radial-gradient(circle at 85% 10%, rgba(198, 245, 106, 0.12), transparent 28rem),
+        linear-gradient(135deg, #05070a 0%, #0a0f17 48%, #06080d 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent 78%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(125,211,252,0.12), rgba(198,245,106,0.08));
+      box-shadow: inset 0 0 24px rgba(125, 211, 252, 0.08);
+      font-weight: 900;
+      color: var(--aero);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 0.88rem;
+      letter-spacing: 0.18em;
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      border: 1px solid rgba(198,245,106,0.38);
+      background: linear-gradient(135deg, rgba(198,245,106,0.18), rgba(125,211,252,0.08));
+      color: var(--text);
+      box-shadow: 0 12px 40px rgba(198,245,106,0.08);
+    }
+
+    .hero {
+      padding: 86px 0 46px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(14, 18, 27, 0.92), rgba(9, 13, 20, 0.78));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "SIGNAL // LIVE FEED // BUILD LOG";
+      position: absolute;
+      right: -76px;
+      bottom: 34px;
+      transform: rotate(-90deg);
+      color: rgba(237, 243, 255, 0.06);
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      font-size: 0.8rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--signal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--signal);
+      box-shadow: 0 0 0 6px rgba(198,245,106,0.09), 0 0 28px rgba(198,245,106,0.62);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.3rem, 8vw, 7.2rem);
+      line-height: 0.86;
+      letter-spacing: -0.08em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 710px;
+      margin: 26px 0 0;
+      color: #cbd6e8;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button.secondary {
+      border-color: rgba(125,211,252,0.26);
+      background: rgba(125,211,252,0.07);
+      color: #d7e8ff;
+    }
+
+    .hero-panel {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(20, 29, 43, 0.88), rgba(11, 15, 23, 0.94)),
+        radial-gradient(circle at top right, rgba(198,245,106,0.2), transparent 18rem);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .latest-label {
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+    }
+
+    .latest-title {
+      margin: 16px 0 12px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    .latest-text {
+      color: #b7c3d6;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.045);
+      color: #c9d7ec;
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 44px 0 20px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 3vw, 2.75rem);
+      letter-spacing: -0.055em;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      color: #c5d0e1;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .chip.active {
+      color: #07100c;
+      background: var(--signal);
+      border-color: transparent;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-bottom: 66px;
+    }
+
+    .card {
+      min-height: 318px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(19, 25, 36, 0.9), rgba(11, 15, 22, 0.92));
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125, 211, 252, 0.38);
+      background: linear-gradient(180deg, rgba(25, 34, 49, 0.96), rgba(12, 17, 25, 0.96));
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(125,211,252,0.11), transparent 13rem);
+      pointer-events: none;
+    }
+
+    .card-top,
+    .card-bottom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--muted-2);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .category {
+      color: var(--signal);
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    .card p {
+      margin: 0;
+      color: #aebbd0;
+      line-height: 1.65;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      color: #dffcff;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .subscribe {
+      margin-bottom: 72px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(198,245,106,0.22);
+      background:
+        linear-gradient(135deg, rgba(198,245,106,0.12), rgba(125,211,252,0.08)),
+        rgba(10, 14, 21, 0.88);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .subscribe h2 {
+      margin: 0 0 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .subscribe p {
+      margin: 0;
+      color: #b7c3d6;
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 42px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .subscribe {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .subscribe {
+        padding: 22px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="The SIGNAL home">
+        <div class="mark">/\</div>
+        <div class="brand-text">
+          <strong>The SIGNAL</strong>
+          <span>An AeroVista Publication</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#latest">Latest</a>
+        <a href="#dispatches">Dispatches</a>
+        <a href="#archive">Archive</a>
+        <a href="https://aerovista.us">AeroVista.us</a>
+      </nav>
+      <a class="button" href="#subscribe">Subscribe</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" id="latest">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> Live ecosystem feed</div>
+          <h1>The<br />SIGNAL</h1>
+          <p class="subtitle">
+            The official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates from the work as it comes alive.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#dispatches">Read Latest</a>
+            <a class="button secondary" href="#archive">Browse Archive</a>
+          </div>
+        </div>
+
+        <article class="hero-panel">
+          <div>
+            <div class="latest-label">Featured dispatch</div>
+            <h2 class="latest-title">AeroVista Is Turning Motion Into a Public Signal</h2>
+            <p class="latest-text">
+              The SIGNAL becomes the central public page for AeroVista updates: launches, build progress, product movement, creative releases, and the operating story behind the ecosystem.
+            </p>
+            <div class="meta-row">
+              <span class="tag">Company Update</span>
+              <span class="tag">May 2026</span>
+              <span class="tag">Signal 001</span>
+            </div>
+          </div>
+          <a class="read-more" href="#">Read featured dispatch →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell" id="dispatches">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Recent signals</div>
+          <h2>Latest Dispatches</h2>
+        </div>
+        <p>
+          Six starting cards to seed the publication. Each one can become its own post as the GitHub Pages archive grows.
+        </p>
+      </div>
+
+      <div class="filters" id="archive" aria-label="Dispatch categories">
+        <span class="chip active">All</span>
+        <span class="chip">Company Updates</span>
+        <span class="chip">Build Logs</span>
+        <span class="chip">Releases</span>
+        <span class="chip">Creative Drops</span>
+        <span class="chip">Infrastructure</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Company Updates</span><span>May 23</span></div>
+            <h3>EOW Shareholder Update</h3>
+            <p>A weekly operating snapshot covering AeroVista project momentum, current priorities, risks, wins, and next moves across the ecosystem.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Build Logs</span><span>May 22</span></div>
+            <h3>Memory Vault Is Live in AVCC</h3>
+            <p>The AVCC Memory Vault tab is now wired, with the curated Quartz vault serving thousands of pages through the command center.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Releases</span><span>May 17</span></div>
+            <h3>AV Gear Shop Overlay Cleanup</h3>
+            <p>The storefront overlay now follows a cleaner rule: presentation belongs to the site, checkout truth belongs to Square.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Client Work</span><span>May 01</span></div>
+            <h3>Cindy Connect Launch Status</h3>
+            <p>Cindy Connect is live with booking, payments, intake, testimonials, lead magnet flow, and a growing marketing sequence roadmap.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Creative Drops</span><span>EchoVerse</span></div>
+            <h3>Hydrilla Gorilla EchoStory</h3>
+            <p>A creative release lane blending music, story, visual identity, and web experience under the EchoVerse Audio banner.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Infrastructure</span><span>NXCore</span></div>
+            <h3>NXCore Resiliency Work Order</h3>
+            <p>A focused hardening plan for logging, health snapshots, Docker limits, monitoring, backups, and recovery after pressure incidents.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell subscribe" id="subscribe">
+      <div>
+        <h2>Follow the signal.</h2>
+        <p>
+          Add an email capture, RSS feed, or newsletter provider here when ready. For now, this page can operate as the public archive and landing page for ongoing AeroVista updates.
+        </p>
+      </div>
+      <a class="button" href="mailto:trcamach@gmail.com?subject=Subscribe%20to%20The%20SIGNAL">Subscribe by Email</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>© 2026 AeroVista LLC. The SIGNAL is an AeroVista publication.</div>
+      <div class="footer-links">
+        <a href="https://aerovista.us">AeroVista.us</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
