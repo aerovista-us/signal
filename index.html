@@ -5,30 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The SIGNAL | An AeroVista Publication</title>
   <meta name="description" content="The SIGNAL is the official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates." />
+  <meta name="theme-color" content="#07100c" />
   <style>
     :root {
-      --bg: #07090d;
+      --bg: #060807;
       --bg-soft: #0d1118;
       --panel: rgba(18, 24, 34, 0.82);
       --panel-strong: rgba(25, 33, 46, 0.96);
-      --line: rgba(140, 180, 255, 0.16);
-      --text: #edf3ff;
-      --muted: #9aa8bd;
-      --muted-2: #718096;
+      --line: rgba(169, 255, 74, 0.18);
+      --line-blue: rgba(125, 211, 252, 0.16);
+      --text: #f3f1e6;
+      --muted: rgba(243, 241, 230, 0.68);
+      --muted-2: rgba(243, 241, 230, 0.48);
       --aero: #7dd3fc;
-      --signal: #c6f56a;
-      --amber: #facc15;
+      --signal: #a9ff4a;
+      --amber: #ffd06a;
       --danger: #fb7185;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
       --radius-md: 14px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -36,9 +37,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 32rem),
-        radial-gradient(circle at 85% 10%, rgba(198, 245, 106, 0.12), transparent 28rem),
-        linear-gradient(135deg, #05070a 0%, #0a0f17 48%, #06080d 100%);
+        radial-gradient(circle at 50% 0%, rgba(169,255,74,0.13), transparent 26rem),
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.13), transparent 32rem),
+        linear-gradient(135deg, #050806 0%, #0b1110 48%, #06080d 100%);
       overflow-x: hidden;
     }
 
@@ -48,16 +49,14 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px);
       background-size: 64px 64px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent 78%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 82%);
+      z-index: -1;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .shell {
       width: min(var(--max), calc(100% - 36px));
@@ -69,8 +68,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(7, 9, 13, 0.72);
-      border-bottom: 1px solid var(--line);
+      background: rgba(5, 8, 7, 0.74);
+      border-bottom: 1px solid rgba(169,255,74,0.12);
     }
 
     .nav-inner {
@@ -94,12 +93,12 @@
       height: 42px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(125, 211, 252, 0.35);
+      border: 1px solid rgba(169, 255, 74, 0.35);
       border-radius: 14px;
-      background: linear-gradient(145deg, rgba(125,211,252,0.12), rgba(198,245,106,0.08));
-      box-shadow: inset 0 0 24px rgba(125, 211, 252, 0.08);
+      background: radial-gradient(circle at 35% 28%, rgba(169,255,74,0.26), transparent 48%), linear-gradient(145deg, rgba(125,211,252,0.10), rgba(255,208,106,0.08));
+      box-shadow: inset 0 0 24px rgba(169, 255, 74, 0.10), 0 0 28px rgba(169,255,74,0.06);
       font-weight: 900;
-      color: var(--aero);
+      color: var(--signal);
     }
 
     .brand-text strong {
@@ -124,9 +123,7 @@
       font-size: 0.9rem;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .button {
       display: inline-flex;
@@ -135,29 +132,33 @@
       gap: 8px;
       border-radius: 999px;
       padding: 12px 18px;
-      font-weight: 700;
-      border: 1px solid rgba(198,245,106,0.38);
-      background: linear-gradient(135deg, rgba(198,245,106,0.18), rgba(125,211,252,0.08));
+      font-weight: 800;
+      border: 1px solid rgba(169,255,74,0.42);
+      background: linear-gradient(135deg, rgba(169,255,74,0.20), rgba(255,208,106,0.10));
       color: var(--text);
-      box-shadow: 0 12px 40px rgba(198,245,106,0.08);
+      box-shadow: 0 12px 40px rgba(169,255,74,0.08);
     }
 
-    .hero {
-      padding: 86px 0 46px;
+    .button.secondary {
+      border-color: rgba(125,211,252,0.26);
+      background: rgba(125,211,252,0.07);
+      color: #d7e8ff;
     }
+
+    .hero { padding: 82px 0 46px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.02fr 0.98fr;
       gap: 34px;
       align-items: stretch;
     }
 
     .hero-copy {
       padding: 34px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(169,255,74,0.15);
       border-radius: var(--radius-xl);
-      background: linear-gradient(145deg, rgba(14, 18, 27, 0.92), rgba(9, 13, 20, 0.78));
+      background: linear-gradient(145deg, rgba(14, 18, 15, 0.93), rgba(9, 13, 20, 0.80));
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
@@ -169,7 +170,7 @@
       right: -76px;
       bottom: 34px;
       transform: rotate(-90deg);
-      color: rgba(237, 243, 255, 0.06);
+      color: rgba(243, 241, 230, 0.06);
       font-weight: 900;
       letter-spacing: 0.28em;
       font-size: 0.8rem;
@@ -182,7 +183,7 @@
       margin-bottom: 18px;
       color: var(--signal);
       font-size: 0.78rem;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
@@ -192,8 +193,11 @@
       height: 9px;
       border-radius: 999px;
       background: var(--signal);
-      box-shadow: 0 0 0 6px rgba(198,245,106,0.09), 0 0 28px rgba(198,245,106,0.62);
+      box-shadow: 0 0 0 6px rgba(169,255,74,0.09), 0 0 28px rgba(169,255,74,0.62);
+      animation: pulse 1.6s ease-in-out infinite;
     }
+
+    @keyframes pulse { 50% { transform: scale(1.45); opacity: .55; } }
 
     h1 {
       margin: 0;
@@ -206,7 +210,7 @@
     .subtitle {
       max-width: 710px;
       margin: 26px 0 0;
-      color: #cbd6e8;
+      color: #d5dccb;
       font-size: clamp(1.08rem, 2vw, 1.35rem);
       line-height: 1.65;
     }
@@ -218,62 +222,217 @@
       margin-top: 32px;
     }
 
-    .button.secondary {
-      border-color: rgba(125,211,252,0.26);
-      background: rgba(125,211,252,0.07);
-      color: #d7e8ff;
-    }
-
-    .hero-panel {
-      padding: 26px;
-      border: 1px solid var(--line);
+    .signal-player {
+      border: 1px solid rgba(169,255,74,0.18);
       border-radius: var(--radius-xl);
       background:
-        linear-gradient(180deg, rgba(20, 29, 43, 0.88), rgba(11, 15, 23, 0.94)),
-        radial-gradient(circle at top right, rgba(198,245,106,0.2), transparent 18rem);
+        linear-gradient(180deg, rgba(8, 13, 9, 0.26), rgba(0, 0, 0, 0.42)),
+        url("bg.png");
+      background-size: cover;
+      background-position: center;
+      min-height: 560px;
+      overflow: hidden;
       box-shadow: var(--shadow);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .signal-player::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 36%, rgba(169,255,74,0.16), transparent 18rem),
+        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.62));
+      z-index: -1;
+    }
+
+    .signal-player::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity: .18;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .player-head {
+      padding: 18px 18px 12px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
-      min-height: 420px;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.04));
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .latest-label {
-      color: var(--muted);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 800;
-    }
-
-    .latest-title {
-      margin: 16px 0 12px;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.02;
-      letter-spacing: -0.055em;
-    }
-
-    .latest-text {
-      color: #b7c3d6;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .meta-row {
+    .track-meta {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .tag {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.045);
-      color: #c9d7ec;
+    .sigil {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: radial-gradient(circle at 30% 30%, rgba(169,255,74,.25), transparent 55%), linear-gradient(180deg, rgba(255,208,106,.20), rgba(0,0,0,.25));
+      border: 1px solid rgba(169,255,74,.24);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .sigil::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: conic-gradient(from 0deg, rgba(169,255,74,0), rgba(169,255,74,.35), rgba(255,208,106,.18), rgba(169,255,74,0));
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .track-title {
+      font-size: 0.97rem;
+      font-weight: 950;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .track-sub {
+      margin-top: 3px;
+      font-size: 0.76rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
       border-radius: 999px;
-      padding: 8px 11px;
-      font-size: 0.78rem;
-      font-weight: 700;
+      border: 1px solid rgba(169,255,74,.28);
+      background: rgba(0,0,0,.24);
+      font-weight: 900;
+      font-size: 12px;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .player-stage {
+      height: 340px;
+      display: grid;
+      place-items: end center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .ring-core {
+      width: min(330px, 78%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(0,0,0,.52) 0 43%, transparent 44%),
+        repeating-conic-gradient(from 0deg, rgba(169,255,74,0.98) 0deg 2deg, transparent 2deg 5deg, rgba(255,208,106,0.86) 5deg 7deg, transparent 7deg 10deg);
+      box-shadow: 0 0 44px rgba(169,255,74,.24), 0 0 80px rgba(255,208,106,.12);
+    }
+
+    .ring-core::before {
+      content: "";
+      width: 72%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(0,0,0,.66);
+      border: 1px solid rgba(169,255,74,0.28);
+      box-shadow: inset 0 0 45px rgba(169,255,74,0.12);
+    }
+
+    .wave {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 53%;
+      height: 88px;
+      opacity: .94;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      filter: drop-shadow(0 0 12px rgba(169,255,74,0.5));
+    }
+
+    .bar {
+      flex: 1;
+      min-width: 2px;
+      height: calc(10px + var(--h) * 1px);
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--signal), var(--amber));
+      transform-origin: center;
+      animation: bounce calc(.72s + var(--d) * .01s) ease-in-out infinite alternate;
+      animation-play-state: paused;
+    }
+
+    .signal-player.playing .bar { animation-play-state: running; }
+    @keyframes bounce { from { transform: scaleY(.45); opacity: .58; } to { transform: scaleY(1.1); opacity: 1; } }
+
+    .player-controls {
+      padding: 14px 16px 18px;
+      display: grid;
+      gap: 10px;
+      background: linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.46));
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .seek { width: 100%; accent-color: var(--signal); height: 26px; }
+
+    .time-row, .btn-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .time {
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .btn-row { justify-content: center; }
+
+    .player-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(0,0,0,.24));
+      color: var(--text);
+      min-width: 54px;
+      min-height: 46px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 950;
+      box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    }
+
+    .player-btn.primary {
+      min-width: 72px;
+      min-height: 58px;
+      border-radius: 999px;
+      border-color: rgba(169,255,74,.38);
+      background: linear-gradient(180deg, rgba(169,255,74,.24), rgba(0,0,0,.26));
+      font-size: 1.15rem;
     }
 
     .section-head {
@@ -307,11 +466,11 @@
     .chip {
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(169,255,74,0.15);
       background: rgba(255,255,255,0.035);
-      color: #c5d0e1;
+      color: #cfd7c7;
       font-size: 0.84rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .chip.active {
@@ -334,9 +493,9 @@
       justify-content: space-between;
       padding: 22px;
       border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(19, 25, 36, 0.9), rgba(11, 15, 22, 0.92));
-      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(169,255,74,0.13);
+      background: linear-gradient(180deg, rgba(19, 25, 20, 0.92), rgba(11, 15, 22, 0.94));
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.25);
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
       overflow: hidden;
       position: relative;
@@ -344,23 +503,19 @@
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: rgba(125, 211, 252, 0.38);
-      background: linear-gradient(180deg, rgba(25, 34, 49, 0.96), rgba(12, 17, 25, 0.96));
+      border-color: rgba(169, 255, 74, 0.34);
+      background: linear-gradient(180deg, rgba(25, 34, 28, 0.98), rgba(12, 17, 25, 0.96));
     }
 
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(125,211,252,0.11), transparent 13rem);
+      background: radial-gradient(circle at top right, rgba(169,255,74,0.10), transparent 13rem);
       pointer-events: none;
     }
 
-    .card-top,
-    .card-bottom {
-      position: relative;
-      z-index: 1;
-    }
+    .card-top, .card-bottom { position: relative; z-index: 1; }
 
     .card-kicker {
       display: flex;
@@ -370,14 +525,12 @@
       margin-bottom: 18px;
       color: var(--muted-2);
       font-size: 0.76rem;
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    .category {
-      color: var(--signal);
-    }
+    .category { color: var(--signal); }
 
     .card h3 {
       margin: 0 0 14px;
@@ -388,7 +541,7 @@
 
     .card p {
       margin: 0;
-      color: #aebbd0;
+      color: #b8c2b4;
       line-height: 1.65;
     }
 
@@ -397,8 +550,8 @@
       align-items: center;
       gap: 8px;
       margin-top: 24px;
-      color: #dffcff;
-      font-weight: 800;
+      color: #e9ffd0;
+      font-weight: 900;
       font-size: 0.92rem;
     }
 
@@ -406,29 +559,19 @@
       margin-bottom: 72px;
       padding: 28px;
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(198,245,106,0.22);
-      background:
-        linear-gradient(135deg, rgba(198,245,106,0.12), rgba(125,211,252,0.08)),
-        rgba(10, 14, 21, 0.88);
+      border: 1px solid rgba(169,255,74,0.22);
+      background: linear-gradient(135deg, rgba(169,255,74,0.12), rgba(125,211,252,0.08)), rgba(10, 14, 21, 0.88);
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items: center;
     }
 
-    .subscribe h2 {
-      margin: 0 0 8px;
-      letter-spacing: -0.04em;
-    }
-
-    .subscribe p {
-      margin: 0;
-      color: #b7c3d6;
-      line-height: 1.6;
-    }
+    .subscribe h2 { margin: 0 0 8px; letter-spacing: -0.04em; }
+    .subscribe p { margin: 0; color: #c6cebf; line-height: 1.6; }
 
     footer {
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(169,255,74,0.12);
       padding: 28px 0 42px;
       color: var(--muted);
     }
@@ -441,50 +584,22 @@
       font-size: 0.9rem;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
+    .footer-links { display: flex; gap: 18px; }
 
-    @media (max-width: 920px) {
-      .hero-grid,
-      .subscribe {
-        grid-template-columns: 1fr;
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
+    @media (max-width: 980px) {
+      .hero-grid, .subscribe { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .signal-player { min-height: 520px; }
     }
 
     @media (max-width: 640px) {
-      .shell {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .hero {
-        padding-top: 42px;
-      }
-
-      .hero-copy,
-      .hero-panel,
-      .subscribe {
-        padding: 22px;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head,
-      .footer-inner {
-        align-items: start;
-        flex-direction: column;
-      }
+      .shell { width: min(100% - 24px, var(--max)); }
+      .hero { padding-top: 42px; }
+      .hero-copy, .subscribe { padding: 22px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .section-head, .footer-inner { align-items: start; flex-direction: column; }
+      .player-stage { height: 300px; }
     }
   </style>
 </head>
@@ -515,7 +630,7 @@
           <div class="eyebrow"><span class="pulse"></span> Live ecosystem feed</div>
           <h1>The<br />SIGNAL</h1>
           <p class="subtitle">
-            The official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates from the work as it comes alive.
+            You ain’t static. You signal. The official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates from the work as it comes alive.
           </p>
           <div class="hero-actions">
             <a class="button" href="#dispatches">Read Latest</a>
@@ -523,21 +638,41 @@
           </div>
         </div>
 
-        <article class="hero-panel">
-          <div>
-            <div class="latest-label">Featured dispatch</div>
-            <h2 class="latest-title">AeroVista Is Turning Motion Into a Public Signal</h2>
-            <p class="latest-text">
-              The SIGNAL becomes the central public page for AeroVista updates: launches, build progress, product movement, creative releases, and the operating story behind the ecosystem.
-            </p>
-            <div class="meta-row">
-              <span class="tag">Company Update</span>
-              <span class="tag">May 2026</span>
-              <span class="tag">Signal 001</span>
+        <aside class="signal-player" id="signalPlayer" aria-label="The SIGNAL audio player">
+          <div class="player-head">
+            <div class="track-meta">
+              <div class="sigil" aria-hidden="true"></div>
+              <div>
+                <div class="track-title" id="trackTitle">You Ain’t Static… You Signal</div>
+                <div class="track-sub" id="trackSub">SwampHop Mystic · The SIGNAL theme</div>
+              </div>
             </div>
+            <div class="pill"><span class="pulse"></span><span id="statusText">IDLE</span></div>
           </div>
-          <a class="read-more" href="#">Read featured dispatch →</a>
-        </article>
+
+          <div class="player-stage">
+            <div class="wave" aria-hidden="true">
+              <span class="bar" style="--h:18;--d:1"></span><span class="bar" style="--h:36;--d:6"></span><span class="bar" style="--h:24;--d:3"></span><span class="bar" style="--h:64;--d:9"></span><span class="bar" style="--h:42;--d:2"></span><span class="bar" style="--h:80;--d:8"></span><span class="bar" style="--h:48;--d:5"></span><span class="bar" style="--h:30;--d:4"></span><span class="bar" style="--h:70;--d:7"></span><span class="bar" style="--h:28;--d:2"></span><span class="bar" style="--h:52;--d:9"></span><span class="bar" style="--h:92;--d:6"></span><span class="bar" style="--h:44;--d:1"></span><span class="bar" style="--h:26;--d:4"></span><span class="bar" style="--h:74;--d:8"></span><span class="bar" style="--h:38;--d:3"></span><span class="bar" style="--h:60;--d:5"></span><span class="bar" style="--h:34;--d:7"></span><span class="bar" style="--h:86;--d:2"></span><span class="bar" style="--h:40;--d:9"></span><span class="bar" style="--h:28;--d:1"></span><span class="bar" style="--h:66;--d:6"></span><span class="bar" style="--h:46;--d:4"></span><span class="bar" style="--h:76;--d:8"></span>
+            </div>
+            <div class="ring-core" aria-hidden="true"></div>
+          </div>
+
+          <div class="player-controls">
+            <input class="seek" id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Audio seek" />
+            <div class="time-row">
+              <div class="time"><span id="tNow">0:00</span> / <span id="tDur">0:00</span></div>
+              <div class="time" id="trackIdx">1 / 2</div>
+            </div>
+            <div class="btn-row">
+              <button class="player-btn" id="btnPrev" title="Previous track">⟲</button>
+              <button class="player-btn" id="btnRew" title="Back 10 seconds">«10</button>
+              <button class="player-btn primary" id="btnPlay" title="Play/Pause">▶︎</button>
+              <button class="player-btn" id="btnFwd" title="Forward 10 seconds">10»</button>
+              <button class="player-btn" id="btnNext" title="Next track">⟳</button>
+            </div>
+            <audio id="audio" preload="metadata"></audio>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -622,7 +757,7 @@
       <div>
         <h2>Follow the signal.</h2>
         <p>
-          Add an email capture, RSS feed, or newsletter provider here when ready. For now, this page can operate as the public archive and landing page for ongoing AeroVista updates.
+          Add an email capture, RSS feed, or newsletter provider here when ready. For now, this page operates as the public archive, music-backed signal post, and landing page for ongoing AeroVista updates.
         </p>
       </div>
       <a class="button" href="mailto:trcamach@gmail.com?subject=Subscribe%20to%20The%20SIGNAL">Subscribe by Email</a>
@@ -638,5 +773,100 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const playlist = [
+        "You Ain’t Static You Signal.mp3",
+        "You Ain’t Static You Signal 2.mp3"
+      ];
+
+      const audio = document.getElementById("audio");
+      const player = document.getElementById("signalPlayer");
+      const btnPlay = document.getElementById("btnPlay");
+      const btnPrev = document.getElementById("btnPrev");
+      const btnNext = document.getElementById("btnNext");
+      const btnRew = document.getElementById("btnRew");
+      const btnFwd = document.getElementById("btnFwd");
+      const seek = document.getElementById("seek");
+      const tNow = document.getElementById("tNow");
+      const tDur = document.getElementById("tDur");
+      const statusText = document.getElementById("statusText");
+      const trackTitle = document.getElementById("trackTitle");
+      const trackIdx = document.getElementById("trackIdx");
+      let currentIndex = 0;
+      let seeking = false;
+
+      const fmt = (s) => {
+        if (!Number.isFinite(s) || s <= 0) return "0:00";
+        const m = Math.floor(s / 60);
+        const r = Math.floor(s % 60);
+        return `${m}:${String(r).padStart(2, "0")}`;
+      };
+
+      const prettyName = (file) => file.replace(/\.mp3$/i, "").replace("You Ain’t Static You Signal", "You Ain’t Static… You Signal");
+
+      function loadTrack(index, autoplay = false) {
+        currentIndex = (index + playlist.length) % playlist.length;
+        audio.src = encodeURI(playlist[currentIndex]);
+        audio.load();
+        trackTitle.textContent = prettyName(playlist[currentIndex]);
+        trackIdx.textContent = `${currentIndex + 1} / ${playlist.length}`;
+        statusText.textContent = "LOADED";
+        player.classList.remove("playing");
+        btnPlay.textContent = "▶︎";
+        if (autoplay) play();
+      }
+
+      async function play() {
+        try {
+          await audio.play();
+          statusText.textContent = "LIVE";
+          btnPlay.textContent = "⏸︎";
+          player.classList.add("playing");
+        } catch (error) {
+          statusText.textContent = "TAP ▶︎";
+        }
+      }
+
+      function pause() {
+        audio.pause();
+        statusText.textContent = "PAUSED";
+        btnPlay.textContent = "▶︎";
+        player.classList.remove("playing");
+      }
+
+      btnPlay.addEventListener("click", () => audio.paused ? play() : pause());
+      btnPrev.addEventListener("click", () => loadTrack(currentIndex - 1, true));
+      btnNext.addEventListener("click", () => loadTrack(currentIndex + 1, true));
+      btnRew.addEventListener("click", () => { audio.currentTime = Math.max(0, audio.currentTime - 10); });
+      btnFwd.addEventListener("click", () => { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10); });
+
+      seek.addEventListener("input", () => {
+        if (!audio.duration) return;
+        seeking = true;
+        tNow.textContent = fmt((seek.value / 1000) * audio.duration);
+      });
+
+      seek.addEventListener("change", () => {
+        if (!audio.duration) return;
+        audio.currentTime = (seek.value / 1000) * audio.duration;
+        seeking = false;
+      });
+
+      audio.addEventListener("loadedmetadata", () => { tDur.textContent = fmt(audio.duration); });
+      audio.addEventListener("timeupdate", () => {
+        if (!audio.duration || seeking) return;
+        tNow.textContent = fmt(audio.currentTime);
+        seek.value = String(Math.floor((audio.currentTime / audio.duration) * 1000));
+      });
+      audio.addEventListener("ended", () => loadTrack(currentIndex + 1, true));
+      audio.addEventListener("pause", () => {
+        if (!audio.ended) player.classList.remove("playing");
+      });
+
+      loadTrack(0, false);
+    })();
+  </script>
 </body>
 </html>
