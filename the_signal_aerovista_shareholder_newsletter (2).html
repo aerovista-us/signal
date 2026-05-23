@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The SIGNAL | AeroVista Shareholder Newsletter</title>
+  <style>
+    :root {
+      --bg: #04070d;
+      --ink: #f5fbff;
+      --muted: #9eb2c7;
+      --soft: #d9efff;
+      --cyan: #67e8f9;
+      --blue: #60a5fa;
+      --violet: #c084fc;
+      --green: #86efac;
+      --amber: #facc15;
+      --panel: rgba(12, 18, 30, 0.88);
+      --panel2: rgba(18, 28, 45, 0.84);
+      --line: rgba(125, 211, 252, 0.22);
+      --shadow: 0 30px 90px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 3%, rgba(103, 232, 249, 0.18), transparent 32%),
+        radial-gradient(circle at 88% 8%, rgba(96, 165, 250, 0.14), transparent 30%),
+        radial-gradient(circle at 55% 92%, rgba(192, 132, 252, 0.12), transparent 38%),
+        linear-gradient(135deg, #02040a 0%, #09111f 50%, #02040a 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent 82%);
+      z-index: 0;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 34px));
+      margin: 0 auto;
+      padding: 34px 0 70px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cyan);
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #001018;
+      font-weight: 950;
+      letter-spacing: -5px;
+      padding-right: 4px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 28px rgba(103,232,249,0.26);
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 48px;
+      min-height: 560px;
+      background:
+        linear-gradient(135deg, rgba(5, 9, 18, 0.96), rgba(14, 24, 40, 0.88)),
+        radial-gradient(circle at 77% 20%, rgba(103, 232, 249, 0.24), transparent 26%);
+      box-shadow: var(--shadow);
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 80% 36%, rgba(103,232,249,0.18), transparent 24%),
+        linear-gradient(110deg, transparent 0%, transparent 52%, rgba(103,232,249,0.09) 52.3%, transparent 53%),
+        linear-gradient(100deg, transparent 0%, transparent 68%, rgba(192,132,252,0.08) 68.4%, transparent 69%);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: "/\\";
+      position: absolute;
+      right: 46px;
+      bottom: 22px;
+      font-size: 210px;
+      line-height: 0.8;
+      font-weight: 950;
+      letter-spacing: -28px;
+      color: rgba(103, 232, 249, 0.055);
+      transform: skew(-9deg);
+    }
+
+    .issue-pill {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border: 1px solid rgba(103,232,249,0.28);
+      border-radius: 999px;
+      color: var(--cyan);
+      background: rgba(103,232,249,0.08);
+      font-size: 12px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px var(--green);
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 32px 0 8px;
+      max-width: 900px;
+      font-size: clamp(68px, 12vw, 148px);
+      line-height: 0.82;
+      letter-spacing: -0.095em;
+      text-transform: uppercase;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #fff 0%, var(--cyan) 46%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 1;
+      margin: 22px 0 0;
+      max-width: 790px;
+      color: var(--soft);
+      font-size: clamp(24px, 4vw, 43px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .dek {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .cover-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .chip {
+      padding: 12px 15px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.095);
+      color: #e6f8ff;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin: 46px 0 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .section-head span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 26px;
+      background: var(--panel);
+      box-shadow: 0 16px 46px rgba(0,0,0,0.24);
+      padding: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(103,232,249,0.09), transparent 36%);
+      pointer-events: none;
+    }
+
+    .card > * { position: relative; z-index: 1; }
+
+    .letter {
+      grid-column: span 7;
+      padding: 34px;
+    }
+
+    .letter h2 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      letter-spacing: -0.05em;
+    }
+
+    .letter p {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+
+    .pullquote {
+      grid-column: span 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(145deg, rgba(103,232,249,0.13), rgba(96,165,250,0.08)),
+        var(--panel2);
+    }
+
+    .quote-mark {
+      font-size: 92px;
+      line-height: 0.7;
+      color: rgba(103,232,249,0.34);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .pullquote h3 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .pullquote p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .headline {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+    }
+
+    .headline-main, .headline-side {
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 28px;
+      background: var(--panel);
+      padding: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .headline-main::before, .headline-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(103,232,249,0.10), transparent 38%);
+      pointer-events: none;
+    }
+
+    .headline-main > *, .headline-side > * { position: relative; z-index: 1; }
+
+    .kicker {
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .headline-main h2 {
+      margin: 0 0 14px;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+    }
+
+    .headline-main p, .headline-side p, .metric-card p, .ecosystem p, .priority p, .risk p, .closing p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .checks {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #eaf8ff;
+      font-weight: 700;
+    }
+
+    .check b {
+      width: 24px;
+      height: 24px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      color: #001018;
+      font-size: 13px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .metric-card { min-height: 170px; }
+
+    .number {
+      margin: 0 0 8px;
+      font-size: 46px;
+      line-height: 1;
+      letter-spacing: -0.07em;
+      font-weight: 950;
+    }
+
+    .ecosystem {
+      grid-column: span 3;
+      min-height: 190px;
+    }
+
+    .ecosystem h3, .priority h3, .risk h3, .closing h2 {
+      margin: 0 0 10px;
+      letter-spacing: -0.035em;
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #042f2e;
+      background: var(--cyan);
+    }
+
+    .badge.green { background: var(--green); color: #052e16; }
+    .badge.amber { background: var(--amber); color: #422006; }
+    .badge.violet { background: var(--violet); color: #2e1065; }
+
+    .risk {
+      grid-column: span 6;
+      background: var(--panel2);
+    }
+
+    .priority {
+      grid-column: span 3;
+      background: var(--panel2);
+    }
+
+    .closing {
+      grid-column: span 12;
+      padding: 36px;
+      background:
+        linear-gradient(135deg, rgba(103,232,249,0.13), rgba(192,132,252,0.10)),
+        var(--panel);
+    }
+
+    .closing h2 { font-size: 36px; }
+
+    .footer {
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 0 4px;
+    }
+
+    @media print {
+      body { background: #07111e; }
+      .wrap { width: 100%; padding: 0; }
+      .cover, .card, .headline-main, .headline-side { box-shadow: none; break-inside: avoid; }
+    }
+
+    @media (max-width: 940px) {
+      .cover { padding: 34px; min-height: auto; }
+      .letter, .pullquote, .risk { grid-column: span 12; }
+      .headline { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .ecosystem, .priority { grid-column: span 6; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 20px, 1180px); padding-top: 18px; }
+      .masthead { align-items: start; flex-direction: column; }
+      .cover { padding: 24px; border-radius: 25px; }
+      .cover::after { display: none; }
+      h1 { font-size: 62px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .metrics { grid-template-columns: 1fr; }
+      .ecosystem, .priority { grid-column: span 12; }
+      .letter, .pullquote, .headline-main, .headline-side, .closing { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="masthead">
+      <div class="brand-mark"><div class="mark">/\</div><span>AeroVista LLC</span></div>
+      <div><a href="#convergence-page" style="color:inherit;text-decoration:none;">Open Convergence Brief ↓</a></div>
+    </header>
+
+    <section class="cover">
+      <div class="issue-pill"><span class="pulse"></span>Volume 01 · The Operating Memory Issue</div>
+      <h1><span class="gradient">The SIGNAL</span></h1>
+      <div class="subtitle">AeroVista is turning scattered knowledge into durable company infrastructure.</div>
+      <p class="dek">
+        This week delivered a major operational milestone: the Memory Vault is live inside AVCC. Years of ideas,
+        decisions, project context, and technical discoveries are now becoming a searchable asset designed to help
+        the company move faster, retain knowledge, and compound value over time.
+      </p>
+      <div class="cover-meta">
+        <span class="chip">Prepared for Shareholders</span>
+        <span class="chip">Status: Positive Forward Progress</span>
+        <span class="chip">Theme: Building Systems That Compound</span>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <h2>From the Founder</h2>
+      <span>Momentum, memory, and operational leverage</span>
+    </section>
+
+    <section class="grid">
+      <article class="card letter">
+        <h2>This week, AeroVista got smarter.</h2>
+        <p>
+          Over the past several years, AeroVista has generated thousands of conversations, designs, procedures,
+          technical discoveries, project plans, and hard-earned lessons. Until now, too much of that knowledge lived
+          across disconnected systems and scattered workstreams.
+        </p>
+        <p>
+          This week, that changed. The AeroVista Memory Vault is now live inside the AeroVista Command Center.
+          More than four thousand knowledge artifacts are indexed, published, and accessible through a unified
+          operational interface.
+        </p>
+        <p>
+          For shareholders, this is more than a technical deployment. It is a step toward building a company that
+          retains what it learns. The goal is simple: stop losing context, reduce repeated work, accelerate onboarding,
+          and create a foundation for AI-assisted operations that improves over time.
+        </p>
+      </article>
+
+      <aside class="card pullquote">
+        <div>
+          <div class="quote-mark">“</div>
+          <h3>The value of accumulated knowledge compounds.</h3>
+        </div>
+        <p>
+          The Memory Vault turns historical work into operational fuel — searchable, reusable, and ready to support
+          the next phase of AeroVista execution.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section-head">
+      <h2>This Week’s Headline</h2>
+      <span>The Memory Vault is live</span>
+    </section>
+
+    <section class="grid">
+      <article class="headline">
+        <div class="headline-main">
+          <div class="kicker">Major Milestone</div>
+          <h2>Memory Vault Goes Live</h2>
+          <p>
+            The Memory Vault is now integrated into AVCC, giving AeroVista a durable knowledge layer for project
+            continuity, technical memory, operating procedures, strategic context, and future AI-assisted discovery.
+          </p>
+          <div class="checks">
+            <div class="check"><b>✓</b>Memory Vault integrated into AVCC</div>
+            <div class="check"><b>✓</b>Quartz publishing system deployed</div>
+            <div class="check"><b>✓</b>Round-trip synchronization verified</div>
+            <div class="check"><b>✓</b>Recursive growth issue identified and resolved</div>
+          </div>
+        </div>
+
+        <div class="headline-side">
+          <div class="kicker">Why It Matters</div>
+          <p>
+            Every organization creates knowledge. Few successfully retain it. The Memory Vault creates a permanent
+            operational memory layer designed to preserve decisions, discoveries, system context, and project history.
+          </p>
+          <p>
+            Future contributors and AI-assisted workflows can now leverage accumulated experience instead of starting
+            from scratch. That means faster recovery, better handoffs, and less wasted effort across the ecosystem.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-head">
+      <h2>By the Numbers</h2>
+      <span>Knowledge layer deployment snapshot</span>
+    </section>
+
+    <section class="metrics">
+      <article class="card metric-card"><p class="number">4,250+</p><p>Knowledge artifacts indexed and stabilized inside the operational memory layer.</p></article>
+      <article class="card metric-card"><p class="number">4,450</p><p>Published knowledge pages generated through the Quartz vault pipeline.</p></article>
+      <article class="card metric-card"><p class="number">340MB</p><p>Static knowledge portal deployed into AVCC for direct operator access.</p></article>
+      <article class="card metric-card"><p class="number">100%</p><p>Round-trip validation success after pipeline stabilization and duplicate prevention.</p></article>
+    </section>
+
+    <section class="section-head"><h2>Ecosystem Status</h2><span>Active lanes across AeroVista</span></section>
+
+    <section class="grid">
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>Nexus TechWorks</h3><p>Platform engineering, infrastructure, internal tools, and system integration.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>AVCC</h3><p>Operational dashboard expansion, Memory Vault access, and command-center visibility.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>AeroCoreOS</h3><p>Long-term unified operating environment and future control surface.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>EchoVerse Audio</h3><p>Creative IP, music-driven experiences, audio products, and storytelling systems.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>RydeSync</h3><p>Product development continues toward deployment readiness and ecosystem fit.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>Lumina Creative</h3><p>Brand systems, content, visuals, and public-facing creative execution.</p></article>
+      <article class="card ecosystem"><span class="badge green">Active</span><h3>Storefront</h3><p>Commerce readiness, overlay cleanup, product presentation, and catalog refinement.</p></article>
+      <article class="card ecosystem"><span class="badge amber">Building</span><h3>n8n Automation</h3><p>Self-hosted workflow automation planned to reduce repeated operational effort.</p></article>
+    </section>
+
+    <section class="section-head"><h2>Infrastructure Update</h2><span>Stability work continues</span></section>
+
+    <section class="grid">
+      <article class="card risk"><span class="badge violet">Watchpoint</span><h3>Resource Management</h3><p>Resource contention remains the main operational risk during large builds, indexing tasks, and heavy development workflows. Mitigation continues through workload separation, improved monitoring, recovery procedures, and dedicated-node planning.</p></article>
+      <article class="card risk"><span class="badge violet">Watchpoint</span><h3>System Consolidation</h3><p>Multiple legacy and emerging systems still operate in parallel. The mitigation path remains clear ownership boundaries, Core Registry alignment, incremental migration, and disciplined documentation as systems converge.</p></article>
+    </section>
+
+    <section class="section-head"><h2>Looking Ahead</h2><span>Next week execution priorities</span></section>
+
+    <section class="grid">
+      <article class="card priority"><span class="badge">P1</span><h3>Infrastructure</h3><p>Continue NXCore resiliency, monitoring, backup verification, and hardening work.</p></article>
+      <article class="card priority"><span class="badge">P2</span><h3>Platform</h3><p>Advance AVCC and AeroCoreOS convergence planning with better application inventory.</p></article>
+      <article class="card priority"><span class="badge">P3</span><h3>Products</h3><p>Progress RydeSync, storefront, and public web platform launch readiness.</p></article>
+      <article class="card priority"><span class="badge">P4</span><h3>Automation</h3><p>Expand self-hosted workflow automation and operational reporting through n8n.</p></article>
+    </section>
+
+    <section class="section-head"><h2>AeroVista Outlook</h2><span>Durable assets over short-term noise</span></section>
+
+    <section class="grid">
+      <article class="card closing">
+        <h2>Building systems that compound.</h2>
+        <p>
+          AeroVista remains focused on durable infrastructure, automation capability, product readiness,
+          operational scalability, creative intellectual property, and knowledge retention. This week’s Memory Vault
+          milestone strengthens the company’s ability to learn from its own history and convert accumulated work into
+          future execution leverage.
+        </p>
+        <p>
+          The near-term goal is stability and clarity. The long-term goal is a unified ecosystem where every build,
+          every lesson, and every decision continues creating value long after the initial work is complete.
+        </p>
+      </article>
+    </section>
+    <section id="convergence-page" class="cover" style="margin-top:54px; min-height:auto;">
+      <div class="issue-pill"><span class="pulse"></span>Daily Intelligence Brief · May 22, 2026</div>
+      <h1><span class="gradient">The Great Convergence</span></h1>
+      <div class="subtitle">Energy, compute, money, and data are becoming one strategic system.</div>
+      <p class="dek">
+        The old model treated energy, finance, technology, and information as separate industries.
+        The new model is an integrated stack: electricity powers compute, compute creates data,
+        data drives financial systems, and capital funds infrastructure expansion.
+      </p>
+      <div class="cover-meta">
+        <span class="chip">Theme: Sovereign Infrastructure</span>
+        <span class="chip">Signal Cluster: Energy + Compute + Money + Data</span>
+        <span class="chip">Position: Control the Stack</span>
+      </div>
+    </section>
+
+    <section class="section-head"><h2>Core Thesis</h2><span>The system is converging</span></section>
+
+    <section class="grid">
+      <article class="card closing">
+        <h2>Sovereign infrastructure is becoming the operating system of global power.</h2>
+        <p>
+          AI does not scale without electricity. Data centers do not operate without grid capacity.
+          Financial settlement is becoming programmable. Governments are treating technology as national security.
+          The winners of the next decade will be the organizations that understand the stack as one connected system.
+        </p>
+      </article>
+    </section>
+
+    <section class="section-head"><h2>The Four-Layer Stack</h2><span>Highest confidence signal clusters</span></section>
+
+    <section class="grid">
+      <article class="card ecosystem"><span class="badge green">Layer 01</span><h3>Energy</h3><p>AI infrastructure and data centers are driving electricity demand, grid investment, and power security into strategic policy.</p></article>
+      <article class="card ecosystem"><span class="badge">Layer 02</span><h3>Compute</h3><p>Semiconductors, GPUs, data centers, and AI models are becoming the new industrial capacity layer.</p></article>
+      <article class="card ecosystem"><span class="badge amber">Layer 03</span><h3>Money</h3><p>Stablecoins, tokenized securities, and instant settlement are pushing finance toward programmable rails.</p></article>
+      <article class="card ecosystem"><span class="badge violet">Layer 04</span><h3>Data</h3><p>Data sovereignty, identity, cybersecurity, and governance determine competitive advantage and AI capability.</p></article>
+    </section>
+
+    <section class="section-head"><h2>Convergence Loop</h2><span>How the flywheel works</span></section>
+
+    <section class="headline">
+      <div class="headline-main">
+        <div class="kicker">Integrated Strategic Stack</div>
+        <h2>Energy → Compute → Data → Money</h2>
+        <p>
+          Energy powers compute. Compute creates data. Data drives financial systems. Money funds energy and infrastructure expansion.
+          Once these loops connect, infrastructure control becomes economic control.
+        </p>
+        <div class="checks">
+          <div class="check"><b>⚡</b>Energy determines AI scale.</div>
+          <div class="check"><b>▣</b>Compute determines industrial capacity.</div>
+          <div class="check"><b>$</b>Money determines infrastructure expansion.</div>
+          <div class="check"><b>◎</b>Data determines intelligence and advantage.</div>
+        </div>
+      </div>
+      <div class="headline-side">
+        <div class="kicker">What Changed</div>
+        <p>
+          The 20th-century model separated energy, finance, factories, and technology. The 21st-century model connects GPUs,
+          data centers, AI models, payment rails, cybersecurity, and national policy into one operating layer.
+        </p>
+        <p>
+          For AeroVista, this is a strategic lens: build tools, content, automation, and infrastructure with the assumption that
+          energy, compute, money, and data will keep converging rather than drifting apart.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-head"><h2>What To Watch Next</h2><span>Signals worth tracking</span></section>
+
+    <section class="grid">
+      <article class="card priority"><span class="badge">01</span><h3>AI Energy Demand</h3><p>Data center load, utility expansion, grid constraints, and power purchase agreements.</p></article>
+      <article class="card priority"><span class="badge">02</span><h3>Semiconductor Capacity</h3><p>GPU supply, export controls, sovereign AI initiatives, and fabrication investments.</p></article>
+      <article class="card priority"><span class="badge">03</span><h3>Stablecoin Regulation</h3><p>Settlement rails, banking adoption, tokenized securities, and cross-border payments.</p></article>
+      <article class="card priority"><span class="badge">04</span><h3>Cyber + Data Policy</h3><p>Identity systems, data sovereignty, breach events, and AI governance frameworks.</p></article>
+    </section>
+
+    <section class="section-head"><h2>Strategic Read</h2><span>Why this belongs in The SIGNAL</span></section>
+
+    <section class="grid">
+      <article class="card risk"><span class="badge green">Opportunity</span><h3>Build for the Stack</h3><p>AeroVista should frame future systems around connected infrastructure: dashboards, automation, secure data flows, AI tooling, and deployable operator intelligence.</p></article>
+      <article class="card risk"><span class="badge amber">Risk</span><h3>Fragmented Thinking</h3><p>The danger is treating each trend as separate. The advantage comes from seeing how energy, compute, finance, and data reinforce each other.</p></article>
+    </section>
+
+    <p style="margin:24px 4px 0;color:#9eb2c7;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;">
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="color:#67e8f9;text-decoration:none;">↑ Back to shareholder issue</a>
+    </p>
+
+
+
+    <footer class="footer">
+      <div>The SIGNAL · A Vespera Publication</div>
+      <div>AeroVista LLC · Prepared for Shareholders</div>
+    </footer>
+  </main>
+</body>
+</html>
