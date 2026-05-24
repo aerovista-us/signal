@@ -1,0 +1,13 @@
+# Static preview for thesignal (HTML, magazine fetch(), PNG assets).
+# Usage: docker compose up
+# Open: http://localhost:${PORT:-9888}/publications/VXP-MR-01-macro-rails-intelligence/magazine.html
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "${PORT:-9888}:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped

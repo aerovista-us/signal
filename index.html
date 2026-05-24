@@ -7,7 +7,8 @@
   <title>The SIGNAL | An AeroVista Publication</title>
   <meta name="description" content="The SIGNAL is the official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates." />
   <link rel="canonical" href="https://thesignal.aerovista.us/" />
-  <meta name="theme-color" content="#07100c" />
+  <meta name="theme-color" content="#04070d" />
+  <link rel="stylesheet" href="css/signal-public-theme.css" />
 
   <!-- Open Graph / Link Preview -->
   <meta property="og:title" content="The SIGNAL — AeroVista Intelligence Feed" />
@@ -23,145 +24,9 @@
   <meta name="twitter:image" content="https://thesignal.aerovista.us/og-image.jpg" />
   <meta name="twitter:url" content="https://thesignal.aerovista.us/" /> 
   <style>
-  :root {
-    --bg: #050706;
-    --ink: #f3efe3;
-    --muted: rgba(243,239,227,.70);
-    --soft: rgba(243,239,227,.50);
-    --line: rgba(214,172,91,.28);
-    --gold: #d6ac5b;
-    --signal: #a9ff4a;
-    --cyan: #61f7e8;
-    --orange: #ff7a1a;
-    --panel: rgba(10,13,13,.78);
-    --panel2: rgba(18,22,24,.88);
-    --shadow: 0 28px 90px rgba(0,0,0,.55);
-    --radius-xl: 30px;
-    --radius-lg: 22px;
-    --max: 1180px;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    color: var(--ink);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background:
-      radial-gradient(circle at 50% 0%, rgba(214,172,91,.14), transparent 30rem),
-      radial-gradient(circle at 76% 18%, rgba(97,247,232,.12), transparent 25rem),
-      radial-gradient(circle at 20% 24%, rgba(169,255,74,.08), transparent 25rem),
-      linear-gradient(135deg, #030505, #07100c 48%, #030405);
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(214,172,91,.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(214,172,91,.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 78%);
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .shell {
-    width: min(var(--max), calc(100% - 36px));
-    margin: 0 auto;
-  }
-
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    border-bottom: 1px solid var(--line);
-    background: rgba(3,5,5,.72);
-    backdrop-filter: blur(16px);
-  }
-
-  .nav-inner {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-weight: 900;
-  }
-
-  .mark {
+  .shell .mark {
     width: 42px;
     height: 42px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(214,172,91,.42);
-    border-radius: 14px;
-    color: var(--gold);
-    background: radial-gradient(circle at 45% 25%, rgba(214,172,91,.24), transparent 52%), rgba(255,255,255,.035);
-    box-shadow: inset 0 0 24px rgba(214,172,91,.08);
-  }
-
-  .brand-text strong {
-    display: block;
-    font-size: .88rem;
-    letter-spacing: .18em;
-  }
-
-  .brand-text span {
-    display: block;
-    margin-top: 2px;
-    font-size: .65rem;
-    color: var(--muted);
-    letter-spacing: .16em;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    color: var(--muted);
-    font-size: .9rem;
-  }
-
-  .nav-links a:hover {
-    color: var(--gold);
-  }
-
-  .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-radius: 999px;
-    padding: 12px 18px;
-    font-weight: 900;
-    border: 1px solid rgba(214,172,91,.32);
-    background: linear-gradient(135deg, rgba(214,172,91,.18), rgba(169,255,74,.08));
-    color: var(--ink);
-    box-shadow: 0 16px 50px rgba(0,0,0,.28);
-  }
-
-  .button.secondary {
-    border-color: rgba(97,247,232,.28);
-    background: rgba(97,247,232,.07);
   }
 
   .hero {
@@ -191,7 +56,7 @@
     right: -110px;
     bottom: 46px;
     transform: rotate(-90deg);
-    color: rgba(214,172,91,.10);
+    color: rgba(103, 232, 249, 0.1);
     font-weight: 900;
     letter-spacing: .28em;
     font-size: .78rem;
@@ -202,7 +67,7 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 18px;
-    color: var(--gold);
+    color: var(--cyan);
     font-size: .78rem;
     font-weight: 900;
     letter-spacing: .24em;
@@ -213,8 +78,8 @@
     width: 9px;
     height: 9px;
     border-radius: 999px;
-    background: var(--signal);
-    box-shadow: 0 0 0 6px rgba(169,255,74,.09), 0 0 28px rgba(169,255,74,.62);
+    background: var(--green);
+    box-shadow: 0 0 0 6px rgba(134, 239, 172, 0.09), 0 0 28px rgba(103, 232, 249, 0.5);
     animation: pulse 1.6s ease-in-out infinite;
   }
 
@@ -222,20 +87,19 @@
     50% { transform: scale(1.45); opacity: .55; }
   }
 
-  h1 {
+  .hero-copy h1 {
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(3.6rem, 8vw, 7.8rem);
     line-height: .86;
     letter-spacing: -.075em;
     text-transform: uppercase;
-    text-shadow: 0 0 26px rgba(214,172,91,.08);
+    text-shadow: 0 0 26px rgba(103, 232, 249, 0.08);
   }
 
   .subtitle {
     max-width: 710px;
     margin: 26px 0 0;
-    color: #ddd3bf;
+    color: var(--soft);
     font-size: clamp(1.08rem, 2vw, 1.35rem);
     line-height: 1.65;
   }
@@ -268,7 +132,7 @@
     inset: 0;
     z-index: -1;
     background:
-      radial-gradient(circle at 50% 36%, rgba(169,255,74,.16), transparent 18rem),
+      radial-gradient(circle at 50% 36%, rgba(103, 232, 249, 0.16), transparent 18rem),
       linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.66));
   }
 
@@ -290,7 +154,7 @@
     justify-content: space-between;
     gap: 12px;
     background: linear-gradient(180deg, rgba(0,0,0,.36), rgba(0,0,0,.06));
-    border-bottom: 1px solid rgba(214,172,91,.20);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.2);
   }
 
   .track-meta {
@@ -305,8 +169,8 @@
     height: 42px;
     flex: 0 0 auto;
     border-radius: 15px;
-    border: 1px solid rgba(214,172,91,.30);
-    background: radial-gradient(circle at 30% 30%, rgba(169,255,74,.25), transparent 55%), linear-gradient(180deg, rgba(255,208,106,.20), rgba(0,0,0,.25));
+    border: 1px solid rgba(103, 232, 249, 0.3);
+    background: radial-gradient(circle at 30% 30%, rgba(103, 232, 249, 0.25), transparent 55%), linear-gradient(180deg, rgba(96, 165, 250, 0.2), rgba(0,0,0,.25));
     box-shadow: 0 10px 25px rgba(0,0,0,.35);
     position: relative;
     overflow: hidden;
@@ -316,7 +180,7 @@
     content: "";
     position: absolute;
     inset: -30%;
-    background: conic-gradient(from 0deg, rgba(169,255,74,0), rgba(169,255,74,.35), rgba(214,172,91,.20), rgba(169,255,74,0));
+    background: conic-gradient(from 0deg, rgba(103, 232, 249, 0), rgba(103, 232, 249, 0.35), rgba(96, 165, 250, 0.2), rgba(103, 232, 249, 0));
     animation: spin 6s linear infinite;
   }
 
@@ -347,9 +211,9 @@
     gap: 8px;
     padding: 8px 10px;
     border-radius: 999px;
-    border: 1px solid rgba(169,255,74,.28);
+    border: 1px solid rgba(134, 239, 172, 0.28);
     background: rgba(0,0,0,.26);
-    color: var(--signal);
+    color: var(--green);
     font-weight: 900;
     font-size: 12px;
     white-space: nowrap;
@@ -372,8 +236,8 @@
     position: relative;
     background:
       radial-gradient(circle, rgba(0,0,0,.52) 0 43%, transparent 44%),
-      repeating-conic-gradient(from 0deg, rgba(169,255,74,.98) 0deg 2deg, transparent 2deg 5deg, rgba(214,172,91,.86) 5deg 7deg, transparent 7deg 10deg);
-    box-shadow: 0 0 44px rgba(169,255,74,.24), 0 0 80px rgba(214,172,91,.12);
+      repeating-conic-gradient(from 0deg, rgba(103, 232, 249, 0.98) 0deg 2deg, transparent 2deg 5deg, rgba(96, 165, 250, 0.86) 5deg 7deg, transparent 7deg 10deg);
+    box-shadow: 0 0 44px rgba(103, 232, 249, 0.24), 0 0 80px rgba(96, 165, 250, 0.12);
   }
 
   .ring-core::before {
@@ -382,8 +246,8 @@
     aspect-ratio: 1;
     border-radius: 50%;
     background: rgba(0,0,0,.66);
-    border: 1px solid rgba(169,255,74,.28);
-    box-shadow: inset 0 0 45px rgba(169,255,74,.12);
+    border: 1px solid rgba(103, 232, 249, 0.28);
+    box-shadow: inset 0 0 45px rgba(103, 232, 249, 0.12);
   }
 
   .wave {
@@ -396,7 +260,7 @@
     display: flex;
     align-items: center;
     gap: 3px;
-    filter: drop-shadow(0 0 12px rgba(169,255,74,.5));
+    filter: drop-shadow(0 0 12px rgba(103, 232, 249, 0.5));
   }
 
   .bar {
@@ -404,7 +268,7 @@
     min-width: 2px;
     height: calc(10px + var(--h) * 1px);
     border-radius: 999px;
-    background: linear-gradient(180deg, var(--signal), var(--gold));
+    background: linear-gradient(180deg, var(--cyan), var(--blue));
     transform-origin: center;
     animation: bounce calc(.72s + var(--d) * .01s) ease-in-out infinite alternate;
     animation-play-state: paused;
@@ -424,13 +288,13 @@
     display: grid;
     gap: 10px;
     background: linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.50));
-    border-top: 1px solid rgba(214,172,91,.20);
+    border-top: 1px solid rgba(125, 211, 252, 0.2);
   }
 
   .seek {
     width: 100%;
     height: 26px;
-    accent-color: var(--signal);
+    accent-color: var(--cyan);
   }
 
   .time-row,
@@ -457,7 +321,7 @@
     min-width: 54px;
     min-height: 46px;
     padding: 10px 14px;
-    border: 1px solid rgba(214,172,91,.25);
+    border: 1px solid rgba(103, 232, 249, 0.25);
     border-radius: 16px;
     background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(0,0,0,.26));
     color: var(--ink);
@@ -470,8 +334,8 @@
     min-width: 72px;
     min-height: 58px;
     border-radius: 999px;
-    border-color: rgba(169,255,74,.38);
-    background: linear-gradient(180deg, rgba(169,255,74,.24), rgba(0,0,0,.28));
+    border-color: rgba(103, 232, 249, 0.38);
+    background: linear-gradient(180deg, rgba(103, 232, 249, 0.24), rgba(0,0,0,.28));
     font-size: 1.15rem;
   }
 
@@ -485,7 +349,6 @@
 
   .section-head h2 {
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(2.1rem, 4vw, 4.2rem);
     line-height: .95;
     letter-spacing: -.055em;
@@ -509,7 +372,7 @@
   .chip {
     padding: 10px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(214,172,91,.24);
+    border: 1px solid rgba(125, 211, 252, 0.24);
     background: rgba(255,255,255,.035);
     color: var(--muted);
     font-size: .84rem;
@@ -517,8 +380,8 @@
   }
 
   .chip.active {
-    color: #07100c;
-    background: var(--gold);
+    color: #001018;
+    background: var(--cyan);
     border-color: transparent;
   }
 
@@ -529,14 +392,18 @@
     padding-bottom: 66px;
   }
 
-  .card {
+  #publications .card-grid {
+    padding-bottom: 48px;
+  }
+
+  .card-grid .card {
     min-height: 318px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 22px;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(214,172,91,.24);
+    border: 1px solid rgba(125, 211, 252, 0.24);
     background: linear-gradient(180deg, var(--panel2), var(--panel));
     box-shadow: 0 18px 56px rgba(0,0,0,.25);
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
@@ -544,20 +411,20 @@
     position: relative;
   }
 
-  .card::before {
+  .card-grid .card::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at top right, rgba(214,172,91,.13), transparent 13rem),
-      radial-gradient(circle at bottom left, rgba(97,247,232,.07), transparent 11rem);
+      linear-gradient(135deg, rgba(103, 232, 249, 0.09), transparent 36%),
+      radial-gradient(circle at bottom left, rgba(96, 165, 250, 0.07), transparent 11rem);
     pointer-events: none;
   }
 
-  .card:hover {
+  .card-grid .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(214,172,91,.48);
-    background: linear-gradient(180deg, rgba(24,27,26,.96), rgba(8,11,12,.94));
+    border-color: rgba(103, 232, 249, 0.48);
+    background: linear-gradient(180deg, rgba(18, 28, 45, 0.96), rgba(12, 18, 30, 0.94));
   }
 
   .card-top,
@@ -580,19 +447,19 @@
   }
 
   .category {
-    color: var(--gold);
+    color: var(--cyan);
   }
 
-  .card h3 {
+  .card-grid .card h3 {
     margin: 0 0 14px;
     font-size: 1.45rem;
     line-height: 1.12;
     letter-spacing: -.045em;
   }
 
-  .card p {
+  .card-grid .card p {
     margin: 0;
-    color: #d6d1c5;
+    color: var(--muted);
     line-height: 1.65;
   }
 
@@ -601,7 +468,7 @@
     align-items: center;
     gap: 8px;
     margin-top: 24px;
-    color: var(--signal);
+    color: var(--cyan);
     font-weight: 950;
     font-size: .92rem;
   }
@@ -611,7 +478,7 @@
     padding: 28px;
     border-radius: var(--radius-xl);
     border: 1px solid var(--line);
-    background: linear-gradient(135deg, rgba(214,172,91,.14), rgba(97,247,232,.07)), rgba(10,14,21,.88);
+    background: linear-gradient(135deg, rgba(103, 232, 249, 0.14), rgba(96, 165, 250, 0.07)), rgba(12, 18, 30, 0.88);
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -621,7 +488,6 @@
 
   .subscribe h2 {
     margin: 0 0 8px;
-    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(2rem, 4vw, 3.8rem);
     line-height: .95;
     letter-spacing: -.05em;
@@ -685,7 +551,7 @@
       padding: 22px;
     }
 
-    h1 {
+    .hero-copy h1 {
       font-size: clamp(3.1rem, 18vw, 6rem);
     }
 
@@ -718,6 +584,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#latest">Latest</a>
         <a href="#dispatches">Dispatches</a>
+        <a href="#publications">Publications</a>
         <a href="#archive">Archive</a>
         <a href="https://aerovista.us">AeroVista.us</a>
       </nav>
@@ -730,7 +597,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="eyebrow"><span class="pulse"></span> Live ecosystem feed</div>
-          <h1>The<br />SIGNAL</h1>
+          <h1>The<br /><span class="gradient">SIGNAL</span></h1>
           <p class="subtitle">
             You ain’t static. You signal. The official update stream of the AeroVista ecosystem — company notes, build logs, releases, creative drops, and field updates from the work as it comes alive.
           </p>
@@ -853,8 +720,45 @@
     <div class="card-bottom"><a class="read-more" href="dispatches/nxcore-resiliency-work-order.html">Open dispatch →</a></div>
   </article>
 </div>
+    </section>
+
+    <section class="shell" id="publications">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Vespera × AeroVista</div>
+          <h2>Macro Publications</h2>
+        </div>
+        <p>
+          Long-form macro intelligence — standalone briefing, issue-wrapped signals deck, and the VXP-MR-01 PNG magazine.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">Macro Briefing</span><span>Standalone</span></div>
+            <h3>Macro Signals Briefing</h3>
+            <p>Signals to watch and how to use them — regulatory rails, tokenized treasuries, collateral, and physical money infrastructure.</p>
           </div>
-          <div class="card-bottom"><a class="read-more" href="#">Open dispatch →</a></div>
+          <div class="card-bottom"><a class="read-more" href="signal.html">Open briefing →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>Apr 2026</span></div>
+            <h3>Signals Briefing · Issue Wrap</h3>
+            <p>Publication edition of the macro signals deck with Vespera × AeroVista issue chrome, footer, and navigation.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html">Open issue briefing →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>Magazine</span></div>
+            <h3>Macro Rails Intelligence Magazine</h3>
+            <p>Mobile-first PNG magazine — swipe through cluster spreads on tokenized rails, collateral systems, and the physical internet of money.</p>
+          </div>
+          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/magazine.html">Open magazine →</a></div>
         </article>
       </div>
     </section>
@@ -874,6 +778,9 @@
     <div class="shell footer-inner">
       <div>© 2026 AeroVista LLC. The SIGNAL is an AeroVista publication.</div>
       <div class="footer-links">
+        <a href="signal.html">Macro briefing</a>
+        <a href="publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html">VXP-MR-01 briefing</a>
+        <a href="publications/VXP-MR-01-macro-rails-intelligence/magazine.html">VXP-MR-01 magazine</a>
         <a href="https://aerovista.us">AeroVista.us</a>
         <a href="#top">Back to top</a>
       </div>
