@@ -1,0 +1,63 @@
+{
+  "issue": "VXP-MR-01",
+  "partner": "Vespera × AeroVista",
+  "pages": [
+    {
+      "src": "cover.png",
+      "title": "Cover",
+      "note": "Issue VXP-MR-01 — swipe or use the arrows to open the cluster spreads.",
+      "links": [
+        { "label": "Table of contents", "href": "./vespera_toc.md" },
+        { "label": "Signals briefing", "href": "./signals_briefing.html" }
+      ]
+    },
+    {
+      "src": "01.regulartory.rails.policy.shifts.png",
+      "title": "Regulatory rails & policy shifts",
+      "note": "Regulation as gatekeeper: SEC, OCC, Fed, and the arc from prohibition toward containment. Use the volume brief for cadence and sources.",
+      "links": [
+        { "label": "Volume 01 — Regulatory rails", "href": "./volume_01_regulatory_rails.md" }
+      ]
+    },
+    {
+      "src": "volume_02_tokenized_treasuries.png",
+      "title": "Tokenized treasuries & collateral engine",
+      "note": "How tokenized government paper and repo plumbing reshape off‑chain balance sheets and on‑chain liquidity.",
+      "links": [
+        { "label": "Volume 02 — Tokenized treasuries", "href": "./volume_02_tokenized_treasuries.md" }
+      ]
+    },
+    {
+      "src": "volume_03_collateral_systems.png",
+      "title": "Collateral systems",
+      "note": "BTC and digital collateral from wallets to mortgages: haircuts, rehypothecation, and stress paths.",
+      "links": [
+        { "label": "Volume 03 — Collateral systems", "href": "./volume_03_collateral_systems.md" }
+      ]
+    },
+    {
+      "src": "volume_04_banking_infra.png",
+      "title": "Banking infra & institutional rails",
+      "note": "When banks go on‑chain: custody, stablecoins, and the interface between bank money and programmable settlement.",
+      "links": [
+        { "label": "Volume 04 — Banking infra", "href": "./volume_04_banking_infra.md" }
+      ]
+    },
+    {
+      "src": "volume_05_geopolitics_control.png",
+      "title": "Geopolitics & control",
+      "note": "Stablecoins and rails as foreign policy: sanctions, reciprocity, and who owns the default payment layer.",
+      "links": [
+        { "label": "Volume 05 — Geopolitics & control", "href": "./volume_05_geopolitics_control.md" }
+      ]
+    },
+    {
+      "src": "volume_06_ai_energy_physical_rails-A.png",
+      "title": "AI, energy & physical rails",
+      "note": "Where power, compute, and money converge: data centers, grids, and the macro cost of intelligence.",
+      "links": [
+        { "label": "Volume 06 — AI & physical rails", "href": "./volume_06_ai_energy_physical_rails.md" }
+      ]
+    }
+  ]
+}

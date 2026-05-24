@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>Vespera × AeroVista · Magazine · VXP-MR-01</title>
+  <meta name="description" content="Mobile-first PNG magazine — Vespera × AeroVista · VXP-MR-01." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --shell-bg: #07080d;
+      --header-accent: #6366f1;
+      --footer-bg: rgba(10, 12, 18, 0.94);
+      --nav-fg: rgba(245, 245, 247, 0.4);
+      --nav-hit: 40px;
+      --chin-bar-h: 44px;
+      --mag-chrome-z: 120;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --border-subtle: 1px solid rgba(63, 63, 70, 0.45);
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: var(--shell-bg);
+      font-family: var(--font);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /*
+      Immersive layout: #book is full-viewport; header + chin float on top (z-index).
+      Gains the vertical space that used to be flex-reserved for chrome, while keeping controls + pinch-zoom.
+    */
+    #magazine-shell {
+      box-sizing: border-box;
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      padding-left: env(safe-area-inset-left, 0px);
+      display: block;
+    }
+
+    #magazine-shell > #book {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      touch-action: none;
+    }
+
+    .mag-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--mag-chrome-z);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "kicker meta"
+        "title spread";
+      column-gap: 10px;
+      row-gap: 0;
+      align-items: baseline;
+      padding: 4px 12px 10px 13px;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 8, 13, 0.94) 0%,
+        rgba(10, 12, 18, 0.78) 45%,
+        rgba(7, 8, 13, 0.2) 85%,
+        rgba(7, 8, 13, 0) 100%
+      );
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: blur(14px);
+      pointer-events: auto;
+    }
+
+    .mag-header::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 3px;
+      bottom: 3px;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(
+        180deg,
+        var(--header-accent) 0%,
+        #a855f7 45%,
+        #22d3ee 100%
+      );
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .mag-header__kicker {
+      grid-area: kicker;
+      margin: 0;
+      font-size: 0.52rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(161, 161, 170, 0.95);
+    }
+
+    .mag-header__title {
+      grid-area: title;
+      margin: 0;
+      padding-top: 1px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fafafa;
+      letter-spacing: -0.03em;
+      text-shadow: 0 1px 12px rgba(99, 102, 241, 0.18);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .hub-back {
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(161, 161, 170, 0.95);
+      text-decoration: none;
+      z-index: 2;
+    }
+
+    .hub-back:hover {
+      color: #e4d3ff;
+    }
+
+    .mag-header__meta {
+      grid-area: meta;
+      margin: 0;
+      justify-self: end;
+      font-size: 0.58rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+      color: #a1a1aa;
+      white-space: nowrap;
+    }
+
+    .mag-header__spread {
+      grid-area: spread;
+      margin: 0;
+      justify-self: end;
+      max-width: 52vw;
+      font-size: 0.62rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #d4d4d8;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: none;
+    }
+
+    .mag-header__spread:not(:empty) {
+      display: block;
+    }
+
+    #book .stf__parent {
+      touch-action: none !important;
+      -ms-touch-action: none !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    #book .stf__wrapper {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding-bottom: 0 !important;
+    }
+
+    #book .stf__block {
+      width: 100% !important;
+      height: 100% !important;
+      touch-action: none;
+      -ms-touch-action: none;
+    }
+
+    #book .stf__block .page {
+      touch-action: pan-x pan-y pinch-zoom !important;
+      -ms-touch-action: pan-x pan-y pinch-zoom !important;
+    }
+
+    .page {
+      box-sizing: border-box;
+      background: #0e1016;
+      overflow-x: auto;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* Chin lives outside #book; keep minimal padding for scroll end + zoomed pan */
+      padding-bottom: max(6px, env(safe-area-inset-bottom, 0px));
+    }
+
+    .page__img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: top center;
+      pointer-events: auto;
+      touch-action: pan-x pan-y pinch-zoom;
+      user-select: none;
+    }
+
+    .page--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 28px 20px;
+      padding-bottom: max(96px, calc(env(safe-area-inset-bottom, 12px) + 72px));
+    }
+
+    .page__placeholder-inner {
+      text-align: center;
+      max-width: min(22rem, 92vw);
+    }
+
+    .page__placeholder-kicker {
+      margin: 0 0 10px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #71717a;
+    }
+
+    .page__placeholder-label {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #e4e4e7;
+    }
+
+    .mag-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--mag-chrome-z);
+      display: flex;
+      flex-direction: column-reverse;
+      background: linear-gradient(
+        0deg,
+        rgba(7, 8, 13, 0.96) 0%,
+        rgba(10, 12, 18, 0.82) 40%,
+        rgba(7, 8, 13, 0.35) 78%,
+        rgba(7, 8, 13, 0) 100%
+      );
+      border-top: none;
+      backdrop-filter: blur(14px);
+      pointer-events: auto;
+    }
+
+    .mag-footer.chin-open {
+      background: rgba(10, 12, 18, 0.97);
+    }
+
+    .mag-footer__bar {
+      display: flex;
+      align-items: stretch;
+      min-height: var(--chin-bar-h);
+      gap: 4px;
+      padding: 0 6px;
+    }
+
+    .mag-chin-toggle {
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      padding: 5px 8px;
+      border: none;
+      background: transparent;
+      color: #d4d4d8;
+      font: inherit;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .mag-chin-toggle:active {
+      background: rgba(39, 39, 42, 0.5);
+    }
+
+    .mag-chin-toggle__title {
+      font-weight: 600;
+      color: #fafafa;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .mag-chin-toggle__hint {
+      font-size: 0.65rem;
+      color: #71717a;
+      letter-spacing: 0.02em;
+    }
+
+    #mag-chin-note:empty {
+      display: none;
+    }
+
+    .mag-chin-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mag-chin-panel {
+        transition: none;
+      }
+    }
+
+    .mag-footer.chin-open .mag-chin-panel {
+      max-height: min(38vh, 320px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: rgba(10, 12, 18, 0.92);
+      border-bottom: var(--border-subtle);
+    }
+
+    .mag-chin-panel__inner {
+      padding: 12px 16px 14px;
+    }
+
+    .mag-chin-panel p {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #a1a1aa;
+    }
+
+    .mag-chin-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mag-chin-links a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid rgba(63, 63, 70, 0.5);
+      color: #e4e4e7;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .mag-chin-links a:active {
+      background: rgba(51, 65, 85, 0.65);
+    }
+
+    .flip-hint {
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: #a1a1aa;
+      background: rgba(30, 27, 75, 0.35);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+
+    .flip-hint[hidden] {
+      display: none !important;
+    }
+
+    .empty-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .empty-state strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .nav {
+      flex: 0 0 var(--nav-hit);
+      width: var(--nav-hit);
+      align-self: center;
+      border: none;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.65);
+      color: var(--nav-fg);
+      font-size: 1.25rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav:active {
+      color: rgba(245, 245, 247, 0.9);
+      background: rgba(30, 41, 59, 0.85);
+    }
+
+    .nav[hidden] {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
+  <script type="module" src="./magazine.mjs"></script>
+</head>
+<body>
+  <div id="magazine-shell">
+    <header class="mag-header" id="mag-header" aria-label="Issue header">
+      <a class="hub-back" href="../../index.html">← The SIGNAL</a>
+      <p class="mag-header__kicker" id="mag-header-kicker">Vespera × AeroVista</p>
+      <h1 class="mag-header__title" id="mag-header-title">VXP-MR-01</h1>
+      <p class="mag-header__meta" id="mag-header-meta">VXP-MR-01</p>
+      <p class="mag-header__spread" id="mag-header-spread"></p>
+    </header>
+    <div id="book" aria-label="Magazine pages"></div>
+    <footer class="mag-footer" id="mag-footer">
+      <div class="mag-footer__bar">
+        <button type="button" class="nav nav--prev" id="nav-prev" hidden aria-label="Previous page">‹</button>
+        <button
+          type="button"
+          class="mag-chin-toggle"
+          id="mag-chin-toggle"
+          aria-expanded="false"
+          aria-controls="mag-chin-panel"
+        >
+          <span class="mag-chin-toggle__title" id="mag-chin-summary">Spread</span>
+          <span class="mag-chin-toggle__hint" id="mag-chin-hint"></span>
+        </button>
+        <button type="button" class="nav nav--next" id="nav-next" hidden aria-label="Next page">›</button>
+      </div>
+      <div class="mag-chin-panel" id="mag-chin-panel" role="region" aria-label="Spread notes">
+        <div class="mag-chin-panel__inner">
+          <p id="flip-hint" class="flip-hint" hidden>
+            Only one page in the manifest — add more entries to <code>pages-manifest.json</code> to swipe between spreads.
+          </p>
+          <p id="mag-chin-note"></p>
+          <div class="mag-chin-links" id="mag-chin-links"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
