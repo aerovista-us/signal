@@ -1,0 +1,20 @@
+publication:
+  brand: "The SIGNAL"
+  owner: "AeroVista"
+  issue_code: "ART-LOC-01"
+  issue_title: "Art Localized Client & Shareholder Note"
+  date: "2026-05-27"
+  classification: "Public pilot note"
+  status: "draft-ready"
+  route: "/publications/ART-LOC-01-art-localized-pilot/issue.html"
+  summary: "A client and shareholder note for The Art Localized, focused on creator trust, responsible AI, partner fit, brand surface, and readiness signals."
+  audience:
+    - clients
+    - shareholders
+    - community partners
+  claims_policy:
+    commercial_result_claims: false
+    certain_impact_claims: false
+    pilot_language_required: true
+  related:
+    art_localized_public_page: "https://aerovista.us/art-localized"

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The SIGNAL | ART-LOC-01 | Art Localized Client & Shareholder Note</title>
+  <meta name="description" content="A client and shareholder-facing SIGNAL note on The Art Localized pilot: creator trust, responsible AI, cultural visibility, partner fit, and measured rollout signals." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/publications/ART-LOC-01-art-localized-pilot/issue.html" />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="ART-LOC-01 | Art Localized Client & Shareholder Note" />
+  <meta property="og:description" content="How AeroVista is shaping The Art Localized as a measured creator-first pilot for clients, partners, and shareholders." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta property="og:site_name" content="The SIGNAL" />
+  <meta property="og:type" content="article" />
+  <style>
+    :root {
+      --bg: #05070d;
+      --panel: rgba(11, 17, 27, 0.88);
+      --panel-soft: rgba(20, 31, 44, 0.72);
+      --ink: #f7fbff;
+      --muted: #a9b8c9;
+      --line: rgba(128, 217, 255, 0.22);
+      --cyan: #67e8f9;
+      --blue: #60a5fa;
+      --green: #86efac;
+      --amber: #facc15;
+      --max: 1120px;
+      --radius: 18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(103, 232, 249, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 10%, rgba(134, 239, 172, 0.12), transparent 28%),
+        linear-gradient(145deg, #02040a, #08111c 48%, #03050a);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 7, 13, 0.78);
+      backdrop-filter: blur(16px);
+    }
+    .topbar__inner {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #001018;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 26px rgba(103, 232, 249, 0.26);
+      font-weight: 950;
+      letter-spacing: -4px;
+      padding-right: 3px;
+    }
+    .nav {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .nav a:hover { color: var(--cyan); }
+
+    .hero { padding: 70px 0 36px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .hero-copy,
+    .panel,
+    .note {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--panel), rgba(8, 12, 20, 0.86));
+      border-radius: 24px;
+      box-shadow: 0 26px 76px rgba(0, 0, 0, 0.38);
+    }
+    .hero-copy { padding: clamp(24px, 4vw, 42px); }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--cyan);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 7vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      max-width: 760px;
+      color: #d7ecff;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.65;
+      margin: 24px 0 0;
+    }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(103, 232, 249, 0.34);
+      padding: 12px 16px;
+      font-weight: 850;
+      background: linear-gradient(135deg, rgba(103, 232, 249, 0.18), rgba(96, 165, 250, 0.08));
+    }
+    .button.secondary { background: rgba(255, 255, 255, 0.04); color: var(--muted); }
+    .note { padding: 22px; }
+    .note h2, .panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .note p, .panel p, li { color: var(--muted); line-height: 1.65; }
+    .status-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .status-list li {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    .tag {
+      display: inline-flex;
+      margin: 0 8px 8px 0;
+      border: 1px solid rgba(134, 239, 172, 0.28);
+      color: #dfffea;
+      background: rgba(134, 239, 172, 0.08);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 20px 0 0;
+    }
+    .panel { padding: 22px; }
+    .panel strong { color: var(--ink); }
+    .main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 20px;
+      padding-bottom: 66px;
+    }
+    .article {
+      display: grid;
+      gap: 18px;
+    }
+    .callout {
+      border-left: 4px solid var(--green);
+      padding: 16px 18px;
+      background: rgba(134, 239, 172, 0.07);
+      border-radius: 14px;
+      color: #dfffea;
+      line-height: 1.6;
+    }
+    .sidebar { display: grid; gap: 16px; align-content: start; }
+    .kpi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .kpi div {
+      padding: 13px;
+      border-radius: 15px;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .kpi strong { display: block; font-size: 1.05rem; color: var(--cyan); }
+    .kpi span { display: block; margin-top: 4px; color: var(--muted); font-size: 0.82rem; }
+    footer { border-top: 1px solid var(--line); padding: 26px 0 38px; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .main, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="brand" href="../../index.html" aria-label="The SIGNAL home">
+        <span class="mark">S</span>
+        <span>The SIGNAL</span>
+      </a>
+      <nav class="nav" aria-label="Publication">
+        <a href="../../index.html#publications">Publications</a>
+        <a href="https://aerovista.us/art-localized">Art Localized</a>
+        <a href="../../index.html#subscribe">Investor Updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">ART-LOC-01 / Client & Shareholder Note / Pilot</p>
+          <h1>Art Localized Signal</h1>
+          <p class="subtitle">
+            The Art Localized is starting as a measured creator-first pilot: protect authorship, build public trust, and test responsible AI-enabled cultural visibility before any broader rollout.
+          </p>
+          <div class="actions">
+            <a class="button" href="https://aerovista.us/art-localized">Open Art Localized</a>
+            <a class="button secondary" href="../../index.html#publications">More SIGNAL publications</a>
+          </div>
+        </div>
+        <aside class="note">
+          <h2>Stakeholder status</h2>
+          <p>This issue is a pilot note, not a results report. It documents the rationale, guardrails, and early signals AeroVista will watch before making any expansion claims.</p>
+          <ul class="status-list">
+            <li><strong>Posture:</strong> early pilot, trust first</li>
+            <li><strong>Audience:</strong> clients, partners, shareholders</li>
+            <li><strong>Proof:</strong> consent, review, feedback, readiness</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell main">
+      <article class="article">
+        <section class="panel">
+          <p class="eyebrow">Why this exists</p>
+          <h2>Local art needs better infrastructure, not louder claims.</h2>
+          <p>
+            The first job is practical: show that AI-supported media can help local artists become more visible without weakening authorship, consent, or regional identity. The client and shareholder value is not in rushing to scale. It is in proving that AeroVista can build a repeatable cultural media model with clear guardrails.
+          </p>
+          <p>
+            The SIGNAL is tracking this pilot because it sits at the intersection of culture, media systems, responsible AI, and community partnership. The useful signal at this stage is whether artists feel represented accurately, whether clients can understand the process, and whether partners can participate without creating brand, consent, or trust risk.
+          </p>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Stakeholder lens</p>
+          <h2>What the first cycle should prove</h2>
+          <div class="grid">
+            <div>
+              <span class="tag">Client trust</span>
+              <p><strong>Make the process legible.</strong> Clients should be able to see how artists are represented, how consent is handled, and what public materials have been reviewed.</p>
+            </div>
+            <div>
+              <span class="tag">Shareholder discipline</span>
+              <p><strong>Keep the pilot measured.</strong> The point is to learn which workflows are repeatable, which risks need controls, and where the model deserves more investment.</p>
+            </div>
+            <div>
+              <span class="tag">Partner fit</span>
+              <p><strong>Protect the brand surface.</strong> A partner should enhance cultural visibility without pushing the project into claims, pressure, or unclear use of artist work.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Investor note</p>
+          <h2>How The SIGNAL will frame progress</h2>
+          <p>
+            Coverage will stay grounded in observed work: what was built, what was learned, what changed after feedback, and what still needs review. For shareholders, the important question is whether this pilot can become a trustworthy media and community infrastructure pattern, not whether early activity can be inflated into a premature success story.
+          </p>
+          <div class="callout">
+            The public claim is intentionally small: AeroVista is testing a creator-first cultural media pathway and watching whether trust, quality, and partner fit hold together.
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Signals to watch</h2>
+          <div class="kpi">
+            <div><strong>Consent</strong><span>review before publishing</span></div>
+            <div><strong>Fit</strong><span>partner role is clear</span></div>
+            <div><strong>Trust</strong><span>artist framing is accurate</span></div>
+            <div><strong>Readiness</strong><span>expand only with evidence</span></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Client assurance</h2>
+          <ul>
+            <li>Artists remain central to how their work and story are framed.</li>
+            <li>AI-assisted materials are treated as support, not replacement authorship.</li>
+            <li>Public-facing assets should have consent, review, and attribution clarity.</li>
+            <li>Expansion should follow evidence of readiness, not momentum alone.</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Related links</h2>
+          <p><a href="https://aerovista.us/art-localized">Art Localized public page</a></p>
+          <p><a href="../../index.html#publications">Back to SIGNAL publications</a></p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">© 2026 AeroVista LLC. The SIGNAL is an AeroVista publication. ART-LOC-01 is a client and shareholder pilot note, not a performance claim.</div>
+  </footer>
+</body>
+</html>
