@@ -1,62 +1,51 @@
 {
   "issue": "VXP-MR-01",
+  "title": "Macro Rails Intelligence",
   "partner": "Vespera × AeroVista",
   "pages": [
     {
       "src": "cover.png",
-      "title": "Cover",
-      "note": "Issue VXP-MR-01 — swipe or use the arrows to open the cluster spreads.",
+      "title": "Daily convergence brief",
+      "note": "Issue VXP-MR-01 — persistent conflict economy: cyber, AI, finance, energy, and state power as one strategic system.",
       "links": [
         { "label": "Table of contents", "href": "./vespera_toc.md" },
         { "label": "Signals briefing", "href": "./signals_briefing.html" }
       ]
     },
     {
-      "src": "01.regulartory.rails.policy.shifts.png",
-      "title": "Regulatory rails & policy shifts",
-      "note": "Regulation as gatekeeper: SEC, OCC, Fed, and the arc from prohibition toward containment. Use the volume brief for cadence and sources.",
+      "src": "02_signal_clusters_deep_dive.png",
+      "title": "Signal clusters deep dive",
+      "note": "Four convergence zones: cyber as infrastructure policy, AI+finance+AML stack, European digital sovereignty, and energy-driven risk.",
       "links": [
-        { "label": "Volume 01 — Regulatory rails", "href": "./volume_01_regulatory_rails.md" }
-      ]
-    },
-    {
-      "src": "volume_02_tokenized_treasuries.png",
-      "title": "Tokenized treasuries & collateral engine",
-      "note": "How tokenized government paper and repo plumbing reshape off‑chain balance sheets and on‑chain liquidity.",
-      "links": [
-        { "label": "Volume 02 — Tokenized treasuries", "href": "./volume_02_tokenized_treasuries.md" }
-      ]
-    },
-    {
-      "src": "volume_03_collateral_systems.png",
-      "title": "Collateral systems",
-      "note": "BTC and digital collateral from wallets to mortgages: haircuts, rehypothecation, and stress paths.",
-      "links": [
-        { "label": "Volume 03 — Collateral systems", "href": "./volume_03_collateral_systems.md" }
-      ]
-    },
-    {
-      "src": "volume_04_banking_infra.png",
-      "title": "Banking infra & institutional rails",
-      "note": "When banks go on‑chain: custody, stablecoins, and the interface between bank money and programmable settlement.",
-      "links": [
-        { "label": "Volume 04 — Banking infra", "href": "./volume_04_banking_infra.md" }
-      ]
-    },
-    {
-      "src": "volume_05_geopolitics_control.png",
-      "title": "Geopolitics & control",
-      "note": "Stablecoins and rails as foreign policy: sanctions, reciprocity, and who owns the default payment layer.",
-      "links": [
+        { "label": "Volume 01 — Regulatory rails", "href": "./volume_01_regulatory_rails.md" },
         { "label": "Volume 05 — Geopolitics & control", "href": "./volume_05_geopolitics_control.md" }
       ]
     },
     {
-      "src": "volume_06_ai_energy_physical_rails-A.png",
-      "title": "AI, energy & physical rails",
-      "note": "Where power, compute, and money converge: data centers, grids, and the macro cost of intelligence.",
+      "src": "03_05_convergence_architecture.png",
+      "title": "Convergence architecture & financial OS",
+      "note": "Global convergence map, the emerging unified intelligence stack, and risk scenario matrix for the programmable finance era.",
       "links": [
-        { "label": "Volume 06 — AI & physical rails", "href": "./volume_06_ai_energy_physical_rails.md" }
+        { "label": "Volume 02 — Tokenized treasuries", "href": "./volume_02_tokenized_treasuries.md" },
+        { "label": "Volume 04 — Banking infra", "href": "./volume_04_banking_infra.md" }
+      ]
+    },
+    {
+      "src": "06_07_strategic_outlook.png",
+      "title": "Strategic outlook & daily watch",
+      "note": "From reaction to architecture: institutional priorities, what to watch daily, and global signal hotspots.",
+      "links": [
+        { "label": "Volume 06 — AI & physical rails", "href": "./volume_06_ai_energy_physical_rails.md" },
+        { "label": "Signals appendix", "href": "./signals_appendix.md" }
+      ]
+    },
+    {
+      "src": "back_cover.png",
+      "title": "Back cover",
+      "note": "The Signal tracks cyber, AI, finance, energy, geopolitics, and sovereign infrastructure as one convergence brief.",
+      "links": [
+        { "label": "Magazine (start)", "href": "./magazine.html" },
+        { "label": "Micro-infographic pack", "href": "./micro_infographic_pack.md" }
       ]
     }
   ]

@@ -10,6 +10,7 @@
   <meta name="theme-color" content="#04070d" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="signal.png" />
+  <link rel="preload" href="signal.png" as="image" type="image/png" />
   <!-- Open Graph / Link Preview -->
   <meta property="og:title" content="The SIGNAL — AeroVista Intelligence Feed" />
   <meta property="og:description" content="You ain’t static. You signal. Stories, launches, creative releases, and field notes from the AeroVista ecosystem." />
@@ -508,6 +509,17 @@
     padding-bottom: 48px;
   }
 
+  #publications .card--magazine .card-art {
+    display: block;
+    width: calc(100% + 44px);
+    max-width: none;
+    margin: -22px -22px 16px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+    border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+  }
+
   .card-grid .card {
     min-height: 318px;
     display: flex;
@@ -611,6 +623,75 @@
     line-height: 1.6;
   }
 
+  .subscribe-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .subscribe-input {
+    height: 46px;
+    border-radius: 999px;
+    padding: 0 14px;
+    color: var(--ink);
+    background: rgba(0, 0, 0, 0.26);
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    outline: none;
+    font-weight: 800;
+    min-width: 240px;
+  }
+
+  .subscribe-input::placeholder {
+    color: rgba(158, 178, 199, 0.85);
+  }
+
+  .subscribe-input:focus {
+    border-color: rgba(103, 232, 249, 0.55);
+    box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.10);
+  }
+
+  .subscribe-thanks {
+    margin: 0 0 12px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(134, 239, 172, 0.35);
+    background: rgba(134, 239, 172, 0.08);
+    color: var(--green);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  .section-tagline {
+    margin: 8px 0 0;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .card.featured {
+    border-color: rgba(103, 232, 249, 0.45);
+    box-shadow: 0 22px 60px rgba(103, 232, 249, 0.12);
+  }
+
+  .card.featured .card-kicker .category::after {
+    content: " · Featured";
+    color: var(--green);
+  }
+
   footer {
     border-top: 1px solid var(--line);
     padding: 28px 0 42px;
@@ -634,6 +715,16 @@
     .hero-grid,
     .subscribe {
       grid-template-columns: 1fr;
+    }
+
+    .subscribe-form {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+
+    .subscribe-input {
+      min-width: 0;
+      width: 100%;
     }
 
     .card-grid {
@@ -714,8 +805,8 @@
             You ain’t static. You signal. Stories, launches, creative releases, and field notes from the AeroVista ecosystem.
           </p>
           <div class="hero-actions">
-            <a class="button" href="#dispatches">Read Latest</a>
-            <a class="button secondary" href="#archive">Browse Archive</a>
+            <a class="button" href="dispatches/eow-shareholder-update.html" data-track="cta_read_latest">Read latest dispatch</a>
+            <a class="button secondary" href="#subscribe" data-track="cta_subscribe">Get updates</a>
           </div>
         </div>
 
@@ -766,6 +857,7 @@
         <p>
           Explore the latest AeroVista updates, project milestones, creative releases, and field reports.
         </p>
+        <p class="section-tagline">Short updates from the ecosystem — what changed, why it matters, and what’s next.</p>
       </div>
 
       <div class="filters" id="archive" aria-label="Dispatch categories">
@@ -774,17 +866,18 @@
   <span class="chip">Build Logs</span>
   <span class="chip">Releases</span>
   <span class="chip">Creative Drops</span>
+  <span class="chip">Client Work</span>
   <span class="chip">Infrastructure</span>
 </div>
 
 <div class="card-grid">
-  <article class="card">
+  <article class="card featured">
     <div class="card-top">
       <div class="card-kicker"><span class="category">Company Updates</span><span>May 23</span></div>
       <h3>EOW Shareholder Update</h3>
       <p>A weekly AeroVista update covering momentum, priorities, wins, risks, and what’s coming next.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/eow-shareholder-update.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/eow-shareholder-update.html" data-track="dispatch_open" data-track-label="eow-shareholder-update">Open dispatch →</a></div>
   </article>
 
   <article class="card">
@@ -793,7 +886,7 @@
       <h3>Memory Vault Is Live in AVCC</h3>
       <p>AeroVista’s Memory Vault is now live inside AVCC, making key knowledge, history, and project context easier to explore.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/memory-vault-live-avcc.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/memory-vault-live-avcc.html" data-track="dispatch_open" data-track-label="memory-vault">Open dispatch →</a></div>
   </article>
 
   <article class="card">
@@ -802,7 +895,7 @@
       <h3>AV Gear Shop Overlay Cleanup</h3>
       <p>The AV Gear Shop experience has been refined for clearer product presentation and a smoother path to checkout.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/av-gear-shop-overlay-cleanup.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/av-gear-shop-overlay-cleanup.html" data-track="dispatch_open" data-track-label="av-gear-shop">Open dispatch →</a></div>
   </article>
 
   <article class="card">
@@ -811,7 +904,7 @@
       <h3>Cindy Connect Launch Status</h3>
       <p>Cindy Connect is live with booking, payments, intake, testimonials, lead magnet flow, and a growing marketing sequence roadmap.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/cindy-connect-launch-status.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/cindy-connect-launch-status.html" data-track="dispatch_open" data-track-label="cindy-connect">Open dispatch →</a></div>
   </article>
 
   <article class="card">
@@ -820,7 +913,7 @@
       <h3>Hydrilla Gorilla EchoStory</h3>
       <p>A creative release lane blending music, story, visual identity, and web experience under the EchoVerse Audio banner.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/hydrilla-gorilla-echostory.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/hydrilla-gorilla-echostory.html" data-track="dispatch_open" data-track-label="hydrilla-gorilla">Open dispatch →</a></div>
   </article>
 
   <article class="card">
@@ -829,7 +922,7 @@
       <h3>NXCore Resiliency Work Order</h3>
       <p>Behind-the-scenes improvements are strengthening AeroVista’s core systems for better stability, monitoring, backups, and recovery.</p>
     </div>
-    <div class="card-bottom"><a class="read-more" href="dispatches/nxcore-resiliency-work-order.html">Open dispatch →</a></div>
+    <div class="card-bottom"><a class="read-more" href="dispatches/nxcore-resiliency-work-order.html" data-track="dispatch_open" data-track-label="nxcore">Open dispatch →</a></div>
   </article>
 </div>
     </section>
@@ -843,6 +936,7 @@
         <p>
           Long-form intelligence reports exploring the forces reshaping technology, finance, infrastructure, and culture.
         </p>
+        <p class="section-tagline">Deeper reads for investors and operators — convergence intelligence on macro rails, collateral, cyber, AI, and energy.</p>
       </div>
 
       <div class="card-grid">
@@ -852,25 +946,34 @@
             <h3>Macro Signals Briefing</h3>
             <p>Signals to watch and how to use them — regulatory rails, tokenized treasuries, collateral, and physical money infrastructure.</p>
           </div>
-          <div class="card-bottom"><a class="read-more" href="signal.html">Open briefing →</a></div>
+          <div class="card-bottom"><a class="read-more" href="signal.html" data-track="publication_open" data-track-label="macro-briefing">Open briefing →</a></div>
         </article>
 
         <article class="card">
           <div class="card-top">
-            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>Apr 2026</span></div>
+            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>May 2026</span></div>
             <h3>Signals Briefing · Issue Wrap</h3>
-            <p>The macro signals briefing in a polished, issue-style reading experience from Vespera × AeroVista.</p>
+            <p>Issue VXP-MR-01 — <em>Macro Rails Intelligence</em> in a polished Vespera × AeroVista reading experience with volume briefs and appendix links.</p>
           </div>
-          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html">Open issue briefing →</a></div>
+          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html" data-track="publication_open" data-track-label="vxp-mr-01-briefing">Open issue briefing →</a></div>
         </article>
 
-        <article class="card">
+        <article class="card card--magazine">
+          <img
+            class="card-art"
+            src="publications/VXP-MR-01-macro-rails-intelligence/cover.png"
+            alt="VXP-MR-01 Macro Rails Intelligence — magazine cover"
+            width="640"
+            height="853"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="card-top">
-            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>Magazine</span></div>
+            <div class="card-kicker"><span class="category">VXP-MR-01</span><span>Magazine · v1.1</span></div>
             <h3>Macro Rails Intelligence Magazine</h3>
-            <p>Swipe through a visual magazine on tokenized rails, collateral systems, and the changing infrastructure of money.</p>
+            <p>Swipe through five spreads — daily convergence brief, signal clusters, financial OS, strategic outlook, and back cover.</p>
           </div>
-          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/magazine.html">Open magazine →</a></div>
+          <div class="card-bottom"><a class="read-more" href="publications/VXP-MR-01-macro-rails-intelligence/magazine.html" data-track="publication_open" data-track-label="vxp-mr-01-magazine">Open magazine →</a></div>
         </article>
       </div>
     </section>
@@ -881,8 +984,16 @@
         <p>
           Stay connected as new AeroVista updates, reports, creative drops, and field notes are published.
         </p>
+        <p class="subscribe-thanks" hidden>Thanks — you’re on the list. Watch for the next dispatch.</p>
       </div>
-      <a class="button" href="mailto:trcamach@gmail.com?subject=Subscribe%20to%20The%20SIGNAL">Subscribe by Email</a>
+      <form class="subscribe-form" action="https://formspree.io/f/mvzlqpne" method="POST">
+        <label class="sr-only" for="email">Email</label>
+        <input class="subscribe-input" id="email" name="email" type="email" autocomplete="email" placeholder="you@domain.com" required />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+        <input type="hidden" name="_subject" value="The SIGNAL — new subscriber" />
+        <input type="hidden" name="_next" value="https://thesignal.aerovista.us/#subscribe?subscribed=1" />
+        <button class="button" type="submit" data-track="cta_subscribe_submit">Subscribe</button>
+      </form>
     </section>
   </main>
 
@@ -899,6 +1010,8 @@
     </div>
   </footer>
 
+  <script src="js/site-config.js"></script>
+  <script src="js/site-analytics.js" defer></script>
   <script>
     (() => {
       const playlist = [
@@ -991,6 +1104,25 @@
       });
 
       loadTrack(0, false);
+    })();
+
+    (() => {
+      const chips = document.querySelectorAll(".filters .chip");
+      const cards = document.querySelectorAll("#dispatches .card-grid .card");
+      if (!chips.length || !cards.length) return;
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const label = chip.textContent.trim();
+          chips.forEach((c) => c.classList.toggle("active", c === chip));
+          cards.forEach((card) => {
+            const cat = card.querySelector(".category")?.textContent.trim() || "";
+            const show = label === "All" || cat === label;
+            card.style.display = show ? "" : "none";
+          });
+          signalTrack("filter_category", { label });
+        });
+      });
     })();
   </script>
 </body>

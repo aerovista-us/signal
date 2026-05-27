@@ -3,9 +3,18 @@ publication:
   series: "The Signal"
   issue_title: "Tokenized Rails, Collateral Systems, and the Physical Internet of Money"
   issue_code: "VXP-MR-01"
-  version: "1.0.0"
+  version: "1.1.0"
   classification: "Internal · Strategy · Not for Distribution"
-  date: "2026-04-25"
+  date: "2026-05-27"
+  magazine_spreads:
+    - cover.png
+    - 02_signal_clusters_deep_dive.png
+    - 03_05_convergence_architecture.png
+    - 06_07_strategic_outlook.png
+    - back_cover.png
+  media:
+    - path: "media/brief-teaser.mp4"
+      role: "Issue brief motion teaser"
   editor: "Vespera Research Cell"
   owner: "AeroVista Macro & Rails Desk"
   volumes:
