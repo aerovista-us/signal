@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AeroVista Signal | Week Ending June 15, 2026</title>
+  <meta name="description" content="AeroVista weekly Signal page for shareholders and employees, week ending June 15, 2026." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html" />
+  <meta name="theme-color" content="#06101f" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="AeroVista Signal — Week Ending June 15, 2026" />
+  <meta property="og:description" content="Shareholder and employee weekly briefing: builder systems, publishing pipelines, catalog infrastructure, memory, recovery, and repeatable launch capability." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="AeroVista Signal — Week Ending June 15, 2026" />
+  <meta property="og:site_name" content="The SIGNAL" />
+  <meta property="og:url" content="https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AeroVista Signal — Week Ending June 15, 2026" />
+  <meta name="twitter:description" content="Shareholder and employee weekly briefing: builder systems, publishing pipelines, catalog infrastructure, memory, recovery, and repeatable launch capability." />
+  <meta name="twitter:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta name="twitter:image:alt" content="AeroVista Signal — Week Ending June 15, 2026" />
+  <style>
+    :root {
+      --bg: #06101f;
+      --bg-2: #09182b;
+      --panel: rgba(12, 30, 53, 0.78);
+      --panel-2: rgba(14, 41, 75, 0.62);
+      --line: rgba(125, 202, 255, 0.22);
+      --text: #eef7ff;
+      --muted: #a7bdd2;
+      --blue: #20a8ff;
+      --cyan: #67d7ff;
+      --green: #78e6a3;
+      --amber: #ffd069;
+      --purple: #b783ff;
+      --orange: #ff8a4d;
+      --shadow: 0 24px 80px rgba(0,0,0,.36);
+      --radius: 24px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(32,168,255,.26), transparent 34rem),
+        radial-gradient(circle at 85% 20%, rgba(183,131,255,.16), transparent 32rem),
+        linear-gradient(180deg, #030812 0%, var(--bg) 42%, #030812 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(3, 8, 18, .72);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .logo {
+      width: 48px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 950;
+      color: white;
+      letter-spacing: -.12em;
+    }
+    .logo span:first-child { color: #fff; }
+    .logo span:last-child { color: var(--blue); }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+    }
+    nav a:hover { color: var(--text); border-color: var(--line); background: rgba(255,255,255,.04); }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0 36px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(3,8,18,.98) 0%, rgba(3,8,18,.72) 45%, rgba(3,8,18,.92) 100%),
+        url('a_high_detail_corporate_infographic_weekly_report.png') center/cover no-repeat;
+      opacity: .48;
+      transform: scale(1.02);
+    }
+    .hero .wrap { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      border: 1px solid var(--line);
+      background: rgba(12, 30, 53, .68);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .pulse {
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 0 8px rgba(120, 230, 163, .12);
+    }
+    h1 {
+      margin: 22px 0 12px;
+      max-width: 880px;
+      font-size: clamp(42px, 8vw, 92px);
+      line-height: .92;
+      letter-spacing: -.06em;
+      text-transform: uppercase;
+    }
+    .gradient { background: linear-gradient(90deg, #fff, var(--cyan), var(--blue)); -webkit-background-clip: text; color: transparent; }
+    .dek {
+      max-width: 760px;
+      color: #d7e8f8;
+      font-size: clamp(18px, 2.1vw, 25px);
+      margin: 0 0 28px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(14, 41, 75, .82), rgba(8, 21, 39, .82));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .audio-card { padding: 24px; }
+    .audio-card h2, .card h2, section h2 { margin: 0 0 10px; font-size: 24px; letter-spacing: -.02em; }
+    .audio-card p { margin: 0 0 18px; color: var(--muted); }
+    audio { width: 100%; filter: drop-shadow(0 16px 34px rgba(0,0,0,.35)); }
+    .audio-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px dashed rgba(103, 215, 255, .35);
+      border-radius: 16px;
+      color: #cfe5f8;
+      font-size: 14px;
+      background: rgba(255,255,255,.035);
+    }
+    .signal-card { padding: 24px; }
+    .signal-card strong { color: var(--green); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .chip { padding: 8px 11px; border-radius: 999px; border: 1px solid var(--line); color: #dbefff; background: rgba(255,255,255,.04); font-size: 13px; }
+    main { padding: 42px 0 72px; }
+    .section { margin-top: 26px; }
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 0 18px;
+    }
+    .section-title p { margin: 0; max-width: 560px; color: var(--muted); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .mini { padding: 22px; min-height: 210px; }
+    .mini .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      font-size: 26px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+    }
+    .mini h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.02em; }
+    .mini p { margin: 0; color: var(--muted); }
+    .mini.blue { border-color: rgba(32,168,255,.42); }
+    .mini.green { border-color: rgba(120,230,163,.42); }
+    .mini.amber { border-color: rgba(255,208,105,.42); }
+    .mini.purple { border-color: rgba(183,131,255,.42); }
+    .mini.orange { border-color: rgba(255,138,77,.42); }
+    .mini.cyan { border-color: rgba(103,215,255,.42); }
+    .feature {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 22px;
+      align-items: center;
+      padding: 22px;
+    }
+    .feature img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(0,0,0,.34);
+    }
+    .feature h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1; margin: 0 0 14px; }
+    .feature p { color: var(--muted); margin: 0 0 16px; }
+    .callout {
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(120,230,163,.28);
+      background: rgba(120,230,163,.07);
+      color: #dffdec;
+      font-weight: 700;
+    }
+    .timeline { display: grid; gap: 14px; }
+    .step {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(12, 30, 53, .62);
+    }
+    .num {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(32,168,255,.14);
+      border: 1px solid rgba(32,168,255,.38);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+    .step h3 { margin: 0 0 4px; }
+    .step p { margin: 0; color: var(--muted); }
+    .quote {
+      margin-top: 28px;
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(103,215,255,.3);
+      background:
+        linear-gradient(135deg, rgba(32,168,255,.12), rgba(183,131,255,.08)),
+        rgba(12, 30, 53, .72);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .quote strong {
+      display: block;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .quote span { color: var(--muted); font-size: 18px; }
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 40px;
+      color: var(--muted);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .printbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 11px 15px;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .btn.primary { background: linear-gradient(90deg, rgba(32,168,255,.8), rgba(103,215,255,.72)); color: #031020; border: 0; }
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hero-grid, .feature, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+    }
+    @media print {
+      .topbar, .printbar, audio { display: none !important; }
+      body { background: #fff; color: #111; }
+      .card, .mini, .step, .quote { box-shadow: none; background: #fff; color: #111; border-color: #ccc; }
+      .muted, p, .mini p, .step p, .feature p { color: #333 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand"><div class="logo"><span>A</span><span>V</span></div><span>AeroVista Signal</span></div>
+      <nav aria-label="Page navigation">
+        <a href="../index.html">← The SIGNAL</a>
+        <a href="../dispatches/current-updates.html">Update hub</a>
+        <a href="#listen">Listen</a>
+        <a href="#wins">Wins</a>
+        <a href="#visual">Dashboard</a>
+        <a href="#moat">Moat</a>
+        <a href="#next">Next</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="pulse"></span> Week Ending June 15, 2026</div>
+      <h1>Weekly <span class="gradient">Signal</span></h1>
+      <p class="dek">A clear shareholder and employee briefing on the work that strengthened AeroVista this week: builder systems, publishing pipelines, catalog infrastructure, memory, recovery, and repeatable launch capability.</p>
+      <div class="printbar">
+        <a class="btn primary" href="#listen">Play ByteCast</a>
+        <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      </div>
+      <div class="hero-grid" id="listen">
+        <article class="card audio-card">
+          <h2>ByteCast Audio</h2>
+          <p>Listen to the week-ending narration for shareholders and employees.</p>
+          <audio controls preload="metadata">
+            <source src="bytecast-week-ending-2026-06-15.aac" type="audio/aac" />
+            <source src="bytecast-week-ending-2026-06-15.mp3" type="audio/mpeg" />
+            <source src="bytecast-week-ending-2026-06-15.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </article>
+        <aside class="card signal-card">
+          <h2>The Signal</h2>
+          <p>AeroVista made meaningful progress converting creative work into repeatable systems that support builders, products, publishing, music, memory, and future revenue.</p>
+          <p><strong>Plain meaning:</strong> this was not a hype week. It was a builder’s week.</p>
+          <div class="chips">
+            <span class="chip">Systems stronger</span>
+            <span class="chip">Knowledge preserved</span>
+            <span class="chip">Builders empowered</span>
+            <span class="chip">Future accelerated</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section" id="wins">
+      <div class="section-title">
+        <div>
+          <h2>What Changed This Week</h2>
+          <p>Seven practical wins, each tied to business value. No fluff. No repeating the same point in different clothes.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card mini blue"><div class="icon">AL</div><h3>Art Localized</h3><p>The builder path moved closer to an operational flow: register, approve, grant, setup, publish, and grow.</p></article>
+        <article class="card mini purple"><div class="icon">◎</div><h3>AVCC</h3><p>The Command Center continued becoming the control layer for access, project visibility, memory, and reporting.</p></article>
+        <article class="card mini green"><div class="icon">🧠</div><h3>Memory Systems</h3><p>Export and recovery work reduced future risk by preserving decisions, access logic, and operational knowledge.</p></article>
+        <article class="card mini amber"><div class="icon">▤</div><h3>Things Worth Remembering</h3><p>The notebook grew from practical content into a stronger story artifact with travel, mistakes, people, and signals.</p></article>
+        <article class="card mini orange"><div class="icon">📖</div><h3>Lostbook</h3><p>The publishing path proved that written material can become structured, interactive, trackable, and reusable.</p></article>
+        <article class="card mini cyan"><div class="icon">♪</div><h3>EchoVerse</h3><p>The catalog pipeline advanced through sync, metadata, analysis, writeback, and future discovery workflows.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="visual">
+      <article class="card feature">
+        <div>
+          <h2>One-page visual dashboard</h2>
+          <p>This graphic can lead the internal post, sit under the audio player, or become the downloadable shareholder snapshot.</p>
+          <div class="callout">Use the dashboard as the centerpiece. Use this page as the guided explanation around it.</div>
+        </div>
+        <img src="a_high_detail_corporate_infographic_weekly_report.png" alt="AeroVista ByteCast weekly report infographic" />
+      </article>
+    </section>
+
+    <section class="section" id="moat">
+      <div class="section-title">
+        <div>
+          <h2>The Business Meaning</h2>
+          <p>The strongest signal is repeatability. AeroVista is not just collecting projects. It is building workflows that each project can reuse.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="card mini">
+          <div class="icon">↻</div>
+          <h3>The AeroVista Loop</h3>
+          <p>Brand → Booth → Media → Product → Publishing → Audio → Apparel → Automation → Reporting → back into Brand.</p>
+        </article>
+        <article class="card mini">
+          <div class="icon">🛡</div>
+          <h3>The Moat</h3>
+          <p>The moat is not one website, one product, or one platform. The moat is the operating model that makes launches easier each time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="next">
+      <div class="section-title">
+        <div>
+          <h2>What Comes Next</h2>
+          <p>Keep the next phase focused. The goal is execution discipline, not random expansion.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="step"><div class="num">1</div><div><h3>Tighten the builder journey</h3><p>Make registration, approval, booth grant, setup, and publish understandable without operator rescue.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Turn the walkthrough into a conversion asset</h3><p>Let creators learn while they build, with forms and help close to the action.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Advance EchoVerse catalog tooling</h3><p>Push metadata, discovery, editing, and release workflows toward creator-facing usefulness.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Prepare TWR for product lanes</h3><p>Grow the notebook as both story artifact and commercial property: print, digital, merch, audio, and collectible formats.</p></div></div>
+        <div class="step"><div class="num">5</div><div><h3>Keep infrastructure boring and recoverable</h3><p>Backups, route checks, exports, and documentation should quietly protect the company while everyone else builds.</p></div></div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <strong>Eyes Forward.</strong>
+      <span>Systems stronger. Knowledge preserved. Builders empowered. Future accelerated.</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© 2026 AeroVista LLC · Internal Signal Briefing</div>
+      <div>Shareholder + Employee Edition</div>
+    </div>
+  </footer>
+  <script src="../js/site-config.js"></script>
+  <script src="../js/site-analytics.js" defer></script>
+</body>
+</html>

@@ -1,20 +1,26 @@
 /**
- * Umami loader + lightweight event helpers for The SIGNAL.
+ * Analytics loader + lightweight event helpers for The SIGNAL.
  * Requires js/site-config.js first.
  */
 (function () {
   const cfg = window.SIGNAL_SITE || {};
-  const umami = cfg.umami || {};
+  const analytics = cfg.analytics || {};
 
   function loadUmami() {
-    if (!umami.enabled || !umami.scriptUrl || !umami.websiteId) return;
-    if (document.querySelector('script[data-website-id="' + umami.websiteId + '"]')) return;
+    if (!analytics.enabled || analytics.provider !== "umami" || !analytics.scriptUrl) return;
+
+    if (!analytics.websiteId) {
+      console.info("Umami skipped: missing websiteId");
+      return;
+    }
+
+    if (document.querySelector('script[data-website-id="' + analytics.websiteId + '"]')) return;
 
     const s = document.createElement("script");
     s.defer = true;
     s.async = true;
-    s.src = umami.scriptUrl;
-    s.setAttribute("data-website-id", umami.websiteId);
+    s.src = analytics.scriptUrl;
+    s.setAttribute("data-website-id", analytics.websiteId);
     s.setAttribute("data-domains", "thesignal.aerovista.us");
     document.head.appendChild(s);
   }

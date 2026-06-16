@@ -1,0 +1,16 @@
+{
+  "issue": "Understanding the Borrowed War Loop",
+  "title": "Understanding the Borrowed War Loop",
+  "partner": "Vespera × Summit",
+  "pages": [
+    {
+      "src": "The Borrowed War Loop.pdf",
+      "title": "The Borrowed War Loop",
+      "note": "IssueThe Borrowed War Loop.pdf",
+      "links": [
+        { "label": "Table of contents", "href": "./vespera_toc.md" },
+        { "label": "Signals briefing", "href": "./signals_briefing.html" }
+      ]
+    }
+  ]
+}

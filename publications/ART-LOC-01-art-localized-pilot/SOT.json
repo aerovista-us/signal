@@ -1,0 +1,225 @@
+{
+  "sot_version": "2.0-aerovista",
+  "project": {
+    "name": "ART-LOC-01-art-localized-pilot",
+    "slug": "art-loc-01-art-localized-pilot",
+    "brand": "Art Localized",
+    "division": "Art Localized",
+    "owner": "AeroVista LLC",
+    "status": "active",
+    "lifecycle": "production",
+    "type": "app",
+    "category": "content-publication",
+    "root": "./",
+    "primary_language": "html",
+    "repo_visibility": "private",
+    "created": "2026-03-18",
+    "updated": "2026-06-12",
+    "timezone": "America/Los_Angeles"
+  },
+  "purpose": {
+    "summary": "Bootstrapped source-of-truth manifest for ART-LOC-01-art-localized-pilot from the Missing-SOT Roots Sprint Wave 1.",
+    "source_of_truth_policy": "Only files listed here and stored in approved canon locations are treated as master files.",
+    "business_role": "Art Localized public pilot package; production-facing publication root."
+  },
+  "technical_profile": {
+    "stack": {
+      "frontend": [],
+      "backend": [
+        "documentation"
+      ],
+      "database": [],
+      "infra": [],
+      "analytics": [],
+      "ai": []
+    },
+    "runtime": {
+      "local_ports": [
+        3000
+      ],
+      "service_urls": [],
+      "health_endpoint": "/health",
+      "entry_command": "",
+      "build_command": "",
+      "start_command": ""
+    },
+    "deployment": {
+      "primary_host": "NXCore",
+      "deploy_path": "/srv/Collab/mini.shops/thesignal/publications/ART-LOC-01-art-localized-pilot",
+      "public_url": "",
+      "internal_url": "",
+      "containerized": false,
+      "compose_file": "",
+      "reverse_proxy": "Traefik",
+      "networking_notes": ""
+    },
+    "data_model": {
+      "core_db_dependency": false,
+      "domain_db": "",
+      "canonical_event_ledger": "",
+      "shared_storage": []
+    }
+  },
+  "canon": {
+    "canon_root": "./docs",
+    "allowed_master_locations": [
+      "./docs",
+      "./config",
+      "./data",
+      "./schemas",
+      "./prompts"
+    ],
+    "forbidden_master_locations": [
+      "./archive",
+      "./intake",
+      "./tmp",
+      "./build",
+      "./dist",
+      "./coverage",
+      "./node_modules"
+    ]
+  },
+  "entrypoints": [
+    {
+      "id": "readme_md",
+      "label": "Project Overview",
+      "path": "README.md",
+      "required": true,
+      "notes": "Discovered during Wave 1 bootstrap."
+    }
+  ],
+  "canon_files": [
+    {
+      "id": "sot_self",
+      "path": "SOT.json",
+      "type": "json",
+      "role": "source of truth manifest",
+      "required": true,
+      "owner": "project-owner",
+      "status": "active"
+    },
+    {
+      "id": "readme_md",
+      "path": "README.md",
+      "type": "md",
+      "role": "project overview",
+      "required": true,
+      "owner": "project-owner",
+      "status": "active"
+    }
+  ],
+  "canon_folders": [
+    {
+      "id": "docs",
+      "path": "docs/",
+      "role": "canonical documentation"
+    },
+    {
+      "id": "config",
+      "path": "config/",
+      "role": "approved configuration masters"
+    },
+    {
+      "id": "archive",
+      "path": "archive/",
+      "role": "historical and non-canonical files"
+    }
+  ],
+  "systems": {
+    "linked_projects": [],
+    "depends_on": [],
+    "feeds": [],
+    "consumes": [],
+    "shares_with": [],
+    "related_domains": [],
+    "tailscale_hosts": [],
+    "cloudflare_tunnels": []
+  },
+  "portfolio": {
+    "division_slug": "art-localized",
+    "portfolio_lane": "fund",
+    "maturity_stage": 2,
+    "maturity_label": "active-investment",
+    "system_role": "commercial-system",
+    "exposure": "public-or-commercial",
+    "strategic_tier": "growth",
+    "owner_team": "Platform / Art Localized",
+    "owner_person": "Tim/operator review",
+    "commercial_status": "revenue-adjacent",
+    "scorecard": {
+      "security": 2,
+      "reliability": 2,
+      "data_safety": 2,
+      "documentation": 2,
+      "repeatability": 2,
+      "owner_clarity": 3
+    },
+    "decision_notes": "Created during Missing-SOT Roots Sprint Wave 1 from triage row #1. Art Localized public pilot package; production-facing publication root."
+  },
+  "ops": {
+    "service_name": "project-service-name",
+    "health_check_paths": [
+      "/health"
+    ],
+    "backup_targets": [],
+    "log_locations": [],
+    "secrets_locations": [],
+    "monitoring": {
+      "enabled": false,
+      "providers": []
+    }
+  },
+  "governance": {
+    "review_cycle": "when major changes ship",
+    "update_rule": "Update this file whenever a canonical file moves, is replaced, changes purpose, or deploy behavior changes.",
+    "promotion_rule": "Files are promoted into canon only after review.",
+    "archive_rule": "Old versions move to archive and are never treated as master files.",
+    "owner_roles": [
+      "project-owner",
+      "ops-owner",
+      "tech-owner"
+    ]
+  },
+  "duplicates": [
+    {
+      "pattern": "README",
+      "known_locations": [
+        "README.md",
+        "docs/README.md"
+      ],
+      "winner": "README.md",
+      "note": "Keep one main README only."
+    }
+  ],
+  "checks": {
+    "required_paths_exist": [
+      "SOT.json",
+      "README.md"
+    ],
+    "marker": {
+      "enabled": true,
+      "marker_key": "SOT:",
+      "accepted_ext": [
+        ".md",
+        ".html",
+        ".json",
+        ".txt",
+        ".yml",
+        ".yaml",
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx"
+      ]
+    },
+    "hash_canon_files": true,
+    "warn_on_duplicate_ids": true,
+    "warn_on_missing_required": true,
+    "warn_on_master_outside_allowed_locations": true
+  },
+  "notes": [
+    "Created by Missing-SOT Roots Sprint Wave 1 on 2026-06-12.",
+    "This is a conservative bootstrap manifest; refine URLs, owners, dependencies, and scorecard during the next review.",
+    "Triage source: MISSING_SOT_ROOTS_TRIAGE_2026-06-11.md row #1."
+  ]
+}

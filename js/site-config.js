@@ -6,7 +6,8 @@ window.SIGNAL_SITE = {
   url: "https://thesignal.aerovista.us",
   name: "The SIGNAL",
   ogImage: "https://thesignal.aerovista.us/signal.png",
-  umami: {
+  analytics: {
+    provider: "umami",
     enabled: true,
     scriptUrl: "https://analytics.aerovista.us/script.js",
     /** Paste from Umami → Websites → The SIGNAL → Tracking code */

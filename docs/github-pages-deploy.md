@@ -17,7 +17,7 @@ dispatches/*.html
 
 ## Umami
 
-After deploy, set your website ID in [`js/site-config.js`](js/site-config.js). See [umami-analytics.md](./umami-analytics.md).
+Set `analytics.websiteId` in [`js/site-config.js`](js/site-config.js) after adding `thesignal.aerovista.us` in Umami. Full checklist (including Cloudflare Access note): [umami-analytics.md](./umami-analytics.md).
 
 ## Full sync checklist (local → GitHub)
 
@@ -25,7 +25,7 @@ Copy from `\\100.115.9.61\Collab\mini.shops\thesignal` into your clone of [aerov
 
 ```bash
 git add index.html signal-public-theme.css css/signal-public-theme.css js/ dispatches/
-git add publications/ docs/ favicon.svg signal.png signal.html
+git add newsletters/ publications/ docs/ favicon.svg signal.png signal.html
 git status
 git commit -m "Add shared theme CSS and sync hub/dispatch styles for GitHub Pages."
 git push origin main
@@ -47,6 +47,10 @@ After deploy, confirm https://thesignal.aerovista.us/signal.png returns **200**.
 - https://thesignal.aerovista.us/ — cyan/blue theme, no console 404
 - https://thesignal.aerovista.us/signal-public-theme.css — should return CSS (200)
 - https://thesignal.aerovista.us/dispatches/eow-shareholder-update.html — themed dispatch page
+- https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html — current weekly Signal
+- https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.aac — ByteCast audio (or `.mp3` if used)
+- https://thesignal.aerovista.us/newsletters/a_high_detail_corporate_infographic_weekly_report.png — weekly infographic
+- https://thesignal.aerovista.us/newsletter-current.html — redirect to current newsletter
 
 ## What is not on GitHub yet (as of theme work)
 

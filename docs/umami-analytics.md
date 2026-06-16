@@ -1,27 +1,39 @@
 # Umami analytics — The SIGNAL
 
-## One-time setup
+## Config shape
 
-1. Open your Umami dashboard (same instance used for other AeroVista sites).
-2. **Websites → Add website**
-   - Name: `The SIGNAL`
-   - Domain: `thesignal.aerovista.us`
-3. Copy the **website ID** from the tracking snippet.
-4. Paste it in [`js/site-config.js`](../js/site-config.js):
+[`js/site-config.js`](../js/site-config.js):
 
 ```javascript
-websiteId: "your-uuid-here",
+analytics: {
+  provider: "umami",
+  enabled: true,
+  scriptUrl: "https://analytics.aerovista.us/script.js",
+  websiteId: "paste-uuid-here",
+}
 ```
 
-5. Confirm `scriptUrl` matches your instance (default: `https://analytics.aerovista.us/script.js`).
-6. Deploy `js/` folder to GitHub with the rest of the site.
+If `websiteId` is empty, the loader logs `Umami skipped: missing websiteId` and does not inject the script.
+
+## Deploy checklist
+
+1. Add `thesignal.aerovista.us` in Umami (**Websites → Add website**).
+2. Paste the UUID into `js/site-config.js` → `analytics.websiteId`.
+3. Push `js/` + updated HTML to GitHub.
+4. Deploy GitHub Pages / site.
+5. Open Umami → **Realtime**.
+6. Click through hub, publication pages, and archive links.
 
 ## Verify
 
 1. Visit https://thesignal.aerovista.us/
-2. Open DevTools → Network → filter `send` or `script.js`
-3. You should see the tracker load and `/api/send` return **200**
-4. In Umami, open **Realtime** while clicking around
+2. DevTools → **Console** — should not show the skip message once UUID is set.
+3. DevTools → **Network** — filter `script.js` and `send`; tracker should load and `/api/send` return **200**.
+4. Umami **Realtime** should show your session while you click around.
+
+## Script domain must be public
+
+`scriptUrl` must be reachable from visitors’ browsers. If `analytics.aerovista.us` sits behind **Cloudflare Access** (or similar), the tracker may fail silently on the public site. Either expose `/script.js` and `/api/send` without auth, or use a public Umami host for production tracking.
 
 ## Events tracked
 
@@ -38,7 +50,7 @@ websiteId: "your-uuid-here",
 
 ## Files
 
-- [`js/site-config.js`](../js/site-config.js) — IDs and URLs
+- [`js/site-config.js`](../js/site-config.js) — provider, URLs, website ID
 - [`js/site-analytics.js`](../js/site-analytics.js) — loader + event helpers
 
-Included on: `index.html`, all `dispatches/*.html`, `signal.html`, and VXP-MR-01 publication HTML.
+Included on: `index.html`, all `dispatches/*.html`, `signal.html`, and publication HTML under `publications/`.
