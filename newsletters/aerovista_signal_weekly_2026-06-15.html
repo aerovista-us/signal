@@ -228,6 +228,14 @@
       border: 1px solid var(--line);
       box-shadow: 0 18px 50px rgba(0,0,0,.34);
     }
+    .visual-card { padding: 22px; }
+    .visual-card img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(0,0,0,.34);
+      display: block;
+    }
     .feature h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1; margin: 0 0 14px; }
     .feature p { color: var(--muted); margin: 0 0 16px; }
     .callout {
@@ -388,12 +396,7 @@
     </section>
 
     <section class="section" id="visual">
-      <article class="card feature">
-        <div>
-          <h2>One-page visual dashboard</h2>
-          <p>This graphic can lead the internal post, sit under the audio player, or become the downloadable shareholder snapshot.</p>
-          <div class="callout">Use the dashboard as the centerpiece. Use this page as the guided explanation around it.</div>
-        </div>
+      <article class="card visual-card">
         <img src="a_high_detail_corporate_infographic_weekly_report.png" alt="AeroVista ByteCast weekly report infographic" />
       </article>
     </section>
