@@ -42,15 +42,26 @@ All hub and dispatch pages use **`signal.png`** at the repo root:
 
 After deploy, confirm https://thesignal.aerovista.us/signal.png returns **200**. Chat apps cache previews; re-paste the URL or use [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to refresh.
 
+## Internal Signals (daily & weekly internal reports)
+
+All daily EOD notes, weekly EOW updates, ByteCast editions, and internal archives live at [`dispatches/internal-signals.html`](../dispatches/internal-signals.html).
+
+Legacy routes redirect there:
+
+- [`newsletter-current.html`](../newsletter-current.html)
+- [`dispatches/current-updates.html`](../dispatches/current-updates.html)
+
 ## Verify after deploy
 
 - https://thesignal.aerovista.us/ — cyan/blue theme, no console 404
 - https://thesignal.aerovista.us/signal-public-theme.css — should return CSS (200)
-- https://thesignal.aerovista.us/dispatches/eow-shareholder-update.html — themed dispatch page
+- https://thesignal.aerovista.us/dispatches/internal-signals.html — Internal Signals hub
+- https://thesignal.aerovista.us/dispatches/current-updates.html — redirects to Internal Signals
+- https://thesignal.aerovista.us/newsletter-current.html — redirects to Internal Signals
 - https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html — current weekly Signal
-- https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.aac — ByteCast audio (or `.mp3` if used)
+- https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html — EchoVerse ByteCast
+- https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.mp3 — weekly ByteCast audio
 - https://thesignal.aerovista.us/newsletters/a_high_detail_corporate_infographic_weekly_report.png — weekly infographic
-- https://thesignal.aerovista.us/newsletter-current.html — redirect to current newsletter
 
 ## What is not on GitHub yet (as of theme work)
 

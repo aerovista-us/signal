@@ -56,6 +56,22 @@ These files keep their own styling and were **not** updated in the newsletter al
 
 Publication routes may reference their own favicon under `publications/`.
 
+## Internal Signals (EOD / EOW)
+
+Shareholder, employee, and operator editions live under [**Internal Signals**](../dispatches/internal-signals.html) (formerly internal news). All daily and weekly internal reports route through this hub.
+
+| Route | Role |
+|-------|------|
+| [`dispatches/internal-signals.html`](../dispatches/internal-signals.html) | Canonical hub — daily EOD, weekly EOW, ByteCast editions, archive |
+| [`dispatches/current-updates.html`](../dispatches/current-updates.html) | Redirect to Internal Signals (legacy EOD/EOW hub URL) |
+| [`newsletter-current.html`](../newsletter-current.html) | Redirect to Internal Signals (legacy newsletter URL) |
+| [`dispatches/eod-current-operating-note.html`](../dispatches/eod-current-operating-note.html) | Current daily operating note |
+| [`dispatches/eow-current-stakeholder-update.html`](../dispatches/eow-current-stakeholder-update.html) | Current weekly stakeholder summary |
+| [`newsletters/aerovista_signal_weekly_2026-06-15.html`](../newsletters/aerovista_signal_weekly_2026-06-15.html) | Current weekly ByteCast edition |
+| [`newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html`](../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html) | Platform ByteCast example (EchoVerse) |
+
+The homepage features one **Internal Signals** card; separate newsletter and EOD/EOW cards were removed.
+
 ## Adding a new dispatch
 
 1. Copy an existing dispatch HTML shell.

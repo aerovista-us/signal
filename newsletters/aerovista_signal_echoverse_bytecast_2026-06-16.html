@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EchoVerse ByteCast | AeroVista Signal · June 16, 2026</title>
+  <meta name="description" content="EchoVerse ByteCast: AeroVista internal Signal on the Audio Intelligence Platform milestone — drop to catalog, ByteTag, analyze, writeback, and Edit handoff." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html" />
+  <meta name="theme-color" content="#050710" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="EchoVerse ByteCast — Audio Intelligence Platform Update" />
+  <meta property="og:description" content="EchoVerse crossed from music tools into a verified Audio Intelligence Platform with a seven-step production path from dropped MP3 to Edit handoff." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta property="og:url" content="https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EchoVerse ByteCast — Audio Intelligence Platform Update" />
+  <meta name="twitter:image" content="https://thesignal.aerovista.us/signal.png" />
+  <style>
+    :root {
+      --bg: #050710;
+      --panel: rgba(10, 18, 33, 0.88);
+      --panel-2: rgba(14, 28, 47, 0.78);
+      --line: rgba(88, 222, 255, 0.24);
+      --cyan: #35e8ff;
+      --blue: #4d8dff;
+      --green: #79ff8b;
+      --gold: #ffd866;
+      --orange: #ff9f43;
+      --purple: #ba7cff;
+      --text: #eef7ff;
+      --muted: #9fb2c8;
+      --soft: #cdd9e8;
+      --danger: #ff657a;
+      --shadow: 0 24px 80px rgba(0,0,0,0.42);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(53, 232, 255, 0.14), transparent 26rem),
+        radial-gradient(circle at 82% 12%, rgba(186, 124, 255, 0.10), transparent 28rem),
+        radial-gradient(circle at 50% 82%, rgba(121, 255, 139, 0.08), transparent 30rem),
+        linear-gradient(180deg, #04050d 0%, #07101d 48%, #03050b 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 85%);
+      z-index: -1;
+    }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(53,232,255,0.22), rgba(77,141,255,0.12));
+      border: 1px solid var(--line);
+      box-shadow: 0 0 28px rgba(53,232,255,0.15);
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 20px;
+    }
+
+    .nav-pills a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(88,222,255,0.18);
+      border-radius: 999px;
+      background: rgba(4,10,20,0.62);
+      color: var(--soft);
+      font-size: 0.88rem;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: clamp(28px, 5vw, 58px);
+      background:
+        linear-gradient(135deg, rgba(53,232,255,0.10), transparent 42%),
+        linear-gradient(45deg, rgba(121,255,139,0.08), transparent 55%),
+        rgba(6, 12, 24, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      top: -130px;
+      background: radial-gradient(circle, rgba(53,232,255,0.18), transparent 68%);
+      filter: blur(2px);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      border: 1px solid rgba(121,255,139,0.25);
+      background: rgba(121,255,139,0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 0 7px rgba(121,255,139,0.12), 0 0 22px rgba(121,255,139,0.55);
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      max-width: 920px;
+      font-size: clamp(2.45rem, 6.2vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+      color: var(--soft);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      margin: 0 0 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(88,222,255,0.28);
+      background: rgba(53,232,255,0.10);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, rgba(53,232,255,0.26), rgba(121,255,139,0.12));
+      box-shadow: 0 12px 34px rgba(53,232,255,0.13);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: rgba(4, 10, 20, 0.68);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--text);
+      letter-spacing: -0.03em;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-top: 26px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: clamp(22px, 4vw, 36px);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section p {
+      color: var(--soft);
+      margin: 0 0 16px;
+    }
+
+    .lede {
+      font-size: 1.14rem;
+      color: #fff !important;
+    }
+
+    .audio-card {
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      gap: 24px;
+      align-items: stretch;
+      border: 1px solid rgba(53,232,255,0.24);
+      background:
+        linear-gradient(135deg, rgba(53,232,255,0.10), transparent 55%),
+        linear-gradient(45deg, rgba(186,124,255,0.10), transparent 65%),
+        rgba(2,6,14,0.72);
+      border-radius: 24px;
+      padding: clamp(18px, 3vw, 28px);
+    }
+
+    .audio-player {
+      display: grid;
+      gap: 16px;
+    }
+
+    audio {
+      width: 100%;
+      min-height: 44px;
+      filter: drop-shadow(0 16px 30px rgba(0,0,0,0.28));
+    }
+
+    .audio-note {
+      border: 1px dashed rgba(255,216,102,0.34);
+      color: var(--gold);
+      background: rgba(255,216,102,0.07);
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-size: 0.94rem;
+    }
+
+    .chapters {
+      display: grid;
+      gap: 9px;
+    }
+
+    .chapter {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.055);
+      color: var(--soft);
+      font-size: 0.94rem;
+    }
+
+    .chapter b { color: var(--cyan); }
+
+    .sticky-audio {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      margin-top: 18px;
+      padding: 12px;
+      border: 1px solid rgba(88,222,255,0.18);
+      border-radius: 18px;
+      background: rgba(4, 10, 20, 0.83);
+      backdrop-filter: blur(14px);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .sticky-audio strong {
+      color: var(--cyan);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .path-step {
+      position: relative;
+      min-height: 142px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(53,232,255,0.08), rgba(255,255,255,0.025));
+    }
+
+    .path-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-weight: 900;
+      z-index: 2;
+    }
+
+    .step-num {
+      color: var(--green);
+      font-weight: 900;
+      font-size: 0.86rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .path-step h3 {
+      margin: 8px 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .path-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .lanes {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .lane {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: var(--panel-2);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .lane:hover {
+      transform: translateY(-3px);
+      border-color: rgba(53,232,255,0.45);
+    }
+
+    .lane .icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .lane h3 {
+      margin: 0 0 8px;
+      color: var(--cyan);
+    }
+
+    .lane p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .status-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-top: 18px;
+      font-size: 0.94rem;
+    }
+
+    .status-table th,
+    .status-table td {
+      border-bottom: 1px solid rgba(88,222,255,0.14);
+      padding: 13px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .status-table th {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(53,232,255,0.06);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: #06110a;
+      background: var(--green);
+      white-space: nowrap;
+    }
+
+    .smoke-card {
+      border: 1px solid rgba(121,255,139,0.25);
+      background: linear-gradient(180deg, rgba(121,255,139,0.09), rgba(53,232,255,0.04));
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .smoke-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 8px 12px;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+
+    .kv b { color: var(--cyan); }
+
+    .quote {
+      border-left: 4px solid var(--cyan);
+      padding: 16px 0 16px 20px;
+      color: #fff;
+      font-size: 1.22rem;
+      margin: 24px 0 0;
+    }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .next-card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .priority {
+      display: inline-flex;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .p1 { background: rgba(121,255,139,0.15); color: var(--green); }
+    .p2 { background: rgba(53,232,255,0.13); color: var(--cyan); }
+    .p3 { background: rgba(255,216,102,0.14); color: var(--gold); }
+
+    .next-card h3 { margin: 0 0 8px; }
+    .next-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+    .code-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid rgba(88,222,255,0.18);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.32);
+      padding: 14px 16px;
+      margin: 12px 0;
+      overflow: auto;
+    }
+
+    code {
+      color: #d8f7ff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .infographic {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 70px rgba(0,0,0,0.35);
+      margin-top: 20px;
+      background: #02030a;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .image-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 12px;
+      background: rgba(0,0,0,0.24);
+    }
+
+    .image-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .image-card p {
+      margin: 12px 4px 2px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    details {
+      border: 1px solid rgba(88,222,255,0.18);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.22);
+      margin-top: 18px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .transcript {
+      padding: 0 18px 18px;
+      white-space: pre-wrap;
+      color: var(--soft);
+      font-size: 0.96rem;
+    }
+
+    .visual-card { padding: 12px; border: 1px solid var(--line); border-radius: 24px; background: rgba(0,0,0,0.24); }
+    .visual-card img { width: 100%; display: block; border-radius: 16px; }
+
+    .site-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; }
+    .site-nav a { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800; }
+
+    .footer {
+      margin-top: 30px;
+      padding: 26px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .footer strong { color: var(--text); }
+
+    @media (max-width: 980px) {
+      .hero-grid, .path, .lanes, .next-grid, .split, .audio-card, .image-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .path-step:not(:last-child)::after { display: none; }
+      .audio-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .page { width: min(100% - 22px, 1180px); }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .hero-grid, .path, .lanes, .next-grid, .split, .audio-card, .image-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { border-radius: 24px; }
+      .kv { grid-template-columns: 1fr; }
+      .status-table { display: block; overflow-x: auto; }
+      .sticky-audio { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2.2rem, 13vw, 4rem); }
+    }
+
+    @media print {
+      audio, .nav-pills { display: none; }
+      body { background: #fff; color: #111; }
+      .section, .hero { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">▲</div>
+        <div>
+          <div>The Signal</div>
+          <div style="font-size:0.74rem;color:var(--muted);">AeroVista Media Intelligence</div>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="../index.html">← The SIGNAL</a>
+        <a href="../dispatches/internal-signals.html">Internal Signals</a>
+      </nav>
+      <div>ByteCast · June 16, 2026</div>
+    </div>
+
+    <nav class="nav-pills" aria-label="Page sections">
+      <a href="#listen">▶ Listen</a>
+      <a href="#path">↳ Happy Path</a>
+      <a href="#lanes">▦ Five Lanes</a>
+      <a href="#status">✓ Status</a>
+      <a href="#visuals">▣ Visuals</a>
+      <a href="#next">→ Next Moves</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><span class="pulse"></span>Status: Operational</span>
+        <h1>EchoVerse is now an <span class="gradient-text">Audio Intelligence Platform.</span></h1>
+        <p class="hero-copy">
+          EchoVerse crossed a major production milestone: new audio can now move through a verified path from dropped MP3 to catalog ID, ByteTag metadata workflow, analysis writeback, and Edit handoff.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#listen">▶ Play ByteCast</a>
+          <a class="button" href="#visuals">View Infographic</a>
+          <a class="button" href="#transcript">Read Transcript</a>
+        </div>
+
+        <div class="hero-grid">
+          <div class="metric"><strong>5</strong><span>platform lanes now defined</span></div>
+          <div class="metric"><strong>7</strong><span>step happy path verified</span></div>
+          <div class="metric"><strong>HTTP 200</strong><span>Edit page confirmed live</span></div>
+          <div class="metric"><strong>nxcore</strong><span>production services aligned</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="listen">
+      <div class="section-inner">
+        <div class="audio-card">
+          <div class="audio-player">
+            <span class="eyebrow"><span class="pulse"></span>Listen to the update</span>
+            <h2>ByteCast: From Drop to Edit</h2>
+            <p class="lede">
+              A shareholder and employee-ready audio briefing covering what changed, why it matters, what was verified, and where EchoVerse goes next.
+            </p>
+            <audio controls preload="metadata">
+              <source src="echoverse-bytecast-2026-06-16.mp3" type="audio/mpeg" />
+              <source src="EchoVerse Platform Shift.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+          <div class="chapters">
+            <div class="chapter"><b>00:00</b><span>Opening: EchoVerse crosses the platform line</span></div>
+            <div class="chapter"><b>00:45</b><span>The verified happy path from dropped MP3 to Edit</span></div>
+            <div class="chapter"><b>02:00</b><span>Why this matters to shareholders and employees</span></div>
+            <div class="chapter"><b>03:15</b><span>The five platform lanes</span></div>
+            <div class="chapter"><b>04:30</b><span>Production status and smoke test</span></div>
+            <div class="chapter"><b>06:00</b><span>Next moves: automate, analyze, reconcile, harden</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>What changed</h2>
+        <p class="lede">
+          EchoVerse is no longer just a music player with supporting tools. It now has a connected operating loop for audio intake, catalog registration, metadata editing, analysis, writeback, and edit handoff.
+        </p>
+        <p>
+          The most important platform gap was closed: NewDropins files can now enter the catalog and receive a track ID before analysis and metadata work. That makes ByteTag part of the real production path instead of a side utility.
+        </p>
+
+        <div class="quote">
+          The business meaning is simple: raw audio can now become catalog-aware, analyzed, metadata-ready, and editable through one repeatable workflow.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="path">
+      <div class="section-inner">
+        <h2>The verified happy path</h2>
+        <p>This is the current operator path after new MP3 files are placed into NewDropins.</p>
+
+        <div class="path">
+          <div class="path-step"><div class="step-num">01</div><h3>Drop MP3</h3><p>New audio lands in the NewDropins folder.</p></div>
+          <div class="path-step"><div class="step-num">02</div><h3>Sync</h3><p><code>sync_newdropins.sh</code> registers files with the catalog.</p></div>
+          <div class="path-step"><div class="step-num">03</div><h3>Track ID</h3><p>The file receives a catalog <code>track_id</code>.</p></div>
+          <div class="path-step"><div class="step-num">04</div><h3>ByteTag</h3><p>Metadata Studio resolves the path and queues work.</p></div>
+          <div class="path-step"><div class="step-num">05</div><h3>Analyze</h3><p>Batch Console processes BPM, key, loudness, and more.</p></div>
+          <div class="path-step"><div class="step-num">06</div><h3>Writeback</h3><p>Analysis results save back to the catalog.</p></div>
+          <div class="path-step"><div class="step-num">07</div><h3>Edit</h3><p>The track opens in the Edit app in a new tab.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lanes">
+      <div class="section-inner">
+        <h2>The five lanes of EchoVerse</h2>
+        <p>The platform now has a clear operating model. Each lane has a job, and each lane can improve without breaking the others.</p>
+
+        <div class="lanes">
+          <div class="lane"><div class="icon">🔎</div><h3>Discovery</h3><p>Find, register, and catalog new audio through Library API and sync workflows.</p></div>
+          <div class="lane"><div class="icon">〰️</div><h3>Analysis</h3><p>Extract technical audio intelligence through the Batch Console and analyzer.</p></div>
+          <div class="lane"><div class="icon">🧱</div><h3>Enrichment</h3><p>Attach overlays, sidecars, and future intelligence layers to each track.</p></div>
+          <div class="lane"><div class="icon">🏷️</div><h3>Metadata</h3><p>Use ByteTag to scan, edit, write ID3, backup, rescan, and hand off to Edit.</p></div>
+          <div class="lane"><div class="icon">📊</div><h3>Analytics</h3><p>Turn listening metrics and catalog data into better operating decisions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="status">
+      <div class="section-inner split">
+        <div>
+          <h2>Production status</h2>
+          <p>
+            The production paths and documentation now match the current nxcore reality. Operators should use the catalog-facing Batch Console route, not the internal analyzer port.
+          </p>
+
+          <table class="status-table">
+            <thead><tr><th>Component</th><th>Endpoint</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Music Catalog</td><td><code>:5307</code></td><td><span class="status-pill">Healthy</span></td></tr>
+              <tr><td>Batch Console</td><td><code>:5307/analyze/</code></td><td><span class="status-pill">Healthy</span></td></tr>
+              <tr><td>Batch Analyzer Service</td><td><code>internal :8765</code></td><td><span class="status-pill">Internal</span></td></tr>
+              <tr><td>Library API</td><td><code>:5304</code></td><td><span class="status-pill">Healthy</span></td></tr>
+              <tr><td>ByteTag UI / API</td><td><code>:5173 / :8097</code></td><td><span class="status-pill">Running</span></td></tr>
+              <tr><td>Edit Page</td><td><code>/catalog/edit/</code></td><td><span class="status-pill">HTTP 200</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="smoke-card">
+          <h3>Smoke test: “Check Yourself”</h3>
+          <div class="kv">
+            <b>Track ID</b><span><code>dda8a3ca99f7f9c4</code></span>
+            <b>BPM</b><span>71.78</span>
+            <b>Key</b><span>G# major</span>
+            <b>LUFS</b><span>-14.0</span>
+            <b>Edit</b><span>HTTP 200 confirmed</span>
+          </div>
+          <p style="margin-top:16px;">This proved the real loop: resolve, analyze, write back, and open in Edit.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>Operator quick reference</h2>
+        <p>The current manual sync step is now a repeatable workflow, not a missing integration.</p>
+        <div class="code-row"><code>curl http://127.0.0.1:5304/api/analytics/health</code></div>
+        <div class="code-row"><code>curl http://127.0.0.1:5307/analyze/health</code></div>
+        <div class="code-row"><code>curl http://127.0.0.1:8097/api/health</code></div>
+        <div class="code-row"><code>cd /srv/NXDrive/EchoVerse/EchoVerse_Music_Catalog.v.nx && ./scripts/sync_newdropins.sh</code></div>
+        <div class="code-row"><code>http://100.115.9.61:5173</code></div>
+        <div class="code-row"><code>http://100.115.9.61:5307/catalog/edit/?track_id={id}</code></div>
+      </div>
+    </section>
+
+    <section class="section" id="next">
+      <div class="section-inner">
+        <h2>Next moves</h2>
+        <p>The next phase is hardening, not invention. EchoVerse should now become more automatic, more measurable, and cleaner for operators.</p>
+
+        <div class="next-grid">
+          <div class="next-card"><span class="priority p1">P1</span><h3>Automate NewDropins sync</h3><p>Use cron, a folder watcher, or a Catalog Console button so new drops enter the catalog automatically.</p></div>
+          <div class="next-card"><span class="priority p1">P1</span><h3>Analyze the backlog</h3><p>Batch-analyze NewDropins tracks that now have a track ID but still need BPM, key, LUFS, and analysis data.</p></div>
+          <div class="next-card"><span class="priority p2">P2</span><h3>Reconcile counts</h3><p>Spot-check the 184 scanned vs 374 in DB behavior to identify duplicates, variants, or merge history.</p></div>
+          <div class="next-card"><span class="priority p2">P2</span><h3>Strengthen export gate</h3><p>Move from the current client-side deterrent to a server-side export token if real access control is needed.</p></div>
+          <div class="next-card"><span class="priority p3">P3</span><h3>Clean infra warnings</h3><p>Install mutagen on nxcore if desired and remove non-fatal warning noise from inventory rebuilds.</p></div>
+          <div class="next-card"><span class="priority p3">P3</span><h3>Normalize container naming</h3><p>Keep docs and scripts aligned to <code>echoverse-catalog-v4</code>.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visuals">
+      <div class="section-inner visual-card">
+        <img src="a_detailed_infographic_poster_dashboard_style_de.png" alt="EchoVerse Audio Intelligence Platform dashboard infographic" />
+      </div>
+    </section>
+
+    <section class="section" id="transcript">
+      <div class="section-inner">
+        <h2>Transcript</h2>
+        <details>
+          <summary>Read the ByteCast transcript</summary>
+          <div class="transcript">AeroVista ByteCast — EchoVerse Audio Intelligence Platform Update
+
+Welcome back to The Signal.
+
+Today’s update is about EchoVerse, and more specifically, the moment EchoVerse crossed an important line.
+
+This was not just another feature session. This was the session where EchoVerse moved from being a collection of useful music tools into something much more meaningful: a working Audio Intelligence Platform.
+
+A music player lets you listen. A catalog lets you organize. A metadata tool lets you clean files. An analyzer gives you technical insight. But a platform connects all of that into a repeatable operating system.
+
+That is what changed.
+
+EchoVerse now has a clean production path that starts with a dropped MP3 and ends with a cataloged, analyzed, metadata-ready track that can be opened directly in the Edit environment.
+
+The new operating flow is simple:
+
+Drop MP3. Sync. Track ID. ByteTag. Analyze. Writeback. Edit.
+
+That may sound technical, but the business meaning is bigger. Before this, pieces of EchoVerse existed as useful parts. Now those parts are starting to act like a system.
+
+The catalog knows the file. The metadata tool knows the catalog. The analyzer knows where to send the result. The Edit app knows how to pick up the handoff.
+
+That is the difference between software and infrastructure.
+
+For shareholders, this matters because AeroVista is not only building front-end experiences. We are building internal capability. Capability becomes leverage. Leverage becomes repeatability. Repeatability becomes scale.
+
+For employees and builders, this matters because the workflow is now easier to understand and easier to repeat. The main operator step is clear: after new MP3s are added to NewDropins, run the sync script.
+
+That is the current workflow. It is not a missing integration anymore. It is a known operating step that can now be automated.
+
+EchoVerse now has five clear lanes: Discovery, Analysis, Enrichment, Metadata, and Analytics.
+
+Discovery finds and registers tracks. Analysis extracts audio intelligence. Enrichment attaches future overlays and sidecars. Metadata is ByteTag’s lane. Analytics turns listening and catalog data into better decisions.
+
+Production services were verified on nxcore. The Catalog service is healthy. The Library API is healthy. The Batch Console is healthy through the catalog-facing analysis route. ByteTag is running. The Edit page returns HTTP 200.
+
+The smoke test track was “Check Yourself.” It resolved through ByteTag to a catalog track ID. It was analyzed successfully. The writeback returned BPM 71.78, key G-sharp major, and LUFS negative 14.0. Then the Edit handoff worked.
+
+That proved the real loop: resolve, analyze, write back, and open in Edit.
+
+The Edit app also took a meaningful step forward. It now supports playback, timecode, synced waveform and timeline seek, keyboard shortcuts, new-tab handoff, operator polish, and export gating.
+
+ByteTag also moved into its correct role. It is not a separate side project. It is now part of the EchoVerse platform. Its job is to act as the Metadata Studio.
+
+There are still next steps. The sync process should be automated. The remaining NewDropins backlog should be batch-analyzed. Export control can move server-side if needed. Count differences should be reconciled. Infrastructure warnings can be cleaned up.
+
+These are not platform blockers. They are hardening tasks.
+
+The bottom line is this:
+
+EchoVerse now has a working production path from dropped audio file to catalog-aware, analyzed, metadata-ready, editable track.
+
+The docs are aligned. The services are healthy. The operator workflow is clear. The platform lanes are defined.
+
+EchoVerse is no longer just playing the tracks. EchoVerse is starting to understand them.
+
+This has been The Signal.
+
+Eyes forward. Systems online.
+</div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>Bottom line</h2>
+        <p class="lede">EchoVerse now has a working production path from dropped audio file to catalog-aware, analyzed, metadata-ready, editable track.</p>
+        <p>The docs are aligned. The services are healthy. The operator workflow is clear. The next phase is automation, backlog processing, count reconciliation, and export hardening.</p>
+        <div class="quote">EchoVerse is no longer just playing the tracks. EchoVerse is starting to understand them.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>AeroVista · The Signal</strong><br />
+      Internal Signal · EchoVerse ByteCast · June 16, 2026<br />
+      Shareholder + Employee Edition
+    </footer>
+  </main>
+  <script src="../js/site-config.js"></script>
+  <script src="../js/site-analytics.js" defer></script>
+</body>
+</html>
