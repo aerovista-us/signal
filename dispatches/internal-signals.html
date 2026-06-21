@@ -17,6 +17,12 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Internal Signals — The SIGNAL" />
   <meta name="twitter:image" content="https://thesignal.aerovista.us/signal.png" />
+  <style>
+    :root{--signal-bg:#04070d;--panel:rgba(11,22,38,.78);--panel2:rgba(6,14,27,.92);--line:rgba(135,206,235,.22);--line2:rgba(0,174,239,.42);--text:#ecf8ff;--muted:#9fb7c8;--blue:#00aeef;--sky:#87ceeb;--gold:#ffd166;--green:#6ee7b7;--red:#ff7a90;--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.45)}
+    body{background:radial-gradient(circle at 12% 4%,rgba(0,174,239,.22),transparent 26rem),radial-gradient(circle at 88% 0%,rgba(135,206,235,.12),transparent 30rem),linear-gradient(145deg,#03060c 0%,#071321 48%,#03060c 100%);color:var(--text)}
+    .nav{backdrop-filter:blur(16px);background:rgba(4,7,13,.72);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.brand{letter-spacing:.08em}.back{border:1px solid var(--line);border-radius:999px;padding:.65rem .9rem;text-decoration:none;color:var(--text);background:rgba(255,255,255,.04)}
+    .hero{padding-top:54px}.issue{border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:var(--shadow)}.hero h1{font-size:clamp(3rem,8vw,6.6rem);letter-spacing:-.07em;line-height:.86;margin-bottom:1.1rem}.deck{max-width:880px}.coverline{gap:.55rem;flex-wrap:wrap}.coverline span,.chip{border:1px solid var(--line);background:rgba(0,174,239,.08);border-radius:999px;padding:.45rem .72rem;color:#dff7ff;font-size:.84rem}.hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:22px;margin-top:28px;align-items:stretch}.latest-card,.status-card,.quick-card,.tool-card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(155deg,rgba(13,27,48,.88),rgba(5,12,24,.88));box-shadow:var(--shadow);padding:22px}.latest-card{position:relative;overflow:hidden}.latest-card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 20% 0%,rgba(0,174,239,.25),transparent 28rem);pointer-events:none}.latest-card>*{position:relative}.label-row{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin-bottom:12px}.status{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(110,231,183,.34);background:rgba(110,231,183,.1);color:#d7fff0;border-radius:999px;padding:.35rem .6rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}.pulse{width:.5rem;height:.5rem;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}.latest-card h2{font-size:clamp(2rem,4vw,3.4rem);line-height:.95;margin:.1rem 0 .8rem;letter-spacing:-.045em}.meta-line{color:var(--muted);font-size:.95rem}.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn,.btn-secondary{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;border-radius:999px;padding:.82rem 1rem;border:1px solid var(--line2);font-weight:700}.btn{background:linear-gradient(135deg,var(--blue),#72dcff);color:#04101b}.btn-secondary{background:rgba(255,255,255,.05);color:var(--text)}.mini-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.mini-metric{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);padding:13px}.mini-metric strong{display:block;font-size:1.2rem}.mini-metric span{color:var(--muted);font-size:.82rem}.hub-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 20px}.search{width:100%;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);color:var(--text);padding:.92rem 1rem}.search::placeholder{color:rgba(236,248,255,.56)}.copy-btn{cursor:pointer}.signal-list{display:grid;gap:14px}.signal-item{border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.04);padding:18px;transition:transform .18s ease,border-color .18s ease,background .18s ease}.signal-item:hover{transform:translateY(-2px);border-color:var(--line2);background:rgba(0,174,239,.07)}.signal-item h3{margin:.15rem 0 .45rem}.signal-item p{margin:.35rem 0;color:var(--muted)}.item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.tag{border:1px solid var(--line);border-radius:999px;padding:.28rem .55rem;color:#dff7ff;background:rgba(255,255,255,.04);font-size:.75rem;white-space:nowrap}.archive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sidebar .card{border:1px solid var(--line);background:rgba(6,14,27,.82);box-shadow:0 16px 45px rgba(0,0,0,.28)}.sidebar .card strong{color:#fff}.notice{border-left:3px solid var(--gold);padding:14px 16px;background:rgba(255,209,102,.08);border-radius:16px;color:#fff}.empty{display:none;color:var(--muted);border:1px dashed var(--line);border-radius:18px;padding:18px;text-align:center}@media(max-width:860px){.hero-grid,.layout{grid-template-columns:1fr}.hub-tools,.archive-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-.045em}.item-top{display:block}.tag{display:inline-flex;margin-top:8px}}
+  </style>
 </head>
 <body>
   <header class="nav">
@@ -25,24 +31,41 @@
       <a class="back" href="../index.html">Back to Feed</a>
     </div>
   </header>
-
   <main>
     <section class="wrap hero">
       <div class="issue">
         <span>Internal Signals</span>
-        <span>Updated June 16, 2026</span>
+        <span>Updated June 21, 2026</span>
       </div>
       <div class="kicker">Shareholders · Employees · Operators</div>
       <h1>Internal Signals</h1>
-      <p class="deck">The canonical home for AeroVista daily operating notes, weekly stakeholder updates, ByteCast editions, and dated internal archives. Formerly internal news.</p>
+      <p class="deck">The canonical home for AeroVista daily operating notes, weekly stakeholder updates, ByteCast editions, and dated internal archives. This hub keeps the current signal obvious and the archive clean.</p>
       <div class="coverline">
-        <span>Daily</span>
-        <span>Weekly</span>
-        <span>ByteCast</span>
-        <span>Archive</span>
+        <span>Daily EOD</span><span>Weekly EOW</span><span>ByteCast</span><span>Milestones</span><span>Archive</span>
+      </div>
+      <div class="hero-grid">
+        <article class="latest-card">
+          <div class="label-row"><span class="status"><span class="pulse"></span> Current EOW</span><span class="chip">Week ending June 21</span><span class="chip">Shareholder + Employee</span></div>
+          <h2>A Better Machine</h2>
+          <p class="deck">Last week explained the map. This week worked the machine: EchoVerse became more operational, Art Localized gained a sharper creator offer, the control layer got more honest, Horizon moved toward production planning, and creative work moved closer to packaging.</p>
+          <div class="action-row">
+            <a class="btn" href="eow-2026-06-21-stakeholder-update.html">Open EOW summary</a>
+            <a class="btn-secondary" href="../newsletters/aerovista_signal_weekly_2026-06-21.html">Open full ByteCast</a>
+            <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-21.html">Copy public link</button>
+          </div>
+        </article>
+        <aside class="status-card">
+          <h3>Current pulse</h3>
+          <div class="mini-metrics">
+            <div class="mini-metric"><strong>5</strong><span>major weekly moves</span></div>
+            <div class="mini-metric"><strong>1</strong><span>cleaner launch offer</span></div>
+            <div class="mini-metric"><strong>1</strong><span>ByteCast page</span></div>
+            <div class="mini-metric"><strong>Next</strong><span>compression + proof</span></div>
+          </div>
+          <p class="notice">Publishing rule: measured claims only. Use observed work, shipped links, review status, and next actions.</p>
+        </aside>
       </div>
     </section>
-
     <section class="wrap layout">
       <article class="article">
         <div class="article-head">
@@ -50,51 +73,87 @@
           <h2>All daily and weekly internal reports</h2>
         </div>
         <div class="article-body">
-          <section class="block">
-            <h3>How this hub works</h3>
-            <p>This URL stays stable. Current daily and weekly routes update in place; dated editions remain listed here so shareholders, employees, and operators always have one predictable place for internal operating truth.</p>
+          <div class="hub-tools">
+            <input id="signalSearch" class="search" type="search" placeholder="Filter signals by title, date, tag, or lane…" aria-label="Filter internal signals" />
+            <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/dispatches/internal-signals.html">Copy hub link</button>
+          </div>
+          <section class="block" id="current">
+            <h3>Current operating links</h3>
+            <div class="signal-list">
+              <article class="signal-item" data-tags="current eod daily operating note">
+                <div class="item-top"><h3>Current EOD operating note</h3><span class="tag">Daily</span></div>
+                <p>Daily operating truth: what moved, what needs attention, what changed, and what happens next.</p>
+                <p><a class="btn-secondary" href="eod-current-operating-note.html">Open current EOD</a></p>
+              </article>
+              <article class="signal-item" data-tags="current eow june 21 stakeholder update better machine">
+                <div class="item-top"><h3>Current EOW stakeholder update</h3><span class="tag">Weekly</span></div>
+                <p>Week ending June 21, 2026 — A Better Machine. Short stakeholder summary for shareholders, employees, and operators.</p>
+                <p><a class="btn-secondary" href="eow-current-stakeholder-update.html">Open current EOW</a> <a class="btn-secondary" href="eow-2026-06-21-stakeholder-update.html">Open dated copy</a></p>
+              </article>
+            </div>
           </section>
-
-          <section class="block" id="daily-internal">
-            <h3>Daily internal — EOD</h3>
-            <p>The end-of-day operating note captures what moved today, what needs attention, what changed in public-facing surfaces, and what should happen next.</p>
-            <p><a class="btn" href="eod-current-operating-note.html">Open current EOD note</a></p>
-          </section>
-
           <section class="block" id="weekly-internal">
-            <h3>Weekly internal — EOW</h3>
-            <p>The end-of-week stakeholder note turns daily motion into progress, proof, risks, priorities, and shareholder context. Current edition: week ending Friday, June 15, 2026.</p>
-            <p><a class="btn" href="eow-current-stakeholder-update.html">Open current EOW summary</a></p>
-            <p><a class="btn" href="../newsletters/aerovista_signal_weekly_2026-06-15.html">June 15, 2026 — Weekly Signal (full ByteCast edition)</a></p>
+            <h3>Weekly Signal editions</h3>
+            <div class="signal-list">
+              <article class="signal-item" data-tags="june 21 2026 weekly bytecast better machine eow">
+                <div class="item-top"><h3>June 21, 2026 — Weekly Signal: A Better Machine</h3><span class="tag">Latest</span></div>
+                <p>Full ByteCast edition with audio, hero art, transcript, summary, business meaning, and next priorities.</p>
+                <p><a class="btn" href="../newsletters/aerovista_signal_weekly_2026-06-21.html">Open June 21 ByteCast</a></p>
+              </article>
+              <article class="signal-item" data-tags="june 15 2026 weekly bytecast systems becoming products">
+                <div class="item-top"><h3>June 15, 2026 — Weekly Signal</h3><span class="tag">Archive</span></div>
+                <p>Previous weekly stakeholder ByteCast edition.</p>
+                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_weekly_2026-06-15.html">Open June 15 ByteCast</a></p>
+              </article>
+            </div>
           </section>
-
           <section class="block" id="platform-bytecast">
             <h3>Platform ByteCast editions</h3>
-            <p>Focused internal Signal pages for major platform milestones — audio briefing, infographic, operator reference, and transcript.</p>
-            <p><a class="btn" href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">June 16, 2026 — EchoVerse Audio Intelligence ByteCast</a></p>
+            <div class="signal-list">
+              <article class="signal-item" data-tags="echoverse audio intelligence bytecast june 16 platform milestone">
+                <div class="item-top"><h3>June 16, 2026 — EchoVerse Audio Intelligence</h3><span class="tag">Milestone</span></div>
+                <p>Focused internal Signal page for the EchoVerse platform milestone: audio briefing, infographic, operator reference, and transcript.</p>
+                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">Open EchoVerse ByteCast</a></p>
+              </article>
+            </div>
           </section>
-
-          <section class="block">
-            <h3>Weekly archive</h3>
-            <p>Dated weekly Signal packages preserved after the current edition rolls forward.</p>
-            <p><a class="btn" href="../newsletters/the-signal-newsletter-2026-05-29.html">May 29, 2026 — Newsletter archive</a></p>
-          </section>
-
           <section class="block" id="archive">
             <h3>EOW archive</h3>
-            <p>Dated end-of-week dispatch reports and public summaries.</p>
-            <p><a class="btn" href="eow-2026-05-29-shareholder-report.html">May 29, 2026 — Long-form shareholder report</a></p>
-            <p><a class="btn" href="eow-2026-05-29-public-signal.html">May 29, 2026 — Public Signal summary</a></p>
-            <p><a class="btn" href="eow-shareholder-update.html">May 23, 2026 — EOW shareholder update</a></p>
+            <div class="archive-grid signal-list">
+              <article class="signal-item" data-tags="eow june 21 2026 stakeholder report better machine">
+                <div class="item-top"><h3>June 21, 2026 — EOW stakeholder update</h3><span class="tag">EOW</span></div>
+                <p>EchoVerse pipeline, creator booth offer, control-layer truth, field production, and packaging discipline.</p>
+                <p><a class="btn-secondary" href="eow-2026-06-21-stakeholder-update.html">Open report</a></p>
+              </article>
+              <article class="signal-item" data-tags="may 29 2026 newsletter archive">
+                <div class="item-top"><h3>May 29, 2026 — Newsletter archive</h3><span class="tag">Archive</span></div>
+                <p>Earlier newsletter package preserved in the dated archive.</p>
+                <p><a class="btn-secondary" href="../newsletters/the-signal-newsletter-2026-05-29.html">Open archive</a></p>
+              </article>
+              <article class="signal-item" data-tags="may 29 2026 long form shareholder report">
+                <div class="item-top"><h3>May 29, 2026 — Long-form shareholder report</h3><span class="tag">Archive</span></div>
+                <p>Dated shareholder report from the EOW archive.</p>
+                <p><a class="btn-secondary" href="eow-2026-05-29-shareholder-report.html">Open report</a></p>
+              </article>
+              <article class="signal-item" data-tags="may 29 2026 public signal summary">
+                <div class="item-top"><h3>May 29, 2026 — Public Signal summary</h3><span class="tag">Archive</span></div>
+                <p>Public-facing summary preserved after the weekly roll-forward.</p>
+                <p><a class="btn-secondary" href="eow-2026-05-29-public-signal.html">Open summary</a></p>
+              </article>
+              <article class="signal-item" data-tags="may 23 2026 eow shareholder update">
+                <div class="item-top"><h3>May 23, 2026 — EOW shareholder update</h3><span class="tag">Archive</span></div>
+                <p>Earlier stakeholder update from the EOW archive.</p>
+                <p><a class="btn-secondary" href="eow-shareholder-update.html">Open update</a></p>
+              </article>
+            </div>
+            <div id="emptyState" class="empty">No matching signals. Try a broader search.</div>
           </section>
-
           <section class="block">
             <h3>Publishing rule</h3>
             <p>Keep claims measured. Use observed work, shipped links, review status, and next actions. Avoid implying revenue, adoption, partner commitments, or delivery guarantees unless they are verified.</p>
           </section>
         </div>
       </article>
-
       <aside class="sidebar">
         <div class="card">
           <h3>Audience</h3>
@@ -107,7 +166,7 @@
         </div>
         <div class="card">
           <h3>Quick links</h3>
-          <p><a href="eod-current-operating-note.html">Current EOD</a><br /><a href="eow-current-stakeholder-update.html">Current EOW</a><br /><a href="../newsletters/aerovista_signal_weekly_2026-06-15.html">Current weekly</a><br /><a href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">EchoVerse ByteCast</a></p>
+          <p><a href="eod-current-operating-note.html">Current EOD</a><br /><a href="eow-current-stakeholder-update.html">Current EOW</a><br /><a href="../newsletters/aerovista_signal_weekly_2026-06-21.html">Latest weekly ByteCast</a><br /><a href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">EchoVerse ByteCast</a></p>
         </div>
         <div class="card">
           <h3>Formerly</h3>
@@ -116,10 +175,34 @@
       </aside>
     </section>
   </main>
-
   <footer>
     <div class="wrap">© 2026 AeroVista LLC · The SIGNAL · An AeroVista Publication</div>
   </footer>
+  <script>
+    (function(){
+      const input=document.getElementById('signalSearch');
+      const items=[...document.querySelectorAll('.signal-item')];
+      const empty=document.getElementById('emptyState');
+      function filter(){
+        const q=(input.value||'').trim().toLowerCase();
+        let shown=0;
+        items.forEach(item=>{
+          const text=(item.textContent+' '+(item.dataset.tags||'')).toLowerCase();
+          const ok=!q||text.includes(q);
+          item.style.display=ok?'block':'none';
+          if(ok) shown++;
+        });
+        if(empty) empty.style.display=shown?'none':'block';
+      }
+      if(input) input.addEventListener('input',filter);
+      document.querySelectorAll('[data-copy]').forEach(btn=>{
+        btn.addEventListener('click',async()=>{
+          const text=btn.getAttribute('data-copy');
+          try{await navigator.clipboard.writeText(text); const old=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=old,1200);}catch(e){window.prompt('Copy link:',text);}
+        });
+      });
+    })();
+  </script>
   <script src="../js/site-config.js"></script>
   <script src="../js/site-analytics.js" defer></script>
 </body>
