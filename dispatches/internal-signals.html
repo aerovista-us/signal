@@ -18,10 +18,458 @@
   <meta name="twitter:title" content="Internal Signals — The SIGNAL" />
   <meta name="twitter:image" content="https://thesignal.aerovista.us/signal.png" />
   <style>
-    :root{--signal-bg:#04070d;--panel:rgba(11,22,38,.78);--panel2:rgba(6,14,27,.92);--line:rgba(135,206,235,.22);--line2:rgba(0,174,239,.42);--text:#ecf8ff;--muted:#9fb7c8;--blue:#00aeef;--sky:#87ceeb;--gold:#ffd166;--green:#6ee7b7;--red:#ff7a90;--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.45)}
-    body{background:radial-gradient(circle at 12% 4%,rgba(0,174,239,.22),transparent 26rem),radial-gradient(circle at 88% 0%,rgba(135,206,235,.12),transparent 30rem),linear-gradient(145deg,#03060c 0%,#071321 48%,#03060c 100%);color:var(--text)}
-    .nav{backdrop-filter:blur(16px);background:rgba(4,7,13,.72);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.brand{letter-spacing:.08em}.back{border:1px solid var(--line);border-radius:999px;padding:.65rem .9rem;text-decoration:none;color:var(--text);background:rgba(255,255,255,.04)}
-    .hero{padding-top:54px}.issue{border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:var(--shadow)}.hero h1{font-size:clamp(3rem,8vw,6.6rem);letter-spacing:-.07em;line-height:.86;margin-bottom:1.1rem}.deck{max-width:880px}.coverline{gap:.55rem;flex-wrap:wrap}.coverline span,.chip{border:1px solid var(--line);background:rgba(0,174,239,.08);border-radius:999px;padding:.45rem .72rem;color:#dff7ff;font-size:.84rem}.hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:22px;margin-top:28px;align-items:stretch}.latest-card,.status-card,.quick-card,.tool-card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(155deg,rgba(13,27,48,.88),rgba(5,12,24,.88));box-shadow:var(--shadow);padding:22px}.latest-card{position:relative;overflow:hidden}.latest-card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 20% 0%,rgba(0,174,239,.25),transparent 28rem);pointer-events:none}.latest-card>*{position:relative}.label-row{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin-bottom:12px}.status{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(110,231,183,.34);background:rgba(110,231,183,.1);color:#d7fff0;border-radius:999px;padding:.35rem .6rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}.pulse{width:.5rem;height:.5rem;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}.latest-card h2{font-size:clamp(2rem,4vw,3.4rem);line-height:.95;margin:.1rem 0 .8rem;letter-spacing:-.045em}.meta-line{color:var(--muted);font-size:.95rem}.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn,.btn-secondary{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;border-radius:999px;padding:.82rem 1rem;border:1px solid var(--line2);font-weight:700}.btn{background:linear-gradient(135deg,var(--blue),#72dcff);color:#04101b}.btn-secondary{background:rgba(255,255,255,.05);color:var(--text)}.mini-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.mini-metric{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);padding:13px}.mini-metric strong{display:block;font-size:1.2rem}.mini-metric span{color:var(--muted);font-size:.82rem}.hub-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 20px}.search{width:100%;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);color:var(--text);padding:.92rem 1rem}.search::placeholder{color:rgba(236,248,255,.56)}.copy-btn{cursor:pointer}.signal-list{display:grid;gap:14px}.signal-item{border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.04);padding:18px;transition:transform .18s ease,border-color .18s ease,background .18s ease}.signal-item:hover{transform:translateY(-2px);border-color:var(--line2);background:rgba(0,174,239,.07)}.signal-item h3{margin:.15rem 0 .45rem}.signal-item p{margin:.35rem 0;color:var(--muted)}.item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.tag{border:1px solid var(--line);border-radius:999px;padding:.28rem .55rem;color:#dff7ff;background:rgba(255,255,255,.04);font-size:.75rem;white-space:nowrap}.archive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sidebar .card{border:1px solid var(--line);background:rgba(6,14,27,.82);box-shadow:0 16px 45px rgba(0,0,0,.28)}.sidebar .card strong{color:#fff}.notice{border-left:3px solid var(--gold);padding:14px 16px;background:rgba(255,209,102,.08);border-radius:16px;color:#fff}.empty{display:none;color:var(--muted);border:1px dashed var(--line);border-radius:18px;padding:18px;text-align:center}@media(max-width:860px){.hero-grid,.layout{grid-template-columns:1fr}.hub-tools,.archive-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-.045em}.item-top{display:block}.tag{display:inline-flex;margin-top:8px}}
+    :root {
+      --hub-line: rgba(135, 206, 235, 0.22);
+      --hub-line2: rgba(0, 174, 239, 0.42);
+      --hub-muted: #9fb7c8;
+      --hub-blue: #00aeef;
+      --hub-sky: #87ceeb;
+      --hub-green: #6ee7b7;
+      --hub-gold: #ffd166;
+      --hub-radius: 18px;
+      --hub-shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+      --nav-h: 72px;
+      --subnav-h: 56px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 4%, rgba(0, 174, 239, 0.18), transparent 26rem),
+        radial-gradient(circle at 88% 0%, rgba(135, 206, 235, 0.10), transparent 30rem),
+        linear-gradient(145deg, #03060c 0%, #071321 48%, #03060c 100%);
+    }
+
+    .hub-wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+
+    /* ── Hero (compact) ── */
+    .hub-hero {
+      padding: 40px 0 28px;
+    }
+    .hub-hero-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .hub-hero h1 {
+      margin: 8px 0 0;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+    }
+    .hub-hero .deck {
+      max-width: 560px;
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+    .hub-meta {
+      color: var(--hub-muted);
+      font-size: 0.82rem;
+      text-align: right;
+    }
+    .hub-meta strong { display: block; color: #fff; font-size: 0.92rem; }
+
+    .featured {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.6fr);
+      gap: 16px;
+      border: 1px solid var(--hub-line2);
+      border-radius: 22px;
+      background: linear-gradient(155deg, rgba(13, 27, 48, 0.92), rgba(5, 12, 24, 0.9));
+      box-shadow: var(--hub-shadow);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at 12% 0%, rgba(0, 174, 239, 0.2), transparent 22rem);
+      pointer-events: none;
+    }
+    .featured > * { position: relative; }
+    .featured-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d7fff0;
+      border: 1px solid rgba(110, 231, 183, 0.34);
+      background: rgba(110, 231, 183, 0.1);
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+    .featured-label .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--hub-green);
+      box-shadow: 0 0 12px var(--hub-green);
+    }
+    .featured h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .featured p {
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+    .featured-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .featured-side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+    }
+    .pulse-stat {
+      border: 1px solid var(--hub-line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 12px 14px;
+    }
+    .pulse-stat strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+    .pulse-stat span {
+      color: var(--hub-muted);
+      font-size: 0.78rem;
+    }
+
+    /* ── Sticky subnav ── */
+    .hub-subnav {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 9;
+      background: rgba(4, 7, 13, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--hub-line);
+      margin-bottom: 20px;
+    }
+    .subnav-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .subnav-inner::-webkit-scrollbar { display: none; }
+    .subnav-link {
+      flex-shrink: 0;
+      border: 1px solid var(--hub-line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--hub-muted);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .subnav-link:hover,
+    .subnav-link.active {
+      color: #fff;
+      border-color: var(--hub-line2);
+      background: rgba(0, 174, 239, 0.12);
+    }
+
+    /* ── Toolbar ── */
+    .hub-toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+    .hub-search {
+      width: 100%;
+      border: 1px solid var(--hub-line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ecf8ff;
+      padding: 11px 16px;
+      font-size: 0.92rem;
+    }
+    .hub-search::placeholder { color: rgba(236, 248, 255, 0.45); }
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .filter-chip {
+      border: 1px solid var(--hub-line);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--hub-muted);
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .filter-chip:hover,
+    .filter-chip.active {
+      color: #fff;
+      border-color: var(--hub-line2);
+      background: rgba(0, 174, 239, 0.1);
+    }
+    .filter-chip .count {
+      opacity: 0.65;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    /* ── Section blocks ── */
+    .hub-section {
+      margin-bottom: 36px;
+      scroll-margin-top: calc(var(--nav-h) + var(--subnav-h) + 12px);
+    }
+    .section-label {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--hub-line);
+    }
+    .section-label h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.82rem;
+      color: var(--hub-sky);
+    }
+    .section-label span {
+      color: var(--hub-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ── Now cards (3-up) ── */
+    .now-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .now-card {
+      border: 1px solid var(--hub-line);
+      border-radius: var(--hub-radius);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .now-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--hub-line2);
+      background: rgba(0, 174, 239, 0.07);
+    }
+    .now-card .type {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--hub-sky);
+    }
+    .now-card strong {
+      font-size: 0.98rem;
+      line-height: 1.35;
+      color: #fff;
+    }
+    .now-card span {
+      font-size: 0.82rem;
+      color: var(--hub-muted);
+      line-height: 1.45;
+      flex: 1;
+    }
+    .now-card .arrow {
+      font-size: 0.78rem;
+      color: var(--hub-blue);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    /* ── Catalog rows ── */
+    .catalog {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      border: 1px solid var(--hub-line);
+      border-radius: var(--hub-radius);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .catalog-row {
+      display: grid;
+      grid-template-columns: 108px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.12s;
+    }
+    .catalog-row:last-child { border-bottom: none; }
+    .catalog-row:hover { background: rgba(0, 174, 239, 0.07); }
+    .catalog-row.hidden { display: none; }
+    .row-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--hub-muted);
+      line-height: 1.35;
+    }
+    .row-date em {
+      display: block;
+      font-style: normal;
+      color: var(--hub-sky);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+    .row-body strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    .row-body span {
+      font-size: 0.82rem;
+      color: var(--hub-muted);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .row-action {
+      flex-shrink: 0;
+      border: 1px solid var(--hub-line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--hub-sky);
+      background: rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+    }
+    .catalog-row:hover .row-action {
+      border-color: var(--hub-line2);
+      background: rgba(0, 174, 239, 0.12);
+      color: #fff;
+    }
+
+    /* ── Type badges ── */
+    .type-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 6px;
+      padding: 2px 6px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .type-badge.bytecast { color: #dff7ff; background: rgba(0, 174, 239, 0.18); }
+    .type-badge.eow { color: #ffe3a1; background: rgba(255, 209, 102, 0.12); }
+    .type-badge.eod { color: #d7fff0; background: rgba(110, 231, 183, 0.12); }
+    .type-badge.milestone { color: #e9d5ff; background: rgba(183, 148, 246, 0.14); }
+    .type-badge.archive { color: var(--hub-muted); background: rgba(255, 255, 255, 0.06); }
+
+    /* ── Footer note + buttons ── */
+    .hub-note {
+      border-left: 3px solid var(--hub-gold);
+      padding: 14px 16px;
+      background: rgba(255, 209, 102, 0.07);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-top: 28px;
+    }
+    .hub-note strong { color: var(--hub-gold); }
+    .btn, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid var(--hub-line2);
+      font-weight: 700;
+      font-size: 0.86rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn {
+      background: linear-gradient(135deg, var(--hub-blue), #72dcff);
+      color: #04101b;
+      border-color: transparent;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ecf8ff;
+    }
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      color: var(--hub-muted);
+      border: 1px dashed var(--hub-line);
+      border-radius: var(--hub-radius);
+      margin-top: 12px;
+    }
+    .empty-state.visible { display: block; }
+
+    .hub-footer-note {
+      padding: 28px 0 48px;
+      color: var(--hub-muted);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .featured { grid-template-columns: 1fr; }
+      .now-grid { grid-template-columns: 1fr; }
+      .catalog-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .row-action { justify-self: start; }
+      .hub-toolbar { grid-template-columns: 1fr; }
+      .hub-meta { text-align: left; }
+    }
   </style>
 </head>
 <body>
@@ -31,196 +479,345 @@
       <a class="back" href="../index.html">Back to Feed</a>
     </div>
   </header>
+
   <main>
-    <section class="wrap hero">
-      <div class="issue">
-        <span>Internal Signals</span>
-        <span>Updated July 5, 2026</span>
-      </div>
-      <div class="kicker">Shareholders · Employees · Operators</div>
-      <h1>Internal Signals</h1>
-      <p class="deck">The canonical home for AeroVista daily operating notes, weekly stakeholder updates, ByteCast editions, and dated internal archives. This hub keeps the current signal obvious and the archive clean.</p>
-      <div class="coverline">
-        <span>Daily EOD</span><span>Weekly EOW</span><span>ByteCast</span><span>Milestones</span><span>Archive</span>
-      </div>
-      <div class="hero-grid">
-        <article class="latest-card">
-          <div class="label-row"><span class="status"><span class="pulse"></span> Current Signal</span><span class="chip">EOD July 5</span><span class="chip">Shareholder + Employee</span></div>
-          <h2>Overall Company Status</h2>
-          <p class="deck">AeroVista has shape now. Ecosystem operating base, AVCC as company brain, Context Authority A+B+C built and gated on secrets rotation — moving from creative momentum into operating maturity.</p>
-          <div class="action-row">
-            <a class="btn" href="../newsletters/aerovista_bytecast_status_player.html">Open full ByteCast</a>
-            <a class="btn-secondary" href="eow-2026-06-28-weekend-report.html">Previous EOW summary</a>
-            <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html">Copy public link</button>
-          </div>
-        </article>
-        <aside class="status-card">
-          <h3>Current pulse</h3>
-          <div class="mini-metrics">
-            <div class="mini-metric"><strong>A+B+C</strong><span>built · tested · pushed</span></div>
-            <div class="mini-metric"><strong>1/6</strong><span>secrets rotation families</span></div>
-            <div class="mini-metric"><strong>1</strong><span>status ByteCast page</span></div>
-            <div class="mini-metric"><strong>Next</strong><span>deploy &amp; federate</span></div>
-          </div>
-          <p class="notice">Publishing rule: measured claims only. Use observed work, shipped links, review status, and next actions.</p>
-        </aside>
-      </div>
-    </section>
-    <section class="wrap layout">
-      <article class="article">
-        <div class="article-head">
-          <div class="kicker">Canonical Internal Hub</div>
-          <h2>All daily and weekly internal reports</h2>
+    <div class="hub-wrap hub-hero">
+      <div class="hub-hero-top">
+        <div>
+          <div class="kicker">Shareholders · Employees · Operators</div>
+          <h1>Internal Signals</h1>
         </div>
-        <div class="article-body">
-          <div class="hub-tools">
-            <input id="signalSearch" class="search" type="search" placeholder="Filter signals by title, date, tag, or lane…" aria-label="Filter internal signals" />
-            <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/dispatches/internal-signals.html">Copy hub link</button>
+        <div class="hub-meta">
+          <strong>Updated July 5, 2026</strong>
+          11 editions indexed
+        </div>
+      </div>
+
+      <article class="featured">
+        <div>
+          <div class="featured-label"><span class="dot"></span> Latest ByteCast</div>
+          <h2>Overall Company Status</h2>
+          <p>AeroVista has shape now — ecosystem operating base, AVCC as company brain, Context Authority A+B+C built and gated on secrets rotation.</p>
+          <div class="featured-actions">
+            <a class="btn" href="../newsletters/aerovista_bytecast_status_player.html">Open ByteCast</a>
+            <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html">Copy link</button>
           </div>
-          <section class="block" id="current">
-            <h3>Current operating links</h3>
-            <div class="signal-list">
-              <article class="signal-item" data-tags="current july 5 2026 eod bytecast overall company status avcc operating maturity">
-                <div class="item-top"><h3>July 5, 2026 — Overall Company Status ByteCast</h3><span class="tag">Latest</span></div>
-                <p>Full ByteCast with preloaded audio, AVCC roadmap infographic, division signals, deploy gate, five-layer architecture, and complete transcript.</p>
-                <p><a class="btn" href="../newsletters/aerovista_bytecast_status_player.html">Open July 5 status ByteCast</a></p>
-              </article>
-              <article class="signal-item" data-tags="current eod daily operating note">
-                <div class="item-top"><h3>Current EOD operating note</h3><span class="tag">Daily</span></div>
-                <p>Daily operating truth: what moved, what needs attention, what changed, and what happens next.</p>
-                <p><a class="btn-secondary" href="eod-current-operating-note.html">Open current EOD</a></p>
-              </article>
-              <article class="signal-item" data-tags="current eow june 28 weekend report resilience recovery">
-                <div class="item-top"><h3>Current EOW stakeholder update</h3><span class="tag">Weekly</span></div>
-                <p>Weekend June 28, 2026 — Resilience Weekend. Short stakeholder summary for shareholders, employees, and operators.</p>
-                <p><a class="btn-secondary" href="eow-current-stakeholder-update.html">Open current EOW</a> <a class="btn-secondary" href="eow-2026-06-28-weekend-report.html">Open dated copy</a></p>
-              </article>
-            </div>
-          </section>
-          <section class="block" id="weekly-internal">
-            <h3>Weekly Signal editions</h3>
-            <div class="signal-list">
-              <article class="signal-item" data-tags="june 28 2026 weekend report resilience recovery eow bytecast">
-                <div class="item-top"><h3>June 28, 2026 — Weekend Report: Resilience Weekend</h3><span class="tag">Latest</span></div>
-                <p>Weekend-to-date ByteCast with audio, timeline, transcript, and recovery doctrine for AVCC, Core Registry, and Art Localized API.</p>
-                <p><a class="btn" href="../newsletters/aerovista_weekend_report_6.28.26.html">Open June 28 weekend report</a></p>
-              </article>
-              <article class="signal-item" data-tags="june 21 2026 weekly bytecast better machine eow">
-                <div class="item-top"><h3>June 21, 2026 — Weekly Signal: A Better Machine</h3><span class="tag">Archive</span></div>
-                <p>Full ByteCast edition with audio, hero art, transcript, summary, business meaning, and next priorities.</p>
-                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_weekly_2026-06-21.html">Open June 21 ByteCast</a></p>
-              </article>
-              <article class="signal-item" data-tags="june 15 2026 weekly bytecast systems becoming products">
-                <div class="item-top"><h3>June 15, 2026 — Weekly Signal</h3><span class="tag">Archive</span></div>
-                <p>Previous weekly stakeholder ByteCast edition.</p>
-                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_weekly_2026-06-15.html">Open June 15 ByteCast</a></p>
-              </article>
-            </div>
-          </section>
-          <section class="block" id="platform-bytecast">
-            <h3>Platform ByteCast editions</h3>
-            <div class="signal-list">
-              <article class="signal-item" data-tags="july 5 2026 overall company status bytecast avcc roadmap operating maturity eod">
-                <div class="item-top"><h3>July 5, 2026 — Overall Company Status Signal</h3><span class="tag">Status</span></div>
-                <p>Company-wide status ByteCast: ecosystem shape, AVCC neural OS roadmap, deploy gate, division lanes, and leadership sequencing.</p>
-                <p><a class="btn-secondary" href="../newsletters/aerovista_bytecast_status_player.html">Open status ByteCast</a></p>
-              </article>
-              <article class="signal-item" data-tags="echoverse audio intelligence bytecast june 16 platform milestone">
-                <div class="item-top"><h3>June 16, 2026 — EchoVerse Audio Intelligence</h3><span class="tag">Milestone</span></div>
-                <p>Focused internal Signal page for the EchoVerse platform milestone: audio briefing, infographic, operator reference, and transcript.</p>
-                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">Open EchoVerse ByteCast</a></p>
-              </article>
-            </div>
-          </section>
-          <section class="block" id="archive">
-            <h3>EOW archive</h3>
-            <div class="archive-grid signal-list">
-              <article class="signal-item" data-tags="eow june 28 2026 weekend report resilience recovery">
-                <div class="item-top"><h3>June 28, 2026 — EOW weekend report</h3><span class="tag">EOW</span></div>
-                <p>AVCC recovery, Core Registry stabilization, Art Localized API preservation, and deployment doctrine.</p>
-                <p><a class="btn-secondary" href="eow-2026-06-28-weekend-report.html">Open report</a></p>
-              </article>
-              <article class="signal-item" data-tags="eow june 21 2026 stakeholder report better machine">
-                <div class="item-top"><h3>June 21, 2026 — Weekly stakeholder update</h3><span class="tag">Archive</span></div>
-                <p>EchoVerse pipeline, creator booth offer, control-layer truth, field production, and packaging discipline.</p>
-                <p><a class="btn-secondary" href="../newsletters/aerovista_signal_weekly_2026-06-21.html">Open weekly ByteCast</a></p>
-              </article>
-              <article class="signal-item" data-tags="may 29 2026 newsletter archive">
-                <div class="item-top"><h3>May 29, 2026 — Newsletter archive</h3><span class="tag">Archive</span></div>
-                <p>Earlier newsletter package preserved in the dated archive.</p>
-                <p><a class="btn-secondary" href="../newsletters/the-signal-newsletter-2026-05-29.html">Open archive</a></p>
-              </article>
-              <article class="signal-item" data-tags="may 29 2026 long form shareholder report">
-                <div class="item-top"><h3>May 29, 2026 — Long-form shareholder report</h3><span class="tag">Archive</span></div>
-                <p>Dated shareholder report from the EOW archive.</p>
-                <p><a class="btn-secondary" href="eow-2026-05-29-shareholder-report.html">Open report</a></p>
-              </article>
-              <article class="signal-item" data-tags="may 29 2026 public signal summary">
-                <div class="item-top"><h3>May 29, 2026 — Public Signal summary</h3><span class="tag">Archive</span></div>
-                <p>Public-facing summary preserved after the weekly roll-forward.</p>
-                <p><a class="btn-secondary" href="eow-2026-05-29-public-signal.html">Open summary</a></p>
-              </article>
-              <article class="signal-item" data-tags="may 23 2026 eow shareholder update">
-                <div class="item-top"><h3>May 23, 2026 — EOW shareholder update</h3><span class="tag">Archive</span></div>
-                <p>Earlier stakeholder update from the EOW archive.</p>
-                <p><a class="btn-secondary" href="eow-shareholder-update.html">Open update</a></p>
-              </article>
-            </div>
-            <div id="emptyState" class="empty">No matching signals. Try a broader search.</div>
-          </section>
-          <section class="block">
-            <h3>Publishing rule</h3>
-            <p>Keep claims measured. Use observed work, shipped links, review status, and next actions. Avoid implying revenue, adoption, partner commitments, or delivery guarantees unless they are verified.</p>
-          </section>
+        </div>
+        <div class="featured-side">
+          <div class="pulse-stat"><strong>A+B+C</strong><span>Built · tested · pushed</span></div>
+          <div class="pulse-stat"><strong>1 / 6</strong><span>Secrets rotation families</span></div>
+          <div class="pulse-stat"><strong>Next</strong><span>Deploy &amp; federate</span></div>
         </div>
       </article>
-      <aside class="sidebar">
-        <div class="card">
-          <h3>Audience</h3>
-          <p>Shareholders, employees, strategic partners, and internal leadership.</p>
-          <span class="signal-chip"><span class="dot"></span>Internal</span>
+    </div>
+
+    <nav class="hub-subnav" aria-label="Section navigation">
+      <div class="hub-wrap subnav-inner">
+        <a class="subnav-link active" href="#now">Right Now</a>
+        <a class="subnav-link" href="#bytecast">ByteCast</a>
+        <a class="subnav-link" href="#weekly">Weekly &amp; EOW</a>
+        <a class="subnav-link" href="#archive">Archive</a>
+        <a class="subnav-link" href="#about">About</a>
+      </div>
+    </nav>
+
+    <div class="hub-wrap">
+      <div class="hub-toolbar">
+        <input id="signalSearch" class="hub-search" type="search" placeholder="Search by title, date, or topic…" aria-label="Search internal signals" />
+        <button class="btn-secondary copy-btn" type="button" data-copy="https://thesignal.aerovista.us/dispatches/internal-signals.html">Copy hub link</button>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filter by type">
+        <button class="filter-chip active" type="button" data-filter="all">All<span class="count">11</span></button>
+        <button class="filter-chip" type="button" data-filter="bytecast">ByteCast<span class="count">5</span></button>
+        <button class="filter-chip" type="button" data-filter="eow">EOW<span class="count">5</span></button>
+        <button class="filter-chip" type="button" data-filter="eod">EOD<span class="count">1</span></button>
+        <button class="filter-chip" type="button" data-filter="milestone">Milestone<span class="count">1</span></button>
+        <button class="filter-chip" type="button" data-filter="archive">Archive<span class="count">3</span></button>
+      </div>
+
+      <!-- RIGHT NOW -->
+      <section class="hub-section" id="now">
+        <div class="section-label">
+          <h2>Right Now</h2>
+          <span>3 current entry points</span>
         </div>
-        <div class="card">
-          <h3>Update cadence</h3>
-          <p><strong>EOD</strong> — daily operating truth.<br /><strong>EOW</strong> — weekly stakeholder context.<br /><strong>ByteCast</strong> — audio + visual internal editions.</p>
+        <div class="now-grid">
+          <a class="now-card" href="../newsletters/aerovista_bytecast_status_player.html" data-types="bytecast milestone">
+            <span class="type">Latest ByteCast</span>
+            <strong>July 5 — Overall Company Status</strong>
+            <span>Audio, AVCC roadmap, division signals, deploy gate, transcript.</span>
+            <span class="arrow">Open edition →</span>
+          </a>
+          <a class="now-card" href="eod-current-operating-note.html" data-types="eod">
+            <span class="type">Daily EOD</span>
+            <strong>Current operating note</strong>
+            <span>What moved today, what needs review, what happens next.</span>
+            <span class="arrow">Open EOD →</span>
+          </a>
+          <a class="now-card" href="eow-current-stakeholder-update.html" data-types="eow">
+            <span class="type">Weekly EOW</span>
+            <strong>June 28 — Resilience Weekend</strong>
+            <span>Stakeholder summary: AVCC recovery, registry stabilization, deployment doctrine.</span>
+            <span class="arrow">Open EOW →</span>
+          </a>
         </div>
-        <div class="card">
-          <h3>Quick links</h3>
-          <p><a href="../newsletters/aerovista_bytecast_status_player.html">Latest status ByteCast</a><br /><a href="eod-current-operating-note.html">Current EOD</a><br /><a href="eow-current-stakeholder-update.html">Current EOW</a><br /><a href="../newsletters/aerovista_weekend_report_6.28.26.html">June 28 weekend report</a><br /><a href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html">EchoVerse ByteCast</a></p>
+      </section>
+
+      <!-- BYTECAST -->
+      <section class="hub-section" id="bytecast">
+        <div class="section-label">
+          <h2>ByteCast Library</h2>
+          <span>Audio + visual internal editions</span>
         </div>
-        <div class="card">
-          <h3>Formerly</h3>
-          <p>Internal news and the EOD/EOW update hub — now Internal Signals.</p>
+        <div class="catalog" id="catalog-bytecast">
+          <a class="catalog-row" href="../newsletters/aerovista_bytecast_status_player.html"
+             data-types="bytecast milestone"
+             data-tags="july 5 2026 overall company status avcc roadmap operating maturity neural os">
+            <div class="row-date"><em>Jul 5</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge bytecast">ByteCast</span><span class="type-badge milestone">Status</span>Overall Company Status Signal</strong>
+              <span>Ecosystem shape, AVCC five-layer architecture, deploy gate, division lanes, leadership sequencing.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="../newsletters/aerovista_weekend_report_6.28.26.html"
+             data-types="bytecast eow"
+             data-tags="june 28 2026 weekend report resilience recovery avcc core registry art localized">
+            <div class="row-date"><em>Jun 28</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge bytecast">ByteCast</span>Resilience Weekend</strong>
+              <span>Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="../newsletters/aerovista_signal_weekly_2026-06-21.html"
+             data-types="bytecast eow"
+             data-tags="june 21 2026 weekly better machine echoverse art localized">
+            <div class="row-date"><em>Jun 21</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge bytecast">ByteCast</span>A Better Machine</strong>
+              <span>Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html"
+             data-types="bytecast milestone"
+             data-tags="june 16 2026 echoverse audio intelligence platform drop to edit">
+            <div class="row-date"><em>Jun 16</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge bytecast">ByteCast</span><span class="type-badge milestone">Platform</span>EchoVerse Audio Intelligence</strong>
+              <span>Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — milestone edition.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="../newsletters/aerovista_signal_weekly_2026-06-15.html"
+             data-types="bytecast eow archive"
+             data-tags="june 15 2026 weekly systems becoming products">
+            <div class="row-date"><em>Jun 15</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge bytecast">ByteCast</span>Systems Becoming Products</strong>
+              <span>Earlier weekly stakeholder edition with audio and infographic.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
         </div>
-      </aside>
-    </section>
+      </section>
+
+      <!-- WEEKLY & EOW -->
+      <section class="hub-section" id="weekly">
+        <div class="section-label">
+          <h2>Weekly &amp; EOW Summaries</h2>
+          <span>Stakeholder context — short reads</span>
+        </div>
+        <div class="catalog" id="catalog-weekly">
+          <a class="catalog-row" href="eow-current-stakeholder-update.html"
+             data-types="eow"
+             data-tags="current june 28 2026 weekend resilience recovery stakeholder">
+            <div class="row-date"><em>Current</em>EOW</div>
+            <div class="row-body">
+              <strong><span class="type-badge eow">EOW</span>Current stakeholder update</strong>
+              <span>Weekend June 28 — resilience weekend summary for shareholders, employees, operators.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="eow-2026-06-28-weekend-report.html"
+             data-types="eow"
+             data-tags="june 28 2026 weekend report resilience recovery dated">
+            <div class="row-date"><em>Jun 28</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge eow">EOW</span>Weekend report (dated copy)</strong>
+              <span>AVCC recovery, Core Registry stabilization, Art Localized API, deployment doctrine.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="eow-2026-05-29-shareholder-report.html"
+             data-types="eow archive"
+             data-tags="may 29 2026 long form shareholder report">
+            <div class="row-date"><em>May 29</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge eow">EOW</span>Long-form shareholder report</strong>
+              <span>Dated shareholder report from the EOW archive.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="eow-2026-05-29-public-signal.html"
+             data-types="eow archive"
+             data-tags="may 29 2026 public signal summary">
+            <div class="row-date"><em>May 29</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge eow">EOW</span>Public Signal summary</strong>
+              <span>Public-facing summary preserved after the weekly roll-forward.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+          <a class="catalog-row" href="eow-shareholder-update.html"
+             data-types="eow archive"
+             data-tags="may 23 2026 eow shareholder update">
+            <div class="row-date"><em>May 23</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge eow">EOW</span>Shareholder update</strong>
+              <span>Earlier stakeholder update from the EOW archive.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ARCHIVE -->
+      <section class="hub-section" id="archive">
+        <div class="section-label">
+          <h2>Archive</h2>
+          <span>Earlier editions preserved</span>
+        </div>
+        <div class="catalog" id="catalog-archive">
+          <a class="catalog-row" href="../newsletters/the-signal-newsletter-2026-05-29.html"
+             data-types="archive"
+             data-tags="may 29 2026 newsletter">
+            <div class="row-date"><em>May 29</em>2026</div>
+            <div class="row-body">
+              <strong><span class="type-badge archive">Archive</span>Newsletter package</strong>
+              <span>Earlier newsletter edition preserved in the dated archive.</span>
+            </div>
+            <span class="row-action">Open →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="hub-section" id="about">
+        <div class="section-label">
+          <h2>About this hub</h2>
+        </div>
+        <div class="hub-note">
+          <strong>Publishing rule:</strong> Keep claims measured. Use observed work, shipped links, review status, and next actions. Avoid implying revenue, adoption, partner commitments, or delivery guarantees unless verified.
+        </div>
+        <p style="color:var(--hub-muted);font-size:0.9rem;line-height:1.65;margin-top:16px">
+          <strong style="color:#fff">Cadence:</strong>
+          <strong>EOD</strong> — daily operating truth &nbsp;·&nbsp;
+          <strong>EOW</strong> — weekly stakeholder context &nbsp;·&nbsp;
+          <strong>ByteCast</strong> — audio + visual internal editions.<br />
+          <strong style="color:#fff">Audience:</strong> Shareholders, employees, strategic partners, and internal leadership.
+        </p>
+      </section>
+
+      <div id="emptyState" class="empty-state">No matching signals. Try a broader search or clear filters.</div>
+    </div>
   </main>
-  <footer>
-    <div class="wrap">© 2026 AeroVista LLC · The SIGNAL · An AeroVista Publication</div>
+
+  <footer class="hub-footer-note">
+    <div class="hub-wrap">© 2026 AeroVista LLC · The SIGNAL · An AeroVista Publication</div>
   </footer>
+
   <script>
-    (function(){
-      const input=document.getElementById('signalSearch');
-      const items=[...document.querySelectorAll('.signal-item')];
-      const empty=document.getElementById('emptyState');
-      function filter(){
-        const q=(input.value||'').trim().toLowerCase();
-        let shown=0;
-        items.forEach(item=>{
-          const text=(item.textContent+' '+(item.dataset.tags||'')).toLowerCase();
-          const ok=!q||text.includes(q);
-          item.style.display=ok?'block':'none';
-          if(ok) shown++;
-        });
-        if(empty) empty.style.display=shown?'none':'block';
+    (function () {
+      const input = document.getElementById('signalSearch');
+      const chips = [...document.querySelectorAll('.filter-chip')];
+      const rows = [...document.querySelectorAll('.catalog-row')];
+      const nowCards = [...document.querySelectorAll('.now-card')];
+      const sections = [...document.querySelectorAll('.hub-section')];
+      const empty = document.getElementById('emptyState');
+      const subnavLinks = [...document.querySelectorAll('.subnav-link')];
+      let activeFilter = 'all';
+
+      function matchesFilter(el) {
+        const types = (el.dataset.types || '').split(/\s+/);
+        return activeFilter === 'all' || types.includes(activeFilter);
       }
-      if(input) input.addEventListener('input',filter);
-      document.querySelectorAll('[data-copy]').forEach(btn=>{
-        btn.addEventListener('click',async()=>{
-          const text=btn.getAttribute('data-copy');
-          try{await navigator.clipboard.writeText(text); const old=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=old,1200);}catch(e){window.prompt('Copy link:',text);}
+
+      function matchesSearch(el, q) {
+        if (!q) return true;
+        const text = (el.textContent + ' ' + (el.dataset.tags || '')).toLowerCase();
+        return text.includes(q);
+      }
+
+      function applyFilters() {
+        const q = (input.value || '').trim().toLowerCase();
+        let visibleRows = 0;
+
+        rows.forEach(function (row) {
+          const ok = matchesFilter(row) && matchesSearch(row, q);
+          row.classList.toggle('hidden', !ok);
+          if (ok) visibleRows++;
+        });
+
+        nowCards.forEach(function (card) {
+          const ok = matchesFilter(card) && matchesSearch(card, q);
+          card.style.display = ok ? '' : 'none';
+        });
+
+        sections.forEach(function (section) {
+          const sectionRows = section.querySelectorAll('.catalog-row:not(.hidden), .now-card:not([style*="display: none"])');
+          const hasNowCards = section.id === 'now' && [...section.querySelectorAll('.now-card')].some(function (c) {
+            return c.style.display !== 'none';
+          });
+          const hasContent = section.id === 'about' || sectionRows.length > 0 || hasNowCards;
+          section.style.display = (q || activeFilter !== 'all') && !hasContent && section.id !== 'about' ? 'none' : '';
+        });
+
+        if (empty) {
+          const anyVisible = visibleRows > 0 || nowCards.some(function (c) { return c.style.display !== 'none'; });
+          empty.classList.toggle('visible', (q || activeFilter !== 'all') && !anyVisible);
+        }
+      }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+          activeFilter = chip.dataset.filter || 'all';
+          applyFilters();
         });
       });
+
+      if (input) input.addEventListener('input', applyFilters);
+
+      document.querySelectorAll('[data-copy]').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
+          const text = btn.getAttribute('data-copy');
+          try {
+            await navigator.clipboard.writeText(text);
+            const old = btn.textContent;
+            btn.textContent = 'Copied';
+            setTimeout(function () { btn.textContent = old; }, 1200);
+          } catch (e) {
+            window.prompt('Copy link:', text);
+          }
+        });
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            subnavLinks.forEach(function (link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+      sections.forEach(function (s) { observer.observe(s); });
     })();
   </script>
   <script src="../js/site-config.js"></script>

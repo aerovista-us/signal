@@ -62,7 +62,7 @@ Shareholder, employee, and operator editions live under [**Internal Signals**](.
 
 | Route | Role |
 |-------|------|
-| [`dispatches/internal-signals.html`](../dispatches/internal-signals.html) | Canonical hub — daily EOD, weekly EOW, ByteCast editions, archive |
+| [`dispatches/internal-signals.html`](../dispatches/internal-signals.html) | Canonical hub — sticky section nav, type filters, catalog rows (no duplicate listings) |
 | [`dispatches/current-updates.html`](../dispatches/current-updates.html) | Redirect to Internal Signals (legacy EOD/EOW hub URL) |
 | [`newsletter-current.html`](../newsletter-current.html) | Redirect to Internal Signals (legacy newsletter URL) |
 | [`dispatches/eod-current-operating-note.html`](../dispatches/eod-current-operating-note.html) | Current daily operating note |
