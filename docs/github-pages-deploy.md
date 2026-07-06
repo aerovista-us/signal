@@ -59,6 +59,9 @@ Legacy routes redirect there:
 - https://thesignal.aerovista.us/dispatches/current-updates.html — redirects to Internal Signals
 - https://thesignal.aerovista.us/newsletter-current.html — redirects to Internal Signals
 - https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html — current weekly Signal
+- https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html — July 5 overall company status ByteCast
+- https://thesignal.aerovista.us/newsletters/7.5.26.EOD.mp3 — status ByteCast audio
+- https://thesignal.aerovista.us/newsletters/overallstatus.png — AVCC roadmap infographic
 - https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html — EchoVerse ByteCast
 - https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.mp3 — weekly ByteCast audio
 - https://thesignal.aerovista.us/newsletters/a_high_detail_corporate_infographic_weekly_report.png — weekly infographic

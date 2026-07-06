@@ -67,7 +67,10 @@ Shareholder, employee, and operator editions live under [**Internal Signals**](.
 | [`newsletter-current.html`](../newsletter-current.html) | Redirect to Internal Signals (legacy newsletter URL) |
 | [`dispatches/eod-current-operating-note.html`](../dispatches/eod-current-operating-note.html) | Current daily operating note |
 | [`dispatches/eow-current-stakeholder-update.html`](../dispatches/eow-current-stakeholder-update.html) | Current weekly stakeholder summary |
-| [`newsletters/aerovista_signal_weekly_2026-06-15.html`](../newsletters/aerovista_signal_weekly_2026-06-15.html) | Current weekly ByteCast edition |
+| [`dispatches/eow-2026-06-28-weekend-report.html`](../dispatches/eow-2026-06-28-weekend-report.html) | Dated EOW weekend report (June 28, 2026) |
+| [`newsletters/aerovista_bytecast_status_player.html`](../newsletters/aerovista_bytecast_status_player.html) | Current overall company status ByteCast (July 5 — audio, AVCC roadmap, transcript) |
+| [`newsletters/aerovista_weekend_report_6.28.26.html`](../newsletters/aerovista_weekend_report_6.28.26.html) | Weekend ByteCast edition (June 28 — audio + transcript) |
+| [`newsletters/aerovista_signal_weekly_2026-06-21.html`](../newsletters/aerovista_signal_weekly_2026-06-21.html) | Weekly ByteCast archive (June 21) |
 | [`newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html`](../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html) | Platform ByteCast example (EchoVerse) |
 
 The homepage features one **Internal Signals** card; separate newsletter and EOD/EOW cards were removed.

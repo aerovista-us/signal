@@ -1,0 +1,1514 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AeroVista ByteCast — Overall Company Status Signal · July 5, 2026</title>
+  <meta name="description" content="AeroVista overall company status ByteCast for stakeholders, employees, operators, and builders — July 5, 2026: ecosystem shape, AVCC as company brain, deploy gate, and the move from creative momentum into operating maturity." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="AeroVista ByteCast — Overall Company Status Signal" />
+  <meta property="og:description" content="AeroVista has shape now. The foundation is live. AVCC is becoming the company brain. The next unlock is integration, closure, deployment, and trust." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/newsletters/overallstatus.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AeroVista ByteCast — Overall Company Status Signal" />
+  <meta name="twitter:image" content="https://thesignal.aerovista.us/newsletters/overallstatus.png" />
+  <style>
+    :root {
+      --bg: #050812;
+      --bg2: #07111f;
+      --panel: rgba(12, 22, 42, 0.78);
+      --panel2: rgba(8, 18, 34, 0.92);
+      --line: rgba(135, 206, 235, 0.22);
+      --line2: rgba(0, 174, 239, 0.38);
+      --text: #eaf7ff;
+      --muted: #a8bed0;
+      --soft: #d6ecfa;
+      --blue: #00aeef;
+      --sky: #87ceeb;
+      --silver: #c0c0c0;
+      --gold: #ffd166;
+      --green: #6ee7b7;
+      --purple: #b794f6;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(0, 174, 239, 0.22), transparent 30rem),
+        radial-gradient(circle at 80% 0%, rgba(135, 206, 235, 0.14), transparent 30rem),
+        linear-gradient(160deg, var(--bg), var(--bg2) 52%, #03060d 100%);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .page-shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 8, 18, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 18px 0;
+    }
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+      text-decoration: none;
+    }
+    .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #04111b;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      background: linear-gradient(135deg, var(--sky), var(--blue));
+      box-shadow: 0 0 34px rgba(0, 174, 239, 0.34);
+    }
+    .brand-title {
+      display: block;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+    .brand-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .nav-links a, .button, button.button {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--soft);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+    }
+    .nav-links a:hover, .button:hover, button.button:hover {
+      transform: translateY(-1px);
+      border-color: var(--line2);
+      background: rgba(0, 174, 239, 0.11);
+    }
+    .button.primary {
+      border-color: rgba(0, 174, 239, 0.66);
+      background: linear-gradient(135deg, rgba(0, 174, 239, 0.20), rgba(135, 206, 235, 0.10));
+      color: #fff;
+    }
+
+    .hero { position: relative; padding: 74px 0 34px; overflow: hidden; }
+    .hero-card, .panel, .audio-card, .win-card, .gate-card, .layer-card, .ask-card, .lane-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(12, 22, 42, 0.82), rgba(8, 18, 34, 0.74));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+      max-width: 920px;
+    }
+    .hero-card:after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -140px auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(0, 174, 239, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--sky);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.45rem, 7vw, 5.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+    }
+    .title-accent {
+      color: var(--sky);
+      text-shadow: 0 0 30px rgba(0, 174, 239, 0.34);
+    }
+    .hero-copy {
+      color: var(--soft);
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      max-width: 830px;
+      margin: 22px 0 0;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #fff;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    main { padding: 14px 0 54px; }
+    .panel { padding: 30px; margin: 22px 0; }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      letter-spacing: -0.04em;
+    }
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .sticky-audio {
+      position: sticky;
+      top: 72px;
+      z-index: 9;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      margin: 0 auto 18px;
+      width: min(var(--max), calc(100% - 32px));
+      border: 1px solid var(--line2);
+      border-radius: 999px;
+      background: rgba(8, 18, 34, 0.92);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+    .sticky-audio strong {
+      white-space: nowrap;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sky);
+    }
+    .sticky-audio audio { flex: 1; min-width: 0; }
+
+    .audio-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+    }
+    audio {
+      width: 100%;
+      margin-top: 14px;
+      filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.22));
+      accent-color: var(--blue);
+    }
+    .audio-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 10px 0 0;
+    }
+    .filename {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--sky);
+    }
+    .player-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .player-controls button {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--soft);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .player-controls button:hover {
+      border-color: var(--line2);
+      background: rgba(0, 174, 239, 0.11);
+    }
+
+    .infographic-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(12, 22, 42, 0.82), rgba(8, 18, 34, 0.74));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .infographic-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid var(--line2);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .infographic-caption {
+      margin: 14px 2px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .lead {
+      font-size: 1.13rem;
+      color: var(--soft);
+      margin: 0 0 18px;
+    }
+    .plainline {
+      border-left: 3px solid var(--blue);
+      padding: 14px 16px;
+      background: rgba(0, 174, 239, 0.07);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 1.05rem;
+      margin: 18px 0 0;
+    }
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .badge {
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.035);
+    }
+    .badge.live {
+      border-color: rgba(110, 231, 183, 0.34);
+      color: #d7fff0;
+      background: rgba(110, 231, 183, 0.1);
+    }
+    .badge.gate {
+      border-color: rgba(255, 209, 102, 0.34);
+      color: #ffe3a1;
+      background: rgba(255, 209, 102, 0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .win-card, .gate-card, .ask-card, .lane-card { padding: 20px; }
+    .win-card h3, .gate-card h3, .ask-card h3, .lane-card h3 {
+      margin: 0 0 8px;
+      color: var(--sky);
+      font-size: 1.08rem;
+    }
+    .win-card p, .gate-card p, .ask-card p, .lane-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .lane-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .lane-chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--soft);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .lane-chip.core {
+      border-color: rgba(0, 174, 239, 0.45);
+      background: rgba(0, 174, 239, 0.1);
+      color: #dff7ff;
+    }
+
+    .layer-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .layer-card {
+      padding: 16px 14px;
+      text-align: center;
+    }
+    .layer-card .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      color: #04111b;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 10px;
+      font-size: 0.82rem;
+    }
+    .layer-card strong {
+      display: block;
+      color: #fff;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+    .layer-card span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .checkpoint-list {
+      list-style: none;
+      margin: 16px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .checkpoint-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .checkpoint-list .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .status-dot.done { background: var(--green); box-shadow: 0 0 12px var(--green); }
+    .status-dot.next { background: var(--blue); box-shadow: 0 0 12px var(--blue); }
+    .status-dot.planned { background: var(--purple); opacity: 0.7; }
+    .checkpoint-list strong { display: block; color: #fff; margin-bottom: 2px; }
+    .checkpoint-list span { color: var(--muted); font-size: 0.92rem; }
+
+    .next-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .next-list li {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      color: #04111b;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+    }
+    .next-list strong { display: block; color: #fff; margin-bottom: 3px; }
+    .next-list span { color: var(--muted); }
+
+    details {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--sky);
+      letter-spacing: 0.02em;
+    }
+    .transcript {
+      white-space: pre-wrap;
+      color: var(--soft);
+      line-height: 1.82;
+      font-size: 1.02rem;
+      max-height: 70vh;
+      overflow: auto;
+      margin-top: 18px;
+      padding-right: 8px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 36px;
+      color: var(--muted);
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+    }
+    .footer-grid strong { color: #fff; }
+    .smallcaps {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      font-size: 0.75rem;
+      color: var(--sky);
+    }
+
+    @media (max-width: 900px) {
+      .metric-row, .layer-flow, .grid, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .sticky-audio { border-radius: 18px; flex-wrap: wrap; }
+    }
+    @media (max-width: 640px) {
+      .nav-wrap, .section-head, .audio-card, .footer-grid {
+        align-items: stretch;
+        flex-direction: column;
+        display: flex;
+      }
+      .metric-row, .layer-flow, .grid, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { justify-content: flex-start; }
+      .hero { padding-top: 44px; }
+      .hero-card { padding: 26px; }
+      h1 { font-size: clamp(2.35rem, 15vw, 4.4rem); }
+    }
+    @media print {
+      body { background: #fff; color: #111; }
+      .site-header, .hero-actions, .sticky-audio, .player-controls, .no-print { display: none !important; }
+      .panel, .hero-card, .win-card { box-shadow: none; border-color: #ccd6df; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header no-print">
+    <div class="page-shell nav-wrap">
+      <a class="brand-lockup" href="../dispatches/internal-signals.html" aria-label="Internal Signals">
+        <span class="mark">AV</span>
+        <span>
+          <span class="brand-title">AeroVista ByteCast</span>
+          <span class="brand-subtitle">Overall Company Status Signal</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#listen">Listen</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#shape">Shape</a>
+        <a href="#avcc">AVCC</a>
+        <a href="#gate">Deploy Gate</a>
+        <a href="#divisions">Divisions</a>
+        <a href="#asks">Asks</a>
+        <a href="#transcript">Transcript</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sticky-audio no-print" aria-label="Persistent audio player">
+    <strong>ByteCast</strong>
+    <audio id="sticky-audio" controls preload="auto">
+      <source src="7.5.26.EOD.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <section class="hero" id="top">
+    <div class="page-shell">
+      <article class="hero-card">
+        <p class="eyebrow">July 5, 2026 · EOD Status Signal</p>
+        <h1>Overall Company Status:<br><span class="title-accent">AeroVista Has Shape Now</span></h1>
+        <p class="hero-copy">For stakeholders, employees, operators, and builders. This is no longer a collection of ideas or a pile of experiments — AeroVista now has a real operating base, a connected ecosystem, and AVCC becoming the company brain.</p>
+        <div class="hero-actions no-print">
+          <a class="button primary" href="#listen" data-play-bytecast>▶ Play ByteCast</a>
+          <a class="button" href="#roadmap">View AVCC Roadmap</a>
+          <a class="button" href="#transcript">Read Transcript</a>
+          <a class="button" href="../dispatches/internal-signals.html">Internal Signals</a>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><strong>Live</strong><span>Platform foundation</span></div>
+          <div class="metric"><strong>A+B+C</strong><span>Built · tested · pushed</span></div>
+          <div class="metric"><strong>1/6</strong><span>Secrets rotation families</span></div>
+          <div class="metric"><strong>Next</strong><span>Integration &amp; trust</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main class="page-shell">
+    <section class="panel" id="listen">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">ByteCast Audio</p>
+          <h2>Listen to the full status signal</h2>
+          <p>Preloaded MP3 — overall company status for July 5, 2026. Moving from creative momentum into operating maturity.</p>
+        </div>
+      </div>
+      <div class="audio-card">
+        <div>
+          <strong>Overall Company Status Signal</strong>
+          <audio id="bytecast-audio" controls preload="auto">
+            <source src="7.5.26.EOD.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p class="audio-note">MP3 source: <span class="filename">7.5.26.EOD.mp3</span></p>
+          <div class="player-controls no-print">
+            <button type="button" id="back15">↶ 15 sec</button>
+            <button type="button" id="playPause">Play / Pause</button>
+            <button type="button" id="fwd15">15 sec ↷</button>
+          </div>
+        </div>
+        <div class="no-print">
+          <a class="button primary" href="7.5.26.EOD.mp3" download>Download MP3</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="roadmap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">AVCC Roadmap</p>
+          <h2>From Operational Hub to Neural Operating System</h2>
+          <p>Context Authority checkpoints A, B, and C are built and tested. Deployment is gated on secrets rotation before federation begins.</p>
+        </div>
+      </div>
+      <figure class="infographic-card">
+        <img src="overallstatus.png" alt="AVCC Roadmap: From Operational Hub to Neural Operating System — checkpoints A through G, five-layer architecture, and deploy gate" loading="eager" />
+        <figcaption class="infographic-caption">Foundation is live. A+B+C are built. Deployment is gated. Federation comes next. <strong>See → Understand → Decide → Act → Improve.</strong></figcaption>
+      </figure>
+    </section>
+
+    <section class="panel" id="shape">
+      <p class="eyebrow">The Signal</p>
+      <p class="lead"><strong>AeroVista is becoming an ecosystem company — not one app, one store, or one dashboard.</strong></p>
+      <p>A connected operating company made of divisions, services, memory, infrastructure, creative work, public surfaces, and decision systems. The goal: build a company that can see itself clearly, understand what changed, know why it matters, decide what should happen next, act with accountability, and remember what it learned.</p>
+      <p class="plainline"><strong>Plain read:</strong> AeroVista is not stalled. AeroVista is loaded. The challenge is execution order.</p>
+      <div class="badge-row">
+        <span class="badge live">Foundation live</span>
+        <span class="badge">Ecosystem shape</span>
+        <span class="badge gate">Operating maturity phase</span>
+        <span class="badge">Neural OS destination</span>
+      </div>
+      <div class="lane-grid" aria-label="Company lanes">
+        <span class="lane-chip">Art Localized</span>
+        <span class="lane-chip">EchoVerse</span>
+        <span class="lane-chip">Gear</span>
+        <span class="lane-chip">SkyForge</span>
+        <span class="lane-chip">Horizon</span>
+        <span class="lane-chip">Summit</span>
+        <span class="lane-chip">Lumina</span>
+        <span class="lane-chip">Vespera</span>
+        <span class="lane-chip">ByteCast</span>
+        <span class="lane-chip">BytePad</span>
+        <span class="lane-chip core">NeXuS / NXCore</span>
+        <span class="lane-chip core">AV Memory</span>
+        <span class="lane-chip core">Source of Truth</span>
+        <span class="lane-chip core">AVCC</span>
+      </div>
+    </section>
+
+    <section class="panel" id="avcc">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Company Brain</p>
+          <h2>AVCC five-layer architecture</h2>
+          <p>AVCC is the center of gravity — context, evidence, memory, identity, operations, reports, release boards, alerts, work orders, service status, and Chief of Staff reasoning.</p>
+        </div>
+      </div>
+      <div class="layer-flow">
+        <article class="layer-card">
+          <div class="num">1</div>
+          <strong>Context</strong>
+          <span>Gathers evidence</span>
+        </article>
+        <article class="layer-card">
+          <div class="num">2</div>
+          <strong>Compiler</strong>
+          <span>Organizes facts</span>
+        </article>
+        <article class="layer-card">
+          <div class="num">3</div>
+          <strong>Intelligence</strong>
+          <span>Produces judgment</span>
+        </article>
+        <article class="layer-card">
+          <div class="num">4</div>
+          <strong>Chief of Staff</strong>
+          <span>Communicates signal</span>
+        </article>
+        <article class="layer-card">
+          <div class="num">5</div>
+          <strong>Control</strong>
+          <span>Executes action</span>
+        </article>
+      </div>
+      <p class="plainline" style="margin-top:18px"><strong>Operating pattern:</strong> Memory without truth becomes clutter. Truth without memory becomes brittle. Judgment needs both.</p>
+    </section>
+
+    <section class="panel" id="gate">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Primary Operating Gate</p>
+          <h2>Secure the core. Deploy intelligence. Then federate.</h2>
+          <p>Context Authority A, B, and C are built, tested, and pushed — but not yet deployed to NXCore. That is the proper gate.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="gate-card">
+          <h3>Secrets rotation — Family 1 of 6 complete</h3>
+          <p>Tunnel secrets rotated. Origin exposure verified closed. Cloudflare Access header-trust risk retired. P0 PII endpoint confirmed closed. Quiet work that protects the whole system.</p>
+        </article>
+        <article class="gate-card">
+          <h3>Locked decision</h3>
+          <p>Deploy A, B, and C before starting Checkpoint D. Do not connect everything into a system before the system is safe enough to trust. That is operating maturity.</p>
+        </article>
+      </div>
+      <ul class="checkpoint-list">
+        <li><span class="status-dot done"></span><span><strong>Checkpoint A — Context Authority / Chief of Staff Core</strong><span>Built · tested · pushed · pending NXCore deploy</span></span></li>
+        <li><span class="status-dot done"></span><span><strong>Checkpoint B — Compiler Depth &amp; Priorities</strong><span>Built · tested · pushed · pending NXCore deploy</span></span></li>
+        <li><span class="status-dot done"></span><span><strong>Checkpoint C — Intelligence Depth &amp; Executive Memory</strong><span>Built · tested · pushed · pending NXCore deploy</span></span></li>
+        <li><span class="status-dot next"></span><span><strong>Checkpoint D — Broker Federation</strong><span>Next after deploy — Art Localized, EchoVerse, Gear as signal sources</span></span></li>
+        <li><span class="status-dot planned"></span><span><strong>Checkpoints E–G</strong><span>Control actions → security hardening → Chief of Staff as home</span></span></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="divisions">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Division Signal</p>
+          <h2>What each lane needs next</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="lane-card">
+          <h3>Public site</h3>
+          <p>Stronger front door and division pages — but must stay connected to operating truth, not become a static poster.</p>
+        </article>
+        <article class="lane-card">
+          <h3>Art Localized</h3>
+          <p>Market engine with clear offer. Next job: conversion rhythm — interest → intake → review → published booths → visible proof.</p>
+        </article>
+        <article class="lane-card">
+          <h3>EchoVerse</h3>
+          <p>Strong foundation in media and audio tooling. Next move: consolidation — choose active surfaces, label experiments, archive the rest.</p>
+        </article>
+        <article class="lane-card">
+          <h3>Gear &amp; storefront</h3>
+          <p>Real commerce lane. Square is checkout truth; storefront is presentation. Next win: operational clarity and trustworthy catalog flow.</p>
+        </article>
+        <article class="lane-card">
+          <h3>ByteCast &amp; BytePad</h3>
+          <p>Becoming company communication rhythm. Write → voice → publish → archive → surface → measure → repeat. Company heartbeat.</p>
+        </article>
+        <article class="lane-card">
+          <h3>NeXuS / NXCore</h3>
+          <p>Infrastructure backbone — access, routing, containers, observability, secrets rotation, deployment discipline. The rails.</p>
+        </article>
+      </div>
+      <p class="plainline" style="margin-top:18px"><strong>Creative strength needs gates.</strong> Without gates, creativity turns into drift. With gates, creativity turns into product.</p>
+    </section>
+
+    <section class="panel" id="asks">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What We Need Now</p>
+          <h2>From every audience</h2>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="ask-card">
+          <h3>Stakeholders</h3>
+          <p>Patience with disciplined progress — not slow progress. Secure the system before it scales. Protect long-term value over short-term noise.</p>
+        </article>
+        <article class="ask-card">
+          <h3>Employees &amp; operators</h3>
+          <p>Work from source of truth. Do not chase the loudest idea. Mark what is finished, name blockers, say when something is stale, leave a trail.</p>
+        </article>
+        <article class="ask-card">
+          <h3>Builders</h3>
+          <p>Complete vertical slices — one lane finished enough to use, documented enough to recover, wired enough to measure, clean enough to hand off.</p>
+        </article>
+        <article class="ask-card">
+          <h3>Leadership</h3>
+          <p>Sequencing: finish secrets rotation → deploy A+B+C → Checkpoint D federation → Control actions → scale.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="sequence">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Leadership Sequence</p>
+          <h2>The road from here</h2>
+        </div>
+      </div>
+      <ol class="next-list">
+        <li><span class="num">1</span><span><strong>Finish remaining secrets-rotation families (2–6).</strong> Complete the security gate before any NXCore deploy.</span></li>
+        <li><span class="num">2</span><span><strong>Deploy AVCC Context Authority A, B, and C to NXCore.</strong> Intelligence layer goes live on secure rails.</span></li>
+        <li><span class="num">3</span><span><strong>Checkpoint D — federate services.</strong> Art Localized, EchoVerse, and Gear become real signal sources.</span></li>
+        <li><span class="num">4</span><span><strong>Move toward Control actions.</strong> From judgment to accountable execution.</span></li>
+        <li><span class="num">5</span><span><strong>Scale with trust.</strong> Integration, closure, deployment — not more scattered starts.</span></li>
+      </ol>
+      <p class="plainline" style="margin-top:18px"><strong>Mission:</strong> Finish what matters. Connect what is real. Protect the source of truth. Deploy safely. Learn from every move. Keep building the company brain.</p>
+    </section>
+
+    <section class="panel" id="transcript">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Full Script</p>
+          <h2>ByteCast transcript</h2>
+          <p>Complete spoken script for accessibility, syndication, and review.</p>
+        </div>
+      </div>
+      <details open>
+        <summary>Open / close full transcript</summary>
+        <div class="transcript" id="transcript-body">AeroVista Bytecast
+
+Overall Company Status Signal
+
+For stakeholders, employees, operators, and builders.
+
+AeroVista has shape now.
+
+That is the first thing to understand.
+
+This is no longer just a collection of ideas.
+
+It is no longer a pile of experiments waiting to become something later.
+
+AeroVista now has a real operating base.
+
+We have a public company presence.
+
+We have division lanes.
+
+We have storefront systems.
+
+We have Art Localized.
+
+We have EchoVerse.
+
+We have Gear.
+
+We have SkyForge.
+
+We have Horizon.
+
+We have Summit.
+
+We have Lumina.
+
+We have Vespera.
+
+We have NeXuS and N X Core carrying the infrastructure layer.
+
+We have A V Memory preserving institutional knowledge.
+
+We have Source of Truth giving the work accountability.
+
+And at the center, we have A V C C becoming the company brain.
+
+That is the overall shape.
+
+AeroVista is becoming an ecosystem company.
+
+Not one app.
+
+Not one store.
+
+Not one media brand.
+
+Not one dashboard.
+
+A connected operating company made of divisions, services, memory, infrastructure, creative work, public surfaces, and decision systems.
+
+The goal is simple.
+
+Build a company that can see itself clearly.
+
+Understand what changed.
+
+Know why it matters.
+
+Decide what should happen next.
+
+Act with accountability.
+
+And remember what it learned.
+
+That is where we are headed.
+
+A full neural operating system for AeroVista.
+
+A system that does not just store work.
+
+A system that helps organize it.
+
+A system that does not just show activity.
+
+A system that helps explain motion.
+
+A system that does not replace human leadership.
+
+A system that sharpens it.
+
+That is the road.
+
+And right now, AeroVista is moving from creative momentum into operating maturity.
+
+The creative base is already proven.
+
+We can generate ideas.
+
+We can build quickly.
+
+We can create brands, tools, pages, products, stories, systems, music, worlds, and experiences.
+
+That part is not in question.
+
+The next question is bigger.
+
+Can we finish cleanly?
+
+Can we connect what we build?
+
+Can we deploy safely?
+
+Can we protect the source of truth?
+
+Can we reduce drift?
+
+Can we turn motion into lasting company value?
+
+That is the phase we are in now.
+
+Across the current project map, AeroVista has serious forward motion.
+
+The work is spread across storefront, command center, EchoVerse, Art Localized, ByteCast, BytePad, RydeSync, Cupid, Source of Truth, infrastructure, travel tools, creative systems, and public-facing projects.
+
+The tracked project map shows strong completion across many lanes.
+
+Dozens of plans are complete.
+
+Several categories are at or near full completion.
+
+But there are also plans still in progress.
+
+Plans that have not started.
+
+And plans that need clearer todo data.
+
+That gives us the honest read.
+
+AeroVista is not stalled.
+
+AeroVista is loaded.
+
+The challenge is not imagination.
+
+The challenge is execution order.
+
+That is why A V C C matters so much.
+
+A V C C is the center of gravity because it is becoming the system that helps the company manage itself.
+
+It brings together context.
+
+Evidence.
+
+Memory.
+
+Identity.
+
+Operations.
+
+Reports.
+
+Release boards.
+
+Alerts.
+
+Work orders.
+
+Service status.
+
+And now, Chief of Staff reasoning.
+
+The five-layer architecture is the important part.
+
+Context gathers evidence.
+
+The compiler organizes facts.
+
+Intelligence produces judgment.
+
+Chief of Staff communicates the signal.
+
+Control will execute the action.
+
+That is the operating pattern.
+
+See.
+
+Understand.
+
+Decide.
+
+Act.
+
+Improve.
+
+That is the company brain taking shape.
+
+And right now, the most important operating gate is clear.
+
+Context Authority Checkpoints A, B, and C are built.
+
+They are tested.
+
+They are pushed to GitHub.
+
+But they are not yet deployed to N X Core.
+
+That is not a setback.
+
+That is the proper gate.
+
+Deployment is waiting on the secrets-rotation pass.
+
+Family one of six is complete.
+
+Tunnel secrets were rotated.
+
+Origin exposure was verified closed.
+
+The Cloudflare Access header-trust risk was retired.
+
+The P zero P I I endpoint was confirmed closed.
+
+That is quiet work.
+
+But it protects the whole system.
+
+And the locked decision is correct.
+
+Deploy A, B, and C before starting Checkpoint D.
+
+In plain terms:
+
+Secure the core.
+
+Deploy the intelligence layer.
+
+Then federate the services.
+
+Do not connect everything into a system before the system is safe enough to trust.
+
+That is operating maturity.
+
+Across the divisions, the picture is becoming clearer.
+
+The AeroVista public site is stronger.
+
+The company has a better front door.
+
+The division pages give the ecosystem shape.
+
+The public surface is more real than it was before.
+
+But the public site cannot become a static poster.
+
+It has to stay connected to the operating truth behind it.
+
+When the company changes, the public surface needs to reflect it.
+
+When a division matures, the site needs to show it.
+
+When a project becomes real, the public trail needs to catch up.
+
+That is how trust stays current.
+
+Art Localized has moved from idea into market engine.
+
+The offer is clear.
+
+Local creators need a door.
+
+Free booth access gives them one.
+
+The Founder District gives proof.
+
+The booth system gives structure.
+
+The next job is conversion.
+
+Interest becomes intake.
+
+Intake becomes review.
+
+Review becomes published booths.
+
+Published booths become visible proof.
+
+Art Localized does not need more noise.
+
+It needs rhythm.
+
+EchoVerse has a strong foundation in public cleanup, media systems, and creative direction.
+
+The public side is more organized.
+
+The documentation side is stronger.
+
+The music and audio tooling has real weight behind it.
+
+But EchoVerse also carries the normal pressure of a creative system with many generations.
+
+Old experiments.
+
+New surfaces.
+
+Card systems.
+
+Player systems.
+
+Public guides.
+
+Story worlds.
+
+That can be powerful.
+
+It can also get crowded.
+
+The next move is consolidation.
+
+Choose the active surfaces.
+
+Label the experiments.
+
+Archive what no longer needs attention.
+
+And let the strongest version move forward.
+
+Gear and storefront systems are becoming a real commerce lane.
+
+The storefront has structure.
+
+Square remains the checkout truth.
+
+The store remains the presentation layer.
+
+Core fixes and production protections have moved forward.
+
+The next win is operational clarity.
+
+Clean catalog flow.
+
+Clean image handling.
+
+Clean product records.
+
+Clean handoff between Square, the storefront, and A V C C.
+
+Commerce does not need to be fancy first.
+
+It needs to be trustworthy first.
+
+ByteCast and BytePad are becoming part of the company's communication rhythm.
+
+That matters because AeroVista needs more than systems.
+
+It needs signal.
+
+ByteCast can become the voice of that signal.
+
+Write.
+
+Voice.
+
+Publish.
+
+Archive.
+
+Surface.
+
+Measure.
+
+Repeat.
+
+When that loop is clean, ByteCast becomes more than content.
+
+It becomes a company heartbeat.
+
+SkyForge, creative worlds, cards, games, story systems, visual campaigns, and experience design continue to show AeroVista's creative strength.
+
+That remains one of the company's advantages.
+
+AeroVista can imagine fast.
+
+It can prototype fast.
+
+It can create things that feel alive.
+
+But creative strength needs gates.
+
+Without gates, creativity turns into drift.
+
+With gates, creativity turns into product.
+
+That is the difference.
+
+NeXuS and N X Core are where the company grows up.
+
+This is the infrastructure backbone.
+
+Access control.
+
+Routing.
+
+Containers.
+
+Observability.
+
+Shell access.
+
+Service health.
+
+Secrets rotation.
+
+Deployment discipline.
+
+These are not side tasks.
+
+They are the rails.
+
+AeroVista is now big enough that rails matter.
+
+A V Memory and the Knowledge Console are another major advantage.
+
+Most small companies lose context as they move.
+
+They forget why decisions were made.
+
+They lose the trail behind the work.
+
+They repeat old questions.
+
+They rebuild what already existed.
+
+AeroVista is building against that failure.
+
+Memory preserves what happened.
+
+Source of Truth identifies what counts now.
+
+A V C C turns both into usable judgment.
+
+That is the operating model.
+
+Memory without truth becomes clutter.
+
+Truth without memory becomes brittle.
+
+Judgment needs both.
+
+So where are we?
+
+We are past the stage of proving that AeroVista can create.
+
+That has already been proven.
+
+We are in the stage of proving that AeroVista can finish, connect, deploy, and scale.
+
+The company has real assets.
+
+Real systems.
+
+Real creative lanes.
+
+Real infrastructure.
+
+Real project history.
+
+Real public surfaces.
+
+Real momentum.
+
+But the work needs tighter closure.
+
+Fewer half-open loops.
+
+Fewer unlabeled prototypes.
+
+Fewer scattered paths.
+
+Fewer almost-done surfaces.
+
+More finished vertical slices.
+
+More documented state.
+
+More clean deployment.
+
+More source-of-truth discipline.
+
+More operator ownership.
+
+That is what we need now.
+
+From stakeholders, we need patience with the right kind of progress.
+
+Not slow progress.
+
+Disciplined progress.
+
+The kind that secures the system before it scales.
+
+The kind that turns a creative ecosystem into an operating company.
+
+The kind that protects long-term value instead of chasing short-term noise.
+
+From employees and operators, we need focus.
+
+Work from the source of truth.
+
+Do not chase the loudest idea.
+
+Do not open three new doors before closing the active gate.
+
+When something is finished, mark it.
+
+When something is blocked, name the blocker.
+
+When something is stale, say so.
+
+When something is live, document the recovery path.
+
+When something changes, leave a trail.
+
+That is how the company becomes trustworthy.
+
+From builders, we need complete vertical slices.
+
+Not scattered progress everywhere.
+
+Not ten percent of ten things.
+
+One lane finished enough to use.
+
+One lane documented enough to recover.
+
+One lane wired enough to measure.
+
+One lane clean enough to hand off.
+
+Then the next.
+
+From leadership, we need sequencing.
+
+The current sequence is clear.
+
+Finish the remaining secrets-rotation families.
+
+Deploy A V C C Context Authority A, B, and C to N X Core.
+
+Then move into Checkpoint D.
+
+Federate Art Localized, EchoVerse, and Gear as real signal sources.
+
+Then move toward Control actions.
+
+Then scale.
+
+That is the road.
+
+The overall AeroVista signal today is strong.
+
+The foundation is live.
+
+The company shape is real.
+
+The creative base is alive.
+
+The infrastructure base is maturing.
+
+The memory layer is valuable.
+
+The source-of-truth layer is becoming essential.
+
+A V C C is becoming the company brain.
+
+And the next unlock is integration.
+
+Not more noise.
+
+Not more scattered starts.
+
+Integration.
+
+Closure.
+
+Deployment.
+
+Trust.
+
+AeroVista is moving from creative momentum into operating maturity.
+
+That is the real status.
+
+And the mission now is simple.
+
+Finish what matters.
+
+Connect what is real.
+
+Protect the source of truth.
+
+Deploy safely.
+
+Learn from every move.
+
+And keep building the company brain strong enough to carry the whole ecosystem forward.</div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-grid">
+      <div>
+        <div class="smallcaps">Internal Signal</div>
+        <strong>AeroVista ByteCast · Overall Company Status</strong>
+        <div>July 5, 2026 · Stakeholders · Employees · Operators · Builders</div>
+      </div>
+      <div>
+        <a class="button" href="../dispatches/internal-signals.html">← Internal Signals</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const mainAudio = document.getElementById('bytecast-audio');
+      const stickyAudio = document.getElementById('sticky-audio');
+      const playPause = document.getElementById('playPause');
+      const back15 = document.getElementById('back15');
+      const fwd15 = document.getElementById('fwd15');
+      const playTriggers = document.querySelectorAll('[data-play-bytecast]');
+
+      function syncFrom(source) {
+        const target = source === mainAudio ? stickyAudio : mainAudio;
+        if (!source || !target) return;
+        if (Math.abs(target.currentTime - source.currentTime) > 0.3) {
+          target.currentTime = source.currentTime;
+        }
+        if (source.paused !== target.paused) {
+          source.paused ? target.pause() : target.play().catch(function () {});
+        }
+      }
+
+      [mainAudio, stickyAudio].forEach(function (el) {
+        if (!el) return;
+        el.addEventListener('play', function () { syncFrom(el); });
+        el.addEventListener('pause', function () { syncFrom(el); });
+        el.addEventListener('seeked', function () { syncFrom(el); });
+        el.addEventListener('timeupdate', function () {
+          const other = el === mainAudio ? stickyAudio : mainAudio;
+          if (other && Math.abs(other.currentTime - el.currentTime) > 1.5) {
+            other.currentTime = el.currentTime;
+          }
+        });
+      });
+
+      playTriggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+          e.preventDefault();
+          mainAudio.play().catch(function () {});
+        });
+      });
+
+      if (playPause) {
+        playPause.addEventListener('click', function () {
+          if (mainAudio.paused) mainAudio.play();
+          else mainAudio.pause();
+        });
+      }
+      if (back15) {
+        back15.addEventListener('click', function () {
+          mainAudio.currentTime = Math.max(0, mainAudio.currentTime - 15);
+          stickyAudio.currentTime = mainAudio.currentTime;
+        });
+      }
+      if (fwd15) {
+        fwd15.addEventListener('click', function () {
+          const target = mainAudio.currentTime + 15;
+          mainAudio.currentTime = Number.isFinite(mainAudio.duration)
+            ? Math.min(mainAudio.duration, target) : target;
+          stickyAudio.currentTime = mainAudio.currentTime;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
