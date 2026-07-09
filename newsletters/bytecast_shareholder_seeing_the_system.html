@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByteCast Shareholder Brief — Build_Nevada Signal &amp; AeroVista Position</title>
+  <meta name="description" content="Shareholder ByteCast: Build_Nevada and the Build_ ecosystem signal — how AeroVista makes ecosystems visible, understandable, and actionable." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/bytecast_shareholder_seeing_the_system.html" />
+  <meta name="theme-color" content="#060b14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Seeing the System — Build_Nevada ByteCast" />
+  <meta property="og:description" content="Shareholder ByteCast on Build_Nevada, ecosystem visibility, and AeroVista positioning." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta property="og:url" content="https://thesignal.aerovista.us/newsletters/bytecast_shareholder_seeing_the_system.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Seeing the System — Build_Nevada ByteCast" />
+  <meta name="twitter:image" content="https://thesignal.aerovista.us/signal.png" />
+  <style>
+    :root {
+      --bg: #060b14;
+      --panel: rgba(12, 22, 38, 0.92);
+      --panel-2: rgba(16, 30, 51, 0.82);
+      --line: rgba(255, 255, 255, 0.13);
+      --ink: #f3f8ff;
+      --muted: #9fb2c8;
+      --soft: #d7e5f4;
+      --cyan: #00aeef;
+      --cyan2: #6be4ff;
+      --gold: #ffbd5a;
+      --amber: #ff8f3d;
+      --green: #4ee6a7;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 70% 5%, rgba(255, 189, 90, 0.14), transparent 34%),
+        radial-gradient(circle at 15% 18%, rgba(0, 174, 239, 0.16), transparent 32%),
+        linear-gradient(135deg, #050915, #081222 48%, #04070f 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+
+    a { color: var(--cyan2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 10px 0 22px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255, 189, 90, 0.22), rgba(0, 174, 239, 0.12));
+      border: 1px solid var(--line);
+      box-shadow: 0 0 28px rgba(255, 189, 90, 0.12);
+    }
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 20px;
+    }
+
+    .nav-pills a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 189, 90, 0.22);
+      border-radius: 999px;
+      background: rgba(4, 10, 20, 0.62);
+      color: var(--soft);
+      font-size: 0.88rem;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: clamp(28px, 5vw, 58px);
+      background:
+        linear-gradient(135deg, rgba(255, 189, 90, 0.12), transparent 42%),
+        linear-gradient(45deg, rgba(0, 174, 239, 0.10), transparent 55%),
+        rgba(6, 12, 24, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      top: -130px;
+      background: radial-gradient(circle, rgba(255, 189, 90, 0.16), transparent 68%);
+      filter: blur(2px);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      border: 1px solid rgba(255, 189, 90, 0.28);
+      background: rgba(255, 189, 90, 0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 0 7px rgba(78, 230, 167, 0.12), 0 0 22px rgba(78, 230, 167, 0.45);
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      max-width: 920px;
+      font-size: clamp(2.45rem, 6.2vw, 5.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, var(--gold), var(--cyan2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+      color: var(--soft);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      margin: 0 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: rgba(4, 10, 20, 0.68);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .section {
+      margin-top: 26px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    .section-inner { padding: clamp(22px, 4vw, 36px); }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section p { color: var(--soft); margin: 0 0 16px; }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .lede { font-size: 1.14rem; color: #fff !important; }
+
+    .audio-card {
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      gap: 24px;
+      align-items: stretch;
+      border: 1px solid rgba(255, 189, 90, 0.24);
+      background:
+        linear-gradient(135deg, rgba(255, 189, 90, 0.10), transparent 55%),
+        linear-gradient(45deg, rgba(0, 174, 239, 0.08), transparent 65%),
+        rgba(2, 6, 14, 0.72);
+      border-radius: 24px;
+      padding: clamp(18px, 3vw, 28px);
+    }
+
+    .audio-player { display: grid; gap: 16px; }
+
+    audio {
+      width: 100%;
+      min-height: 44px;
+      accent-color: var(--cyan);
+      filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.28));
+    }
+
+    .tag {
+      display: inline-flex;
+      border: 1px solid rgba(255, 189, 90, 0.35);
+      color: #ffe0aa;
+      background: rgba(255, 189, 90, 0.11);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .chapters { display: grid; gap: 9px; }
+
+    .chapter {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      color: var(--soft);
+      font-size: 0.94rem;
+    }
+
+    .chapter b { color: var(--gold); }
+
+    .quote {
+      margin: 22px 0 0;
+      padding: 22px 24px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255, 189, 90, 0.06);
+      border-radius: 0 18px 18px 0;
+      font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .quote em { font-style: normal; color: var(--cyan2); }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      background: var(--panel-2);
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.2rem; color: #fff; }
+    .card p, .card li { color: #c3d3e5; margin: 0; }
+    .card ul { padding-left: 18px; margin: 12px 0 0; }
+
+    .layers {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .layer {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .layer-num {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .layer h3 { margin: 8px 0; color: var(--cyan2); font-size: 1.05rem; }
+    .layer p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+    .takeaways {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .takeaway {
+      border: 1px solid rgba(78, 230, 167, 0.22);
+      background: rgba(78, 230, 167, 0.06);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .takeaway strong { display: block; color: #fff; margin-bottom: 6px; }
+    .takeaway span { color: var(--soft); font-size: 0.94rem; }
+
+    details {
+      border: 1px solid rgba(255, 189, 90, 0.18);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.22);
+      margin-top: 18px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .transcript {
+      padding: 0 18px 18px;
+      white-space: pre-wrap;
+      color: var(--soft);
+      font-size: 0.96rem;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding: 26px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .footer strong { color: var(--ink); }
+
+    @media (max-width: 980px) {
+      .hero-grid, .card-grid, .layers, .takeaways, .audio-card {
+        grid-template-columns: 1fr 1fr;
+      }
+      .audio-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .page { width: min(100% - 22px, 1180px); }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .hero-grid, .card-grid, .layers, .takeaways {
+        grid-template-columns: 1fr;
+      }
+      .hero { border-radius: 24px; }
+      h1 { font-size: clamp(2.2rem, 13vw, 4rem); }
+    }
+
+    @media print {
+      audio, .nav-pills { display: none; }
+      body { background: #fff; color: #111; }
+      .section, .hero { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">▲</div>
+        <div>
+          <div>The Signal</div>
+          <div style="font-size:0.74rem;color:var(--muted);">AeroVista Shareholder Brief</div>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="../index.html">← The SIGNAL</a>
+        <a href="../dispatches/internal-signals.html">Internal Signals</a>
+      </nav>
+      <div>ByteCast · July 8, 2026</div>
+    </div>
+
+    <nav class="nav-pills" aria-label="Page sections">
+      <a href="#listen">▶ Listen</a>
+      <a href="#snapshot">◎ Snapshot</a>
+      <a href="#position">↳ Position</a>
+      <a href="#why">✦ Why it matters</a>
+      <a href="#layers">▦ Layers</a>
+      <a href="#takeaways">→ Takeaways</a>
+      <a href="#transcript">¶ Transcript</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><span class="pulse"></span> ByteCast · Shareholder Edition</span>
+        <h1>Seeing the <span class="gradient-text">System</span></h1>
+        <p class="hero-copy">
+          Build_Nevada is the newest signal in the Build_ ecosystem — a repeating inward breakdown of how Nevada reveals itself as system, not scenery. This ByteCast connects that signal to AeroVista's positioning: the company that makes complex ecosystems visible, understandable, and actionable.
+        </p>
+
+        <div class="hero-grid">
+          <div class="metric"><strong>25 min</strong><span>Runtime</span></div>
+          <div class="metric"><strong>Build_</strong><span>Theme</span></div>
+          <div class="metric"><strong>Shareholder</strong><span>Audience</span></div>
+          <div class="metric"><strong>ByteCast</strong><span>Format</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="listen">
+      <div class="section-inner">
+        <div class="audio-card">
+          <div class="audio-player">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+              <span class="eyebrow"><span class="pulse"></span> Play the ByteCast</span>
+              <span class="tag">Shareholder</span>
+            </div>
+            <h2>Build_Nevada Signal &amp; AeroVista Position</h2>
+            <p class="lede">
+              This briefing frames AeroVista not merely as an aviation company, but as an organization that turns complex ecosystems into visible, understandable, and actionable signals for shareholders.
+            </p>
+            <audio controls preload="metadata">
+              <source src="bytecast-build_navada.mp3" type="audio/mpeg" />
+              <source src="https://thesignal.aerovista.us/newsletters/bytecast-build_navada.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+          <div class="chapters">
+            <div class="chapter"><b>00:00</b><span>Opening — Build_Nevada as ecosystem signal, not travel narrative</span></div>
+            <div class="chapter"><b>03:30</b><span>What the tape is actually saying: infrastructure, incentives, pattern</span></div>
+            <div class="chapter"><b>08:00</b><span>Build_ ecosystem context and why Nevada is the newest inward signal</span></div>
+            <div class="chapter"><b>13:00</b><span>AeroVista as translation layer across fragmented ecosystems</span></div>
+            <div class="chapter"><b>18:30</b><span>Shareholder positioning: visibility, repeatability, leverage</span></div>
+            <div class="chapter"><b>22:00</b><span>Closing — eyes forward, systems online</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="snapshot">
+      <div class="section-inner">
+        <div class="kicker">Signal snapshot</div>
+        <h2>What the tape is actually saying</h2>
+        <p>Build_Nevada is not a travel piece. It is an ecosystem decomposition — how the state reads as infrastructure, incentive geometry, and repeating operational pattern.</p>
+        <p>The briefing walks through how surface narrative (desert, growth, spectacle) sits on top of deeper mechanics: land use, logistics corridors, tax and incentive structure, energy and water constraints, and the operational loops that keep the machine running.</p>
+
+        <div class="quote">
+          Ecosystems <em>do not expose their mechanics</em> by default. Operators need a translation layer — somebody who can see across fragments and report the reality underneath.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="position">
+      <div class="section-inner">
+        <div class="kicker">The Build_ signal</div>
+        <h2>Build_Nevada inside the ecosystem</h2>
+        <p>Build_Nevada is the newest repeating inward signal in the Build_ family — the same editorial discipline applied to a geography that rewards systems thinking over postcard thinking.</p>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>System, not scenery</h3>
+            <p>Nevada is presented as an operating environment: constraints, incentives, and repeatable patterns that explain why things cluster where they do.</p>
+          </article>
+          <article class="card">
+            <h3>Inward breakdown</h3>
+            <p>Each Build_ edition peels back one layer of a larger ecosystem. Nevada adds a western U.S. node to that map — logistics, energy, land, and policy geometry.</p>
+          </article>
+          <article class="card">
+            <h3>Signal discipline</h3>
+            <p>The format stays consistent: observe, decompose, name the loop, report what repeats. That discipline is what makes Build_ useful to shareholders, not just interesting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="section-inner">
+        <div class="kicker">Why it matters</div>
+        <h2>AeroVista's role in the stack</h2>
+        <p class="lede">AeroVista is building the capability to turn complex, fragmented ecosystems into governed signals — the same muscle exercised in Build_Nevada, applied across aviation, media, and internal operating systems.</p>
+        <p>For shareholders, the connection is direct: companies that can see across silos, name reality early, and ship repeatable reporting loops compound faster than companies still guessing from headlines.</p>
+        <ul>
+          <li><strong>Visibility</strong> — make hidden infrastructure and incentive geometry legible before the market prices it in.</li>
+          <li><strong>Understandability</strong> — translate operator truth into formats leadership and investors can act on.</li>
+          <li><strong>Actionability</strong> — connect insight to the next move: deploy, federate, harden, or hold.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="layers">
+      <div class="section-inner">
+        <div class="kicker">Reading order</div>
+        <h2>Four layers in the Nevada signal</h2>
+        <p>The ByteCast moves through these layers in sequence — the page mirrors that structure for quick reference.</p>
+
+        <div class="layers">
+          <div class="layer">
+            <div class="layer-num">Layer 01</div>
+            <h3>Surface narrative</h3>
+            <p>What people say about Nevada: growth, desert, opportunity, spectacle.</p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">Layer 02</div>
+            <h3>Incentive geometry</h3>
+            <p>Tax posture, regulatory environment, and why capital routes here.</p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">Layer 03</div>
+            <h3>Infrastructure pattern</h3>
+            <p>Energy, water, logistics corridors, and land-use loops that repeat.</p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">Layer 04</div>
+            <h3>Translation layer</h3>
+            <p>Where AeroVista sits: reporting reality across fragments into one signal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="takeaways">
+      <div class="section-inner">
+        <div class="kicker">Shareholder takeaways</div>
+        <h2>What to carry forward</h2>
+
+        <div class="takeaways">
+          <div class="takeaway">
+            <strong>Build_ is a product line, not a one-off.</strong>
+            <span>Each geography or domain gets the same inward decomposition — Nevada is the newest entry, not the whole story.</span>
+          </div>
+          <div class="takeaway">
+            <strong>AeroVista sells clarity under complexity.</strong>
+            <span>The aviation brand is real; the deeper asset is ecosystem intelligence and repeatable signal production.</span>
+          </div>
+          <div class="takeaway">
+            <strong>Signals compound when format repeats.</strong>
+            <span>ByteCast, EOW, and EOD share one hub so operators and shareholders always know where truth lives.</span>
+          </div>
+          <div class="takeaway">
+            <strong>Listen for the loops, not the adjectives.</strong>
+            <span>The briefing rewards attention to what repeats — incentives, constraints, and operational geometry.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="transcript">
+      <div class="section-inner">
+        <h2>Transcript</h2>
+        <p>Full verbatim transcript ships with the audio master. Use the chapter markers above to navigate the 25-minute briefing; the narrative arc runs from Build_Nevada signal → ecosystem context → AeroVista positioning → shareholder action.</p>
+        <details>
+          <summary>Read briefing outline (section-by-section)</summary>
+          <div class="transcript">AeroVista ByteCast — Seeing the System (Build_Nevada)
+
+Welcome to The Signal.
+
+This is a shareholder edition of ByteCast — built to connect the newest Build_ signal, Build_Nevada, to AeroVista's positioning in the market.
+
+Build_Nevada is not tourism content. It is an inward breakdown of how Nevada functions as system: infrastructure, incentive geometry, and repeating operational pattern beneath the surface narrative.
+
+The Build_ ecosystem applies the same editorial discipline across geographies and domains. Each edition observes, decomposes, names the loop, and reports what repeats. Nevada is the newest node on that map.
+
+Ecosystems do not expose their mechanics by default. Operators need a translation layer — somebody who can see across fragments and report the reality underneath. That is the role AeroVista is building into its operating model.
+
+For shareholders, the business meaning is bigger than aviation alone. AeroVista is developing the capability to turn complex ecosystems into visible, understandable, and actionable signals — the same muscle exercised in media intelligence, internal operating reports, and platform milestones like EchoVerse and AVCC.
+
+Visibility comes first: name infrastructure and incentives before the market prices them in. Understandability follows: translate operator truth into formats leadership can act on. Actionability closes the loop: connect insight to deploy, federate, harden, or hold.
+
+The briefing closes with a simple discipline: listen for the loops, not the adjectives. What repeats — constraints, incentives, geometry — is what matters.
+
+This has been The Signal.
+
+Eyes forward. Systems online.</div>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>AeroVista · The Signal</strong><br />
+      Shareholder ByteCast · Build_Nevada · July 8, 2026<br />
+      Generated for shareholder distribution
+    </footer>
+  </main>
+  <script src="../js/site-config.js"></script>
+  <script src="../js/site-analytics.js" defer></script>
+</body>
+</html>

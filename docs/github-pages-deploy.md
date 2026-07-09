@@ -65,6 +65,8 @@ Legacy routes redirect there:
 - https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html — EchoVerse ByteCast
 - https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.mp3 — weekly ByteCast audio
 - https://thesignal.aerovista.us/newsletters/a_high_detail_corporate_infographic_weekly_report.png — weekly infographic
+- https://thesignal.aerovista.us/newsletters/bytecast_shareholder_seeing_the_system.html — Build_Nevada shareholder ByteCast
+- https://thesignal.aerovista.us/newsletters/bytecast-build_navada.mp3 — Build_Nevada ByteCast audio
 
 ## What is not on GitHub yet (as of theme work)
 
