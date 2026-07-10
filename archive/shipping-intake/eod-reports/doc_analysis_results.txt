@@ -1,0 +1,43 @@
+Most common keywords:
+- system: 1880
+- ai: 1368
+- music: 1149
+- data: 1128
+- file: 1124
+- integration: 1015
+- development: 879
+- files: 874
+- nexus: 836
+- content: 830
+- documentation: 819
+- management: 818
+- search: 814
+- python: 810
+- analysis: 726
+- const: 713
+- status: 703
+- processing: 677
+- new: 668
+- features: 663
+
+Most common two-word phrases:
+- music catalog: 184
+- offline ai: 146
+- file management: 137
+- pip install: 126
+- performance optimization: 125
+- error handling: 122
+- ai assistant: 113
+- user experience: 112
+- web interface: 111
+- main dashboard: 105
+- catch error: 99
+- pending pending: 90
+- music dashboard: 89
+- advanced features: 87
+- def self: 84
+- content creation: 84
+- ai integration: 82
+- album art: 81
+- try const: 81
+- unified server: 79

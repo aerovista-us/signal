@@ -1,4 +1,5 @@
-/* The SIGNAL public site — shared theme (shareholder newsletter palette) */
+/* The SIGNAL public site — shared theme (shareholder newsletter palette)
+   Deploy this file at repo root for dispatch pages. index.html inlines the same rules. */
 
 :root {
   --bg: #04070d;
@@ -17,19 +18,14 @@
   --radius-xl: 30px;
   --radius-lg: 22px;
   --max: 1180px;
-  /* legacy aliases */
   --gold: var(--cyan);
   --signal: var(--green);
   --orange: #f97316;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -57,10 +53,7 @@ body::before {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 82%);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
 .gradient {
   background: linear-gradient(90deg, #fff 0%, var(--cyan) 46%, var(--blue) 100%);
@@ -69,18 +62,9 @@ a {
   color: transparent;
 }
 
-/* layout shells */
-.shell {
-  width: min(var(--max), calc(100% - 36px));
-  margin: 0 auto;
-}
+.shell { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+.wrap { width: min(1040px, calc(100% - 36px)); margin: 0 auto; }
 
-.wrap {
-  width: min(1040px, calc(100% - 36px));
-  margin: 0 auto;
-}
-
-/* nav */
 .nav {
   position: sticky;
   top: 0;
@@ -122,31 +106,11 @@ a {
   border: none;
 }
 
-.brand-text strong {
-  display: block;
-  font-size: 0.88rem;
-  letter-spacing: 0.18em;
-}
+.brand-text strong { display: block; font-size: 0.88rem; letter-spacing: 0.18em; }
+.brand-text span { display: block; margin-top: 2px; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.16em; }
 
-.brand-text span {
-  display: block;
-  margin-top: 2px;
-  font-size: 0.65rem;
-  color: var(--muted);
-  letter-spacing: 0.16em;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.nav-links a:hover {
-  color: var(--cyan);
-}
+.nav-links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 0.9rem; }
+.nav-links a:hover { color: var(--cyan); }
 
 .back {
   color: var(--muted);
@@ -157,10 +121,7 @@ a {
   font-weight: 800;
 }
 
-.back:hover {
-  color: var(--cyan);
-  border-color: rgba(103, 232, 249, 0.42);
-}
+.back:hover { color: var(--cyan); border-color: rgba(103, 232, 249, 0.42); }
 
 .button {
   display: inline-flex;
@@ -181,10 +142,7 @@ a {
   background: rgba(96, 165, 250, 0.07);
 }
 
-/* dispatch pages */
-.hero {
-  padding: 72px 0 32px;
-}
+.hero { padding: 72px 0 32px; }
 
 .kicker {
   color: var(--cyan);
@@ -271,18 +229,14 @@ h1 {
   letter-spacing: -0.055em;
 }
 
-.article-body {
-  padding: 28px;
-}
+.article-body { padding: 28px; }
 
 .block {
   padding: 24px 0;
   border-bottom: 1px solid rgba(125, 211, 252, 0.18);
 }
 
-.block:last-child {
-  border-bottom: 0;
-}
+.block:last-child { border-bottom: 0; }
 
 .block h3 {
   margin: 0 0 10px;
@@ -370,9 +324,7 @@ h1 {
   background: linear-gradient(135deg, rgba(103, 232, 249, 0.18), rgba(96, 165, 250, 0.08));
 }
 
-.btn:hover {
-  border-color: rgba(103, 232, 249, 0.48);
-}
+.btn:hover { border-color: rgba(103, 232, 249, 0.48); }
 
 footer {
   border-top: 1px solid var(--line);
@@ -381,20 +333,8 @@ footer {
 }
 
 @media (max-width: 850px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    position: static;
-  }
-
-  .issue {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: clamp(3.1rem, 18vw, 6rem);
-  }
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .issue { align-items: flex-start; flex-direction: column; }
+  h1 { font-size: clamp(3.1rem, 18vw, 6rem); }
 }

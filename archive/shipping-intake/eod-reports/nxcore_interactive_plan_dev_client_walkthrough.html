@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NXCore — Interactive Completion Plan</title>
+  <style>
+    :root{--bg:#0f172a;--bg2:#111827;--card:#111827;--muted:#94a3b8;--fg:#e5e7eb;--pri:#06b6d4;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--accent:#a78bfa}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b1224,#0f172a);color:var(--fg);font:16px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
+    a{color:var(--pri)}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #1f2937}
+    .bar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0}
+    .title{font-weight:800;font-size:22px;letter-spacing:.3px}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #1f2937;background:#0b1220;padding:6px 10px;border-radius:999px;color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    .card{background:radial-gradient(1200px 400px at -10% -30%,rgba(167,139,250,.08),transparent),radial-gradient(800px 300px at 120% 10%,rgba(6,182,212,.08),transparent),#0b1220;border:1px solid #1f2937;border-radius:16px;padding:16px}
+    .card h3{margin:0 0 10px 0;font-size:18px}
+    .muted{color:var(--muted)}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;border:1px solid #263244;background:#0e1527;color:#b8c3d9;font-size:12px}
+    .ok{color:#10b981}.warn{color:#f59e0b}.bad{color:#ef4444}.pri{color:var(--pri)}
+    .btn{cursor:pointer;border:1px solid #1f2937;background:#0e162a;color:#e5e7eb;padding:8px 12px;border-radius:10px}
+    .btn:hover{border-color:#334155}
+    .btn.ghost{background:transparent}
+    .toolbar{display:flex;flex-wrap:wrap;gap:8px}
+    .kpi{display:flex;gap:16px;flex-wrap:wrap}
+    .kpi .box{background:#0c152a;border:1px solid #1f2937;border-radius:12px;padding:10px 14px}
+    .kpi .val{font-size:22px;font-weight:800}
+    details{border:1px solid #1f2937;border-radius:12px;padding:10px;background:#0b1325}
+    details>summary{cursor:pointer;list-style:none}
+    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    pre{background:#0a1322;border:1px solid #1f2937;padding:12px;border-radius:12px;overflow:auto}
+    .row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .list{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+    .task{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid #203045;border-radius:12px;background:linear-gradient(180deg,#0b1222,#0f1a2e)}
+    .task small{color:var(--muted)}
+    .pill{padding:2px 8px;border-radius:999px;border:1px solid #263244;background:#0e1527;color:#b8c3d9;font-size:12px}
+    .hidden{display:none !important}
+    .footer{margin:24px 0;color:#7f8ea8}
+    .sep{height:1px;background:linear-gradient(90deg,transparent,#243244,transparent);margin:16px 0}
+    .copy{cursor:pointer;border:1px dashed #2a3a54;padding:3px 6px;border-radius:8px;font-size:12px;color:#cde4ff}
+    .mode-toggle{display:flex;gap:8px;align-items:center}
+    .note{font-size:13px;color:#9fb0c8}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="title">NXCore — Interactive Completion Plan</div>
+      <div class="toolbar">
+        <div class="mode-toggle">
+          <span class="muted">View:</span>
+          <button class="btn" id="modeDev">Developer</button>
+          <button class="btn ghost" id="modeClient">Client</button>
+        </div>
+        <button class="btn" id="btnExport">Export Progress</button>
+        <label class="btn" for="importFile">Import</label>
+        <input id="importFile" type="file" accept="application/json" class="hidden" />
+        <button class="btn" id="btnPrint">Save as PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="kpi">
+      <div class="box"><div class="val" id="kpiDone">3</div><div class="muted">Completed Tracks</div></div>
+      <div class="box"><div class="val" id="kpiActive">3</div><div class="muted">In Progress</div></div>
+      <div class="box"><div class="val" id="kpiPending">5</div><div class="muted">Planned</div></div>
+      <div class="box"><div class="val" id="kpiETA">4.0d</div><div class="muted">ETA to Go‑Live (best effort)</div></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Overview</h3>
+        <p class="muted">Objective: bring NXCore to production-ready state by closing identity, storage, observability, and backup gaps. Toggle <b>Developer</b>/<b>Client</b> view to show or hide deep technical details.</p>
+        <div class="list">
+          <div class="chip">Updated: <span id="stamp"></span></div>
+          <div class="chip">Owner: Infra</div>
+          <div class="chip">Version: v1.0 Walkthrough</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Benefits</h3>
+        <ul class="muted">
+          <li>Centralized SSO with audit trail (compliance, safe access)</li>
+          <li>Resilient storage + tested backups (RPO/RTO clarity)</li>
+          <li>Observable services (dashboards + alerts + runbooks)</li>
+          <li>Client transparency with a guided, non-technical view</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Status Roll‑Up</h3>
+        <div class="list" id="statusList"></div>
+      </div>
+      <div class="card">
+        <h3>Acceptance Criteria</h3>
+        <ul>
+          <li>Authelia UI + styles load; login succeeds; groups/claims applied</li>
+          <li>Traefik routers visible; HTTP cert fetch works</li>
+          <li>Daily PostgreSQL backups run and restore test passes</li>
+          <li>Grafana dashboards + alerts configured; runbooks linked</li>
+          <li>Playwright strict TLS green; mock data removed</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section class="card">
+      <h3>Tasks</h3>
+      <p class="note">Check items off as you complete them. Use the copy buttons to grab commands.</p>
+      <div class="list" id="taskList"></div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section class="grid">
+      <div class="card dev">
+        <h3>Risk & Mitigations (Dev)</h3>
+        <ul>
+          <li><b>I/O stalls on image delete</b> → Detach loop, check <code>dmesg</code>, fallback to single‑user delete.</li>
+          <li><b>Auth UI assets mismatch</b> → Validate container workdir + asset path; add e2e check for <code>/auth/manifest.json</code>.</li>
+          <li><b>Backups untested</b> → Weekly restore rehearsal; gate changes on last-pass success.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Go‑Live Checklist</h3>
+        <ul id="golive">
+          <li><label><input type="checkbox" data-check="routers"/> Traefik routers + HTTP cert path</label></li>
+          <li><label><input type="checkbox" data-check="health"/> Authelia health + Redis healthcheck & depends_on</label></li>
+          <li><label><input type="checkbox" data-check="assets"/> Authelia UI assets served</label></li>
+          <li><label><input type="checkbox" data-check="backups"/> Postgres daily backups + restore test</label></li>
+          <li><label><input type="checkbox" data-check="grafana"/> Grafana dashboards + alerts + contacts</label></li>
+          <li><label><input type="checkbox" data-check="mock"/> Mock data removed</label></li>
+          <li><label><input type="checkbox" data-check="tls"/> Playwright strict TLS green</label></li>
+          <li><label><input type="checkbox" data-check="runbooks"/> Runbooks linked in Grafana</label></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="footer">Tip: Use <b>Export Progress</b> to save state as JSON and share with teammates or clients. <b>Save as PDF</b> creates a clean handout.</p>
+  </main>
+
+  <template id="taskTmpl">
+    <div class="task">
+      <input type="checkbox" class="t-check"/>
+      <div>
+        <div class="row"><strong class="t-title"></strong><span class="pill t-eta"></span></div>
+        <div class="muted t-desc"></div>
+        <details class="dev">
+          <summary>Commands</summary>
+          <pre class="t-code"></pre>
+          <div class="copy" title="Copy to clipboard">Copy</div>
+        </details>
+      </div>
+      <div class="pill t-owner"></div>
+    </div>
+  </template>
+
+  <script>
+    const plan = {
+      updatedAt: new Date().toLocaleString(),
+      status: [
+        {title:"Env vars wired across compose stacks", state:"done"},
+        {title:"Traefik HTTP cert path fixed / routers clarified", state:"done"},
+        {title:"SSO core online (Postgres on root, Authelia schema 0→23, health 200)", state:"done"},
+        {title:"Authelia ↔ Redis health (depends_on + healthcheck)", state:"active"},
+        {title:"Authelia static assets for /auth (manifest.json, CSS)", state:"active"},
+        {title:"Storage cleanup: remove docker-data.img safely", state:"active"},
+        {title:"Playwright CA trust (strict TLS)", state:"pending"},
+        {title:"Daily Postgres backups + retention + restore test", state:"pending"},
+        {title:"Grafana dashboards + alerts + contact points", state:"pending"},
+        {title:"Mock data purge before prod", state:"pending"}
+      ],
+      tasks: [
+        {
+          title:"Authelia ↔ Redis health",
+          owner:"Infra",
+          eta:"0.5d",
+          desc:"Add Redis healthcheck and make Authelia depend on healthy Redis.",
+          code:`# docker-compose.yml (redis)\nhealthcheck:\n  test: [\"CMD\", \"redis-cli\", \"ping\"]\n  interval: 10s\n  timeout: 3s\n  retries: 5\n\n# docker-compose.yml (authelia)\ndepends_on:\n  redis:\n    condition: service_healthy\n\n# verify\ndocker compose ps\ndocker inspect $(docker compose ps -q redis) --format '{{json .State.Health}}' | jq`,
+          done:false
+        },
+        {
+          title:"Authelia static assets",
+          owner:"Infra",
+          eta:"0.5d",
+          desc:"Mount public assets and confirm manifest & CSS are served under /auth/.",
+          code:`# mount build output into container\n- ./authelia/public:/app/public:ro\n\n# verify from inside network\ndocker exec traefik wget -qO- http://authelia:9091/manifest.json | head\n\n# verify externally\ncurl -I https://<host>/auth/manifest.json`,
+          done:false
+        },
+        {
+          title:"Storage cleanup (docker-data.img)",
+          owner:"Infra",
+          eta:"0.5d",
+          desc:"Detach any loop devices / handles, then delete image; inspect dmesg for I/O issues.",
+          code:`sudo systemctl stop docker\nsudo losetup -a | grep docker-data.img && sudo losetup -D || true\nsudo fuser -v /srv/data/docker-data.img || true\nsudo rm -f /srv/data/docker-data.img\ndmesg | tail -n 120` ,
+          done:false
+        },
+        {
+          title:"Playwright CA trust",
+          owner:"QA/Platform",
+          eta:"0.5d",
+          desc:"Import Root CA to system store and Chromium profile used by tests; enforce strict TLS.",
+          code:`# Playwright config\n// playwright.config.ts\nexport default defineConfig({\n  use: { ignoreHTTPSErrors: false },\n});\n\n# CI bootstrap (example)\nsudo cp /path/to/AeroVista-RootCA.crt /usr/local/share/ca-certificates/\nsudo update-ca-certificates` ,
+          done:false
+        },
+        {
+          title:"PostgreSQL backups + restore test",
+          owner:"DBA/Infra",
+          eta:"0.5d",
+          desc:"Nightly pg_dump, 7/14/30 retention via systemd timer; verify restore on disposable container.",
+          code:`# /srv/core/bin/pg-backup.sh (excerpt)\nTS=$(date +%F_%H%M)\nmkdir -p /srv/backups/postgres/$TS\npg_dumpall -U postgres | gzip > /srv/backups/postgres/$TS/all.sql.gz\n# retention pruning...\n\n# systemd timer/service setup...`,
+          done:false
+        },
+        {
+          title:"Grafana dashboards + alerts",
+          owner:"Observability",
+          eta:"1.0d",
+          desc:"Import Traefik/Docker/Postgres dashboards, wire contact points, add 5 baseline alerts, link runbooks.",
+          code:`# example checks\n# HTTP 5xx rate, CPU, memory, disk usage, Authelia latency\n# Link runbooks in panel descriptions.`,
+          done:false
+        },
+        {
+          title:"Mock data purge",
+          owner:"App teams",
+          eta:"0.5d",
+          desc:"Remove demo models, sample rows, and example n8n flows prior to exposure.",
+          code:`git grep -n 'demo\|sample'\n# delete and commit cleanup`,
+          done:false
+        }
+      ],
+      checks: {}
+    };
+
+    // State + hydration
+    const $$ = (q,root=document)=>root.querySelector(q);
+    const list = $$("#statusList");
+    const taskList = $$("#taskList");
+    const stamp = $$("#stamp");
+
+    function paintStatus(){
+      list.innerHTML = '';
+      let done=0,active=0,pending=0;
+      plan.status.forEach(s=>{
+        const row = document.createElement('div');
+        const color = s.state==='done'?'ok':s.state==='active'?'warn':'muted';
+        row.className='row';
+        row.innerHTML = `<div>${s.title}</div><div class="pill ${color}">${s.state.toUpperCase()}</div>`;
+        list.appendChild(row);
+        if(s.state==='done') done++; else if(s.state==='active') active++; else pending++;
+      });
+      $$("#kpiDone").textContent = done;
+      $$("#kpiActive").textContent = active;
+      $$("#kpiPending").textContent = pending;
+      // naive ETA: sum task etas remaining (0.5d=0.5, etc.)
+      const days = plan.tasks.filter(t=>!t.done).reduce((a,t)=>a+parseFloat(t.eta),0);
+      $$("#kpiETA").textContent = days.toFixed(1)+"d";
+    }
+
+    function makeTask(t){
+      const tpl = document.getElementById('taskTmpl');
+      const node = tpl.content.cloneNode(true);
+      const root = node.querySelector('.task');
+      root.querySelector('.t-title').textContent = t.title;
+      root.querySelector('.t-desc').textContent = t.desc;
+      root.querySelector('.t-code').textContent = t.code;
+      root.querySelector('.t-eta').textContent = 'ETA ' + t.eta;
+      root.querySelector('.t-owner').textContent = t.owner;
+      const chk = root.querySelector('.t-check');
+      chk.checked = !!t.done;
+      chk.addEventListener('change',()=>{t.done = chk.checked; persist(); paintStatus();});
+      root.querySelector('.copy').addEventListener('click',()=>{
+        navigator.clipboard.writeText(t.code); 
+        const btn = root.querySelector('.copy');
+        btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);
+      });
+      return node;
+    }
+
+    function paintTasks(){
+      taskList.innerHTML='';
+      plan.tasks.forEach(t=> taskList.appendChild(makeTask(t)) );
+    }
+
+    function paintChecks(){
+      document.querySelectorAll('#golive input[type=checkbox]').forEach(cb=>{
+        cb.checked = !!plan.checks[cb.dataset.check];
+        cb.addEventListener('change',()=>{plan.checks[cb.dataset.check]=cb.checked; persist();});
+      });
+    }
+
+    function persist(){ localStorage.setItem('nxcore-plan', JSON.stringify(plan)); }
+
+    function load(){
+      const raw = localStorage.getItem('nxcore-plan');
+      if(raw){ try{ const s = JSON.parse(raw); Object.assign(plan, s); }catch{}}
+    }
+
+    function setMode(mode){
+      const dev = mode==='dev';
+      document.querySelectorAll('.dev').forEach(el=> el.classList.toggle('hidden', !dev));
+      $$('#modeDev').classList.toggle('ghost', !dev);
+      $$('#modeClient').classList.toggle('ghost', dev);
+    }
+
+    // Export/Import/Print
+    $$('#btnExport').addEventListener('click',()=>{
+      const blob = new Blob([JSON.stringify(plan,null,2)],{type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download='nxcore-plan-progress.json'; a.click();
+    });
+    $$('#importFile').addEventListener('change',(e)=>{
+      const f = e.target.files[0]; if(!f) return;
+      const r = new FileReader();
+      r.onload = ()=>{ try{ const s = JSON.parse(r.result); Object.assign(plan, s); persist(); hydrate(); }catch{ alert('Invalid JSON'); } };
+      r.readAsText(f);
+    });
+    $$('#btnPrint').addEventListener('click',()=>window.print());
+
+    // Mode toggle
+    $$('#modeDev').addEventListener('click',()=>setMode('dev'));
+    $$('#modeClient').addEventListener('click',()=>setMode('client'));
+
+    function hydrate(){
+      stamp.textContent = plan.updatedAt;
+      paintStatus();
+      paintTasks();
+      paintChecks();
+    }
+
+    load();
+    hydrate();
+    setMode('dev');
+  </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+{
+  "publication": "The Signal",
+  "brand": "AeroVista",
+  "division": "EchoVerse",
+  "date": "2026-06-16",
+  "editionType": "milestone",
+  "folderSlug": "2026-06-16-echoverse",
+  "catalogTitle": "EchoVerse Audio Intelligence",
+  "tags": ["june 16 2026", "echoverse", "audio intelligence platform"],
+  "slug": "echoverse-audio-intelligence-platform",
+  "title": "EchoVerse is now an Audio Intelligence Platform.",
+  "kicker": "Status: Operational",
+  "subtitle": "EchoVerse crossed a major production milestone: new audio can now move through a verified path from dropped MP3 to catalog ID, ByteTag metadata workflow, analysis writeback, and Edit handoff.",
+  "audio": {
+    "title": "ByteCast: From Drop to Edit",
+    "file": "echoverse-bytecast-2026-06-16.mp3",
+    "description": "A shareholder and employee-ready audio briefing covering what changed, why it matters, what was verified, and where EchoVerse goes next.",
+    "chapters": [
+      {
+        "time": "00:00",
+        "label": "Opening: EchoVerse crosses the platform line"
+      },
+      {
+        "time": "00:45",
+        "label": "The verified happy path from dropped MP3 to Edit"
+      },
+      {
+        "time": "02:00",
+        "label": "Why this matters to shareholders and employees"
+      },
+      {
+        "time": "03:15",
+        "label": "The five platform lanes"
+      },
+      {
+        "time": "04:30",
+        "label": "Production status and smoke test"
+      },
+      {
+        "time": "06:00",
+        "label": "Next moves: automate, analyze, reconcile, harden"
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "value": "5",
+      "label": "platform lanes now defined"
+    },
+    {
+      "value": "7",
+      "label": "step happy path verified"
+    },
+    {
+      "value": "HTTP 200",
+      "label": "Edit page confirmed live"
+    },
+    {
+      "value": "nxcore",
+      "label": "production services aligned"
+    }
+  ],
+  "summary": [
+    "EchoVerse is no longer just a music player with supporting tools. It now has a connected operating loop for audio intake, catalog registration, metadata editing, analysis, writeback, and edit handoff.",
+    "The most important platform gap was closed: NewDropins files can now enter the catalog and receive a track ID before analysis and metadata work. That makes ByteTag part of the real production path instead of a side utility."
+  ],
+  "quote": "The business meaning is simple: raw audio can now become catalog-aware, analyzed, metadata-ready, and editable through one repeatable workflow.",
+  "happyPath": [
+    {
+      "step": "01",
+      "title": "Drop MP3",
+      "body": "New audio lands in the NewDropins folder."
+    },
+    {
+      "step": "02",
+      "title": "Sync",
+      "body": "sync_newdropins.sh registers files with the catalog."
+    },
+    {
+      "step": "03",
+      "title": "Track ID",
+      "body": "The file receives a catalog track_id."
+    },
+    {
+      "step": "04",
+      "title": "ByteTag",
+      "body": "Metadata Studio resolves the path and queues work."
+    },
+    {
+      "step": "05",
+      "title": "Analyze",
+      "body": "Batch Console processes BPM, key, loudness, and more."
+    },
+    {
+      "step": "06",
+      "title": "Writeback",
+      "body": "Analysis results save back to the catalog."
+    },
+    {
+      "step": "07",
+      "title": "Edit",
+      "body": "The track opens in the Edit app in a new tab."
+    }
+  ],
+  "lanes": [
+    {
+      "icon": "\ud83d\udd0e",
+      "title": "Discovery",
+      "body": "Find, register, and catalog new audio through Library API and sync workflows."
+    },
+    {
+      "icon": "\u3030\ufe0f",
+      "title": "Analysis",
+      "body": "Extract technical audio intelligence through the Batch Console and analyzer."
+    },
+    {
+      "icon": "\ud83e\uddf1",
+      "title": "Enrichment",
+      "body": "Attach overlays, sidecars, and future intelligence layers to each track."
+    },
+    {
+      "icon": "\ud83c\udff7\ufe0f",
+      "title": "Metadata",
+      "body": "Use ByteTag to scan, edit, write ID3, backup, rescan, and hand off to Edit."
+    },
+    {
+      "icon": "\ud83d\udcca",
+      "title": "Analytics",
+      "body": "Turn listening metrics and catalog data into better operating decisions."
+    }
+  ],
+  "services": [
+    {
+      "component": "Music Catalog",
+      "endpoint": ":5307",
+      "status": "Healthy"
+    },
+    {
+      "component": "Batch Console",
+      "endpoint": ":5307/analyze/",
+      "status": "Healthy"
+    },
+    {
+      "component": "Batch Analyzer Service",
+      "endpoint": "internal :8765",
+      "status": "Internal"
+    },
+    {
+      "component": "Library API",
+      "endpoint": ":5304",
+      "status": "Healthy"
+    },
+    {
+      "component": "ByteTag UI / API",
+      "endpoint": ":5173 / :8097",
+      "status": "Running"
+    },
+    {
+      "component": "Edit Page",
+      "endpoint": "/catalog/edit/",
+      "status": "HTTP 200"
+    }
+  ],
+  "smokeTest": {
+    "title": "Smoke test: \u201cCheck Yourself\u201d",
+    "items": [
+      {
+        "label": "Track ID",
+        "value": "dda8a3ca99f7f9c4"
+      },
+      {
+        "label": "BPM",
+        "value": "71.78"
+      },
+      {
+        "label": "Key",
+        "value": "G# major"
+      },
+      {
+        "label": "LUFS",
+        "value": "-14.0"
+      },
+      {
+        "label": "Edit",
+        "value": "HTTP 200 confirmed"
+      }
+    ],
+    "note": "This proved the real loop: resolve, analyze, write back, and open in Edit."
+  },
+  "quickReference": [
+    "curl http://127.0.0.1:5304/api/analytics/health",
+    "curl http://127.0.0.1:5307/analyze/health",
+    "curl http://127.0.0.1:8097/api/health",
+    "cd /srv/NXDrive/EchoVerse/EchoVerse_Music_Catalog.v.nx && ./scripts/sync_newdropins.sh",
+    "http://100.115.9.61:5173",
+    "http://100.115.9.61:5307/catalog/edit/?track_id={id}"
+  ],
+  "nextMoves": [
+    {
+      "priority": "P1",
+      "title": "Automate NewDropins sync",
+      "body": "Use cron, a folder watcher, or a Catalog Console button so new drops enter the catalog automatically."
+    },
+    {
+      "priority": "P1",
+      "title": "Analyze the backlog",
+      "body": "Batch-analyze NewDropins tracks that now have a track ID but still need BPM, key, LUFS, and analysis data."
+    },
+    {
+      "priority": "P2",
+      "title": "Reconcile counts",
+      "body": "Spot-check the 184 scanned vs 374 in DB behavior to identify duplicates, variants, or merge history."
+    },
+    {
+      "priority": "P2",
+      "title": "Strengthen export gate",
+      "body": "Move from the current client-side deterrent to a server-side export token if real access control is needed."
+    },
+    {
+      "priority": "P3",
+      "title": "Clean infra warnings",
+      "body": "Install mutagen on nxcore if desired and remove non-fatal warning noise from inventory rebuilds."
+    },
+    {
+      "priority": "P3",
+      "title": "Normalize container naming",
+      "body": "Keep docs and scripts aligned to echoverse-catalog-v4."
+    }
+  ],
+  "visuals": [
+    {
+      "file": "EchoVerse_from_drop_to_Edit.png",
+      "caption": "Primary landscape infographic for the Signal hero and internal update."
+    },
+    {
+      "file": "a_detailed_infographic_poster_dashboard_style_de.png",
+      "caption": "Detailed dashboard poster for operator review and platform walkthroughs."
+    }
+  ],
+  "transcript": "Paste or generate the ByteCast transcript here. This field supports plain text and will render inside an expandable transcript block.",
+  "bottomLine": [
+    "EchoVerse now has a working production path from dropped audio file to catalog-aware, analyzed, metadata-ready, editable track.",
+    "The docs are aligned. The services are healthy. The operator workflow is clear. The next phase is automation, backlog processing, count reconciliation, and export hardening."
+  ],
+  "closingQuote": "EchoVerse is no longer just playing the tracks. EchoVerse is starting to understand them."
+}

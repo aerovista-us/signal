@@ -47,7 +47,7 @@ These files keep their own styling and were **not** updated in the newsletter al
 | [`signal.html`](../signal.html) | Standalone Vespera macro briefing (purple palette) |
 | [`publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html`](../publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html) | Issue-wrapped briefing; tied to `signal.html` |
 | [`publications/VXP-MR-01-macro-rails-intelligence/magazine.html`](../publications/VXP-MR-01-macro-rails-intelligence/magazine.html) | PNG magazine shell |
-| [`player                 .html`](../player%20%20%20%20%20%20%20%20%20%20%20%20%20%20.html) | SwampHop audio player (separate green/gold aesthetic) |
+| [`player-swamphop.html`](../player-swamphop.html) | SwampHop audio player (legacy spaced `player .html` redirects here) |
 
 ## Browser chrome
 
@@ -62,22 +62,24 @@ Shareholder, employee, and operator editions live under [**Internal Signals**](.
 
 | Route | Role |
 |-------|------|
-| [`dispatches/internal-signals.html`](../dispatches/internal-signals.html) | Canonical hub — sections: Right Now, Daily EOD, Weekly EOW, ByteCast, Milestones, Archive |
-| [`dispatches/current-updates.html`](../dispatches/current-updates.html) | Redirect to Internal Signals (legacy EOD/EOW hub URL) |
-| [`newsletter-current.html`](../newsletter-current.html) | Redirect to Internal Signals (legacy newsletter URL) |
-| [`dispatches/eod-current-operating-note.html`](../dispatches/eod-current-operating-note.html) | Current daily operating note |
-| [`dispatches/eow-current-stakeholder-update.html`](../dispatches/eow-current-stakeholder-update.html) | Current weekly stakeholder summary |
-| [`dispatches/eow-2026-06-28-weekend-report.html`](../dispatches/eow-2026-06-28-weekend-report.html) | Dated EOW weekend report (June 28, 2026) |
-| [`newsletters/aerovista_bytecast_status_player.html`](../newsletters/aerovista_bytecast_status_player.html) | Current overall company status ByteCast (July 5 — audio, AVCC roadmap, transcript) |
-| [`newsletters/aerovista_weekend_report_6.28.26.html`](../newsletters/aerovista_weekend_report_6.28.26.html) | Weekend ByteCast edition (June 28 — audio + transcript) |
-| [`newsletters/aerovista_signal_weekly_2026-06-21.html`](../newsletters/aerovista_signal_weekly_2026-06-21.html) | Weekly ByteCast archive (June 21) |
-| [`newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html`](../newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html) | Platform ByteCast example (EchoVerse) |
+| [`dispatches/internal-signals.html`](../dispatches/internal-signals.html) | Canonical hub — catalog from `js/signals-catalog.json` |
+| [`dispatches/current-updates.html`](../dispatches/current-updates.html) | Redirect to Internal Signals (legacy) |
+| [`newsletter-current.html`](../newsletter-current.html) | Redirect to Internal Signals (legacy) |
+| [`dispatches/eod/current-operating-note.html`](../dispatches/eod/current-operating-note.html) | Current daily operating note |
+| [`dispatches/eow/current-stakeholder-update.html`](../dispatches/eow/current-stakeholder-update.html) | Current weekly stakeholder summary |
+| [`newsletters/editions/eod/2026-07-05-company-status/`](../newsletters/editions/eod/2026-07-05-company-status/) | July 5 company status ByteCast |
+| [`newsletters/editions/shareholder/2026-07-08-seeing-the-system/`](../newsletters/editions/shareholder/2026-07-08-seeing-the-system/) | Build_Nevada shareholder ByteCast |
+| [`newsletters/editions/weekly/2026-06-28-resilience-weekend/`](../newsletters/editions/weekly/2026-06-28-resilience-weekend/) | June 28 weekend ByteCast |
+| [`newsletters/editions/milestone/2026-06-16-echoverse/`](../newsletters/editions/milestone/2026-06-16-echoverse/) | EchoVerse milestone |
+| [`archive/shipping-intake/`](../archive/shipping-intake/) | Historical EOD/status source material from shipping intake (not published editions) |
 
 The homepage features one **Internal Signals** card; separate newsletter and EOD/EOW cards were removed.
+
+Edition layout and naming: [site-structure.md](./site-structure.md).
 
 ## Adding a new dispatch
 
 1. Copy an existing dispatch HTML shell.
-2. Include `<link rel="stylesheet" href="../css/signal-public-theme.css" />`.
+2. Include `<link rel="stylesheet" href="/signal-public-theme.css" />` (or `../signal-public-theme.css` from `dispatches/`).
 3. Set `<meta name="theme-color" content="#04070d" />`.
 4. Do **not** duplicate the old inline gold-theme `<style>` block.

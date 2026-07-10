@@ -2,76 +2,74 @@
 
 Production at [thesignal.aerovista.us](https://thesignal.aerovista.us) serves from the **`main`** branch of this repo. If a file exists on your Collab share but not on GitHub, the live site will 404.
 
-## Fix for `signal-public-theme.css` 404
+Site layout: [site-structure.md](./site-structure.md) · Publishing: [publishing-workflow.md](./publishing-workflow.md)
 
-The homepage (`index.html`) **inlines** the shared theme in a `<style>` block, so pushing only `index.html` restores the newsletter look.
+## Theme CSS
 
-Dispatch pages load **`signal-public-theme.css`** at the **repo root** (not `css/`). That file must be committed and pushed:
-
-```
-signal-public-theme.css          ← required for /dispatches/*
-css/signal-public-theme.css      ← optional mirror (keep in sync)
-index.html
-dispatches/*.html
-```
+- **Canonical:** `signal-public-theme.css` (repo root) — dispatches use `/signal-public-theme.css`
+- **Mirror:** `css/signal-public-theme.css` — keep in sync with root
+- **`index.html`** inlines theme in `<style>` (no external CSS required on Pages)
 
 ## Umami
 
-Set `analytics.websiteId` in [`js/site-config.js`](js/site-config.js) after adding `thesignal.aerovista.us` in Umami. Full checklist (including Cloudflare Access note): [umami-analytics.md](./umami-analytics.md).
+Set `analytics.websiteId` in [`js/site-config.js`](../js/site-config.js). Checklist: [umami-analytics.md](./umami-analytics.md).
 
 ## Full sync checklist (local → GitHub)
 
 Copy from `\\100.115.9.61\Collab\mini.shops\thesignal` into your clone of [aerovista-us/signal](https://github.com/aerovista-us/signal), then:
 
 ```bash
-git add index.html signal-public-theme.css css/signal-public-theme.css js/ dispatches/
-git add newsletters/ publications/ docs/ favicon.svg signal.png signal.html
+git add index.html signal-public-theme.css css/signal-public-theme.css js/ dispatches/ newsletters/
+git add publications/ docs/ scripts/ favicon.svg signal.png signal.html player-swamphop.html
+git add signal_pipeline_echoverse_starter/ archive/orphans/
 git status
-git commit -m "Add shared theme CSS and sync hub/dispatch styles for GitHub Pages."
+git commit -m "Sync site structure: editions, dispatches subfolders, catalog hub."
 git push origin main
 ```
 
-Wait 1–2 minutes for GitHub Pages to rebuild, then hard-refresh the site.
+Wait 1–2 minutes for GitHub Pages to rebuild, then hard-refresh.
 
-## Link preview image (Slack, iMessage, social)
+## Redirect policy
 
-All hub and dispatch pages use **`signal.png`** at the repo root:
+Moved files keep **redirect stub HTML** at the old URL (meta refresh + canonical). Verify both stub and new canonical URL return **200**.
 
-- `og:image` / `twitter:image` → `https://thesignal.aerovista.us/signal.png`
-- Do **not** use `singal.png` (typo) or `og-image.jpg` (file does not exist)
+## Internal Signals hub
 
-After deploy, confirm https://thesignal.aerovista.us/signal.png returns **200**. Chat apps cache previews; re-paste the URL or use [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to refresh.
+- Hub: [`dispatches/internal-signals.html`](../dispatches/internal-signals.html)
+- Catalog data: [`js/signals-catalog.json`](../js/signals-catalog.json)
+- Renderer: [`js/render-signals-hub.js`](../js/render-signals-hub.js)
 
-## Internal Signals (daily & weekly internal reports)
-
-All daily EOD notes, weekly EOW updates, ByteCast editions, and internal archives live at [`dispatches/internal-signals.html`](../dispatches/internal-signals.html).
-
-Legacy routes redirect there:
-
-- [`newsletter-current.html`](../newsletter-current.html)
-- [`dispatches/current-updates.html`](../dispatches/current-updates.html)
+Legacy redirects: [`newsletter-current.html`](../newsletter-current.html), [`dispatches/current-updates.html`](../dispatches/current-updates.html)
 
 ## Verify after deploy
 
-- https://thesignal.aerovista.us/ — cyan/blue theme, no console 404
-- https://thesignal.aerovista.us/signal-public-theme.css — should return CSS (200)
-- https://thesignal.aerovista.us/dispatches/internal-signals.html — Internal Signals hub
-- https://thesignal.aerovista.us/dispatches/current-updates.html — redirects to Internal Signals
-- https://thesignal.aerovista.us/newsletter-current.html — redirects to Internal Signals
-- https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html — current weekly Signal
-- https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html — July 5 overall company status ByteCast
-- https://thesignal.aerovista.us/newsletters/7.5.26.EOD.mp3 — status ByteCast audio
-- https://thesignal.aerovista.us/newsletters/overallstatus.png — AVCC roadmap infographic
-- https://thesignal.aerovista.us/newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html — EchoVerse ByteCast
-- https://thesignal.aerovista.us/newsletters/bytecast-week-ending-2026-06-15.mp3 — weekly ByteCast audio
-- https://thesignal.aerovista.us/newsletters/a_high_detail_corporate_infographic_weekly_report.png — weekly infographic
-- https://thesignal.aerovista.us/newsletters/bytecast_shareholder_seeing_the_system.html — Build_Nevada shareholder ByteCast
-- https://thesignal.aerovista.us/newsletters/bytecast-build_navada.mp3 — Build_Nevada ByteCast audio
+### Core
 
-## What is not on GitHub yet (as of theme work)
+- https://thesignal.aerovista.us/ — homepage, no console 404
+- https://thesignal.aerovista.us/signal-public-theme.css — CSS 200
+- https://thesignal.aerovista.us/js/signals-catalog.json — catalog JSON 200
+- https://thesignal.aerovista.us/dispatches/internal-signals.html — hub loads catalog rows
 
-These may 404 on production until pushed:
+### Canonical editions
 
-- `publications/` (macro briefing + magazine)
-- `docs/`
-- Root `signal-public-theme.css` (until next push)
+- https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/
+- https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/
+- https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/
+- https://thesignal.aerovista.us/newsletters/editions/milestone/2026-06-16-echoverse/
+
+### Legacy stubs (must still 200 → redirect)
+
+- https://thesignal.aerovista.us/newsletters/aerovista_bytecast_status_player.html
+- https://thesignal.aerovista.us/newsletters/bytecast_shareholder_seeing_the_system.html
+- https://thesignal.aerovista.us/newsletters/aerovista_signal_weekly_2026-06-15.html
+- https://thesignal.aerovista.us/dispatches/eod-current-operating-note.html
+- https://thesignal.aerovista.us/dispatches/topics/cindy-connect-launch-status.html
+
+### Assets (new paths)
+
+- https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/assets/audio.mp3
+- https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio.mp3
+
+### Link preview
+
+- https://thesignal.aerovista.us/signal.png — OG image 200

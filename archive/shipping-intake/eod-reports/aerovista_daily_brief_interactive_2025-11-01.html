@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AeroVista Daily Brief — Saturday, November 01, 2025</title>
+<style>
+  :root { --bg:#0c0f14; --panel:#121826; --ink:#e7eeff; --ink-dim:#a7b2cf; --accent:#77f6ff; --accent-2:#7d7bff; --good:#40c463; --warn:#ffcc66; --bad:#ff6b6b; --muted:#20273a; --ring: rgba(119,246,255,.25); }
+  * { box-sizing:border-box; }
+  body { margin:0; background: radial-gradient(1200px 800px at 10% -10%, #101632 0%, var(--bg) 55%) fixed; color:var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  header { padding:28px 20px 16px; background:linear-gradient(90deg, rgba(125,123,255,.35), rgba(119,246,255,.2) 60%, transparent); border-bottom:1px solid #1a2336; }
+  .wrap { max-width:1100px; margin:0 auto; padding:20px; }
+  h1 { margin:0 0 6px; font-size:26px; letter-spacing:.2px; }
+  .sub { color:var(--ink-dim); font-size:14px; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 8px; align-items:center; }
+  .toolbar input[type="text"] { flex:1; min-width:200px; padding:10px 12px; border-radius:12px; border:1px solid #1f2940; background:#0e1423; color:var(--ink); outline:none; box-shadow:0 0 0 0 var(--ring); }
+  .toolbar input[type="text"]:focus { box-shadow:0 0 0 4px var(--ring); }
+  .chip { padding:8px 12px; background:#0d1322; border:1px solid #202944; border-radius:999px; color:var(--ink-dim); cursor:pointer; user-select:none; transition:.2s; }
+  .chip.active { color:#10141f; background:linear-gradient(135deg, #77f6ff, #7d7bff); border-color:transparent; }
+  .btn { padding:10px 14px; border-radius:12px; background:linear-gradient(135deg,#1a2336,#111827); color:var(--ink); border:1px solid #26314f; cursor:pointer; }
+  .btn:hover { border-color:#344873; }
+  .card { background:linear-gradient(180deg,#0e1525,#0b111d); border:1px solid #1a2238; border-radius:16px; padding:14px; position:relative; box-shadow:0 8px 24px rgba(0,0,0,.35); margin-bottom:14px; }
+  .card h3 { margin:0 0 8px; font-size:17px; }
+  .meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .tag { font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid #2a3556; color:var(--ink-dim); }
+  .tag.P1 { border-color:#3a547b; color:#cfe1ff; }
+  .tag.P2 { border-color:#51427b; color:#dbcfff; }
+  .tag.P3 { border-color:#3b6258; color:#d2ffef; }
+  .status { position:absolute; right:12px; top:12px; font-size:12px; color:#9bb0ff; text-transform:uppercase; letter-spacing:.4px; }
+  .task { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-top:1px dashed #1b243a; }
+  .task:first-of-type { border-top:none; }
+  .task input[type="checkbox"] { width:18px; height:18px; accent-color:#74f0ff; margin-top:2px; }
+  .task .t-title { font-size:14px; line-height:1.35; }
+  .task.done .t-title { text-decoration:line-through; color:#7b8ab0; }
+  .task small { display:block; color:#8aa0d3; margin-top:4px; }
+  .task .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid #2b3658; margin-right:6px; color:#a7b2cf; }
+  .notes { width:100%; margin-top:6px; background:#0b1222; border:1px solid #1f2940; color:var(--ink); border-radius:10px; padding:8px; font-size:12px; }
+  .progress { margin:10px 0 4px; height:8px; background:#0c1221; border:1px solid #1c2742; border-radius:999px; overflow:hidden; }
+  .progress > span { display:block; height:100%; width:0%; background:linear-gradient(90deg,#77f6ff,#7d7bff); transition:width .3s; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; margin-top:10px; }
+  .kpi { background:#0f1627; border:1px solid #1a233a; border-radius:14px; padding:12px; }
+  .kpi .val { font-size:20px; font-weight:700; }
+  footer { color:#8aa0d3; font-size:12px; padding:20px; text-align:center; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Daily Brief — Saturday, November 01, 2025</h1>
+      <div class="sub">AeroVista LLC • Interactive To-Dos & Project States (auto-saved in your browser)</div>
+      <div class="toolbar">
+        <input id="search" type="text" placeholder="Search tasks, projects, tags…" />
+        <div class="chip" data-chip="P1">P1</div>
+        <div class="chip" data-chip="P2">P2</div>
+        <div class="chip" data-chip="P3">P3</div>
+        <div class="chip" data-chip="Backlog">Backlog</div>
+        <button class="btn" id="markP1">Mark visible P1 as done</button>
+        <button class="btn" id="exportJson">Export JSON</button>
+        <input type="file" id="importJson" style="display:none" accept="application/json" />
+        <button class="btn" id="importBtn">Import JSON</button>
+      </div>
+      <div class="kpis" id="kpis"></div>
+    </div>
+  </header>
+
+  <main class="wrap" id="content"></main>
+
+  <footer>
+    <p>Tip: Use the chips and search to focus. Export JSON to back up, Import to merge/replace.</p>
+  </footer>
+
+<script>
+const STORAGE_KEY = "av_daily_brief_data_v7";
+const seed = { compiled: {"meta": {"generated": "Saturday, November 01, 2025", "title": "AeroVista Daily Brief — Interactive", "owner": "AeroVista LLC (Timbr)"}, "projects": [{"id": "proj-app-boot-fix", "name": "App Boot & Build Hardening", "division": "Nexus TechWorks", "status": "Healthy (Running)", "tags": ["P2", "Quality", "Ops"], "tasks": [{"id": "boot-bat-fix", "title": "Fixed start.bat ('then was unexpected') by replacing multi-line IF with GOTO error handling", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "boot-log", "title": "Added server logging to C:\\AI\\logs\\server.log to capture startup errors", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "srv-js-fix", "title": "Removed stray backslash in server.js (SyntaxError)", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "app-js-fix", "title": "Removed stray backslash in app.js (client SyntaxError)", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "prod-build", "title": "Production build pipeline (Tailwind CLI/PostCSS, bundler, remove in-browser Babel, minification, purgeCSS/autoprefixer, source maps)", "priority": "P2", "due": "This Week", "notes": ""}, {"id": "favicon", "title": "Add favicon.ico + link tags (16/32/48) and address console 404", "priority": "P3", "due": "Next", "notes": ""}]}, {"id": "proj-p1-focus", "name": "P1 Focus — Multi-Project Architecture & App Portfolio", "division": "Nexus TechWorks", "status": "Active", "tags": ["P1", "Architecture", "Priority"], "tasks": [{"id": "p1-billing", "title": "Approve org/folder/billing layout + budgets/alerts (R&D split)", "priority": "P1", "due": "Today", "notes": ""}, {"id": "p1-auth", "title": "Confirm centralized Firebase Auth + authorized domains + custom-claims", "priority": "P1", "due": "Today", "notes": ""}, {"id": "p1-routing", "title": "Decide routing for RydeSync (link-out vs reverse-proxy)", "priority": "P1", "due": "Today", "notes": ""}, {"id": "p1-redis", "title": "Approve Redis tier/region & budget thresholds", "priority": "P1", "due": "Today", "notes": ""}, {"id": "p1-terraform", "title": "Generate Terraform scaffolds (org/folders/projects, CI/CD, baseline IAM)", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "p1-aerodash-merge", "title": "Consolidate AeroDash versions; archive Broken/Prototype after merge", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "p1-rydesync-cutover", "title": "Complete RydeSync-Next; retire older simple server after cutover", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "p1-standardize", "title": "Standardize MindForge/BytePad naming/scope/packaging", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "p1-functions", "title": "Deploy Firebase Functions Gen-2 (nodejs22, v2 imports) for aerovista-site after emulator pass", "priority": "P1", "due": "This Week", "notes": "See troubleshooting living doc."}]}, {"id": "proj-av-web", "name": "AeroVista Web (aerovista-site / aerovista-us)", "division": "Nexus TechWorks", "status": "In Progress", "tags": ["Firebase", "Web", "P1"], "tasks": [{"id": "av-auth", "title": "Central Auth: verify domains, custom claims, emulator pass", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "av-functions", "title": "Functions v2/Gen-2 (nodejs22) deploy after emulator clean run", "priority": "P1", "due": "This Week", "notes": ""}]}, {"id": "proj-rydesync", "name": "RydeSync-Next (service + integration)", "division": "Nexus TechWorks", "status": "In Progress", "tags": ["P1", "Redis", "Cloud Run"], "tasks": [{"id": "rs-route", "title": "Decide link-out vs reverse-proxy under aerovista.us", "priority": "P1", "due": "Today", "notes": ""}, {"id": "rs-redis", "title": "Pick Redis tier/region; set budget thresholds", "priority": "P1", "due": "Today", "notes": ""}, {"id": "rs-week1", "title": "Week 1: Bring av-rydesync online (Run + Redis)", "priority": "P2", "due": "Week 1", "notes": ""}]}, {"id": "proj-n8n", "name": "n8n Automation Stack (self-hosted)", "division": "Nexus TechWorks", "status": "In Progress", "tags": ["P1", "DevOps", "Infra"], "tasks": [{"id": "n8n-pack", "title": "Finalize install pack (Docker Compose: n8n + Postgres + Traefik/NGINX)", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "n8n-https", "title": "Enable HTTPS behind Tailscale / reverse proxy", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "n8n-seed", "title": "Seed AeroVista/Nexus workflows (webhooks & schedulers)", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "n8n-cost", "title": "Map free vs enterprise features & cost projection", "priority": "P1", "due": "This Week", "notes": ""}, {"id": "n8n-backups", "title": "Backups/cron & monitoring; SOP docs", "priority": "P1", "due": "This Week", "notes": ""}]}, {"id": "proj-4wk", "name": "4-Week Rollout (Multi-project Architecture)", "division": "Nexus TechWorks", "status": "Planning", "tags": ["P2", "Planning"], "tasks": [{"id": "w1", "title": "Week 1: Shared projects, budgets, DNS; central Auth; av-rydesync online", "priority": "P2", "due": "Week 1", "notes": ""}, {"id": "w2", "title": "Week 2: Proxy/link from av-web; move room sync to Redis; harden RTDB", "priority": "P2", "due": "Week 2", "notes": ""}, {"id": "w3", "title": "Week 3: Division projects; subdomains; observability", "priority": "P2", "due": "Week 3", "notes": ""}, {"id": "w4", "title": "Week 4: CSP/Cloud Armor; cost dashboards; playbooks; UAT + cutover", "priority": "P2", "due": "Week 4", "notes": ""}]}, {"id": "proj-nxcore-tls", "name": "NXCore Core Infra — Traefik/TLS", "division": "Nexus TechWorks", "status": "Partially Complete", "tags": ["Infra", "Traefik"], "tasks": [{"id": "tls-crlf", "title": "Fix cert line endings (dos2unix) — RESOLVED", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "tls-dynamic", "title": "Move TLS config to dynamic; correct cert paths — RESOLVED", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "tls-restart", "title": "Restart Traefik; container stable 7+ hrs — RESOLVED", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "tls-api", "title": "Traefik API unreachable (dashboard)", "priority": "P2", "due": "Next", "notes": "Verify entrypoint, router, and auth."}, {"id": "tls-sni", "title": "SSL/TLS SNI error (tlsv1 unrecognized name)", "priority": "P2", "due": "Next", "notes": "Check cert SAN, Host rules, SNI."}, {"id": "tls-le", "title": "Fix Let's Encrypt resolver reference (non-existent resolver)", "priority": "P2", "due": "Next", "notes": ""}, {"id": "tls-compose", "title": "Clean duplicate labels / malformed YAML in compose", "priority": "P2", "due": "Next", "notes": ""}]}, {"id": "proj-aerocaller", "name": "AeroCaller — WebRTC/PeerJS", "division": "Nexus TechWorks", "status": "In Progress", "tags": ["WebRTC", "Networking"], "tasks": [{"id": "ac-wss", "title": "Resolve WSS invalid frame header to /peerjs", "priority": "P2", "due": "Next", "notes": "Reverse proxy headers, HTTP/2, ws passthrough."}, {"id": "ac-turn", "title": "Stand up TURN (coturn) on tailnet; test STUN/TURN", "priority": "P2", "due": "Next", "notes": ""}, {"id": "ac-zip", "title": "Provide zipped install/scripts bundle for TURN deploy", "priority": "P3", "due": "Later", "notes": ""}]}, {"id": "proj-mikee", "name": "Mikee Gray — Static Site Landing", "division": "Lumina Creative / Web", "status": "Live (Public Preview)", "tags": ["Web", "GitHub", "Marketing"], "tasks": [{"id": "mk-landing", "title": "Custom index.html (Tailwind, hero, about, video, sponsors, contact, footer)", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "mk-logos", "title": "Sponsor logos embedded (Signal, Big Bear, Union, Wend)", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "mk-assets", "title": "Local assets & paths corrected", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "mk-links", "title": "Sponsor images link to official sites", "priority": "P1", "due": "Done", "notes": "", "done": true}, {"id": "mk-pages", "title": "GitHub Pages enabled & verified live", "priority": "P1", "due": "Done", "notes": "https://aerovista-us.github.io/Mikee/", "done": true}, {"id": "mk-readme", "title": "Add README.md (usage/credits)", "priority": "P2", "due": "This Week", "notes": ""}, {"id": "mk-visibility", "title": "Decide repo visibility (GitHub Pro needed for private)", "priority": "P2", "due": "This Week", "notes": ""}, {"id": "mk-softlock", "title": "Soft-lock: minify/inline HTML, watermark/password-gate if needed", "priority": "P3", "due": "Next", "notes": ""}, {"id": "mk-zip", "title": "Zipped deployable asset pack", "priority": "P3", "due": "Next", "notes": ""}]}, {"id": "proj-aerocoreos", "name": "AeroCoreOS — P3 Hygiene", "division": "Nexus TechWorks", "status": "Ongoing", "tags": ["P3", "Hygiene"], "tasks": [{"id": "p3-cleanup", "title": "Biweekly: archive broken versions; consolidate backups", "priority": "P3", "due": "Biweekly", "notes": ""}, {"id": "p3-security", "title": "Security hygiene across Electron/Node/P2P apps", "priority": "P3", "due": "Biweekly", "notes": ""}]}, {"id": "proj-ascension", "name": "Ascension Awaits (game project)", "division": "SkyForge Creative Studios", "status": "Backlog", "tags": ["Backlog"], "tasks": [{"id": "aa-ui", "title": "Stabilize gameplay UI; fix recursion & asset paths", "priority": "Backlog", "due": "Later", "notes": ""}]}]} };
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return seed;
+    const parsed = JSON.parse(raw);
+    if (!parsed || !parsed.compiled || !parsed.compiled.projects) return seed;
+    return parsed;
+  } catch (e) {
+    console.warn("State load failed, using seed.", e);
+    return seed;
+  }
+}
+
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+let state = loadState();
+
+function render() {
+  const root = document.getElementById('content');
+  root.innerHTML = '';
+  const filters = activeFilters();
+  const query = document.getElementById('search').value.toLowerCase().trim();
+
+  const projs = state.compiled.projects || [];
+  let totals = {p1:0, p1Done:0, all:0, done:0};
+
+  projs.forEach(p => {
+    const hasChip = filters.length === 0 || filters.some(f => (p.tags||[]).includes(f));
+    const inSearch = !query || (p.name.toLowerCase().includes(query) || (p.tasks||[]).some(t => t.title.toLowerCase().includes(query)));
+    if (!hasChip || !inSearch) return;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const h = document.createElement('h3');
+    h.textContent = p.name;
+    card.appendChild(h);
+
+    const status = document.createElement('div');
+    status.className = 'status';
+    status.textContent = p.status || '—';
+    card.appendChild(status);
+
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    const divTag = document.createElement('span');
+    divTag.className = 'tag';
+    divTag.textContent = p.division || '';
+    meta.appendChild(divTag);
+    (p.tags||[]).forEach(t => {
+      const tg = document.createElement('span');
+      tg.className = 'tag ' + (t || '');
+      tg.textContent = t;
+      meta.appendChild(tg);
+    });
+    card.appendChild(meta);
+
+    let doneCount = 0;
+    let totalCount = 0;
+    (p.tasks||[]).forEach(t => {
+      totalCount++;
+      const task = document.createElement('div');
+      task.className = 'task' + (t.done ? ' done' : '');
+
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = !!t.done;
+      cb.addEventListener('change', () => {
+        t.done = cb.checked;
+        task.classList.toggle('done', t.done);
+        t.doneAt = t.done ? new Date().toISOString() : null;
+        saveState(state);
+        renderKPIs();
+        updateProgress(card, p);
+      });
+      task.appendChild(cb);
+
+      const body = document.createElement('div');
+      body.style.flex = '1';
+
+      const title = document.createElement('div');
+      title.className = 't-title';
+      title.textContent = t.title;
+      body.appendChild(title);
+
+      const sub = document.createElement('small');
+      sub.innerHTML = `<span class="badge">${t.priority||''}</span><span class="badge">Due: ${t.due||''}</span>`;
+      body.appendChild(sub);
+
+      if (typeof t.notes === 'string') {
+        const notes = document.createElement('textarea');
+        notes.className = 'notes';
+        notes.placeholder = 'Notes…';
+        notes.value = t.notes || '';
+        notes.addEventListener('input', () => { t.notes = notes.value; saveState(state); });
+        body.appendChild(notes);
+      }
+
+      task.appendChild(body);
+      card.appendChild(task);
+
+      if (t.priority === 'P1') totals.p1++;
+      if (t.priority === 'P1' && t.done) totals.p1Done++;
+      if (t.done) doneCount++;
+    });
+
+    totals.all += totalCount;
+    totals.done += doneCount;
+
+    const prog = document.createElement('div');
+    prog.className = 'progress';
+    const bar = document.createElement('span');
+    prog.appendChild(bar);
+    card.appendChild(prog);
+    updateProgress(card, p);
+
+    root.appendChild(card);
+  });
+
+  renderKPIs(totals);
+}
+
+function updateProgress(card, project) {
+  const tasks = project.tasks || [];
+  const done = tasks.filter(t => t.done).length;
+  const total = tasks.length || 1;
+  const pct = Math.round((done / total) * 100);
+  const bar = card.querySelector('.progress > span');
+  if (bar) { bar.style.width = pct + '%'; bar.title = pct + '% complete'; }
+}
+
+function renderKPIs(totals) {
+  const k = document.getElementById('kpis');
+  const pctAll = Math.round((totals.done / (totals.all || 1)) * 100);
+  const pctP1 = Math.round((totals.p1Done / (totals.p1 || 1)) * 100);
+  k.innerHTML = `
+    <div class="kpi"><div class="label">Overall Completion</div><div class="val">${pctAll}%</div></div>
+    <div class="kpi"><div class="label">P1 Completion</div><div class="val">${pctP1}%</div></div>
+    <div class="kpi"><div class="label">Projects</div><div class="val">${(seed.compiled.projects||[]).length}</div></div>
+    <div class="kpi"><div class="label">Date</div><div class="val">Saturday, November 01, 2025</div></div>
+  `;
+}
+
+function activeFilters() {
+  return Array.from(document.querySelectorAll('.chip.active')).map(c => c.dataset.chip);
+}
+
+document.addEventListener('click', (e) => {
+  const c = e.target.closest('.chip');
+  if (c) { c.classList.toggle('active'); render(); }
+});
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('markP1').addEventListener('click', () => {
+  (state.compiled.projects||[]).forEach(p => (p.tasks||[]).forEach(t => {
+    const chips = activeFilters();
+    const visible = chips.length === 0 || chips.some(f => (p.tags||[]).includes(f));
+    if (t.priority === 'P1' && visible) t.done = true;
+  }));
+  saveState(state);
+  render();
+});
+
+document.getElementById('exportJson').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = "av_daily_brief_export.json";
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importJson').click());
+document.getElementById('importJson').addEventListener('change', (evt) => {
+  const f = evt.target.files[0];
+  if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const imp = JSON.parse(r.result);
+      if (!imp || !imp.compiled) throw new Error("Unrecognized format");
+      state = imp;
+      saveState(state);
+      render();
+      alert("Import successful.");
+    } catch (e) {
+      alert("Import failed: " + e.message);
+    }
+  };
+  r.readAsText(f);
+});
+
+render();
+</script>
+</body>
+</html>

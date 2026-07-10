@@ -1,0 +1,802 @@
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Nov  3 11:45:35 PM UTC 2025
+
+  System load:             1.22
+  Usage of /:              59.5% of 147.09GB
+  Memory usage:            21%
+  Swap usage:              0%
+  Temperature:             67.0 C
+  Processes:               195
+  Users logged in:         2
+  IPv4 address for enp1s0: 192.168.7.253
+  IPv6 address for enp1s0: fd88:bc9e:4369:1:529a:4cff:fe5b:7db4
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+13 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+No directory, logging in with HOME=/
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+glyph@nxcore:/$ # Who/what/when
+uname -a
+lsb_release -a || cat /etc/os-release
+uptime -p; date; whoami; hostnamectl
+
+# Disks, partitions, filesystems, mounts (human-friendly)
+lsblk -o NAME,MODEL,SIZE,TYPE,FSTYPE,MOUNTPOINT,LABEL,UUID,TRAN,SERIAL
+blkid
+df -hT
+mount | sort
+
+# Persistent names (very helpful for USB vs SATA mapping)
+ls -l /dev/disk/by-id/
+ls -l /dev/disk/by-uuid/
+Linux nxcore 6.8.0-86-generic #87-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 22 18:03:36 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.3 LTS
+Release:        24.04
+Codename:       noble
+up 23 hours, 23 minutes
+Mon Nov  3 11:45:37 PM UTC 2025
+glyph
+ Static hostname: nxcore
+       Icon name: computer-desktop
+         Chassis: desktop 🖥️
+      Machine ID: 7a59301b74d9416aa731c01ce3576095
+         Boot ID: 73a4d9dafaff4b17a0389c8293d6e8bd
+Operating System: Ubuntu 24.04.3 LTS
+          Kernel: Linux 6.8.0-86-generic
+    Architecture: x86-64
+ Hardware Vendor: Dell Inc.
+  Hardware Model: OptiPlex 3050
+Firmware Version: 1.31.0
+   Firmware Date: Tue 2024-07-09
+    Firmware Age: 1y 3month 3w 5d
+NAME      MODEL   SIZE TYPE FSTYPE MOUNTPOINT       LABEL       UUID                                   TRAN   SERIAL
+loop0               4K loop squash /snap/bare/5
+loop1           183.4M loop squash /snap/chromium/3
+loop2            73.9M loop squash /snap/core22/213
+loop3            48.8M loop squash /snap/cups/1116
+loop4           516.2M loop squash /snap/gnome-42-2
+loop5            91.7M loop squash /snap/gtk-common
+loop6            76.6M loop squash /snap/powershell
+loop7            50.9M loop squash /snap/snapd/2557
+loop8            55.5M loop        /snap/core18/295
+sda       KINGS 476.9G disk                                                                            sata   50026B
+├─sda1              1G part vfat   /boot/efi                    EF9E-3BCD
+├─sda2              2G part ext4   /boot                        0483ef4f-27ff-4e82-a8a5-133f0dcd00b1
+└─sda3          473.9G part LVM2_m                              xmAckl-V6rB-Y1QI-KxEF-2NYs-V2XD-YwUhL8
+  ├─ubuntu--vg-ubuntu--lv
+  │               150G lvm  ext4   /                            d08462ea-decb-4a56-884e-2a72666dfddb
+  ├─ubuntu--vg-docker
+  │               300G lvm  ext4   /srv/docker-data DOCKER      92631457-0461-4a05-8708-cc57d6852bd7
+  └─ubuntu--vg-srv_core
+                   20G lvm  ext4   /srv/core        SRV_CORE    892ee5cf-c6a8-4914-9a0a-9dca9528006e
+sdd       Extre   1.8T disk                                                                            usb    2136UW
+└─sdd1            1.8T part exfat  /srv/shares/Aero Extreme Pro 3655-78FC
+sde       Extre   1.8T disk                                                                            usb    2333BV
+└─sde1            1.8T part exfat  /srv/backups     Extreme SSD 5A00-F9C3
+sr0       PLDS   1024M rom                                                                             sata   YYCRWP
+/dev/mapper/ubuntu--vg-docker: LABEL="DOCKER" UUID="92631457-0461-4a05-8708-cc57d6852bd7" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/ubuntu--vg-srv_core: LABEL="SRV_CORE" UUID="892ee5cf-c6a8-4914-9a0a-9dca9528006e" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/ubuntu--vg-ubuntu--lv: UUID="d08462ea-decb-4a56-884e-2a72666dfddb" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sda2: UUID="0483ef4f-27ff-4e82-a8a5-133f0dcd00b1" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="f812d903-9968-4e6b-811e-fcf109dd9d08"
+/dev/sda3: UUID="xmAckl-V6rB-Y1QI-KxEF-2NYs-V2XD-YwUhL8" TYPE="LVM2_member" PARTUUID="c8b7b2c6-ada5-4350-b554-cd0ebd4f372a"
+/dev/sda1: UUID="EF9E-3BCD" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="69298e61-c18a-4efe-97dd-53af50e6da7b"
+/dev/loop1: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop6: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop4: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop2: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop0: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop7: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop5: BLOCK_SIZE="131072" TYPE="squashfs"
+/dev/loop3: BLOCK_SIZE="131072" TYPE="squashfs"
+Filesystem                        Type      Size  Used Avail Use% Mounted on
+tmpfs                             tmpfs     1.6G  5.6M  1.6G   1% /run
+efivarfs                          efivarfs  256K  212K   40K  85% /sys/firmware/efi/efivars
+/dev/mapper/ubuntu--vg-ubuntu--lv ext4      148G   88G   53G  63% /
+tmpfs                             tmpfs     7.8G  8.3M  7.8G   1% /dev/shm
+tmpfs                             tmpfs     5.0M     0  5.0M   0% /run/lock
+/dev/sda2                         ext4      2.0G  196M  1.6G  11% /boot
+/dev/mapper/ubuntu--vg-srv_core   ext4       20G   36K   19G   1% /srv/core
+/dev/mapper/ubuntu--vg-docker     ext4      295G   12G  268G   5% /srv/docker-data
+/dev/sda1                         vfat      1.1G  6.2M  1.1G   1% /boot/efi
+tmpfs                             tmpfs     1.6G   24K  1.6G   1% /run/user/1002
+tmpfs                             tmpfs     1.6G   16K  1.6G   1% /run/user/1000
+/dev/sdd1                         exfat     1.9T  1.3T  600G  68% /srv/disks/AeroDrive-2TB-fuse
+/dev/sde1                         exfat     1.9T  1.7T  129G  94% /srv/backups
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+/dev/mapper/ubuntu--vg-docker on /srv/docker-data type ext4 (rw,noatime,discard)
+/dev/mapper/ubuntu--vg-srv_core on /srv/core type ext4 (rw,noatime)
+/dev/mapper/ubuntu--vg-ubuntu--lv on /snap type ext4 (rw,relatime)
+/dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (rw,relatime)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+/dev/sda2 on /boot type ext4 (rw,relatime)
+/dev/sdd1 on /srv/disks/AeroDrive-2TB-fuse type exfat (rw,relatime,uid=1000,gid=1003,fmask=0002,dmask=0002,allow_utime=0020,iocharset=utf8,errors=remount-ro,x-systemd.automount)
+/dev/sdd1 on /srv/shares/AeroDrive/External-2TB type exfat (rw,relatime,uid=1000,gid=1003,fmask=0002,dmask=0002,allow_utime=0020,iocharset=utf8,errors=remount-ro)
+/dev/sde1 on /srv/backups type exfat (rw,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,iocharset=utf8,errors=remount-ro,x-systemd.automount)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,nosuid,nodev,relatime,pagesize=2M)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+nsfs on /run/snapd/ns/chromium.mnt type nsfs (rw)
+nsfs on /run/snapd/ns/cups.mnt type nsfs (rw)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=5484)
+systemd-1 on /srv/backups type autofs (rw,relatime,fd=78,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=1570484)
+systemd-1 on /srv/disks/AeroDrive-2TB-fuse type autofs (rw,relatime,fd=81,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=1443483)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k,inode64)
+tmpfs on /run/snapd/ns type tmpfs (rw,nosuid,nodev,noexec,relatime,size=1625772k,mode=755,inode64)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,size=1625772k,mode=755,inode64)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=1625768k,nr_inodes=406442,mode=700,uid=1000,gid=1000,inode64)
+tmpfs on /run/user/1002 type tmpfs (rw,nosuid,nodev,relatime,size=1625768k,nr_inodes=406442,mode=700,uid=1002,gid=1002,inode64)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=8087920k,nr_inodes=2021980,mode=755,inode64)
+/var/lib/snapd/snaps/bare_5.snap on /snap/bare/5 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/chromium_3293.snap on /snap/chromium/3293 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/core18_2952.snap on /snap/core18/2952 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/core22_2139.snap on /snap/core22/2139 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/cups_1116.snap on /snap/cups/1116 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/gnome-42-2204_226.snap on /snap/gnome-42-2204/226 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/gtk-common-themes_1535.snap on /snap/gtk-common-themes/1535 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/powershell_316.snap on /snap/powershell/316 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+/var/lib/snapd/snaps/snapd_25577.snap on /snap/snapd/25577 type squashfs (ro,nodev,relatime,errors=continue,threads=single,x-gdu.hide,x-gvfs-hide)
+total 0
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 ata-KINGSTON_SKC600512G_50026B7784CD478A -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 ata-KINGSTON_SKC600512G_50026B7784CD478A-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 ata-KINGSTON_SKC600512G_50026B7784CD478A-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 ata-KINGSTON_SKC600512G_50026B7784CD478A-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 ata-PLDS_DVD+_-RW_DU-8A5LH_YYCRWPLC0073D86Y5A05 -> ../../sr0
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-name-ubuntu--vg-docker -> ../../dm-1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-name-ubuntu--vg-srv_core -> ../../dm-2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-name-ubuntu--vg-ubuntu--lv -> ../../dm-0
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-uuid-LVM-dahwdnFq7ZR9T1r8zKo72V35ojltycqu7EQeuGkSXUd9vUjiJTUyO8VLZI1sMTKy -> ../../dm-0
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-uuid-LVM-dahwdnFq7ZR9T1r8zKo72V35ojltycquMiG9uF4WKjE7KThFhwTnNDNEgdk5smZb -> ../../dm-1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 dm-uuid-LVM-dahwdnFq7ZR9T1r8zKo72V35ojltycquvq7c1wyNfoDgT5f0eA81xPwj4i9Z6vui -> ../../dm-2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 lvm-pv-uuid-xmAckl-V6rB-Y1QI-KxEF-2NYs-V2XD-YwUhL8 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 scsi-0ATA_KINGSTON_SKC6005_50026B7784CD478A -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-0ATA_KINGSTON_SKC6005_50026B7784CD478A-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-0ATA_KINGSTON_SKC6005_50026B7784CD478A-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-0ATA_KINGSTON_SKC6005_50026B7784CD478A-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 scsi-1ATA_KINGSTON_SKC600512G_50026B7784CD478A -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-1ATA_KINGSTON_SKC600512G_50026B7784CD478A-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-1ATA_KINGSTON_SKC600512G_50026B7784CD478A-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-1ATA_KINGSTON_SKC600512G_50026B7784CD478A-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 scsi-350026b7784cd478a -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-350026b7784cd478a-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-350026b7784cd478a-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-350026b7784cd478a-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 08:07 scsi-35057440000000001 -> ../../sde
+lrwxrwxrwx 1 root root 10 Nov  3 08:07 scsi-35057440000000001-part1 -> ../../sde1
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 scsi-SATA_KINGSTON_SKC6005_50026B7784CD478A -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-SATA_KINGSTON_SKC6005_50026B7784CD478A-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-SATA_KINGSTON_SKC6005_50026B7784CD478A-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 scsi-SATA_KINGSTON_SKC6005_50026B7784CD478A-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 08:07 scsi-SSanDisk_Extreme_55AE_2333BV401461 -> ../../sde
+lrwxrwxrwx 1 root root 10 Nov  3 08:07 scsi-SSanDisk_Extreme_55AE_2333BV401461-part1 -> ../../sde1
+lrwxrwxrwx 1 root root  9 Nov  3 07:50 scsi-SSanDisk_Extreme_Pro_55AF_2136UW401021 -> ../../sdd
+lrwxrwxrwx 1 root root 10 Nov  3 07:50 scsi-SSanDisk_Extreme_Pro_55AF_2136UW401021-part1 -> ../../sdd1
+lrwxrwxrwx 1 root root  9 Nov  3 08:07 usb-SanDisk_Extreme_55AE_323333334256343031343631-0:0 -> ../../sde
+lrwxrwxrwx 1 root root 10 Nov  3 08:07 usb-SanDisk_Extreme_55AE_323333334256343031343631-0:0-part1 -> ../../sde1
+lrwxrwxrwx 1 root root  9 Nov  3 07:50 usb-SanDisk_Extreme_Pro_55AF_323133365557343031303231-0:0 -> ../../sdd
+lrwxrwxrwx 1 root root 10 Nov  3 07:50 usb-SanDisk_Extreme_Pro_55AF_323133365557343031303231-0:0-part1 -> ../../sdd1
+lrwxrwxrwx 1 root root  9 Nov  3 00:21 wwn-0x50026b7784cd478a -> ../../sda
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 wwn-0x50026b7784cd478a-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 wwn-0x50026b7784cd478a-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 wwn-0x50026b7784cd478a-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Nov  3 08:07 wwn-0x5057440000000001 -> ../../sde
+lrwxrwxrwx 1 root root 10 Nov  3 08:07 wwn-0x5057440000000001-part1 -> ../../sde1
+total 0
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 0483ef4f-27ff-4e82-a8a5-133f0dcd00b1 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Nov  3 07:50 3655-78FC -> ../../sdd1
+lrwxrwxrwx 1 root root 10 Nov  3 08:07 5A00-F9C3 -> ../../sde1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 892ee5cf-c6a8-4914-9a0a-9dca9528006e -> ../../dm-2
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 92631457-0461-4a05-8708-cc57d6852bd7 -> ../../dm-1
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 d08462ea-decb-4a56-884e-2a72666dfddb -> ../../dm-0
+lrwxrwxrwx 1 root root 10 Nov  3 00:21 EF9E-3BCD -> ../../sda1
+
+# USB tree + storage class
+lsusb
+lsusb -t
+# Kernel saw what devices?
+dmesg | grep -Ei 'usb|scsi|sd[a-z]|nvme' | tail -n 200
+# Transport + serials at a glance
+lsblk -o NAME,TRAN,SERIAL,MODEL,SIZE,FSTYPE,MOUNTPOINT | column -t
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0781:55ae SanDisk Corp. Extreme 55AE
+Bus 001 Device 003: ID 0781:55af SanDisk Corp. Extreme Pro 55AF
+Bus 001 Device 004: ID 413c:2113 Dell Computer Corp. KB216 Wired Keyboard
+Bus 001 Device 005: ID 413c:301a Dell Computer Corp. Dell MS116 Optical Mouse
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/12p, 480M
+    |__ Port 001: Dev 002, If 0, Class=Mass Storage, Driver=uas, 480M
+    |__ Port 002: Dev 003, If 0, Class=Mass Storage, Driver=uas, 480M
+    |__ Port 005: Dev 005, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+    |__ Port 010: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+    |__ Port 010: Dev 004, If 1, Class=Human Interface Device, Driver=usbhid, 1.5M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/6p, 5000M
+dmesg: read kernel buffer failed: Operation not permitted
+NAME                     TRAN    SERIAL                MODEL                               SIZE      FSTYPE    MOUNTPOINT
+loop0                    4K      squashfs              /snap/bare/5
+loop1                    183.4M  squashfs              /snap/chromium/3293
+loop2                    73.9M   squashfs              /snap/core22/2139
+loop3                    48.8M   squashfs              /snap/cups/1116
+loop4                    516.2M  squashfs              /snap/gnome-42-2204/226
+loop5                    91.7M   squashfs              /snap/gtk-common-themes/1535
+loop6                    76.6M   squashfs              /snap/powershell/316
+loop7                    50.9M   squashfs              /snap/snapd/25577
+loop8                    55.5M   /snap/core18/2952
+sda                      sata    50026B7784CD478A      KINGSTON                            SKC6005   476.9G
+├─sda1                   1G      vfat                  /boot/efi
+├─sda2                   2G      ext4                  /boot
+└─sda3                   473.9G  LVM2_member
+├─ubuntu--vg-ubuntu--lv  150G    ext4                  /
+├─ubuntu--vg-docker      300G    ext4                  /srv/docker-data
+└─ubuntu--vg-srv_core    20G     ext4                  /srv/core
+sdd                      usb     2136UW401021          Extreme                             Pro       55AF      1.8T
+└─sdd1                   1.8T    exfat                 /srv/shares/AeroDrive/External-2TB
+sde                      usb     2333BV401461          Extreme                             55AE      1.8T
+└─sde1                   1.8T    exfat                 /srv/backups
+sr0                      sata    YYCRWPLC0073D86Y5A05  PLDS                                DVD+/-RW  DU-8A5LH  1024M
+
+ # Install once if needed (Ubuntu)
+sudo apt-get update -y && sudo apt-get install -y smartmontools
+
+# Replace sdX with the actual device (e.g., sdb or sdd)
+sudo smartctl -a /dev/sdX
+sudo smartctl -x /dev/sdX
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 https://download.docker.com/linux/ubuntu noble InRelease
+Get:3 https://pkgs.tailscale.com/stable/ubuntu noble InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Get:5 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,298 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [213 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [9,012 B]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2,131 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,578 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [483 kB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [906 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [203 kB]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [297 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15.4 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2,235 kB]
+Get:23 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [506 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:25 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [378 kB]
+Get:26 http://us.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:27 http://us.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,140 B]
+Get:28 http://us.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:29 http://us.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.0 kB]
+Get:30 http://us.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 10.9 MB in 2s (4,395 kB/s)
+Reading package lists... Done
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.8.0-86-generic] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Smartctl open device: /dev/sdX failed: No such device
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.8.0-86-generic] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Smartctl open device: /dev/sdX failed: No such device
+
+
+
+# Show mounts referencing the device
+mount | grep -E '/dev/sd[a-z][0-9]?'
+
+# Which processes have it open
+sudo lsof +f -- /dev/sdX || true
+sudo fuser -vm /dev/sdX || true
+/dev/sda2 on /boot type ext4 (rw,relatime)
+/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+/dev/sdd1 on /srv/disks/AeroDrive-2TB-fuse type exfat (rw,relatime,uid=1000,gid=1003,fmask=0002,dmask=0002,allow_utime=0020,iocharset=utf8,errors=remount-ro,x-systemd.automount)
+/dev/sde1 on /srv/backups type exfat (rw,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,iocharset=utf8,errors=remount-ro,x-systemd.automount)
+/dev/sdd1 on /srv/shares/AeroDrive/External-2TB type exfat (rw,relatime,uid=1000,gid=1003,fmask=0002,dmask=0002,allow_utime=0020,iocharset=utf8,errors=remount-ro)
+lsof: not a file system: /dev/sdX
+Specified filename /dev/sdX does not exist.
+
+
+
+losetup -a
+# Anyone touching an image you expect to delete?
+sudo fuser -vm /path/to/your.img || true
+/dev/loop1: []: (/var/lib/snapd/snaps/chromium_3293.snap)
+/dev/loop8: []: (/var/lib/snapd/snaps/core18_2952.snap)
+/dev/loop6: []: (/var/lib/snapd/snaps/powershell_316.snap)
+/dev/loop4: []: (/var/lib/snapd/snaps/gnome-42-2204_226.snap)
+/dev/loop2: []: (/var/lib/snapd/snaps/core22_2139.snap)
+/dev/loop0: []: (/var/lib/snapd/snaps/bare_5.snap)
+/dev/loop7: []: (/var/lib/snapd/snaps/snapd_25577.snap)
+/dev/loop5: []: (/var/lib/snapd/snaps/gtk-common-themes_1535.snap)
+/dev/loop3: []: (/var/lib/snapd/snaps/cups_1116.snap)
+Specified filename /path/to/your.img does not exist.
+
+
+
+ # Current rules that might interfere
+grep -R . /etc/udev/rules.d/ /lib/udev/rules.d/ 2>/dev/null | sed -n '1,120p'
+# Device metadata
+udevadm info --query=all --name=/dev/sdX | sed -n '1,200p'
+# Recent udev logs (this boot)
+journalctl -b -u systemd-udevd --no-pager | tail -n 200
+/etc/udev/rules.d/ubuntu--vg-ubuntu--lv.rules:# Written by curtin
+/etc/udev/rules.d/ubuntu--vg-ubuntu--lv.rules:SUBSYSTEM=="block", ACTION=="add|change", ENV{DM_NAME}=="ubuntu--vg-ubuntu--lv", SYMLINK+="disk/by-dname/ubuntu--vg-ubuntu--lv"
+/etc/udev/rules.d/70-snap.snapd.rules:# This file is automatically generated.
+/etc/udev/rules.d/70-snap.snapd.rules:# Concatenation of all ModemManager udev rules
+/etc/udev/rules.d/70-snap.snapd.rules:# do not edit this file, it will be overwritten on update
+/etc/udev/rules.d/70-snap.snapd.rules:ACTION!="add|change|move|bind", GOTO="mm_cinterion_port_types_end"
+/etc/udev/rules.d/70-snap.snapd.rules:SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e2d", GOTO="mm_cinterion_port_types"
+/etc/udev/rules.d/70-snap.snapd.rules:GOTO="mm_cinterion_port_types_end"
+/etc/udev/rules.d/70-snap.snapd.rules:LABEL="mm_cinterion_port_types"
+/etc/udev/rules.d/70-snap.snapd.rules:SUBSYSTEMS=="usb", ATTRS{bInterfaceNumber}=="?*", ENV{.MM_USBIFNUM}="$attr{bInterfaceNumber}"
+/etc/udev/rules.d/70-snap.snapd.rules:# PHS8
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0053", ENV{.MM_USBIFNUM}=="01", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS8 port types
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM0 (if #0): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM1 (if #2): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM2 (if #4): GPS data port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM3 (if #6): unknown
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM4 (if #8): unknown
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0061", ENV{.MM_USBIFNUM}=="00", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_PRIMARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0061", ENV{.MM_USBIFNUM}=="02", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_SECONDARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0061", ENV{.MM_USBIFNUM}=="04", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0061", ENV{.MM_USBIFNUM}=="06", ENV{ID_MM_PORT_IGNORE}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0061", ENV{.MM_USBIFNUM}=="08", ENV{ID_MM_PORT_IGNORE}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS62 family non-mbim enumeration uses alternate settings for 2G band management
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{ID_MM_CINTERION_MODEM_FAMILY}="imt"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS62 family non-mbim enumeration
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM0 (if #0): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM1 (if #2): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM2 (if #4): can be AT or GNSS in some models
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM3 (if #6): AT port (but just ignore)
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM4 (if #8): DIAG/QCDM
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{.MM_USBIFNUM}=="00", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_PRIMARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{.MM_USBIFNUM}=="02", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_SECONDARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{.MM_USBIFNUM}=="04", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{.MM_USBIFNUM}=="06", ENV{ID_MM_PORT_IGNORE}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005b", ENV{.MM_USBIFNUM}=="08", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_QCDM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS62 family mbim enumeration
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM0 (if #0): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM1 (if #2): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM2 (if #4): can be AT or GNSS in some models
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM3 (if #6): AT port (but just ignore)
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM4 (if #8): DIAG/QCDM
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005d", ENV{.MM_USBIFNUM}=="00", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_PRIMARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005d", ENV{.MM_USBIFNUM}=="02", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_SECONDARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005d", ENV{.MM_USBIFNUM}=="04", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005d", ENV{.MM_USBIFNUM}=="06", ENV{ID_MM_PORT_IGNORE}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="005d", ENV{.MM_USBIFNUM}=="08", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_QCDM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS63
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM0 (if #0): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM1 (if #2): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM2 (if #4): GPS data port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM3 (if #6): DIAG/QCDM
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0069", ENV{.MM_USBIFNUM}=="00", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_PRIMARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0069", ENV{.MM_USBIFNUM}=="02", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_SECONDARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0069", ENV{.MM_USBIFNUM}=="04", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="0069", ENV{.MM_USBIFNUM}=="06", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_QCDM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# PLS83
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM0 (if #0): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM1 (if #2): AT port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM2 (if #4): GPS data port
+/etc/udev/rules.d/70-snap.snapd.rules:#  ttyACM3 (if #6): DIAG/QCDM
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="006F", ENV{.MM_USBIFNUM}=="00", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_PRIMARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="006F", ENV{.MM_USBIFNUM}=="02", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_AT_SECONDARY}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="006F", ENV{.MM_USBIFNUM}=="04", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_GPS}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="1e2d", ATTRS{idProduct}=="006F", ENV{.MM_USBIFNUM}=="06", SUBSYSTEM=="tty", ENV{ID_MM_PORT_TYPE_QCDM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:LABEL="mm_cinterion_port_types_end"
+/etc/udev/rules.d/70-snap.snapd.rules:# do not edit this file, it will be overwritten on update
+/etc/udev/rules.d/70-snap.snapd.rules:ACTION!="add|change|move", GOTO="mm_mbm_end"
+/etc/udev/rules.d/70-snap.snapd.rules:SUBSYSTEMS=="usb", GOTO="mm_mbm_check"
+/etc/udev/rules.d/70-snap.snapd.rules:GOTO="mm_mbm_end"
+/etc/udev/rules.d/70-snap.snapd.rules:LABEL="mm_mbm_check"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F3507g
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1900", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1902", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F3607gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1904", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1905", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1906", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F3307
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="190a", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1909", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F3307 R2
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1914", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C3607w
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1049", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C3607w v2
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="190b", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F5521gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="190d", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1911", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson H5321gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1919", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson H5321w
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="191d", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F5321gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1917", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson F5321w
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="191b", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C5621gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="191f", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C5621w
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1921", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson H5321gw
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1926", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1927", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C3304w
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1928", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Ericsson C5621 TFF
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1936", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Sony-Ericsson MD300
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0fce", ATTRS{idProduct}=="d0cf", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Sony-Ericsson MD400
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0fce", ATTRS{idProduct}=="d0e1", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Sony-Ericsson MD400G
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="0fce", ATTRS{idProduct}=="d103", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Dell 5560
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="413c", ATTRS{idProduct}=="818e", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Dell 5550
+/etc/udev/rules.d/70-snap.snapd.rules:ATTRS{idVendor}=="413c", ATTRS{idProduct}=="818d", ENV{ID_MM_ERICSSON_MBM}="1"
+/etc/udev/rules.d/70-snap.snapd.rules:# Dell 5530 HSDPA
+Unknown device "/dev/sdX": No such device
+Nov 03 00:21:48 nxcore systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events and Files...
+Nov 03 00:21:48 nxcore systemd-udevd[536]: Using default interface naming scheme 'v255'.
+Nov 03 00:21:48 nxcore systemd[1]: Started systemd-udevd.service - Rule-based Manager for Device Events and Files.
+Nov 03 00:21:48 nxcore lvm[691]: PV /dev/sda3 online, VG ubuntu-vg is complete.
+Nov 03 00:21:48 nxcore lvm[691]: VG ubuntu-vg finished
+
+
+
+
+journalctl -b -k --no-pager | grep -Ei 'ext4|xfs|btrfs|nvme|sd[a-z]|I/O error|reset|write-protect|dirty' | tail -n 200
+dmesg | grep -Ei 'I/O error|buffer I/O|reset|link is slow' | tail -n 200
+Nov 03 00:21:48 nxcore kernel: ACPI: RSDP 0x00000000DAE3A000 000024 (v02 DELL  )
+Nov 03 00:21:48 nxcore kernel: ACPI: XSDT 0x00000000DAE3A0C8 000114 (v01 DELL   CBX3     01072009 AMI  00010013)
+Nov 03 00:21:48 nxcore kernel: ACPI: DSDT 0x00000000DAE3A270 0277C2 (v02 DELL   CBX3     01072009 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE61D68 003176 (v02 SaSsdt SaSsdt   00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE64EE0 0025A5 (v02 PegSsd PegSsdt  00001000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE674C0 000DE5 (v02 INTEL  Ther_Rvp 00001000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE682A8 0008F4 (v02 INTEL  DELL_SFF 00000000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE68BE8 000EDE (v02 CpuRef CpuSsdt  00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE69B60 000141 (v02 INTEL  HdaDsp   00000000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE69CA8 00029F (v02 INTEL  sensrhub 00000000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE69F48 003002 (v02 INTEL  PtidDevc 00001000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE6CF50 00050D (v02 INTEL  TbtTypeC 00000000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: MSDM 0x00000000DAE6D4F0 000055 (v03 DELL   CBX3     06222004 AMI  00010013)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0x00000000DAE6DDD0 000183 (v01 Intel  IntelRMT 00001000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving DSDT table memory at [mem 0xdae3a270-0xdae61a31]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae61d68-0xdae64edd]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae64ee0-0xdae67484]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae674c0-0xdae682a4]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae682a8-0xdae68b9b]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae68be8-0xdae69ac5]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae69b60-0xdae69ca0]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae69ca8-0xdae69f46]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae69f48-0xdae6cf49]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae6cf50-0xdae6d45c]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving MSDM table memory at [mem 0xdae6d4f0-0xdae6d544]
+Nov 03 00:21:48 nxcore kernel: ACPI: Reserving SSDT table memory at [mem 0xdae6ddd0-0xdae6df52]
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0xFFFF8C7D803C1000 0003FF (v02 PmRef  Cpu0Cst  00003001 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0xFFFF8C7D80CA6800 0006D5 (v02 PmRef  Cpu0Ist  00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0xFFFF8C7D80CA0800 00065C (v02 PmRef  ApIst    00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0xFFFF8C7D802A4000 000197 (v02 PmRef  ApHwp    00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ACPI: SSDT 0xFFFF8C7D802A4400 00018A (v02 PmRef  ApCst    00003000 INTL 20160422)
+Nov 03 00:21:48 nxcore kernel: ahci 0000:00:17.0: flags: 64bit ncq pm led clo only pio slum part deso sadm sds apst
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] 1000215216 512-byte logical blocks: (512 GB/477 GiB)
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] 4096-byte physical blocks
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] Write Protect is off
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] Preferred minimum I/O size 4096 bytes
+Nov 03 00:21:48 nxcore kernel:  sda: sda1 sda2 sda3
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] supports TCG Opal
+Nov 03 00:21:48 nxcore kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] 3906963617 512-byte logical blocks: (2.00 TB/1.82 TiB)
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Write Protect is off
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Mode Sense: 37 00 10 00
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Write cache: enabled, read cache: enabled, supports DPO and FUA
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Preferred minimum I/O size 512 bytes
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Optimal transfer size 1048576 bytes
+Nov 03 00:21:48 nxcore kernel:  sdb: sdb1
+Nov 03 00:21:48 nxcore kernel: sd 6:0:0:0: [sdb] Attached SCSI disk
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] 3906963617 512-byte logical blocks: (2.00 TB/1.82 TiB)
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Write Protect is off
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Mode Sense: 37 00 10 00
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Write cache: enabled, read cache: enabled, supports DPO and FUA
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Preferred minimum I/O size 512 bytes
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Optimal transfer size 2097152 bytes
+Nov 03 00:21:48 nxcore kernel:  sdc: sdc1
+Nov 03 00:21:48 nxcore kernel: sd 7:0:0:0: [sdc] Attached SCSI disk
+Nov 03 00:21:48 nxcore kernel: Btrfs loaded, zoned=yes, fsverity=yes
+Nov 03 00:21:48 nxcore kernel: EXT4-fs (dm-0): mounted filesystem d08462ea-decb-4a56-884e-2a72666dfddb ro with ordered data mode. Quota mode: none.
+Nov 03 00:21:48 nxcore kernel: EXT4-fs (dm-0): re-mounted d08462ea-decb-4a56-884e-2a72666dfddb r/w. Quota mode: none.
+Nov 03 00:21:49 nxcore kernel: EXT4-fs (sda2): mounted filesystem 0483ef4f-27ff-4e82-a8a5-133f0dcd00b1 r/w with ordered data mode. Quota mode: none.
+Nov 03 00:21:49 nxcore kernel: EXT4-fs (dm-2): mounted filesystem 892ee5cf-c6a8-4914-9a0a-9dca9528006e r/w with ordered data mode. Quota mode: none.
+Nov 03 00:21:49 nxcore kernel: exFAT-fs (sdb1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Nov 03 00:21:49 nxcore kernel: EXT4-fs (dm-1): mounted filesystem 92631457-0461-4a05-8708-cc57d6852bd7 r/w with ordered data mode. Quota mode: none.
+Nov 03 03:41:19 nxcore kernel: exFAT-fs (sdb1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Nov 03 07:48:08 nxcore kernel: sd 7:0:0:0: [sdc] Synchronizing SCSI cache
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] 3906963617 512-byte logical blocks: (2.00 TB/1.82 TiB)
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Write Protect is off
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Mode Sense: 37 00 10 00
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Write cache: enabled, read cache: enabled, supports DPO and FUA
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Preferred minimum I/O size 512 bytes
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Optimal transfer size 2097152 bytes
+Nov 03 07:48:09 nxcore kernel:  sdd: sdd1
+Nov 03 07:48:09 nxcore kernel: sd 7:0:0:0: [sdd] Attached SCSI disk
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sdb] Synchronizing SCSI cache
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] 3906963617 512-byte logical blocks: (2.00 TB/1.82 TiB)
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Write Protect is off
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Mode Sense: 37 00 10 00
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Write cache: enabled, read cache: enabled, supports DPO and FUA
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Preferred minimum I/O size 512 bytes
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Optimal transfer size 1048576 bytes
+Nov 03 08:06:15 nxcore kernel:  sde: sde1
+Nov 03 08:06:15 nxcore kernel: sd 6:0:0:0: [sde] Attached SCSI disk
+Nov 03 08:59:30 nxcore kernel: exFAT-fs (sde1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+dmesg: read kernel buffer failed: Operation not permitted
+
+
+# For ext4:
+sudo e2fsck -fn /dev/sdX1
+
+# For NTFS (if present):
+sudo apt-get install -y ntfs-3g
+sudo ntfsfix -n /dev/sdX1  # -n = no modify; report only
+e2fsck 1.47.0 (5-Feb-2023)
+e2fsck: No such file or directory while trying to open /dev/sdX1
+Possibly non-existent device?
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+Failed to determine whether /dev/sdX1 is mounted: No such file or directory
+Mounting volume... Failed to access '/dev/sdX1': No such file or directory
+Error opening '/dev/sdX1': No such file or directory
+FAILED
+Attempting to correct errors... Failed to access '/dev/sdX1': No such file or directory
+Error opening '/dev/sdX1': No such file or directory
+FAILED
+Failed to startup volume: No such file or directory
+Failed to access '/dev/sdX1': No such file or directory
+Error opening '/dev/sdX1': No such file or directory
+Volume is corrupt. You should run chkdsk.
+No change made
+
+
+
+ cat /etc/fstab
+systemctl status systemd-udevd --no-pager
+systemctl status systemd-tmpfiles-setup || true
+● systemd-udevd.service - Rule-based Manager for Device Events and Files
+     Loaded: loaded (/usr/lib/systemd/system/systemd-udevd.service; static)
+    Drop-In: /usr/lib/systemd/system/systemd-udevd.service.d
+             └─syscall-architecture.conf
+     Active: active (running) since Mon 2025-11-03 00:21:48 UTC; 23h ago
+TriggeredBy: ● systemd-udevd-kernel.socket
+             ● systemd-udevd-control.socket
+       Docs: man:systemd-udevd.service(8)
+             man:udev(7)
+   Main PID: 536 (systemd-udevd)
+     Status: "Processing with 24 children at max"
+      Tasks: 1
+     Memory: 43.8M (peak: 71.3M)
+        CPU: 21.469s
+     CGroup: /system.slice/systemd-udevd.service
+             └─udev
+               └─536 /usr/lib/systemd/systemd-udevd
+
+Nov 03 00:21:48 nxcore systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events an…Files...
+Nov 03 00:21:48 nxcore systemd-udevd[536]: Using default interface naming scheme 'v255'.
+Nov 03 00:21:48 nxcore systemd[1]: Started systemd-udevd.service - Rule-based Manager for Device Events and Files.
+Nov 03 00:21:48 nxcore lvm[691]: PV /dev/sda3 online, VG ubuntu-vg is complete.
+Nov 03 00:21:48 nxcore lvm[691]: VG ubuntu-vg finished
+Hint: Some lines were ellipsized, use -l to show in full.
+● systemd-tmpfiles-setup.service - Create Volatile Files and Directories
+     Loaded: loaded (/usr/lib/systemd/system/systemd-tmpfiles-setup.service; static)
+     Active: active (exited) since Mon 2025-11-03 00:21:49 UTC; 23h ago
+       Docs: man:tmpfiles.d(5)
+             man:systemd-tmpfiles(8)
+   Main PID: 841 (code=exited, status=0/SUCCESS)
+        CPU: 35ms
+
+Nov 03 00:21:49 nxcore systemd[1]: Starting systemd-tmpfiles-setup.service - Create Volatile Files and Directories.>
+Nov 03 00:21:49 nxcore systemd[1]: Finished systemd-tmpfiles-setup.service - Create Volatile Files and Directories.
+lines 1-10/10 (END)
+
+
+
+systemctl status docker --no-pager
+docker info 2>/dev/null | sed -n '1,120p' || true
+docker ps -a 2>/dev/null | head -n 50 || true
+○ docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+     Active: inactive (dead) since Mon 2025-11-03 13:00:56 UTC; 10h ago
+   Duration: 12h 39min 1.333s
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 1730 (code=exited, status=0/SUCCESS)
+        CPU: 8min 1.073s
+
+Nov 03 13:00:36 nxcore dockerd[1730]: time="2025-11-03T13:00:36.559718718Z" level=info msg="No non-localhos…servers"
+Nov 03 13:00:56 nxcore dockerd[1730]: time="2025-11-03T13:00:56.327832942Z" level=info msg="ignoring event"…kDelete"
+Nov 03 13:00:56 nxcore dockerd[1730]: time="2025-11-03T13:00:56.339979526Z" level=warning msg="ShouldRestart failed…
+Nov 03 13:00:56 nxcore dockerd[1730]: time="2025-11-03T13:00:56.655708669Z" level=info msg="Processing sign…inated'"
+Nov 03 13:00:56 nxcore systemd[1]: Stopping docker.service - Docker Application Container Engine...
+Nov 03 13:00:56 nxcore dockerd[1730]: time="2025-11-03T13:00:56.658763512Z" level=info msg="stopping event …ace=moby
+Nov 03 13:00:56 nxcore dockerd[1730]: time="2025-11-03T13:00:56.659968000Z" level=info msg="Daemon shutdown…omplete"
+Nov 03 13:00:56 nxcore systemd[1]: docker.service: Deactivated successfully.
+Nov 03 13:00:56 nxcore systemd[1]: Stopped docker.service - Docker Application Container Engine.
+Nov 03 13:00:56 nxcore systemd[1]: docker.service: Consumed 8min 1.073s CPU time, 12.9G memory peak, 0B mem…ap peak.
+Hint: Some lines were ellipsized, use -l to show in full.
+Client: Docker Engine - Community
+ Version:    28.5.1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.29.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.40.2
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 8
+ Server Version: 28.5.1
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: b98a3aace656320842a23f4a392a33f46af97866
+ runc version: v1.3.0-0-g4ca628d1
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.8.0-86-generic
+ Operating System: Ubuntu 24.04.3 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 4
+ Total Memory: 15.5GiB
+ Name: nxcore
+ ID: 5c04b141-3d27-4230-aac2-f53c6025ab1a
+ Docker Root Dir: /srv/docker-data
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+
+ ip a
+ip route
+systemd-resolve --status | sed -n '1,120p'
+# Tailscale (if used)
+tailscale status 2>/dev/null || true
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 50:9a:4c:5b:7d:b4 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.253/22 metric 100 brd 192.168.7.255 scope global dynamic enp1s0
+       valid_lft 8454sec preferred_lft 8454sec
+    inet6 fd88:bc9e:4369:1:529a:4cff:fe5b:7db4/64 scope global dynamic mngtmpaddr noprefixroute
+       valid_lft 2591540sec preferred_lft 604340sec
+    inet6 fe80::529a:4cff:fe5b:7db4/64 scope link
+       valid_lft forever preferred_lft forever
+3: tailscale0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1280 qdisc fq_codel state UNKNOWN group default qlen 500
+    link/none
+    inet 100.115.9.61/32 scope global tailscale0
+       valid_lft forever preferred_lft forever
+    inet6 fd7a:115c:a1e0::9901:93e/128 scope global
+       valid_lft forever preferred_lft forever
+    inet6 fe80::7de:7654:4c08:e207/64 scope link stable-privacy
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 2e:f7:07:48:63:ac brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+default via 192.168.4.1 dev enp1s0 proto dhcp src 192.168.7.253 metric 100
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown
+192.168.4.0/22 dev enp1s0 proto kernel scope link src 192.168.7.253 metric 100
+192.168.4.1 dev enp1s0 proto dhcp scope link src 192.168.7.253 metric 100
+216.165.129.158 via 192.168.4.1 dev enp1s0 proto dhcp src 192.168.7.253 metric 100
+216.170.153.146 via 192.168.4.1 dev enp1s0 proto dhcp src 192.168.7.253 metric 100
+systemd-resolve: command not found
+100.115.9.61    nxcore                   trcamach@            linux    -                                            
+100.96.78.9     aerocoreos               trcamach@            linux    offline, last seen 20d ago                   
+100.112.151.67  av-dsktp-o6              trcamach@            windows  offline, last seen 11d ago                   
+100.105.47.121  av-lsv-o1-linux          trcamach@            linux    offline, last seen 23d ago                   
+100.100.239.23  av-lsv-o1                trcamach@            windows  offline, last seen 24d ago                   
+100.102.151.96  av-lt                    trcamach@            windows  offline, last seen 1m ago                    
+100.105.223.26  av-mini-j1               trcamach@            windows  offline, last seen 3d ago                    
+100.83.32.61    av-mini-o2               trcamach@            windows  active; direct 192.168.7.252:41641, tx 339936 rx 186680
+100.91.74.108   av-mini-t1               trcamach@            windows  offline, last seen 19h ago                   
+100.67.36.79    billbox-samsung-sm-x900  trcamach@            android  offline, last seen 4d ago                    
+100.121.178.43  bytecore                 trcamach@            linux    offline, last seen 38d ago                   
+100.76.201.75   hq-central               trcamach@            windows  -                                            
+100.88.255.127  j-phone-15               trcamach@            iOS      -                                            
+100.86.228.64   jay-machine              trcamach@            windows  offline, last seen 10h ago                   
+100.99.174.1    pocket-samsung-sm-s928u  trcamach@            android  offline, last seen 1d ago                    
+100.86.32.108   samsung-sm-a156u         billyhendrickson18@  android  offline, last seen 5d ago       
+
+
+C:\Users\Billy

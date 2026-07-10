@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AeroVista – Live Audit Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-elevated: #10131a;
+      --bg-elevated-soft: #181c26;
+      --accent: #27d3ff;
+      --accent-soft: rgba(39, 211, 255, 0.16);
+      --accent-strong: rgba(39, 211, 255, 0.35);
+      --danger: #ff4b81;
+      --text: #f5f7ff;
+      --text-muted: #9aa4c2;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --transition-fast: 0.18s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      --chip-bg: rgba(255, 255, 255, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #0b1b30 0, var(--bg) 45%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-pill {
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 65%);
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .meta-chip {
+      font-size: 0.78rem;
+      padding: 6px 11px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: rgba(3, 9, 18, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #43ff9a;
+      box-shadow: 0 0 10px rgba(67, 255, 154, 0.9);
+    }
+
+    .meta-chip.danger .meta-dot {
+      background: var(--danger);
+      box-shadow: 0 0 10px rgba(255, 75, 129, 0.9);
+    }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .search-box {
+      flex: 1 1 220px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(6, 13, 26, 0.9);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.86rem;
+      width: 100%;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .toolbar-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      background: rgba(7, 12, 22, 0.9);
+      color: var(--text);
+      padding: 7px 13px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast),
+        transform 0.1s ease-out, box-shadow var(--transition-fast);
+    }
+
+    .btn-primary {
+      border-color: var(--accent-strong);
+      background: linear-gradient(120deg, #02141c, #021925);
+      box-shadow: 0 0 18px rgba(39, 211, 255, 0.2);
+    }
+
+    .btn:hover {
+      background: rgba(16, 24, 42, 0.95);
+      border-color: var(--accent-strong);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn span.icon {
+      font-size: 0.95rem;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 880px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Panels */
+    .panel {
+      background: radial-gradient(circle at top left, rgba(39, 211, 255, 0.05), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255, 75, 129, 0.04), transparent 60%),
+        var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 14px 14px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .panel-title {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-tag {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      background: rgba(39, 211, 255, 0.08);
+      color: var(--accent);
+      border: 1px solid rgba(39, 211, 255, 0.2);
+    }
+
+    .panel-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 3px 0 6px;
+    }
+
+    .pill {
+      padding: 4px 9px;
+      border-radius: var(--radius-full);
+      background: var(--chip-bg);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections (accordions) */
+    .section {
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(5, 7, 15, 0.9);
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: border-color var(--transition-fast), background var(--transition-fast),
+        transform 0.12s ease-out, box-shadow var(--transition-fast);
+    }
+
+    .section-header {
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .caret {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid var(--border-subtle);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform var(--transition-fast), border-color var(--transition-fast),
+        background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .section-meta {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: rgba(6, 10, 20, 0.9);
+    }
+
+    .badge.p1 {
+      border-color: rgba(255, 75, 129, 0.7);
+      color: #ffd7e5;
+      background: rgba(255, 75, 129, 0.13);
+    }
+
+    .section-body {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 10px 0;
+      transition: max-height 0.2s ease-out, padding 0.18s ease-out;
+    }
+
+    .section.open {
+      border-color: rgba(39, 211, 255, 0.6);
+      background: radial-gradient(circle at top left, rgba(39, 211, 255, 0.08), transparent 55%),
+        rgba(5, 9, 18, 0.95);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .section.open .caret {
+      transform: rotate(90deg);
+      border-color: rgba(39, 211, 255, 0.8);
+      background: rgba(39, 211, 255, 0.12);
+      color: var(--accent);
+    }
+
+    .section.open .section-body {
+      padding: 4px 10px 9px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .checklist input[type="checkbox"] {
+      margin-top: 3px;
+      cursor: pointer;
+    }
+
+    .checklist label {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checklist label span.label-main {
+      color: var(--text);
+      display: block;
+    }
+
+    .checklist label span.label-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .small-note {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Right column cards */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stack .panel {
+      padding: 12px;
+    }
+
+    .pill-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .risk-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      font-size: 0.8rem;
+    }
+
+    .risk-list li {
+      padding: 3px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+
+    .risk-pill {
+      padding: 0 7px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .risk-pill.p1 {
+      border-color: rgba(255, 75, 129, 0.7);
+      color: #ffd7e5;
+      background: rgba(255, 75, 129, 0.14);
+    }
+
+    .risk-pill.p2 {
+      border-color: rgba(255, 196, 87, 0.7);
+      color: #ffeaa8;
+      background: rgba(255, 196, 87, 0.12);
+    }
+
+    .risk-pill.p3 {
+      border-color: rgba(114, 231, 169, 0.7);
+      color: #d5ffe5;
+      background: rgba(114, 231, 169, 0.09);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 18px;
+      opacity: 0.8;
+    }
+
+    /* Search highlighting */
+    .highlight {
+      background: rgba(39, 211, 255, 0.2);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="title-block">
+        <h1>
+          Live Audit Console
+          <span class="title-pill">On the Clock</span>
+        </h1>
+        <p class="subtitle">
+          Operational, security, and compliance review framework for your current AeroVista / NXCore stack.
+        </p>
+      </div>
+      <div class="meta-bar">
+        <div class="meta-chip">
+          <span class="meta-dot"></span>
+          Session status: Active
+        </div>
+        <div class="meta-chip danger">
+          <span class="meta-dot"></span>
+          P1 Issues: To be confirmed
+        </div>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <span>🔍</span>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Filter by keyword (e.g., TLS, Traefik, backups, COD)..."
+        />
+      </div>
+      <div class="toolbar-right">
+        <button class="btn btn-primary" id="expandAllBtn">
+          <span class="icon">📂</span>
+          <span>Expand all</span>
+        </button>
+        <button class="btn" id="collapseAllBtn">
+          <span class="icon">📁</span>
+          <span>Collapse all</span>
+        </button>
+      </div>
+    </div>
+
+    <main class="grid">
+      <!-- Left column -->
+      <section aria-label="Audit flow">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span>Audit Flow</span>
+              <span class="panel-tag">T-0 → T-30</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p><strong>Objectives:</strong> Identify high-risk gaps, compliance red flags, and operational fragility.</p>
+            <p><strong>Outputs:</strong> Risk register, prioritized fixes, and evidence notes you can drop into reports.</p>
+
+            <!-- Section: Scope & Assets -->
+            <div class="section open" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>1. Scope & Assets</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge">Discovery</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="scope-public" />
+                    <label for="scope-public">
+                      <span class="label-main">Map public web / apps</span>
+                      <span class="label-sub">
+                        Aerovista marketing sites, dashboards, GitHub Pages, any login surfaces.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="scope-core" />
+                    <label for="scope-core">
+                      <span class="label-main">Inventory core infra</span>
+                      <span class="label-sub">
+                        NXCore (Docker / Traefik / n8n / Ollama / databases / file shares).
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="scope-auth" />
+                    <label for="scope-auth">
+                      <span class="label-main">Auth & identity surfaces</span>
+                      <span class="label-sub">
+                        Authelia, Firebase Auth, Tailscale ACLs, any role-based access.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="scope-data" />
+                    <label for="scope-data">
+                      <span class="label-main">Data stores & backups</span>
+                      <span class="label-sub">
+                        Postgres, Redis, file shares, backup targets, retention windows.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="scope-ci" />
+                    <label for="scope-ci">
+                      <span class="label-main">CI/CD & automation</span>
+                      <span class="label-sub">
+                        GitHub Actions, Firebase deployment flows, local deployment scripts, n8n workflows.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="scope-compliance" />
+                    <label for="scope-compliance">
+                      <span class="label-main">Compliance surfaces</span>
+                      <span class="label-sub">
+                        COD policy, quiz ≥80% rules, violation logging, NNB/ZTP audit score handling.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: Security & Compliance -->
+            <div class="section open" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>2. Security & Compliance</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge p1">P1 Focus</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="sec-tls" />
+                    <label for="sec-tls">
+                      <span class="label-main">TLS & Traefik routing sanity</span>
+                      <span class="label-sub">
+                        HTTP→HTTPS behavior, HSTS, exception paths (e.g., <code>/certs/</code>), and duplicate routers.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sec-authelia" />
+                    <label for="sec-authelia">
+                      <span class="label-main">SSO posture & MFA coverage</span>
+                      <span class="label-sub">
+                        Authelia schemas, MFA enforcement for admin apps, session lifetimes, and remember-me configuration.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sec-secrets" />
+                    <label for="sec-secrets">
+                      <span class="label-main">Secrets management</span>
+                      <span class="label-sub">
+                        .env handling, Docker secrets, repo exposure scans, and rotation cadence.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sec-network" />
+                    <label for="sec-network">
+                      <span class="label-main">Network controls & exposure</span>
+                      <span class="label-sub">
+                        Tailscale ACL least privilege, admin surfaces gated by SSO, open ports review.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sec-data-protect" />
+                    <label for="sec-data-protect">
+                      <span class="label-main">Data protection</span>
+                      <span class="label-sub">
+                        At-rest encryption, encrypted backups, restore tests, RPO/RTO alignment.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sec-compliance-map" />
+                    <label for="sec-compliance-map">
+                      <span class="label-main">Compliance mapping</span>
+                      <span class="label-sub">
+                        COD policy → real enforcement, quiz rules evidence, violation escalation logs, NNB/ZTP score usage.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: Reliability & Ops -->
+            <div class="section" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>3. Reliability & Operations</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge">SRE</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="ops-backups" />
+                    <label for="ops-backups">
+                      <span class="label-main">Backups & restore reality</span>
+                      <span class="label-sub">
+                        Schedules, success rate, most recent restore drill, documented RPO/RTO.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="ops-observability" />
+                    <label for="ops-observability">
+                      <span class="label-main">Observability coverage</span>
+                      <span class="label-sub">
+                        Grafana/Prometheus metrics, Uptime Kuma for public entrypoints, log retention & centralization.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="ops-deploys" />
+                    <label for="ops-deploys">
+                      <span class="label-main">Deploy & rollback paths</span>
+                      <span class="label-sub">
+                        Reproducible builds, ability to roll back, environment parity (dev/stage/prod).
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="ops-n8n" />
+                    <label for="ops-n8n">
+                      <span class="label-main">Job runners & n8n workflows</span>
+                      <span class="label-sub">
+                        Idempotent critical flows, retry logic, error alerts, dead-letter handling.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: App/Web Hygiene -->
+            <div class="section" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>4. App & Web Hygiene</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge">UX & Security</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="app-404" />
+                    <label for="app-404">
+                      <span class="label-main">404 / SPA routing sanity</span>
+                      <span class="label-sub">
+                        Manifest and basePath correctness, clean 404s, fallback routes for single-page apps.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="app-csp" />
+                    <label for="app-csp">
+                      <span class="label-main">Content Security Policy (CSP)</span>
+                      <span class="label-sub">
+                        Nonce/hash-based scripts, no <code>unsafe-inline</code>, restricted domains for images/fonts/media.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="app-perf" />
+                    <label for="app-perf">
+                      <span class="label-main">Performance & caching basics</span>
+                      <span class="label-sub">
+                        Compression, caching headers, image optimization, Lighthouse PWA checks where relevant.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: Documentation & Evidence -->
+            <div class="section" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>5. Documentation & Evidence</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge">Audit Trail</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="doc-runbooks" />
+                    <label for="doc-runbooks">
+                      <span class="label-main">Runbooks & incident playbooks</span>
+                      <span class="label-sub">
+                        Clear steps for auth outage, cert expiry, DB failure, and service restarts on NXCore.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="doc-access-logs" />
+                    <label for="doc-access-logs">
+                      <span class="label-main">Admin access logging</span>
+                      <span class="label-sub">
+                        Track who changed what and when for critical configs, roles, and routing changes.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="doc-sops" />
+                    <label for="doc-sops">
+                      <span class="label-main">SOPs for infra & workstations</span>
+                      <span class="label-sub">
+                        NXCore replacement, PC images, CA installation, onboarding/offboarding, and access changes.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: Deliverables -->
+            <div class="section" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>6. Deliverables from This Audit</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge">Output</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="deliv-risk-reg" />
+                    <label for="deliv-risk-reg">
+                      <span class="label-main">Risk register</span>
+                      <span class="label-sub">
+                        ID, description, impact, likelihood, owner, due date (P1 → P3).
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="deliv-top10" />
+                    <label for="deliv-top10">
+                      <span class="label-main">Top 10 fixes</span>
+                      <span class="label-sub">
+                        Step-by-step remediation notes for the highest-value changes.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="deliv-evidence" />
+                    <label for="deliv-evidence">
+                      <span class="label-main">Evidence pack notes</span>
+                      <span class="label-sub">
+                        Commands run, file paths, screenshots/config snippets ready to paste into reports.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="deliv-checklist" />
+                    <label for="deliv-checklist">
+                      <span class="label-main">Follow-up checklist</span>
+                      <span class="label-sub">
+                        Who/when/how to verify fixes and schedule re-checks.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section: Quick Wins -->
+            <div class="section" data-section>
+              <div class="section-header">
+                <div class="section-title">
+                  <div class="caret">&gt;</div>
+                  <span>7. Quick Wins (Default First Moves)</span>
+                </div>
+                <div class="section-meta">
+                  <span class="badge p1">High Yield</span>
+                </div>
+              </div>
+              <div class="section-body">
+                <ul class="checklist">
+                  <li>
+                    <input type="checkbox" id="qw-traefik" />
+                    <label for="qw-traefik">
+                      <span class="label-main">Traefik routing & resolver sanity</span>
+                      <span class="label-sub">
+                        Fix duplicate labels, ensure correct <code>certificatesResolvers</code>, HTTP/HTTPS behavior, and live Traefik API.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="qw-authelia" />
+                    <label for="qw-authelia">
+                      <span class="label-main">Authelia MFA for admin surfaces</span>
+                      <span class="label-sub">
+                        Require MFA, secure cookies, correct <code>X-Forwarded-*</code> handling for SSO-protected apps.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="qw-backup-drill" />
+                    <label for="qw-backup-drill">
+                      <span class="label-main">Backup restore drill</span>
+                      <span class="label-sub">
+                        Confirm last successful restore; schedule quarterly drills and document outcomes.
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="qw-404-fixes" />
+                    <label for="qw-404-fixes">
+                      <span class="label-main">Public site 404 & manifest fixes</span>
+                      <span class="label-sub">
+                        Align SPA routing, manifests, and caching headers for marketing sites and dashboards.
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+                <p class="small-note">
+                  If no specific direction is given, these are the first items tackled “on the clock”.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right column -->
+      <aside aria-label="Context and quick views">
+        <div class="stack">
+          <!-- Summary / Priority panel -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <span>Session Snapshot</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <p class="pill-tagline">
+                Use this card to track the high-level feel for the session as you move through the checklist.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Scope: Infra + Web + Policy</span>
+                <span class="pill">Mode: Active Audit</span>
+                <span class="pill">Owner: You</span>
+              </div>
+              <p class="small-note">
+                When you pause, jot a one-liner note in your own log keyed to this session: timestamp, focus area, and any blockers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Risk quicklane -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <span>Risk Lane (Draft)</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="risk-list">
+                <li>
+                  <span>Traefik / TLS misconfig</span>
+                  <span class="risk-pill p1">P1</span>
+                </li>
+                <li>
+                  <span>MFA gaps on admin apps</span>
+                  <span class="risk-pill p1">P1</span>
+                </li>
+                <li>
+                  <span>Backups untested in restores</span>
+                  <span class="risk-pill p2">P2</span>
+                </li>
+                <li>
+                  <span>CSP & 404 hygiene</span>
+                  <span class="risk-pill p2">P2</span>
+                </li>
+                <li>
+                  <span>Runbooks & SOP coverage</span>
+                  <span class="risk-pill p3">P3</span>
+                </li>
+              </ul>
+              <p class="small-note">
+                Replace these items with real findings as you go. This list is intentionally short so it fits in a single glance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Notes / Instructions -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <span>How to Use This File</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ol style="padding-left: 18px; margin: 6px 0 4px; font-size: 0.82rem;">
+                <li>Save this document as <code>aerovista-audit-console.html</code>.</li>
+                <li>Open it in your browser during active audit sessions.</li>
+                <li>Use the search bar to filter by topic (e.g., “Traefik”, “backups”, “COD”).</li>
+                <li>Check off items as you verify them and mirror the progress in your main log / tracker.</li>
+              </ol>
+              <p class="small-note">
+                If you want, you can version this file in Git and keep one per site / environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="footer-note">
+      This page is self-contained and offline-friendly. Drop it onto any machine in the stack and run it locally while you work.
+    </div>
+  </div>
+
+  <script>
+    // Accordion behavior
+    document.querySelectorAll("[data-section]").forEach((section) => {
+      const header = section.querySelector(".section-header");
+      if (!header) return;
+      header.addEventListener("click", () => {
+        section.classList.toggle("open");
+      });
+    });
+
+    // Expand / collapse all
+    const expandAllBtn = document.getElementById("expandAllBtn");
+    const collapseAllBtn = document.getElementById("collapseAllBtn");
+
+    expandAllBtn.addEventListener("click", () => {
+      document.querySelectorAll("[data-section]").forEach((s) => s.classList.add("open"));
+    });
+
+    collapseAllBtn.addEventListener("click", () => {
+      document.querySelectorAll("[data-section]").forEach((s) => s.classList.remove("open"));
+    });
+
+    // Simple search: filters sections based on text content
+    const searchInput = document.getElementById("searchInput");
+
+    function clearHighlights(root) {
+      const highlighted = root.querySelectorAll(".highlight");
+      highlighted.forEach((el) => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+      });
+    }
+
+    function highlightTerm(root, term) {
+      if (!term) return;
+      const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            if (
+              node.parentNode &&
+              node.parentNode.nodeName !== "SCRIPT" &&
+              node.parentNode.nodeName !== "STYLE" &&
+              node.textContent.toLowerCase().includes(term)
+            ) {
+              return NodeFilter.FILTER_ACCEPT;
+            }
+            return NodeFilter.FILTER_REJECT;
+          },
+        },
+        false
+      );
+
+      const nodes = [];
+      while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+      }
+
+      nodes.forEach((node) => {
+        const text = node.textContent;
+        const parent = node.parentNode;
+        const frag = document.createDocumentFragment();
+        let lastIndex = 0;
+        let index;
+
+        while ((index = text.toLowerCase().indexOf(term, lastIndex)) !== -1) {
+          if (index > lastIndex) {
+            frag.appendChild(document.createTextNode(text.slice(lastIndex, index)));
+          }
+          const highlight = document.createElement("span");
+          highlight.className = "highlight";
+          highlight.textContent = text.slice(index, index + term.length);
+          frag.appendChild(highlight);
+          lastIndex = index + term.length;
+        }
+
+        if (lastIndex < text.length) {
+          frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        parent.replaceChild(frag, node);
+      });
+    }
+
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.trim().toLowerCase();
+      const sections = document.querySelectorAll("[data-section]");
+
+      sections.forEach((section) => {
+        const body = section.querySelector(".section-body");
+        const headerText = section.querySelector(".section-title")?.textContent || "";
+        const text = (headerText + " " + (body?.textContent || "")).toLowerCase();
+
+        // Reset highlights
+        clearHighlights(section);
+
+        if (!term) {
+          section.style.display = "";
+        } else if (text.includes(term)) {
+          section.style.display = "";
+          // auto-open matching section
+          section.classList.add("open");
+          highlightTerm(section, term);
+        } else {
+          section.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

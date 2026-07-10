@@ -1,15 +1,18 @@
-EchoVerse ByteCast audio for aerovista_signal_echoverse_bytecast_2026-06-16.html
+Audio and media for Signal editions
+=====================================
 
-Primary filename (URL-safe):
-  echoverse-bytecast-2026-06-16.mp3
+Assets now live inside each edition folder:
 
-Alternate filename also wired in the page:
-  EchoVerse Platform Shift.mp3
+  newsletters/editions/{type}/{slug}/assets/
+    audio.mp3
+    infographic.png
 
-Transcript:
-  echoverse_bytecast_transcript_2026-06-16.txt
+Do not drop MP3/PNG beside flat HTML in newsletters/ root.
 
-Infographic:
-  a_detailed_infographic_poster_dashboard_style_de.png
+See:
+  docs/site-structure.md
+  docs/publishing-workflow.md
 
-Legacy HTML filenames redirect to the canonical ByteCast page.
+EchoVerse reference (migrated):
+  editions/milestone/2026-06-16-echoverse/assets/audio.mp3
+  editions/milestone/2026-06-16-echoverse/assets/infographic.png

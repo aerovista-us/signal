@@ -1,0 +1,168 @@
+🧭 Executive Summary
+
+System: Dell OptiPlex 3050 — Ubuntu 24.04.3 LTS
+Hostname: nxcore
+CPU: 4 cores @ ~98 % usage
+RAM: 16 GB (12 GB used)
+Uptime: 7 days
+Kernel / core services: Running, but multiple dependent daemons failed (GPU manager, rsyslog, pmlogger stack).
+Critical alert: CPU saturation + rsyslog I/O failures indicate a resource or permission bottleneck, not hardware failure.
+
+⚙️ Health Summary
+Category	Status	Detail
+Services	❌ 10 failed	GPU manager, rsyslog log chain, LightDM, man-db, media-backup, pm-logger suite, Unbound resolvconf helper, AI monitor, Exchange outbox publisher
+CPU Load	🔴 98 % of 4 cores	Sustained — likely due to runaway rsyslog threads + gunicorn processes
+Memory	⚠️ 12 / 16 GB used	Manageable, but swap pressure may rise under load
+Storage Root (/)	🔴 150 GB used / 160 GB total	Only ~6 % free; high risk for log and package failures
+NXDrive (sdb1 exFAT)	✅ Mounted 1.7 / 2 TB	Large external SSD — healthy
+ACOS Drive (sdd1 ext4)	✅ Mounted 5.8 / 500 GB	Healthy
+Docker Volume LV	✅ Mounted	322 GB unused; good candidate for log offload
+Network	✅ Stable interfaces	enp1s0 LAN + tailscale0 mesh operational
+Cockpit UI	⚠️ Partially functional	Several JS modules 404 / MIME errors due to missing localization files and UDisks2 modules
+🧩 Key Errors & Root Causes
+1. rsyslog write errors / “message lost”
+action-3-builtin:omfile write error — see https://www.rsyslog.com/solving-rsyslog-write-errors
+
+
+Cause: /var/log (or /) nearly full → write failures → rsyslogd back-pressure → CPU spike.
+
+Impact: system logs not written, service health degraded.
+
+Fix:
+
+sudo journalctl --vacuum-time=3d
+sudo du -sh /var/log/*
+sudo truncate -s 0 /var/log/syslog /var/log/kern.log /var/log/auth.log
+sudo systemctl restart rsyslog
+
+2. libvirtd “failed to create mdevctl thread”
+failed to create mdevctl thread: Resource temporarily unavailable
+
+
+Cause: high CPU load or thread limit (ulimit) hit during libvirt startup.
+Fix: increase process limits and restart libvirtd:
+
+sudo systemctl restart libvirtd
+sudo prlimit --pid $(pidof libvirtd) --nofile=65536:65536
+
+3. Missing UDisks2 modules
+Error initializing module 'lvm2' / 'iscsi' / 'btrfs': cannot open shared object file
+
+
+Cause: partial package install or cockpit-storage plugin mismatch after 24.04 update.
+Fix:
+
+sudo apt install --reinstall udisks2 libblockdev-lvm2 libblockdev-btrfs libblockdev-iscsi
+sudo systemctl restart udisks2
+
+4. Cockpit web console 404 / MIME errors
+po.manifest.js / po.js 404; MIME type text/html not executable
+
+
+Cause: missing localized resource bundles under /usr/share/cockpit/@localhost.
+Fix:
+
+sudo apt reinstall cockpit cockpit-bridge cockpit-system
+sudo systemctl restart cockpit.socket
+
+
+Optional: clean browser cache or force-refresh (Ctrl + F5) after repair.
+
+5. Failed Services Overview
+Service	Status	Type	Likely Cause
+ai-monitor	Failed	Static	Python env not resolved
+exchange-outbox	Failed	Disabled	GitHub creds or path missing
+gpu-manager	Failed	Enabled	No NVIDIA driver or kernel module
+lightdm	Failed	Indirect	Headless server — expected
+man-db	Failed	Static	tmp space full / lock stale
+media-backup	Failed	Static	mount paths missing
+pm-logger (check/daily/farm)	Failed	Static	PCP package removed
+unbound-resolvconf	Failed	Disabled	systemd-resolved handles DNS now
+6. High CPU Load
+
+Top suspects:
+
+rsyslogd retrying failed writes.
+
+gunicorn leftover from /srv/nxcore-dash.
+
+PCP / pm-logger runaway due to log errors.
+
+Fix / isolate:
+
+sudo systemctl stop pmcd pmlogger || true
+sudo pkill -f gunicorn
+sudo systemctl restart rsyslog
+
+🧠 Cockpit Error Root Causes
+Error	Explanation	Resolution
+po.manifest.js 404	Missing locale bundles	reinstall cockpit-system
+storaged.js ... cannot open shared object file	udisks2 modules missing	reinstall blockdev libs
+TypeError: Cannot read properties of undefined (reading 'includes')	Cockpit logs plugin JS bug triggered by missing log entries (rsyslog down)	fix rsyslog, then restart cockpit
+Refused to execute script ... MIME type text/html	404 returned HTML instead of JS due to invalid cockpit resource path	reinstall + clear cache
+🧰 Recommended Repair Sequence (≈ 15 minutes)
+
+1️⃣ Free disk space
+
+sudo apt clean && sudo journalctl --vacuum-time=3d
+sudo truncate -s 0 /var/log/*.log
+
+
+2️⃣ Repair logging stack
+
+sudo systemctl stop rsyslog
+sudo apt install --reinstall rsyslog
+sudo systemctl enable --now rsyslog
+
+
+3️⃣ Reinstall missing storage modules
+
+sudo apt install --reinstall udisks2 libblockdev-lvm2 libblockdev-iscsi libblockdev-btrfs
+
+
+4️⃣ Re-enable critical services
+
+sudo systemctl enable --now ai-monitor exchange-outbox media-backup
+sudo systemctl daemon-reload
+
+
+5️⃣ Fix Cockpit
+
+sudo apt reinstall cockpit cockpit-bridge cockpit-system
+sudo systemctl restart cockpit.socket
+
+
+6️⃣ Trim root LV
+
+sudo fstrim -av
+
+
+7️⃣ Verify health
+
+systemctl --failed
+df -hT /
+sudo ss -ltnp | grep 8080 || echo "✅ no stray Gunicorn"
+
+🚀 Optional Improvements
+
+Move /var/log → docker LV (bind-mount in /etc/fstab to prevent root overflow).
+
+Set log rotation limits (/etc/logrotate.d/rsyslog).
+
+Add swapfile if sustained memory > 80 %.
+
+Retire host Gunicorn (nxcore-dash) and expose Cockpit via Traefik secure router.
+
+Tune journald:
+
+sudo sed -i 's/^#SystemMaxUse.*/SystemMaxUse=500M/' /etc/systemd/journald.conf
+sudo systemctl restart systemd-journald
+
+✅ After Repair Expected State
+Area	Goal	Outcome
+CPU usage	≤ 20 % idle load	rsyslog fixed, no retry loops
+Memory	≤ 8 GB used	normal for docker stack + cockpit
+Root FS	> 20 % free	journald trim + log rotation
+Cockpit	Fully functional, no 404/MIME errors	✅
+Traefik	Clean logs, dashboard reachable	✅
+NXCore services	All critical units enabled, 0 failed	✅

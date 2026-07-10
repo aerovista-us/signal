@@ -1,0 +1,124 @@
+{
+  "updatedAt": "11/3/2025, 8:54:58 PM",
+  "status": [
+    {
+      "title": "Env vars wired across compose stacks",
+      "state": "done"
+    },
+    {
+      "title": "Traefik HTTP cert path fixed / routers clarified",
+      "state": "done"
+    },
+    {
+      "title": "SSO core online (Postgres on root, Authelia schema 0→23, health 200)",
+      "state": "done"
+    },
+    {
+      "title": "Authelia ↔ Redis health (depends_on + healthcheck)",
+      "state": "active"
+    },
+    {
+      "title": "Authelia static assets for /auth (manifest.json, CSS)",
+      "state": "active"
+    },
+    {
+      "title": "Storage cleanup: remove docker-data.img safely",
+      "state": "active"
+    },
+    {
+      "title": "Playwright CA trust (strict TLS)",
+      "state": "pending"
+    },
+    {
+      "title": "Daily Postgres backups + retention + restore test",
+      "state": "pending"
+    },
+    {
+      "title": "Grafana dashboards + alerts + contact points",
+      "state": "pending"
+    },
+    {
+      "title": "Mock data purge before prod",
+      "state": "pending"
+    },
+    {
+      "title": "AeroCoreOS UI Standards Rollout",
+      "state": "active"
+    },
+    {
+      "title": "EchoVerse HTTPS Activation",
+      "state": "active"
+    },
+    {
+      "title": "RydeSync Redis Migration",
+      "state": "active"
+    },
+    {
+      "title": "Memory Mapper Performance Optimization",
+      "state": "active"
+    },
+    {
+      "title": "ByteCoreLite Phase 2 Hardening",
+      "state": "pending"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Authelia ↔ Redis health",
+      "owner": "Infra",
+      "eta": "0.5d",
+      "desc": "Add Redis healthcheck and make Authelia depend on healthy Redis.",
+      "code": "# docker-compose.yml (redis)\nhealthcheck:\n  test: [\"CMD\", \"redis-cli\", \"ping\"]\n  interval: 10s\n  timeout: 3s\n  retries: 5\n\n# docker-compose.yml (authelia)\ndepends_on:\n  redis:\n    condition: service_healthy\n\n# verify\ndocker compose ps\ndocker inspect $(docker compose ps -q redis) --format '{{json .State.Health}}' | jq",
+      "done": false
+    },
+    {
+      "title": "Authelia static assets",
+      "owner": "Infra",
+      "eta": "0.5d",
+      "desc": "Mount public assets and confirm manifest & CSS are served under /auth/.",
+      "code": "# mount build output into container\n- ./authelia/public:/app/public:ro\n\n# verify from inside network\ndocker exec traefik wget -qO- http://authelia:9091/manifest.json | head\n\n# verify externally\ncurl -I https://<host>/auth/manifest.json",
+      "done": false
+    },
+    {
+      "title": "Storage cleanup (docker-data.img)",
+      "owner": "Infra",
+      "eta": "0.5d",
+      "desc": "Detach any loop devices / handles, then delete image; inspect dmesg for I/O issues.",
+      "code": "sudo systemctl stop docker\nsudo losetup -a | grep docker-data.img && sudo losetup -D || true\nsudo fuser -v /srv/data/docker-data.img || true\nsudo rm -f /srv/data/docker-data.img\ndmesg | tail -n 120",
+      "done": false
+    },
+    {
+      "title": "Playwright CA trust",
+      "owner": "QA/Platform",
+      "eta": "0.5d",
+      "desc": "Import Root CA to system store and Chromium profile used by tests; enforce strict TLS.",
+      "code": "# Playwright config\n// playwright.config.ts\nexport default defineConfig({\n  use: { ignoreHTTPSErrors: false },\n});\n\n# CI bootstrap (example)\nsudo cp /path/to/AeroVista-RootCA.crt /usr/local/share/ca-certificates/\nsudo update-ca-certificates",
+      "done": false
+    },
+    {
+      "title": "PostgreSQL backups + restore test",
+      "owner": "DBA/Infra",
+      "eta": "0.5d",
+      "desc": "Nightly pg_dump, 7/14/30 retention via systemd timer; verify restore on disposable container.",
+      "code": "# /srv/core/bin/pg-backup.sh (excerpt)\nTS=$(date +%F_%H%M)\nmkdir -p /srv/backups/postgres/$TS\npg_dumpall -U postgres | gzip > /srv/backups/postgres/$TS/all.sql.gz\n# retention pruning...\n\n# systemd timer/service setup...",
+      "done": false
+    },
+    {
+      "title": "Grafana dashboards + alerts",
+      "owner": "Observability",
+      "eta": "1.0d",
+      "desc": "Import Traefik/Docker/Postgres dashboards, wire contact points, add 5 baseline alerts, link runbooks.",
+      "code": "# example checks\n# HTTP 5xx rate, CPU, memory, disk usage, Authelia latency\n# Link runbooks in panel descriptions.",
+      "done": false
+    },
+    {
+      "title": "Mock data purge",
+      "owner": "App teams",
+      "eta": "0.5d",
+      "desc": "Remove demo models, sample rows, and example n8n flows prior to exposure.",
+      "code": "git grep -n 'demo|sample'\n# delete and commit cleanup",
+      "done": false
+    }
+  ],
+  "checks": {}
+}

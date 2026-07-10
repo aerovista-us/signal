@@ -1,0 +1,246 @@
+{
+  "updated": "2026-07-08",
+  "featured": {
+    "label": "Latest EOD Signal",
+    "title": "Overall Company Status",
+    "summary": "AeroVista has shape now — ecosystem operating base, AVCC as company brain, Context Authority A+B+C built and gated on secrets rotation.",
+    "href": "/newsletters/editions/eod/2026-07-05-company-status/",
+    "stats": [
+      { "value": "A+B+C", "label": "Built · tested · pushed" },
+      { "value": "1 / 6", "label": "Secrets rotation families" },
+      { "value": "Next", "label": "Deploy & federate" }
+    ]
+  },
+  "now": [
+    {
+      "id": "shareholder-2026-07-08",
+      "typeLabel": "Shareholder ByteCast",
+      "title": "July 8 — Seeing the System",
+      "summary": "Build_Nevada signal, ecosystem visibility, and AeroVista positioning — audio + briefing.",
+      "href": "/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
+      "types": ["bytecast"],
+      "tags": ["july 8 2026 shareholder build nevada"]
+    },
+    {
+      "id": "eod-2026-07-05",
+      "typeLabel": "Latest EOD",
+      "title": "July 5 — Overall Company Status",
+      "summary": "Audio, AVCC roadmap, division signals, deploy gate, transcript.",
+      "href": "/newsletters/editions/eod/2026-07-05-company-status/",
+      "types": ["eod"],
+      "tags": ["july 5 2026 eod overall company status"]
+    },
+    {
+      "id": "eod-current",
+      "typeLabel": "Daily EOD",
+      "title": "Current operating note",
+      "summary": "What moved today, what needs review, what happens next.",
+      "href": "/dispatches/eod/current-operating-note.html",
+      "types": ["eod"],
+      "tags": ["current daily operating note"]
+    },
+    {
+      "id": "eow-current",
+      "typeLabel": "Weekly EOW",
+      "title": "June 28 — Resilience Weekend",
+      "summary": "Stakeholder summary: AVCC recovery, registry stabilization, deployment doctrine.",
+      "href": "/dispatches/eow/current-stakeholder-update.html",
+      "types": ["eow"],
+      "tags": ["june 28 2026 weekend resilience"]
+    }
+  ],
+  "editions": [
+    {
+      "id": "eod-2026-07-05",
+      "section": "eod",
+      "title": "Overall Company Status Signal",
+      "badges": [{ "type": "eod", "label": "EOD" }],
+      "dateEm": "Jul 5",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eod/2026-07-05-company-status/",
+      "types": ["eod"],
+      "tags": ["july 5 2026 eod overall company status avcc roadmap operating maturity"],
+      "summary": "Full EOD audio edition — ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing."
+    },
+    {
+      "id": "eod-current",
+      "section": "eod",
+      "title": "Current operating note",
+      "badges": [{ "type": "eod", "label": "EOD" }],
+      "dateEm": "Current",
+      "dateYear": "EOD",
+      "href": "/dispatches/eod/current-operating-note.html",
+      "types": ["eod"],
+      "tags": ["current daily operating note template"],
+      "summary": "Daily template: what moved, what needs review, risks, and next moves."
+    },
+    {
+      "id": "eow-current",
+      "section": "weekly",
+      "title": "Current stakeholder update",
+      "badges": [{ "type": "eow", "label": "EOW" }],
+      "dateEm": "Current",
+      "dateYear": "EOW",
+      "href": "/dispatches/eow/current-stakeholder-update.html",
+      "types": ["eow"],
+      "tags": ["current june 28 2026 weekend resilience recovery stakeholder summary"],
+      "summary": "Short summary — weekend June 28 resilience weekend for shareholders, employees, operators."
+    },
+    {
+      "id": "eow-2026-06-28-summary",
+      "section": "weekly",
+      "title": "Weekend report — dated summary",
+      "badges": [{ "type": "eow", "label": "EOW" }],
+      "dateEm": "Jun 28",
+      "dateYear": "2026",
+      "href": "/dispatches/eow/2026-06-28-weekend-report.html",
+      "types": ["eow"],
+      "tags": ["june 28 2026 weekend report resilience recovery dated summary"],
+      "summary": "AVCC recovery, Core Registry stabilization, Art Localized API, deployment doctrine."
+    },
+    {
+      "id": "weekly-2026-06-28",
+      "section": "weekly",
+      "title": "Resilience Weekend",
+      "badges": [{ "type": "eow", "label": "EOW" }, { "type": "bytecast", "label": "Full edition" }],
+      "dateEm": "Jun 28",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+      "types": ["eow", "bytecast"],
+      "tags": ["june 28 2026 weekend report resilience recovery full edition audio"],
+      "summary": "Full weekly ByteCast — audio, timeline, transcript, recovery doctrine."
+    },
+    {
+      "id": "weekly-2026-06-21",
+      "section": "weekly",
+      "title": "A Better Machine",
+      "badges": [{ "type": "eow", "label": "EOW" }, { "type": "bytecast", "label": "Full edition" }],
+      "dateEm": "Jun 21",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-21-better-machine/",
+      "types": ["eow", "bytecast"],
+      "tags": ["june 21 2026 weekly better machine full edition audio"],
+      "summary": "Full weekly ByteCast — operating pressure, repeatable loops, infographic, transcript."
+    },
+    {
+      "id": "weekly-2026-06-15",
+      "section": "weekly",
+      "title": "Systems Becoming Products",
+      "badges": [{ "type": "eow", "label": "EOW" }, { "type": "bytecast", "label": "Full edition" }],
+      "dateEm": "Jun 15",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+      "types": ["eow", "bytecast"],
+      "tags": ["june 15 2026 weekly systems becoming products full edition audio"],
+      "summary": "Full weekly ByteCast — earlier stakeholder edition with audio and infographic."
+    },
+    {
+      "id": "shareholder-2026-07-08",
+      "section": "bytecast",
+      "title": "Seeing the System",
+      "badges": [{ "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Jul 8",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
+      "types": ["bytecast"],
+      "tags": ["july 8 2026 shareholder build nevada build_ ecosystem positioning seeing the system"],
+      "summary": "Shareholder brief on Build_Nevada — ecosystem decomposition, AeroVista translation layer, audio + outline."
+    },
+    {
+      "id": "weekly-2026-06-28-bc",
+      "section": "bytecast",
+      "title": "Resilience Weekend",
+      "badges": [{ "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Jun 28",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+      "types": ["bytecast", "eow"],
+      "tags": ["june 28 2026 weekend report resilience recovery avcc core registry art localized"],
+      "summary": "Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript."
+    },
+    {
+      "id": "weekly-2026-06-21-bc",
+      "section": "bytecast",
+      "title": "A Better Machine",
+      "badges": [{ "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Jun 21",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-21-better-machine/",
+      "types": ["bytecast", "eow"],
+      "tags": ["june 21 2026 weekly better machine echoverse art localized"],
+      "summary": "Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript."
+    },
+    {
+      "id": "weekly-2026-06-15-bc",
+      "section": "bytecast",
+      "title": "Systems Becoming Products",
+      "badges": [{ "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Jun 15",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+      "types": ["bytecast", "eow"],
+      "tags": ["june 15 2026 weekly systems becoming products"],
+      "summary": "Weekly stakeholder edition with audio and infographic."
+    },
+    {
+      "id": "milestone-2026-06-16",
+      "section": "milestones",
+      "title": "EchoVerse Audio Intelligence",
+      "badges": [{ "type": "milestone", "label": "Milestone" }, { "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Jun 16",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/milestone/2026-06-16-echoverse/",
+      "types": ["bytecast", "milestone"],
+      "tags": ["june 16 2026 echoverse audio intelligence platform drop to edit"],
+      "summary": "Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — platform milestone edition."
+    },
+    {
+      "id": "weekly-2026-05-29",
+      "section": "archive",
+      "title": "Newsletter package",
+      "badges": [{ "type": "archive", "label": "Archive" }, { "type": "eow", "label": "EOW" }],
+      "dateEm": "May 29",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-05-29-newsletter-package/",
+      "types": ["eow", "archive"],
+      "tags": ["may 29 2026 newsletter weekly package"],
+      "summary": "Weekly AeroVista shareholder newsletter — ecosystem activation, governed memory, Art Localized."
+    },
+    {
+      "id": "eow-2026-05-29-report",
+      "section": "archive",
+      "title": "Long-form shareholder report",
+      "badges": [{ "type": "archive", "label": "Archive" }, { "type": "eow", "label": "EOW" }],
+      "dateEm": "May 29",
+      "dateYear": "2026",
+      "href": "/dispatches/eow/2026-05-29-shareholder-report.html",
+      "types": ["eow", "archive"],
+      "tags": ["may 29 2026 long form shareholder report"],
+      "summary": "Dated shareholder EOW report from The SIGNAL archive."
+    },
+    {
+      "id": "eow-2026-05-29-public",
+      "section": "archive",
+      "title": "Public Signal summary",
+      "badges": [{ "type": "archive", "label": "Archive" }, { "type": "eow", "label": "EOW" }],
+      "dateEm": "May 29",
+      "dateYear": "2026",
+      "href": "/dispatches/eow/2026-05-29-public-signal.html",
+      "types": ["eow", "archive"],
+      "tags": ["may 29 2026 public signal summary ecosystem activation"],
+      "summary": "Shorter public-facing Signal post preserved after the weekly roll-forward."
+    },
+    {
+      "id": "eow-shareholder-update",
+      "section": "archive",
+      "title": "Shareholder update",
+      "badges": [{ "type": "archive", "label": "Archive" }, { "type": "eow", "label": "EOW" }],
+      "dateEm": "May 23",
+      "dateYear": "2026",
+      "href": "/dispatches/eow/shareholder-update.html",
+      "types": ["eow", "archive"],
+      "tags": ["may 23 2026 eow shareholder update"],
+      "summary": "Earlier stakeholder EOW update from the archive."
+    }
+  ]
+}

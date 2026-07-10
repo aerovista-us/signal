@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Signal | AeroVista Weekend Report</title>
+
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/" />
+  <meta name="description" content="AeroVista weekend-to-date internal Signal for shareholders and employees — June 28, 2026: recovery, stabilization, and stronger operating doctrine after a major infrastructure setback." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="AeroVista Weekend Report — June 28, 2026" />
+  <meta property="og:description" content="Recover cleanly, verify honestly, document aggressively, deploy safely, and protect the work." />
+  <meta property="og:image" content="https://thesignal.aerovista.us/signal.png" />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root {
+      --bg: #05070d;
+      --panel: rgba(11, 18, 32, 0.88);
+      --panel-2: rgba(8, 14, 26, 0.92);
+      --text: #e8f4ff;
+      --muted: #96a7bb;
+      --blue: #00aeef;
+      --sky: #87ceeb;
+      --silver: #c0c0c0;
+      --line: rgba(135, 206, 235, 0.22);
+      --glow: rgba(0, 174, 239, 0.35);
+      --danger-soft: rgba(255, 195, 87, 0.12);
+      --success-soft: rgba(0, 239, 183, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0, 174, 239, 0.20), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(135, 206, 235, 0.12), transparent 38%),
+        linear-gradient(135deg, #02040a 0%, #07111f 42%, #02040a 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(135, 206, 235, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(135, 206, 235, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(0, 174, 239, 0.12), rgba(11, 18, 32, 0.90)),
+        var(--panel);
+      border-radius: 28px;
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: 0 0 48px rgba(0, 174, 239, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      right: -180px;
+      top: -210px;
+      background: radial-gradient(circle, rgba(0, 174, 239, 0.30), transparent 68%);
+      filter: blur(2px);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(135, 206, 235, 0.32);
+      border-radius: 999px;
+      color: var(--sky);
+      background: rgba(0, 174, 239, 0.08);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 18px var(--blue);
+    }
+
+    h1 {
+      margin: 24px 0 14px;
+      font-size: clamp(2.2rem, 7vw, 5.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .meta-pill {
+      border: 1px solid rgba(192, 192, 192, 0.22);
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--silver);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.88rem;
+    }
+
+    .audio-card {
+      margin-top: 26px;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--panel-2);
+      border: 1px solid rgba(0, 174, 239, 0.28);
+      box-shadow: 0 0 28px rgba(0, 174, 239, 0.08);
+    }
+
+    .audio-title {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--sky);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    audio {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 0 14px rgba(0, 174, 239, 0.18));
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      color: var(--text);
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .card ul {
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+    .highlight {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .status-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgba(135, 206, 235, 0.22);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1.75rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .timeline {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .day {
+      border-left: 3px solid var(--blue);
+      padding: 18px 20px;
+      border-radius: 0 20px 20px 0;
+      background: rgba(0, 174, 239, 0.06);
+    }
+
+    .day h3 {
+      margin: 0 0 8px;
+      color: var(--sky);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .day p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .transcript {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(5, 7, 13, 0.72);
+      overflow: hidden;
+    }
+
+    .transcript-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0, 174, 239, 0.07);
+    }
+
+    .transcript-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .transcript-body {
+      padding: 24px;
+    }
+
+    .transcript-body p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0 0 18px;
+    }
+
+    .transcript-body h3 {
+      margin: 28px 0 10px;
+      color: var(--sky);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 195, 87, 0.22);
+      background: var(--danger-soft);
+      color: #f5d99a;
+      line-height: 1.65;
+    }
+
+    .success {
+      border-color: rgba(0, 239, 183, 0.20);
+      background: var(--success-soft);
+      color: #aaf5df;
+    }
+
+    footer {
+      margin-top: 36px;
+      text-align: center;
+      color: rgba(232, 244, 255, 0.48);
+      font-size: 0.9rem;
+    }
+
+    .hub-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hub-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--sky);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: rgba(0, 174, 239, 0.08);
+    }
+
+    .hub-back:hover {
+      border-color: rgba(0, 174, 239, 0.55);
+      background: rgba(0, 174, 239, 0.14);
+    }
+
+    @media (max-width: 820px) {
+      .grid,
+      .status-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 22px;
+      }
+
+      .hero,
+      .card,
+      .transcript {
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: clamp(2.05rem, 14vw, 4rem);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <main class="page">
+    <nav class="hub-nav" aria-label="Internal Signals navigation">
+      <a class="hub-back" href="/dispatches/internal-signals.html">← Internal Signals</a>
+      <a class="hub-back" href="/index.html">The SIGNAL</a>
+    </nav>
+    <section class="hero">
+      <div class="kicker">
+        <span class="pulse"></span>
+        The Signal Broadcast
+      </div>
+
+      <h1>Weekend<br />Report</h1>
+
+  <p class="subtitle">
+    A weekend-to-date briefing for AeroVista shareholders and employees:
+    restoring core systems, stabilizing the operating layer, and turning a major setback
+    into stronger doctrine.
+  </p>
+
+  <div class="meta-row">
+    <span class="meta-pill">Friday–Sunday Morning</span>
+    <span class="meta-pill">Posted Sunday at 1:45 PM PT</span>
+    <span class="meta-pill">AeroVista Internal Signal</span>
+  </div>
+
+  <div class="audio-card">
+    <p class="audio-title">Listen to the report</p>
+
+    <audio controls preload="metadata">
+      <source src="./assets/audio.mp3" type="audio/mpeg" />
+      Your browser does not support the audio player.
+    </audio>
+  </div>
+</section>
+
+<section class="status-strip">
+  <div class="stat">
+    <strong>14–22</strong>
+    <span>estimated focused hours redirected into recovery, verification, and stabilization.</span>
+  </div>
+
+  <div class="stat">
+    <strong>3</strong>
+    <span>major recovery lanes: AVCC, Core Registry, and Art Localized API.</span>
+  </div>
+
+  <div class="stat">
+    <strong>1</strong>
+    <span>clear lesson: protect the source of truth before accelerating the build.</span>
+  </div>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Executive Summary</h2>
+    <p>
+      This weekend became an important resilience weekend for AeroVista.
+      Instead of a normal forward-build cycle, a significant portion of time was redirected
+      into restoring, stabilizing, and verifying core operating systems after a serious
+      infrastructure setback.
+    </p>
+    <p>
+      The result was not only recovery. It was a sharper understanding of how the systems
+      survive pressure, where deployment discipline needs to tighten, and how to protect
+      the work as the company grows.
+    </p>
+    <div class="callout success">
+      <span class="highlight">Weekend message:</span>
+      recover cleanly, verify honestly, document aggressively, deploy safely, and protect the work.
+    </div>
+  </article>
+
+  <article class="card">
+    <h2>What Improved</h2>
+    <ul>
+      <li>AVCC was restored and verified.</li>
+      <li>Core Registry moved from failure state into controlled recovery.</li>
+      <li>Art Localized API was preserved from the live environment.</li>
+      <li>A dangerous deployment pattern was identified.</li>
+      <li>Recovery knowledge is being converted into operating doctrine.</li>
+      <li>The company proved resilience under pressure.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="card timeline">
+  <h2>Weekend Timeline</h2>
+
+  <div class="day">
+    <h3>Friday — Recovery Mission</h3>
+    <p>
+      Friday centered on restoring confidence in the command layer. AVCC was brought back
+      into a healthy running state, public access was verified, and Core Registry shifted from
+      mystery failure into controlled recovery.
+    </p>
+  </div>
+
+  <div class="day">
+    <h3>Saturday — Stabilization and Discipline</h3>
+    <p>
+      Saturday’s value was consolidation. The weekend made clear that AeroVista has reached
+      a stage where source-of-truth discipline matters as much as feature velocity.
+    </p>
+  </div>
+
+  <div class="day">
+    <h3>Sunday Morning — Resilience</h3>
+    <p>
+      By Sunday, the work moved from “get it back” into “understand what happened and prevent
+      it.” Art Localized became the next major recovery lane, and the live API provided a path
+      to preserve critical configuration.
+    </p>
+  </div>
+</section>
+
+<section class="transcript">
+  <div class="transcript-header">
+    <h2>Transcript / Report Text</h2>
+  </div>
+
+  <div class="transcript-body">
+    <p>
+      This weekend became an important resilience weekend for AeroVista.
+    </p>
+
+    <p>
+      Instead of a normal forward-build cycle, a significant portion of time was redirected
+      into restoring, stabilizing, and verifying core operating systems after a serious
+      infrastructure setback. The result was not just recovery — it was a stronger understanding
+      of how AeroVista’s systems survive pressure, where deployment discipline needs to tighten,
+      and how to protect the work as the company grows.
+    </p>
+
+    <h3>The Real Story</h3>
+    <p>
+      AeroVista hit a real operational setback, recovered critical services, preserved momentum,
+      and turned the loss into stronger operating doctrine.
+    </p>
+
+    <p>
+      Approximately 14 to 22 focused hours were redirected from new feature development into
+      recovery, verification, stabilization, and root-cause isolation. That represents roughly
+      one to two concentrated workdays of forward progress temporarily diverted into resilience
+      work.
+    </p>
+
+    <p>
+      While that cost is real, the outcome was valuable. The systems are now better understood,
+      the weak points are clearer, and the company has a stronger recovery posture than it had
+      before the weekend began.
+    </p>
+
+    <h3>Friday</h3>
+    <p>
+      Friday’s work centered on restoring confidence in the core operating layer. AeroVista
+      Command Center was brought back to a healthy running state. The container was confirmed
+      healthy, internal service health responded correctly, and the public access path continued
+      to route through Cloudflare Access.
+    </p>
+
+    <p>
+      Core Registry also became a major focus. The original source structure was not available
+      in the expected location, which shifted the work from simple restart mode into recovery
+      mode. Instead of treating the issue as a normal container failure, the work moved into
+      evidence gathering, container inspection, path verification, and emergency reconstruction.
+    </p>
+
+    <h3>Saturday</h3>
+    <p>
+      Saturday’s value was consolidation. The recovery work made one thing very clear:
+      AeroVista has reached the point where source-of-truth discipline matters as much as
+      feature velocity.
+    </p>
+
+    <p>
+      The company is no longer just building isolated experiments. It is now operating a
+      connected environment with live services, mounted drives, containers, internal APIs,
+      public routes, and deployment paths that need to be protected.
+    </p>
+
+    <h3>Sunday Morning</h3>
+    <p>
+      By Sunday, the work moved from “get it back” into “make sure we understand what happened
+      and how to prevent it.” Art Localized became the next major recovery and verification lane.
+      The live API was confirmed healthy, and production configuration was recovered from the
+      running environment.
+    </p>
+
+    <p>
+      The most important takeaway from Sunday was that AeroVista’s containerized architecture
+      provided a recovery path. Running services were not just black boxes. They became evidence.
+      They allowed the system state to be inspected, reconstructed, and stabilized.
+    </p>
+
+    <h3>Bottom Line</h3>
+    <p>
+      This weekend cost AeroVista forward velocity, but it did not stop momentum.
+    </p>
+
+    <p>
+      Roughly one to two concentrated workdays were redirected from new build work into recovery
+      and stabilization. That is the honest cost.
+    </p>
+
+    <p>
+      The return on that cost is also clear: critical services were restored, recovery paths
+      were proven, weak points were identified, and stronger operating rules emerged.
+    </p>
+
+    <div class="callout success">
+      AeroVista is still moving forward. The difference after this weekend is that the company
+      is moving forward with a better understanding of how to protect what it is building.
+    </div>
+  </div>
+</section>
+
+<footer>
+  The Signal · AeroVista LLC · Weekend-to-Date Broadcast · June 28, 2026
+</footer>
+
+  </main>
+  <script src="/js/site-paths.js"></script><script src="/js/site-config.js"></script>
+  <script src="/js/site-analytics.js" defer></script>
+</body>
+</html>
