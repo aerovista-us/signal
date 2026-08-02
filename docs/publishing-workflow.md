@@ -7,6 +7,7 @@ How to ship a new internal Signal edition.
 | Type | Use for | Example path |
 |------|---------|--------------|
 | `eod` | Daily operating truth, company status | `editions/eod/2026-07-05-company-status/` |
+| `eom` | End-of-month rollup, everything that shipped | `editions/eom/2026-07-31-july-convergence/` |
 | `weekly` | Weekly EOW ByteCast, full audio + visuals | `editions/weekly/2026-06-21-better-machine/` |
 | `shareholder` | Shareholder briefs, positioning | `editions/shareholder/2026-07-08-seeing-the-system/` |
 | `milestone` | Platform / division milestone ByteCast | `editions/milestone/2026-06-16-echoverse/` |

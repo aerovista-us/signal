@@ -1,17 +1,26 @@
 {
-  "updated": "2026-07-08",
+  "updated": "2026-07-31",
   "featured": {
-    "label": "Latest EOD Signal",
-    "title": "Overall Company Status",
-    "summary": "AeroVista has shape now — ecosystem operating base, AVCC as company brain, Context Authority A+B+C built and gated on secrets rotation.",
-    "href": "/newsletters/editions/eod/2026-07-05-company-status/",
+    "label": "Latest EOM Signal",
+    "title": "July Convergence",
+    "summary": "Full end-of-month report: executive brief, six division reports, and the complete ByteCast series covering everything that shipped in July.",
+    "href": "/newsletters/editions/eom/2026-07-31-july-convergence/",
     "stats": [
-      { "value": "A+B+C", "label": "Built · tested · pushed" },
-      { "value": "1 / 6", "label": "Secrets rotation families" },
-      { "value": "Next", "label": "Deploy & federate" }
+      { "value": "6", "label": "Division reports" },
+      { "value": "43/43", "label": "Profit Compass tests" },
+      { "value": "Aug", "label": "Next: adoption & revenue" }
     ]
   },
   "now": [
+    {
+      "id": "eom-2026-07-31-july-convergence",
+      "typeLabel": "End of Month",
+      "title": "July 31 — July Convergence",
+      "summary": "Executive brief, six division reports, and the full ByteCast series covering everything that shipped in July.",
+      "href": "/newsletters/editions/eom/2026-07-31-july-convergence/",
+      "types": ["eom"],
+      "tags": ["july 31 2026 end of month eom july convergence executive divisions platform identity markets portfolio bytecast"]
+    },
     {
       "id": "shareholder-2026-07-08",
       "typeLabel": "Shareholder ByteCast",
@@ -50,6 +59,18 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-07-31-july-convergence",
+      "section": "eom",
+      "title": "July Convergence",
+      "badges": [{ "type": "eom", "label": "EOM" }],
+      "dateEm": "Jul 31",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eom/2026-07-31-july-convergence/",
+      "types": ["eom"],
+      "tags": ["july 2026 end of month eom executive brief platform identity divisions markets portfolio bytecast series july convergence"],
+      "summary": "Interactive end-of-month hub — executive brief, six division reports, full ByteCast transcript series, verified July metrics."
+    },
     {
       "id": "eod-2026-07-05",
       "section": "eod",

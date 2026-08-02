@@ -1,0 +1,109 @@
+{
+  "title": "AeroVista July 2026 Month-End Signal",
+  "reportingPeriod": "2026-07-01/2026-07-31",
+  "closingVerificationThrough": "2026-08-01",
+  "reports": [
+    {
+      "id": "00",
+      "slug": "executive",
+      "title": "Executive Month-End Brief",
+      "bytecastTitle": "July Convergence",
+      "html": "reports/executive.html",
+      "reportSource": "sources/00_AEROVISTA_JULY_2026_EXECUTIVE_BRIEF.md",
+      "bytecastSource": "bytecasts/00_BYTECAST_JULY_CONVERGENCE.md",
+      "audioExpected": "audio/00-july-convergence.mp3"
+    },
+    {
+      "id": "01",
+      "slug": "platform",
+      "title": "Platform, Infrastructure & Operations",
+      "bytecastTitle": "The System Holds",
+      "html": "reports/platform.html",
+      "reportSource": "sources/01_PLATFORM_INFRASTRUCTURE_AND_OPERATIONS.md",
+      "bytecastSource": "bytecasts/01_BYTECAST_THE_SYSTEM_HOLDS.md",
+      "audioExpected": "audio/01-the-system-holds.mp3"
+    },
+    {
+      "id": "02",
+      "slug": "identity",
+      "title": "Identity, Business Systems & Commerce",
+      "bytecastTitle": "Identity to Value",
+      "html": "reports/identity.html",
+      "reportSource": "sources/02_IDENTITY_BUSINESS_SYSTEMS_AND_COMMERCE.md",
+      "bytecastSource": "bytecasts/02_BYTECAST_IDENTITY_TO_VALUE.md",
+      "audioExpected": "audio/02-identity-to-value.mp3"
+    },
+    {
+      "id": "03",
+      "slug": "divisions",
+      "title": "Divisions & Product Development",
+      "bytecastTitle": "The Work Itself",
+      "html": "reports/divisions.html",
+      "reportSource": "sources/03_DIVISIONS_AND_PRODUCT_DEVELOPMENT.md",
+      "bytecastSource": "bytecasts/03_BYTECAST_THE_WORK_ITSELF.md",
+      "audioExpected": "audio/03-the-work-itself.mp3"
+    },
+    {
+      "id": "04",
+      "slug": "markets",
+      "title": "Markets, Media & Creative Output",
+      "bytecastTitle": "Into the World",
+      "html": "reports/markets.html",
+      "reportSource": "sources/04_MARKETS_MEDIA_AND_CREATIVE_OUTPUT.md",
+      "bytecastSource": "bytecasts/04_BYTECAST_INTO_THE_WORLD.md",
+      "audioExpected": "audio/04-into-the-world.mp3"
+    },
+    {
+      "id": "05",
+      "slug": "portfolio",
+      "title": "Portfolio Control & August Plan",
+      "bytecastTitle": "August: The Test",
+      "html": "reports/portfolio.html",
+      "reportSource": "sources/05_PORTFOLIO_CONTROL_AND_AUGUST_PLAN.md",
+      "bytecastSource": "bytecasts/05_BYTECAST_AUGUST_THE_TEST.md",
+      "audioExpected": "audio/05-august-the-test.mp3"
+    }
+  ],
+  "metrics": [
+    {
+      "value": "43/43",
+      "label": "Profit Compass tests",
+      "note": "Private-pilot foundation"
+    },
+    {
+      "value": "58",
+      "label": "Commerce backend tests",
+      "note": "Sandbox and migration gates"
+    },
+    {
+      "value": "29/29",
+      "label": "EchoVerse backend tests",
+      "note": "Android companion milestone"
+    },
+    {
+      "value": "57",
+      "label": "Gear catalog products",
+      "note": "Restored on disk"
+    },
+    {
+      "value": "37",
+      "label": "Sellable checkout keys",
+      "note": "Bootstrap restored"
+    },
+    {
+      "value": "4/4",
+      "label": "Gear readiness checks",
+      "note": "Operational verification"
+    },
+    {
+      "value": "64/64",
+      "label": "CLAP embeddings",
+      "note": "Style Atlas test-albums"
+    },
+    {
+      "value": "Green",
+      "label": "Art Localized deep health",
+      "note": "Backups and timers active"
+    }
+  ]
+}

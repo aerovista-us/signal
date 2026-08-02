@@ -150,13 +150,51 @@
     });
   }
 
+  function renderFeatured(featured) {
+    if (!featured) return;
+    var article = document.querySelector(".featured");
+    if (!article) return;
+    var label = article.querySelector(".featured-label");
+    if (label && featured.label) {
+      label.innerHTML =
+        '<span class="dot"></span> ' + esc(featured.label);
+    }
+    var h2 = article.querySelector("h2");
+    if (h2 && featured.title) h2.textContent = featured.title;
+    var p = article.querySelector(".featured-copy p, .featured > div > p");
+    if (!p) p = article.querySelector(".featured p");
+    if (p && featured.summary) p.textContent = featured.summary;
+    var openBtn = article.querySelector('.featured-actions a.btn[href]');
+    if (openBtn && featured.href) openBtn.href = featured.href;
+    var copyBtn = article.querySelector(".featured-actions [data-copy]");
+    if (copyBtn && featured.href) {
+      copyBtn.setAttribute(
+        "data-copy",
+        featured.href.indexOf("http") === 0
+          ? featured.href
+          : "https://thesignal.aerovista.us" + featured.href
+      );
+    }
+    var stats = article.querySelectorAll(".featured-side .pulse-stat");
+    (featured.stats || []).forEach(function (stat, i) {
+      if (!stats[i]) return;
+      var strong = stats[i].querySelector("strong");
+      var span = stats[i].querySelector("span");
+      if (strong) strong.textContent = stat.value;
+      if (span) span.textContent = stat.label;
+    });
+  }
+
   function render(data) {
+    renderFeatured(data.featured);
+
     var editions = data.editions || [];
     var sections = {
       eod: document.getElementById("catalog-eod"),
       weekly: document.getElementById("catalog-weekly"),
       bytecast: document.getElementById("catalog-bytecast"),
       milestones: document.getElementById("catalog-milestones"),
+      eom: document.getElementById("catalog-eom"),
       archive: document.getElementById("catalog-archive"),
     };
 

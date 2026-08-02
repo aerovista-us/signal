@@ -405,6 +405,7 @@
     .type-badge.eow { color: #ffe3a1; background: rgba(255, 209, 102, 0.12); }
     .type-badge.eod { color: #d7fff0; background: rgba(110, 231, 183, 0.12); }
     .type-badge.milestone { color: #e9d5ff; background: rgba(183, 148, 246, 0.14); }
+    .type-badge.eom { color: #c9f7cf; background: rgba(94, 224, 130, 0.14); }
     .type-badge.archive { color: var(--hub-muted); background: rgba(255, 255, 255, 0.06); }
 
     /* ── Footer note + buttons ── */
@@ -530,46 +531,22 @@
       </div>
 
       <div class="filter-row" role="group" aria-label="Filter by type">
-        <button class="filter-chip active" type="button" data-filter="all">All<span class="count">15</span></button>
-        <button class="filter-chip" type="button" data-filter="eod">EOD<span class="count">2</span></button>
-        <button class="filter-chip" type="button" data-filter="eow">EOW<span class="count">8</span></button>
-        <button class="filter-chip" type="button" data-filter="bytecast">ByteCast<span class="count">5</span></button>
-        <button class="filter-chip" type="button" data-filter="milestone">Milestone<span class="count">1</span></button>
-        <button class="filter-chip" type="button" data-filter="archive">Archive<span class="count">4</span></button>
+        <button class="filter-chip active" type="button" data-filter="all">All<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="eod">EOD<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="eom">EOM<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="eow">EOW<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="bytecast">ByteCast<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="milestone">Milestone<span class="count">—</span></button>
+        <button class="filter-chip" type="button" data-filter="archive">Archive<span class="count">—</span></button>
       </div>
 
-      <!-- RIGHT NOW -->
+      <!-- RIGHT NOW (rendered from signals-catalog.json) -->
       <section class="hub-section" id="now">
         <div class="section-label">
           <h2>Right Now</h2>
-          <span>4 current entry points</span>
+          <span>Current entry points</span>
         </div>
-        <div class="now-grid">
-          <a class="now-card" href="/newsletters/editions/shareholder/2026-07-08-seeing-the-system/" data-types="bytecast">
-            <span class="type">Shareholder ByteCast</span>
-            <strong>July 8 — Seeing the System</strong>
-            <span>Build_Nevada signal, ecosystem visibility, and AeroVista positioning — audio + briefing.</span>
-            <span class="arrow">Open edition →</span>
-          </a>
-          <a class="now-card" href="/newsletters/editions/eod/2026-07-05-company-status/" data-types="eod">
-            <span class="type">Latest EOD</span>
-            <strong>July 5 — Overall Company Status</strong>
-            <span>Audio, AVCC roadmap, division signals, deploy gate, transcript.</span>
-            <span class="arrow">Open edition →</span>
-          </a>
-          <a class="now-card" href="/dispatches/eod/current-operating-note.html" data-types="eod">
-            <span class="type">Daily EOD</span>
-            <strong>Current operating note</strong>
-            <span>What moved today, what needs review, what happens next.</span>
-            <span class="arrow">Open EOD →</span>
-          </a>
-          <a class="now-card" href="/dispatches/eow/current-stakeholder-update.html" data-types="eow">
-            <span class="type">Weekly EOW</span>
-            <strong>June 28 — Resilience Weekend</strong>
-            <span>Stakeholder summary: AVCC recovery, registry stabilization, deployment doctrine.</span>
-            <span class="arrow">Open EOW →</span>
-          </a>
-        </div>
+        <div class="now-grid"></div>
       </section>
 
       <!-- DAILY EOD -->
@@ -578,28 +555,16 @@
           <h2>Daily EOD</h2>
           <span>Operating truth — daily cadence</span>
         </div>
-        <div class="catalog" id="catalog-eod">
-          <a class="catalog-row" href="/newsletters/editions/eod/2026-07-05-company-status/"
-             data-types="eod"
-             data-tags="july 5 2026 eod overall company status avcc roadmap operating maturity">
-            <div class="row-date"><em>Jul 5</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge eod">EOD</span>Overall Company Status Signal</strong>
-              <span>Full EOD audio edition — ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/dispatches/eod/current-operating-note.html"
-             data-types="eod"
-             data-tags="current daily operating note template">
-            <div class="row-date"><em>Current</em>EOD</div>
-            <div class="row-body">
-              <strong><span class="type-badge eod">EOD</span>Current operating note</strong>
-              <span>Daily template: what moved, what needs review, risks, and next moves.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
+        <div class="catalog" id="catalog-eod"></div>
+      </section>
+
+      <!-- END OF MONTH -->
+      <section class="hub-section" id="eom">
+        <div class="section-label">
+          <h2>End of Month</h2>
+          <span>Full monthly rollup — everything that shipped</span>
         </div>
+        <div class="catalog" id="catalog-eom"></div>
       </section>
 
       <!-- WEEKLY & EOW -->
@@ -608,58 +573,7 @@
           <h2>Weekly EOW</h2>
           <span>Stakeholder summaries and full weekly editions</span>
         </div>
-        <div class="catalog" id="catalog-weekly">
-          <a class="catalog-row" href="/dispatches/eow/current-stakeholder-update.html"
-             data-types="eow"
-             data-tags="current june 28 2026 weekend resilience recovery stakeholder summary">
-            <div class="row-date"><em>Current</em>EOW</div>
-            <div class="row-body">
-              <strong><span class="type-badge eow">EOW</span>Current stakeholder update</strong>
-              <span>Short summary — weekend June 28 resilience weekend for shareholders, employees, operators.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/dispatches/eow/2026-06-28-weekend-report.html"
-             data-types="eow"
-             data-tags="june 28 2026 weekend report resilience recovery dated summary">
-            <div class="row-date"><em>Jun 28</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge eow">EOW</span>Weekend report — dated summary</strong>
-              <span>AVCC recovery, Core Registry stabilization, Art Localized API, deployment doctrine.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-28-resilience-weekend/"
-             data-types="eow bytecast"
-             data-tags="june 28 2026 weekend report resilience recovery full edition audio">
-            <div class="row-date"><em>Jun 28</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge eow">EOW</span><span class="type-badge bytecast">Full edition</span>Resilience Weekend</strong>
-              <span>Full weekly ByteCast — audio, timeline, transcript, recovery doctrine.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-21-better-machine/"
-             data-types="eow bytecast"
-             data-tags="june 21 2026 weekly better machine full edition audio">
-            <div class="row-date"><em>Jun 21</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge eow">EOW</span><span class="type-badge bytecast">Full edition</span>A Better Machine</strong>
-              <span>Full weekly ByteCast — operating pressure, repeatable loops, infographic, transcript.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-15-systems-becoming-products/"
-             data-types="eow bytecast"
-             data-tags="june 15 2026 weekly systems becoming products full edition audio">
-            <div class="row-date"><em>Jun 15</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge eow">EOW</span><span class="type-badge bytecast">Full edition</span>Systems Becoming Products</strong>
-              <span>Full weekly ByteCast — earlier stakeholder edition with audio and infographic.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-        </div>
+        <div class="catalog" id="catalog-weekly"></div>
       </section>
 
       <!-- BYTECAST -->
@@ -668,48 +582,7 @@
           <h2>ByteCast Library</h2>
           <span>Audio + visual editions (weekly and platform)</span>
         </div>
-        <div class="catalog" id="catalog-bytecast">
-          <a class="catalog-row" href="/newsletters/editions/shareholder/2026-07-08-seeing-the-system/"
-             data-types="bytecast"
-             data-tags="july 8 2026 shareholder build nevada build_ ecosystem positioning seeing the system">
-            <div class="row-date"><em>Jul 8</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge bytecast">ByteCast</span>Seeing the System</strong>
-              <span>Shareholder brief on Build_Nevada — ecosystem decomposition, AeroVista translation layer, audio + outline.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-28-resilience-weekend/"
-             data-types="bytecast eow"
-             data-tags="june 28 2026 weekend report resilience recovery avcc core registry art localized">
-            <div class="row-date"><em>Jun 28</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge bytecast">ByteCast</span>Resilience Weekend</strong>
-              <span>Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-21-better-machine/"
-             data-types="bytecast eow"
-             data-tags="june 21 2026 weekly better machine echoverse art localized">
-            <div class="row-date"><em>Jun 21</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge bytecast">ByteCast</span>A Better Machine</strong>
-              <span>Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-06-15-systems-becoming-products/"
-             data-types="bytecast eow"
-             data-tags="june 15 2026 weekly systems becoming products">
-            <div class="row-date"><em>Jun 15</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge bytecast">ByteCast</span>Systems Becoming Products</strong>
-              <span>Weekly stakeholder edition with audio and infographic.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-        </div>
+        <div class="catalog" id="catalog-bytecast"></div>
       </section>
 
       <!-- MILESTONES -->
@@ -718,18 +591,7 @@
           <h2>Platform Milestones</h2>
           <span>Division and platform ByteCast editions</span>
         </div>
-        <div class="catalog" id="catalog-milestones">
-          <a class="catalog-row" href="/newsletters/editions/milestone/2026-06-16-echoverse/"
-             data-types="bytecast milestone"
-             data-tags="june 16 2026 echoverse audio intelligence platform drop to edit">
-            <div class="row-date"><em>Jun 16</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge milestone">Milestone</span><span class="type-badge bytecast">ByteCast</span>EchoVerse Audio Intelligence</strong>
-              <span>Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — platform milestone edition.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-        </div>
+        <div class="catalog" id="catalog-milestones"></div>
       </section>
 
       <!-- ARCHIVE -->
@@ -738,48 +600,7 @@
           <h2>Archive</h2>
           <span>Earlier EOW reports and newsletter packages</span>
         </div>
-        <div class="catalog" id="catalog-archive">
-          <a class="catalog-row" href="/newsletters/editions/weekly/2026-05-29-newsletter-package/"
-             data-types="eow archive"
-             data-tags="may 29 2026 newsletter weekly package">
-            <div class="row-date"><em>May 29</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge archive">Archive</span><span class="type-badge eow">EOW</span>Newsletter package</strong>
-              <span>Weekly AeroVista shareholder newsletter — ecosystem activation, governed memory, Art Localized.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/dispatches/eow/2026-05-29-shareholder-report.html"
-             data-types="eow archive"
-             data-tags="may 29 2026 long form shareholder report">
-            <div class="row-date"><em>May 29</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge archive">Archive</span><span class="type-badge eow">EOW</span>Long-form shareholder report</strong>
-              <span>Dated shareholder EOW report from The SIGNAL archive.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/dispatches/eow/2026-05-29-public-signal.html"
-             data-types="eow archive"
-             data-tags="may 29 2026 public signal summary ecosystem activation">
-            <div class="row-date"><em>May 29</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge archive">Archive</span><span class="type-badge eow">EOW</span>Public Signal summary</strong>
-              <span>Shorter public-facing Signal post preserved after the weekly roll-forward.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-          <a class="catalog-row" href="/dispatches/eow/shareholder-update.html"
-             data-types="eow archive"
-             data-tags="may 23 2026 eow shareholder update">
-            <div class="row-date"><em>May 23</em>2026</div>
-            <div class="row-body">
-              <strong><span class="type-badge archive">Archive</span><span class="type-badge eow">EOW</span>Shareholder update</strong>
-              <span>Earlier stakeholder EOW update from the archive.</span>
-            </div>
-            <span class="row-action">Open →</span>
-          </a>
-        </div>
+        <div class="catalog" id="catalog-archive"></div>
       </section>
 
       <!-- ABOUT -->

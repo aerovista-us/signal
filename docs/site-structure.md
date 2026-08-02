@@ -23,6 +23,7 @@ newsletters/
   editions/
     weekly/{YYYY-MM-DD-slug}/
     eod/{YYYY-MM-DD-slug}/
+    eom/{YYYY-MM-DD-slug}/
     bytecast/...
     shareholder/...
     milestone/...
@@ -52,16 +53,28 @@ dispatches/
 
 ## Redirect stub template
 
+Stubs use **relative** URLs from the stub file’s directory (not `dispatches/...` when the stub already lives under `dispatches/`).
+
+Newsletter example (`newsletters/aerovista_signal_weekly_2026-06-15.html`):
+
 ```html
 <meta http-equiv="refresh" content="0; url=editions/weekly/2026-06-15-systems-becoming-products/" />
 <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/" />
 ```
 
-## Safe edits on large HTML
+Dispatch example (`dispatches/eod-current-operating-note.html`):
 
-See [large-edition-files.md](./large-edition-files.md).
+```html
+<meta http-equiv="refresh" content="0; url=eod/current-operating-note.html" />
+<link rel="canonical" href="https://thesignal.aerovista.us/dispatches/eod/current-operating-note.html" />
+```
 
 ## Migration scripts
 
 - `scripts/migrate-newsletters.ps1` — one-time edition folder migration
 - `scripts/migrate-dispatches.ps1` — dispatch subfolder migration
+- `scripts/fix-dispatch-stubs.ps1` — replace flat dispatch files with redirect stubs + fix nested internal links
+
+## Safe edits on large HTML
+
+See [large-edition-files.md](./large-edition-files.md).
