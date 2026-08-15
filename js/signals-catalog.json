@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31",
+  "updated": "2026-08-15",
   "featured": {
     "label": "Latest EOM Signal",
     "title": "July Convergence",
@@ -12,6 +12,15 @@
     ]
   },
   "now": [
+    {
+      "id": "mtd-2026-08-15-machine-taking-shape",
+      "typeLabel": "August MTD ByteCast",
+      "title": "Aug 15 — The Machine Is Taking Shape",
+      "summary": "Interactive August month-to-date report with embedded ByteCast audio and animated operating model.",
+      "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "types": ["bytecast", "milestone"],
+      "tags": ["august 2026 mtd month to date interactive report bytecast the machine is taking shape animated operating model"]
+    },
     {
       "id": "eom-2026-07-31-july-convergence",
       "typeLabel": "End of Month",
@@ -59,6 +68,18 @@
     }
   ],
   "editions": [
+    {
+      "id": "mtd-2026-08-15-machine-taking-shape",
+      "section": "bytecast",
+      "title": "The Machine Is Taking Shape",
+      "badges": [{ "type": "bytecast", "label": "ByteCast" }, { "type": "milestone", "label": "MTD" }],
+      "dateEm": "Aug 15",
+      "dateYear": "2026",
+      "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "types": ["bytecast", "milestone"],
+      "tags": ["august 2026 mtd month to date interactive report bytecast the machine is taking shape animated operating model self-contained"],
+      "summary": "Self-contained interactive report for August month-to-date — embedded ByteCast audio (6:22) and animated AeroVista operating model."
+    },
     {
       "id": "eom-2026-07-31-july-convergence",
       "section": "eom",
