@@ -1,14 +1,14 @@
 {
   "updated": "2026-08-15",
   "featured": {
-    "label": "Latest EOM Signal",
-    "title": "July Convergence",
-    "summary": "Full end-of-month report: executive brief, six division reports, and the complete ByteCast series covering everything that shipped in July.",
-    "href": "/newsletters/editions/eom/2026-07-31-july-convergence/",
+    "label": "Latest MTD Signal",
+    "title": "The Machine Is Taking Shape",
+    "summary": "Interactive August month-to-date report — embedded ByteCast audio, evidence review, and the architecture call heading into the second half of August.",
+    "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
     "stats": [
-      { "value": "6", "label": "Division reports" },
-      { "value": "43/43", "label": "Profit Compass tests" },
-      { "value": "Aug", "label": "Next: adoption & revenue" }
+      { "value": "Aug 1–14", "label": "Coverage window" },
+      { "value": "6:22", "label": "ByteCast runtime" },
+      { "value": "Aug 15–31", "label": "Next: prove the business" }
     ]
   },
   "now": [
