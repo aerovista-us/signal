@@ -1,17 +1,26 @@
 {
-  "updated": "2026-08-15",
+  "updated": "2026-09-02",
   "featured": {
-    "label": "Latest MTD Signal",
-    "title": "The Machine Is Taking Shape",
-    "summary": "Interactive August month-to-date report — embedded ByteCast audio, evidence review, and the architecture call heading into the second half of August.",
-    "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+    "label": "Latest EOM Signal",
+    "title": "From Building Pieces to Building a Company",
+    "summary": "August end-of-month briefing — an interactive portfolio report and ByteCast on the convergence of AeroVista's products, infrastructure, and operating systems.",
+    "href": "/newsletters/EOM_August_2026.html",
     "stats": [
-      { "value": "Aug 1–14", "label": "Coverage window" },
-      { "value": "6:22", "label": "ByteCast runtime" },
-      { "value": "Aug 15–31", "label": "Next: prove the business" }
+      { "value": "August 2026", "label": "Coverage window" },
+      { "value": "14:30", "label": "ByteCast runtime" },
+      { "value": "September", "label": "Completion + proof" }
     ]
   },
   "now": [
+    {
+      "id": "eom-2026-08-31-building-a-company",
+      "typeLabel": "August EOM ByteCast",
+      "title": "Aug 31 — Building a Company",
+      "summary": "Interactive end-of-month portfolio briefing with a 14:30 ByteCast on convergence, recoverability, and September priorities.",
+      "href": "/newsletters/EOM_August_2026.html",
+      "types": ["eom", "bytecast"],
+      "tags": ["august 31 2026 end of month eom bytecast building a company convergence portfolio recoverability september priorities"]
+    },
     {
       "id": "mtd-2026-08-15-machine-taking-shape",
       "typeLabel": "August MTD ByteCast",
@@ -68,6 +77,18 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-08-31-building-a-company",
+      "section": "eom",
+      "title": "From Building Pieces to Building a Company",
+      "badges": [{ "type": "eom", "label": "EOM" }, { "type": "bytecast", "label": "ByteCast" }],
+      "dateEm": "Aug 31",
+      "dateYear": "2026",
+      "href": "/newsletters/EOM_August_2026.html",
+      "types": ["eom", "bytecast"],
+      "tags": ["august 2026 end of month eom bytecast building a company convergence portfolio aerocore avcc rydesync recoverability september priorities"],
+      "summary": "Interactive August rollup and 14:30 ByteCast — portfolio convergence, production lessons, and the completion-and-proof plan for September."
+    },
     {
       "id": "mtd-2026-08-15-machine-taking-shape",
       "section": "bytecast",

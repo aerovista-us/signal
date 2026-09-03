@@ -81,6 +81,7 @@ git push origin main
 
 ### Canonical editions
 
+- https://thesignal.aerovista.us/newsletters/EOM_August_2026.html
 - https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/
 - https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/
 - https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/
@@ -96,6 +97,7 @@ git push origin main
 
 ### Assets (new paths)
 
+- https://thesignal.aerovista.us/newsletters/EOM_August_2026.mp3
 - https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/assets/audio.mp3
 - https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio.mp3
 
