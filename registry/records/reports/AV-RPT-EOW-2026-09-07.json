@@ -116,10 +116,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 1467,
+      "sizeBytes": 1412,
       "integrity": {
-        "gitBlobSha1": "23af04c5799d98f11389070ef49535ac10a0b51e",
-        "sha256": "c690d9c9232e56c827f9bef7b84039293b6a6cb8b8a7c32ee109c48336144edc"
+        "gitBlobSha1": "eac6403ca051d8fce85421e8b92330f6336ccc63",
+        "sha256": "a7b935469ada9cabe28e840df2f7fb68bc451bf20f9db0df41edee751a4b4ce9"
       }
     }
   ],

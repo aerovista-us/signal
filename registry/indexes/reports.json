@@ -22,7 +22,6 @@
         "interactive-html",
         "bytecast",
         "transcript",
-        "webvtt-captions",
         "evidence-ledger"
       ],
       "audience": [
@@ -33,7 +32,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 6
+      "fileCount": 5
     },
     {
       "id": "AV-RPT-EOM-2026-08",
