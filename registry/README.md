@@ -76,4 +76,12 @@ A final formal report must include a stable `reportId`, report class, reporting 
 
 Formal report normalization uses one immutable report package directory per report. Legacy public HTML paths remain redirect stubs and legacy direct-media paths remain referenced compatibility aliases until intentionally retired.
 
-Validated pilot: `AV-RPT-EOM-2026-08` is normalized at `newsletters/editions/eom/2026-08-31-building-a-company/`.
+Folder normalization is complete for the formal-report inventory. All 10 current formal report records use `package.mode: directory`, `package.strict: true`, and `package.portable: true`.
+
+Normalized legacy-flat reports:
+- `AV-RPT-EOM-2026-08` -> `newsletters/editions/eom/2026-08-31-building-a-company/`
+- `AV-RPT-MTD-2026-08-14` -> `newsletters/editions/mtd/2026-08-14-machine-taking-shape/`
+- `AV-RPT-EOW-2026-05-29` -> `newsletters/editions/eow/2026-05-29-shareholder-report/`
+- `AV-RPT-EOW-2026-05-23` -> `newsletters/editions/eow/2026-05-23-shareholder-update/`
+
+Every prior public HTML location is retained as a direct redirect, and legacy direct-media URLs remain referenced compatibility aliases.
