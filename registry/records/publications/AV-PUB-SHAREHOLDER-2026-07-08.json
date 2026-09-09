@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-SHAREHOLDER-2026-07-08",
+  "contentClass": "publication",
+  "publicationClass": "shareholder-brief",
+  "title": "Seeing the System",
+  "summary": "Shareholder brief on Build_Nevada, ecosystem decomposition, AeroVista positioning, and the translation layer, with ByteCast audio.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "shareholder",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast"
+  ],
+  "issuedAt": "2026-07-08",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
+  "canonicalPath": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
+  "tags": [
+    "july-2026",
+    "shareholder",
+    "bytecast",
+    "build-nevada",
+    "seeing-the-system"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/shareholder/2026-07-08-seeing-the-system",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 8468773,
+      "integrity": {
+        "gitBlobSha1": "616cb9a459ff50a84ef04a4494abad6c5b74f83a"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "shareholder-2026-07-08"
+    }
+  ]
+}
