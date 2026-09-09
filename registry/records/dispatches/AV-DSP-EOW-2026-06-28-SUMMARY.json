@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOW-2026-06-28-SUMMARY",
+  "contentClass": "dispatch",
+  "title": "Resilience Weekend — Dated Summary",
+  "summary": "Short EOW stakeholder summary covering AVCC recovery, Core Registry stabilization, Art Localized API preservation, and stronger deployment doctrine.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-06-28",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-06-28-weekend-report.html",
+  "canonicalPath": "dispatches/eow/2026-06-28-weekend-report.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "dispatch",
+    "resilience-weekend"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/2026-06-28-weekend-report.html",
+      "name": "2026-06-28-weekend-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5312,
+      "integrity": {
+        "gitBlobSha1": "5dccb2edb2abe2088994e7a449264d7efd87a38b"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-06-28-summary"
+    }
+  ]
+}
