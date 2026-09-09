@@ -11,7 +11,7 @@ One registry system, multiple content classes:
 - `dispatch` — short operational or topical update.
 - `media` — standalone media only. Companion ByteCast/audio stays attached to its parent record.
 
-Presentation catalogs such as `js/signals-catalog.json` remain UI data. They are not the authoritative record.
+The registry records are authoritative. `registry/presentation/signals-catalog.json` holds presentation choices tied to registry `recordId` values, and `js/signals-catalog.json` is generated from those choices plus canonical registry metadata.
 
 ## Layout
 
@@ -23,6 +23,8 @@ registry/
     publications/*.json
     dispatches/*.json
     media/*.json
+  presentation/
+    signals-catalog.json
   indexes/
     all.json
     reports.json
@@ -32,29 +34,39 @@ registry/
     current.json
 ```
 
-Each record owns a complete file manifest. A directory package with `package.strict: true` must list every file under its package root. This makes the package movable and auditable as a unit.
+Each record carries a complete file manifest. A directory package with `package.strict: true` must list every file under its package root. This makes the package movable and auditable as a unit.
 
 ## File relationships
 
-- `owned` — travels with the record during export/migration/archive.
-- `referenced` — external evidence or linked material; preserve the reference but do not copy it automatically.
+- `owned` — canonical package material that travels with the record during export, migration, or archive.
+- `referenced` — related material that is not part of the canonical package, including external evidence and local legacy aliases/duplicates.
+
+Local legacy aliases are still recorded with filename, role, path, file type, MIME type, size, Git blob SHA-1, and SHA-256. During migration they must be deliberately preserved, redirected, or retired; they must not disappear simply because the canonical package moves.
+
+## Integrity
+
+The registry refresh computes SHA-256 and Git blob SHA-1 for local files. Final owned files must have SHA-256 integrity data. Validation also checks file sizes, paths, duplicate IDs, duplicate ownership, reporting-period ordering, required classifications, canonical paths, and strict-package completeness.
 
 ## Validation and index generation
 
 Run:
 
 ```bash
+python scripts/registry_v2.py refresh
 python scripts/registry_v2.py validate
 python scripts/registry_v2.py build
 python scripts/registry_v2.py check
 ```
 
-`check` validates records, checks owned file existence/size/Git blob SHA-1 when provided, verifies strict package completeness, then regenerates the index views.
+- `refresh` expands strict package manifests and recalculates file metadata and hashes.
+- `validate` verifies the authoritative records.
+- `build` regenerates indexes and the UI catalog.
+- `check` validates and regenerates generated views so CI can detect drift.
 
 ## Migration rule
 
-Do not move legacy live files merely to register them. First create a valid registry record with their current paths. Physical package normalization can happen later with redirects preserving live URLs.
+Do not move legacy live files merely to register them. Register current canonical and legacy paths first. Physical normalization can happen later with redirects preserving live URLs and registry references recording every legacy asset that must be handled.
 
 ## Formal report minimum
 
-A final formal report must include a stable ID, report class, reporting period/effective time, issue date, status, audience, package declaration, and complete owned-file manifest.
+A final formal report must include a stable `reportId`, report class, reporting period or effective time, issue date, status, audience, title, summary, owner, canonical URL/path, tags, package declaration, and complete file manifest.
