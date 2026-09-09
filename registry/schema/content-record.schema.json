@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesignal.aerovista.us/registry/schema/content-record.schema.json",
+  "title": "Signal Registry v2 Content Record",
+  "type": "object",
+  "required": ["schemaVersion","id","contentClass","title","status","audience","formats","issuedAt","package","files"],
+  "properties": {
+    "schemaVersion": { "const": "2.0" },
+    "id": { "type": "string", "pattern": "^AV-[A-Z]+-[A-Z0-9-]+$" },
+    "contentClass": { "enum": ["report","publication","dispatch","media"] },
+    "reportClass": { "enum": ["eod","eow","mtd","eom","quarterly","annual","milestone","incident","audit","compliance","release-readiness","production-validation","investigation","risk-review","special"] },
+    "publicationClass": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "status": { "enum": ["draft","review","final","superseded","withdrawn"] },
+    "owner": { "type": "string" },
+    "audience": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["internal","executive","operations","staff","stakeholder","shareholder","advisor","partner","public"] } },
+    "formats": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": "string", "format": "date" },
+        "effectiveAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "issuedAt": { "type": "string", "format": "date" },
+    "canonicalUrl": { "type": "string" },
+    "tags": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "package": {
+      "type": "object",
+      "required": ["mode","root","strict"],
+      "properties": {
+        "mode": { "enum": ["directory","legacy-flat","external"] },
+        "root": { "type": "string" },
+        "strict": { "type": "boolean" },
+        "portable": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "supersedes": { "type": ["string","null"] },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id","role","relationship","path","name","mediaType"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": { "enum": ["primary","report-section","audio","image","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"] },
+          "relationship": { "enum": ["owned","referenced"] },
+          "path": { "type": "string" },
+          "name": { "type": "string" },
+          "mediaType": { "type": "string" },
+          "sizeBytes": { "type": "integer", "minimum": 0 },
+          "integrity": {
+            "type": "object",
+            "properties": {
+              "gitBlobSha1": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            },
+            "additionalProperties": false
+          },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type","value"],
+        "properties": {
+          "type": { "type": "string" },
+          "value": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "contentClass": { "const": "report" } } },
+      "then": { "required": ["reportClass","period"] }
+    }
+  ],
+  "additionalProperties": false
+}
