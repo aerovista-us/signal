@@ -62,7 +62,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 680,
-      "integrity": {},
+      "integrity": {
+        "gitBlobSha1": "03339d92f26eca1f9780081f4c7f5d53c6cf0b77",
+        "sha256": "8312cb7c6d858600cc8272ed70ee075cea7f9d0f1e8b8249f94e5401916e8ea9"
+      },
       "description": "Legacy MTD URL retained as a redirect to the normalized package."
     }
   ],

@@ -47,7 +47,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 22629,
-      "integrity": {}
+      "integrity": {
+        "gitBlobSha1": "eee2c03be7786f237bb4ce1929ac2494c2449f8f",
+        "sha256": "6db573075b4b9a637ab2fcac754d092c53a8ed76587bd49c345fc7fce3bdbd8c"
+      }
     },
     {
       "id": "legacy-canonical-html",
@@ -58,7 +61,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 684,
-      "integrity": {},
+      "integrity": {
+        "gitBlobSha1": "957cb3432632f2ee264424c0fddd82ac9dc9924f",
+        "sha256": "3f909d8fbc88f8c7da88f81205c0827b37649657fa031f395a3c2635805040d0"
+      },
       "description": "Former canonical URL retained as a direct redirect."
     },
     {
@@ -70,7 +76,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 684,
-      "integrity": {},
+      "integrity": {
+        "gitBlobSha1": "957cb3432632f2ee264424c0fddd82ac9dc9924f",
+        "sha256": "3f909d8fbc88f8c7da88f81205c0827b37649657fa031f395a3c2635805040d0"
+      },
       "description": "Legacy flat alias retained as a direct redirect."
     }
   ],

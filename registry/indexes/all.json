@@ -337,8 +337,8 @@
         "start": "2026-05-24",
         "end": "2026-05-29"
       },
-      "canonicalPath": "dispatches/eow/2026-05-29-shareholder-report.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-shareholder-report.html",
+      "canonicalPath": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-29-shareholder-report/",
       "formats": [
         "html"
       ],
@@ -348,7 +348,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 2
+      "fileCount": 3
     },
     {
       "id": "AV-PUB-NEWSLETTER-2026-05-29",
@@ -506,8 +506,8 @@
         "start": "2026-05-17",
         "end": "2026-05-23"
       },
-      "canonicalPath": "dispatches/eow/shareholder-update.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/shareholder-update.html",
+      "canonicalPath": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-23-shareholder-update/",
       "formats": [
         "html"
       ],
@@ -517,7 +517,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 2
+      "fileCount": 3
     },
     {
       "id": "AV-MEDIA-EP02",
