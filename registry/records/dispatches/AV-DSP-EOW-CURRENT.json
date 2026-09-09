@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOW-CURRENT",
+  "contentClass": "dispatch",
+  "title": "Current EOW Stakeholder Update",
+  "summary": "Mutable current EOW stakeholder surface currently reflecting the June 28 resilience weekend. It is an alias/view, not the immutable weekly report.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-06-28",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
+  "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
+  "tags": [
+    "current",
+    "eow",
+    "stakeholder-update",
+    "dispatch"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": false
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/current-stakeholder-update.html",
+      "name": "current-stakeholder-update.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5553,
+      "integrity": {
+        "gitBlobSha1": "7c59484c068de9bc16a0c644de8e7dc5ed1cea2f"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-current"
+    }
+  ]
+}
