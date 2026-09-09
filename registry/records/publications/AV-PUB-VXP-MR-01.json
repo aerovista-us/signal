@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-VXP-MR-01",
+  "contentClass": "publication",
+  "publicationClass": "research-intelligence",
+  "title": "Tokenized Rails, Collateral Systems, and the Physical Internet of Money",
+  "summary": "Vespera × AeroVista internal strategy publication spanning regulatory rails, tokenized treasuries, collateral systems, banking infrastructure, geopolitics, and AI-energy physical rails.",
+  "status": "final",
+  "owner": "AeroVista Macro & Rails Desk",
+  "audience": [
+    "internal",
+    "executive",
+    "advisor"
+  ],
+  "formats": [
+    "interactive-html",
+    "magazine",
+    "video",
+    "research-volumes",
+    "infographics"
+  ],
+  "issuedAt": "2026-05-27",
+  "canonicalUrl": "https://thesignal.aerovista.us/publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
+  "canonicalPath": "publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
+  "tags": [
+    "vespera",
+    "macro-rails",
+    "strategy",
+    "research",
+    "internal-intelligence"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "publications/VXP-MR-01-macro-rails-intelligence",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
+      "name": "magazine.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 13759,
+      "integrity": {
+        "gitBlobSha1": "5d8ed3f656e4e24f7be4f0494a47a6bfc16f62d8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "issue-code",
+      "value": "VXP-MR-01"
+    }
+  ]
+}
