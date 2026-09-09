@@ -20,7 +20,6 @@
     "interactive-html",
     "bytecast",
     "transcript",
-    "webvtt-captions",
     "evidence-ledger"
   ],
   "period": {
@@ -79,20 +78,6 @@
       "integrity": {
         "gitBlobSha1": "a584f2fba82018e34b545a0db4327699f2234dd8",
         "sha256": "84380cec35b4a1c295449fcb039ef896734dc5ebc20362d1d7f6b8fbdf88d86c"
-      }
-    },
-    {
-      "id": "bytecast-vtt",
-      "role": "transcript",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.vtt",
-      "name": "bytecast.vtt",
-      "fileType": "vtt",
-      "mediaType": "text/vtt",
-      "sizeBytes": 18415,
-      "integrity": {
-        "gitBlobSha1": "030fc2b0cf935957e473310a98969c42a6faa40a",
-        "sha256": "2f2c2028171857afa66c09705be84de2399c209331caae97c032bd791963569c"
       }
     },
     {
