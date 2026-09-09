@@ -55,6 +55,22 @@ class RegistryV2ValidationTests(unittest.TestCase):
         self.assertTrue(any("invalid or missing reportClass" in e for e in errors), errors)
         self.assertTrue(any("invalid audience" in e for e in errors), errors)
 
+    def test_registered_html_redirects_target_canonical_url(self):
+        checked = 0
+        for record in self.records:
+            canonical_url = record.get("canonicalUrl", "")
+            canonical_target = registry.urlparse(canonical_url).path or "/"
+            for asset in record.get("files", []):
+                if asset.get("role") != "redirect" or asset.get("mediaType") != "text/html":
+                    continue
+                html = (registry.ROOT / asset["path"]).read_text(encoding="utf-8-sig")
+                self.assertTrue(
+                    canonical_url in html or canonical_target in html,
+                    f"{record['id']} redirect {asset['path']} does not target {canonical_url}",
+                )
+                checked += 1
+        self.assertGreater(checked, 0, "expected at least one registered HTML redirect")
+
 
 if __name__ == "__main__":
     unittest.main()
