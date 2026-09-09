@@ -28,5 +28,17 @@
     "AVCC identity/access backend regression 230/230",
     "Phase 0.12.8 local-first workstation foundation"
   ],
-  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/"
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+  "bytecast": {
+    "title": "From Convergence to Proof",
+    "audienceStyle": "nontechnical",
+    "player": "bytecast.html",
+    "audio": "assets/eow-9.7.mp3",
+    "transcript": "bytecast-transcript.txt",
+    "durationSeconds": 886.656,
+    "durationDisplay": "14:46",
+    "mediaType": "audio/mpeg",
+    "sizeBytes": 10046304,
+    "sha256": "09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071"
+  }
 }

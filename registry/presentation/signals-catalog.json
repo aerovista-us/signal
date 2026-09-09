@@ -3,11 +3,11 @@
   "featured": {
     "label": "Latest EOW Signal",
     "title": "From Convergence to Proof",
-    "summary": "September 1–7 internal briefing — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
+    "summary": "September 1\u20137 internal briefing \u2014 the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
     "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
     "stats": [
       {
-        "value": "Sep 1–7",
+        "value": "Sep 1\u20137",
         "label": "Coverage window"
       },
       {
@@ -29,10 +29,11 @@
     {
       "id": "weekly-2026-09-07",
       "typeLabel": "Latest EOW",
-      "title": "Sep 7 — From Convergence to Proof",
-      "summary": "Formal internal EOW: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
+      "title": "Sep 7 \u2014 From Convergence to Proof",
+      "summary": "Formal EOW plus a 14:46 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, creative distribution, and endpoint operations.",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
+        "bytecast",
         "eow",
         "internal"
       ],
@@ -42,9 +43,25 @@
       "recordId": "AV-RPT-EOW-2026-09-07"
     },
     {
+      "id": "bytecast-2026-09-07",
+      "typeLabel": "Latest ByteCast",
+      "title": "From Convergence to Proof \u2014 Audio Edition",
+      "summary": "A 14:46 nontechnical guide to the September 1\u20137 EOW: what changed, why it matters, what was proven, and what must become repeatable.",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html",
+      "types": [
+        "bytecast",
+        "eow",
+        "internal"
+      ],
+      "tags": [
+        "september 7 2026 bytecast nontechnical convergence proof repeatability avcc phase rydesync audio"
+      ],
+      "recordId": "AV-RPT-EOW-2026-09-07"
+    },
+    {
       "id": "eom-2026-08-31-building-a-company",
       "typeLabel": "August EOM ByteCast",
-      "title": "Aug 31 — Building a Company",
+      "title": "Aug 31 \u2014 Building a Company",
       "summary": "Interactive end-of-month portfolio briefing with a 14:30 ByteCast on convergence, recoverability, and September priorities.",
       "href": "/newsletters/EOM_August_2026.html",
       "types": [
@@ -59,7 +76,7 @@
     {
       "id": "mtd-2026-08-15-machine-taking-shape",
       "typeLabel": "August MTD ByteCast",
-      "title": "Aug 15 — The Machine Is Taking Shape",
+      "title": "Aug 15 \u2014 The Machine Is Taking Shape",
       "summary": "Interactive August month-to-date report with embedded ByteCast audio and animated operating model.",
       "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
       "types": [
@@ -74,7 +91,7 @@
     {
       "id": "eom-2026-07-31-july-convergence",
       "typeLabel": "End of Month",
-      "title": "July 31 — July Convergence",
+      "title": "July 31 \u2014 July Convergence",
       "summary": "Executive brief, six division reports, and the full ByteCast series covering everything that shipped in July.",
       "href": "/newsletters/editions/eom/2026-07-31-july-convergence/",
       "types": [
@@ -88,8 +105,8 @@
     {
       "id": "shareholder-2026-07-08",
       "typeLabel": "Shareholder ByteCast",
-      "title": "July 8 — Seeing the System",
-      "summary": "Build_Nevada signal, ecosystem visibility, and AeroVista positioning — audio + briefing.",
+      "title": "July 8 \u2014 Seeing the System",
+      "summary": "Build_Nevada signal, ecosystem visibility, and AeroVista positioning \u2014 audio + briefing.",
       "href": "/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
       "types": [
         "bytecast"
@@ -102,7 +119,7 @@
     {
       "id": "eod-2026-07-05",
       "typeLabel": "Latest EOD",
-      "title": "July 5 — Overall Company Status",
+      "title": "July 5 \u2014 Overall Company Status",
       "summary": "Audio, AVCC roadmap, division signals, deploy gate, transcript.",
       "href": "/newsletters/editions/eod/2026-07-05-company-status/",
       "types": [
@@ -130,7 +147,7 @@
     {
       "id": "eow-current",
       "typeLabel": "Weekly EOW",
-      "title": "Sep 7 — From Convergence to Proof",
+      "title": "Sep 7 \u2014 From Convergence to Proof",
       "summary": "Current EOW summary: August's convergence thesis became operating proof across commercial workflow, source control, product releases, and endpoint operations.",
       "href": "/dispatches/eow/current-stakeholder-update.html",
       "types": [
@@ -155,19 +172,52 @@
         {
           "type": "milestone",
           "label": "Internal"
+        },
+        {
+          "type": "bytecast",
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 7",
       "dateYear": "2026",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
+        "bytecast",
         "eow",
         "internal"
       ],
       "tags": [
         "september 2026 eow convergence proof avcc commercial workflow phase rydesync source control release governance"
       ],
-      "summary": "September 1–7 formal EOW — the first week of September turned August's convergence thesis into operating evidence and clearer acceptance gates.",
+      "summary": "September 1\u20137 formal EOW with a 14:46 nontechnical ByteCast \u2014 operating evidence, business meaning, open acceptance gates, and the path from proof to repeatability.",
+      "recordId": "AV-RPT-EOW-2026-09-07"
+    },
+    {
+      "id": "bytecast-2026-09-07",
+      "section": "bytecast",
+      "title": "From Convergence to Proof",
+      "badges": [
+        {
+          "type": "bytecast",
+          "label": "ByteCast"
+        },
+        {
+          "type": "eow",
+          "label": "EOW"
+        }
+      ],
+      "dateEm": "Sep 7",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html",
+      "types": [
+        "bytecast",
+        "eow",
+        "internal"
+      ],
+      "tags": [
+        "september 2026 eow bytecast nontechnical convergence proof repeatability audio player transcript"
+      ],
+      "summary": "14:46 plain-language audio edition \u2014 the business meaning behind AVCC proof, controlled releases, Phase productization, shared creative infrastructure, and endpoint operations.",
       "recordId": "AV-RPT-EOW-2026-09-07"
     },
     {
@@ -194,7 +244,7 @@
       "tags": [
         "august 2026 end of month eom bytecast building a company convergence portfolio aerocore avcc rydesync recoverability september priorities"
       ],
-      "summary": "Interactive August rollup and 14:30 ByteCast — portfolio convergence, production lessons, and the completion-and-proof plan for September.",
+      "summary": "Interactive August rollup and 14:30 ByteCast \u2014 portfolio convergence, production lessons, and the completion-and-proof plan for September.",
       "recordId": "AV-RPT-EOM-2026-08"
     },
     {
@@ -221,7 +271,7 @@
       "tags": [
         "august 2026 mtd month to date interactive report bytecast the machine is taking shape animated operating model self-contained"
       ],
-      "summary": "Self-contained interactive report for August month-to-date — embedded ByteCast audio (6:22) and animated AeroVista operating model.",
+      "summary": "Self-contained interactive report for August month-to-date \u2014 embedded ByteCast audio (6:22) and animated AeroVista operating model.",
       "recordId": "AV-RPT-MTD-2026-08-14"
     },
     {
@@ -243,7 +293,7 @@
       "tags": [
         "july 2026 end of month eom executive brief platform identity divisions markets portfolio bytecast series july convergence"
       ],
-      "summary": "Interactive end-of-month hub — executive brief, six division reports, full ByteCast transcript series, verified July metrics.",
+      "summary": "Interactive end-of-month hub \u2014 executive brief, six division reports, full ByteCast transcript series, verified July metrics.",
       "recordId": "AV-RPT-EOM-2026-07"
     },
     {
@@ -265,7 +315,7 @@
       "tags": [
         "july 5 2026 eod overall company status avcc roadmap operating maturity"
       ],
-      "summary": "Full EOD audio edition — ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing.",
+      "summary": "Full EOD audio edition \u2014 ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing.",
       "recordId": "AV-RPT-EOD-2026-07-05"
     },
     {
@@ -309,13 +359,13 @@
       "tags": [
         "current september 7 2026 eow convergence proof internal stakeholder summary"
       ],
-      "summary": "Current EOW summary — September 1–7: from convergence to proof across AVCC, source discipline, product releases, and endpoint operations.",
+      "summary": "Current EOW summary \u2014 September 1\u20137: from convergence to proof across AVCC, source discipline, product releases, and endpoint operations.",
       "recordId": "AV-DSP-EOW-CURRENT"
     },
     {
       "id": "eow-2026-06-28-summary",
       "section": "weekly",
-      "title": "Weekend report — dated summary",
+      "title": "Weekend report \u2014 dated summary",
       "badges": [
         {
           "type": "eow",
@@ -358,7 +408,7 @@
       "tags": [
         "june 28 2026 weekend report resilience recovery full edition audio"
       ],
-      "summary": "Full weekly ByteCast — audio, timeline, transcript, recovery doctrine.",
+      "summary": "Full weekly ByteCast \u2014 audio, timeline, transcript, recovery doctrine.",
       "recordId": "AV-RPT-EOW-2026-06-28"
     },
     {
@@ -385,7 +435,7 @@
       "tags": [
         "june 21 2026 weekly better machine full edition audio"
       ],
-      "summary": "Full weekly ByteCast — operating pressure, repeatable loops, infographic, transcript.",
+      "summary": "Full weekly ByteCast \u2014 operating pressure, repeatable loops, infographic, transcript.",
       "recordId": "AV-RPT-EOW-2026-06-21"
     },
     {
@@ -412,7 +462,7 @@
       "tags": [
         "june 15 2026 weekly systems becoming products full edition audio"
       ],
-      "summary": "Full weekly ByteCast — earlier stakeholder edition with audio and infographic.",
+      "summary": "Full weekly ByteCast \u2014 earlier stakeholder edition with audio and infographic.",
       "recordId": "AV-RPT-EOW-2026-06-15"
     },
     {
@@ -434,7 +484,7 @@
       "tags": [
         "july 8 2026 shareholder build nevada build_ ecosystem positioning seeing the system"
       ],
-      "summary": "Shareholder brief on Build_Nevada — ecosystem decomposition, AeroVista translation layer, audio + outline.",
+      "summary": "Shareholder brief on Build_Nevada \u2014 ecosystem decomposition, AeroVista translation layer, audio + outline.",
       "recordId": "AV-PUB-SHAREHOLDER-2026-07-08"
     },
     {
@@ -457,7 +507,7 @@
       "tags": [
         "june 28 2026 weekend report resilience recovery avcc core registry art localized"
       ],
-      "summary": "Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript.",
+      "summary": "Recovery doctrine for AVCC, Core Registry, and Art Localized API \u2014 audio, timeline, transcript.",
       "recordId": "AV-RPT-EOW-2026-06-28"
     },
     {
@@ -480,7 +530,7 @@
       "tags": [
         "june 21 2026 weekly better machine echoverse art localized"
       ],
-      "summary": "Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript.",
+      "summary": "Operating pressure, repeatable loops, cleaner offers \u2014 audio, infographic, full transcript.",
       "recordId": "AV-RPT-EOW-2026-06-21"
     },
     {
@@ -530,7 +580,7 @@
       "tags": [
         "june 16 2026 echoverse audio intelligence platform drop to edit"
       ],
-      "summary": "Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — platform milestone edition.",
+      "summary": "Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff \u2014 platform milestone edition.",
       "recordId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE"
     },
     {
@@ -557,7 +607,7 @@
       "tags": [
         "may 29 2026 newsletter weekly package"
       ],
-      "summary": "Weekly AeroVista shareholder newsletter — ecosystem activation, governed memory, Art Localized.",
+      "summary": "Weekly AeroVista shareholder newsletter \u2014 ecosystem activation, governed memory, Art Localized.",
       "recordId": "AV-PUB-NEWSLETTER-2026-05-29"
     },
     {

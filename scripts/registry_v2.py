@@ -110,6 +110,8 @@ def infer_role(path: Path):
         return "style"
     if ext in {".js",".mjs",".ps1",".py"}:
         return "script"
+    if name == "bytecast.html":
+        return "report-section"
     if "transcript" in p or "bytecast" in p:
         return "transcript"
     if "/reports/" in p and ext in {".html",".md"}:
