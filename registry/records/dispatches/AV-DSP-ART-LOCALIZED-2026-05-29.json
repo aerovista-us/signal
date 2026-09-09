@@ -41,7 +41,8 @@
       "mediaType": "text/html",
       "sizeBytes": 10821,
       "integrity": {
-        "gitBlobSha1": "78d93981fa40a6bbb9b39c85daad15d26bb9aaa3"
+        "gitBlobSha1": "78d93981fa40a6bbb9b39c85daad15d26bb9aaa3",
+        "sha256": "dd9dd58e0167ef35dfff28f956be85fbc8f6cb44b7ab497ca3ec18ea90545287"
       }
     },
     {
@@ -54,7 +55,8 @@
       "mediaType": "text/html",
       "sizeBytes": 601,
       "integrity": {
-        "gitBlobSha1": "6e0c0a8ea0f03860a7a08a378eb73638bc91e633"
+        "gitBlobSha1": "6e0c0a8ea0f03860a7a08a378eb73638bc91e633",
+        "sha256": "1c9a23e76d8a58f4381ee223bb5b0d8431c4e922a34a7a5b09cdd07c03a938ba"
       }
     }
   ],
