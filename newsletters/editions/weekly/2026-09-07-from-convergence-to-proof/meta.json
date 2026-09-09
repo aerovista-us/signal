@@ -33,13 +33,11 @@
     "interactive-html",
     "bytecast",
     "transcript",
-    "webvtt-captions",
     "evidence-ledger"
   ],
   "bytecast": {
     "audio": "assets/bytecast.mp3",
     "transcript": "bytecast-transcript.md",
-    "captions": "bytecast.vtt",
     "runtimeSeconds": 886.656,
     "runtimeLabel": "14:47",
     "audienceStyle": "plain-language companion"
