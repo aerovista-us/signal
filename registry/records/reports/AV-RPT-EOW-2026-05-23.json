@@ -51,6 +51,20 @@
         "gitBlobSha1": "dedb05d1719c2c71bb129f9f5dd1e92fdd06811e",
         "sha256": "6a1ebfc67db2c20b498cc8dd17bb8b629c0d4e828ec884529505ec5f29f81242"
       }
+    },
+    {
+      "id": "legacy-dispatches-eow-shareholder-update-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-shareholder-update.html",
+      "name": "eow-shareholder-update.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 514,
+      "integrity": {
+        "gitBlobSha1": "2224ab0a42f165e569005ad6c35918b6ca0de048"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

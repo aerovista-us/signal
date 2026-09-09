@@ -96,6 +96,62 @@
         "gitBlobSha1": "83da8af8acc9dd09581bd5acafba727aa51ded3f",
         "sha256": "3ee2821cd1f326172021cfbd48e0b49446bbb54c00cf8d02f6b8e802706b393f"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-weekly-2026-06-21-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_weekly_2026-06-21.html",
+      "name": "aerovista_signal_weekly_2026-06-21.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 534,
+      "integrity": {
+        "gitBlobSha1": "ed4c63ae16a578b26bb7f09ff31be65d2e0b0eca"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecasewe621-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecasewe621.mp3",
+      "name": "bytecasewe621.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3421944,
+      "integrity": {
+        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-wejune21-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/WEjune21.png",
+      "name": "WEjune21.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1926266,
+      "integrity": {
+        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-readme-deploy-weekly-2026-06-21-txt",
+      "role": "readme",
+      "relationship": "referenced",
+      "path": "newsletters/README_deploy_weekly_2026-06-21.txt",
+      "name": "README_deploy_weekly_2026-06-21.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 397,
+      "integrity": {
+        "gitBlobSha1": "4257ad37a7ef2057e8a6ca7c8bd15b90ba7c1da9"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

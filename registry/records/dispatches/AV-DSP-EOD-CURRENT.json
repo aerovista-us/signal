@@ -44,6 +44,20 @@
         "gitBlobSha1": "648bfd47d4f251891ff364fe80629ea1de2f0507",
         "sha256": "656d4f529eefd0737024d66efefd9dd74d5cc1f0651373992c032d2ef0f6ecf1"
       }
+    },
+    {
+      "id": "legacy-dispatches-eod-current-operating-note-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eod-current-operating-note.html",
+      "name": "eod-current-operating-note.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 534,
+      "integrity": {
+        "gitBlobSha1": "f6981e4f5621333a9a6299f9f67c97a4ff5b2944"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

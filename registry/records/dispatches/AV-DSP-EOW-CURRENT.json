@@ -45,6 +45,20 @@
         "gitBlobSha1": "7c59484c068de9bc16a0c644de8e7dc5ed1cea2f",
         "sha256": "98d8a08361398dd41409c8efa6610c2bb69cd11306b3fb1379588942fb360602"
       }
+    },
+    {
+      "id": "legacy-dispatches-eow-current-stakeholder-update-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-current-stakeholder-update.html",
+      "name": "eow-current-stakeholder-update.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 554,
+      "integrity": {
+        "gitBlobSha1": "d2096a55602dcbfa424eadf58fe94661f66bd7c5"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

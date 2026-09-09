@@ -89,6 +89,62 @@
         "gitBlobSha1": "54d2be29b5ed6c424bd8b1db387fef703530c5f1",
         "sha256": "61aa86977a56ad601d23440476a830ddf0ba885c8e72a1a91a18e2cbe6048087"
       }
+    },
+    {
+      "id": "legacy-newsletters-bytecast-shareholder-seeing-the-system-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast_shareholder_seeing_the_system.html",
+      "name": "bytecast_shareholder_seeing_the_system.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 560,
+      "integrity": {
+        "gitBlobSha1": "c458e7c23e52014046523fdb2f42d9fc43d39b24"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-build-nevada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-build-nevada.mp3",
+      "name": "bytecast-build-nevada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-build-navada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-build_navada.mp3",
+      "name": "bytecast-build_navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-positioning-build-navada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-positioning-build_navada.mp3",
+      "name": "bytecast-positioning-build_navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

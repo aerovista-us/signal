@@ -96,6 +96,62 @@
         "gitBlobSha1": "574d9a2b116fb801ab8fee6816dc694cdb33c6ed",
         "sha256": "4642c634fc58d2c4605dcfd8b13120d0276a9d865cd002437af3561b18a60a92"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-weekly-2026-06-15-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_weekly_2026-06-15.html",
+      "name": "aerovista_signal_weekly_2026-06-15.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 585,
+      "integrity": {
+        "gitBlobSha1": "dfa4f17a43ba0eb7b1affb4bffcc8b41ea16a7ab"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-week-ending-2026-06-15-aac",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-week-ending-2026-06-15.aac",
+      "name": "bytecast-week-ending-2026-06-15.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 4799417,
+      "integrity": {
+        "gitBlobSha1": "884b331ba133095519f8fefa3c6e085a35bb01ba"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-week-ending-2026-06-15-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-week-ending-2026-06-15.mp3",
+      "name": "bytecast-week-ending-2026-06-15.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5763552,
+      "integrity": {
+        "gitBlobSha1": "c24fd7329d4be0efab973927bbe4d861d3b9f7ec"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-a-high-detail-corporate-infographic-weekly-report-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/a_high_detail_corporate_infographic_weekly_report.png",
+      "name": "a_high_detail_corporate_infographic_weekly_report.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1986514,
+      "integrity": {
+        "gitBlobSha1": "ba6523a7ba0c441e4a0677495981818971a4aaf2"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

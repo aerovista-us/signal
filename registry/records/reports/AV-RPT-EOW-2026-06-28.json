@@ -97,6 +97,62 @@
         "gitBlobSha1": "df234eddcca799c16b4f16c2641b22717a73e403",
         "sha256": "fe6d8d615840587c2c7ea67a91233244785ba921a7591b105a85b8fadf3bf939"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-weekend-report-6-28-26-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_weekend_report_6.28.26.html",
+      "name": "aerovista_weekend_report_6.28.26.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 550,
+      "integrity": {
+        "gitBlobSha1": "0de2f411dc0d69d8ad976698e70d13a5d9f3a8dc"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-aac",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.aac",
+      "name": "weekend-report.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 3703981,
+      "integrity": {
+        "gitBlobSha1": "a17913b253c8b02d851c1a3e047cf129e238126f"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.mp3",
+      "name": "weekend-report.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5811648,
+      "integrity": {
+        "gitBlobSha1": "c13914b1bf1c173591dc7e90b3500a544070f787"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-wav",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.wav",
+      "name": "weekend-report.wav",
+      "fileType": "wav",
+      "mediaType": "audio/wav",
+      "sizeBytes": 26442232,
+      "integrity": {
+        "gitBlobSha1": "db9d9428b0ec8d41fb5454bc5aa6919dcf03439b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

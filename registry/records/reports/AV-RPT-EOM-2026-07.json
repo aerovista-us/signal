@@ -713,6 +713,20 @@
         "gitBlobSha1": "7bd7881a6b68a6e85e151e641e5893a5f172b694",
         "sha256": "b3618ef42104cd433f98e57b4210fcd8362fc5b8618390b5e208cf47969f5f13"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-july-2026-month-end-signal-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_july_2026_month_end_signal.html",
+      "name": "aerovista_july_2026_month_end_signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 528,
+      "integrity": {
+        "gitBlobSha1": "3f99661efd5ca1d316e15d89ece312537fc3e6b3"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

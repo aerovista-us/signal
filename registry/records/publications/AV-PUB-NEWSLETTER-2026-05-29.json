@@ -59,6 +59,20 @@
         "gitBlobSha1": "7a5cd17ee8e974a02605fedbe4145455ae3c7e1e",
         "sha256": "b83e725364f952cb3da1b22ed8f4824ac0468d1aa258a727865b70fcbf7a75da"
       }
+    },
+    {
+      "id": "legacy-newsletters-the-signal-newsletter-2026-05-29-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/the-signal-newsletter-2026-05-29.html",
+      "name": "the-signal-newsletter-2026-05-29.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 564,
+      "integrity": {
+        "gitBlobSha1": "20a1c225f166668b3c1b9c7965f3e70fd890a251"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

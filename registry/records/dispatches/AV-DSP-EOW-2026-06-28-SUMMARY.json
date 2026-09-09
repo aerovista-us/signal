@@ -44,6 +44,20 @@
         "gitBlobSha1": "5dccb2edb2abe2088994e7a449264d7efd87a38b",
         "sha256": "1e209f13473b51d70777656e82871262c1de143662c6fd3bbaa2ae8adf174286"
       }
+    },
+    {
+      "id": "legacy-dispatches-eow-2026-06-28-weekend-report-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-2026-06-28-weekend-report.html",
+      "name": "eow-2026-06-28-weekend-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 543,
+      "integrity": {
+        "gitBlobSha1": "20ce2c313e46b8f5cff824b18bc5cdf742b70261"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

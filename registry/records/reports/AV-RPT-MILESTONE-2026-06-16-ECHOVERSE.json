@@ -124,6 +124,146 @@
         "gitBlobSha1": "1fc29911fe40d9ad23c0090963e5ebe063e037f4",
         "sha256": "1dbaac4124936f8544b42913107758ee0dc7144d22d176d5e1b5832d0417550d"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-echoverse-bytecast-2026-06-16-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_echoverse_bytecast_2026-06-16.html",
+      "name": "aerovista_signal_echoverse_bytecast_2026-06-16.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 552,
+      "integrity": {
+        "gitBlobSha1": "f435f0577fd1cd3efcc413497dea4c122307859b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-echoverse-audio-intelligence-update-2026-06-16-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_echoverse_audio_intelligence_update_2026-06-16.html",
+      "name": "aerovista_signal_echoverse_audio_intelligence_update_2026-06-16.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 532,
+      "integrity": {
+        "gitBlobSha1": "091f732064b1a4064ba0f9b824cf6e32cb87e649"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-echoverse-audio-intelligence-update-enhanced-2026-06-16-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_echoverse_audio_intelligence_update_enhanced_2026-06-16.html",
+      "name": "aerovista_signal_echoverse_audio_intelligence_update_enhanced_2026-06-16.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 532,
+      "integrity": {
+        "gitBlobSha1": "091f732064b1a4064ba0f9b824cf6e32cb87e649"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-echoverse-platform-shift-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/EchoVerse Platform Shift.mp3",
+      "name": "EchoVerse Platform Shift.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 6202032,
+      "integrity": {
+        "gitBlobSha1": "c110441d65219b4b66aa5119a0cb19e5a5bf5a17"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-echoverse-bytecast-2026-06-16-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/echoverse-bytecast-2026-06-16.mp3",
+      "name": "echoverse-bytecast-2026-06-16.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 6202032,
+      "integrity": {
+        "gitBlobSha1": "c110441d65219b4b66aa5119a0cb19e5a5bf5a17"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-echoverse-from-drop-to-edit-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/EchoVerse_from_drop_to_Edit.png",
+      "name": "EchoVerse_from_drop_to_Edit.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1995533,
+      "integrity": {
+        "gitBlobSha1": "5bfbf9d178f2ca0d6c935f081ad6cac7130e0e4a"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-echoverse-from-drop-to-edit-2-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/EchoVerse_from_drop_to_Edit (2).png",
+      "name": "EchoVerse_from_drop_to_Edit (2).png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2763012,
+      "integrity": {
+        "gitBlobSha1": "4f9f2fef17fb362ba8386e877e423c3e15dcd319"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-a-detailed-infographic-poster-dashboard-style-de-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/a_detailed_infographic_poster_dashboard_style_de.png",
+      "name": "a_detailed_infographic_poster_dashboard_style_de.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1995533,
+      "integrity": {
+        "gitBlobSha1": "5bfbf9d178f2ca0d6c935f081ad6cac7130e0e4a"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-a-detailed-infographic-poster-dashboard-style-de-2-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/a_detailed_infographic_poster_dashboard_style_de (2).png",
+      "name": "a_detailed_infographic_poster_dashboard_style_de (2).png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2763012,
+      "integrity": {
+        "gitBlobSha1": "4f9f2fef17fb362ba8386e877e423c3e15dcd319"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-echoverse-bytecast-transcript-2026-06-16-txt",
+      "role": "transcript",
+      "relationship": "referenced",
+      "path": "newsletters/echoverse_bytecast_transcript_2026-06-16.txt",
+      "name": "echoverse_bytecast_transcript_2026-06-16.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 3830,
+      "integrity": {
+        "gitBlobSha1": "479e965eaa6bac977aa1aa564d778c13ab3e931b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

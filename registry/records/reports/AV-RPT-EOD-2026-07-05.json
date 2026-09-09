@@ -95,6 +95,48 @@
         "gitBlobSha1": "d0b8e090533c6c899a5d1656c4ce6190b4c1d888",
         "sha256": "81cce555a95a5195651020dbf38328db34fc24066fdc443200288146f5574379"
       }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-bytecast-status-player-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_bytecast_status_player.html",
+      "name": "aerovista_bytecast_status_player.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 537,
+      "integrity": {
+        "gitBlobSha1": "a675958ba8357565f7543539448d3d6f1b92a829"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-7-5-26-eod-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/7.5.26.EOD.mp3",
+      "name": "7.5.26.EOD.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 7463856,
+      "integrity": {
+        "gitBlobSha1": "cd42ca11b22d6983850099ebc7ff0737ed216f8f"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-overallstatus-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/overallstatus.png",
+      "name": "overallstatus.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1979547,
+      "integrity": {
+        "gitBlobSha1": "11ea2e41f86f09c8276563d3a21dfc0e554393f5"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [

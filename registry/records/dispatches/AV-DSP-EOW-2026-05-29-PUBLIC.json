@@ -44,6 +44,20 @@
         "gitBlobSha1": "e0244d979d07dc28dc0f988a734a01d281631781",
         "sha256": "b7fcc7eac66916ea7fe6442dd2642107d4e56890df80df9942029f084fa9edc3"
       }
+    },
+    {
+      "id": "legacy-dispatches-eow-2026-05-29-public-signal-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-2026-05-29-public-signal.html",
+      "name": "eow-2026-05-29-public-signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 536,
+      "integrity": {
+        "gitBlobSha1": "d6db6f97c51c9894023875cbfd8333e146818c96"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [
