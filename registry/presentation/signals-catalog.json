@@ -1,9 +1,9 @@
 {
   "updated": "2026-09-08",
   "featured": {
-    "label": "Latest EOW Signal",
+    "label": "Latest EOW + ByteCast",
     "title": "From Convergence to Proof",
-    "summary": "September 1–7 internal briefing — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
+    "summary": "September 1–7 internal briefing with a 14:47 plain-language ByteCast — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
     "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
     "stats": [
       {
@@ -28,16 +28,18 @@
   "now": [
     {
       "id": "weekly-2026-09-07",
-      "typeLabel": "Latest EOW",
+      "typeLabel": "Latest EOW + ByteCast",
       "title": "Sep 7 — From Convergence to Proof",
-      "summary": "Formal internal EOW: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
+      "summary": "Formal internal EOW with a 14:47 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
         "eow",
-        "internal"
+        "internal",
+        "bytecast"
       ],
       "tags": [
-        "september 1 7 2026 eow convergence proof avcc phase rydesync source control release governance internal"
+        "september 1 7 2026 eow convergence proof avcc phase rydesync source control release governance internal",
+        "bytecast audio plain language podcast"
       ],
       "recordId": "AV-RPT-EOW-2026-09-07"
     },
@@ -153,8 +155,8 @@
           "label": "EOW"
         },
         {
-          "type": "milestone",
-          "label": "Internal"
+          "type": "bytecast",
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 7",
@@ -162,12 +164,14 @@
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
         "eow",
-        "internal"
+        "internal",
+        "bytecast"
       ],
       "tags": [
-        "september 2026 eow convergence proof avcc commercial workflow phase rydesync source control release governance"
+        "september 2026 eow convergence proof avcc commercial workflow phase rydesync source control release governance",
+        "bytecast audio podcast plain language"
       ],
-      "summary": "September 1–7 formal EOW — the first week of September turned August's convergence thesis into operating evidence and clearer acceptance gates.",
+      "summary": "September 1–7 formal EOW with a 14:47 plain-language ByteCast — turning August's convergence thesis into operating evidence and clearer acceptance gates.",
       "recordId": "AV-RPT-EOW-2026-09-07"
     },
     {
