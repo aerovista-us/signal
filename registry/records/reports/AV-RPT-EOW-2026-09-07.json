@@ -18,6 +18,8 @@
   ],
   "formats": [
     "interactive-html",
+    "bytecast",
+    "transcript",
     "evidence-ledger"
   ],
   "period": {
@@ -37,7 +39,10 @@
     "release-governance",
     "phase",
     "rydesync",
-    "internal-signal"
+    "internal-signal",
+    "bytecast",
+    "plain-language",
+    "audio-companion"
   ],
   "package": {
     "mode": "directory",
@@ -47,6 +52,34 @@
   },
   "supersedes": null,
   "files": [
+    {
+      "id": "assets-bytecast-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3",
+      "name": "bytecast.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 10046304,
+      "integrity": {
+        "gitBlobSha1": "819bdbc5abf27fbef393f3085bc408dba75a6579",
+        "sha256": "09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071"
+      }
+    },
+    {
+      "id": "bytecast-transcript-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast-transcript.md",
+      "name": "bytecast-transcript.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 14748,
+      "integrity": {
+        "gitBlobSha1": "a584f2fba82018e34b545a0db4327699f2234dd8",
+        "sha256": "84380cec35b4a1c295449fcb039ef896734dc5ebc20362d1d7f6b8fbdf88d86c"
+      }
+    },
     {
       "id": "evidence-json",
       "role": "data",
@@ -69,10 +102,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 22261,
+      "sizeBytes": 23575,
       "integrity": {
-        "gitBlobSha1": "4a31f44038d666682549b49bb8229444c3a118ad",
-        "sha256": "60163a6da531facd65672b5664d76af97d3a2be1884553bb2ce1cc18ad710f58"
+        "gitBlobSha1": "fc1367aae29acec945f9c8d63f88bbd6eb9a6969",
+        "sha256": "e7f5b93d87c19054a414c762d60a3b5c452748bec2d8b1f3548f815379a31000"
       }
     },
     {
@@ -83,10 +116,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 1103,
+      "sizeBytes": 1412,
       "integrity": {
-        "gitBlobSha1": "bad1715fd2234dc946dfac553aa6db9fa12e9a49",
-        "sha256": "eda74d9b64107d74b6530ec124fb1b43fed97869455ca1324ebc3bbae371c348"
+        "gitBlobSha1": "eac6403ca051d8fce85421e8b92330f6336ccc63",
+        "sha256": "a7b935469ada9cabe28e840df2f7fb68bc451bf20f9db0df41edee751a4b4ce9"
       }
     }
   ],

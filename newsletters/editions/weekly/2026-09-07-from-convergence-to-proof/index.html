@@ -34,6 +34,14 @@
     .boundary{color:var(--amber);font-weight:900}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
     .source-note{font-size:.88rem!important}
+
+    .audio-card{margin-top:26px;padding:22px;border-radius:22px;background:rgba(255,255,255,.035);border:1px solid rgba(103,232,249,.28);box-shadow:0 0 28px rgba(103,232,249,.08)}
+    .audio-title{margin:0 0 6px;color:var(--cyan);font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .audio-card h2{margin:0 0 8px;color:var(--ink);font-size:1.35rem}
+    .audio-card p{margin:0 0 16px;color:var(--muted);line-height:1.55}
+    .audio-card audio{width:100%;display:block;filter:drop-shadow(0 0 14px rgba(103,232,249,.16))}
+    .audio-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .audio-links a{font-size:.82rem}
     @media(max-width:850px){.continuity,.metrics,.moves,.risk-grid{grid-template-columns:1fr}.move:last-child,.risk:last-child{grid-column:auto}.day{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.metrics{grid-template-columns:1fr}}
   </style>
@@ -55,6 +63,21 @@
       <div class="kicker">Release continuity</div>
       <h1>From Convergence to Proof.</h1>
       <p class="deck">August ended with a clear operating thesis: stop measuring progress by how many pieces exist and start proving that the pieces work together. The first week of September followed that instruction. The strongest work was not expansion. It was evidence — source-of-truth accepted, commercial workflow exercised, releases gated, products made recoverable, and a staff endpoint brought under the same operating discipline.</p>
+
+
+      <div class="audio-card" id="bytecast">
+        <p class="audio-title">ByteCast · Listen to the report</p>
+        <h2>From Convergence to Proof</h2>
+        <p>14:47 plain-language audio companion for the September 1–7 EOW report.</p>
+        <audio controls preload="metadata">
+          <source src="./assets/bytecast.mp3" type="audio/mpeg" />
+          Your browser does not support the audio player.
+        </audio>
+        <div class="audio-links">
+          <a class="btn" href="./assets/bytecast.mp3" download>Download MP3</a>
+          <a class="btn" href="./bytecast-transcript.md">Read transcript</a>
+        </div>
+      </div>
 
       <div class="continuity">
         <article>
@@ -78,6 +101,7 @@
         <span>Commercial proof</span><span>Source discipline</span><span>Release gates</span><span>Productization</span><span>Endpoint operations</span>
       </div>
     </section>
+
 
     <section class="wrap layout">
       <article class="article">
@@ -252,5 +276,8 @@
   <script src="/js/site-paths.js"></script>
   <script src="/js/site-config.js"></script>
   <script src="/js/site-analytics.js" defer></script>
+
+
+
 </body>
 </html>

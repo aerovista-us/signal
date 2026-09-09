@@ -1,9 +1,9 @@
 {
   "updated": "2026-09-08",
   "featured": {
-    "label": "Latest EOW Signal",
+    "label": "Latest EOW + ByteCast",
     "title": "From Convergence to Proof",
-    "summary": "September 1–7 internal briefing — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
+    "summary": "September 1–7 internal briefing with a 14:47 plain-language ByteCast — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
     "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
     "stats": [
       {
@@ -23,20 +23,21 @@
         "label": "Phase foundation"
       }
     ],
-    "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal"
+    "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast plain-language audio-companion"
   },
   "now": [
     {
       "id": "weekly-2026-09-07",
-      "typeLabel": "Latest EOW",
+      "typeLabel": "Latest EOW + ByteCast",
       "title": "Sep 7 — From Convergence to Proof",
-      "summary": "Formal internal EOW: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
+      "summary": "Formal internal EOW with a 14:47 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
         "eow",
-        "internal"
+        "internal",
+        "bytecast"
       ],
-      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal"
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast plain-language audio-companion"
     },
     {
       "id": "eom-2026-08-31-building-a-company",
@@ -129,8 +130,8 @@
           "label": "EOW"
         },
         {
-          "type": "milestone",
-          "label": "Internal"
+          "type": "bytecast",
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 7",
@@ -138,10 +139,11 @@
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
         "eow",
-        "internal"
+        "internal",
+        "bytecast"
       ],
-      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal",
-      "summary": "September 1–7 formal EOW — the first week of September turned August's convergence thesis into operating evidence and clearer acceptance gates."
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast plain-language audio-companion",
+      "summary": "September 1–7 formal EOW with a 14:47 plain-language ByteCast — turning August's convergence thesis into operating evidence and clearer acceptance gates."
     },
     {
       "id": "eom-2026-08-31-building-a-company",
