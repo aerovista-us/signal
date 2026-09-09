@@ -1,0 +1,47 @@
+name: EOW registry refresh
+
+on:
+  push:
+    branches: [eow-2026-09-07]
+    paths:
+      - "registry/**"
+      - "newsletters/**"
+      - "dispatches/**"
+      - ".github/workflows/eow-refresh.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal-eow-2026-09-07-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: eow-2026-09-07
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh Registry v2
+        run: python scripts/registry_v2.py refresh
+      - name: Run regression tests
+        run: python scripts/test_registry_v2.py
+      - name: Commit generated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/records registry/indexes js/signals-catalog.json
+          if git diff --cached --quiet; then
+            echo "Registry already fresh."
+          else
+            git commit -m "Registry: refresh Sep 7 EOW manifests and indexes"
+            git pull --rebase origin eow-2026-09-07
+            git push origin HEAD:eow-2026-09-07
+          fi
