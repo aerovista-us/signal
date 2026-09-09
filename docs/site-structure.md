@@ -2,19 +2,45 @@
 
 Canonical layout for [thesignal.aerovista.us](https://thesignal.aerovista.us).
 
+## Registry v2 — authoritative records
+
+```
+registry/
+  schema/
+    content-record.schema.json
+  records/
+    reports/
+    publications/
+    dispatches/
+    media/
+  indexes/
+    all.json
+    reports.json
+    publications.json
+    dispatches.json
+    media.json
+    current.json
+```
+
+The registry is the authoritative content inventory. `js/signals-catalog.json` remains the presentation catalog for the Internal Signals hub.
+
+A formal report record contains the complete manifest for every owned HTML, MP3/AAC/WAV, image, transcript, source, data, script/style, metadata, and attachment file belonging to that report.
+
+See [registry-v2.md](./registry-v2.md).
+
 ## Root
 
 | Path | Role |
 |------|------|
 | `index.html` | Public homepage |
-| `signal-public-theme.css` | Canonical theme (dispatches load `/signal-public-theme.css`) |
-| `css/signal-public-theme.css` | Mirror — keep in sync with root |
-| `js/site-paths.js` | Path registry (`SIGNAL_PATHS`) |
+| `signal-public-theme.css` | Canonical theme |
+| `css/signal-public-theme.css` | Theme mirror |
+| `js/site-paths.js` | Path registry |
 | `js/site-config.js` | Site URL, OG image, analytics |
-| `js/signals-catalog.json` | Internal Signals hub catalog data |
+| `js/signals-catalog.json` | Internal Signals presentation/catalog data |
 | `js/render-signals-hub.js` | Hub renderer + search/filter |
 | `newsletter-current.html` | Redirect → Internal Signals |
-| `player-swamphop.html` | SwampHop player (legacy spaced filename redirects here) |
+| `player-swamphop.html` | SwampHop player |
 
 ## Newsletters — editions
 
@@ -27,53 +53,45 @@ newsletters/
     bytecast/...
     shareholder/...
     milestone/...
-      index.html      # canonical page
-      meta.json       # catalog metadata
-      assets/         # audio.mp3, infographic.png, ...
-  *.html              # redirect stubs → editions/...
+      index.html
+      meta.json
+      assets/
+  *.html
 ```
 
 **Naming:** `{type}/{date}-{kebab-slug}/` — ISO dates, kebab-case.
 
-**Legacy flat URLs** (`newsletters/aerovista_signal_weekly_2026-06-15.html`, etc.) remain as meta-refresh redirect stubs.
+Legacy flat URLs remain redirect stubs when migrated.
 
 ## Dispatches
 
 ```
 dispatches/
-  internal-signals.html    # hub (do not move URL)
-  current-updates.html     # redirect stub
+  internal-signals.html
+  current-updates.html
   eod/current-operating-note.html
   eow/current-stakeholder-update.html
   eow/2026-06-28-weekend-report.html
   topics/cindy-connect-launch-status.html
-  ...
-  eod-current-operating-note.html   # redirect stub
 ```
 
-## Redirect stub template
+## Redirect policy
 
-Stubs use **relative** URLs from the stub file’s directory (not `dispatches/...` when the stub already lives under `dispatches/`).
+Moved files keep redirect stubs at old public URLs. Registry records should preserve both canonical URL and legacy references where useful.
 
-Newsletter example (`newsletters/aerovista_signal_weekly_2026-06-15.html`):
+## Validation
 
-```html
-<meta http-equiv="refresh" content="0; url=editions/weekly/2026-06-15-systems-becoming-products/" />
-<link rel="canonical" href="https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/" />
+```bash
+python scripts/registry_v2.py check
 ```
 
-Dispatch example (`dispatches/eod-current-operating-note.html`):
-
-```html
-<meta http-equiv="refresh" content="0; url=eod/current-operating-note.html" />
-<link rel="canonical" href="https://thesignal.aerovista.us/dispatches/eod/current-operating-note.html" />
-```
+For strict directory packages, validation fails if the package contains an owned file not listed in the manifest.
 
 ## Migration scripts
 
-- `scripts/migrate-newsletters.ps1` — one-time edition folder migration
-- `scripts/migrate-dispatches.ps1` — dispatch subfolder migration
-- `scripts/fix-dispatch-stubs.ps1` — replace flat dispatch files with redirect stubs + fix nested internal links
+- `scripts/migrate-newsletters.ps1`
+- `scripts/migrate-dispatches.ps1`
+- `scripts/fix-dispatch-stubs.ps1`
 
 ## Safe edits on large HTML
 
