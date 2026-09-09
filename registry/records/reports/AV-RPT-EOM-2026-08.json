@@ -41,20 +41,6 @@
   "supersedes": null,
   "files": [
     {
-      "id": "index-html",
-      "role": "primary",
-      "relationship": "owned",
-      "path": "newsletters/editions/eom/2026-08-31-building-a-company/index.html",
-      "name": "index.html",
-      "fileType": "html",
-      "mediaType": "text/html",
-      "sizeBytes": 21272,
-      "integrity": {
-        "gitBlobSha1": "0bfd5f69bb0e326355efefdbc9e23b9721f34010",
-        "sha256": "a6505e76a358ebfdfbda1105b8a38e5ae44b6d6a7f9d390ddeab48ac1d6fbb01"
-      }
-    },
-    {
       "id": "eom-august-2026-mp3",
       "role": "audio",
       "relationship": "owned",
@@ -69,6 +55,34 @@
       }
     },
     {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-08-31-building-a-company/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 9901488,
+      "integrity": {
+        "gitBlobSha1": "9fbb2fb1648cf1c439aefbf9ed884166c6e3b951",
+        "sha256": "32a86d74bbefbba7a1844106c8ca87abd258b595f3dc0785c83d0ebee4f0b921"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-08-31-building-a-company/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 21272,
+      "integrity": {
+        "gitBlobSha1": "0bfd5f69bb0e326355efefdbc9e23b9721f34010",
+        "sha256": "a6505e76a358ebfdfbda1105b8a38e5ae44b6d6a7f9d390ddeab48ac1d6fbb01"
+      }
+    },
+    {
       "id": "legacy-eom-august-html",
       "role": "redirect",
       "relationship": "referenced",
@@ -77,7 +91,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 672,
-      "integrity": {},
+      "integrity": {
+        "gitBlobSha1": "6dded4233d9a40d75dd91d030d8051662a870ef0",
+        "sha256": "d19a5bb977d39ff72da6b9eb5333bf2e39c36d41a09596c52617f1b74cb8ee19"
+      },
       "description": "Legacy public URL retained as an HTML redirect to the normalized report package."
     },
     {

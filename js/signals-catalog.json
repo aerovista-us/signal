@@ -4,7 +4,7 @@
     "label": "Latest EOM Signal",
     "title": "From Building Pieces to Building a Company",
     "summary": "August end-of-month briefing — an interactive portfolio report and ByteCast on the convergence of AeroVista's products, infrastructure, and operating systems.",
-    "href": "/newsletters/EOM_August_2026.html",
+    "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
     "stats": [
       {
         "value": "August 2026",
@@ -27,7 +27,7 @@
       "typeLabel": "August EOM ByteCast",
       "title": "Aug 31 — Building a Company",
       "summary": "Interactive end-of-month portfolio briefing with a 14:30 ByteCast on convergence, recoverability, and September priorities.",
-      "href": "/newsletters/EOM_August_2026.html",
+      "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
       "types": [
         "eom",
         "bytecast"
@@ -119,7 +119,7 @@
       ],
       "dateEm": "Aug 31",
       "dateYear": "2026",
-      "href": "/newsletters/EOM_August_2026.html",
+      "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
       "types": [
         "eom",
         "bytecast"
