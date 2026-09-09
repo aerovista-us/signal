@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-15",
+  "reportId": "AV-RPT-EOW-2026-06-15",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Systems Becoming Products",
+  "summary": "Weekly stakeholder edition covering AeroVista systems becoming repeatable products, with ByteCast audio and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-06-09",
+    "end": "2026-06-15"
+  },
+  "issuedAt": "2026-06-15",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "systems-becoming-products",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-15-systems-becoming-products",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 18514,
+      "integrity": {
+        "gitBlobSha1": "2d63cf6895691b45945ee7ec06cce3c03924176a"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-15"
+    }
+  ]
+}
