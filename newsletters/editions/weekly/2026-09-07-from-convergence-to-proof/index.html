@@ -35,39 +35,13 @@
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
     .source-note{font-size:.88rem!important}
 
-    .bytecast-hero-action{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .bytecast-hero-action small{color:var(--muted);font-weight:750;letter-spacing:.03em}
-    .bytecast-release{margin-top:10px;margin-bottom:30px}
-    .bytecast-player{position:relative;overflow:hidden;display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:stretch;border:1px solid rgba(103,232,249,.24);border-radius:28px;background:linear-gradient(135deg,rgba(8,18,32,.98),rgba(14,33,48,.96) 52%,rgba(11,27,34,.98));box-shadow:0 28px 80px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.02) inset;padding:24px}
-    .bytecast-player:before{content:"";position:absolute;inset:-45% auto auto -8%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(103,232,249,.16),rgba(103,232,249,.045) 38%,transparent 68%);pointer-events:none}
-    .bytecast-player:after{content:"";position:absolute;right:-150px;bottom:-240px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(114,224,156,.16);box-shadow:0 0 0 54px rgba(114,224,156,.018),0 0 0 108px rgba(103,232,249,.012);pointer-events:none}
-    .bytecast-art{position:relative;z-index:1;min-height:250px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:radial-gradient(circle at 50% 42%,rgba(103,232,249,.20),transparent 35%),linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));display:grid;place-items:center;overflow:hidden}
-    .bytecast-core{position:relative;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(103,232,249,.32);box-shadow:0 0 0 18px rgba(103,232,249,.035),0 0 0 42px rgba(114,224,156,.022),0 0 65px rgba(103,232,249,.14)}
-    .bytecast-core:before,.bytecast-core:after{content:"";position:absolute;border-radius:50%;border:1px dashed rgba(103,232,249,.20)}
-    .bytecast-core:before{inset:-28px}.bytecast-core:after{inset:-52px;border-color:rgba(114,224,156,.15)}
-    .bytecast-core strong{font-size:1.55rem;letter-spacing:-.05em}.bytecast-core span{display:block;color:var(--cyan);font-size:.68rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;text-align:center}
-    .bytecast-wave{position:absolute;left:18px;right:18px;bottom:18px;height:32px;display:flex;align-items:center;justify-content:center;gap:4px;opacity:.6}
-    .bytecast-wave i{display:block;width:3px;height:8px;border-radius:99px;background:linear-gradient(var(--cyan),var(--green));transform-origin:center;animation:bytecast-wave 1.1s ease-in-out infinite;animation-play-state:paused}
-    .bytecast-wave i:nth-child(2n){height:17px;animation-delay:-.22s}.bytecast-wave i:nth-child(3n){height:25px;animation-delay:-.48s}.bytecast-wave i:nth-child(5n){height:13px;animation-delay:-.7s}
-    .bytecast-player.is-playing .bytecast-wave i{animation-play-state:running}
-    @keyframes bytecast-wave{0%,100%{transform:scaleY(.45);opacity:.45}50%{transform:scaleY(1.35);opacity:1}}
-    .bytecast-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;min-width:0}
-    .bytecast-copy .eyebrow{color:var(--green);font-size:.72rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase}
-    .bytecast-copy h2{margin:7px 0 7px;font-size:clamp(1.7rem,4vw,2.65rem);line-height:1;letter-spacing:-.045em}
-    .bytecast-copy>p{margin:0;color:var(--muted);max-width:760px;line-height:1.6}
-    .bc-controls{display:grid;grid-template-columns:auto auto auto auto minmax(120px,1fr) auto;gap:10px;align-items:center;margin-top:22px}
-    .bc-control{display:grid;place-items:center;height:42px;min-width:42px;padding:0 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--ink);cursor:pointer;font-weight:900}
-    .bc-control:hover{border-color:rgba(103,232,249,.48);background:rgba(103,232,249,.10)}
-    .bc-control.main{width:54px;height:54px;border-color:rgba(103,232,249,.62);background:linear-gradient(135deg,rgba(103,232,249,.25),rgba(114,224,156,.14));font-size:1.1rem;box-shadow:0 0 34px rgba(103,232,249,.12)}
-    .bc-time{font:800 .78rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--soft);min-width:42px;text-align:center}
-    .bc-progress{width:100%;accent-color:var(--cyan);cursor:pointer}
-    .bc-caption{margin-top:15px;min-height:48px;padding:11px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(2,8,15,.34);color:var(--soft);font-size:.92rem;line-height:1.45}
-    .bc-caption:before{content:"CAPTIONS";display:inline-block;margin-right:9px;color:var(--cyan);font-size:.62rem;font-weight:950;letter-spacing:.13em;vertical-align:middle}
-    .bc-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
-    .bc-actions a{font-size:.82rem}
-    #bytecast-audio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-    @media(max-width:800px){.bytecast-player{grid-template-columns:1fr}.bytecast-art{min-height:190px}.bytecast-core{width:126px;height:126px}.bc-controls{grid-template-columns:auto auto auto 1fr auto}.bc-controls .bc-time:first-of-type{display:none}}
-    @media(max-width:540px){.bytecast-player{padding:16px;border-radius:22px}.bc-controls{grid-template-columns:auto auto auto;justify-content:start}.bc-progress{grid-column:1/-1}.bc-time{display:none!important}}
+    .audio-card{margin-top:26px;padding:22px;border-radius:22px;background:rgba(255,255,255,.035);border:1px solid rgba(103,232,249,.28);box-shadow:0 0 28px rgba(103,232,249,.08)}
+    .audio-title{margin:0 0 6px;color:var(--cyan);font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .audio-card h2{margin:0 0 8px;color:var(--ink);font-size:1.35rem}
+    .audio-card p{margin:0 0 16px;color:var(--muted);line-height:1.55}
+    .audio-card audio{width:100%;display:block;filter:drop-shadow(0 0 14px rgba(103,232,249,.16))}
+    .audio-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .audio-links a{font-size:.82rem}
     @media(max-width:850px){.continuity,.metrics,.moves,.risk-grid{grid-template-columns:1fr}.move:last-child,.risk:last-child{grid-column:auto}.day{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.metrics{grid-template-columns:1fr}}
   </style>
@@ -91,9 +65,19 @@
       <p class="deck">August ended with a clear operating thesis: stop measuring progress by how many pieces exist and start proving that the pieces work together. The first week of September followed that instruction. The strongest work was not expansion. It was evidence — source-of-truth accepted, commercial workflow exercised, releases gated, products made recoverable, and a staff endpoint brought under the same operating discipline.</p>
 
 
-      <div class="bytecast-hero-action">
-        <button class="btn" type="button" data-bytecast-play>▶ Play ByteCast</button>
-        <small>14:47 · plain-language companion to this report</small>
+      <div class="audio-card" id="bytecast">
+        <p class="audio-title">ByteCast · Listen to the report</p>
+        <h2>From Convergence to Proof</h2>
+        <p>14:47 plain-language audio companion for the September 1–7 EOW report.</p>
+        <audio controls preload="metadata">
+          <source src="./assets/bytecast.mp3" type="audio/mpeg" />
+          <track kind="captions" src="./bytecast.vtt" srclang="en" label="English" />
+          Your browser does not support the audio player.
+        </audio>
+        <div class="audio-links">
+          <a class="btn" href="./assets/bytecast.mp3" download>Download MP3</a>
+          <a class="btn" href="./bytecast-transcript.md">Read transcript</a>
+        </div>
       </div>
 
       <div class="continuity">
@@ -119,40 +103,6 @@
       </div>
     </section>
 
-
-    <section class="wrap bytecast-release" id="bytecast">
-      <div class="bytecast-player" id="bytecast-player">
-        <div class="bytecast-art" aria-hidden="true">
-          <div class="bytecast-core">
-            <div><span>ByteCast</span><strong>09·07</strong><span>EOW</span></div>
-          </div>
-          <div class="bytecast-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-        <div class="bytecast-copy">
-          <div class="eyebrow">Audio companion · From convergence to proof</div>
-          <h2>Listen to the week, not the engineering jargon.</h2>
-          <p>This edition explains the same verified EOW story in plain language: why the 101-service inventory matters, what a $180 draft-invoice proof actually proves, why releases need guardrails, and how “proof” becomes “repeatability.”</p>
-          <div class="bc-controls" role="group" aria-label="ByteCast audio controls">
-            <button class="bc-control" type="button" id="bc-back" aria-label="Back 15 seconds">−15</button>
-            <button class="bc-control main" type="button" id="bc-play" aria-label="Play ByteCast">▶</button>
-            <button class="bc-control" type="button" id="bc-forward" aria-label="Forward 15 seconds">+15</button>
-            <span class="bc-time" id="bc-current">0:00</span>
-            <input class="bc-progress" id="bc-progress" type="range" min="0" max="886.656" step="0.1" value="0" aria-label="ByteCast playback position">
-            <span class="bc-time" id="bc-duration">14:47</span>
-          </div>
-          <div class="bc-caption" id="bc-caption" aria-live="polite">Press play to begin the September 1–7 ByteCast.</div>
-          <div class="bc-actions">
-            <a class="btn" href="assets/bytecast.mp3" download>Download MP3</a>
-            <a class="btn" href="bytecast-transcript.md">Read transcript</a>
-            <a class="btn" href="bytecast.vtt">WebVTT captions</a>
-          </div>
-        </div>
-        <audio id="bytecast-audio" preload="metadata">
-          <source src="assets/bytecast.mp3" type="audio/mpeg">
-          <track kind="captions" src="bytecast.vtt" srclang="en" label="English" default>
-        </audio>
-      </div>
-    </section>
 
     <section class="wrap layout">
       <article class="article">
@@ -328,81 +278,7 @@
   <script src="/js/site-config.js"></script>
   <script src="/js/site-analytics.js" defer></script>
 
-  <script>
-    (() => {
-      const audio = document.getElementById('bytecast-audio');
-      const shell = document.getElementById('bytecast-player');
-      const play = document.getElementById('bc-play');
-      const back = document.getElementById('bc-back');
-      const forward = document.getElementById('bc-forward');
-      const progress = document.getElementById('bc-progress');
-      const current = document.getElementById('bc-current');
-      const duration = document.getElementById('bc-duration');
-      const caption = document.getElementById('bc-caption');
-      const heroTriggers = document.querySelectorAll('[data-bytecast-play]');
-      if (!audio || !play || !progress) return;
 
-      const clock = (value) => {
-        const total = Math.max(0, Math.floor(Number(value) || 0));
-        const mins = Math.floor(total / 60);
-        const secs = String(total % 60).padStart(2, '0');
-        return mins + ':' + secs;
-      };
-
-      const setPlayState = () => {
-        const playing = !audio.paused && !audio.ended;
-        play.textContent = playing ? '❚❚' : '▶';
-        play.setAttribute('aria-label', playing ? 'Pause ByteCast' : 'Play ByteCast');
-        shell.classList.toggle('is-playing', playing);
-        heroTriggers.forEach((button) => {
-          button.textContent = playing ? '❚❚ Pause ByteCast' : '▶ Play ByteCast';
-        });
-      };
-
-      const toggle = () => {
-        if (audio.paused) audio.play().catch(() => audio.focus());
-        else audio.pause();
-      };
-
-      play.addEventListener('click', toggle);
-      back.addEventListener('click', () => { audio.currentTime = Math.max(0, audio.currentTime - 15); });
-      forward.addEventListener('click', () => {
-        audio.currentTime = Math.min(Number.isFinite(audio.duration) ? audio.duration : 886.656, audio.currentTime + 15);
-      });
-      progress.addEventListener('input', () => { audio.currentTime = Number(progress.value); });
-      audio.addEventListener('timeupdate', () => {
-        progress.value = String(audio.currentTime);
-        current.textContent = clock(audio.currentTime);
-      });
-      audio.addEventListener('loadedmetadata', () => {
-        if (Number.isFinite(audio.duration)) {
-          progress.max = String(audio.duration);
-          duration.textContent = clock(audio.duration);
-        }
-      });
-      ['play','pause','ended'].forEach((eventName) => audio.addEventListener(eventName, setPlayState));
-
-      heroTriggers.forEach((button) => button.addEventListener('click', () => {
-        document.getElementById('bytecast').scrollIntoView({behavior:'smooth', block:'center'});
-        if (audio.paused) audio.play().catch(() => audio.focus());
-        else audio.pause();
-      }));
-
-      const activateCaptions = () => {
-        const track = audio.textTracks && audio.textTracks[0];
-        if (!track) return;
-        track.mode = 'hidden';
-        const renderCue = () => {
-          const cue = track.activeCues && track.activeCues[0];
-          caption.textContent = cue ? cue.text : (audio.paused ? 'ByteCast paused.' : 'From Convergence to Proof · September 1–7, 2026');
-        };
-        track.addEventListener('cuechange', renderCue);
-      };
-      if (audio.readyState >= 1) activateCaptions();
-      else audio.addEventListener('loadedmetadata', activateCaptions, {once:true});
-      setPlayState();
-    })();
-  </script>
 
 </body>
 </html>
