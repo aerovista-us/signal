@@ -1,0 +1,50 @@
+name: Refresh Sep 7 ByteCast package
+
+on:
+  push:
+    branches: [bytecast-eow-2026-09-07]
+    paths:
+      - "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/**"
+      - "registry/**"
+      - ".github/workflows/eow-bytecast-refresh.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal-bytecast-eow-2026-09-07
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: bytecast-eow-2026-09-07
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh Registry v2 manifests
+        run: python scripts/registry_v2.py refresh
+      - name: Run Registry v2 regression tests
+        run: python scripts/test_registry_v2.py
+      - name: Verify final supplied MP3
+        run: |
+          test -s newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3
+          test "$(wc -c < newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3)" = "10046304"
+      - name: Commit generated registry state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/records registry/indexes js/signals-catalog.json
+          if git diff --cached --quiet; then
+            echo "Registry already fresh."
+          else
+            git commit -m "Registry: refresh Sep 7 ByteCast package manifests"
+            git pull --rebase origin bytecast-eow-2026-09-07
+            git push origin HEAD:bytecast-eow-2026-09-07
+          fi
