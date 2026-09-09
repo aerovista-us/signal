@@ -18,6 +18,9 @@
   ],
   "formats": [
     "interactive-html",
+    "bytecast",
+    "transcript",
+    "webvtt-captions",
     "evidence-ledger"
   ],
   "period": {
@@ -37,7 +40,10 @@
     "release-governance",
     "phase",
     "rydesync",
-    "internal-signal"
+    "internal-signal",
+    "bytecast",
+    "plain-language",
+    "audio-companion"
   ],
   "package": {
     "mode": "directory",
