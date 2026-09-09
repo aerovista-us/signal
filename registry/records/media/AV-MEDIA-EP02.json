@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-MEDIA-EP02",
+  "contentClass": "media",
+  "title": "EP02 Image Asset",
+  "summary": "Standalone EP02 publication image asset preserved under the Signal publications tree.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "public"
+  ],
+  "formats": [
+    "png"
+  ],
+  "issuedAt": "2026-05-23",
+  "canonicalUrl": "https://thesignal.aerovista.us/publications/ep02/ep02.png",
+  "canonicalPath": "publications/ep02/ep02.png",
+  "tags": [
+    "ep02",
+    "image",
+    "publication-asset"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "publications/ep02",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-image",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/ep02/ep02.png",
+      "name": "ep02.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2432376,
+      "integrity": {
+        "gitBlobSha1": "73e1ff194b6552c143f48c64a9073972b5cdbfea"
+      }
+    }
+  ],
+  "references": []
+}
