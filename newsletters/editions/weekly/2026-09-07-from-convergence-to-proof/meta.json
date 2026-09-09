@@ -1,0 +1,32 @@
+{
+  "reportId": "AV-RPT-EOW-2026-09-07",
+  "title": "From Convergence to Proof",
+  "reportClass": "eow",
+  "period": {
+    "start": "2026-09-01",
+    "end": "2026-09-07"
+  },
+  "issuedAt": "2026-09-08",
+  "status": "final",
+  "audience": [
+    "internal",
+    "executive",
+    "operations",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "arc": {
+    "previous": "From Building Pieces to Building a Company",
+    "current": "From Convergence to Proof",
+    "next": "Proof to Repeatability"
+  },
+  "thesis": "The first week of September converted August's convergence thesis into operating evidence across commercial workflow, source control, release governance, productization, creative distribution, and staff endpoint operations.",
+  "keyProofs": [
+    "101-container fleet baseline reconciled",
+    "$180 replay-safe non-charging AVCC Draft Invoice proof",
+    "AVCC identity/access backend regression 230/230",
+    "Phase 0.12.8 local-first workstation foundation"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/"
+}
