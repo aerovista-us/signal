@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-WAR-LOOP",
+  "contentClass": "publication",
+  "publicationClass": "research-publication",
+  "title": "The Borrowed War Loop",
+  "summary": "Publication package containing The Borrowed War Loop PDF, magazine and briefing surfaces, teaser media, and supporting publication metadata. Existing package metadata appears partially inherited from VXP-MR-01 and remains flagged for reconciliation.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "advisor"
+  ],
+  "formats": [
+    "pdf",
+    "interactive-html",
+    "video"
+  ],
+  "issuedAt": "2026-06-16",
+  "canonicalUrl": "https://thesignal.aerovista.us/publications/warLOOP/magazine.html",
+  "canonicalPath": "publications/warLOOP/magazine.html",
+  "tags": [
+    "war-loop",
+    "publication",
+    "research",
+    "vespera",
+    "metadata-review"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "publications/warLOOP",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/warLOOP/magazine.html",
+      "name": "magazine.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 13249,
+      "integrity": {
+        "gitBlobSha1": "437c1b029d3835f03129eae924a7a45ef6a2a42e"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "metadata-review-note",
+      "value": "vespera_publication_meta.yaml",
+      "description": "Metadata appears inherited from VXP-MR-01 and should be reconciled before final status."
+    }
+  ]
+}
