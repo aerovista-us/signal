@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "2.0",
+  "count": 3,
+  "records": [
+    {
+      "id": "AV-RPT-EOM-2026-08",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "From Building Pieces to Building a Company",
+      "status": "final",
+      "issuedAt": "2026-09-03",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-31"
+      },
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/EOM_August_2026.html",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-08.json"
+    },
+    {
+      "id": "AV-RPT-EOM-2026-07",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "July Convergence",
+      "status": "final",
+      "issuedAt": "2026-08-02",
+      "period": {
+        "start": "2026-07-01",
+        "end": "2026-07-31"
+      },
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-07-31-july-convergence/",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-07.json"
+    },
+    {
+      "id": "AV-RPT-EOD-2026-07-05",
+      "contentClass": "report",
+      "reportClass": "eod",
+      "title": "Overall Company Status Signal",
+      "status": "final",
+      "issuedAt": "2026-07-05",
+      "period": {
+        "start": "2026-07-05",
+        "end": "2026-07-05"
+      },
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/",
+      "recordPath": "registry/records/reports/AV-RPT-EOD-2026-07-05.json"
+    }
+  ],
+  "contentClass": "report"
+}
