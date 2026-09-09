@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "reportId": "AV-RPT-EOW-2026-09-07",
+  "claimPolicy": "Prefer canonical GitHub/runtime/handoff evidence over older summaries. Planned, draft, disabled, or unverified work is not represented as complete.",
+  "sources": [
+    {
+      "type": "signal",
+      "name": "August 2026 EOM — From Building Pieces to Building a Company",
+      "use": "Narrative continuity: convergence, completion over expansion, recoverability, end-to-end proof."
+    },
+    {
+      "type": "work-log",
+      "name": "aerovista-work-log-merged-2026-09-04-r8.json",
+      "use": "Fleet baseline, source-provenance boundary, Sep 1-4 portfolio reconciliation."
+    },
+    {
+      "type": "work-log",
+      "name": "work-log.refreshed-2026-09-05.json",
+      "use": "Sep 5 canonical GitHub/runtime reconciliation for AVCC, RydeSync, EchoVerse, Catalog Console and Phase."
+    },
+    {
+      "type": "handoff",
+      "name": "01_AVCC_COMMERCIAL_WORKFLOW_HANDOFF.md",
+      "use": "Accepted AVCC lifecycle: 60-min work + follow-up note + 30-min work → approvals → two billing entries → one $180 non-charging Draft Invoice."
+    },
+    {
+      "type": "handoff",
+      "name": "00_MASTER_HANDOFF_INDEX.md / AVCC UI & Identity handoffs",
+      "use": "Sep 7 governed AVCC production promotion c908195c and rollback snapshot 20260907_105957."
+    },
+    {
+      "type": "handoff",
+      "name": "AeroVista-Staff-PC-Provisioning-Handoff.md",
+      "use": "Sep 7 AV-STAFF-ALEAH-01 Tailscale/OpenSSH/update/provisioning proof."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/nxcore",
+      "commits": [
+        "60655fc6aaa3f588ad83d9d6a066caef2498d341",
+        "21999e4b966322ab38ea4f5f5bb889e34d9ba659"
+      ],
+      "use": "Canonical Traefik runtime and guarded RydeSync deploy contract."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/RydeSync",
+      "commits": [
+        "d13910b17ae5b47c9734e54d019d00165f7f2dba",
+        "c44fcd6f8de603515805564240a5b8b04b69d585"
+      ],
+      "use": "Accepted Alpha.7 synchronized to main; current canonical production line."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/ACOS",
+      "commits": [
+        "dd95634513069bf350dd47876b926c1cb40ce916",
+        "ef2367d50158ff863472f909320c494729c9b895",
+        "5ed4ec3b57847e0a534a7ecf647748177c752f9a",
+        "c908195c12a15d198082857c84d111f15a0b4da8"
+      ],
+      "use": "Commercial vertical slice, production workflow, identity/access hardening, operator UI."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/workspaces",
+      "commits": [
+        "2bfd7fdfe547cc175067a5c30fc53b3c9bca21df"
+      ],
+      "use": "EchoVerse synthetic release regression and tool consolidation."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/aerovista-catalog-console",
+      "commits": [
+        "c5c6f417923f9a98da69cd76211ad51e46f08596",
+        "5c513e9513a2cc8dae5fe2eaa88048c7f844eae0"
+      ],
+      "use": "Catalog Control + AVCC SSO and Time Circuit destination registration."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/northline",
+      "commits": [
+        "4c48efe1cc4155a782a4135470ae4d2edfd33823"
+      ],
+      "use": "AeroCore analytics/replays/heatmaps instrumentation; ingestion remained unverified."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/time-circuit",
+      "commits": [
+        "7a0d7950a929114b4b39621ecac219f34c6abd21",
+        "38b916c3ed16d7e4bcf9c3e78bcbed54b136c0c1"
+      ],
+      "use": "Playlist/analyzer toolkit and canonical Future's Past store manifest."
+    },
+    {
+      "type": "github",
+      "repository": "aerovista-us/phase",
+      "ref": "Phase 0.12.8 foundation by Sep 7",
+      "use": "Local-first workstation productization, recovery, packaging, stems, preflight, test-gated Pages, browser/offline proof."
+    }
+  ],
+  "openBoundaries": [
+    "AVCC live role/directory/NXCal/deprovision acceptance should be explicitly closed.",
+    "RydeSync real-device product acceptance remains.",
+    "Northline analytics ingestion and production checkout remain unverified/disabled.",
+    "Time Circuit checkout remains fail-closed pending canonical NXCore Commerce authority.",
+    "42 distinct non-remote deploy directories still require canonical-source classification.",
+    "Phase 1.0 still requires separation-service provisioning, deeper browser QA, profiling and release cleanup."
+  ]
+}
