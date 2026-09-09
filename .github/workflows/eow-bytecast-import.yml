@@ -1,0 +1,48 @@
+name: Import Sep 7 EOW ByteCast audio
+
+on:
+  push:
+    branches: [bytecast-eow-2026-09-07]
+    paths:
+      - ".github/workflows/eow-bytecast-import.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal-eow-bytecast-import
+  cancel-in-progress: false
+
+jobs:
+  import-audio:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: bytecast-eow-2026-09-07
+          fetch-depth: 0
+      - name: Download and verify supplied ByteCast
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets
+          curl --fail --location --retry 3 \
+            "https://d2ol7oe51mr4n9.cloudfront.net/user_3EZxYiYAQvApUgvDJfc9s9rjbqI/00caeace-54a6-4e80-a62b-2aee7cfadb4c.mp3" \
+            --output newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3
+          test "$(stat -c%s newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3)" = "10046304"
+          echo "09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071  newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3" | sha256sum --check
+      - name: Commit supplied ByteCast into the report package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3
+          if git diff --cached --quiet; then
+            echo "Audio already imported."
+          else
+            git commit -m "Signal: add Sep 7 EOW ByteCast audio"
+            git push origin HEAD:bytecast-eow-2026-09-07
+          fi
