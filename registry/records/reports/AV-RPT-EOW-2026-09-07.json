@@ -18,7 +18,10 @@
   ],
   "formats": [
     "interactive-html",
-    "evidence-ledger"
+    "evidence-ledger",
+    "bytecast",
+    "themed-audio-player",
+    "plain-text-transcript"
   ],
   "period": {
     "start": "2026-09-01",
@@ -37,7 +40,10 @@
     "release-governance",
     "phase",
     "rydesync",
-    "internal-signal"
+    "internal-signal",
+    "bytecast",
+    "nontechnical",
+    "audio-edition"
   ],
   "package": {
     "mode": "directory",
@@ -47,6 +53,48 @@
   },
   "supersedes": null,
   "files": [
+    {
+      "id": "assets-eow-9-7-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/eow-9.7.mp3",
+      "name": "eow-9.7.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 10046304,
+      "integrity": {
+        "gitBlobSha1": "819bdbc5abf27fbef393f3085bc408dba75a6579",
+        "sha256": "09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071"
+      }
+    },
+    {
+      "id": "bytecast-transcript-txt",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast-transcript.txt",
+      "name": "bytecast-transcript.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 14688,
+      "integrity": {
+        "gitBlobSha1": "1f7e0520091362a6259177814d5dbed3d59523e2",
+        "sha256": "0e17bb135f0004acfcee8d18f76035883afbed580914cb3d6859b36e27e2c566"
+      }
+    },
+    {
+      "id": "bytecast-html",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html",
+      "name": "bytecast.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 21145,
+      "integrity": {
+        "gitBlobSha1": "45b95f2ee87888b7723cc9e8098f49566f91d7ee",
+        "sha256": "3e98aecfacb64e3ae482a7b15210cf7b560f64786a748b698894b00fbd4fa608"
+      }
+    },
     {
       "id": "evidence-json",
       "role": "data",
@@ -69,10 +117,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 22261,
+      "sizeBytes": 22522,
       "integrity": {
-        "gitBlobSha1": "4a31f44038d666682549b49bb8229444c3a118ad",
-        "sha256": "60163a6da531facd65672b5664d76af97d3a2be1884553bb2ce1cc18ad710f58"
+        "gitBlobSha1": "68ae5242f5a589336f99f9b3463a606c3cd96e88",
+        "sha256": "456bbf788cdf89fd2e7d562804127f060eaf3f7058ec2913e6f3d5ed6c391dae"
       }
     },
     {
@@ -83,10 +131,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 1103,
+      "sizeBytes": 1517,
       "integrity": {
-        "gitBlobSha1": "bad1715fd2234dc946dfac553aa6db9fa12e9a49",
-        "sha256": "eda74d9b64107d74b6530ec124fb1b43fed97869455ca1324ebc3bbae371c348"
+        "gitBlobSha1": "38fa0b6b9f7a1e19f4d6294a80449a1adfccaf39",
+        "sha256": "9d4f1c26659aedcd0c90cca9db17a4c5024b1fe23cda1f8121926d67f9df87af"
       }
     }
   ],
@@ -115,6 +163,11 @@
     {
       "type": "git-evidence",
       "value": "aerovista-us/workspaces@2bfd7fdfe547cc175067a5c30fc53b3c9bca21df"
+    },
+    {
+      "type": "source-media-import",
+      "value": "higgsfield:bf838ff7-096b-40ae-b625-58d259d5832b",
+      "description": "Original uploaded eow-9.7.mp3 imported into the owned report package; SHA-256 09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071."
     }
   ]
 }

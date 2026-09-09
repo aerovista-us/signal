@@ -23,20 +23,34 @@
         "label": "Phase foundation"
       }
     ],
-    "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal"
+    "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast nontechnical audio-edition"
   },
   "now": [
     {
       "id": "weekly-2026-09-07",
       "typeLabel": "Latest EOW",
       "title": "Sep 7 — From Convergence to Proof",
-      "summary": "Formal internal EOW: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
+      "summary": "Formal EOW plus a 14:46 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, creative distribution, and endpoint operations.",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
+        "bytecast",
         "eow",
         "internal"
       ],
-      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal"
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast nontechnical audio-edition"
+    },
+    {
+      "id": "bytecast-2026-09-07",
+      "typeLabel": "Latest ByteCast",
+      "title": "From Convergence to Proof — Audio Edition",
+      "summary": "A 14:46 nontechnical guide to the September 1–7 EOW: what changed, why it matters, what was proven, and what must become repeatable.",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "types": [
+        "bytecast",
+        "eow",
+        "internal"
+      ],
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast nontechnical audio-edition"
     },
     {
       "id": "eom-2026-08-31-building-a-company",
@@ -131,17 +145,47 @@
         {
           "type": "milestone",
           "label": "Internal"
+        },
+        {
+          "type": "bytecast",
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 7",
       "dateYear": "2026",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "types": [
+        "bytecast",
         "eow",
         "internal"
       ],
-      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal",
-      "summary": "September 1–7 formal EOW — the first week of September turned August's convergence thesis into operating evidence and clearer acceptance gates."
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast nontechnical audio-edition",
+      "summary": "September 1–7 formal EOW with a 14:46 nontechnical ByteCast — operating evidence, business meaning, open acceptance gates, and the path from proof to repeatability."
+    },
+    {
+      "id": "bytecast-2026-09-07",
+      "section": "bytecast",
+      "title": "From Convergence to Proof",
+      "badges": [
+        {
+          "type": "bytecast",
+          "label": "ByteCast"
+        },
+        {
+          "type": "eow",
+          "label": "EOW"
+        }
+      ],
+      "dateEm": "Sep 7",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "types": [
+        "bytecast",
+        "eow",
+        "internal"
+      ],
+      "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast nontechnical audio-edition",
+      "summary": "14:46 plain-language audio edition — the business meaning behind AVCC proof, controlled releases, Phase productization, shared creative infrastructure, and endpoint operations."
     },
     {
       "id": "eom-2026-08-31-building-a-company",

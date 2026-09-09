@@ -39,7 +39,10 @@
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
       "formats": [
         "interactive-html",
-        "evidence-ledger"
+        "evidence-ledger",
+        "bytecast",
+        "themed-audio-player",
+        "plain-text-transcript"
       ],
       "audience": [
         "internal",
@@ -49,7 +52,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 3
+      "fileCount": 6
     },
     {
       "id": "AV-RPT-EOM-2026-08",
