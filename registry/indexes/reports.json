@@ -43,8 +43,8 @@
         "start": "2026-08-01",
         "end": "2026-08-14"
       },
-      "canonicalPath": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "canonicalPath": "newsletters/editions/mtd/2026-08-14-machine-taking-shape/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/mtd/2026-08-14-machine-taking-shape/",
       "formats": [
         "interactive-html",
         "embedded-bytecast"
@@ -54,7 +54,7 @@
         "executive",
         "stakeholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-RPT-EOM-2026-07",
