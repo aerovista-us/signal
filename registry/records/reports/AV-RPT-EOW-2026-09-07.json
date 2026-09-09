@@ -54,6 +54,48 @@
   "supersedes": null,
   "files": [
     {
+      "id": "assets-bytecast-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/bytecast.mp3",
+      "name": "bytecast.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 10046304,
+      "integrity": {
+        "gitBlobSha1": "819bdbc5abf27fbef393f3085bc408dba75a6579",
+        "sha256": "09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071"
+      }
+    },
+    {
+      "id": "bytecast-transcript-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast-transcript.md",
+      "name": "bytecast-transcript.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 14748,
+      "integrity": {
+        "gitBlobSha1": "a584f2fba82018e34b545a0db4327699f2234dd8",
+        "sha256": "84380cec35b4a1c295449fcb039ef896734dc5ebc20362d1d7f6b8fbdf88d86c"
+      }
+    },
+    {
+      "id": "bytecast-vtt",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.vtt",
+      "name": "bytecast.vtt",
+      "fileType": "vtt",
+      "mediaType": "text/vtt",
+      "sizeBytes": 18415,
+      "integrity": {
+        "gitBlobSha1": "030fc2b0cf935957e473310a98969c42a6faa40a",
+        "sha256": "2f2c2028171857afa66c09705be84de2399c209331caae97c032bd791963569c"
+      }
+    },
+    {
       "id": "evidence-json",
       "role": "data",
       "relationship": "owned",
@@ -75,10 +117,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 22261,
+      "sizeBytes": 33573,
       "integrity": {
-        "gitBlobSha1": "4a31f44038d666682549b49bb8229444c3a118ad",
-        "sha256": "60163a6da531facd65672b5664d76af97d3a2be1884553bb2ce1cc18ad710f58"
+        "gitBlobSha1": "23acd806a31acece73b3d8e564bd6287eb6c3e41",
+        "sha256": "6e4c4ecc997114be2cdc81e10f872e0dc90e181d16415740df21a568902c91a8"
       }
     },
     {
@@ -89,10 +131,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 1103,
+      "sizeBytes": 1467,
       "integrity": {
-        "gitBlobSha1": "bad1715fd2234dc946dfac553aa6db9fa12e9a49",
-        "sha256": "eda74d9b64107d74b6530ec124fb1b43fed97869455ca1324ebc3bbae371c348"
+        "gitBlobSha1": "23af04c5799d98f11389070ef49535ac10a0b51e",
+        "sha256": "c690d9c9232e56c827f9bef7b84039293b6a6cb8b8a7c32ee109c48336144edc"
       }
     }
   ],
