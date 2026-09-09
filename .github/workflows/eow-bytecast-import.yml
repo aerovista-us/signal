@@ -1,0 +1,166 @@
+name: Import Sep 7 ByteCast audio
+
+on:
+  push:
+    branches: [eow-2026-09-07-bytecast]
+    paths:
+      - "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/**"
+      - ".github/workflows/eow-bytecast-import.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal-eow-2026-09-07-bytecast-import
+  cancel-in-progress: false
+
+jobs:
+  import-bytecast:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: eow-2026-09-07-bytecast
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download and verify canonical audio
+        env:
+          AUDIO_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3EZxYiYAQvApUgvDJfc9s9rjbqI/bf838ff7-096b-40ae-b625-58d259d5832b.mp3
+          AUDIO_SHA256: 09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071
+        run: |
+          set -euo pipefail
+          mkdir -p newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets
+          curl -fL --retry 4 --retry-delay 2 "$AUDIO_URL" -o newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/eow-9.7.mp3
+          echo "$AUDIO_SHA256  newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/eow-9.7.mp3" | sha256sum -c -
+          test "$(stat -c%s newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/assets/eow-9.7.mp3)" = "10046304"
+
+      - name: Wire report, metadata, registry, and Internal Signals
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('newsletters/editions/weekly/2026-09-07-from-convergence-to-proof')
+
+          report = root / 'index.html'
+          html = report.read_text(encoding='utf-8')
+          marker = '''      <div class="coverline">
+                  <span>Commercial proof</span><span>Source discipline</span><span>Release gates</span><span>Productization</span><span>Endpoint operations</span>
+                </div>
+              </section>'''
+          callout = '''      <div class="coverline">
+                  <span>Commercial proof</span><span>Source discipline</span><span>Release gates</span><span>Productization</span><span>Endpoint operations</span>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+                  <a class="btn" href="./bytecast.html">Listen to the ByteCast · 14:46</a>
+                  <a class="btn" href="./bytecast-transcript.txt">Read the nontechnical transcript</a>
+                </div>
+              </section>'''
+          if 'Listen to the ByteCast · 14:46' not in html:
+              if marker not in html:
+                  raise SystemExit('EOW report insertion marker not found')
+              html = html.replace(marker, callout, 1)
+              report.write_text(html, encoding='utf-8')
+
+          meta_path = root / 'meta.json'
+          meta = json.loads(meta_path.read_text(encoding='utf-8'))
+          meta['bytecast'] = {
+              'title': 'From Convergence to Proof',
+              'audienceStyle': 'nontechnical',
+              'player': 'bytecast.html',
+              'audio': 'assets/eow-9.7.mp3',
+              'transcript': 'bytecast-transcript.txt',
+              'durationSeconds': 886.656,
+              'durationDisplay': '14:46',
+              'mediaType': 'audio/mpeg',
+              'sizeBytes': 10046304,
+              'sha256': '09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071'
+          }
+          meta_path.write_text(json.dumps(meta, indent=2) + '\n', encoding='utf-8')
+
+          record_path = Path('registry/records/reports/AV-RPT-EOW-2026-09-07.json')
+          record = json.loads(record_path.read_text(encoding='utf-8'))
+          for fmt in ['bytecast', 'themed-audio-player', 'plain-text-transcript']:
+              if fmt not in record['formats']:
+                  record['formats'].append(fmt)
+          for tag in ['bytecast', 'nontechnical', 'audio-edition']:
+              if tag not in record['tags']:
+                  record['tags'].append(tag)
+          media_ref = {
+              'type': 'source-media-import',
+              'value': 'higgsfield:bf838ff7-096b-40ae-b625-58d259d5832b',
+              'description': 'Original uploaded eow-9.7.mp3 imported into the owned report package; SHA-256 09e3b9d35a573b700535b55bddcdd6d89ba594aec0fd39a351a53bc0ab770071.'
+          }
+          if not any(x.get('type') == media_ref['type'] for x in record.get('references', [])):
+              record.setdefault('references', []).append(media_ref)
+          record_path.write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
+
+          catalog_path = Path('registry/presentation/signals-catalog.json')
+          catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+
+          report_now = next((x for x in catalog.get('now', []) if x.get('id') == 'weekly-2026-09-07'), None)
+          if report_now:
+              report_now['types'] = sorted(set(report_now.get('types', []) + ['bytecast']))
+              report_now['summary'] = 'Formal EOW plus a 14:46 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, creative distribution, and endpoint operations.'
+
+          bytecast_now = {
+              'id': 'bytecast-2026-09-07',
+              'typeLabel': 'Latest ByteCast',
+              'title': 'From Convergence to Proof — Audio Edition',
+              'summary': 'A 14:46 nontechnical guide to the September 1–7 EOW: what changed, why it matters, what was proven, and what must become repeatable.',
+              'href': '/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html',
+              'types': ['bytecast', 'eow', 'internal'],
+              'tags': ['september 7 2026 bytecast nontechnical convergence proof repeatability avcc phase rydesync audio'],
+              'recordId': 'AV-RPT-EOW-2026-09-07'
+          }
+          catalog['now'] = [x for x in catalog.get('now', []) if x.get('id') != bytecast_now['id']]
+          catalog['now'].insert(1 if catalog['now'] else 0, bytecast_now)
+
+          weekly = next((x for x in catalog.get('editions', []) if x.get('id') == 'weekly-2026-09-07'), None)
+          if weekly:
+              if not any(b.get('type') == 'bytecast' for b in weekly.get('badges', [])):
+                  weekly.setdefault('badges', []).append({'type': 'bytecast', 'label': 'ByteCast'})
+              weekly['types'] = sorted(set(weekly.get('types', []) + ['bytecast']))
+              weekly['summary'] = 'September 1–7 formal EOW with a 14:46 nontechnical ByteCast — operating evidence, business meaning, open acceptance gates, and the path from proof to repeatability.'
+
+          bytecast_edition = {
+              'id': 'bytecast-2026-09-07',
+              'section': 'bytecast',
+              'title': 'From Convergence to Proof',
+              'badges': [{'type': 'bytecast', 'label': 'ByteCast'}, {'type': 'eow', 'label': 'EOW'}],
+              'dateEm': 'Sep 7',
+              'dateYear': '2026',
+              'href': '/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html',
+              'types': ['bytecast', 'eow', 'internal'],
+              'tags': ['september 2026 eow bytecast nontechnical convergence proof repeatability audio player transcript'],
+              'summary': '14:46 plain-language audio edition — the business meaning behind AVCC proof, controlled releases, Phase productization, shared creative infrastructure, and endpoint operations.',
+              'recordId': 'AV-RPT-EOW-2026-09-07'
+          }
+          catalog['editions'] = [x for x in catalog.get('editions', []) if x.get('id') != bytecast_edition['id']]
+          insert_at = 1 if catalog['editions'] else 0
+          catalog['editions'].insert(insert_at, bytecast_edition)
+          catalog_path.write_text(json.dumps(catalog, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Refresh and validate Registry v2
+        run: |
+          python scripts/registry_v2.py refresh
+          python scripts/test_registry_v2.py
+          python scripts/registry_v2.py validate
+
+      - name: Commit canonical ByteCast package
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/eow-bytecast-import.yml
+          git add newsletters/editions/weekly/2026-09-07-from-convergence-to-proof registry/records registry/indexes registry/presentation/signals-catalog.json js/signals-catalog.json
+          git commit -m "Publish Sep 7 EOW ByteCast player and canonical audio"
+          git pull --rebase origin eow-2026-09-07-bytecast
+          git push origin HEAD:eow-2026-09-07-bytecast
