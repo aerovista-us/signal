@@ -46,7 +46,50 @@
     "portable": true
   },
   "supersedes": null,
-  "files": [],
+  "files": [
+    {
+      "id": "evidence-json",
+      "role": "data",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/evidence.json",
+      "name": "evidence.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 4493,
+      "integrity": {
+        "gitBlobSha1": "4e9cae0deb0658a05a1b4bccbc8708b709d114ad",
+        "sha256": "97bcf08e3c3d0d6cd8a7b47e5d8e9245018b43498e0203da66c03a95ade8f314"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22267,
+      "integrity": {
+        "gitBlobSha1": "67596b4133c2647abfa01a0a1da88e6243e921d0",
+        "sha256": "d06469eae061cdc6c9f83118d856fef45398c264b0f22c8155844f1719ebb56b"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 1103,
+      "integrity": {
+        "gitBlobSha1": "bad1715fd2234dc946dfac553aa6db9fa12e9a49",
+        "sha256": "eda74d9b64107d74b6530ec124fb1b43fed97869455ca1324ebc3bbae371c348"
+      }
+    }
+  ],
   "references": [
     {
       "type": "narrative-predecessor",
