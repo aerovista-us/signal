@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+  "reportId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+  "contentClass": "report",
+  "reportClass": "milestone",
+  "title": "EchoVerse Audio Intelligence",
+  "summary": "EchoVerse platform milestone covering drop-to-catalog, ByteTag, analysis writeback, Edit handoff, ByteCast audio, transcript, and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "transcript",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-06-16",
+    "end": "2026-06-16"
+  },
+  "issuedAt": "2026-06-16",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/milestone/2026-06-16-echoverse/",
+  "canonicalPath": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
+  "tags": [
+    "june-2026",
+    "milestone",
+    "echoverse",
+    "audio-intelligence",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/milestone/2026-06-16-echoverse",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 33231,
+      "integrity": {
+        "gitBlobSha1": "dbb46a24e9aafbba4f5f199dc6903d9c62229d29"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "milestone-2026-06-16"
+    }
+  ]
+}
