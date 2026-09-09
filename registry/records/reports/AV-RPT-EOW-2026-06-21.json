@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-21",
+  "reportId": "AV-RPT-EOW-2026-06-21",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "A Better Machine",
+  "summary": "Weekly EOW report on operating pressure, repeatable loops, cleaner offers, and product execution with audio and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-06-16",
+    "end": "2026-06-21"
+  },
+  "issuedAt": "2026-06-21",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-21-better-machine/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "better-machine",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-21-better-machine",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 25064,
+      "integrity": {
+        "gitBlobSha1": "a747f4490bc5b14d48540d8a1f1e4b763b004e72"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-21"
+    }
+  ]
+}
