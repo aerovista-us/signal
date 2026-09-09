@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-WAR-LOOP",
+  "contentClass": "publication",
+  "publicationClass": "research-publication",
+  "title": "The Borrowed War Loop",
+  "summary": "Publication package containing The Borrowed War Loop PDF, magazine and briefing surfaces, teaser media, and supporting publication metadata. Existing package metadata appears partially inherited from VXP-MR-01 and remains flagged for reconciliation.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "advisor"
+  ],
+  "formats": [
+    "pdf",
+    "interactive-html",
+    "video"
+  ],
+  "issuedAt": "2026-06-16",
+  "canonicalUrl": "https://thesignal.aerovista.us/publications/warLOOP/magazine.html",
+  "canonicalPath": "publications/warLOOP/magazine.html",
+  "tags": [
+    "war-loop",
+    "publication",
+    "research",
+    "vespera",
+    "metadata-review"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "publications/warLOOP",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "the-borrowed-war-loop-pdf",
+      "role": "document",
+      "relationship": "owned",
+      "path": "publications/warLOOP/The Borrowed War Loop.pdf",
+      "name": "The Borrowed War Loop.pdf",
+      "fileType": "pdf",
+      "mediaType": "application/pdf",
+      "sizeBytes": 2434652,
+      "integrity": {
+        "gitBlobSha1": "6173390b3c0ef3a836985924eb10296d0d3f390b",
+        "sha256": "af3131fba58999f1dbf7a58c587a0a415bf670ab34fb53a2c8bfca1db6c6d499"
+      }
+    },
+    {
+      "id": "magazine-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/warLOOP/magazine.html",
+      "name": "magazine.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 13249,
+      "integrity": {
+        "gitBlobSha1": "437c1b029d3835f03129eae924a7a45ef6a2a42e",
+        "sha256": "bd25d1fb120ad36f4572e31a3d55c0d1c2515f13cb34e8b58fac1be19800f488"
+      }
+    },
+    {
+      "id": "magazine-mjs",
+      "role": "script",
+      "relationship": "owned",
+      "path": "publications/warLOOP/magazine.mjs",
+      "name": "magazine.mjs",
+      "fileType": "mjs",
+      "mediaType": "text/javascript",
+      "sizeBytes": 15542,
+      "integrity": {
+        "gitBlobSha1": "c2a0e298232016a163753d6ee49307933343bffd",
+        "sha256": "58d0fcd5fb755e76e6972f4aa9c72e21bdadbc2ca2c8bf1820f2ac3b640aaec9"
+      }
+    },
+    {
+      "id": "media-brief-teaser-mp4",
+      "role": "video",
+      "relationship": "owned",
+      "path": "publications/warLOOP/media/brief-teaser.mp4",
+      "name": "brief-teaser.mp4",
+      "fileType": "mp4",
+      "mediaType": "video/mp4",
+      "sizeBytes": 6963184,
+      "integrity": {
+        "gitBlobSha1": "31420078cf01ec9090415933a4e2640be9a83bf7",
+        "sha256": "2e6d47bba2ae80ddf9c8e16c888316f15c065804d26778857928bcc1b1477cce"
+      }
+    },
+    {
+      "id": "micro-infographic-pack-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/warLOOP/micro_infographic_pack.md",
+      "name": "micro_infographic_pack.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 604,
+      "integrity": {
+        "gitBlobSha1": "9be707299453e4033d2ec48972a3942675e9e714",
+        "sha256": "49b89b5035f26052b64a28fa5c419fdb9cbb4cbff8f99f83e4c7b567c8154de3"
+      }
+    },
+    {
+      "id": "pages-readme-txt",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "publications/warLOOP/pages/README.txt",
+      "name": "README.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 1397,
+      "integrity": {
+        "gitBlobSha1": "70c8ebaedb18f2c0773127846a1a577139595b98",
+        "sha256": "fd16ef5d8aaeddf05174e21e65749338ca24a31309b898209b57460082fdf388"
+      }
+    },
+    {
+      "id": "pages-manifest-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "publications/warLOOP/pages-manifest.json",
+      "name": "pages-manifest.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 467,
+      "integrity": {
+        "gitBlobSha1": "c2a8ac14e8344f9f34aea7431c4c7e7afbb4e21b",
+        "sha256": "f9b7fd699701257fe56d63c59480d67bb5153e3be8b53aa2a38691220cd680ca"
+      }
+    },
+    {
+      "id": "scripts-pull-page-flip-ps1",
+      "role": "script",
+      "relationship": "owned",
+      "path": "publications/warLOOP/scripts/pull-page-flip.ps1",
+      "name": "pull-page-flip.ps1",
+      "fileType": "ps1",
+      "mediaType": "application/octet-stream",
+      "sizeBytes": 508,
+      "integrity": {
+        "gitBlobSha1": "6d886334209813739b51272236fe2e59c6eaa222",
+        "sha256": "9231d1bd107a18a2c557717c28d6744e5c08c8d10d2a5db2f71b3bcfe5efbe8f"
+      }
+    },
+    {
+      "id": "signals-briefing-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/warLOOP/signals_briefing.html",
+      "name": "signals_briefing.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 19161,
+      "integrity": {
+        "gitBlobSha1": "527da1dc55e865905d8eece16e2939a4b658e9b1",
+        "sha256": "05261ed259185f321d02bd873698d88da5d1532150ab4944e5def2bc99c0fbda"
+      }
+    },
+    {
+      "id": "vendor-readme-txt",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "publications/warLOOP/vendor/README.txt",
+      "name": "README.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 675,
+      "integrity": {
+        "gitBlobSha1": "8f93d66034387b4f4510b098c2806c5ae8c61528",
+        "sha256": "5c40f1b3a493da3d79e5f3c4f069c8f854cdc4683ea6073f0f9838cf99f2d7e3"
+      }
+    },
+    {
+      "id": "vespera-publication-meta-yaml",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "publications/warLOOP/vespera_publication_meta.yaml",
+      "name": "vespera_publication_meta.yaml",
+      "fileType": "yaml",
+      "mediaType": "application/yaml",
+      "sizeBytes": 1653,
+      "integrity": {
+        "gitBlobSha1": "12233c831b20b877274a2ab75f193d2ed0c6d0af",
+        "sha256": "14b6eb570395cdd58a9c6c7bae2fd413ddaef1e4917ae9e0e8cdd282e7a2bf1e"
+      }
+    },
+    {
+      "id": "vespera-toc-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/warLOOP/vespera_toc.md",
+      "name": "vespera_toc.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 736,
+      "integrity": {
+        "gitBlobSha1": "d993b3add25124de434a211583f568b51b595c86",
+        "sha256": "6b98e2042017abf5c6bc150edb705e40cf080d89ec90cfb1962ead7e4d3bfb4e"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "metadata-review-note",
+      "value": "vespera_publication_meta.yaml",
+      "description": "Metadata appears inherited from VXP-MR-01 and should be reconciled before final status."
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-SHAREHOLDER-2026-07-08",
+  "contentClass": "publication",
+  "publicationClass": "shareholder-brief",
+  "title": "Seeing the System",
+  "summary": "Shareholder brief on Build_Nevada, ecosystem decomposition, AeroVista positioning, and the translation layer, with ByteCast audio.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "shareholder",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast"
+  ],
+  "issuedAt": "2026-07-08",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
+  "canonicalPath": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
+  "tags": [
+    "july-2026",
+    "shareholder",
+    "bytecast",
+    "build-nevada",
+    "seeing-the-system"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/shareholder/2026-07-08-seeing-the-system",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "assets-audio-legacy-navada-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio-legacy-navada.mp3",
+      "name": "audio-legacy-navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      }
+    },
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 8468773,
+      "integrity": {
+        "gitBlobSha1": "616cb9a459ff50a84ef04a4494abad6c5b74f83a",
+        "sha256": "69b69a2e23f1595cb25ef077df93e5c264a1a530f32869bed3ef3c1a6b364bbe"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 364,
+      "integrity": {
+        "gitBlobSha1": "54d2be29b5ed6c424bd8b1db387fef703530c5f1",
+        "sha256": "61aa86977a56ad601d23440476a830ddf0ba885c8e72a1a91a18e2cbe6048087"
+      }
+    },
+    {
+      "id": "legacy-newsletters-bytecast-shareholder-seeing-the-system-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast_shareholder_seeing_the_system.html",
+      "name": "bytecast_shareholder_seeing_the_system.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 560,
+      "integrity": {
+        "gitBlobSha1": "c458e7c23e52014046523fdb2f42d9fc43d39b24",
+        "sha256": "7c0daef2ba1930996cb5cfbca9a1ba8a36f850f018cd6270405a08320e68fa8e"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-build-nevada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-build-nevada.mp3",
+      "name": "bytecast-build-nevada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-build-navada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-build_navada.mp3",
+      "name": "bytecast-build_navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-positioning-build-navada-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-positioning-build_navada.mp3",
+      "name": "bytecast-positioning-build_navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "shareholder-2026-07-08"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-05-29",
+  "reportId": "AV-RPT-EOW-2026-05-29",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Long-form Shareholder Report",
+  "summary": "AeroVista end-of-week shareholder report covering infrastructure, memory, identity, publications, Art Localized, EchoVerse, commerce, and release discipline.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "period": {
+    "start": "2026-05-24",
+    "end": "2026-05-29"
+  },
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-29-shareholder-report/",
+  "canonicalPath": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
+  "tags": [
+    "may-2026",
+    "eow",
+    "shareholder-report",
+    "archive"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eow/2026-05-29-shareholder-report",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22629,
+      "integrity": {
+        "gitBlobSha1": "eee2c03be7786f237bb4ce1929ac2494c2449f8f",
+        "sha256": "6db573075b4b9a637ab2fcac754d092c53a8ed76587bd49c345fc7fce3bdbd8c"
+      }
+    },
+    {
+      "id": "legacy-canonical-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow/2026-05-29-shareholder-report.html",
+      "name": "2026-05-29-shareholder-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 684,
+      "integrity": {
+        "gitBlobSha1": "957cb3432632f2ee264424c0fddd82ac9dc9924f",
+        "sha256": "3f909d8fbc88f8c7da88f81205c0827b37649657fa031f395a3c2635805040d0"
+      },
+      "description": "Former canonical URL retained as a direct redirect."
+    },
+    {
+      "id": "legacy-flat-alias",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-2026-05-29-shareholder-report.html",
+      "name": "eow-2026-05-29-shareholder-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 684,
+      "integrity": {
+        "gitBlobSha1": "957cb3432632f2ee264424c0fddd82ac9dc9924f",
+        "sha256": "3f909d8fbc88f8c7da88f81205c0827b37649657fa031f395a3c2635805040d0"
+      },
+      "description": "Legacy flat alias retained as a direct redirect."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-05-29-report"
+    }
+  ]
+}

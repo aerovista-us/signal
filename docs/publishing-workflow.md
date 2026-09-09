@@ -2,6 +2,8 @@
 
 How to ship a new internal Signal edition.
 
+> **Registry v2 rule:** For formal reports and other governed Signal content, the registry record is authoritative. `js/signals-catalog.json` is a presentation index only. See [registry-v2.md](./registry-v2.md).
+
 ## Choose the type
 
 | Type | Use for | Example path |
@@ -14,48 +16,56 @@ How to ship a new internal Signal edition.
 
 **Dispatch vs edition:** Short EOW summaries live in `dispatches/eow/`. Full audio editions live in `newsletters/editions/`.
 
-## Option A — Pipeline (recommended for standard ByteCast)
+**Classification vs format:** EOD/EOW/EOM/milestone describe report class. ByteCast, HTML, PDF, image, or dashboard describe delivery format. Do not create a separate ByteCast registry record when the audio belongs to a report.
 
-1. Copy `signal_pipeline_echoverse_starter/content/echoverse-platform-update.json`
-2. Set `editionType`, `date`, `folderSlug`, `catalogTitle`, `tags`, content sections
-3. Drop `assets/audio.mp3` source file in `signal_pipeline_echoverse_starter/assets/`
-4. Run `python scripts/build_signal.py content/YOUR.json`
-5. Add entry to `js/signals-catalog.json` (or run catalog sync)
-6. Deploy per [github-pages-deploy.md](./github-pages-deploy.md)
+## Formal report package first
 
-## Option B — Hand-crafted HTML
+Before publishing a formal report:
 
-1. Create `newsletters/editions/{type}/{slug}/index.html`
-2. Put media in `newsletters/editions/{type}/{slug}/assets/`
-3. Use absolute paths: `/favicon.svg`, `/js/site-paths.js`, `/dispatches/internal-signals.html`
-4. Add `meta.json` beside `index.html`
-5. Add catalog entry to `js/signals-catalog.json`
-6. If replacing a legacy flat file, leave a redirect stub at the old path
+1. Create/finalize the report and every companion asset.
+2. Prefer one self-contained directory per new report.
+3. Create `registry/records/reports/AV-RPT-....json`.
+4. List **every owned file** in the record manifest.
+5. Mark external evidence as `referenced`, not `owned`.
+6. For a self-contained directory set `package.mode: "directory"` and `package.strict: true`.
+7. Run `python scripts/registry_v2.py check`.
+8. Commit the report package, registry record, and generated `registry/indexes/`.
+9. Then update the Internal Signals presentation catalog/UI.
+
+For legacy flat reports, register existing paths first with `package.mode: "legacy-flat"`; normalize/move them later.
+
+## Existing edition authoring
+
+### Option A — Pipeline
+
+1. Copy the edition content starter.
+2. Set edition type/date/slug/title/tags/content.
+3. Add audio and visual assets.
+4. Build the edition.
+5. Create/update the Registry v2 record and validate it.
+6. Add/update `js/signals-catalog.json`.
+7. Deploy per [github-pages-deploy.md](./github-pages-deploy.md).
+
+### Option B — Hand-crafted HTML
+
+1. Create `newsletters/editions/{type}/{slug}/index.html`.
+2. Put all owned media/support files inside that report directory when practical.
+3. Use absolute site paths where required by the page shell.
+4. Add `meta.json` beside `index.html`.
+5. Create the Registry v2 record and complete file manifest.
+6. Run the registry validator.
+7. Add the catalog presentation entry.
+8. If replacing a legacy flat file, leave a redirect stub at the old path.
 
 ## Catalog entry
 
-Add to `js/signals-catalog.json` under `editions` and optionally `now`:
-
-```json
-{
-  "id": "weekly-2026-06-21",
-  "section": "weekly",
-  "title": "A Better Machine",
-  "badges": [{ "type": "eow", "label": "EOW" }],
-  "dateEm": "Jun 21",
-  "dateYear": "2026",
-  "href": "/newsletters/editions/weekly/2026-06-21-better-machine/",
-  "types": ["eow", "bytecast"],
-  "tags": "june 21 2026 weekly",
-  "summary": "One-line description for the hub."
-}
-```
-
-Filter counts and hub rows update automatically via `render-signals-hub.js`.
+`js/signals-catalog.json` drives the Internal Signals UI. It may contain featured/now/section presentation metadata, but it must not be treated as the formal records database.
 
 ## Deploy checklist
 
-1. Sync `newsletters/editions/`, `js/signals-catalog.json`, redirect stubs, `dispatches/`
-2. `git push origin main`
-3. Verify canonical URL + legacy stub URL (see deploy doc table)
-4. Hard-refresh [Internal Signals](https://thesignal.aerovista.us/dispatches/internal-signals.html)
+1. Validate: `python scripts/registry_v2.py check`
+2. Sync the report/edition package and registry files.
+3. Update the UI catalog and any redirect stubs.
+4. Push to `main`.
+5. Verify canonical URL + legacy stub URL.
+6. Hard-refresh Internal Signals.

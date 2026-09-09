@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-NEWSLETTER-2026-05-29",
+  "contentClass": "publication",
+  "publicationClass": "newsletter",
+  "title": "Newsletter Package May 29",
+  "summary": "Weekly AeroVista shareholder newsletter on ecosystem activation, governed memory, and Art Localized.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-05-29-newsletter-package/",
+  "canonicalPath": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
+  "tags": [
+    "may-2026",
+    "newsletter",
+    "weekly",
+    "archive"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-05-29-newsletter-package",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 18768,
+      "integrity": {
+        "gitBlobSha1": "13ffb340d70f4064ba1e9c1379771206f1a3ef2b",
+        "sha256": "81ec0aac5c4f7739c7fee50a8a71ba092b7f7f50b9a6740bedee6c15bac9fcfe"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-05-29-newsletter-package/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 353,
+      "integrity": {
+        "gitBlobSha1": "7a5cd17ee8e974a02605fedbe4145455ae3c7e1e",
+        "sha256": "b83e725364f952cb3da1b22ed8f4824ac0468d1aa258a727865b70fcbf7a75da"
+      }
+    },
+    {
+      "id": "legacy-newsletters-the-signal-newsletter-2026-05-29-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/the-signal-newsletter-2026-05-29.html",
+      "name": "the-signal-newsletter-2026-05-29.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 564,
+      "integrity": {
+        "gitBlobSha1": "20a1c225f166668b3c1b9c7965f3e70fd890a251",
+        "sha256": "dd29b9df06fd2c384abd8c4425618d9a5b47c9f0bced72402c4eccf078cd7564"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-05-29"
+    }
+  ]
+}

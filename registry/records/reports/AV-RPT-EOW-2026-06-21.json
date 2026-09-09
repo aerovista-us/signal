@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-21",
+  "reportId": "AV-RPT-EOW-2026-06-21",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "A Better Machine",
+  "summary": "Weekly EOW report on operating pressure, repeatable loops, cleaner offers, and product execution with audio and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-06-16",
+    "end": "2026-06-21"
+  },
+  "issuedAt": "2026-06-21",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-21-better-machine/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "better-machine",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-21-better-machine",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3421944,
+      "integrity": {
+        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3",
+        "sha256": "eb60720c14940f753ad4b7c934b8c2019d7408b1b732852f1bc79c125fab941b"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1926266,
+      "integrity": {
+        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7",
+        "sha256": "5752bc27b3b453b666c886691dbf0604e78001ecb3f55daae4614d7b360781cb"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 25064,
+      "integrity": {
+        "gitBlobSha1": "a747f4490bc5b14d48540d8a1f1e4b763b004e72",
+        "sha256": "56876205526702d97bc81644627fe2d89e2108b4dc3e7767a9f03f1a63f78f61"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 338,
+      "integrity": {
+        "gitBlobSha1": "83da8af8acc9dd09581bd5acafba727aa51ded3f",
+        "sha256": "3ee2821cd1f326172021cfbd48e0b49446bbb54c00cf8d02f6b8e802706b393f"
+      }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-weekly-2026-06-21-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_weekly_2026-06-21.html",
+      "name": "aerovista_signal_weekly_2026-06-21.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 534,
+      "integrity": {
+        "gitBlobSha1": "ed4c63ae16a578b26bb7f09ff31be65d2e0b0eca",
+        "sha256": "61dd5064877b4759046c0e7bfb5ef5e2850d160c83cd365516cd4979b0ad4931"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecasewe621-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecasewe621.mp3",
+      "name": "bytecasewe621.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3421944,
+      "integrity": {
+        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3",
+        "sha256": "eb60720c14940f753ad4b7c934b8c2019d7408b1b732852f1bc79c125fab941b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-wejune21-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/WEjune21.png",
+      "name": "WEjune21.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1926266,
+      "integrity": {
+        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7",
+        "sha256": "5752bc27b3b453b666c886691dbf0604e78001ecb3f55daae4614d7b360781cb"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-readme-deploy-weekly-2026-06-21-txt",
+      "role": "readme",
+      "relationship": "referenced",
+      "path": "newsletters/README_deploy_weekly_2026-06-21.txt",
+      "name": "README_deploy_weekly_2026-06-21.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 397,
+      "integrity": {
+        "gitBlobSha1": "4257ad37a7ef2057e8a6ca7c8bd15b90ba7c1da9",
+        "sha256": "d731c4fd1b24b1b453c152f4cd835834f2304a5c503c24440143515fd1986336"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-21"
+    }
+  ]
+}

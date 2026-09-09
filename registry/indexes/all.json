@@ -1,0 +1,601 @@
+{
+  "schemaVersion": "2.0",
+  "count": 26,
+  "records": [
+    {
+      "id": "AV-RPT-EOM-2026-08",
+      "reportId": "AV-RPT-EOM-2026-08",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-08.json",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "From Building Pieces to Building a Company",
+      "status": "final",
+      "issuedAt": "2026-09-02",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-31"
+      },
+      "canonicalPath": "newsletters/editions/eom/2026-08-31-building-a-company/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-08-31-building-a-company/",
+      "formats": [
+        "interactive-html",
+        "bytecast"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "shareholder",
+        "stakeholder"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-RPT-MTD-2026-08-14",
+      "reportId": "AV-RPT-MTD-2026-08-14",
+      "recordPath": "registry/records/reports/AV-RPT-MTD-2026-08-14.json",
+      "contentClass": "report",
+      "reportClass": "mtd",
+      "title": "The Machine Is Taking Shape",
+      "status": "final",
+      "issuedAt": "2026-08-15",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "canonicalPath": "newsletters/editions/mtd/2026-08-14-machine-taking-shape/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/mtd/2026-08-14-machine-taking-shape/",
+      "formats": [
+        "interactive-html",
+        "embedded-bytecast"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-EOM-2026-07",
+      "reportId": "AV-RPT-EOM-2026-07",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-07.json",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "July Convergence",
+      "status": "final",
+      "issuedAt": "2026-07-31",
+      "period": {
+        "start": "2026-07-01",
+        "end": "2026-07-31"
+      },
+      "canonicalPath": "newsletters/editions/eom/2026-07-31-july-convergence/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-07-31-july-convergence/",
+      "formats": [
+        "interactive-html",
+        "multi-report",
+        "bytecast-series",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 49
+    },
+    {
+      "id": "AV-DSP-EOD-CURRENT",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOD-CURRENT.json",
+      "contentClass": "dispatch",
+      "title": "Current EOD Operating Note",
+      "status": "review",
+      "issuedAt": "2026-07-10",
+      "canonicalPath": "dispatches/eod/current-operating-note.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eod/current-operating-note.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "operations",
+        "staff"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-PUB-SHAREHOLDER-2026-07-08",
+      "recordPath": "registry/records/publications/AV-PUB-SHAREHOLDER-2026-07-08.json",
+      "contentClass": "publication",
+      "publicationClass": "shareholder-brief",
+      "title": "Seeing the System",
+      "status": "final",
+      "issuedAt": "2026-07-08",
+      "canonicalPath": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/shareholder/2026-07-08-seeing-the-system/",
+      "formats": [
+        "interactive-html",
+        "bytecast"
+      ],
+      "audience": [
+        "internal",
+        "shareholder",
+        "stakeholder"
+      ],
+      "fileCount": 8
+    },
+    {
+      "id": "AV-RPT-EOD-2026-07-05",
+      "reportId": "AV-RPT-EOD-2026-07-05",
+      "recordPath": "registry/records/reports/AV-RPT-EOD-2026-07-05.json",
+      "contentClass": "report",
+      "reportClass": "eod",
+      "title": "Overall Company Status Signal",
+      "status": "final",
+      "issuedAt": "2026-07-05",
+      "period": {
+        "start": "2026-07-05",
+        "end": "2026-07-05"
+      },
+      "canonicalPath": "newsletters/editions/eod/2026-07-05-company-status/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder"
+      ],
+      "fileCount": 7
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-28",
+      "reportId": "AV-RPT-EOW-2026-06-28",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-28.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Resilience Weekend",
+      "status": "final",
+      "issuedAt": "2026-06-28",
+      "period": {
+        "start": "2026-06-22",
+        "end": "2026-06-28"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "aac"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 8
+    },
+    {
+      "id": "AV-DSP-EOW-CURRENT",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-CURRENT.json",
+      "contentClass": "dispatch",
+      "title": "Current EOW Stakeholder Update",
+      "status": "review",
+      "issuedAt": "2026-06-28",
+      "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-DSP-EOW-2026-06-28-SUMMARY",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-2026-06-28-SUMMARY.json",
+      "contentClass": "dispatch",
+      "title": "Resilience Weekend — Dated Summary",
+      "status": "final",
+      "issuedAt": "2026-06-28",
+      "canonicalPath": "dispatches/eow/2026-06-28-weekend-report.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-06-28-weekend-report.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-21",
+      "reportId": "AV-RPT-EOW-2026-06-21",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-21.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "A Better Machine",
+      "status": "final",
+      "issuedAt": "2026-06-21",
+      "period": {
+        "start": "2026-06-16",
+        "end": "2026-06-21"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-21-better-machine/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 8
+    },
+    {
+      "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "reportId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "recordPath": "registry/records/reports/AV-RPT-MILESTONE-2026-06-16-ECHOVERSE.json",
+      "contentClass": "report",
+      "reportClass": "milestone",
+      "title": "EchoVerse Audio Intelligence",
+      "status": "final",
+      "issuedAt": "2026-06-16",
+      "period": {
+        "start": "2026-06-16",
+        "end": "2026-06-16"
+      },
+      "canonicalPath": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/milestone/2026-06-16-echoverse/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "transcript",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 16
+    },
+    {
+      "id": "AV-PUB-WAR-LOOP",
+      "recordPath": "registry/records/publications/AV-PUB-WAR-LOOP.json",
+      "contentClass": "publication",
+      "publicationClass": "research-publication",
+      "title": "The Borrowed War Loop",
+      "status": "review",
+      "issuedAt": "2026-06-16",
+      "canonicalPath": "publications/warLOOP/magazine.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/publications/warLOOP/magazine.html",
+      "formats": [
+        "pdf",
+        "interactive-html",
+        "video"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "advisor"
+      ],
+      "fileCount": 12
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-15",
+      "reportId": "AV-RPT-EOW-2026-06-15",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-15.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Systems Becoming Products",
+      "status": "final",
+      "issuedAt": "2026-06-15",
+      "period": {
+        "start": "2026-06-09",
+        "end": "2026-06-15"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 8
+    },
+    {
+      "id": "AV-RPT-EOW-2026-05-29",
+      "reportId": "AV-RPT-EOW-2026-05-29",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-05-29.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Long-form Shareholder Report",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "period": {
+        "start": "2026-05-24",
+        "end": "2026-05-29"
+      },
+      "canonicalPath": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-29-shareholder-report/",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 3
+    },
+    {
+      "id": "AV-PUB-NEWSLETTER-2026-05-29",
+      "recordPath": "registry/records/publications/AV-PUB-NEWSLETTER-2026-05-29.json",
+      "contentClass": "publication",
+      "publicationClass": "newsletter",
+      "title": "Newsletter Package May 29",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "canonicalPath": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-05-29-newsletter-package/",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 3
+    },
+    {
+      "id": "AV-DSP-EOW-2026-05-29-PUBLIC",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-2026-05-29-PUBLIC.json",
+      "contentClass": "dispatch",
+      "title": "Public Signal Summary",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "canonicalPath": "dispatches/eow/2026-05-29-public-signal.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-public-signal.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "public",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-DSP-ART-LOCALIZED-2026-05-29",
+      "recordPath": "registry/records/dispatches/AV-DSP-ART-LOCALIZED-2026-05-29.json",
+      "contentClass": "dispatch",
+      "publicationClass": "topic",
+      "title": "Art Localized Market Update",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "canonicalPath": "dispatches/topics/art-localized-market-update-2026-05-29.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/art-localized-market-update-2026-05-29.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "public"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-PUB-VXP-MR-01",
+      "recordPath": "registry/records/publications/AV-PUB-VXP-MR-01.json",
+      "contentClass": "publication",
+      "publicationClass": "research-intelligence",
+      "title": "Tokenized Rails, Collateral Systems, and the Physical Internet of Money",
+      "status": "final",
+      "issuedAt": "2026-05-27",
+      "canonicalPath": "publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
+      "formats": [
+        "interactive-html",
+        "magazine",
+        "video",
+        "research-volumes",
+        "infographics"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "advisor"
+      ],
+      "fileCount": 33
+    },
+    {
+      "id": "AV-PUB-ART-LOC-01",
+      "recordPath": "registry/records/publications/AV-PUB-ART-LOC-01.json",
+      "contentClass": "publication",
+      "publicationClass": "pilot-note",
+      "title": "Art Localized Client & Shareholder Note",
+      "status": "review",
+      "issuedAt": "2026-05-27",
+      "canonicalPath": "publications/ART-LOC-01-art-localized-pilot/issue.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/publications/ART-LOC-01-art-localized-pilot/issue.html",
+      "formats": [
+        "html",
+        "source-of-truth"
+      ],
+      "audience": [
+        "client",
+        "shareholder",
+        "community"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-DSP-NXCORE-RESILIENCY-2026-05-24",
+      "recordPath": "registry/records/dispatches/AV-DSP-NXCORE-RESILIENCY-2026-05-24.json",
+      "contentClass": "dispatch",
+      "publicationClass": "infrastructure",
+      "title": "NXCore Resiliency Work Order",
+      "status": "final",
+      "issuedAt": "2026-05-24",
+      "canonicalPath": "dispatches/topics/nxcore-resiliency-work-order.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/nxcore-resiliency-work-order.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "operations"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-DSP-HYDRILLA-GORILLA-2026-05-24",
+      "recordPath": "registry/records/dispatches/AV-DSP-HYDRILLA-GORILLA-2026-05-24.json",
+      "contentClass": "dispatch",
+      "publicationClass": "creative-drop",
+      "title": "Hydrilla Gorilla EchoStory",
+      "status": "final",
+      "issuedAt": "2026-05-24",
+      "canonicalPath": "dispatches/topics/hydrilla-gorilla-echostory.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/hydrilla-gorilla-echostory.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "public"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-EOW-2026-05-23",
+      "reportId": "AV-RPT-EOW-2026-05-23",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-05-23.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Shareholder Update",
+      "status": "final",
+      "issuedAt": "2026-05-23",
+      "period": {
+        "start": "2026-05-17",
+        "end": "2026-05-23"
+      },
+      "canonicalPath": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-23-shareholder-update/",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 3
+    },
+    {
+      "id": "AV-MEDIA-EP02",
+      "recordPath": "registry/records/media/AV-MEDIA-EP02.json",
+      "contentClass": "media",
+      "title": "EP02 Image Asset",
+      "status": "final",
+      "issuedAt": "2026-05-23",
+      "canonicalPath": "publications/ep02/ep02.png",
+      "canonicalUrl": "https://thesignal.aerovista.us/publications/ep02/ep02.png",
+      "formats": [
+        "png"
+      ],
+      "audience": [
+        "internal",
+        "public"
+      ],
+      "fileCount": 1
+    },
+    {
+      "id": "AV-DSP-MEMORY-VAULT-2026-05-22",
+      "recordPath": "registry/records/dispatches/AV-DSP-MEMORY-VAULT-2026-05-22.json",
+      "contentClass": "dispatch",
+      "publicationClass": "build-log",
+      "title": "Memory Vault Is Live in AVCC",
+      "status": "final",
+      "issuedAt": "2026-05-22",
+      "canonicalPath": "dispatches/topics/memory-vault-live-avcc.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/memory-vault-live-avcc.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "operations"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-DSP-AV-GEAR-2026-05-17",
+      "recordPath": "registry/records/dispatches/AV-DSP-AV-GEAR-2026-05-17.json",
+      "contentClass": "dispatch",
+      "publicationClass": "release-note",
+      "title": "AV Gear Shop Overlay Cleanup",
+      "status": "final",
+      "issuedAt": "2026-05-17",
+      "canonicalPath": "dispatches/topics/av-gear-shop-overlay-cleanup.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/av-gear-shop-overlay-cleanup.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "public"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-DSP-CINDY-CONNECT-2026-05-01",
+      "recordPath": "registry/records/dispatches/AV-DSP-CINDY-CONNECT-2026-05-01.json",
+      "contentClass": "dispatch",
+      "publicationClass": "client-launch",
+      "title": "Cindy Connect Launch Status",
+      "status": "final",
+      "issuedAt": "2026-05-01",
+      "canonicalPath": "dispatches/topics/cindy-connect-launch-status.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/cindy-connect-launch-status.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "client",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    }
+  ]
+}

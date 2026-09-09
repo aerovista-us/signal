@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-MTD-2026-08-14",
+  "reportId": "AV-RPT-MTD-2026-08-14",
+  "contentClass": "report",
+  "reportClass": "mtd",
+  "title": "The Machine Is Taking Shape",
+  "summary": "Self-contained August month-to-date interactive operating report with embedded 6:23 ByteCast audio and animated operating model.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "embedded-bytecast"
+  ],
+  "period": {
+    "start": "2026-08-01",
+    "end": "2026-08-14"
+  },
+  "issuedAt": "2026-08-15",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/mtd/2026-08-14-machine-taking-shape/",
+  "canonicalPath": "newsletters/editions/mtd/2026-08-14-machine-taking-shape/index.html",
+  "tags": [
+    "august-2026",
+    "mtd",
+    "month-to-date",
+    "bytecast",
+    "operating-model"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/mtd/2026-08-14-machine-taking-shape",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/mtd/2026-08-14-machine-taking-shape/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 12310940,
+      "integrity": {
+        "gitBlobSha1": "e7cdaad9aef6314995942e3c0a9cbd069fef5f25",
+        "sha256": "1d2d78beaf4f1d3b07feb442778f56cf3a3ace134042be6fa2fd3e1010cf4d4a"
+      }
+    },
+    {
+      "id": "legacy-mtd-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "name": "AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 680,
+      "integrity": {
+        "gitBlobSha1": "03339d92f26eca1f9780081f4c7f5d53c6cf0b77",
+        "sha256": "8312cb7c6d858600cc8272ed70ee075cea7f9d0f1e8b8249f94e5401916e8ea9"
+      },
+      "description": "Legacy MTD URL retained as a redirect to the normalized package."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "mtd-2026-08-15-machine-taking-shape"
+    },
+    {
+      "type": "legacy-url",
+      "value": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html"
+    }
+  ]
+}

@@ -1,0 +1,743 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOM-2026-07",
+  "reportId": "AV-RPT-EOM-2026-07",
+  "contentClass": "report",
+  "reportClass": "eom",
+  "title": "July Convergence",
+  "summary": "Interactive July 2026 end-of-month hub with executive brief, six report sections, six-part ByteCast series, images, metadata, and source evidence.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "multi-report",
+    "bytecast-series",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-07-01",
+    "end": "2026-07-31"
+  },
+  "issuedAt": "2026-07-31",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-07-31-july-convergence/",
+  "canonicalPath": "newsletters/editions/eom/2026-07-31-july-convergence/index.html",
+  "tags": [
+    "july-2026",
+    "eom",
+    "convergence",
+    "portfolio",
+    "bytecast-series"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eom/2026-07-31-july-convergence",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "readme-md",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/README.md",
+      "name": "README.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 880,
+      "integrity": {
+        "gitBlobSha1": "ad643cb69da96408d29e98fca42d8bd3332ce0f6",
+        "sha256": "815073c76452666949cdf978e14e2158187ff23be5a5c08afd9f2de9c6bbd283"
+      }
+    },
+    {
+      "id": "assets-app-js",
+      "role": "script",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/assets/app.js",
+      "name": "app.js",
+      "fileType": "js",
+      "mediaType": "text/javascript",
+      "sizeBytes": 4509,
+      "integrity": {
+        "gitBlobSha1": "aef170a2ac1864eac3b814a265ad95aa22dbd30a",
+        "sha256": "f969f209b0fc0b478460e758ed439dd37f71b8f401f3b76384a07ac434887818"
+      }
+    },
+    {
+      "id": "assets-images-old-fisherman-comic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/assets/images/old-fisherman-comic.png",
+      "name": "old-fisherman-comic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 4417899,
+      "integrity": {
+        "gitBlobSha1": "9ca26b6f80087c43de077d2100caed248b22a6f4",
+        "sha256": "c5de1c62e5f970ec84ece4fd2acf3e0767668c224d0c75cef70eafeb21c4a485"
+      }
+    },
+    {
+      "id": "assets-images-signal-reference-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/assets/images/signal-reference.png",
+      "name": "signal-reference.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2653996,
+      "integrity": {
+        "gitBlobSha1": "f1bfb0bc2a5d563aa26035abc90647978afb0210",
+        "sha256": "5335b5331e1c52fe05a716dbf79454682f757f03959c9a5a680528b9d280644f"
+      }
+    },
+    {
+      "id": "assets-images-workspace-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/assets/images/workspace-infographic.png",
+      "name": "workspace-infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2443223,
+      "integrity": {
+        "gitBlobSha1": "9a786ae93807d24da1710a28c5dd220bf7aa7970",
+        "sha256": "8bc15f641941870c63827dd6f0d2903fc4e7f74240e05c33d867c31a955e759a"
+      }
+    },
+    {
+      "id": "assets-styles-css",
+      "role": "style",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/assets/styles.css",
+      "name": "styles.css",
+      "fileType": "css",
+      "mediaType": "text/css",
+      "sizeBytes": 19186,
+      "integrity": {
+        "gitBlobSha1": "aeec2c8d016530c4684d086334fb7d348158227e",
+        "sha256": "a46afe2a2b44dcfafa00a6713e8decada3282417dd282584bfdb26173e089db5"
+      }
+    },
+    {
+      "id": "audio-00-july-convergence-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/00-july-convergence.mp3",
+      "name": "00-july-convergence.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5141737,
+      "integrity": {
+        "gitBlobSha1": "963e4bbc389aa803b90aec6301bc9061854caae9",
+        "sha256": "89623315c6611427732ddc5572e502b156271b9e4ab35361dd3bcd52bf768098"
+      }
+    },
+    {
+      "id": "audio-01-the-system-holds-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/01-the-system-holds.mp3",
+      "name": "01-the-system-holds.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 4673177,
+      "integrity": {
+        "gitBlobSha1": "e64c98b58750646d200f71771b7e9fa072eb9565",
+        "sha256": "a9d15f2a65f4a2700ef26b7df3492725388ec69b3e62a312d8662b9a5294d891"
+      }
+    },
+    {
+      "id": "audio-02-identity-to-value-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/02-identity-to-value.mp3",
+      "name": "02-identity-to-value.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 4935411,
+      "integrity": {
+        "gitBlobSha1": "02072e0d53fae92945d39810719b1d75b6068920",
+        "sha256": "9027a23f9221eb85b84d9966440f1f217e8f3e1e46ffa63be77fe588eb3918d7"
+      }
+    },
+    {
+      "id": "audio-03-the-work-itself-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/03-the-work-itself.mp3",
+      "name": "03-the-work-itself.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 6854873,
+      "integrity": {
+        "gitBlobSha1": "73126ef5c50056f9a16c5685f4c8bd9f6d1b2193",
+        "sha256": "59f8d182d251598e0aa296f935562e5a0659a1eae1a4c54c358de92cf0261958"
+      }
+    },
+    {
+      "id": "audio-04-into-the-world-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/04-into-the-world.mp3",
+      "name": "04-into-the-world.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 7848377,
+      "integrity": {
+        "gitBlobSha1": "45342f6273f042ef3026207fbdcaf50f0c7eb3d1",
+        "sha256": "bd2edbf312d86a600dea4f5e2009751eda5143a4e45d21036679101ccaf10fb1"
+      }
+    },
+    {
+      "id": "audio-05-august-the-test-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/05-august-the-test.mp3",
+      "name": "05-august-the-test.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 4803806,
+      "integrity": {
+        "gitBlobSha1": "a7af2563f80d71a86a8fda99c48fb67fc93745a0",
+        "sha256": "ba6075233370eb870d49e87758f933cab4fd52425caef5ad8de00b3a5ad3e863"
+      }
+    },
+    {
+      "id": "audio-readme-txt",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/audio/README.txt",
+      "name": "README.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 274,
+      "integrity": {
+        "gitBlobSha1": "74bbc5ed8f3a81f4bef855a10ed9124141b77170",
+        "sha256": "42e3d84b78b24608d12652feb772a4fbd0b074b4e438a3d22860b5f4adf59418"
+      }
+    },
+    {
+      "id": "bytecasts-00-bytecast-july-convergence-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/00_BYTECAST_JULY_CONVERGENCE.md",
+      "name": "00_BYTECAST_JULY_CONVERGENCE.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 6377,
+      "integrity": {
+        "gitBlobSha1": "01758e47a554214b86bd6254b36f084590c30926",
+        "sha256": "c5a45755b26d9b83660672935bcd8f97960ffe80c0f7597d2befc9e1e95c9291"
+      }
+    },
+    {
+      "id": "bytecasts-01-bytecast-the-system-holds-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/01_BYTECAST_THE_SYSTEM_HOLDS.md",
+      "name": "01_BYTECAST_THE_SYSTEM_HOLDS.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 6371,
+      "integrity": {
+        "gitBlobSha1": "eb8739f13de393b72331d1bf59c373c355d9057e",
+        "sha256": "b7dd2583d1e5c21f9f0c7212516e07fcc366fcda5f4096c868542b326b302859"
+      }
+    },
+    {
+      "id": "bytecasts-02-bytecast-identity-to-value-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/02_BYTECAST_IDENTITY_TO_VALUE.md",
+      "name": "02_BYTECAST_IDENTITY_TO_VALUE.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 6975,
+      "integrity": {
+        "gitBlobSha1": "b43e445c514827049fee90e076e222ac3a314444",
+        "sha256": "db90ae1e9b8e57ce608590ee3aaf57447eaca45ed1d6fa7e232f4fb7e847c149"
+      }
+    },
+    {
+      "id": "bytecasts-03-bytecast-the-work-itself-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/03_BYTECAST_THE_WORK_ITSELF.md",
+      "name": "03_BYTECAST_THE_WORK_ITSELF.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 7085,
+      "integrity": {
+        "gitBlobSha1": "99401634852ad84032d6b591e899a713c8e4d2e8",
+        "sha256": "191adb076168d89dc1e126915f180dad7f69b6aff9404c7129cdad22e3f2814f"
+      }
+    },
+    {
+      "id": "bytecasts-04-bytecast-into-the-world-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/04_BYTECAST_INTO_THE_WORLD.md",
+      "name": "04_BYTECAST_INTO_THE_WORLD.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 6302,
+      "integrity": {
+        "gitBlobSha1": "55559c8115de3360c2d879cf115f308eb607a89d",
+        "sha256": "cf4fa709ce9631da1dd9dbebdaac8a997802bc0e7a5c440923878eabedb72cca"
+      }
+    },
+    {
+      "id": "bytecasts-05-bytecast-august-the-test-md",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/05_BYTECAST_AUGUST_THE_TEST.md",
+      "name": "05_BYTECAST_AUGUST_THE_TEST.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 5789,
+      "integrity": {
+        "gitBlobSha1": "7c64beee7e427242e5a102d4070444f620c31ada",
+        "sha256": "a2ea74102e6a47ecba368f2279663220e47a20c0f3b960004ecab5be1cfe978e"
+      }
+    },
+    {
+      "id": "bytecasts-readme-bytecast-series-md",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/bytecasts/README_BYTECAST_SERIES.md",
+      "name": "README_BYTECAST_SERIES.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 2651,
+      "integrity": {
+        "gitBlobSha1": "49c8f023f5902eca574eb503daf22da738ca4296",
+        "sha256": "89d70dc2cffdd0ae86af5fdb5ecb9a661799dd605dfff9b5d924bdf24d4f18f5"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 34893,
+      "integrity": {
+        "gitBlobSha1": "920fb38a323525f2c8d13fab7d6fee549b7226a9",
+        "sha256": "d7730f8d8cc6a5d2644f522bcbc84bd987f94252f10972083f4f039313b8f866"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 557,
+      "integrity": {
+        "gitBlobSha1": "ac11c23efcbff878c496af016218f26df0c0ab68",
+        "sha256": "d1cda155339f784ea93096e3cb9c934732ef621931d9267f1b263f89bed5c89c"
+      }
+    },
+    {
+      "id": "report-index-json",
+      "role": "data",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/report-index.json",
+      "name": "report-index.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 3440,
+      "integrity": {
+        "gitBlobSha1": "3f1a0e57bfb8233d716dc8219679d6d03c27612f",
+        "sha256": "aabe74b0d69f1eebf970bd19ca4e642467a288757041d77a13632e3049d2c870"
+      }
+    },
+    {
+      "id": "reports-divisions-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/divisions.html",
+      "name": "divisions.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 23921,
+      "integrity": {
+        "gitBlobSha1": "1e3a57d34538744976f5ce0aac5ac413ae2de1cc",
+        "sha256": "2ba642142ba1753677c9dcdf5a30096b489d028530cb8c45f6a4a9c0a032dc47"
+      }
+    },
+    {
+      "id": "reports-executive-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/executive.html",
+      "name": "executive.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 21195,
+      "integrity": {
+        "gitBlobSha1": "3881a37a1b5bc29fe539a8312409e7407bc84895",
+        "sha256": "7e619a998ca56fd4b24f047474ad572c4ee27209440d3d7921c81a4de10b6b59"
+      }
+    },
+    {
+      "id": "reports-identity-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/identity.html",
+      "name": "identity.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 23683,
+      "integrity": {
+        "gitBlobSha1": "17853b16efa28149dc0b1ce826180c6cc04b3ede",
+        "sha256": "eb3edb99316abb9cbdb510ca7c1fca8f2a7c893b0d2166b7bb3d820d29d7e4e1"
+      }
+    },
+    {
+      "id": "reports-markets-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/markets.html",
+      "name": "markets.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22822,
+      "integrity": {
+        "gitBlobSha1": "d99b0697ac362b03fe8c8a0e0b3cc1cd5b52c20b",
+        "sha256": "dced3581fb8e3fdf8a13e9cbb5f5c7a5ee77aa5a19856d6c9cc35eaa58683bf9"
+      }
+    },
+    {
+      "id": "reports-platform-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/platform.html",
+      "name": "platform.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 21853,
+      "integrity": {
+        "gitBlobSha1": "13697b63e00e698c3eb7b23b518b3c2b1ec5ab41",
+        "sha256": "e72908bb50060dcb3a28c7beb2ddfd8f067bc0745ab360f3fe106c7bc342692f"
+      }
+    },
+    {
+      "id": "reports-portfolio-html",
+      "role": "other",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/reports/portfolio.html",
+      "name": "portfolio.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22517,
+      "integrity": {
+        "gitBlobSha1": "15dd1612d09270614b5ae1d2b636cf3c700f56be",
+        "sha256": "b1596b81b53b4fc3bd455238d99bf8a707e1c30dacd6026c6abd4b9ab3cdec48"
+      }
+    },
+    {
+      "id": "sources-00-aerovista-july-2026-executive-brief-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/00_AEROVISTA_JULY_2026_EXECUTIVE_BRIEF.md",
+      "name": "00_AEROVISTA_JULY_2026_EXECUTIVE_BRIEF.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 4903,
+      "integrity": {
+        "gitBlobSha1": "b3e60ee63d8c6ee212276efddacdc108fcbb4dcd",
+        "sha256": "7b5f772604435ae0b7688af93cdfcae573be3086cbda49a6205090d928488289"
+      }
+    },
+    {
+      "id": "sources-01-platform-infrastructure-and-operations-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/01_PLATFORM_INFRASTRUCTURE_AND_OPERATIONS.md",
+      "name": "01_PLATFORM_INFRASTRUCTURE_AND_OPERATIONS.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 4813,
+      "integrity": {
+        "gitBlobSha1": "c35c1c2c108797f9bd616d2138ab29a50aac65ec",
+        "sha256": "bce9abf83df1eeb0846cdefe8734fd975eb15933f20eb82b142fa02d11cf7d77"
+      }
+    },
+    {
+      "id": "sources-02-identity-business-systems-and-commerce-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/02_IDENTITY_BUSINESS_SYSTEMS_AND_COMMERCE.md",
+      "name": "02_IDENTITY_BUSINESS_SYSTEMS_AND_COMMERCE.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 5452,
+      "integrity": {
+        "gitBlobSha1": "f97689d2c9a36b7b050b6ad08f79aa371e34fc5b",
+        "sha256": "ebacf59a1a5c780597672de17bbfa4acc28b20af6d5b5656ef6d3cd29e5b6a9b"
+      }
+    },
+    {
+      "id": "sources-03-divisions-and-product-development-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/03_DIVISIONS_AND_PRODUCT_DEVELOPMENT.md",
+      "name": "03_DIVISIONS_AND_PRODUCT_DEVELOPMENT.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 5061,
+      "integrity": {
+        "gitBlobSha1": "979d2457cacaf086705a0139f5045ca1e1e87493",
+        "sha256": "72660fd90ee391eb5352d34b0a7959a4995ec201a5c6da864ec6c3cf70bd8751"
+      }
+    },
+    {
+      "id": "sources-04-markets-media-and-creative-output-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/04_MARKETS_MEDIA_AND_CREATIVE_OUTPUT.md",
+      "name": "04_MARKETS_MEDIA_AND_CREATIVE_OUTPUT.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 4955,
+      "integrity": {
+        "gitBlobSha1": "ec3b8437e1e5e43e306fd3eed817585313383660",
+        "sha256": "aa3cdcb29e92172586733656b83e22af28c7269988355459892cce706c9e30f8"
+      }
+    },
+    {
+      "id": "sources-05-portfolio-control-and-august-plan-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/05_PORTFOLIO_CONTROL_AND_AUGUST_PLAN.md",
+      "name": "05_PORTFOLIO_CONTROL_AND_AUGUST_PLAN.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 5442,
+      "integrity": {
+        "gitBlobSha1": "32a3722f125dc886d2b6d33d806de2d7bbfe3342",
+        "sha256": "90824058430fedf28f7bb5e8719692dc67591d62567b1fb581167f16c9502a38"
+      }
+    },
+    {
+      "id": "sources-aerovista-identity-profit-compass-master-report-eod-2026-08-01-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/AEROVISTA_IDENTITY_PROFIT_COMPASS_MASTER_REPORT_EOD_2026-08-01.md",
+      "name": "AEROVISTA_IDENTITY_PROFIT_COMPASS_MASTER_REPORT_EOD_2026-08-01.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 30177,
+      "integrity": {
+        "gitBlobSha1": "3e3c7b9aa786876ded1b59103c0abe3221fcccb4",
+        "sha256": "1409858eba49bdcc2d019ed38c3066d596cf829b5b08a6f9ee0536e26dec85ff"
+      }
+    },
+    {
+      "id": "sources-readme-md",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/README.md",
+      "name": "README.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 1118,
+      "integrity": {
+        "gitBlobSha1": "6da5e60a8a60de971c55a947518bcd33d2ee1419",
+        "sha256": "a86b06b12ce507d8bb9b4b7aaa93dcde6498aa43b378aafa42813c4dd648f6a1"
+      }
+    },
+    {
+      "id": "sources-vespera-call-to-action-update-1-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/Vespera.call.to.action.update(1).md",
+      "name": "Vespera.call.to.action.update(1).md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 9207,
+      "integrity": {
+        "gitBlobSha1": "65ce538a956bfc4e5bc575428c3ce35fc8f79903",
+        "sha256": "a1f3aade79ee58a4b6267917786f2c8e49ef56b1f5847849b732fc33305af899"
+      }
+    },
+    {
+      "id": "sources-aerovista-master-blueprint-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/aerovista_master_blueprint.md",
+      "name": "aerovista_master_blueprint.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 150672,
+      "integrity": {
+        "gitBlobSha1": "dd7396c80c60f0fd5e7e1165314a45c82f9b9ebc",
+        "sha256": "e3c0fb44ba8b84b0ab68c86154f1f82036a252200365b5f6250f29f1d97d3c84"
+      }
+    },
+    {
+      "id": "sources-children-s-reading-reward-apps-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/children_s_reading_reward_apps.md",
+      "name": "children_s_reading_reward_apps.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 63148,
+      "integrity": {
+        "gitBlobSha1": "914124a423df8e58a076fa41ef5e0bbe564b37f2",
+        "sha256": "06f986ac5b31c18215d2172d03be9f85d45f668db6c03200fcd70527bd5029b8"
+      }
+    },
+    {
+      "id": "sources-comic-strip-idea-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/comic_strip_idea.md",
+      "name": "comic_strip_idea.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 7678,
+      "integrity": {
+        "gitBlobSha1": "963cf9e49dd631e6bc27e4dd9c541ba11ef31bc4",
+        "sha256": "537805f8f4d846995a9be2bc3ac61a654a7aab5b9e7a50b1cc0a820cd1da4644"
+      }
+    },
+    {
+      "id": "sources-create-account-integration-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/create_account_integration.md",
+      "name": "create_account_integration.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 80978,
+      "integrity": {
+        "gitBlobSha1": "285f6292094c6e52a4aa5131d38153fb214635a0",
+        "sha256": "c65469a65a4de5a4444cc0f9d8fdb47e23a82f6ac73f79c6a18654c8b0cd925c"
+      }
+    },
+    {
+      "id": "sources-full-audit-report-1-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/full.audit.report(1).md",
+      "name": "full.audit.report(1).md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 14573,
+      "integrity": {
+        "gitBlobSha1": "96af2f6c7b9766bf62aec95c5f77cc7849471891",
+        "sha256": "d9479f089e8aef97f33f535c99cafa3fe876f21035739f7c8c4fa92075159da1"
+      }
+    },
+    {
+      "id": "sources-internal-report-summary-1-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/internal_report_summary(1).md",
+      "name": "internal_report_summary(1).md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 22206,
+      "integrity": {
+        "gitBlobSha1": "2b67795080b19b26ebde83e1945828e791b8e5b3",
+        "sha256": "533d5d040ab0ad017b60b524c2a101deeb3d9114512501619ef3e8f079ae9a76"
+      }
+    },
+    {
+      "id": "sources-project-status-update-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/project_status_update.md",
+      "name": "project_status_update.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 21364,
+      "integrity": {
+        "gitBlobSha1": "191e26ee18dea3acf6520e60b8f0a5af1d6494d4",
+        "sha256": "5d30b05205f72525f78e052928f4218e4bded9c9e227d870de9d3fc4fe898b5a"
+      }
+    },
+    {
+      "id": "sources-rydesync-versions-comparison-1-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/rydesync_versions_comparison(1).md",
+      "name": "rydesync_versions_comparison(1).md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 45798,
+      "integrity": {
+        "gitBlobSha1": "73e6d112e527b668ff5e686b872b1a2498c5d36a",
+        "sha256": "08085ab7e763eac4ff3203f7f88bc0ba8ea98c05a35b207c2e38163cc6bb8e29"
+      }
+    },
+    {
+      "id": "sources-safe-build-review-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/safe_build_review.md",
+      "name": "safe_build_review.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 38723,
+      "integrity": {
+        "gitBlobSha1": "f5d000c77909f285f250a16c345b40099f3e3a1b",
+        "sha256": "28282002261659c32a21cb83b9e56273afc133538fed09e9186fb04866956f8c"
+      }
+    },
+    {
+      "id": "sources-work-progress-june-15-21-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-07-31-july-convergence/sources/work_progress_june_15_21.md",
+      "name": "work_progress_june_15_21.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 63396,
+      "integrity": {
+        "gitBlobSha1": "7bd7881a6b68a6e85e151e641e5893a5f172b694",
+        "sha256": "b3618ef42104cd433f98e57b4210fcd8362fc5b8618390b5e208cf47969f5f13"
+      }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-july-2026-month-end-signal-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_july_2026_month_end_signal.html",
+      "name": "aerovista_july_2026_month_end_signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 528,
+      "integrity": {
+        "gitBlobSha1": "3f99661efd5ca1d316e15d89ece312537fc3e6b3",
+        "sha256": "d5e664483487a59172daa7d103f8d376d1efb877d5e528adaa40727eb4b19a70"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eom-2026-07-31-july-convergence"
+    },
+    {
+      "type": "legacy-url",
+      "value": "/newsletters/aerovista_july_2026_month_end_signal.html"
+    }
+  ]
+}

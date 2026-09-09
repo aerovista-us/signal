@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-28",
+  "reportId": "AV-RPT-EOW-2026-06-28",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Resilience Weekend",
+  "summary": "Full weekly EOW ByteCast edition on AVCC recovery, Core Registry stabilization, deployment doctrine, and operational resilience.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "aac"
+  ],
+  "period": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "issuedAt": "2026-06-28",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "resilience-weekend",
+    "recovery",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-28-resilience-weekend",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "assets-audio-aac",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/assets/audio.aac",
+      "name": "audio.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 3703981,
+      "integrity": {
+        "gitBlobSha1": "a17913b253c8b02d851c1a3e047cf129e238126f",
+        "sha256": "fcaeef983984d43053827b1648d7f23228d679cff9a767dcd3f3e00e887aa622"
+      }
+    },
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5811648,
+      "integrity": {
+        "gitBlobSha1": "c13914b1bf1c173591dc7e90b3500a544070f787",
+        "sha256": "602714f092545d8d494312896224f514ad6bc92501ca3e7f3ea5ad66b639720b"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 17067,
+      "integrity": {
+        "gitBlobSha1": "d53b2188107c58ecce81d87552691742d1fb5c24",
+        "sha256": "3ba581c66c7a53f7dab7212f2f9cdc48104543bf36016e452f9a29a2626ba04a"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 346,
+      "integrity": {
+        "gitBlobSha1": "df234eddcca799c16b4f16c2641b22717a73e403",
+        "sha256": "fe6d8d615840587c2c7ea67a91233244785ba921a7591b105a85b8fadf3bf939"
+      }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-weekend-report-6-28-26-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_weekend_report_6.28.26.html",
+      "name": "aerovista_weekend_report_6.28.26.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 550,
+      "integrity": {
+        "gitBlobSha1": "0de2f411dc0d69d8ad976698e70d13a5d9f3a8dc",
+        "sha256": "9876747e9a99cd1cc11980a99999fd53753d0ec933c9b3f4e5b64d7a7acfffe8"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-aac",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.aac",
+      "name": "weekend-report.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 3703981,
+      "integrity": {
+        "gitBlobSha1": "a17913b253c8b02d851c1a3e047cf129e238126f",
+        "sha256": "fcaeef983984d43053827b1648d7f23228d679cff9a767dcd3f3e00e887aa622"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.mp3",
+      "name": "weekend-report.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5811648,
+      "integrity": {
+        "gitBlobSha1": "c13914b1bf1c173591dc7e90b3500a544070f787",
+        "sha256": "602714f092545d8d494312896224f514ad6bc92501ca3e7f3ea5ad66b639720b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-weekend-report-wav",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/weekend-report.wav",
+      "name": "weekend-report.wav",
+      "fileType": "wav",
+      "mediaType": "audio/wav",
+      "sizeBytes": 26442232,
+      "integrity": {
+        "gitBlobSha1": "db9d9428b0ec8d41fb5454bc5aa6919dcf03439b",
+        "sha256": "94efafe7642c32439984d92888e63004b3c367d3ca33fc1f2a3772e043205feb"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-28"
+    }
+  ]
+}

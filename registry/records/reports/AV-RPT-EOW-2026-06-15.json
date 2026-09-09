@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-15",
+  "reportId": "AV-RPT-EOW-2026-06-15",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Systems Becoming Products",
+  "summary": "Weekly stakeholder edition covering AeroVista systems becoming repeatable products, with ByteCast audio and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-06-09",
+    "end": "2026-06-15"
+  },
+  "issuedAt": "2026-06-15",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "systems-becoming-products",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-15-systems-becoming-products",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5763552,
+      "integrity": {
+        "gitBlobSha1": "c24fd7329d4be0efab973927bbe4d861d3b9f7ec",
+        "sha256": "4d6706787204225904b24d5f506c37d86ca34afca4fc4b6848bfe0fc8d11b9a9"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1986514,
+      "integrity": {
+        "gitBlobSha1": "ba6523a7ba0c441e4a0677495981818971a4aaf2",
+        "sha256": "6826a22bc02bb6a31d97e2996180f24090c7dda9d21b5f425758ab9b2455571f"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 18514,
+      "integrity": {
+        "gitBlobSha1": "2d63cf6895691b45945ee7ec06cce3c03924176a",
+        "sha256": "fe24d42b0af6548b9ca863bf50c51dcad46b2701ccc7f696a1b06713da70ee5e"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 369,
+      "integrity": {
+        "gitBlobSha1": "574d9a2b116fb801ab8fee6816dc694cdb33c6ed",
+        "sha256": "4642c634fc58d2c4605dcfd8b13120d0276a9d865cd002437af3561b18a60a92"
+      }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-signal-weekly-2026-06-15-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_signal_weekly_2026-06-15.html",
+      "name": "aerovista_signal_weekly_2026-06-15.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 585,
+      "integrity": {
+        "gitBlobSha1": "dfa4f17a43ba0eb7b1affb4bffcc8b41ea16a7ab",
+        "sha256": "4c9b813e6d2403d72124b216a99105f270e387af62f61b348e2248fff0817e7b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-week-ending-2026-06-15-aac",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-week-ending-2026-06-15.aac",
+      "name": "bytecast-week-ending-2026-06-15.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 4799417,
+      "integrity": {
+        "gitBlobSha1": "884b331ba133095519f8fefa3c6e085a35bb01ba",
+        "sha256": "f7880d595673b852dd416b8f6317b35c0a8df47702bc463c49b0204bc0469de5"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-bytecast-week-ending-2026-06-15-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/bytecast-week-ending-2026-06-15.mp3",
+      "name": "bytecast-week-ending-2026-06-15.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5763552,
+      "integrity": {
+        "gitBlobSha1": "c24fd7329d4be0efab973927bbe4d861d3b9f7ec",
+        "sha256": "4d6706787204225904b24d5f506c37d86ca34afca4fc4b6848bfe0fc8d11b9a9"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-a-high-detail-corporate-infographic-weekly-report-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/a_high_detail_corporate_infographic_weekly_report.png",
+      "name": "a_high_detail_corporate_infographic_weekly_report.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1986514,
+      "integrity": {
+        "gitBlobSha1": "ba6523a7ba0c441e4a0677495981818971a4aaf2",
+        "sha256": "6826a22bc02bb6a31d97e2996180f24090c7dda9d21b5f425758ab9b2455571f"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-15"
+    }
+  ]
+}

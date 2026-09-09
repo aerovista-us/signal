@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOW-2026-05-29-PUBLIC",
+  "contentClass": "dispatch",
+  "title": "Public Signal Summary",
+  "summary": "Shorter public-facing Signal summary preserved from the May 29 weekly reporting cycle.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-public-signal.html",
+  "canonicalPath": "dispatches/eow/2026-05-29-public-signal.html",
+  "tags": [
+    "may-2026",
+    "eow",
+    "public",
+    "dispatch",
+    "archive"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/2026-05-29-public-signal.html",
+      "name": "2026-05-29-public-signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 6376,
+      "integrity": {
+        "gitBlobSha1": "e0244d979d07dc28dc0f988a734a01d281631781",
+        "sha256": "b7fcc7eac66916ea7fe6442dd2642107d4e56890df80df9942029f084fa9edc3"
+      }
+    },
+    {
+      "id": "legacy-dispatches-eow-2026-05-29-public-signal-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-2026-05-29-public-signal.html",
+      "name": "eow-2026-05-29-public-signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 536,
+      "integrity": {
+        "gitBlobSha1": "d6db6f97c51c9894023875cbfd8333e146818c96",
+        "sha256": "7077dca3f63761d8a979e0f6c691d2cd8f6610ede7c40d8a3ff144686ece1f71"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-05-29-public"
+    }
+  ]
+}

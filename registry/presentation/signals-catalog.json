@@ -4,7 +4,7 @@
     "label": "Latest EOM Signal",
     "title": "From Building Pieces to Building a Company",
     "summary": "August end-of-month briefing — an interactive portfolio report and ByteCast on the convergence of AeroVista's products, infrastructure, and operating systems.",
-    "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
+    "href": "/newsletters/EOM_August_2026.html",
     "stats": [
       {
         "value": "August 2026",
@@ -19,7 +19,7 @@
         "label": "Completion + proof"
       }
     ],
-    "tags": "august-2026 eom portfolio bytecast internal-signal"
+    "recordId": "AV-RPT-EOM-2026-08"
   },
   "now": [
     {
@@ -27,24 +27,30 @@
       "typeLabel": "August EOM ByteCast",
       "title": "Aug 31 — Building a Company",
       "summary": "Interactive end-of-month portfolio briefing with a 14:30 ByteCast on convergence, recoverability, and September priorities.",
-      "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
+      "href": "/newsletters/EOM_August_2026.html",
       "types": [
         "eom",
         "bytecast"
       ],
-      "tags": "august-2026 eom portfolio bytecast internal-signal"
+      "tags": [
+        "august 31 2026 end of month eom bytecast building a company convergence portfolio recoverability september priorities"
+      ],
+      "recordId": "AV-RPT-EOM-2026-08"
     },
     {
       "id": "mtd-2026-08-15-machine-taking-shape",
       "typeLabel": "August MTD ByteCast",
       "title": "Aug 15 — The Machine Is Taking Shape",
       "summary": "Interactive August month-to-date report with embedded ByteCast audio and animated operating model.",
-      "href": "/newsletters/editions/mtd/2026-08-14-machine-taking-shape/",
+      "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
       "types": [
         "bytecast",
         "milestone"
       ],
-      "tags": "august-2026 mtd month-to-date bytecast operating-model"
+      "tags": [
+        "august 2026 mtd month to date interactive report bytecast the machine is taking shape animated operating model"
+      ],
+      "recordId": "AV-RPT-MTD-2026-08-14"
     },
     {
       "id": "eom-2026-07-31-july-convergence",
@@ -55,7 +61,10 @@
       "types": [
         "eom"
       ],
-      "tags": "july-2026 eom convergence portfolio bytecast-series"
+      "tags": [
+        "july 31 2026 end of month eom july convergence executive divisions platform identity markets portfolio bytecast"
+      ],
+      "recordId": "AV-RPT-EOM-2026-07"
     },
     {
       "id": "shareholder-2026-07-08",
@@ -66,7 +75,10 @@
       "types": [
         "bytecast"
       ],
-      "tags": "july-2026 shareholder bytecast build-nevada seeing-the-system"
+      "tags": [
+        "july 8 2026 shareholder build nevada"
+      ],
+      "recordId": "AV-PUB-SHAREHOLDER-2026-07-08"
     },
     {
       "id": "eod-2026-07-05",
@@ -77,7 +89,10 @@
       "types": [
         "eod"
       ],
-      "tags": "july-2026 eod company-status avcc bytecast"
+      "tags": [
+        "july 5 2026 eod overall company status"
+      ],
+      "recordId": "AV-RPT-EOD-2026-07-05"
     },
     {
       "id": "eod-current",
@@ -88,7 +103,10 @@
       "types": [
         "eod"
       ],
-      "tags": "current eod operating-note dispatch"
+      "tags": [
+        "current daily operating note"
+      ],
+      "recordId": "AV-DSP-EOD-CURRENT"
     },
     {
       "id": "eow-current",
@@ -99,7 +117,10 @@
       "types": [
         "eow"
       ],
-      "tags": "current eow stakeholder-update dispatch"
+      "tags": [
+        "june 28 2026 weekend resilience"
+      ],
+      "recordId": "AV-DSP-EOW-CURRENT"
     }
   ],
   "editions": [
@@ -119,13 +140,16 @@
       ],
       "dateEm": "Aug 31",
       "dateYear": "2026",
-      "href": "/newsletters/editions/eom/2026-08-31-building-a-company/",
+      "href": "/newsletters/EOM_August_2026.html",
       "types": [
         "eom",
         "bytecast"
       ],
-      "tags": "august-2026 eom portfolio bytecast internal-signal",
-      "summary": "Interactive August rollup and 14:30 ByteCast — portfolio convergence, production lessons, and the completion-and-proof plan for September."
+      "tags": [
+        "august 2026 end of month eom bytecast building a company convergence portfolio aerocore avcc rydesync recoverability september priorities"
+      ],
+      "summary": "Interactive August rollup and 14:30 ByteCast — portfolio convergence, production lessons, and the completion-and-proof plan for September.",
+      "recordId": "AV-RPT-EOM-2026-08"
     },
     {
       "id": "mtd-2026-08-15-machine-taking-shape",
@@ -143,13 +167,16 @@
       ],
       "dateEm": "Aug 15",
       "dateYear": "2026",
-      "href": "/newsletters/editions/mtd/2026-08-14-machine-taking-shape/",
+      "href": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
       "types": [
         "bytecast",
         "milestone"
       ],
-      "tags": "august-2026 mtd month-to-date bytecast operating-model",
-      "summary": "Self-contained interactive report for August month-to-date — embedded ByteCast audio (6:22) and animated AeroVista operating model."
+      "tags": [
+        "august 2026 mtd month to date interactive report bytecast the machine is taking shape animated operating model self-contained"
+      ],
+      "summary": "Self-contained interactive report for August month-to-date — embedded ByteCast audio (6:22) and animated AeroVista operating model.",
+      "recordId": "AV-RPT-MTD-2026-08-14"
     },
     {
       "id": "eom-2026-07-31-july-convergence",
@@ -167,8 +194,11 @@
       "types": [
         "eom"
       ],
-      "tags": "july-2026 eom convergence portfolio bytecast-series",
-      "summary": "Interactive end-of-month hub — executive brief, six division reports, full ByteCast transcript series, verified July metrics."
+      "tags": [
+        "july 2026 end of month eom executive brief platform identity divisions markets portfolio bytecast series july convergence"
+      ],
+      "summary": "Interactive end-of-month hub — executive brief, six division reports, full ByteCast transcript series, verified July metrics.",
+      "recordId": "AV-RPT-EOM-2026-07"
     },
     {
       "id": "eod-2026-07-05",
@@ -186,8 +216,11 @@
       "types": [
         "eod"
       ],
-      "tags": "july-2026 eod company-status avcc bytecast",
-      "summary": "Full EOD audio edition — ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing."
+      "tags": [
+        "july 5 2026 eod overall company status avcc roadmap operating maturity"
+      ],
+      "summary": "Full EOD audio edition — ecosystem shape, AVCC architecture, deploy gate, division lanes, leadership sequencing.",
+      "recordId": "AV-RPT-EOD-2026-07-05"
     },
     {
       "id": "eod-current",
@@ -205,8 +238,11 @@
       "types": [
         "eod"
       ],
-      "tags": "current eod operating-note dispatch",
-      "summary": "Daily template: what moved, what needs review, risks, and next moves."
+      "tags": [
+        "current daily operating note template"
+      ],
+      "summary": "Daily template: what moved, what needs review, risks, and next moves.",
+      "recordId": "AV-DSP-EOD-CURRENT"
     },
     {
       "id": "eow-current",
@@ -224,8 +260,11 @@
       "types": [
         "eow"
       ],
-      "tags": "current eow stakeholder-update dispatch",
-      "summary": "Short summary — weekend June 28 resilience weekend for shareholders, employees, operators."
+      "tags": [
+        "current june 28 2026 weekend resilience recovery stakeholder summary"
+      ],
+      "summary": "Short summary — weekend June 28 resilience weekend for shareholders, employees, operators.",
+      "recordId": "AV-DSP-EOW-CURRENT"
     },
     {
       "id": "eow-2026-06-28-summary",
@@ -243,8 +282,11 @@
       "types": [
         "eow"
       ],
-      "tags": "june-2026 eow dispatch resilience-weekend",
-      "summary": "AVCC recovery, Core Registry stabilization, Art Localized API, deployment doctrine."
+      "tags": [
+        "june 28 2026 weekend report resilience recovery dated summary"
+      ],
+      "summary": "AVCC recovery, Core Registry stabilization, Art Localized API, deployment doctrine.",
+      "recordId": "AV-DSP-EOW-2026-06-28-SUMMARY"
     },
     {
       "id": "weekly-2026-06-28",
@@ -267,8 +309,11 @@
         "eow",
         "bytecast"
       ],
-      "tags": "june-2026 eow weekly resilience-weekend recovery bytecast",
-      "summary": "Full weekly ByteCast — audio, timeline, transcript, recovery doctrine."
+      "tags": [
+        "june 28 2026 weekend report resilience recovery full edition audio"
+      ],
+      "summary": "Full weekly ByteCast — audio, timeline, transcript, recovery doctrine.",
+      "recordId": "AV-RPT-EOW-2026-06-28"
     },
     {
       "id": "weekly-2026-06-21",
@@ -291,8 +336,11 @@
         "eow",
         "bytecast"
       ],
-      "tags": "june-2026 eow weekly better-machine bytecast",
-      "summary": "Full weekly ByteCast — operating pressure, repeatable loops, infographic, transcript."
+      "tags": [
+        "june 21 2026 weekly better machine full edition audio"
+      ],
+      "summary": "Full weekly ByteCast — operating pressure, repeatable loops, infographic, transcript.",
+      "recordId": "AV-RPT-EOW-2026-06-21"
     },
     {
       "id": "weekly-2026-06-15",
@@ -315,8 +363,11 @@
         "eow",
         "bytecast"
       ],
-      "tags": "june-2026 eow weekly systems-becoming-products bytecast",
-      "summary": "Full weekly ByteCast — earlier stakeholder edition with audio and infographic."
+      "tags": [
+        "june 15 2026 weekly systems becoming products full edition audio"
+      ],
+      "summary": "Full weekly ByteCast — earlier stakeholder edition with audio and infographic.",
+      "recordId": "AV-RPT-EOW-2026-06-15"
     },
     {
       "id": "shareholder-2026-07-08",
@@ -334,8 +385,11 @@
       "types": [
         "bytecast"
       ],
-      "tags": "july-2026 shareholder bytecast build-nevada seeing-the-system",
-      "summary": "Shareholder brief on Build_Nevada — ecosystem decomposition, AeroVista translation layer, audio + outline."
+      "tags": [
+        "july 8 2026 shareholder build nevada build_ ecosystem positioning seeing the system"
+      ],
+      "summary": "Shareholder brief on Build_Nevada — ecosystem decomposition, AeroVista translation layer, audio + outline.",
+      "recordId": "AV-PUB-SHAREHOLDER-2026-07-08"
     },
     {
       "id": "weekly-2026-06-28-bc",
@@ -354,8 +408,11 @@
         "bytecast",
         "eow"
       ],
-      "tags": "june-2026 eow weekly resilience-weekend recovery bytecast",
-      "summary": "Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript."
+      "tags": [
+        "june 28 2026 weekend report resilience recovery avcc core registry art localized"
+      ],
+      "summary": "Recovery doctrine for AVCC, Core Registry, and Art Localized API — audio, timeline, transcript.",
+      "recordId": "AV-RPT-EOW-2026-06-28"
     },
     {
       "id": "weekly-2026-06-21-bc",
@@ -374,8 +431,11 @@
         "bytecast",
         "eow"
       ],
-      "tags": "june-2026 eow weekly better-machine bytecast",
-      "summary": "Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript."
+      "tags": [
+        "june 21 2026 weekly better machine echoverse art localized"
+      ],
+      "summary": "Operating pressure, repeatable loops, cleaner offers — audio, infographic, full transcript.",
+      "recordId": "AV-RPT-EOW-2026-06-21"
     },
     {
       "id": "weekly-2026-06-15-bc",
@@ -394,8 +454,11 @@
         "bytecast",
         "eow"
       ],
-      "tags": "june-2026 eow weekly systems-becoming-products bytecast",
-      "summary": "Weekly stakeholder edition with audio and infographic."
+      "tags": [
+        "june 15 2026 weekly systems becoming products"
+      ],
+      "summary": "Weekly stakeholder edition with audio and infographic.",
+      "recordId": "AV-RPT-EOW-2026-06-15"
     },
     {
       "id": "milestone-2026-06-16",
@@ -418,8 +481,11 @@
         "bytecast",
         "milestone"
       ],
-      "tags": "june-2026 milestone echoverse audio-intelligence bytecast",
-      "summary": "Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — platform milestone edition."
+      "tags": [
+        "june 16 2026 echoverse audio intelligence platform drop to edit"
+      ],
+      "summary": "Drop-to-catalog pipeline, ByteTag, analysis writeback, Edit handoff — platform milestone edition.",
+      "recordId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE"
     },
     {
       "id": "weekly-2026-05-29",
@@ -442,8 +508,11 @@
         "eow",
         "archive"
       ],
-      "tags": "may-2026 newsletter weekly archive",
-      "summary": "Weekly AeroVista shareholder newsletter — ecosystem activation, governed memory, Art Localized."
+      "tags": [
+        "may 29 2026 newsletter weekly package"
+      ],
+      "summary": "Weekly AeroVista shareholder newsletter — ecosystem activation, governed memory, Art Localized.",
+      "recordId": "AV-PUB-NEWSLETTER-2026-05-29"
     },
     {
       "id": "eow-2026-05-29-report",
@@ -461,13 +530,16 @@
       ],
       "dateEm": "May 29",
       "dateYear": "2026",
-      "href": "/newsletters/editions/eow/2026-05-29-shareholder-report/",
+      "href": "/dispatches/eow/2026-05-29-shareholder-report.html",
       "types": [
         "eow",
         "archive"
       ],
-      "tags": "may-2026 eow shareholder-report archive",
-      "summary": "Dated shareholder EOW report from The SIGNAL archive."
+      "tags": [
+        "may 29 2026 long form shareholder report"
+      ],
+      "summary": "Dated shareholder EOW report from The SIGNAL archive.",
+      "recordId": "AV-RPT-EOW-2026-05-29"
     },
     {
       "id": "eow-2026-05-29-public",
@@ -490,8 +562,11 @@
         "eow",
         "archive"
       ],
-      "tags": "may-2026 eow public dispatch archive",
-      "summary": "Shorter public-facing Signal post preserved after the weekly roll-forward."
+      "tags": [
+        "may 29 2026 public signal summary ecosystem activation"
+      ],
+      "summary": "Shorter public-facing Signal post preserved after the weekly roll-forward.",
+      "recordId": "AV-DSP-EOW-2026-05-29-PUBLIC"
     },
     {
       "id": "eow-shareholder-update",
@@ -509,13 +584,16 @@
       ],
       "dateEm": "May 23",
       "dateYear": "2026",
-      "href": "/newsletters/editions/eow/2026-05-23-shareholder-update/",
+      "href": "/dispatches/eow/shareholder-update.html",
       "types": [
         "eow",
         "archive"
       ],
-      "tags": "may-2026 eow shareholder-update archive",
-      "summary": "Earlier stakeholder EOW update from the archive."
+      "tags": [
+        "may 23 2026 eow shareholder update"
+      ],
+      "summary": "Earlier stakeholder EOW update from the archive.",
+      "recordId": "AV-RPT-EOW-2026-05-23"
     }
   ]
 }

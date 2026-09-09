@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOW-2026-06-28-SUMMARY",
+  "contentClass": "dispatch",
+  "title": "Resilience Weekend — Dated Summary",
+  "summary": "Short EOW stakeholder summary covering AVCC recovery, Core Registry stabilization, Art Localized API preservation, and stronger deployment doctrine.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-06-28",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-06-28-weekend-report.html",
+  "canonicalPath": "dispatches/eow/2026-06-28-weekend-report.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "dispatch",
+    "resilience-weekend"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/2026-06-28-weekend-report.html",
+      "name": "2026-06-28-weekend-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5312,
+      "integrity": {
+        "gitBlobSha1": "5dccb2edb2abe2088994e7a449264d7efd87a38b",
+        "sha256": "1e209f13473b51d70777656e82871262c1de143662c6fd3bbaa2ae8adf174286"
+      }
+    },
+    {
+      "id": "legacy-dispatches-eow-2026-06-28-weekend-report-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-2026-06-28-weekend-report.html",
+      "name": "eow-2026-06-28-weekend-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 543,
+      "integrity": {
+        "gitBlobSha1": "20ce2c313e46b8f5cff824b18bc5cdf742b70261",
+        "sha256": "bc7e2c660fabe1fbe5ed3323f246cbad509e05292a6ff1424adf189772f5ca55"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-06-28-summary"
+    }
+  ]
+}

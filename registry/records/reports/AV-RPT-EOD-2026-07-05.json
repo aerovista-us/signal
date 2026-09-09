@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOD-2026-07-05",
+  "reportId": "AV-RPT-EOD-2026-07-05",
+  "contentClass": "report",
+  "reportClass": "eod",
+  "title": "Overall Company Status Signal",
+  "summary": "Full EOD edition covering company status, AVCC roadmap, deploy gate, division lanes, ByteCast audio, and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-07-05",
+    "end": "2026-07-05"
+  },
+  "issuedAt": "2026-07-05",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/",
+  "canonicalPath": "newsletters/editions/eod/2026-07-05-company-status/index.html",
+  "tags": [
+    "july-2026",
+    "eod",
+    "company-status",
+    "avcc",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eod/2026-07-05-company-status",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 7463856,
+      "integrity": {
+        "gitBlobSha1": "cd42ca11b22d6983850099ebc7ff0737ed216f8f",
+        "sha256": "b78baf90b607f9dcea08f6c3175f4297dccee6d5f7e32908af16ef7021eb8818"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1979547,
+      "integrity": {
+        "gitBlobSha1": "11ea2e41f86f09c8276563d3a21dfc0e554393f5",
+        "sha256": "15197acbe0b63b7976e67c8c0e43521cb4384350171c293c56031dbc8ae6214d"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 43987,
+      "integrity": {
+        "gitBlobSha1": "ef8e95c6a4ee807a130d1188b39382f1e01210b1",
+        "sha256": "de62a0018a0168d819d914e8fd2322a7cd6e6afd6f4ae67465b27aace9570a4f"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 333,
+      "integrity": {
+        "gitBlobSha1": "d0b8e090533c6c899a5d1656c4ce6190b4c1d888",
+        "sha256": "81cce555a95a5195651020dbf38328db34fc24066fdc443200288146f5574379"
+      }
+    },
+    {
+      "id": "legacy-newsletters-aerovista-bytecast-status-player-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "newsletters/aerovista_bytecast_status_player.html",
+      "name": "aerovista_bytecast_status_player.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 537,
+      "integrity": {
+        "gitBlobSha1": "a675958ba8357565f7543539448d3d6f1b92a829",
+        "sha256": "fb8bd2f92850841e2b84e7ed10046e24d49f40822ccab99a4071b4f9ca7e4a8b"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-7-5-26-eod-mp3",
+      "role": "audio",
+      "relationship": "referenced",
+      "path": "newsletters/7.5.26.EOD.mp3",
+      "name": "7.5.26.EOD.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 7463856,
+      "integrity": {
+        "gitBlobSha1": "cd42ca11b22d6983850099ebc7ff0737ed216f8f",
+        "sha256": "b78baf90b607f9dcea08f6c3175f4297dccee6d5f7e32908af16ef7021eb8818"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    },
+    {
+      "id": "legacy-newsletters-overallstatus-png",
+      "role": "image",
+      "relationship": "referenced",
+      "path": "newsletters/overallstatus.png",
+      "name": "overallstatus.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1979547,
+      "integrity": {
+        "gitBlobSha1": "11ea2e41f86f09c8276563d3a21dfc0e554393f5",
+        "sha256": "15197acbe0b63b7976e67c8c0e43521cb4384350171c293c56031dbc8ae6214d"
+      },
+      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eod-2026-07-05"
+    }
+  ]
+}

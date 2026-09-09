@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesignal.aerovista.us/registry/schema/content-record.schema.json",
+  "title": "Signal Registry v2 Content Record",
+  "type": "object",
+  "required": [
+    "schemaVersion","id","contentClass","title","summary","owner","status",
+    "audience","formats","issuedAt","canonicalUrl","canonicalPath","tags","package","files"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "2.0" },
+    "id": { "type": "string", "pattern": "^AV-[A-Z]+-[A-Z0-9-]+$" },
+    "reportId": { "type": "string", "pattern": "^AV-RPT-[A-Z0-9-]+$" },
+    "contentClass": { "enum": ["report","publication","dispatch","media"] },
+    "reportClass": { "enum": ["eod","eow","mtd","eom","quarterly","annual","milestone","incident","audit","compliance","release-readiness","production-validation","investigation","risk-review","special"] },
+    "publicationClass": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "status": { "enum": ["draft","review","final","superseded","withdrawn"] },
+    "owner": { "type": "string", "minLength": 1 },
+    "audience": {
+      "type": "array","minItems": 1,"uniqueItems": true,
+      "items": { "enum": ["internal","executive","operations","staff","stakeholder","shareholder","advisor","partner","client","community","public"] }
+    },
+    "formats": { "type": "array","minItems": 1,"uniqueItems": true,"items": { "type": "string","minLength": 1 } },
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": "string", "format": "date" },
+        "effectiveAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "issuedAt": { "type": "string", "format": "date" },
+    "canonicalUrl": { "type": "string", "minLength": 1 },
+    "canonicalPath": { "type": "string", "minLength": 1 },
+    "tags": { "type": "array","uniqueItems": true,"items": { "type": "string","minLength": 1 } },
+    "package": {
+      "type": "object",
+      "required": ["mode","root","strict","portable"],
+      "properties": {
+        "mode": { "enum": ["directory","legacy-flat","external"] },
+        "root": { "type": "string" },
+        "strict": { "type": "boolean" },
+        "portable": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "supersedes": { "type": ["string","null"] },
+    "files": {
+      "type": "array","minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id","role","relationship","path","name","fileType","mediaType","sizeBytes","integrity"],
+        "properties": {
+          "id": { "type": "string","minLength": 1 },
+          "role": { "enum": ["primary","report-section","audio","image","video","document","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"] },
+          "relationship": { "enum": ["owned","referenced"] },
+          "path": { "type": "string","minLength": 1 },
+          "name": { "type": "string","minLength": 1 },
+          "fileType": { "type": "string","minLength": 1 },
+          "mediaType": { "type": "string","minLength": 1 },
+          "sizeBytes": { "type": "integer","minimum": 0 },
+          "integrity": {
+            "type": "object",
+            "properties": {
+              "gitBlobSha1": { "type": "string","pattern": "^[0-9a-f]{40}$" },
+              "sha256": { "type": "string","pattern": "^[0-9a-f]{64}$" }
+            },
+            "additionalProperties": false
+          },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type","value"],
+        "properties": {
+          "type": { "type": "string","minLength": 1 },
+          "value": { "type": "string","minLength": 1 },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "properties": {
+        "featured": { "type": "boolean" },
+        "featuredLabel": { "type": "string" },
+        "featuredStats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value","label"],
+            "properties": { "value": {"type":"string"}, "label": {"type":"string"} },
+            "additionalProperties": false
+          }
+        },
+        "catalogEntries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id","section","badges","types"],
+            "properties": {
+              "id": { "type": "string" },
+              "section": { "enum": ["eod","eom","weekly","bytecast","milestones","archive"] },
+              "title": { "type": "string" },
+              "summary": { "type": "string" },
+              "dateEm": { "type": "string" },
+              "dateYear": { "type": "string" },
+              "typeLabel": { "type": "string" },
+              "now": { "type": "boolean" },
+              "badges": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["type","label"],
+                  "properties": { "type": {"type":"string"}, "label": {"type":"string"} },
+                  "additionalProperties": false
+                }
+              },
+              "types": { "type": "array","items": {"type":"string"} }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "contentClass": { "const": "report" } }, "required": ["contentClass"] },
+      "then": { "required": ["reportId","reportClass","period"] }
+    },
+    {
+      "if": { "properties": { "contentClass": { "const": "publication" } }, "required": ["contentClass"] },
+      "then": { "required": ["publicationClass"] }
+    }
+  ],
+  "additionalProperties": false
+}

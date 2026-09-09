@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-05-23",
+  "reportId": "AV-RPT-EOW-2026-05-23",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Shareholder Update",
+  "summary": "Earlier weekly AeroVista shareholder update covering momentum, priorities, wins, risks, and what comes next.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "period": {
+    "start": "2026-05-17",
+    "end": "2026-05-23"
+  },
+  "issuedAt": "2026-05-23",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-23-shareholder-update/",
+  "canonicalPath": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
+  "tags": [
+    "may-2026",
+    "eow",
+    "shareholder-update",
+    "archive"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eow/2026-05-23-shareholder-update",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5468,
+      "integrity": {
+        "gitBlobSha1": "100172dbc925572ea118dc1c6c6431b8e041967a",
+        "sha256": "b4088fd09c9872c2ed834cfae284e00c2358762e0ea3bc8a22808530b3e90b39"
+      }
+    },
+    {
+      "id": "legacy-canonical-html",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow/shareholder-update.html",
+      "name": "shareholder-update.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 684,
+      "integrity": {
+        "gitBlobSha1": "6f4072f68f4a400bb450dc0ee7305e299e4b21c8",
+        "sha256": "7f412666d8d373c0fc41417b02467ece02088c899ed162a601b5021d8e268a38"
+      },
+      "description": "Former canonical URL retained as a direct redirect."
+    },
+    {
+      "id": "legacy-flat-alias",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/eow-shareholder-update.html",
+      "name": "eow-shareholder-update.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 684,
+      "integrity": {
+        "gitBlobSha1": "6f4072f68f4a400bb450dc0ee7305e299e4b21c8",
+        "sha256": "7f412666d8d373c0fc41417b02467ece02088c899ed162a601b5021d8e268a38"
+      },
+      "description": "Legacy flat alias retained as a direct redirect."
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-shareholder-update"
+    }
+  ]
+}
