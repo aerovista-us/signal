@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-NEWSLETTER-2026-05-29",
+  "contentClass": "publication",
+  "publicationClass": "newsletter",
+  "title": "Newsletter Package May 29",
+  "summary": "Weekly AeroVista shareholder newsletter on ecosystem activation, governed memory, and Art Localized.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-05-29-newsletter-package/",
+  "canonicalPath": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
+  "tags": [
+    "may-2026",
+    "newsletter",
+    "weekly",
+    "archive"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-05-29-newsletter-package",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 18768,
+      "integrity": {
+        "gitBlobSha1": "13ffb340d70f4064ba1e9c1379771206f1a3ef2b"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-05-29"
+    }
+  ]
+}
