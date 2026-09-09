@@ -5,6 +5,7 @@ on:
     paths:
       - "registry/**"
       - "scripts/registry_v2.py"
+      - "js/signals-catalog.json"
       - "newsletters/**"
       - "dispatches/**"
       - "publications/**"
@@ -13,6 +14,7 @@ on:
     paths:
       - "registry/**"
       - "scripts/registry_v2.py"
+      - "js/signals-catalog.json"
       - "newsletters/**"
       - "dispatches/**"
       - "publications/**"
@@ -28,7 +30,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate Signal Registry v2
+      - name: Validate and regenerate Registry v2
         run: python scripts/registry_v2.py check
-      - name: Fail if generated indexes are stale
-        run: git diff --exit-code -- registry/indexes
+      - name: Fail if generated views are stale
+        run: git diff --exit-code -- registry/indexes js/signals-catalog.json
