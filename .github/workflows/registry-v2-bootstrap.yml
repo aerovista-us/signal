@@ -1,0 +1,35 @@
+name: Registry v2 bootstrap refresh
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/registry-v2-bootstrap.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-registry-v2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: registry-v2
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh Registry v2 branch
+        run: python scripts/registry_v2.py refresh
+      - name: Commit generated Registry v2 state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/records registry/indexes js/signals-catalog.json
+          if git diff --cached --quiet; then
+            echo "Registry already fresh."
+          else
+            git commit -m "Registry v2: refresh manifests, hashes, indexes, and UI catalog"
+            git push origin HEAD:registry-v2
+          fi
