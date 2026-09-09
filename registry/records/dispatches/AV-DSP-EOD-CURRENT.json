@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOD-CURRENT",
+  "contentClass": "dispatch",
+  "title": "Current EOD Operating Note",
+  "summary": "Mutable daily operating-note surface for what moved, what needs review, risks, and next actions. It is a current view, not an immutable formal report.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "operations",
+    "staff"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-07-10",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eod/current-operating-note.html",
+  "canonicalPath": "dispatches/eod/current-operating-note.html",
+  "tags": [
+    "current",
+    "eod",
+    "operating-note",
+    "dispatch"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eod",
+    "strict": false,
+    "portable": false
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eod/current-operating-note.html",
+      "name": "current-operating-note.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 4279,
+      "integrity": {
+        "gitBlobSha1": "648bfd47d4f251891ff364fe80629ea1de2f0507"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eod-current"
+    }
+  ]
+}
