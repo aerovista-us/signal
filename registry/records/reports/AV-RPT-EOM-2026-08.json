@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOM-2026-08",
+  "contentClass": "report",
+  "reportClass": "eom",
+  "title": "From Building Pieces to Building a Company",
+  "summary": "August 2026 end-of-month portfolio briefing with embedded ByteCast.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "shareholder",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast"
+  ],
+  "period": {
+    "start": "2026-08-01",
+    "end": "2026-08-31"
+  },
+  "issuedAt": "2026-09-03",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/EOM_August_2026.html",
+  "tags": [
+    "august-2026",
+    "eom",
+    "portfolio",
+    "bytecast",
+    "internal-signal"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "newsletters",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/EOM_August_2026.html",
+      "name": "EOM_August_2026.html",
+      "mediaType": "text/html",
+      "sizeBytes": 21272,
+      "integrity": {
+        "gitBlobSha1": "0bfd5f69bb0e326355efefdbc9e23b9721f34010"
+      }
+    },
+    {
+      "id": "bytecast-audio",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/EOM_August_2026.mp3",
+      "name": "EOM_August_2026.mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 9901488,
+      "integrity": {
+        "gitBlobSha1": "9fbb2fb1648cf1c439aefbf9ed884166c6e3b951"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eom-2026-08-31-building-a-company"
+    },
+    {
+      "type": "git-commit",
+      "value": "16627918be55aa024e3740be2e2f7267ed181c66",
+      "description": "Published August EOM ByteCast in Internal Signals"
+    }
+  ]
+}
