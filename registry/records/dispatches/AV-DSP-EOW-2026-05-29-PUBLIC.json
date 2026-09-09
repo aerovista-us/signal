@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-EOW-2026-05-29-PUBLIC",
+  "contentClass": "dispatch",
+  "title": "Public Signal Summary",
+  "summary": "Shorter public-facing Signal summary preserved from the May 29 weekly reporting cycle.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-public-signal.html",
+  "canonicalPath": "dispatches/eow/2026-05-29-public-signal.html",
+  "tags": [
+    "may-2026",
+    "eow",
+    "public",
+    "dispatch",
+    "archive"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/2026-05-29-public-signal.html",
+      "name": "2026-05-29-public-signal.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 6376,
+      "integrity": {
+        "gitBlobSha1": "e0244d979d07dc28dc0f988a734a01d281631781"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-05-29-public"
+    }
+  ]
+}
