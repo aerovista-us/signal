@@ -1,0 +1,56 @@
+name: Refresh ByteCast player role
+
+on:
+  push:
+    branches: [eow-2026-09-07-bytecast]
+    paths:
+      - ".github/workflows/bytecast-role-refresh.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: eow-2026-09-07-bytecast
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refine ByteCast player classification
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/registry_v2.py')
+          s = p.read_text(encoding='utf-8')
+          old = '''    if ext in {".js",".mjs",".ps1",".py"}:
+                  return "script"
+              if "transcript" in p or "bytecast" in p:
+                  return "transcript"'''
+          new = '''    if ext in {".js",".mjs",".ps1",".py"}:
+                  return "script"
+              if name == "bytecast.html":
+                  return "report-section"
+              if "transcript" in p or "bytecast" in p:
+                  return "transcript"'''
+          if old not in s:
+              raise SystemExit('infer_role anchor not found')
+          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          PY
+          python scripts/registry_v2.py refresh
+          python scripts/test_registry_v2.py
+          python scripts/registry_v2.py validate
+      - name: Commit classification and refreshed manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/bytecast-role-refresh.yml
+          git add scripts/registry_v2.py registry/records registry/indexes js/signals-catalog.json
+          git commit -m "Registry: classify themed ByteCast players as report sections"
+          git pull --rebase origin eow-2026-09-07-bytecast
+          git push origin HEAD:eow-2026-09-07-bytecast
