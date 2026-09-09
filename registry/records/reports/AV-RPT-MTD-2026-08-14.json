@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-MTD-2026-08-14",
+  "reportId": "AV-RPT-MTD-2026-08-14",
+  "contentClass": "report",
+  "reportClass": "mtd",
+  "title": "The Machine Is Taking Shape",
+  "summary": "Self-contained August month-to-date interactive operating report with embedded 6:23 ByteCast audio and animated operating model.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "embedded-bytecast"
+  ],
+  "period": {
+    "start": "2026-08-01",
+    "end": "2026-08-14"
+  },
+  "issuedAt": "2026-08-15",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+  "canonicalPath": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+  "tags": [
+    "august-2026",
+    "mtd",
+    "month-to-date",
+    "bytecast",
+    "operating-model"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "newsletters",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "name": "AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 12310940,
+      "integrity": {
+        "gitBlobSha1": "e7cdaad9aef6314995942e3c0a9cbd069fef5f25"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "mtd-2026-08-15-machine-taking-shape"
+    }
+  ]
+}
