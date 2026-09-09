@@ -70,3 +70,10 @@ Do not move legacy live files merely to register them. Register current canonica
 ## Formal report minimum
 
 A final formal report must include a stable `reportId`, report class, reporting period or effective time, issue date, status, audience, title, summary, owner, canonical URL/path, tags, package declaration, and complete file manifest.
+
+
+## Folder normalization
+
+Formal report normalization uses one immutable report package directory per report. Legacy public HTML paths remain redirect stubs and legacy direct-media paths remain referenced compatibility aliases until intentionally retired.
+
+Validated pilot: `AV-RPT-EOM-2026-08` is normalized at `newsletters/editions/eom/2026-08-31-building-a-company/`.
