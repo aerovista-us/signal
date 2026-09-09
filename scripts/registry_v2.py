@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Signal Registry v2 validator, manifest refresher, index builder, and catalog generator."""
+"""Signal Registry v2 validator, manifest refresher, index builder, and UI catalog generator."""
 
 from __future__ import annotations
 
@@ -11,6 +11,7 @@ import re
 import subprocess
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "registry"
@@ -19,15 +20,21 @@ INDEXES = REGISTRY / "indexes"
 PRESENTATION = REGISTRY / "presentation" / "signals-catalog.json"
 CATALOG_OUT = ROOT / "js" / "signals-catalog.json"
 
-REQUIRED = {"schemaVersion","id","contentClass","title","status","audience","formats","issuedAt","canonicalPath","package","files"}
+REQUIRED = {
+    "schemaVersion","id","contentClass","title","summary","owner","status",
+    "audience","formats","issuedAt","canonicalUrl","canonicalPath","tags","package","files"
+}
 CLASSES = {"report","publication","dispatch","media"}
 STATUSES = {"draft","review","final","superseded","withdrawn"}
 RELATIONSHIPS = {"owned","referenced"}
 REPORT_CLASSES = {"eod","eow","mtd","eom","quarterly","annual","milestone","incident","audit","compliance","release-readiness","production-validation","investigation","risk-review","special"}
 AUDIENCES = {"internal","executive","operations","staff","stakeholder","shareholder","advisor","partner","public","client","community"}
-ROLES = {"primary","report-section","audio","video","image","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"}
+ROLES = {"primary","report-section","audio","video","image","document","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"}
+PACKAGE_MODES = {"directory","legacy-flat","external"}
 ID_RE = re.compile(r"^AV-[A-Z]+-[A-Z0-9-]+$")
-
+REPORT_ID_RE = re.compile(r"^AV-RPT-[A-Z0-9-]+$")
+SHA1_RE = re.compile(r"^[0-9a-f]{40}$")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 INDEX_NAMES = {
     "report": "reports.json",
     "publication": "publications.json",
@@ -49,6 +56,12 @@ def load_records():
         obj["_recordPath"] = path.relative_to(ROOT).as_posix()
         records.append(obj)
     return records
+
+def safe_repo_path(value: str):
+    if not isinstance(value, str) or not value:
+        return False
+    p = Path(value)
+    return not p.is_absolute() and ".." not in p.parts
 
 def git_blob_sha1(path: Path):
     cp = subprocess.run(["git","hash-object",str(path)], cwd=ROOT, text=True, capture_output=True)
@@ -93,7 +106,7 @@ def infer_role(path: Path):
         return "video"
     if ext in {".png",".jpg",".jpeg",".webp",".gif",".svg"}:
         return "image"
-    if ext in {".css"}:
+    if ext == ".css":
         return "style"
     if ext in {".js",".mjs",".ps1",".py"}:
         return "script"
@@ -105,8 +118,8 @@ def infer_role(path: Path):
         return "source"
     if ext in {".json",".csv"}:
         return "data"
-    if ext in {".pdf",".docx",".xlsx",".pptx"}:
-        return "attachment"
+    if ext in {".pdf",".docx",".xlsx",".pptx",".rtf"}:
+        return "document"
     return "other"
 
 def stable_file_id(rel_path: str):
@@ -133,7 +146,7 @@ def enrich_file_entry(entry):
 def scan_package(record):
     package = record.get("package") or {}
     root_rel = package.get("root")
-    if package.get("mode") != "directory" or not root_rel:
+    if package.get("mode") != "directory" or not safe_repo_path(root_rel):
         return None
     package_root = ROOT / root_rel
     if not package_root.is_dir():
@@ -144,10 +157,9 @@ def scan_package(record):
     for full in sorted(p for p in package_root.rglob("*") if p.is_file()):
         rel = full.relative_to(ROOT).as_posix()
         local = full.relative_to(package_root)
-        role = infer_role(local)
         owned.append(enrich_file_entry({
             "id": stable_file_id(local.as_posix()),
-            "role": role,
+            "role": infer_role(local),
             "relationship": "owned",
             "path": rel,
             "name": full.name,
@@ -184,12 +196,15 @@ def parse_date(value, label, errors, rp):
         return None
 
 def validate_period(record, rp, errors):
-    period = record.get("period")
     if record.get("contentClass") != "report":
         return
+    period = record.get("period")
     if not isinstance(period, dict) or not period:
         errors.append(f"{rp}: period required for reports")
         return
+    extras = set(period) - {"start","end","effectiveAt"}
+    if extras:
+        errors.append(f"{rp}: invalid period fields {sorted(extras)}")
     has_range = "start" in period or "end" in period
     has_effective = "effectiveAt" in period
     if not has_range and not has_effective:
@@ -200,11 +215,11 @@ def validate_period(record, rp, errors):
         else:
             start = parse_date(period["start"], "period.start", errors, rp)
             end = parse_date(period["end"], "period.end", errors, rp)
+            issued = parse_date(record.get("issuedAt",""), "issuedAt", errors, rp)
             if start and end and start > end:
                 errors.append(f"{rp}: period.start must be <= period.end")
-            issued = parse_date(record.get("issuedAt",""), "issuedAt", errors, rp)
-            if issued and end and issued < end:
-                errors.append(f"{rp}: issuedAt cannot be before period.end")
+            if issued and end and record.get("status") == "final" and issued < end:
+                errors.append(f"{rp}: final issuedAt cannot be before period.end")
     if has_effective:
         try:
             datetime.fromisoformat(period["effectiveAt"].replace("Z","+00:00"))
@@ -214,6 +229,7 @@ def validate_period(record, rp, errors):
 def validate(records):
     errors = []
     ids = set()
+    globally_owned = {}
 
     for r in records:
         rp = r["_recordPath"]
@@ -222,54 +238,81 @@ def validate(records):
             errors.append(f"{rp}: missing required fields: {sorted(missing)}")
             continue
 
-        if r["schemaVersion"] != "2.0":
+        rid = r.get("id")
+        if r.get("schemaVersion") != "2.0":
             errors.append(f"{rp}: schemaVersion must be 2.0")
-        if not ID_RE.fullmatch(r["id"]):
-            errors.append(f"{rp}: invalid id format {r['id']}")
-        if r["id"] in ids:
-            errors.append(f"{rp}: duplicate id {r['id']}")
-        ids.add(r["id"])
+        if not isinstance(rid,str) or not ID_RE.fullmatch(rid):
+            errors.append(f"{rp}: invalid id format {rid!r}")
+        elif rid in ids:
+            errors.append(f"{rp}: duplicate id {rid}")
+        ids.add(rid)
 
-        if r["contentClass"] not in CLASSES:
-            errors.append(f"{rp}: invalid contentClass {r['contentClass']}")
-        if r["status"] not in STATUSES:
-            errors.append(f"{rp}: invalid status {r['status']}")
-        if not isinstance(r["audience"], list) or not r["audience"]:
-            errors.append(f"{rp}: audience must be a non-empty array")
+        cls = r.get("contentClass")
+        if cls not in CLASSES:
+            errors.append(f"{rp}: invalid contentClass {cls!r}")
+        if r.get("status") not in STATUSES:
+            errors.append(f"{rp}: invalid status {r.get('status')!r}")
+        for field in ("title","owner","canonicalUrl","canonicalPath"):
+            if not isinstance(r.get(field),str) or not r[field].strip():
+                errors.append(f"{rp}: {field} must be non-empty")
+        if not isinstance(r.get("summary"),str):
+            errors.append(f"{rp}: summary must be a string")
+
+        if not safe_repo_path(r.get("canonicalPath","")):
+            errors.append(f"{rp}: canonicalPath must be repository-relative and cannot contain ..")
         else:
-            unknown = sorted(set(r["audience"]) - AUDIENCES)
+            canonical = ROOT / r["canonicalPath"]
+            if not canonical.is_file():
+                errors.append(f"{rp}: canonicalPath does not exist: {r['canonicalPath']}")
+
+        if isinstance(r.get("canonicalUrl"),str) and not r["canonicalUrl"].startswith(("https://","http://")):
+            errors.append(f"{rp}: canonicalUrl must be absolute http(s)")
+
+        audience = r.get("audience")
+        if not isinstance(audience,list) or not audience or len(audience) != len(set(audience)):
+            errors.append(f"{rp}: audience must be a non-empty unique array")
+        else:
+            unknown = sorted(set(audience) - AUDIENCES)
             if unknown:
                 errors.append(f"{rp}: invalid audience values {unknown}")
-            if len(r["audience"]) != len(set(r["audience"])):
-                errors.append(f"{rp}: audience contains duplicates")
-        if not isinstance(r["formats"], list) or not r["formats"]:
-            errors.append(f"{rp}: formats must be a non-empty array")
-        elif len(r["formats"]) != len(set(r["formats"])):
-            errors.append(f"{rp}: formats contains duplicates")
 
-        issued = parse_date(r["issuedAt"], "issuedAt", errors, rp)
+        formats = r.get("formats")
+        if not isinstance(formats,list) or not formats or len(formats) != len(set(formats)) or any(not isinstance(x,str) or not x for x in formats):
+            errors.append(f"{rp}: formats must be a non-empty unique string array")
 
-        if r["contentClass"] == "report":
-            if r.get("reportId") != r["id"]:
+        tags = r.get("tags")
+        if not isinstance(tags,list) or len(tags) != len(set(tags)) or any(not isinstance(x,str) or not x for x in tags):
+            errors.append(f"{rp}: tags must be a unique string array")
+
+        parse_date(r.get("issuedAt",""), "issuedAt", errors, rp)
+
+        if cls == "report":
+            report_id = r.get("reportId")
+            if not isinstance(report_id,str) or not REPORT_ID_RE.fullmatch(report_id):
+                errors.append(f"{rp}: valid reportId required for reports")
+            elif report_id != rid:
                 errors.append(f"{rp}: reportId must equal id")
             if r.get("reportClass") not in REPORT_CLASSES:
                 errors.append(f"{rp}: invalid or missing reportClass")
-            if r["status"] == "final" and not r.get("canonicalUrl"):
-                errors.append(f"{rp}: final report requires canonicalUrl")
+        elif cls == "publication":
+            if not isinstance(r.get("publicationClass"),str) or not r["publicationClass"].strip():
+                errors.append(f"{rp}: publicationClass required for publications")
         validate_period(r, rp, errors)
 
-        canonical = ROOT / r["canonicalPath"]
-        if not canonical.is_file():
-            errors.append(f"{rp}: canonicalPath does not exist: {r['canonicalPath']}")
+        package = r.get("package")
+        if not isinstance(package,dict):
+            errors.append(f"{rp}: package must be an object")
+            package = {}
+        else:
+            if package.get("mode") not in PACKAGE_MODES:
+                errors.append(f"{rp}: invalid package.mode")
+            if not safe_repo_path(package.get("root","")):
+                errors.append(f"{rp}: package.root must be repository-relative and safe")
+            if not isinstance(package.get("strict"),bool) or not isinstance(package.get("portable"),bool):
+                errors.append(f"{rp}: package.strict and package.portable must be booleans")
 
-        package = r["package"]
-        if package.get("mode") not in {"directory","legacy-flat","external"}:
-            errors.append(f"{rp}: invalid package.mode")
-        if not isinstance(package.get("strict"), bool):
-            errors.append(f"{rp}: package.strict must be boolean")
-
-        files = r["files"]
-        if not isinstance(files, list) or not files:
+        files = r.get("files")
+        if not isinstance(files,list) or not files:
             errors.append(f"{rp}: files must be a non-empty array")
             continue
 
@@ -277,85 +320,113 @@ def validate(records):
         owned_paths = set()
         primary_owned = []
         for f in files:
-            req = {"id","role","relationship","path","name","fileType","mediaType"}
+            if not isinstance(f,dict):
+                errors.append(f"{rp}: file entries must be objects")
+                continue
+            req = {"id","role","relationship","path","name","fileType","mediaType","sizeBytes","integrity"}
             fm = req - set(f)
             if fm:
                 errors.append(f"{rp}: file entry missing {sorted(fm)}")
                 continue
-            if f["id"] in file_ids:
-                errors.append(f"{rp}: duplicate file id {f['id']}")
-            file_ids.add(f["id"])
-            if f["role"] not in ROLES:
-                errors.append(f"{rp}: invalid file role {f['role']} for {f['path']}")
-            if f["relationship"] not in RELATIONSHIPS:
-                errors.append(f"{rp}: invalid relationship for {f['path']}")
+
+            fid = f.get("id")
+            if not isinstance(fid,str) or not fid:
+                errors.append(f"{rp}: file id must be non-empty")
+            elif fid in file_ids:
+                errors.append(f"{rp}: duplicate file id {fid}")
+            file_ids.add(fid)
+
+            if f.get("role") not in ROLES:
+                errors.append(f"{rp}: invalid file role {f.get('role')!r} for {f.get('path')}")
+            if f.get("relationship") not in RELATIONSHIPS:
+                errors.append(f"{rp}: invalid relationship for {f.get('path')}")
+                continue
+            if not safe_repo_path(f.get("path","")):
+                errors.append(f"{rp}: unsafe file path {f.get('path')!r}")
                 continue
 
             rel = Path(f["path"])
-            if rel.is_absolute() or ".." in rel.parts:
-                errors.append(f"{rp}: unsafe file path {f['path']}")
-                continue
             full = ROOT / rel
+            if f.get("name") != rel.name:
+                errors.append(f"{rp}: file name does not match path basename for {f['path']}")
+            if not isinstance(f.get("fileType"),str) or not f["fileType"]:
+                errors.append(f"{rp}: fileType required for {f['path']}")
+            if not isinstance(f.get("mediaType"),str) or not f["mediaType"]:
+                errors.append(f"{rp}: mediaType required for {f['path']}")
+            if not isinstance(f.get("sizeBytes"),int) or f["sizeBytes"] < 0:
+                errors.append(f"{rp}: invalid sizeBytes for {f['path']}")
             if not full.is_file():
                 errors.append(f"{rp}: broken local file path {f['path']}")
                 continue
-
-            if "sizeBytes" in f and full.stat().st_size != f["sizeBytes"]:
+            if full.stat().st_size != f["sizeBytes"]:
                 errors.append(f"{rp}: size mismatch {f['path']} expected={f['sizeBytes']} actual={full.stat().st_size}")
 
-            integ = f.get("integrity") or {}
-            expected_blob = integ.get("gitBlobSha1")
-            if expected_blob:
+            integ = f.get("integrity")
+            if not isinstance(integ,dict):
+                errors.append(f"{rp}: integrity must be an object for {f['path']}")
+                integ = {}
+            blob = integ.get("gitBlobSha1")
+            sha = integ.get("sha256")
+            if blob is not None and (not isinstance(blob,str) or not SHA1_RE.fullmatch(blob)):
+                errors.append(f"{rp}: invalid gitBlobSha1 for {f['path']}")
+            if sha is not None and (not isinstance(sha,str) or not SHA256_RE.fullmatch(sha)):
+                errors.append(f"{rp}: invalid sha256 for {f['path']}")
+            if blob:
                 actual_blob = git_blob_sha1(full)
-                if actual_blob and actual_blob != expected_blob:
+                if actual_blob and actual_blob != blob:
                     errors.append(f"{rp}: git blob mismatch {f['path']}")
-            expected_sha = integ.get("sha256")
-            if expected_sha:
-                actual_sha = sha256_file(full)
-                if actual_sha != expected_sha:
+            if sha:
+                if sha256_file(full) != sha:
                     errors.append(f"{rp}: sha256 mismatch {f['path']}")
-            elif r["status"] == "final" and f["relationship"] == "owned":
+            elif r.get("status") == "final" and f.get("relationship") == "owned":
                 errors.append(f"{rp}: final owned file missing sha256 {f['path']}")
 
-            if f["relationship"] == "owned":
-                owned_paths.add(rel.as_posix())
-                if f["role"] == "primary":
-                    primary_owned.append(rel.as_posix())
+            if f.get("relationship") == "owned":
+                p = rel.as_posix()
+                owned_paths.add(p)
+                previous = globally_owned.get(p)
+                if previous and previous != rid:
+                    errors.append(f"{rp}: {p} is already owned by {previous}; shared files must be referenced")
+                globally_owned[p] = rid
+                if f.get("role") == "primary":
+                    primary_owned.append(p)
 
         if not primary_owned:
             errors.append(f"{rp}: at least one owned primary file is required")
-        if r["canonicalPath"] not in primary_owned:
+        if r.get("canonicalPath") not in primary_owned:
             errors.append(f"{rp}: canonicalPath must be one of the owned primary files")
 
-        if package.get("strict") and package.get("mode") == "directory":
-            package_root = ROOT / package["root"]
+        if package.get("strict") and package.get("mode") == "directory" and safe_repo_path(package.get("root","")):
+            package_root = (ROOT / package["root"]).resolve()
             if not package_root.is_dir():
                 errors.append(f"{rp}: strict package root missing: {package['root']}")
             else:
                 actual = {p.relative_to(ROOT).as_posix() for p in package_root.rglob("*") if p.is_file()}
                 missing_manifest = sorted(actual - owned_paths)
-                outside_package = sorted(p for p in owned_paths if not (ROOT / p).is_relative_to(package_root))
                 if missing_manifest:
                     errors.append(f"{rp}: unregistered files inside strict package: {missing_manifest}")
-                if outside_package:
-                    errors.append(f"{rp}: owned files outside strict package: {outside_package}")
+                for p in owned_paths:
+                    try:
+                        (ROOT / p).resolve().relative_to(package_root)
+                    except ValueError:
+                        errors.append(f"{rp}: owned file outside strict package: {p}")
 
     return errors
 
 def summary_record(r):
-    period = r.get("period")
     return {
         "id": r["id"],
+        **({"reportId":r["reportId"]} if r.get("reportId") else {}),
         "recordPath": r["_recordPath"],
         "contentClass": r["contentClass"],
-        **({"reportClass": r.get("reportClass")} if r["contentClass"] == "report" else {}),
-        **({"publicationClass": r.get("publicationClass")} if r.get("publicationClass") else {}),
+        **({"reportClass":r.get("reportClass")} if r.get("reportClass") else {}),
+        **({"publicationClass":r.get("publicationClass")} if r.get("publicationClass") else {}),
         "title": r["title"],
         "status": r["status"],
         "issuedAt": r["issuedAt"],
-        **({"period": period} if period else {}),
+        **({"period":r.get("period")} if r.get("period") else {}),
         "canonicalPath": r["canonicalPath"],
-        **({"canonicalUrl": r.get("canonicalUrl")} if r.get("canonicalUrl") else {}),
+        "canonicalUrl": r["canonicalUrl"],
         "formats": r["formats"],
         "audience": r["audience"],
         "fileCount": len(r["files"]),
@@ -363,50 +434,52 @@ def summary_record(r):
 
 def sort_key(r):
     period = r.get("period") or {}
-    return (period.get("end") or period.get("effectiveAt") or r.get("issuedAt",""), r.get("issuedAt",""), r["id"])
+    return (period.get("end") or (period.get("effectiveAt") or "")[:10] or r.get("issuedAt",""), r.get("issuedAt",""), r["id"])
 
 def build_indexes(records):
     INDEXES.mkdir(parents=True, exist_ok=True)
     ordered = sorted(records, key=sort_key, reverse=True)
-    summaries = [summary_record(r) for r in ordered]
-    write_json(INDEXES / "all.json", {"schemaVersion":"2.0","count":len(summaries),"records":summaries})
-
+    write_json(INDEXES / "all.json", {"schemaVersion":"2.0","count":len(ordered),"records":[summary_record(r) for r in ordered]})
     for cls, filename in INDEX_NAMES.items():
         subset = [summary_record(r) for r in ordered if r["contentClass"] == cls]
         write_json(INDEXES / filename, {"schemaVersion":"2.0","contentClass":cls,"count":len(subset),"records":subset})
 
     current = {}
-    finals = [r for r in ordered if r["contentClass"] == "report" and r["status"] == "final"]
-    for r in finals:
-        rc = r.get("reportClass")
-        if rc and rc not in current:
-            current[rc] = {
-                "id": r["id"],
-                "title": r["title"],
-                "issuedAt": r["issuedAt"],
-                "period": r.get("period"),
-                "canonicalPath": r["canonicalPath"],
-                "canonicalUrl": r.get("canonicalUrl"),
-            }
+    for r in ordered:
+        if r["contentClass"] == "report" and r["status"] == "final":
+            rc = r.get("reportClass")
+            if rc and rc not in current:
+                current[rc] = {
+                    "id":r["id"],"reportId":r["reportId"],"title":r["title"],
+                    "issuedAt":r["issuedAt"],"period":r.get("period"),
+                    "canonicalPath":r["canonicalPath"],"canonicalUrl":r["canonicalUrl"]
+                }
     write_json(INDEXES / "current.json", {"schemaVersion":"2.0","reports":current})
 
 def generate_catalog(records):
     if not PRESENTATION.is_file():
         return
     cfg = read_json(PRESENTATION)
-    known = {r["id"] for r in records}
+    by_id = {r["id"]:r for r in records}
 
-    def scrub(obj):
-        if isinstance(obj, list):
-            return [scrub(x) for x in obj]
-        if isinstance(obj, dict):
-            rid = obj.get("recordId")
-            if rid and rid not in known:
+    def hydrate(obj):
+        if isinstance(obj,list):
+            return [hydrate(x) for x in obj]
+        if not isinstance(obj,dict):
+            return obj
+        out = {k:hydrate(v) for k,v in obj.items() if k != "recordId"}
+        rid = obj.get("recordId")
+        if rid:
+            if rid not in by_id:
                 raise ValueError(f"presentation references unknown recordId {rid}")
-            return {k:scrub(v) for k,v in obj.items() if k != "recordId"}
-        return obj
+            r = by_id[rid]
+            out["href"] = urlparse(r["canonicalUrl"]).path or "/"
+            out.setdefault("title", r["title"])
+            out.setdefault("summary", r["summary"])
+            out["tags"] = " ".join(r.get("tags",[]))
+        return out
 
-    write_json(CATALOG_OUT, scrub(cfg))
+    write_json(CATALOG_OUT, hydrate(cfg))
 
 def build(records):
     build_indexes(records)
