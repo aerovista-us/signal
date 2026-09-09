@@ -83,7 +83,7 @@
     },
     {
       "id": "bytecast-html",
-      "role": "transcript",
+      "role": "report-section",
       "relationship": "owned",
       "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html",
       "name": "bytecast.html",
