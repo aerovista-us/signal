@@ -34,7 +34,7 @@
     },
     "issuedAt": { "type": "string", "format": "date" },
     "canonicalUrl": { "type": "string", "minLength": 1 },
-    "canonicalPath": { "type": "string", "pattern": "^/" },
+    "canonicalPath": { "type": "string", "minLength": 1 },
     "tags": { "type": "array","uniqueItems": true,"items": { "type": "string","minLength": 1 } },
     "package": {
       "type": "object",
@@ -52,13 +52,14 @@
       "type": "array","minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id","role","relationship","path","name","mediaType","sizeBytes","integrity"],
+        "required": ["id","role","relationship","path","name","fileType","mediaType","sizeBytes","integrity"],
         "properties": {
           "id": { "type": "string","minLength": 1 },
           "role": { "enum": ["primary","report-section","audio","image","video","document","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"] },
           "relationship": { "enum": ["owned","referenced"] },
           "path": { "type": "string","minLength": 1 },
           "name": { "type": "string","minLength": 1 },
+          "fileType": { "type": "string","minLength": 1 },
           "mediaType": { "type": "string","minLength": 1 },
           "sizeBytes": { "type": "integer","minimum": 0 },
           "integrity": {
