@@ -55,20 +55,6 @@
       }
     },
     {
-      "id": "assets-audio-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/eom/2026-08-31-building-a-company/assets/audio.mp3",
-      "name": "audio.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 9901488,
-      "integrity": {
-        "gitBlobSha1": "9fbb2fb1648cf1c439aefbf9ed884166c6e3b951",
-        "sha256": "32a86d74bbefbba7a1844106c8ca87abd258b595f3dc0785c83d0ebee4f0b921"
-      }
-    },
-    {
       "id": "index-html",
       "role": "primary",
       "relationship": "owned",
