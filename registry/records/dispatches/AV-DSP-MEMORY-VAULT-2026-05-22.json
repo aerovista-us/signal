@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-MEMORY-VAULT-2026-05-22",
+  "contentClass": "dispatch",
+  "publicationClass": "build-log",
+  "title": "Memory Vault Is Live in AVCC",
+  "summary": "Build-log dispatch documenting the Memory Vault becoming available inside AVCC for searchable history, documentation, and project context.",
+  "owner": "AeroVista LLC",
+  "status": "final",
+  "audience": [
+    "internal",
+    "executive",
+    "operations"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-22",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/memory-vault-live-avcc.html",
+  "canonicalPath": "dispatches/topics/memory-vault-live-avcc.html",
+  "tags": [
+    "avcc",
+    "memory-vault",
+    "build-log"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/topics",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/topics/memory-vault-live-avcc.html",
+      "name": "memory-vault-live-avcc.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5478,
+      "integrity": {
+        "gitBlobSha1": "cc7f700051c6f37b8eaaa3a14e9a8e4de961e390"
+      }
+    },
+    {
+      "id": "legacy-redirect",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/memory-vault-live-avcc.html",
+      "name": "memory-vault-live-avcc.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 543,
+      "integrity": {
+        "gitBlobSha1": "1c877e313bf8f25531faa0689ce51720e14ea8b6"
+      }
+    }
+  ],
+  "references": []
+}

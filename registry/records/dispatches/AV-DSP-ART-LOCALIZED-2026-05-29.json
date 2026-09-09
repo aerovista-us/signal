@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-DSP-ART-LOCALIZED-2026-05-29",
+  "contentClass": "dispatch",
+  "publicationClass": "topic",
+  "title": "Art Localized Market Update",
+  "summary": "Topical Signal dispatch covering Art Localized market activation and local creative-market positioning.",
+  "owner": "AeroVista LLC",
+  "status": "final",
+  "audience": [
+    "internal",
+    "stakeholder",
+    "public"
+  ],
+  "formats": [
+    "html"
+  ],
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/topics/art-localized-market-update-2026-05-29.html",
+  "canonicalPath": "dispatches/topics/art-localized-market-update-2026-05-29.html",
+  "tags": [
+    "art-localized",
+    "market-update",
+    "may-2026"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/topics",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/topics/art-localized-market-update-2026-05-29.html",
+      "name": "art-localized-market-update-2026-05-29.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 10821,
+      "integrity": {
+        "gitBlobSha1": "78d93981fa40a6bbb9b39c85daad15d26bb9aaa3"
+      }
+    },
+    {
+      "id": "legacy-redirect",
+      "role": "redirect",
+      "relationship": "referenced",
+      "path": "dispatches/art-localized-market-update-2026-05-29.html",
+      "name": "art-localized-market-update-2026-05-29.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 601,
+      "integrity": {
+        "gitBlobSha1": "6e0c0a8ea0f03860a7a08a378eb73638bc91e633"
+      }
+    }
+  ],
+  "references": []
+}
