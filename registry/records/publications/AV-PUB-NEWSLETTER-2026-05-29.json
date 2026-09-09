@@ -33,7 +33,7 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/weekly/2026-05-29-newsletter-package/index.html",
@@ -42,7 +42,22 @@
       "mediaType": "text/html",
       "sizeBytes": 18768,
       "integrity": {
-        "gitBlobSha1": "13ffb340d70f4064ba1e9c1379771206f1a3ef2b"
+        "gitBlobSha1": "13ffb340d70f4064ba1e9c1379771206f1a3ef2b",
+        "sha256": "81ec0aac5c4f7739c7fee50a8a71ba092b7f7f50b9a6740bedee6c15bac9fcfe"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-05-29-newsletter-package/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 353,
+      "integrity": {
+        "gitBlobSha1": "7a5cd17ee8e974a02605fedbe4145455ae3c7e1e",
+        "sha256": "b83e725364f952cb3da1b22ed8f4824ac0468d1aa258a727865b70fcbf7a75da"
       }
     }
   ],

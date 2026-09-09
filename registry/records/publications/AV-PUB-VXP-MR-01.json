@@ -38,7 +38,119 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "01-regulartory-rails-policy-shifts-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/01.regulartory.rails.policy.shifts.png",
+      "name": "01.regulartory.rails.policy.shifts.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2065731,
+      "integrity": {
+        "gitBlobSha1": "408ea1f15b4b38a039cc4acd6ccd464c00ebfe64",
+        "sha256": "a3b12a5a2759c755f1fb1bfdc668a5282db42c0656ea72d8c08d0227e5f3d16d"
+      }
+    },
+    {
+      "id": "02-tokenized-treasuries-stablecoin-liquidity-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/02.tokenized.treasuries.stablecoin.liquidity.png",
+      "name": "02.tokenized.treasuries.stablecoin.liquidity.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1997301,
+      "integrity": {
+        "gitBlobSha1": "071243db4126a9a23d903ae64e0ddba50ea463c1",
+        "sha256": "4be390e0acb71aff544f889b20014548028ece2f8a8345aa2038ba5635b733c2"
+      }
+    },
+    {
+      "id": "02-signal-clusters-deep-dive-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/02_signal_clusters_deep_dive.png",
+      "name": "02_signal_clusters_deep_dive.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2265618,
+      "integrity": {
+        "gitBlobSha1": "353159c5b0fd858c45e79dc3729fcd1c2d945e1c",
+        "sha256": "9978d4808a27b6a8d31dacd82233013993ea2ed95bf73e4c6bef367939e6b5f9"
+      }
+    },
+    {
+      "id": "03-collateral-systems-credit-innoovation-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/03.collateral.systems.credit.innoovation.png",
+      "name": "03.collateral.systems.credit.innoovation.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1982067,
+      "integrity": {
+        "gitBlobSha1": "47d3a2103c34334e65ae9ec72cc95aa8bea057eb",
+        "sha256": "48e3b845bdf26e58313586aafdc06aade0d3fd4c79c0186d8d1bbb0e7ea56066"
+      }
+    },
+    {
+      "id": "03-05-convergence-architecture-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/03_05_convergence_architecture.png",
+      "name": "03_05_convergence_architecture.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1996805,
+      "integrity": {
+        "gitBlobSha1": "689d12a8171b579d6df93dd588452765d36f6b7f",
+        "sha256": "f213203db4f389d3d63df26bbe20ed865f6128629f31d5521e33e2920a687f9d"
+      }
+    },
+    {
+      "id": "06-07-strategic-outlook-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/06_07_strategic_outlook.png",
+      "name": "06_07_strategic_outlook.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2003883,
+      "integrity": {
+        "gitBlobSha1": "b3f21a86159902620c07dcfbf7f1fbb7ce2eac27",
+        "sha256": "f83b7385aee24fff8738798484e2808349cc44057bdf72f926919b02d86dec98"
+      }
+    },
+    {
+      "id": "back-cover-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/back_cover.png",
+      "name": "back_cover.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1940543,
+      "integrity": {
+        "gitBlobSha1": "d0de9b8fafc91fb1895414778e15122297940fda",
+        "sha256": "32a94d7afd797387177630798ccf5251a5c81e1dceace099812898f77a6ca552"
+      }
+    },
+    {
+      "id": "cover-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/cover.png",
+      "name": "cover.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2036337,
+      "integrity": {
+        "gitBlobSha1": "a1764dc7e1ed9fa754305070bf8474ea7ea055cc",
+        "sha256": "9e914eacb62391a92563febd11ffda92201f090171efb126818529ff09dde1c8"
+      }
+    },
+    {
+      "id": "magazine-html",
       "role": "primary",
       "relationship": "owned",
       "path": "publications/VXP-MR-01-macro-rails-intelligence/magazine.html",
@@ -47,7 +159,344 @@
       "mediaType": "text/html",
       "sizeBytes": 13759,
       "integrity": {
-        "gitBlobSha1": "5d8ed3f656e4e24f7be4f0494a47a6bfc16f62d8"
+        "gitBlobSha1": "5d8ed3f656e4e24f7be4f0494a47a6bfc16f62d8",
+        "sha256": "f3694be02b7e257145fe2b37184c8ebbab2cdb2fcd84bcbd81f840a9105b1869"
+      }
+    },
+    {
+      "id": "magazine-mjs",
+      "role": "script",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/magazine.mjs",
+      "name": "magazine.mjs",
+      "fileType": "mjs",
+      "mediaType": "text/javascript",
+      "sizeBytes": 16027,
+      "integrity": {
+        "gitBlobSha1": "0e4d51e9f35afbf0e95b1d0b102053dfc31b89dd",
+        "sha256": "0a16673835cb22477714ef7af3f1f8188ff6459eae91eef9ad9a0974fa668a3a"
+      }
+    },
+    {
+      "id": "media-brief-teaser-mp4",
+      "role": "video",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/media/brief-teaser.mp4",
+      "name": "brief-teaser.mp4",
+      "fileType": "mp4",
+      "mediaType": "video/mp4",
+      "sizeBytes": 6963184,
+      "integrity": {
+        "gitBlobSha1": "31420078cf01ec9090415933a4e2640be9a83bf7",
+        "sha256": "2e6d47bba2ae80ddf9c8e16c888316f15c065804d26778857928bcc1b1477cce"
+      }
+    },
+    {
+      "id": "micro-infographic-pack-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/micro_infographic_pack.md",
+      "name": "micro_infographic_pack.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 617,
+      "integrity": {
+        "gitBlobSha1": "21d6ad84155a7121ca197ae8dd89a0f10d946e37",
+        "sha256": "51182dc46d54b87d8002f89902b60f6df640aa3f19b53d9c0523fcb16a4cf312"
+      }
+    },
+    {
+      "id": "pages-readme-txt",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/pages/README.txt",
+      "name": "README.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 1426,
+      "integrity": {
+        "gitBlobSha1": "30f84efd3c0b478724778d3bef9e02d708615c96",
+        "sha256": "5ad312e9841e320b3dd9e44af888277b9b94829e15fec14926c1c82730f4a303"
+      }
+    },
+    {
+      "id": "pages-manifest-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/pages-manifest.json",
+      "name": "pages-manifest.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 2345,
+      "integrity": {
+        "gitBlobSha1": "9827c24b43ed9729e2fa090dcb7805dcad35c008",
+        "sha256": "02a0e00dd2902a3e19b3bdb27f2b03890b87ff241d57bac513724349d39ff83e"
+      }
+    },
+    {
+      "id": "scripts-pull-page-flip-ps1",
+      "role": "script",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/scripts/pull-page-flip.ps1",
+      "name": "pull-page-flip.ps1",
+      "fileType": "ps1",
+      "mediaType": "application/octet-stream",
+      "sizeBytes": 515,
+      "integrity": {
+        "gitBlobSha1": "1b59643e9ef83be0bb983accefc062bf5a25bd3e",
+        "sha256": "011465c4abefe8205de29c1480716e270cb331124d87ff099cd662471e03d94e"
+      }
+    },
+    {
+      "id": "signals-appendix-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/signals_appendix.md",
+      "name": "signals_appendix.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 335,
+      "integrity": {
+        "gitBlobSha1": "07e721cc0fd4a6900a683f9f4cd2d633a334098b",
+        "sha256": "384bc1952d88e24461ae2a92e137983aecbffb79a48e0a920a9dcbed0eb54c57"
+      }
+    },
+    {
+      "id": "signals-briefing-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/signals_briefing.html",
+      "name": "signals_briefing.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 19739,
+      "integrity": {
+        "gitBlobSha1": "ee48585faa224f335c1bd96b14b6d82b054573ae",
+        "sha256": "b9266ebbc72c9d6789fd818a8966e9786d71283c8871ed6da7ab87c16956774b"
+      }
+    },
+    {
+      "id": "vendor-readme-txt",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/vendor/README.txt",
+      "name": "README.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 692,
+      "integrity": {
+        "gitBlobSha1": "6979b57d4d60781620aba1b21247ba58244b19ae",
+        "sha256": "8e13c2a17b2953ed0454fe7bd05f9a9cf74ed1e015706d804c835650d35e561d"
+      }
+    },
+    {
+      "id": "vespera-publication-meta-yaml",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/vespera_publication_meta.yaml",
+      "name": "vespera_publication_meta.yaml",
+      "fileType": "yaml",
+      "mediaType": "application/yaml",
+      "sizeBytes": 1700,
+      "integrity": {
+        "gitBlobSha1": "b7b9bd2397166b83be91e466cc0d02a7361e0862",
+        "sha256": "e74bebbf200f95caa6b81ad28d0f4c005e60b978852ceb269b97b65e161c245f"
+      }
+    },
+    {
+      "id": "vespera-toc-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/vespera_toc.md",
+      "name": "vespera_toc.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 757,
+      "integrity": {
+        "gitBlobSha1": "171f99c8a683aff0056cb35e67795d400692e0d8",
+        "sha256": "c9cba8093266355bc9763fc58502de2a094f11d6bbf86248aecda86d053572e5"
+      }
+    },
+    {
+      "id": "volume-01-regulatory-rails-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_01_regulatory_rails.md",
+      "name": "volume_01_regulatory_rails.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 2385,
+      "integrity": {
+        "gitBlobSha1": "1adcf970565a9a1b079301f7f3c26caf433986a2",
+        "sha256": "da9fa96ca96dcd421c096c0ea668e2e7078145925635b7549f2aaa0fd629f581"
+      }
+    },
+    {
+      "id": "volume-01-regulatory-rails-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_01_regulatory_rails.png",
+      "name": "volume_01_regulatory_rails.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2065731,
+      "integrity": {
+        "gitBlobSha1": "408ea1f15b4b38a039cc4acd6ccd464c00ebfe64",
+        "sha256": "a3b12a5a2759c755f1fb1bfdc668a5282db42c0656ea72d8c08d0227e5f3d16d"
+      }
+    },
+    {
+      "id": "volume-02-tokenized-treasuries-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_02_tokenized_treasuries.md",
+      "name": "volume_02_tokenized_treasuries.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 2023,
+      "integrity": {
+        "gitBlobSha1": "0ade0bab5296c12d3723af60b1b25908d5514a04",
+        "sha256": "6e322b5fd75b14ad3f74438cd8f67082cb2c4bcb9dc628a9cc441999d866db75"
+      }
+    },
+    {
+      "id": "volume-02-tokenized-treasuries-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_02_tokenized_treasuries.png",
+      "name": "volume_02_tokenized_treasuries.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1997301,
+      "integrity": {
+        "gitBlobSha1": "071243db4126a9a23d903ae64e0ddba50ea463c1",
+        "sha256": "4be390e0acb71aff544f889b20014548028ece2f8a8345aa2038ba5635b733c2"
+      }
+    },
+    {
+      "id": "volume-03-collateral-systems-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_03_collateral_systems.md",
+      "name": "volume_03_collateral_systems.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 1762,
+      "integrity": {
+        "gitBlobSha1": "66ea4c745cdcd89dee5dcacb65dc6ddb986e30da",
+        "sha256": "d5ee00e2807bd9d3890d91c88876391ab7ef6decb265dbfee4278a0bf4dae0fe"
+      }
+    },
+    {
+      "id": "volume-03-collateral-systems-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_03_collateral_systems.png",
+      "name": "volume_03_collateral_systems.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1982067,
+      "integrity": {
+        "gitBlobSha1": "47d3a2103c34334e65ae9ec72cc95aa8bea057eb",
+        "sha256": "48e3b845bdf26e58313586aafdc06aade0d3fd4c79c0186d8d1bbb0e7ea56066"
+      }
+    },
+    {
+      "id": "volume-04-banking-infra-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_04_banking_infra.md",
+      "name": "volume_04_banking_infra.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 1791,
+      "integrity": {
+        "gitBlobSha1": "e0a0fa50a21c06384d3d2426c5bddadbd67c43e8",
+        "sha256": "6d82c0e1c210e3523c261e9539e42031e4af0399d6befc7dc6dc00444b67a7ef"
+      }
+    },
+    {
+      "id": "volume-04-banking-infra-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_04_banking_infra.png",
+      "name": "volume_04_banking_infra.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1992505,
+      "integrity": {
+        "gitBlobSha1": "76f963d4659f41842fb164e45198b68638ce431d",
+        "sha256": "28b849064e6ef3a6eaadd0f1b7965845318266f1624be8ea254933f9a804b813"
+      }
+    },
+    {
+      "id": "volume-05-geopolitics-control-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_05_geopolitics_control.md",
+      "name": "volume_05_geopolitics_control.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 1649,
+      "integrity": {
+        "gitBlobSha1": "9e5f192867a692e64c840ebb0975c44ff913a024",
+        "sha256": "c97d840a722971f0e1bd646b450f1baca279cb078d3e98943c03a9bffb4f7387"
+      }
+    },
+    {
+      "id": "volume-05-geopolitics-control-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_05_geopolitics_control.png",
+      "name": "volume_05_geopolitics_control.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1981398,
+      "integrity": {
+        "gitBlobSha1": "a98a409238193c07e9bedb36df626f107ef657bb",
+        "sha256": "fbe3d7fbb52a651509f9f44bd5d74ff36aba7039d7206dc5053c942143123502"
+      }
+    },
+    {
+      "id": "volume-06-ai-energy-physical-rails-a-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_06_ai_energy_physical_rails-A.png",
+      "name": "volume_06_ai_energy_physical_rails-A.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2126566,
+      "integrity": {
+        "gitBlobSha1": "e5574da88a5d4559d1e5b7bbcad0c8f514419618",
+        "sha256": "4d7a93dad63d9748d4d43d0802c93518e4b7acd2f4f64dd9042719a445bc8a0d"
+      }
+    },
+    {
+      "id": "volume-06-ai-energy-physical-rails-b-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_06_ai_energy_physical_rails-b.png",
+      "name": "volume_06_ai_energy_physical_rails-b.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 2140650,
+      "integrity": {
+        "gitBlobSha1": "6a916439587ae3904931fc605c06e241acb5c9c2",
+        "sha256": "ff6a168a92a205f95228270a54b4a1df38117e153ee7b85f27425a941c77bad5"
+      }
+    },
+    {
+      "id": "volume-06-ai-energy-physical-rails-md",
+      "role": "source",
+      "relationship": "owned",
+      "path": "publications/VXP-MR-01-macro-rails-intelligence/volume_06_ai_energy_physical_rails.md",
+      "name": "volume_06_ai_energy_physical_rails.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 1783,
+      "integrity": {
+        "gitBlobSha1": "7c49050f79a453587fdc5f3a0c5926e540671403",
+        "sha256": "beb190a76ed3334461da8b8fd423275220c2c0a6d890dbcc864058e2f991779b"
       }
     }
   ],

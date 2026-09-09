@@ -35,7 +35,35 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "assets-audio-legacy-navada-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio-legacy-navada.mp3",
+      "name": "audio-legacy-navada.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      }
+    },
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 2529480,
+      "integrity": {
+        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
+        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
+      }
+    },
+    {
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/index.html",
@@ -44,7 +72,22 @@
       "mediaType": "text/html",
       "sizeBytes": 8468773,
       "integrity": {
-        "gitBlobSha1": "616cb9a459ff50a84ef04a4494abad6c5b74f83a"
+        "gitBlobSha1": "616cb9a459ff50a84ef04a4494abad6c5b74f83a",
+        "sha256": "69b69a2e23f1595cb25ef077df93e5c264a1a530f32869bed3ef3c1a6b364bbe"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 364,
+      "integrity": {
+        "gitBlobSha1": "54d2be29b5ed6c424bd8b1db387fef703530c5f1",
+        "sha256": "61aa86977a56ad601d23440476a830ddf0ba885c8e72a1a91a18e2cbe6048087"
       }
     }
   ],

@@ -42,7 +42,63 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "assets-audio-alt-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/assets/audio-alt.mp3",
+      "name": "audio-alt.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 6202032,
+      "integrity": {
+        "gitBlobSha1": "c110441d65219b4b66aa5119a0cb19e5a5bf5a17",
+        "sha256": "9debdd1f41aec78cea3fd78d7362829efdf57fba6bf3b1c47fcd32937c528ae8"
+      }
+    },
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 6202032,
+      "integrity": {
+        "gitBlobSha1": "c110441d65219b4b66aa5119a0cb19e5a5bf5a17",
+        "sha256": "9debdd1f41aec78cea3fd78d7362829efdf57fba6bf3b1c47fcd32937c528ae8"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1995533,
+      "integrity": {
+        "gitBlobSha1": "5bfbf9d178f2ca0d6c935f081ad6cac7130e0e4a",
+        "sha256": "96a61dc092bd6211f49a57eea05b09d054af8b51b28e492ce8525fc6ab091cd6"
+      }
+    },
+    {
+      "id": "assets-transcript-txt",
+      "role": "transcript",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/assets/transcript.txt",
+      "name": "transcript.txt",
+      "fileType": "txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 3830,
+      "integrity": {
+        "gitBlobSha1": "479e965eaa6bac977aa1aa564d778c13ab3e931b",
+        "sha256": "61220ce64950c807a6eb83e4e2c5082ed4d927277c26aa15c47f81412a6952b2"
+      }
+    },
+    {
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
@@ -51,7 +107,22 @@
       "mediaType": "text/html",
       "sizeBytes": 33231,
       "integrity": {
-        "gitBlobSha1": "dbb46a24e9aafbba4f5f199dc6903d9c62229d29"
+        "gitBlobSha1": "dbb46a24e9aafbba4f5f199dc6903d9c62229d29",
+        "sha256": "4d0ea6417d04f9eec7b9407100818d24579e15f2fb2a7397cca23f6356a748ae"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/milestone/2026-06-16-echoverse/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 361,
+      "integrity": {
+        "gitBlobSha1": "1fc29911fe40d9ad23c0090963e5ebe063e037f4",
+        "sha256": "1dbaac4124936f8544b42913107758ee0dc7144d22d176d5e1b5832d0417550d"
       }
     }
   ],

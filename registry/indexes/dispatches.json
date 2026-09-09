@@ -1,6 +1,83 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "dispatch",
-  "count": 0,
-  "records": []
+  "count": 4,
+  "records": [
+    {
+      "id": "AV-DSP-EOD-CURRENT",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOD-CURRENT.json",
+      "contentClass": "dispatch",
+      "title": "Current EOD Operating Note",
+      "status": "review",
+      "issuedAt": "2026-07-10",
+      "canonicalPath": "dispatches/eod/current-operating-note.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eod/current-operating-note.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "operations",
+        "staff"
+      ],
+      "fileCount": 1
+    },
+    {
+      "id": "AV-DSP-EOW-CURRENT",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-CURRENT.json",
+      "contentClass": "dispatch",
+      "title": "Current EOW Stakeholder Update",
+      "status": "review",
+      "issuedAt": "2026-06-28",
+      "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 1
+    },
+    {
+      "id": "AV-DSP-EOW-2026-06-28-SUMMARY",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-2026-06-28-SUMMARY.json",
+      "contentClass": "dispatch",
+      "title": "Resilience Weekend — Dated Summary",
+      "status": "final",
+      "issuedAt": "2026-06-28",
+      "canonicalPath": "dispatches/eow/2026-06-28-weekend-report.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-06-28-weekend-report.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 1
+    },
+    {
+      "id": "AV-DSP-EOW-2026-05-29-PUBLIC",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-2026-05-29-PUBLIC.json",
+      "contentClass": "dispatch",
+      "title": "Public Signal Summary",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "canonicalPath": "dispatches/eow/2026-05-29-public-signal.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-public-signal.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "public",
+        "stakeholder"
+      ],
+      "fileCount": 1
+    }
+  ]
 }

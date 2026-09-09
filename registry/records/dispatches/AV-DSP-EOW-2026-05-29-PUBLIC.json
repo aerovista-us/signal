@@ -41,7 +41,8 @@
       "mediaType": "text/html",
       "sizeBytes": 6376,
       "integrity": {
-        "gitBlobSha1": "e0244d979d07dc28dc0f988a734a01d281631781"
+        "gitBlobSha1": "e0244d979d07dc28dc0f988a734a01d281631781",
+        "sha256": "b7fcc7eac66916ea7fe6442dd2642107d4e56890df80df9942029f084fa9edc3"
       }
     }
   ],

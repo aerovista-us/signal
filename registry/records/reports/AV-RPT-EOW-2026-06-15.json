@@ -42,7 +42,35 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5763552,
+      "integrity": {
+        "gitBlobSha1": "c24fd7329d4be0efab973927bbe4d861d3b9f7ec",
+        "sha256": "4d6706787204225904b24d5f506c37d86ca34afca4fc4b6848bfe0fc8d11b9a9"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1986514,
+      "integrity": {
+        "gitBlobSha1": "ba6523a7ba0c441e4a0677495981818971a4aaf2",
+        "sha256": "6826a22bc02bb6a31d97e2996180f24090c7dda9d21b5f425758ab9b2455571f"
+      }
+    },
+    {
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
@@ -51,7 +79,22 @@
       "mediaType": "text/html",
       "sizeBytes": 18514,
       "integrity": {
-        "gitBlobSha1": "2d63cf6895691b45945ee7ec06cce3c03924176a"
+        "gitBlobSha1": "2d63cf6895691b45945ee7ec06cce3c03924176a",
+        "sha256": "fe24d42b0af6548b9ca863bf50c51dcad46b2701ccc7f696a1b06713da70ee5e"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 369,
+      "integrity": {
+        "gitBlobSha1": "574d9a2b116fb801ab8fee6816dc694cdb33c6ed",
+        "sha256": "4642c634fc58d2c4605dcfd8b13120d0276a9d865cd002437af3561b18a60a92"
       }
     }
   ],

@@ -43,7 +43,35 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "assets-audio-aac",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/assets/audio.aac",
+      "name": "audio.aac",
+      "fileType": "aac",
+      "mediaType": "audio/aac",
+      "sizeBytes": 3703981,
+      "integrity": {
+        "gitBlobSha1": "a17913b253c8b02d851c1a3e047cf129e238126f",
+        "sha256": "fcaeef983984d43053827b1648d7f23228d679cff9a767dcd3f3e00e887aa622"
+      }
+    },
+    {
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 5811648,
+      "integrity": {
+        "gitBlobSha1": "c13914b1bf1c173591dc7e90b3500a544070f787",
+        "sha256": "602714f092545d8d494312896224f514ad6bc92501ca3e7f3ea5ad66b639720b"
+      }
+    },
+    {
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
@@ -52,7 +80,22 @@
       "mediaType": "text/html",
       "sizeBytes": 17067,
       "integrity": {
-        "gitBlobSha1": "d53b2188107c58ecce81d87552691742d1fb5c24"
+        "gitBlobSha1": "d53b2188107c58ecce81d87552691742d1fb5c24",
+        "sha256": "3ba581c66c7a53f7dab7212f2f9cdc48104543bf36016e452f9a29a2626ba04a"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 346,
+      "integrity": {
+        "gitBlobSha1": "df234eddcca799c16b4f16c2641b22717a73e403",
+        "sha256": "fe6d8d615840587c2c7ea67a91233244785ba921a7591b105a85b8fadf3bf939"
       }
     }
   ],

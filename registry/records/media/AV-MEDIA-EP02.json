@@ -39,7 +39,8 @@
       "mediaType": "image/png",
       "sizeBytes": 2432376,
       "integrity": {
-        "gitBlobSha1": "73e1ff194b6552c143f48c64a9073972b5cdbfea"
+        "gitBlobSha1": "73e1ff194b6552c143f48c64a9073972b5cdbfea",
+        "sha256": "5f6de1c3f7747a2984d920093b532ede4c12e8c9661c8fb64dc4eb80d6594b24"
       }
     }
   ],

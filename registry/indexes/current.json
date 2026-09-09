@@ -3,23 +3,63 @@
   "reports": {
     "eom": {
       "id": "AV-RPT-EOM-2026-08",
+      "reportId": "AV-RPT-EOM-2026-08",
       "title": "From Building Pieces to Building a Company",
-      "issuedAt": "2026-09-03",
+      "issuedAt": "2026-09-02",
       "period": {
         "start": "2026-08-01",
         "end": "2026-08-31"
       },
+      "canonicalPath": "newsletters/EOM_August_2026.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/EOM_August_2026.html"
+    },
+    "mtd": {
+      "id": "AV-RPT-MTD-2026-08-14",
+      "reportId": "AV-RPT-MTD-2026-08-14",
+      "title": "The Machine Is Taking Shape",
+      "issuedAt": "2026-08-15",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "canonicalPath": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html"
     },
     "eod": {
       "id": "AV-RPT-EOD-2026-07-05",
+      "reportId": "AV-RPT-EOD-2026-07-05",
       "title": "Overall Company Status Signal",
       "issuedAt": "2026-07-05",
       "period": {
         "start": "2026-07-05",
         "end": "2026-07-05"
       },
+      "canonicalPath": "newsletters/editions/eod/2026-07-05-company-status/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/"
+    },
+    "eow": {
+      "id": "AV-RPT-EOW-2026-06-28",
+      "reportId": "AV-RPT-EOW-2026-06-28",
+      "title": "Resilience Weekend",
+      "issuedAt": "2026-06-28",
+      "period": {
+        "start": "2026-06-22",
+        "end": "2026-06-28"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/"
+    },
+    "milestone": {
+      "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "reportId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "title": "EchoVerse Audio Intelligence",
+      "issuedAt": "2026-06-16",
+      "period": {
+        "start": "2026-06-16",
+        "end": "2026-06-16"
+      },
+      "canonicalPath": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/milestone/2026-06-16-echoverse/"
     }
   }
 }

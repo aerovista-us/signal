@@ -42,7 +42,35 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "assets-audio-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/assets/audio.mp3",
+      "name": "audio.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3421944,
+      "integrity": {
+        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3",
+        "sha256": "eb60720c14940f753ad4b7c934b8c2019d7408b1b732852f1bc79c125fab941b"
+      }
+    },
+    {
+      "id": "assets-infographic-png",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/assets/infographic.png",
+      "name": "infographic.png",
+      "fileType": "png",
+      "mediaType": "image/png",
+      "sizeBytes": 1926266,
+      "integrity": {
+        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7",
+        "sha256": "5752bc27b3b453b666c886691dbf0604e78001ecb3f55daae4614d7b360781cb"
+      }
+    },
+    {
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
       "path": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
@@ -51,7 +79,22 @@
       "mediaType": "text/html",
       "sizeBytes": 25064,
       "integrity": {
-        "gitBlobSha1": "a747f4490bc5b14d48540d8a1f1e4b763b004e72"
+        "gitBlobSha1": "a747f4490bc5b14d48540d8a1f1e4b763b004e72",
+        "sha256": "56876205526702d97bc81644627fe2d89e2108b4dc3e7767a9f03f1a63f78f61"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-21-better-machine/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 338,
+      "integrity": {
+        "gitBlobSha1": "83da8af8acc9dd09581bd5acafba727aa51ded3f",
+        "sha256": "3ee2821cd1f326172021cfbd48e0b49446bbb54c00cf8d02f6b8e802706b393f"
       }
     }
   ],

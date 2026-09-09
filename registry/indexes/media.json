@@ -1,6 +1,25 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "media",
-  "count": 0,
-  "records": []
+  "count": 1,
+  "records": [
+    {
+      "id": "AV-MEDIA-EP02",
+      "recordPath": "registry/records/media/AV-MEDIA-EP02.json",
+      "contentClass": "media",
+      "title": "EP02 Image Asset",
+      "status": "final",
+      "issuedAt": "2026-05-23",
+      "canonicalPath": "publications/ep02/ep02.png",
+      "canonicalUrl": "https://thesignal.aerovista.us/publications/ep02/ep02.png",
+      "formats": [
+        "png"
+      ],
+      "audience": [
+        "internal",
+        "public"
+      ],
+      "fileCount": 1
+    }
+  ]
 }

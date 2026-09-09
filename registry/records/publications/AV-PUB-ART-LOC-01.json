@@ -35,7 +35,35 @@
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "readme-md",
+      "role": "readme",
+      "relationship": "owned",
+      "path": "publications/ART-LOC-01-art-localized-pilot/README.md",
+      "name": "README.md",
+      "fileType": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 574,
+      "integrity": {
+        "gitBlobSha1": "7802ed8074de80f443e3d82ed65c1a8138da05d7",
+        "sha256": "e4127380657c1fa76bb0592c807d3a2bf7233f74312c50320f4b11e6f2b3908a"
+      }
+    },
+    {
+      "id": "sot-json",
+      "role": "data",
+      "relationship": "owned",
+      "path": "publications/ART-LOC-01-art-localized-pilot/SOT.json",
+      "name": "SOT.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 5785,
+      "integrity": {
+        "gitBlobSha1": "8f74a98e438c1956747206bf3fa9a361723475de",
+        "sha256": "6798271bb80ebb89bd269e8c8e8d2131886aa2297eb54c2609191952c9910e0c"
+      }
+    },
+    {
+      "id": "issue-html",
       "role": "primary",
       "relationship": "owned",
       "path": "publications/ART-LOC-01-art-localized-pilot/issue.html",
@@ -44,7 +72,22 @@
       "mediaType": "text/html",
       "sizeBytes": 13052,
       "integrity": {
-        "gitBlobSha1": "232dcb417debad1fb42cd4a8b8dfba2d02eb89d2"
+        "gitBlobSha1": "232dcb417debad1fb42cd4a8b8dfba2d02eb89d2",
+        "sha256": "33351bb296e650eb1f48244f1d144cadae7940e13ecbd15e00fbfcd2c254c736"
+      }
+    },
+    {
+      "id": "publication-meta-yaml",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "publications/ART-LOC-01-art-localized-pilot/publication_meta.yaml",
+      "name": "publication_meta.yaml",
+      "fileType": "yaml",
+      "mediaType": "application/yaml",
+      "sizeBytes": 718,
+      "integrity": {
+        "gitBlobSha1": "990e82d7715a09580c567ccc8566eca4bf6b0e1b",
+        "sha256": "0b8080c4eee26aa777f2a77f94b6fe7ef6246713c6fe01d5405b122406547fbb"
       }
     }
   ],

@@ -1,37 +1,94 @@
 {
   "schemaVersion": "2.0",
-  "count": 3,
+  "contentClass": "report",
+  "count": 10,
   "records": [
     {
       "id": "AV-RPT-EOM-2026-08",
+      "reportId": "AV-RPT-EOM-2026-08",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-08.json",
       "contentClass": "report",
       "reportClass": "eom",
       "title": "From Building Pieces to Building a Company",
       "status": "final",
-      "issuedAt": "2026-09-03",
+      "issuedAt": "2026-09-02",
       "period": {
         "start": "2026-08-01",
         "end": "2026-08-31"
       },
+      "canonicalPath": "newsletters/EOM_August_2026.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/EOM_August_2026.html",
-      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-08.json"
+      "formats": [
+        "interactive-html",
+        "bytecast"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "shareholder",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-MTD-2026-08-14",
+      "reportId": "AV-RPT-MTD-2026-08-14",
+      "recordPath": "registry/records/reports/AV-RPT-MTD-2026-08-14.json",
+      "contentClass": "report",
+      "reportClass": "mtd",
+      "title": "The Machine Is Taking Shape",
+      "status": "final",
+      "issuedAt": "2026-08-15",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "canonicalPath": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
+      "formats": [
+        "interactive-html",
+        "embedded-bytecast"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder"
+      ],
+      "fileCount": 1
     },
     {
       "id": "AV-RPT-EOM-2026-07",
+      "reportId": "AV-RPT-EOM-2026-07",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-07.json",
       "contentClass": "report",
       "reportClass": "eom",
       "title": "July Convergence",
       "status": "final",
-      "issuedAt": "2026-08-02",
+      "issuedAt": "2026-07-31",
       "period": {
         "start": "2026-07-01",
         "end": "2026-07-31"
       },
+      "canonicalPath": "newsletters/editions/eom/2026-07-31-july-convergence/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-07-31-july-convergence/",
-      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-07.json"
+      "formats": [
+        "interactive-html",
+        "multi-report",
+        "bytecast-series",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 48
     },
     {
       "id": "AV-RPT-EOD-2026-07-05",
+      "reportId": "AV-RPT-EOD-2026-07-05",
+      "recordPath": "registry/records/reports/AV-RPT-EOD-2026-07-05.json",
       "contentClass": "report",
       "reportClass": "eod",
       "title": "Overall Company Status Signal",
@@ -41,9 +98,183 @@
         "start": "2026-07-05",
         "end": "2026-07-05"
       },
+      "canonicalPath": "newsletters/editions/eod/2026-07-05-company-status/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/",
-      "recordPath": "registry/records/reports/AV-RPT-EOD-2026-07-05.json"
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-28",
+      "reportId": "AV-RPT-EOW-2026-06-28",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-28.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Resilience Weekend",
+      "status": "final",
+      "issuedAt": "2026-06-28",
+      "period": {
+        "start": "2026-06-22",
+        "end": "2026-06-28"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "aac"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-21",
+      "reportId": "AV-RPT-EOW-2026-06-21",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-21.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "A Better Machine",
+      "status": "final",
+      "issuedAt": "2026-06-21",
+      "period": {
+        "start": "2026-06-16",
+        "end": "2026-06-21"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-21-better-machine/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-21-better-machine/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "reportId": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
+      "recordPath": "registry/records/reports/AV-RPT-MILESTONE-2026-06-16-ECHOVERSE.json",
+      "contentClass": "report",
+      "reportClass": "milestone",
+      "title": "EchoVerse Audio Intelligence",
+      "status": "final",
+      "issuedAt": "2026-06-16",
+      "period": {
+        "start": "2026-06-16",
+        "end": "2026-06-16"
+      },
+      "canonicalPath": "newsletters/editions/milestone/2026-06-16-echoverse/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/milestone/2026-06-16-echoverse/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "transcript",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 6
+    },
+    {
+      "id": "AV-RPT-EOW-2026-06-15",
+      "reportId": "AV-RPT-EOW-2026-06-15",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-06-15.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Systems Becoming Products",
+      "status": "final",
+      "issuedAt": "2026-06-15",
+      "period": {
+        "start": "2026-06-09",
+        "end": "2026-06-15"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-06-15-systems-becoming-products/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-15-systems-becoming-products/",
+      "formats": [
+        "interactive-html",
+        "bytecast",
+        "infographic"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 4
+    },
+    {
+      "id": "AV-RPT-EOW-2026-05-29",
+      "reportId": "AV-RPT-EOW-2026-05-29",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-05-29.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Long-form Shareholder Report",
+      "status": "final",
+      "issuedAt": "2026-05-29",
+      "period": {
+        "start": "2026-05-24",
+        "end": "2026-05-29"
+      },
+      "canonicalPath": "dispatches/eow/2026-05-29-shareholder-report.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-shareholder-report.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 1
+    },
+    {
+      "id": "AV-RPT-EOW-2026-05-23",
+      "reportId": "AV-RPT-EOW-2026-05-23",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-05-23.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "Shareholder Update",
+      "status": "final",
+      "issuedAt": "2026-05-23",
+      "period": {
+        "start": "2026-05-17",
+        "end": "2026-05-23"
+      },
+      "canonicalPath": "dispatches/eow/shareholder-update.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/shareholder-update.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 1
     }
-  ],
-  "contentClass": "report"
+  ]
 }
