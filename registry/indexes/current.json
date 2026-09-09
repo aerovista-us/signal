@@ -1,6 +1,18 @@
 {
   "schemaVersion": "2.0",
   "reports": {
+    "eow": {
+      "id": "AV-RPT-EOW-2026-09-07",
+      "reportId": "AV-RPT-EOW-2026-09-07",
+      "title": "From Convergence to Proof",
+      "issuedAt": "2026-09-08",
+      "period": {
+        "start": "2026-09-01",
+        "end": "2026-09-07"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/"
+    },
     "eom": {
       "id": "AV-RPT-EOM-2026-08",
       "reportId": "AV-RPT-EOM-2026-08",
@@ -36,18 +48,6 @@
       },
       "canonicalPath": "newsletters/editions/eod/2026-07-05-company-status/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/"
-    },
-    "eow": {
-      "id": "AV-RPT-EOW-2026-06-28",
-      "reportId": "AV-RPT-EOW-2026-06-28",
-      "title": "Resilience Weekend",
-      "issuedAt": "2026-06-28",
-      "period": {
-        "start": "2026-06-22",
-        "end": "2026-06-28"
-      },
-      "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/"
     },
     "milestone": {
       "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",

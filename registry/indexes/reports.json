@@ -1,8 +1,37 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "report",
-  "count": 10,
+  "count": 11,
   "records": [
+    {
+      "id": "AV-RPT-EOW-2026-09-07",
+      "reportId": "AV-RPT-EOW-2026-09-07",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-09-07.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "From Convergence to Proof",
+      "status": "final",
+      "issuedAt": "2026-09-08",
+      "period": {
+        "start": "2026-09-01",
+        "end": "2026-09-07"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "formats": [
+        "interactive-html",
+        "evidence-ledger"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "operations",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 3
+    },
     {
       "id": "AV-RPT-EOM-2026-08",
       "reportId": "AV-RPT-EOM-2026-08",

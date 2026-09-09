@@ -1,7 +1,56 @@
 {
   "schemaVersion": "2.0",
-  "count": 26,
+  "count": 27,
   "records": [
+    {
+      "id": "AV-DSP-EOW-CURRENT",
+      "recordPath": "registry/records/dispatches/AV-DSP-EOW-CURRENT.json",
+      "contentClass": "dispatch",
+      "title": "Current EOW Stakeholder Update",
+      "status": "review",
+      "issuedAt": "2026-09-08",
+      "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
+      "formats": [
+        "html"
+      ],
+      "audience": [
+        "internal",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-EOW-2026-09-07",
+      "reportId": "AV-RPT-EOW-2026-09-07",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-09-07.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "From Convergence to Proof",
+      "status": "final",
+      "issuedAt": "2026-09-08",
+      "period": {
+        "start": "2026-09-01",
+        "end": "2026-09-07"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "formats": [
+        "interactive-html",
+        "evidence-ledger"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "operations",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 3
+    },
     {
       "id": "AV-RPT-EOM-2026-08",
       "reportId": "AV-RPT-EOM-2026-08",
@@ -178,26 +227,6 @@
         "shareholder"
       ],
       "fileCount": 8
-    },
-    {
-      "id": "AV-DSP-EOW-CURRENT",
-      "recordPath": "registry/records/dispatches/AV-DSP-EOW-CURRENT.json",
-      "contentClass": "dispatch",
-      "title": "Current EOW Stakeholder Update",
-      "status": "review",
-      "issuedAt": "2026-06-28",
-      "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
-      "formats": [
-        "html"
-      ],
-      "audience": [
-        "internal",
-        "staff",
-        "stakeholder",
-        "shareholder"
-      ],
-      "fileCount": 2
     },
     {
       "id": "AV-DSP-EOW-2026-06-28-SUMMARY",

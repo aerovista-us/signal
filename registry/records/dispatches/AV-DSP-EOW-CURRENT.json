@@ -3,7 +3,7 @@
   "id": "AV-DSP-EOW-CURRENT",
   "contentClass": "dispatch",
   "title": "Current EOW Stakeholder Update",
-  "summary": "Mutable current EOW stakeholder surface currently reflecting the June 28 resilience weekend. It is an alias/view, not the immutable weekly report.",
+  "summary": "Mutable current EOW stakeholder surface reflecting the September 1–7 From Convergence to Proof report. It is an alias/view, not the immutable weekly report.",
   "status": "review",
   "owner": "AeroVista LLC",
   "audience": [
@@ -15,13 +15,15 @@
   "formats": [
     "html"
   ],
-  "issuedAt": "2026-06-28",
+  "issuedAt": "2026-09-08",
   "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/current-stakeholder-update.html",
   "canonicalPath": "dispatches/eow/current-stakeholder-update.html",
   "tags": [
     "current",
     "eow",
     "stakeholder-update",
+    "september-2026",
+    "convergence-to-proof",
     "dispatch"
   ],
   "package": {
@@ -40,10 +42,10 @@
       "name": "current-stakeholder-update.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 5553,
+      "sizeBytes": 4488,
       "integrity": {
-        "gitBlobSha1": "7c59484c068de9bc16a0c644de8e7dc5ed1cea2f",
-        "sha256": "98d8a08361398dd41409c8efa6610c2bb69cd11306b3fb1379588942fb360602"
+        "gitBlobSha1": "53b1378855ae7c158448f567cc369f32dc5b5c15",
+        "sha256": "12f0ef279ca77566a59dce7e6c91e4bfdec6f11eab60781d610017b81b02f8a8"
       }
     },
     {
@@ -66,6 +68,11 @@
     {
       "type": "legacy-catalog-id",
       "value": "eow-current"
+    },
+    {
+      "type": "current-report",
+      "value": "AV-RPT-EOW-2026-09-07",
+      "description": "Current immutable formal EOW edition."
     }
   ]
 }

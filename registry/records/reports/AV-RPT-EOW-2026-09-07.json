@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-09-07",
+  "reportId": "AV-RPT-EOW-2026-09-07",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "From Convergence to Proof",
+  "summary": "Internal EOW report for September 1–7, 2026: the first week of September turned August's convergence thesis into operating proof across AVCC, source control, release governance, productization, creative distribution, and staff endpoint operations.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "operations",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "evidence-ledger"
+  ],
+  "period": {
+    "start": "2026-09-01",
+    "end": "2026-09-07"
+  },
+  "issuedAt": "2026-09-08",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+  "canonicalPath": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+  "tags": [
+    "september-2026",
+    "eow",
+    "weekly",
+    "convergence-to-proof",
+    "avcc",
+    "source-control",
+    "release-governance",
+    "phase",
+    "rydesync",
+    "internal-signal"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "evidence-json",
+      "role": "data",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/evidence.json",
+      "name": "evidence.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 4493,
+      "integrity": {
+        "gitBlobSha1": "4e9cae0deb0658a05a1b4bccbc8708b709d114ad",
+        "sha256": "97bcf08e3c3d0d6cd8a7b47e5d8e9245018b43498e0203da66c03a95ade8f314"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22261,
+      "integrity": {
+        "gitBlobSha1": "4a31f44038d666682549b49bb8229444c3a118ad",
+        "sha256": "60163a6da531facd65672b5664d76af97d3a2be1884553bb2ce1cc18ad710f58"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 1103,
+      "integrity": {
+        "gitBlobSha1": "bad1715fd2234dc946dfac553aa6db9fa12e9a49",
+        "sha256": "eda74d9b64107d74b6530ec124fb1b43fed97869455ca1324ebc3bbae371c348"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "narrative-predecessor",
+      "value": "AV-RPT-EOM-2026-08",
+      "description": "Continues the August EOM completion-and-proof arc."
+    },
+    {
+      "type": "git-evidence",
+      "value": "aerovista-us/ACOS@ef2367d50158ff863472f909320c494729c9b895"
+    },
+    {
+      "type": "git-evidence",
+      "value": "aerovista-us/ACOS@c908195c12a15d198082857c84d111f15a0b4da8"
+    },
+    {
+      "type": "git-evidence",
+      "value": "aerovista-us/nxcore@60655fc6aaa3f588ad83d9d6a066caef2498d341"
+    },
+    {
+      "type": "git-evidence",
+      "value": "aerovista-us/RydeSync@d13910b17ae5b47c9734e54d019d00165f7f2dba"
+    },
+    {
+      "type": "git-evidence",
+      "value": "aerovista-us/workspaces@2bfd7fdfe547cc175067a5c30fc53b3c9bca21df"
+    }
+  ]
+}

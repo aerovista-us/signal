@@ -1,27 +1,46 @@
 {
-  "updated": "2026-09-02",
+  "updated": "2026-09-08",
   "featured": {
-    "label": "Latest EOM Signal",
-    "title": "From Building Pieces to Building a Company",
-    "summary": "August end-of-month briefing — an interactive portfolio report and ByteCast on the convergence of AeroVista's products, infrastructure, and operating systems.",
-    "href": "/newsletters/EOM_August_2026.html",
+    "label": "Latest EOW Signal",
+    "title": "From Convergence to Proof",
+    "summary": "September 1–7 internal briefing — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
+    "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
     "stats": [
       {
-        "value": "August 2026",
+        "value": "Sep 1–7",
         "label": "Coverage window"
       },
       {
-        "value": "14:30",
-        "label": "ByteCast runtime"
+        "value": "101",
+        "label": "Fleet baseline"
       },
       {
-        "value": "September",
-        "label": "Completion + proof"
+        "value": "$180",
+        "label": "Commercial proof"
+      },
+      {
+        "value": "0.12.8",
+        "label": "Phase foundation"
       }
     ],
-    "recordId": "AV-RPT-EOM-2026-08"
+    "recordId": "AV-RPT-EOW-2026-09-07"
   },
   "now": [
+    {
+      "id": "weekly-2026-09-07",
+      "typeLabel": "Latest EOW",
+      "title": "Sep 7 — From Convergence to Proof",
+      "summary": "Formal internal EOW: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "types": [
+        "eow",
+        "internal"
+      ],
+      "tags": [
+        "september 1 7 2026 eow convergence proof avcc phase rydesync source control release governance internal"
+      ],
+      "recordId": "AV-RPT-EOW-2026-09-07"
+    },
     {
       "id": "eom-2026-08-31-building-a-company",
       "typeLabel": "August EOM ByteCast",
@@ -111,19 +130,46 @@
     {
       "id": "eow-current",
       "typeLabel": "Weekly EOW",
-      "title": "June 28 — Resilience Weekend",
-      "summary": "Stakeholder summary: AVCC recovery, registry stabilization, deployment doctrine.",
+      "title": "Sep 7 — From Convergence to Proof",
+      "summary": "Current EOW summary: August's convergence thesis became operating proof across commercial workflow, source control, product releases, and endpoint operations.",
       "href": "/dispatches/eow/current-stakeholder-update.html",
       "types": [
         "eow"
       ],
       "tags": [
-        "june 28 2026 weekend resilience"
+        "current september 7 2026 eow convergence proof commercial workflow source control release governance"
       ],
       "recordId": "AV-DSP-EOW-CURRENT"
     }
   ],
   "editions": [
+    {
+      "id": "weekly-2026-09-07",
+      "section": "weekly",
+      "title": "From Convergence to Proof",
+      "badges": [
+        {
+          "type": "eow",
+          "label": "EOW"
+        },
+        {
+          "type": "milestone",
+          "label": "Internal"
+        }
+      ],
+      "dateEm": "Sep 7",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+      "types": [
+        "eow",
+        "internal"
+      ],
+      "tags": [
+        "september 2026 eow convergence proof avcc commercial workflow phase rydesync source control release governance"
+      ],
+      "summary": "September 1–7 formal EOW — the first week of September turned August's convergence thesis into operating evidence and clearer acceptance gates.",
+      "recordId": "AV-RPT-EOW-2026-09-07"
+    },
     {
       "id": "eom-2026-08-31-building-a-company",
       "section": "eom",
@@ -261,9 +307,9 @@
         "eow"
       ],
       "tags": [
-        "current june 28 2026 weekend resilience recovery stakeholder summary"
+        "current september 7 2026 eow convergence proof internal stakeholder summary"
       ],
-      "summary": "Short summary — weekend June 28 resilience weekend for shareholders, employees, operators.",
+      "summary": "Current EOW summary — September 1–7: from convergence to proof across AVCC, source discipline, product releases, and endpoint operations.",
       "recordId": "AV-DSP-EOW-CURRENT"
     },
     {
