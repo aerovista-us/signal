@@ -85,3 +85,10 @@ Normalized legacy-flat reports:
 - `AV-RPT-EOW-2026-05-23` -> `newsletters/editions/eow/2026-05-23-shareholder-update/`
 
 Every prior public HTML location is retained as a direct redirect, and legacy direct-media URLs remain referenced compatibility aliases.
+
+## Folder normalization status
+
+Folder normalization is complete for governed reports and publications. Every formal report and publication record uses a strict, portable directory package. Legacy live HTML URLs are retained as registered redirects to canonical packages, and legacy media aliases remain registered as referenced assets when direct media URLs must stay available.
+
+Mutable `current` dispatch views remain dispatch aliases by design. Standalone media records, such as EP02, are not forced into report-package semantics.
+
