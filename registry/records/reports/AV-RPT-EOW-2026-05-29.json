@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-05-29",
+  "reportId": "AV-RPT-EOW-2026-05-29",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Long-form Shareholder Report",
+  "summary": "AeroVista end-of-week shareholder report covering infrastructure, memory, identity, publications, Art Localized, EchoVerse, commerce, and release discipline.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "html"
+  ],
+  "period": {
+    "start": "2026-05-24",
+    "end": "2026-05-29"
+  },
+  "issuedAt": "2026-05-29",
+  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-shareholder-report.html",
+  "canonicalPath": "dispatches/eow/2026-05-29-shareholder-report.html",
+  "tags": [
+    "may-2026",
+    "eow",
+    "shareholder-report",
+    "archive"
+  ],
+  "package": {
+    "mode": "legacy-flat",
+    "root": "dispatches/eow",
+    "strict": false,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "dispatches/eow/2026-05-29-shareholder-report.html",
+      "name": "2026-05-29-shareholder-report.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22575,
+      "integrity": {
+        "gitBlobSha1": "5315f0604ecba62953358a8cdf017293493752c7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eow-2026-05-29-report"
+    }
+  ]
+}
