@@ -381,6 +381,17 @@ def validate(records):
             elif r.get("status") == "final" and f.get("relationship") == "owned":
                 errors.append(f"{rp}: final owned file missing sha256 {f['path']}")
 
+            if f.get("role") == "redirect" and f.get("relationship") == "referenced" and f.get("mediaType") == "text/html":
+                try:
+                    redirect_html = full.read_text(encoding="utf-8-sig")
+                except UnicodeDecodeError:
+                    errors.append(f"{rp}: redirect file is not UTF-8 HTML: {f['path']}")
+                else:
+                    canonical_url = r.get("canonicalUrl", "")
+                    canonical_target = urlparse(canonical_url).path or "/"
+                    if canonical_url not in redirect_html and canonical_target not in redirect_html:
+                        errors.append(f"{rp}: redirect {f['path']} does not target canonical URL {canonical_url}")
+
             if f.get("relationship") == "owned":
                 p = rel.as_posix()
                 owned_paths.add(p)
