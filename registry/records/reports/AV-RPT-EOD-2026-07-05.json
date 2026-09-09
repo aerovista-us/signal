@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOD-2026-07-05",
+  "contentClass": "report",
+  "reportClass": "eod",
+  "title": "Overall Company Status Signal",
+  "summary": "Full EOD edition covering company status, AVCC roadmap, deploy gate, division lanes, audio, and infographic.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "infographic"
+  ],
+  "period": {
+    "start": "2026-07-05",
+    "end": "2026-07-05"
+  },
+  "issuedAt": "2026-07-05",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-07-05-company-status/",
+  "tags": [
+    "july-2026",
+    "eod",
+    "company-status",
+    "avcc",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eod/2026-07-05-company-status",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/index.html",
+      "name": "index.html",
+      "mediaType": "text/html",
+      "sizeBytes": 43987,
+      "integrity": {
+        "gitBlobSha1": "ef8e95c6a4ee807a130d1188b39382f1e01210b1"
+      }
+    },
+    {
+      "id": "metadata",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/meta.json",
+      "name": "meta.json",
+      "mediaType": "application/json",
+      "sizeBytes": 333,
+      "integrity": {
+        "gitBlobSha1": "d0b8e090533c6c899a5d1656c4ce6190b4c1d888"
+      }
+    },
+    {
+      "id": "audio",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/assets/audio.mp3",
+      "name": "audio.mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 7463856,
+      "integrity": {
+        "gitBlobSha1": "cd42ca11b22d6983850099ebc7ff0737ed216f8f"
+      }
+    },
+    {
+      "id": "infographic",
+      "role": "image",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-07-05-company-status/assets/infographic.png",
+      "name": "infographic.png",
+      "mediaType": "image/png",
+      "sizeBytes": 1979547,
+      "integrity": {
+        "gitBlobSha1": "11ea2e41f86f09c8276563d3a21dfc0e554393f5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eod-2026-07-05"
+    }
+  ]
+}
