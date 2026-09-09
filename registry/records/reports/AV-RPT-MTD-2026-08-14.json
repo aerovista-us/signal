@@ -54,19 +54,16 @@
       }
     },
     {
-      "id": "legacy-august-mtd-html",
+      "id": "legacy-mtd-html",
       "role": "redirect",
       "relationship": "referenced",
       "path": "newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
       "name": "AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 614,
-      "integrity": {
-        "gitBlobSha1": "c2b2502f85be6130da4ee99696692ea9b900824b",
-        "sha256": "16ad575805c8a2ac1baaefeaeae9079b87cc78ceac2b413cdb824531d5f7832f"
-      },
-      "description": "Legacy live URL retained as an HTML redirect to the canonical August MTD package."
+      "sizeBytes": 680,
+      "integrity": {},
+      "description": "Legacy MTD URL retained as a redirect to the normalized package."
     }
   ],
   "references": [

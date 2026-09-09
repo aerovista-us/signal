@@ -22,8 +22,8 @@
     "end": "2026-05-23"
   },
   "issuedAt": "2026-05-23",
-  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/shareholder-update.html",
-  "canonicalPath": "dispatches/eow/shareholder-update.html",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-23-shareholder-update/",
+  "canonicalPath": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
   "tags": [
     "may-2026",
     "eow",
@@ -31,41 +31,47 @@
     "archive"
   ],
   "package": {
-    "mode": "legacy-flat",
-    "root": "dispatches/eow",
-    "strict": false,
+    "mode": "directory",
+    "root": "newsletters/editions/eow/2026-05-23-shareholder-update",
+    "strict": true,
     "portable": true
   },
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
+      "path": "newsletters/editions/eow/2026-05-23-shareholder-update/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 5468,
+      "integrity": {}
+    },
+    {
+      "id": "legacy-canonical-html",
+      "role": "redirect",
+      "relationship": "referenced",
       "path": "dispatches/eow/shareholder-update.html",
       "name": "shareholder-update.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 5420,
-      "integrity": {
-        "gitBlobSha1": "dedb05d1719c2c71bb129f9f5dd1e92fdd06811e",
-        "sha256": "6a1ebfc67db2c20b498cc8dd17bb8b629c0d4e828ec884529505ec5f29f81242"
-      }
+      "sizeBytes": 684,
+      "integrity": {},
+      "description": "Former canonical URL retained as a direct redirect."
     },
     {
-      "id": "legacy-dispatches-eow-shareholder-update-html",
+      "id": "legacy-flat-alias",
       "role": "redirect",
       "relationship": "referenced",
       "path": "dispatches/eow-shareholder-update.html",
       "name": "eow-shareholder-update.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 514,
-      "integrity": {
-        "gitBlobSha1": "2224ab0a42f165e569005ad6c35918b6ca0de048",
-        "sha256": "f56af5b25a3bac05ec11974852632083884493b8de47130882432a4459cb209f"
-      },
-      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+      "sizeBytes": 684,
+      "integrity": {},
+      "description": "Legacy flat alias retained as a direct redirect."
     }
   ],
   "references": [

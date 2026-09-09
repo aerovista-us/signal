@@ -22,8 +22,8 @@
     "end": "2026-05-29"
   },
   "issuedAt": "2026-05-29",
-  "canonicalUrl": "https://thesignal.aerovista.us/dispatches/eow/2026-05-29-shareholder-report.html",
-  "canonicalPath": "dispatches/eow/2026-05-29-shareholder-report.html",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eow/2026-05-29-shareholder-report/",
+  "canonicalPath": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
   "tags": [
     "may-2026",
     "eow",
@@ -31,41 +31,47 @@
     "archive"
   ],
   "package": {
-    "mode": "legacy-flat",
-    "root": "dispatches/eow",
-    "strict": false,
+    "mode": "directory",
+    "root": "newsletters/editions/eow/2026-05-29-shareholder-report",
+    "strict": true,
     "portable": true
   },
   "supersedes": null,
   "files": [
     {
-      "id": "primary-html",
+      "id": "index-html",
       "role": "primary",
       "relationship": "owned",
+      "path": "newsletters/editions/eow/2026-05-29-shareholder-report/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 22629,
+      "integrity": {}
+    },
+    {
+      "id": "legacy-canonical-html",
+      "role": "redirect",
+      "relationship": "referenced",
       "path": "dispatches/eow/2026-05-29-shareholder-report.html",
       "name": "2026-05-29-shareholder-report.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 22575,
-      "integrity": {
-        "gitBlobSha1": "5315f0604ecba62953358a8cdf017293493752c7",
-        "sha256": "2fb4b71cd2cb828ad49782b7ab854754b7c38c62d3eac38d45333a4630ddc8ee"
-      }
+      "sizeBytes": 684,
+      "integrity": {},
+      "description": "Former canonical URL retained as a direct redirect."
     },
     {
-      "id": "legacy-dispatches-eow-2026-05-29-shareholder-report-html",
+      "id": "legacy-flat-alias",
       "role": "redirect",
       "relationship": "referenced",
       "path": "dispatches/eow-2026-05-29-shareholder-report.html",
       "name": "eow-2026-05-29-shareholder-report.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 561,
-      "integrity": {
-        "gitBlobSha1": "d09a96e3e5f3df3e5de80f37d4f7883b28977974",
-        "sha256": "8bff87810ac2b22a0ff6eca4941402f78cd0934920611dac96f6bd79071579c7"
-      },
-      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
+      "sizeBytes": 684,
+      "integrity": {},
+      "description": "Legacy flat alias retained as a direct redirect."
     }
   ],
   "references": [
