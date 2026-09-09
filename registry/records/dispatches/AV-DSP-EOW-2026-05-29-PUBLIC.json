@@ -55,7 +55,8 @@
       "mediaType": "text/html",
       "sizeBytes": 536,
       "integrity": {
-        "gitBlobSha1": "d6db6f97c51c9894023875cbfd8333e146818c96"
+        "gitBlobSha1": "d6db6f97c51c9894023875cbfd8333e146818c96",
+        "sha256": "7077dca3f63761d8a979e0f6c691d2cd8f6610ede7c40d8a3ff144686ece1f71"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }

@@ -82,7 +82,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 48
+      "fileCount": 49
     },
     {
       "id": "AV-DSP-EOD-CURRENT",
@@ -101,7 +101,7 @@
         "operations",
         "staff"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-PUB-SHAREHOLDER-2026-07-08",
@@ -122,7 +122,7 @@
         "shareholder",
         "stakeholder"
       ],
-      "fileCount": 4
+      "fileCount": 8
     },
     {
       "id": "AV-RPT-EOD-2026-07-05",
@@ -149,7 +149,7 @@
         "executive",
         "stakeholder"
       ],
-      "fileCount": 4
+      "fileCount": 7
     },
     {
       "id": "AV-RPT-EOW-2026-06-28",
@@ -177,7 +177,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 4
+      "fileCount": 8
     },
     {
       "id": "AV-DSP-EOW-CURRENT",
@@ -197,7 +197,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-DSP-EOW-2026-06-28-SUMMARY",
@@ -216,7 +216,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-RPT-EOW-2026-06-21",
@@ -244,7 +244,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 4
+      "fileCount": 8
     },
     {
       "id": "AV-RPT-MILESTONE-2026-06-16-ECHOVERSE",
@@ -272,7 +272,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 6
+      "fileCount": 16
     },
     {
       "id": "AV-PUB-WAR-LOOP",
@@ -322,7 +322,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 4
+      "fileCount": 8
     },
     {
       "id": "AV-RPT-EOW-2026-05-29",
@@ -348,7 +348,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-PUB-NEWSLETTER-2026-05-29",
@@ -368,7 +368,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 2
+      "fileCount": 3
     },
     {
       "id": "AV-DSP-EOW-2026-05-29-PUBLIC",
@@ -386,7 +386,7 @@
         "public",
         "stakeholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-DSP-ART-LOCALIZED-2026-05-29",
@@ -517,7 +517,7 @@
         "stakeholder",
         "shareholder"
       ],
-      "fileCount": 1
+      "fileCount": 2
     },
     {
       "id": "AV-MEDIA-EP02",

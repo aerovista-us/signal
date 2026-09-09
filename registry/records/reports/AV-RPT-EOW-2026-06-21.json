@@ -107,7 +107,8 @@
       "mediaType": "text/html",
       "sizeBytes": 534,
       "integrity": {
-        "gitBlobSha1": "ed4c63ae16a578b26bb7f09ff31be65d2e0b0eca"
+        "gitBlobSha1": "ed4c63ae16a578b26bb7f09ff31be65d2e0b0eca",
+        "sha256": "61dd5064877b4759046c0e7bfb5ef5e2850d160c83cd365516cd4979b0ad4931"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     },
@@ -121,7 +122,8 @@
       "mediaType": "audio/mpeg",
       "sizeBytes": 3421944,
       "integrity": {
-        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3"
+        "gitBlobSha1": "d3b634f10cd2e6e7c0e34c297c4450aebe153fb3",
+        "sha256": "eb60720c14940f753ad4b7c934b8c2019d7408b1b732852f1bc79c125fab941b"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     },
@@ -135,7 +137,8 @@
       "mediaType": "image/png",
       "sizeBytes": 1926266,
       "integrity": {
-        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7"
+        "gitBlobSha1": "bfc817e55dc32ae4aeff1b577d24dc107ec2d3e7",
+        "sha256": "5752bc27b3b453b666c886691dbf0604e78001ecb3f55daae4614d7b360781cb"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     },
@@ -149,7 +152,8 @@
       "mediaType": "text/plain",
       "sizeBytes": 397,
       "integrity": {
-        "gitBlobSha1": "4257ad37a7ef2057e8a6ca7c8bd15b90ba7c1da9"
+        "gitBlobSha1": "4257ad37a7ef2057e8a6ca7c8bd15b90ba7c1da9",
+        "sha256": "d731c4fd1b24b1b453c152f4cd835834f2304a5c503c24440143515fd1986336"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
