@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-PUB-ART-LOC-01",
+  "contentClass": "publication",
+  "publicationClass": "pilot-note",
+  "title": "Art Localized Client & Shareholder Note",
+  "summary": "Public pilot note focused on creator trust, responsible AI, partner fit, brand surface, and readiness signals.",
+  "status": "review",
+  "owner": "AeroVista",
+  "audience": [
+    "client",
+    "shareholder",
+    "community"
+  ],
+  "formats": [
+    "html",
+    "source-of-truth"
+  ],
+  "issuedAt": "2026-05-27",
+  "canonicalUrl": "https://thesignal.aerovista.us/publications/ART-LOC-01-art-localized-pilot/issue.html",
+  "canonicalPath": "publications/ART-LOC-01-art-localized-pilot/issue.html",
+  "tags": [
+    "art-localized",
+    "pilot",
+    "client-note",
+    "shareholder-note",
+    "responsible-ai"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "publications/ART-LOC-01-art-localized-pilot",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "publications/ART-LOC-01-art-localized-pilot/issue.html",
+      "name": "issue.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 13052,
+      "integrity": {
+        "gitBlobSha1": "232dcb417debad1fb42cd4a8b8dfba2d02eb89d2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "issue-code",
+      "value": "ART-LOC-01"
+    }
+  ]
+}
