@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByteCast — From Convergence to Proof | The SIGNAL</title>
+  <meta name="description" content="Listen to the nontechnical ByteCast edition of AeroVista's September 1–7, 2026 EOW report: From Convergence to Proof." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/bytecast.html" />
+  <meta name="theme-color" content="#04070d" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/signal-public-theme.css" />
+  <style>
+    :root{
+      --bc-cyan:#67e8f9;
+      --bc-blue:#38bdf8;
+      --bc-green:#6ee7b7;
+      --bc-gold:#f9d675;
+      --bc-panel:rgba(9,20,35,.88);
+      --bc-line:rgba(103,232,249,.22);
+      --bc-soft:#b8ccda;
+    }
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 14% 6%,rgba(56,189,248,.18),transparent 27rem),
+        radial-gradient(circle at 88% 12%,rgba(110,231,183,.12),transparent 28rem),
+        linear-gradient(145deg,#02050a,#071321 48%,#02050a);
+    }
+    .player-shell{width:min(1100px,calc(100% - 30px));margin:0 auto;padding:42px 0 72px}
+    .player-hero{text-align:center;padding:30px 0 28px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(110,231,183,.35);background:rgba(110,231,183,.08);border-radius:999px;padding:7px 12px;color:#d8fff0;font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--bc-green);box-shadow:0 0 14px var(--bc-green)}
+    .player-hero h1{font-size:clamp(2.5rem,7vw,5.4rem);line-height:.92;letter-spacing:-.06em;margin:22px auto 18px;max-width:900px}
+    .player-hero .deck{max-width:760px;margin:0 auto;color:var(--bc-soft);font-size:clamp(1rem,2vw,1.18rem);line-height:1.7}
+    .arc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px auto 0;max-width:850px}
+    .arc div{border:1px solid var(--bc-line);border-radius:16px;background:rgba(255,255,255,.035);padding:13px}
+    .arc strong{display:block;color:#fff;font-size:.92rem}
+    .arc span{font-size:.74rem;color:var(--bc-soft);text-transform:uppercase;letter-spacing:.12em}
+    .arc .active{border-color:rgba(110,231,183,.48);background:rgba(110,231,183,.075)}
+    .player-card{position:relative;overflow:hidden;border:1px solid rgba(103,232,249,.32);border-radius:30px;background:linear-gradient(155deg,rgba(14,31,52,.96),rgba(4,10,19,.96));box-shadow:0 35px 100px rgba(0,0,0,.48);padding:clamp(22px,4vw,38px)}
+    .player-card:before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 15% 0%,rgba(56,189,248,.16),transparent 32rem);pointer-events:none}
+    .player-card>*{position:relative}
+    .player-top{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center}
+    .cover{width:110px;aspect-ratio:1;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(56,189,248,.24),rgba(110,231,183,.13));border:1px solid rgba(103,232,249,.35);box-shadow:inset 0 0 35px rgba(56,189,248,.08)}
+    .cover svg{width:66px;height:66px}
+    .track-meta .label{font-size:.72rem;font-weight:900;letter-spacing:.14em;color:var(--bc-cyan);text-transform:uppercase}
+    .track-meta h2{margin:6px 0 6px;font-size:clamp(1.35rem,3vw,2.1rem);letter-spacing:-.04em}
+    .track-meta p{margin:0;color:var(--bc-soft);font-size:.92rem;line-height:1.5}
+    .runtime{text-align:right;color:var(--bc-soft);font-size:.8rem}
+    .runtime strong{display:block;color:#fff;font-size:1.15rem}
+    .wave-wrap{position:relative;margin:30px 0 16px;height:104px;border:1px solid rgba(103,232,249,.15);border-radius:22px;background:rgba(0,0,0,.17);overflow:hidden;cursor:pointer}
+    .wave{position:absolute;inset:16px 18px;display:flex;align-items:center;gap:3px}
+    .bar{flex:1;min-width:2px;border-radius:999px;background:rgba(184,204,218,.23);height:var(--h);transition:background .16s,transform .16s}
+    .bar.played{background:linear-gradient(180deg,var(--bc-cyan),var(--bc-green));box-shadow:0 0 8px rgba(103,232,249,.32)}
+    .wave-wrap:hover .bar{transform:scaleY(1.04)}
+    .progress{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+    .time-row{display:flex;justify-content:space-between;color:var(--bc-soft);font-variant-numeric:tabular-nums;font-size:.82rem;margin:0 3px 20px}
+    .controls{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+    .control-left,.control-right{display:flex;align-items:center;gap:10px}
+    .control-right{justify-content:flex-end}
+    button,.control-link{font:inherit}
+    .circle-btn,.small-btn,.speed-btn{border:1px solid var(--bc-line);background:rgba(255,255,255,.045);color:#eefaff;cursor:pointer;transition:.18s ease}
+    .circle-btn:hover,.small-btn:hover,.speed-btn:hover{border-color:rgba(103,232,249,.52);background:rgba(56,189,248,.11);transform:translateY(-1px)}
+    .circle-btn{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--bc-cyan),var(--bc-green));color:#04111b;border:none;box-shadow:0 12px 35px rgba(56,189,248,.26)}
+    .circle-btn svg{width:30px;height:30px}
+    .small-btn{height:42px;min-width:48px;border-radius:13px;padding:0 12px;font-weight:800;font-size:.82rem}
+    .speed-btn{height:42px;border-radius:13px;padding:0 14px;font-weight:900}
+    .control-link{display:inline-flex;align-items:center;height:42px;border-radius:13px;padding:0 14px;border:1px solid var(--bc-line);text-decoration:none;color:#eefaff;font-size:.82rem;font-weight:800;background:rgba(255,255,255,.045)}
+    .control-link:hover{border-color:rgba(103,232,249,.52);background:rgba(56,189,248,.11)}
+    .status-line{display:flex;align-items:center;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(103,232,249,.12);color:var(--bc-soft);font-size:.8rem}
+    .status-line i{width:7px;height:7px;border-radius:50%;background:var(--bc-green);box-shadow:0 0 10px var(--bc-green)}
+    .story-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:18px;margin-top:22px}
+    .panel{border:1px solid var(--bc-line);border-radius:24px;background:var(--bc-panel);padding:22px}
+    .panel h3{margin:0 0 8px;font-size:1.05rem}
+    .panel>p{color:var(--bc-soft);line-height:1.6;margin:0 0 18px;font-size:.9rem}
+    .chapters{display:grid;gap:8px}
+    .chapter{display:grid;grid-template-columns:58px 1fr;gap:12px;text-align:left;width:100%;border:1px solid rgba(103,232,249,.13);border-radius:14px;background:rgba(255,255,255,.025);color:#eefaff;padding:11px 12px;cursor:pointer}
+    .chapter:hover{border-color:rgba(103,232,249,.43);background:rgba(56,189,248,.08)}
+    .chapter time{color:var(--bc-cyan);font-weight:900;font-variant-numeric:tabular-nums}
+    .chapter span{color:var(--bc-soft)}
+    .meaning-list{display:grid;gap:11px}
+    .meaning{border-left:2px solid var(--bc-green);padding:4px 0 4px 13px}
+    .meaning strong{display:block;color:#fff;margin-bottom:3px}
+    .meaning span{color:var(--bc-soft);font-size:.88rem;line-height:1.5}
+    .transcript-panel{margin-top:18px}
+    .transcript-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;background:transparent;color:#fff;padding:0;cursor:pointer;text-align:left}
+    .transcript-toggle span{color:var(--bc-soft);font-size:.82rem}
+    .transcript{display:none;margin-top:18px;max-height:620px;overflow:auto;border-top:1px solid rgba(103,232,249,.14);padding-top:18px;white-space:pre-wrap;color:#d7e5ee;line-height:1.85;font-size:.94rem;scrollbar-color:rgba(103,232,249,.35) transparent}
+    .transcript.open{display:block}
+    .footer-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+    .footer-actions a{display:inline-flex;align-items:center;border:1px solid var(--bc-line);border-radius:999px;padding:10px 15px;text-decoration:none;color:#eefaff;background:rgba(255,255,255,.035);font-weight:800;font-size:.84rem}
+    .footer-actions a:hover{border-color:rgba(103,232,249,.55);background:rgba(56,189,248,.1)}
+    @media(max-width:760px){
+      .arc{grid-template-columns:1fr}.player-top{grid-template-columns:82px 1fr}.cover{width:82px}.runtime{grid-column:1/-1;text-align:left}.controls{grid-template-columns:1fr;justify-items:center}.control-left,.control-right{justify-content:center;flex-wrap:wrap}.story-grid{grid-template-columns:1fr}.wave-wrap{height:88px}.circle-btn{width:68px;height:68px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/index.html"><span class="mark">/\</span><span>The SIGNAL</span></a>
+      <a class="back" href="./">Read the EOW</a>
+    </div>
+  </header>
+
+  <main class="player-shell">
+    <section class="player-hero">
+      <div class="eyebrow"><i></i> ByteCast · Nontechnical Edition</div>
+      <h1>From Convergence<br />to Proof.</h1>
+      <p class="deck">A plain-language walk through the September 1–7 EOW: what changed, why it matters to the company, what was actually proven, and what still has to become repeatable.</p>
+      <div class="arc" aria-label="Release arc">
+        <div><span>Previous</span><strong>Convergence</strong></div>
+        <div class="active"><span>This ByteCast</span><strong>Proof</strong></div>
+        <div><span>Next Gate</span><strong>Repeatability</strong></div>
+      </div>
+    </section>
+
+    <section class="player-card" aria-label="ByteCast audio player">
+      <audio id="audio" preload="metadata" src="assets/eow-9.7.mp3"></audio>
+      <div class="player-top">
+        <div class="cover" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <path d="M20 72 50 20l30 52" stroke="#67e8f9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31 72h38" stroke="#6ee7b7" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="track-meta">
+          <div class="label">AeroVista ByteCast · EOW</div>
+          <h2>From Convergence to Proof</h2>
+          <p>September 1–7, 2026 · Issued September 8 · Single narrator</p>
+        </div>
+        <div class="runtime"><strong>14:46</strong>Runtime<br />MP3 · Mono</div>
+      </div>
+
+      <div class="wave-wrap" id="waveWrap" title="Click or drag to seek">
+        <div class="wave" id="wave" aria-hidden="true"></div>
+        <input class="progress" id="progress" type="range" min="0" max="1000" value="0" aria-label="Audio position" />
+      </div>
+      <div class="time-row"><span id="current">0:00</span><span id="remaining">−14:46</span></div>
+
+      <div class="controls">
+        <div class="control-left">
+          <button class="small-btn" id="back" type="button" aria-label="Back fifteen seconds">−15</button>
+          <button class="speed-btn" id="speed" type="button" aria-label="Playback speed">1×</button>
+        </div>
+        <button class="circle-btn" id="play" type="button" aria-label="Play ByteCast">
+          <svg id="playIcon" viewBox="0 0 32 32" fill="currentColor"><path d="M9 6.6v18.8c0 1.2 1.3 2 2.4 1.4l15-9.4a1.7 1.7 0 0 0 0-2.8l-15-9.4A1.6 1.6 0 0 0 9 6.6Z"/></svg>
+        </button>
+        <div class="control-right">
+          <button class="small-btn" id="forward" type="button" aria-label="Forward thirty seconds">+30</button>
+          <a class="control-link" href="assets/eow-9.7.mp3" download>Download</a>
+        </div>
+      </div>
+      <div class="status-line"><i></i><span id="status">Ready. Your listening position will be remembered on this device.</span></div>
+    </section>
+
+    <div class="story-grid">
+      <section class="panel">
+        <h3>Story markers</h3>
+        <p>Jump to the major ideas. Times are aligned to the narration and may vary by a few seconds as the recording loads.</p>
+        <div class="chapters">
+          <button class="chapter" type="button" data-time="0"><time>0:00</time><span>Why convergence now has to become proof</span></button>
+          <button class="chapter" type="button" data-time="103"><time>1:43</time><span>The invisible infrastructure underneath the company</span></button>
+          <button class="chapter" type="button" data-time="239"><time>3:59</time><span>AVCC and the one-hundred-eighty-dollar business-process proof</span></button>
+          <button class="chapter" type="button" data-time="390"><time>6:30</time><span>Identity, permissions, and the difference between built and accepted</span></button>
+          <button class="chapter" type="button" data-time="486"><time>8:06</time><span>RydeSync, EchoVerse, and controlled releases</span></button>
+          <button class="chapter" type="button" data-time="588"><time>9:48</time><span>Phase becoming a recoverable, supportable product</span></button>
+          <button class="chapter" type="button" data-time="688"><time>11:28</time><span>Creative identity with shared business authority</span></button>
+          <button class="chapter" type="button" data-time="762"><time>12:42</time><span>The staff workstation and repeatable operations</span></button>
+          <button class="chapter" type="button" data-time="827"><time>13:47</time><span>The next release arc: proof to repeatability</span></button>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <h3>What to listen for</h3>
+        <p>The episode translates the technical work into the business behavior it enables.</p>
+        <div class="meaning-list">
+          <div class="meaning"><strong>Source of truth</strong><span>Knowing where the master copy lives so a system can be rebuilt deliberately.</span></div>
+          <div class="meaning"><strong>Replay-safe billing</strong><span>Running the action twice does not create a second invoice or accidental charge.</span></div>
+          <div class="meaning"><strong>Fail-closed commerce</strong><span>If a store cannot verify that it can safely take money, it does not take money.</span></div>
+          <div class="meaning"><strong>Local-first software</strong><span>The computer in front of the user remains useful even when the network is unavailable.</span></div>
+          <div class="meaning"><strong>Acceptance</strong><span>A feature is not considered complete until it works with real people, devices, and conditions.</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="panel transcript-panel">
+      <button class="transcript-toggle" id="transcriptToggle" type="button" aria-expanded="false">
+        <strong>Read the full ByteCast transcript</strong>
+        <span id="transcriptState">Open transcript ↓</span>
+      </button>
+      <div class="transcript" id="transcript">Loading transcript…</div>
+    </section>
+
+    <div class="footer-actions">
+      <a href="./">Read the formal EOW report</a>
+      <a href="/dispatches/internal-signals.html">Browse Internal Signals</a>
+      <a href="bytecast-transcript.txt">Open plain-text transcript</a>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const audio=document.getElementById('audio');
+      const play=document.getElementById('play');
+      const playIcon=document.getElementById('playIcon');
+      const progress=document.getElementById('progress');
+      const current=document.getElementById('current');
+      const remaining=document.getElementById('remaining');
+      const status=document.getElementById('status');
+      const speed=document.getElementById('speed');
+      const wave=document.getElementById('wave');
+      const transcript=document.getElementById('transcript');
+      const transcriptToggle=document.getElementById('transcriptToggle');
+      const transcriptState=document.getElementById('transcriptState');
+      const storageKey='signal-bytecast-eow-2026-09-07-position';
+      const speeds=[1,1.25,1.5,.75];
+      let speedIndex=0;
+      let bars=[];
+
+      function format(sec){
+        if(!Number.isFinite(sec)||sec<0)sec=0;
+        const m=Math.floor(sec/60);const s=Math.floor(sec%60);
+        return m+':'+String(s).padStart(2,'0');
+      }
+      function drawWave(){
+        const count=96;let seed=70907;let html='';
+        for(let i=0;i<count;i++){
+          seed=(seed*9301+49297)%233280;
+          const r=seed/233280;
+          const envelope=.58+.42*Math.sin((i/count)*Math.PI);
+          const h=Math.round(18+(r*62*envelope));
+          html+='<i class="bar" style="--h:'+h+'%"></i>';
+        }
+        wave.innerHTML=html;bars=[...wave.children];
+      }
+      function update(){
+        const duration=audio.duration||886.6;
+        const ratio=Math.max(0,Math.min(1,(audio.currentTime||0)/duration));
+        progress.value=Math.round(ratio*1000);
+        current.textContent=format(audio.currentTime);
+        remaining.textContent='−'+format(duration-audio.currentTime);
+        const played=Math.round(ratio*bars.length);
+        bars.forEach((bar,i)=>bar.classList.toggle('played',i<played));
+        if(audio.currentTime>2)localStorage.setItem(storageKey,String(audio.currentTime));
+      }
+      function icon(paused){
+        playIcon.innerHTML=paused
+          ? '<path d="M9 6.6v18.8c0 1.2 1.3 2 2.4 1.4l15-9.4a1.7 1.7 0 0 0 0-2.8l-15-9.4A1.6 1.6 0 0 0 9 6.6Z"/>'
+          : '<path d="M8 6h6v20H8zm10 0h6v20h-6z"/>';
+        play.setAttribute('aria-label',paused?'Play ByteCast':'Pause ByteCast');
+      }
+      play.addEventListener('click',()=>audio.paused?audio.play():audio.pause());
+      audio.addEventListener('play',()=>{icon(false);status.textContent='Playing From Convergence to Proof.';});
+      audio.addEventListener('pause',()=>{icon(true);status.textContent=audio.ended?'Episode complete. Proof becomes repeatability next.':'Paused. Your position is saved.';});
+      audio.addEventListener('timeupdate',update);
+      audio.addEventListener('loadedmetadata',()=>{
+        const saved=Number(localStorage.getItem(storageKey)||0);
+        if(saved>5&&saved<audio.duration-15){audio.currentTime=saved;status.textContent='Resumed near '+format(saved)+'.';}
+        update();
+      });
+      audio.addEventListener('ended',()=>{localStorage.removeItem(storageKey);update();});
+      audio.addEventListener('error',()=>{status.textContent='Audio could not load. Refresh the page or use Download.';});
+      progress.addEventListener('input',()=>{const d=audio.duration||886.6;audio.currentTime=(Number(progress.value)/1000)*d;update();});
+      document.getElementById('back').addEventListener('click',()=>audio.currentTime=Math.max(0,audio.currentTime-15));
+      document.getElementById('forward').addEventListener('click',()=>audio.currentTime=Math.min(audio.duration||886.6,audio.currentTime+30));
+      speed.addEventListener('click',()=>{speedIndex=(speedIndex+1)%speeds.length;audio.playbackRate=speeds[speedIndex];speed.textContent=speeds[speedIndex]+'×';status.textContent='Playback speed set to '+speeds[speedIndex]+' times.';});
+      document.querySelectorAll('.chapter').forEach(btn=>btn.addEventListener('click',()=>{audio.currentTime=Number(btn.dataset.time);audio.play();window.scrollTo({top:document.querySelector('.player-card').offsetTop-80,behavior:'smooth'});}));
+      document.addEventListener('keydown',e=>{
+        if(e.target.matches('input,button,a'))return;
+        if(e.code==='Space'){e.preventDefault();audio.paused?audio.play():audio.pause();}
+        if(e.code==='ArrowLeft')audio.currentTime=Math.max(0,audio.currentTime-10);
+        if(e.code==='ArrowRight')audio.currentTime=Math.min(audio.duration||886.6,audio.currentTime+10);
+      });
+      transcriptToggle.addEventListener('click',()=>{
+        const open=transcript.classList.toggle('open');
+        transcriptToggle.setAttribute('aria-expanded',String(open));
+        transcriptState.textContent=open?'Close transcript ↑':'Open transcript ↓';
+      });
+      fetch('bytecast-transcript.txt').then(r=>r.text()).then(text=>transcript.textContent=text).catch(()=>transcript.textContent='Transcript unavailable. Use the plain-text transcript link below.');
+      if('mediaSession' in navigator){
+        navigator.mediaSession.metadata=new MediaMetadata({title:'From Convergence to Proof',artist:'AeroVista ByteCast',album:'The SIGNAL · EOW September 7, 2026'});
+        navigator.mediaSession.setActionHandler('play',()=>audio.play());
+        navigator.mediaSession.setActionHandler('pause',()=>audio.pause());
+        navigator.mediaSession.setActionHandler('seekbackward',d=>audio.currentTime=Math.max(0,audio.currentTime-(d.seekOffset||15)));
+        navigator.mediaSession.setActionHandler('seekforward',d=>audio.currentTime=Math.min(audio.duration||886.6,audio.currentTime+(d.seekOffset||30)));
+      }
+      drawWave();update();
+    })();
+  </script>
+  <script src="/js/site-paths.js"></script>
+  <script src="/js/site-config.js"></script>
+  <script src="/js/site-analytics.js" defer></script>
+</body>
+</html>
