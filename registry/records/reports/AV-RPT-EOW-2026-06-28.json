@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-06-28",
+  "reportId": "AV-RPT-EOW-2026-06-28",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "Resilience Weekend",
+  "summary": "Full weekly EOW ByteCast edition on AVCC recovery, Core Registry stabilization, deployment doctrine, and operational resilience.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast",
+    "aac"
+  ],
+  "period": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "issuedAt": "2026-06-28",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-06-28-resilience-weekend/",
+  "canonicalPath": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+  "tags": [
+    "june-2026",
+    "eow",
+    "weekly",
+    "resilience-weekend",
+    "recovery",
+    "bytecast"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-06-28-resilience-weekend",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "primary-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-06-28-resilience-weekend/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 17067,
+      "integrity": {
+        "gitBlobSha1": "d53b2188107c58ecce81d87552691742d1fb5c24"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "weekly-2026-06-28"
+    }
+  ]
+}
