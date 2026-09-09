@@ -69,10 +69,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 22267,
+      "sizeBytes": 22261,
       "integrity": {
-        "gitBlobSha1": "67596b4133c2647abfa01a0a1da88e6243e921d0",
-        "sha256": "d06469eae061cdc6c9f83118d856fef45398c264b0f22c8155844f1719ebb56b"
+        "gitBlobSha1": "4a31f44038d666682549b49bb8229444c3a118ad",
+        "sha256": "60163a6da531facd65672b5664d76af97d3a2be1884553bb2ce1cc18ad710f58"
       }
     },
     {
