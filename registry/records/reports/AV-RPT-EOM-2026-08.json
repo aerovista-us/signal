@@ -1,10 +1,11 @@
 {
   "schemaVersion": "2.0",
   "id": "AV-RPT-EOM-2026-08",
+  "reportId": "AV-RPT-EOM-2026-08",
   "contentClass": "report",
   "reportClass": "eom",
   "title": "From Building Pieces to Building a Company",
-  "summary": "August 2026 end-of-month portfolio briefing with embedded ByteCast.",
+  "summary": "August 2026 end-of-month portfolio briefing on convergence, recoverability, production lessons, and September completion-and-proof priorities.",
   "status": "final",
   "owner": "AeroVista LLC",
   "audience": [
@@ -21,8 +22,9 @@
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
-  "issuedAt": "2026-09-03",
+  "issuedAt": "2026-09-02",
   "canonicalUrl": "https://thesignal.aerovista.us/newsletters/EOM_August_2026.html",
+  "canonicalPath": "newsletters/EOM_August_2026.html",
   "tags": [
     "august-2026",
     "eom",
@@ -44,6 +46,7 @@
       "relationship": "owned",
       "path": "newsletters/EOM_August_2026.html",
       "name": "EOM_August_2026.html",
+      "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 21272,
       "integrity": {
@@ -56,6 +59,7 @@
       "relationship": "owned",
       "path": "newsletters/EOM_August_2026.mp3",
       "name": "EOM_August_2026.mp3",
+      "fileType": "mp3",
       "mediaType": "audio/mpeg",
       "sizeBytes": 9901488,
       "integrity": {
@@ -69,9 +73,9 @@
       "value": "eom-2026-08-31-building-a-company"
     },
     {
-      "type": "git-commit",
+      "type": "git-published-commit",
       "value": "16627918be55aa024e3740be2e2f7267ed181c66",
-      "description": "Published August EOM ByteCast in Internal Signals"
+      "description": "Git publication commit on 2026-09-03; report itself is dated 2026-09-02."
     }
   ]
 }
