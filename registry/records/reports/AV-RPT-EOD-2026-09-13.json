@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOD-2026-09-13",
+  "reportId": "AV-RPT-EOD-2026-09-13",
+  "contentClass": "report",
+  "reportClass": "eod",
+  "title": "48-Hour Shareholder & Partner Update",
+  "summary": "Plain-language 48-hour AeroVista operating update covering LotScope/Pondy progress, Cindy Connect apparel and storefront work, Northline collection/commerce work, The Last Normal Night original IP production, infrastructure maturity, risks, and the next execution sequence.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "stakeholder",
+    "shareholder",
+    "partner"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "period": {
+    "start": "2026-09-11",
+    "end": "2026-09-13"
+  },
+  "issuedAt": "2026-09-13",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+  "canonicalPath": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/index.html",
+  "tags": [
+    "september-2026",
+    "eod",
+    "48-hour-update",
+    "shareholder",
+    "partner",
+    "lotscope",
+    "pondy-flats",
+    "cindy-connect",
+    "northline",
+    "the-last-normal-night",
+    "portfolio"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 31452,
+      "integrity": {
+        "gitBlobSha1": "255c0a271414df214fc9f274f02ae5d14653364e",
+        "sha256": "efae0bf29fbc1fffcf570f996dbdc621720b4633296052cb6b19c6a42f25c432"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 486,
+      "integrity": {
+        "gitBlobSha1": "3f6d43fb186f1aab317a84af96d46d43c20ba713",
+        "sha256": "c0e1b042cfbd87a848ffbdcb75f58c80270718ad2b61e07d5c536083d7b10806"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "legacy-catalog-id",
+      "value": "eod-2026-09-13-shareholder-partner-update"
+    }
+  ]
+}
