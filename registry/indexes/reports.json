@@ -1,8 +1,35 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "report",
-  "count": 11,
+  "count": 12,
   "records": [
+    {
+      "id": "AV-RPT-EOD-2026-09-13",
+      "reportId": "AV-RPT-EOD-2026-09-13",
+      "recordPath": "registry/records/reports/AV-RPT-EOD-2026-09-13.json",
+      "contentClass": "report",
+      "reportClass": "eod",
+      "title": "48-Hour Shareholder & Partner Update",
+      "status": "final",
+      "issuedAt": "2026-09-13",
+      "period": {
+        "start": "2026-09-11",
+        "end": "2026-09-13"
+      },
+      "canonicalPath": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+      "formats": [
+        "interactive-html"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "stakeholder",
+        "shareholder",
+        "partner"
+      ],
+      "fileCount": 2
+    },
     {
       "id": "AV-RPT-EOW-2026-09-07",
       "reportId": "AV-RPT-EOW-2026-09-07",
