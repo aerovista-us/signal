@@ -6,6 +6,9 @@ on:
       - "registry/**"
       - "scripts/registry_v2.py"
       - "scripts/test_registry_v2.py"
+      - "scripts/smoke_production.py"
+      - "scripts/test_smoke_production.py"
+      - ".github/workflows/production-smoke.yml"
       - "js/signals-catalog.json"
       - "newsletters/**"
       - "dispatches/**"
@@ -16,6 +19,9 @@ on:
       - "registry/**"
       - "scripts/registry_v2.py"
       - "scripts/test_registry_v2.py"
+      - "scripts/smoke_production.py"
+      - "scripts/test_smoke_production.py"
+      - ".github/workflows/production-smoke.yml"
       - "js/signals-catalog.json"
       - "newsletters/**"
       - "dispatches/**"
@@ -33,7 +39,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run Registry v2 regression tests
-        run: python scripts/test_registry_v2.py
+        run: python -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate and regenerate Registry v2
         run: python scripts/registry_v2.py check
       - name: Fail if generated views are stale
