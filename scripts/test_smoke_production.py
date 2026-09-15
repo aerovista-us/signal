@@ -57,8 +57,10 @@ class ProductionSmokeTests(unittest.TestCase):
 
         def text_response(url, timeout=20):
             if url == "https://example.test/":
+                return "Signal home"
+            if url.endswith("dispatches/internal-signals.html"):
                 return '<script src="/js/render-signals-hub.js"></script>'
-            return '<link rel="canonical" href="https://example.test/reports/current/">Current Report'
+            return '<link rel="canonical" href="https://example.test/reports/current/">Current&#32;Report'
 
         with (
             mock.patch.object(smoke, "EXPECTED_CATALOG", expected_file),
