@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AeroVista Shareholder &amp; Partner Update — September 13, 2026</title>
+  <meta name="description" content="AeroVista shareholder and partner update for September 11–13, 2026." />
+  <link rel="canonical" href="https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="48-Hour Shareholder &amp; Partner Update" />
+  <meta property="og:description" content="Plain-language AeroVista operating update covering September 11–13, 2026." />
+  <meta property="og:url" content="https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/" />
+  <style>
+    :root{
+      --bg:#07111d;
+      --bg2:#0b1726;
+      --panel:rgba(255,255,255,.065);
+      --panel2:rgba(255,255,255,.035);
+      --text:#eef6ff;
+      --muted:#a8b6c8;
+      --line:rgba(255,255,255,.11);
+      --accent:#4fd1ff;
+      --accent2:#8d7cff;
+      --good:#79e6a2;
+      --warn:#ffd479;
+      --danger:#ff8f8f;
+      --shadow:0 24px 70px rgba(0,0,0,.34);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(79,209,255,.16), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(141,124,255,.14), transparent 30%),
+        linear-gradient(180deg,#050c15 0%,var(--bg) 38%,#091423 100%);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none; opacity:.25;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,black,transparent 75%);
+    }
+    a{color:inherit}
+    .skip-link{position:fixed;left:16px;top:10px;z-index:100;transform:translateY(-160%);padding:10px 14px;border-radius:10px;background:#fff;color:#07111d;font-weight:800}
+    .skip-link:focus{transform:translateY(0)}
+    .shell{width:min(1180px,calc(100% - 36px));margin:0 auto}
+    .hero{
+      min-height:92vh;
+      display:grid;
+      align-items:center;
+      padding:88px 0 72px;
+      position:relative;
+    }
+    .eyebrow{
+      display:inline-flex;gap:10px;align-items:center;
+      color:#cdeeff;font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
+      padding:9px 13px;border:1px solid rgba(79,209,255,.28);
+      border-radius:999px;background:rgba(79,209,255,.06)
+    }
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 0 rgba(121,230,162,.55);animation:pulse 2s infinite}
+    @keyframes pulse{70%{box-shadow:0 0 0 13px rgba(121,230,162,0)}100%{box-shadow:0 0 0 0 rgba(121,230,162,0)}}
+    h1{
+      margin:24px 0 22px;
+      max-width:1050px;
+      font-size:clamp(3.2rem,8vw,7rem);
+      line-height:.92;
+      letter-spacing:-.055em;
+    }
+    h1 .grad{
+      background:linear-gradient(90deg,#fff 0%,#bfeeff 36%,#b6aaff 82%,#fff 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{
+      max-width:800px;
+      color:var(--muted);
+      font-size:clamp(1.08rem,2vw,1.35rem);
+      margin:0 0 28px;
+    }
+    .hero .thesis{
+      max-width:920px;
+      font-size:clamp(1.35rem,3vw,2.2rem);
+      line-height:1.28;
+      color:#f9fbff;
+      font-weight:700;
+      margin-top:30px;
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+    .chip{padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:#dbe8f5;font-size:.92rem}
+    .scrollcue{position:absolute;bottom:22px;left:0;color:#7f90a6;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+    section{padding:78px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .section-head{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2.1rem,4vw,4rem);line-height:.98;letter-spacing:-.04em;margin:0}
+    .section-head p{margin:0;color:var(--muted);font-size:1.05rem}
+    .metrics{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    }
+    .metric{
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+      border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)
+    }
+    .metric strong{display:block;font-size:2.2rem;line-height:1;color:#fff;margin-bottom:8px}
+    .metric span{color:var(--muted);font-size:.92rem}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      border:1px solid var(--line);border-radius:24px;padding:26px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.028));
+      box-shadow:var(--shadow)
+    }
+    .card h3{font-size:1.35rem;margin:0 0 10px}
+    .card p{color:var(--muted);margin:0}
+    .status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:15px}
+    .dot{width:8px;height:8px;border-radius:50%}
+    .good{color:var(--good)} .good .dot{background:var(--good)}
+    .warn{color:var(--warn)} .warn .dot{background:var(--warn)}
+    .line{
+      height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:26px 0
+    }
+    .spotlight{
+      position:relative;overflow:hidden;
+      padding:36px;border-radius:28px;border:1px solid rgba(79,209,255,.22);
+      background:
+        radial-gradient(circle at 85% 0%,rgba(79,209,255,.12),transparent 34%),
+        linear-gradient(145deg,rgba(79,209,255,.07),rgba(141,124,255,.045));
+    }
+    .spotlight h3{font-size:clamp(2rem,4vw,3.3rem);margin:0 0 16px;letter-spacing:-.04em}
+    .spotlight p{font-size:1.1rem;color:#c9d7e7;max-width:880px}
+    .bigquote{
+      padding:40px 0;
+      font-size:clamp(2rem,4.8vw,4.9rem);
+      line-height:1.06;
+      letter-spacing:-.045em;
+      font-weight:800;
+      max-width:1050px;
+    }
+    .bigquote span{color:var(--accent)}
+    .timeline{display:grid;gap:12px}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start}
+    .num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(79,209,255,.08);border:1px solid rgba(79,209,255,.2);font-weight:800}
+    .step h4{margin:1px 0 3px;font-size:1.04rem}
+    .step p{margin:0;color:var(--muted)}
+    .risk{border-left:3px solid var(--warn)}
+    .footer{
+      padding:70px 0 90px;
+      text-align:center;
+    }
+    .footer h2{font-size:clamp(2.2rem,4vw,4.5rem);line-height:1;letter-spacing:-.045em;margin:0 auto 18px;max-width:900px}
+    .footer p{color:var(--muted);max-width:760px;margin:0 auto}
+    .smallcaps{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;color:#8ca0b8;font-weight:700}
+    .nav{
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);
+      background:rgba(5,12,21,.68);border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-inner{height:58px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+    .date{color:#8394aa;font-size:.82rem}
+    @media(max-width:850px){
+      .section-head,.grid2,.grid3,.metrics{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:72px}
+      .scrollcue{display:none}
+      .metric strong{font-size:2rem}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#report">Skip to report</a>
+  <div class="nav">
+    <div class="shell nav-inner">
+      <div class="brand">AeroVista · Partner Update</div>
+      <div class="date">September 13, 2026</div>
+    </div>
+  </div>
+
+  <main id="report">
+    <div class="shell hero">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> 48-Hour Shareholder &amp; Partner Brief</div>
+        <h1><span class="grad">From building tools<br>to building systems.</span></h1>
+        <p>AeroVista's latest work marks a shift from isolated software features toward connected systems that can analyze a real-world problem, test alternatives, improve a plan, and help drive it toward a usable outcome.</p>
+        <div class="thesis">The headline: <strong>LotScope is beginning to move from “Can this property work?” to “What should we change to make it work better?”</strong></div>
+        <div class="chips">
+          <div class="chip">LotScope automation advancing</div>
+          <div class="chip">Pondy Flats moving toward customer-ready proof</div>
+          <div class="chip">Cindy Connect · apparel + storefront in development</div>
+          <div class="chip">Northline · collection + commerce architecture</div>
+          <div class="chip">The Last Normal Night · original IP in production</div>
+          <div class="chip">Staff infrastructure maturing</div>
+        </div>
+      </div>
+      <div class="scrollcue">Scroll for the operating picture ↓</div>
+    </div>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>What changed most</h2>
+          <p>The company is increasingly moving from foundation-building into proof, refinement, and presentation.</p>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>2</strong><span>materially distinct Pondy design directions documented and under active review</span></div>
+          <div class="metric"><strong>4</strong><span>enclosed parking stalls preserved as a design requirement</span></div>
+          <div class="metric"><strong>20 ft</strong><span>approximate design depth recovered through a better garage interpretation</span></div>
+          <div class="metric"><strong>0</strong><span>need to manufacture success by weakening core design standards</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>LotScope is becoming the engine</h2>
+          <p>The most important product advancement is not another dashboard. It is a better decision-making loop.</p>
+        </div>
+        <div class="spotlight">
+          <div class="smallcaps">Strategic product shift</div>
+          <h3>From finding problems to helping solve them.</h3>
+          <p>LotScope is increasingly able to test multiple ways to improve a difficult property plan: move a building, reposition a garage, reshape a driveway, increase pavement only where it adds value, and compare the consequences before recommending a direction.</p>
+        </div>
+
+        <div class="bigquote">The goal is not a single formula. The goal is the <span>best practical use of the property.</span></div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Working direction</div>
+            <h3>Move structures</h3>
+            <p>Buildings and garages can be adjusted instead of treating their first location as permanent.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Working direction</div>
+            <h3>Reshape circulation</h3>
+            <p>Driveway geometry and maneuvering space can be tested against real vehicle behavior.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Working direction</div>
+            <h3>Use pavement intelligently</h3>
+            <p>Additional pavement remains an available tool when it improves the whole plan—not a default and not a forbidden option.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Pondy Flats is proving the model</h2>
+          <p>A difficult real-world property is forcing the system to balance living space, parking, setbacks, access, usability, and design quality at the same time.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="smallcaps">Design breakthrough</div>
+            <h3>Design #2 clarified a viable direction</h3>
+            <p>A more accurate interpretation of detached-garage placement indicated roughly 20 additional feet of usable design depth. That working analysis allowed the homes to remain connected while shifting garages rearward and improving circulation, subject to final site and design confirmation.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">Current focus</div>
+            <h3>Design #4 is testing circulation quality</h3>
+            <p>The current work is testing whether final parking and release maneuvers can be made clean, comfortable, and presentation-ready while retaining four enclosed stalls. The geometry remains under review until it clears the required gates.</p>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="spotlight">
+          <div class="smallcaps">Why this matters</div>
+          <h3>We are moving from feasibility to development assistance.</h3>
+          <p>Pondy is becoming the proof that LotScope can take imperfect property information, narrow viable options, expose design conflicts, improve geometry, preserve evidence, and ultimately support a customer-facing recommendation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>The public product is getting smarter without overpromising</h2>
+          <p>The customer-facing experience is improving, but exact engineering proof remains intentionally separated from rough public inputs.</p>
+        </div>
+        <div class="grid2">
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Public workflow in progress</div>
+            <h3>Irregular-lot input is advancing</h3>
+            <p>The fallback lot-sketch approach is being carried into LotScope's public custom workflow so users can describe more realistic property shapes without implying that approximate inputs are survey-grade.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Professional boundary</div>
+            <h3>Proof stays in Workbench</h3>
+            <p>Exact placement, vehicle movement, and design validation remain part of the professional/internal workflow rather than being implied from approximate consumer inputs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Company systems are maturing in parallel</h2>
+          <p>The product work is being supported by stronger internal operations, infrastructure visibility, and staff technology.</p>
+        </div>
+        <div class="grid3">
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Operational cleanup</div>
+            <h3>AeroVista Command Center</h3>
+            <p>The internal platform remains operational. Current work is focused on ensuring project records and work logs accurately reflect the latest activity before making further updates.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Infrastructure</div>
+            <h3>Safer system visibility</h3>
+            <p>A fresh read-only inventory of the primary AeroVista server improves operational awareness without giving the reporting layer command authority.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Staff operations</div>
+            <h3>Managed workstation baseline</h3>
+            <p>The first reference staff PC now supports secure private-network remote administration and logging. Its managed update workflow is configured, while final update verification and repeatable onboarding remain in progress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Creative work is becoming product infrastructure</h2>
+          <p>Three projects now show the same broader pattern from different angles: build the identity, build the experience around it, then connect it to durable distribution and commerce.</p>
+        </div>
+
+        <div class="spotlight">
+          <div class="smallcaps">Cindy Connect · Brand → Apparel → Storefront</div>
+          <h3>Cindy Santi is moving from creative direction into a real commerce-ready product line.</h3>
+          <p>The project now has a defined five-piece hoodie collection, a known website/source environment, consolidated brand assets, exact emblem sources, and an interactive storefront prototype built around the selected artwork. The work is no longer just “make a hoodie graphic.” It is becoming a repeatable path from brand philosophy to physical product and digital retail presentation.</p>
+        </div>
+
+        <div class="metrics" style="margin-top:18px">
+          <div class="metric"><strong>5</strong><span>defined hoodie designs in the current Cindy Santi collection</span></div>
+          <div class="metric"><strong>$68</strong><span>current prototype storefront price — placeholder, not final retail</span></div>
+          <div class="metric"><strong>1</strong><span>interactive real-artwork storefront prototype to continue from</span></div>
+          <div class="metric"><strong>WIP</strong><span>production masters, real garment imagery and live commerce remain ahead</span></div>
+        </div>
+
+        <div class="grid2" style="margin-top:18px">
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Completed / established</div>
+            <h3>Cindy Connect foundation</h3>
+            <p>The working source environment has been identified on AeroVista infrastructure and tied back to the Cindy Connect/Firebase hosting context. Brand assets and hoodie work have been consolidated so the project has a clear continuation point instead of living across disconnected mockups.</p>
+            <div class="line"></div>
+            <p><strong style="color:#fff">Collection:</strong> Interrupt the Loop · Clarity Over Comfort · Own Your Next Step · Break the Pattern · Grow Through What You Go Through.</p>
+          </div>
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Store work in progress</div>
+            <h3>Interactive storefront already exists</h3>
+            <p>The current prototype includes a hero, five products, responsive layouts, filtering, quick view, sizing UI, a shopping bag, subtotal calculation, collection storytelling and disabled/demo checkout. The exact selected artwork is embedded into the current store rather than substituted with approximate graphics.</p>
+            <div class="line"></div>
+            <p>The next commercial step is replacing simulated hoodie silhouettes with the actual blank/product photography and connecting real variants, inventory, tax, shipping, payment, fulfillment and order confirmation.</p>
+          </div>
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Production artwork</div>
+            <h3>Visual concepts are approved; press masters are not finished</h3>
+            <p>The current collection art is strong enough for presentation and storefront prototyping, but it is still below the intended final print-master specification. Production work must rebuild or vectorize the artwork, restore true transparency, lock the original Cindy Santi emblem into every design, outline typography and verify one-color print behavior.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Brand protection</div>
+            <h3>The real emblem stays canonical</h3>
+            <p>The production workflow now explicitly separates AI-assisted surrounding illustration from Cindy's approved vector emblem. That prevents brand drift and creates a more professional path to repeatable apparel manufacturing.</p>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="spotlight">
+          <div class="smallcaps">Northline · EchoStory → Collection → Commerce</div>
+          <h3>Northline is being rebuilt as a compact attention-capture product, not a sprawling platform.</h3>
+          <p>Northline's current standalone experience presents the <strong>Northline Collection</strong> as an AeroVista / EchoVerse Audio property built around North Idaho landscape language—cold peaks, dark timber, still water, snow, reflection and hidden apex geometry. The reconstructed experience contains six visible chapters/tracks, with the lead Northline signal available as a demo and the remaining masters intentionally shown as pending rather than playing incorrect audio.</p>
+        </div>
+
+        <div class="grid3" style="margin-top:18px">
+          <div class="card">
+            <div class="smallcaps">Experience</div>
+            <h3>Six-part collection structure</h3>
+            <p>Northline · Blue Divide · Ridgeline · Idaho After Dark · Powderline · Source Code. The experience already carries a cohesive visual/story language rather than functioning as a generic music player.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">Commercial architecture</div>
+            <h3>Centralized checkout path staged</h3>
+            <p>Northline is part of the shared NXCore Commerce direction alongside other AeroVista stores. Its storefront integration is designed to route through the common commerce edge instead of embedding provider-specific payment logic into every niche experience.</p>
+          </div>
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Not live commerce yet</div>
+            <h3>Checkout remains deliberately gated</h3>
+            <p>Production checkout should stay disabled until the shared backend, Northline catalog, server-authoritative pricing, payment behavior, webhook correlation and store-level acceptance are proven end to end. This is staged work, not completed revenue activation.</p>
+          </div>
+        </div>
+
+        <div class="bigquote">Northline is useful because it demonstrates a model AeroVista can repeat: <span>small branded experience, focused content, products, shared commerce underneath.</span></div>
+
+        <div class="spotlight">
+          <div class="smallcaps">The Last Normal Night · Original IP</div>
+          <h3>A ten-track story is becoming a multi-format AeroVista property.</h3>
+          <p>The Last Normal Night has advanced beyond a music concept. The core narrative is structured as ten connected chapters set around a distorted Coeur d'Alene reality, with recurring continuity objects, a defined mythology, a web-player lane and a comic/graphic-story production lane. The September 11 handoff exists specifically to prevent the project from losing canon or restarting from scratch.</p>
+        </div>
+
+        <div class="grid2" style="margin-top:18px">
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Canon established</div>
+            <h3>Ten connected story chapters</h3>
+            <p>The narrative progresses from <strong>The Last Normal Night</strong> through The Wrong Side of Morning, Frequency Three, The Man in My Shadow, The Lake Remembers, Don't Answer Yourself, I Already Did This, Welcome Back, The Door Was Never for Me and Midnight Knows My Name.</p>
+            <div class="line"></div>
+            <p>Shared signals—including 11:59, the lake, the truck radio, recurring local landmarks, the wrong shadow and Frequency Three—tie the album together as one story rather than ten unrelated tracks.</p>
+          </div>
+          <div class="card">
+            <div class="status good"><span class="dot"></span> Production system documented</div>
+            <h3>Music + web + comic are being treated as one IP system</h3>
+            <p>The project handoff captures the album/story canon, audio status, track art, player work, comic architecture, Coeur d'Alene geography rules, character/object continuity and the Episode 1 production map. That gives future work a trustworthy source instead of reinterpreting the story every session.</p>
+          </div>
+          <div class="card">
+            <div class="status warn"><span class="dot"></span> Current production lane</div>
+            <h3>Resume from the locked visual sequence</h3>
+            <p>The correct continuation is the established comic workflow beginning at the trusted Page 7 point and continuing forward through the already mapped episode sequence. The work should now prioritize consistent finished pages rather than opening another round of story ideation.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">Strategic value</div>
+            <h3>Original IP expands what AeroVista can own</h3>
+            <p>Unlike client or utility work, The Last Normal Night is an owned narrative world that can connect recorded music, artwork, interactive web presentation, serialized comics and future physical/digital products under one property.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Portfolio momentum</h2>
+          <p>Several non-core workstreams also moved forward without distracting from the primary engineering push.</p>
+        </div>
+        <div class="grid3">
+          <div class="card">
+            <div class="smallcaps">Cindy Connect</div>
+            <h3>Brand-to-store pipeline active</h3>
+            <p>Five apparel concepts, canonical logo assets and an interactive real-artwork store prototype are now organized into one production lane.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">Northline + Last Normal Night</div>
+            <h3>Owned media/IP systems advancing</h3>
+            <p>Northline is being rebuilt as a focused EchoStory/commerce experience while The Last Normal Night continues as a ten-chapter music, web and comic property.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">RV Watch</div>
+            <h3>Market research refreshed</h3>
+            <p>Current options were reprioritized around the real mission: living quality, Surron transport, and practical mobile workspace.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">AeroVista Brand</div>
+            <h3>Identity work continues</h3>
+            <p>New blueprint and founder-oriented visual concepts deepen the technology-led identity without returning to literal aviation branding.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">EchoVerse / Signal / Time Circuit</div>
+            <h3>Creative asset development</h3>
+            <p>New visual material was produced, while software and publication releases remain separately governed.</p>
+          </div>
+          <div class="card">
+            <div class="smallcaps">Operating discipline</div>
+            <h3>Less “looks done,” more “is proven”</h3>
+            <p>The company is increasingly separating prototypes, validated capability, production state, and customer-ready presentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>What we are protecting against</h2>
+          <p>The biggest risks now are execution risks, not lack of ideas.</p>
+        </div>
+        <div class="grid2">
+          <div class="card risk">
+            <h3>Endless expansion</h3>
+            <p>AeroVista already has meaningful working technology. The priority is to convert more of it into finished, visible outcomes rather than continuously opening new directions.</p>
+          </div>
+          <div class="card risk">
+            <h3>Presentation outrunning proof</h3>
+            <p>Customer-facing images and claims must remain tied to validated geometry and working capability.</p>
+          </div>
+          <div class="card risk">
+            <h3>Source-of-truth drift</h3>
+            <p>Code, production, reporting, and internal project records need to stay synchronized as execution speed increases.</p>
+          </div>
+          <div class="card risk">
+            <h3>Technical progress staying invisible</h3>
+            <p>Several systems are capable internally but still need polished demonstrations that partners and customers can immediately understand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Next execution sequence</h2>
+          <p>The next phase is intentionally narrow. The objective is to turn engineering momentum into finished proof.</p>
+        </div>
+        <div class="timeline">
+          <div class="step"><div class="num">1</div><div><h4>Finish Pondy Design #4 circulation</h4><p>Keep four enclosed stalls and refine the remaining maneuvering constraints without weakening the design standard.</p></div></div>
+          <div class="step"><div class="num">2</div><div><h4>Freeze the exact winning geometry</h4><p>Stop moving the design once it clears the required gates.</p></div></div>
+          <div class="step"><div class="num">3</div><div><h4>Create the customer-ready Pondy package</h4><p>Turn validated engineering into a clear site plan, explanation, and presentation.</p></div></div>
+          <div class="step"><div class="num">4</div><div><h4>Complete the coordinated LotScope release</h4><p>Bring the improved public experience and professional Workbench into a stable, consistent release state.</p></div></div>
+          <div class="step"><div class="num">5</div><div><h4>Reconcile internal reporting</h4><p>Bring AeroVista's internal project records back into alignment with actual work completed.</p></div></div>
+          <div class="step"><div class="num">6</div><div><h4>Turn workstation lessons into a repeatable staff standard</h4><p>Move from one working machine to a reproducible company-managed endpoint model.</p></div></div>
+          <div class="step"><div class="num">7</div><div><h4>Advance Cindy Connect from prototype store to launchable commerce</h4><p>Finish print masters, exact garment mockups, product data and the production storefront path without confusing the current demo cart with live checkout.</p></div></div>
+          <div class="step"><div class="num">8</div><div><h4>Finish Northline reconstruction and shared-commerce acceptance</h4><p>Complete the collection experience, add real masters as they arrive and keep checkout gated until the shared commerce edge passes store-level proof.</p></div></div>
+          <div class="step"><div class="num">9</div><div><h4>Continue The Last Normal Night from its locked handoff</h4><p>Produce the mapped comic sequence and keep music, player, artwork and story continuity aligned as one owned IP property.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell footer">
+      <div class="smallcaps">AeroVista Outlook</div>
+      <h2>The next milestone is not another experiment. It is multiple ideas becoming finished proof.</h2>
+      <p>Pondy Flats is approaching a full property-to-design proof. Cindy Connect is moving from brand concept toward a shoppable physical-product system. Northline is testing the focused collection + shared-commerce model. The Last Normal Night is building owned narrative IP across music, web and comics. Together, these projects show the same AeroVista pattern: create the idea, build the system around it, prove it, and turn it into something people can actually use, buy, experience or follow.</p>
+    </div>
+  </main>
+</body>
+</html>

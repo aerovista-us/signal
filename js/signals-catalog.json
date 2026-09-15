@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-13",
   "featured": {
     "label": "Latest EOW + ByteCast",
     "title": "From Convergence to Proof",
@@ -26,6 +26,20 @@
     "tags": "september-2026 eow weekly convergence-to-proof avcc source-control release-governance phase rydesync internal-signal bytecast plain-language audio-companion"
   },
   "now": [
+    {
+      "id": "eod-2026-09-13-shareholder-partner-update",
+      "typeLabel": "Latest EOD",
+      "title": "Sep 13 — Shareholder & Partner Update",
+      "summary": "Plain-language 48-hour operating update covering LotScope and Pondy Flats, Cindy Santi, Northline, The Last Normal Night, infrastructure, risks, and near-term priorities.",
+      "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+      "types": [
+        "eod",
+        "internal",
+        "shareholder",
+        "partner"
+      ],
+      "tags": "september-2026 eod 48-hour-update shareholder partner lotscope pondy-flats cindy-connect northline the-last-normal-night portfolio"
+    },
     {
       "id": "weekly-2026-09-07",
       "typeLabel": "Latest EOW + ByteCast",
@@ -120,6 +134,32 @@
     }
   ],
   "editions": [
+    {
+      "id": "eod-2026-09-13-shareholder-partner-update",
+      "section": "eod",
+      "title": "48-Hour Shareholder & Partner Update",
+      "badges": [
+        {
+          "type": "eod",
+          "label": "EOD"
+        },
+        {
+          "type": "internal",
+          "label": "Partner brief"
+        }
+      ],
+      "dateEm": "Sep 13",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+      "types": [
+        "eod",
+        "internal",
+        "shareholder",
+        "partner"
+      ],
+      "tags": "september-2026 eod 48-hour-update shareholder partner lotscope pondy-flats cindy-connect northline the-last-normal-night portfolio",
+      "summary": "Plain-language 48-hour operating update covering major product, infrastructure, commerce, creative-IP, risk, and execution developments."
+    },
     {
       "id": "weekly-2026-09-07",
       "section": "weekly",

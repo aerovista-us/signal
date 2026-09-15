@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-13",
   "featured": {
     "label": "Latest EOW + ByteCast",
     "title": "From Convergence to Proof",
@@ -26,6 +26,23 @@
     "recordId": "AV-RPT-EOW-2026-09-07"
   },
   "now": [
+    {
+      "id": "eod-2026-09-13-shareholder-partner-update",
+      "typeLabel": "Latest EOD",
+      "title": "Sep 13 — Shareholder & Partner Update",
+      "summary": "Plain-language 48-hour operating update covering LotScope and Pondy Flats, Cindy Santi, Northline, The Last Normal Night, infrastructure, risks, and near-term priorities.",
+      "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+      "types": [
+        "eod",
+        "internal",
+        "shareholder",
+        "partner"
+      ],
+      "tags": [
+        "september 11 13 2026 eod shareholder partner lotscope pondy flats cindy santi northline last normal night"
+      ],
+      "recordId": "AV-RPT-EOD-2026-09-13"
+    },
     {
       "id": "weekly-2026-09-07",
       "typeLabel": "Latest EOW + ByteCast",
@@ -145,6 +162,35 @@
     }
   ],
   "editions": [
+    {
+      "id": "eod-2026-09-13-shareholder-partner-update",
+      "section": "eod",
+      "title": "48-Hour Shareholder & Partner Update",
+      "badges": [
+        {
+          "type": "eod",
+          "label": "EOD"
+        },
+        {
+          "type": "internal",
+          "label": "Partner brief"
+        }
+      ],
+      "dateEm": "Sep 13",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+      "types": [
+        "eod",
+        "internal",
+        "shareholder",
+        "partner"
+      ],
+      "tags": [
+        "september 11 13 2026 eod shareholder partner lotscope pondy flats cindy santi northline last normal night"
+      ],
+      "summary": "Plain-language 48-hour operating update covering major product, infrastructure, commerce, creative-IP, risk, and execution developments.",
+      "recordId": "AV-RPT-EOD-2026-09-13"
+    },
     {
       "id": "weekly-2026-09-07",
       "section": "weekly",
