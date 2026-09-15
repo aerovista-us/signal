@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import sys
 import time
@@ -62,17 +63,20 @@ def check_production(base_url):
         if actual != wanted:
             raise AssertionError(f"deployed featured.{field}={actual!r}; expected {wanted!r}")
 
-    home = fetch_text(base_url)
-    if "render-signals-hub.js" not in home:
-        raise AssertionError("homepage is not loading the governed Signal hub renderer")
+    fetch_text(base_url)
+    hub_url = urljoin(base_url, "dispatches/internal-signals.html")
+    hub = fetch_text(hub_url)
+    if "render-signals-hub.js" not in hub:
+        raise AssertionError("Internal Signals hub is not loading the governed renderer")
 
     featured = deployed["featured"]
     featured_url = urljoin(base_url, featured["href"].lstrip("/"))
     report_html = fetch_text(featured_url)
-    if featured["title"] not in report_html:
+    decoded_report_html = html.unescape(report_html)
+    if featured["title"] not in decoded_report_html:
         raise AssertionError("featured report title is missing from the deployed report page")
     canonical_path = urlparse(featured_url).path
-    if featured_url not in report_html and canonical_path not in report_html:
+    if featured_url not in decoded_report_html and canonical_path not in decoded_report_html:
         raise AssertionError("featured report page does not declare its canonical publication path")
 
     index = fetch_json(urljoin(base_url, "registry/indexes/current.json"))
@@ -84,6 +88,7 @@ def check_production(base_url):
 
     return {
         "baseUrl": base_url,
+        "hubUrl": hub_url,
         "featured": featured["title"],
         "featuredUrl": featured_url,
         "currentReportId": latest["id"],
