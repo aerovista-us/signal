@@ -63,7 +63,7 @@ python scripts/registry_v2.py check
 - `build` regenerates indexes and the UI catalog.
 - `check` validates and regenerates generated views so CI can detect drift.
 
-After GitHub Pages completes a successful `main` deployment, the production smoke gate checks the site root and Internal Signals hub, compares the live catalog with the deployed revision, opens the selected report, verifies its canonical path, and confirms the featured entry is the newest final report in the live current index. It can also be run manually:
+On every `main` push and successful production deployment event, the production smoke gate retries until the deployed revision is visible, checks the site root and Internal Signals hub, compares the live catalog with the deployed revision, opens the selected report, verifies its canonical path, and confirms the featured entry is the newest final report in the live current index. It can also be run manually:
 
 ```bash
 python scripts/smoke_production.py --base-url https://thesignal.aerovista.us/
