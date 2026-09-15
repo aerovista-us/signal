@@ -467,6 +467,76 @@ def build_indexes(records):
                 }
     write_json(INDEXES / "current.json", {"schemaVersion":"2.0","reports":current})
 
+
+def format_day(value):
+    parsed = date.fromisoformat(value)
+    return f"{parsed.strftime('%b')} {parsed.day}"
+
+
+def format_period(period):
+    if not period:
+        return None
+    if period.get("start") and period.get("end"):
+        start = date.fromisoformat(period["start"])
+        end = date.fromisoformat(period["end"])
+        if start == end:
+            return format_day(period["start"])
+        if start.year == end.year and start.month == end.month:
+            return f"{start.strftime('%b')} {start.day}–{end.day}"
+        return f"{format_day(period['start'])}–{format_day(period['end'])}"
+    if period.get("effectiveAt"):
+        return format_day(period["effectiveAt"][:10])
+    return None
+
+
+def select_featured_record(records, selection):
+    mode = selection.get("mode")
+    if mode != "latest-final-report":
+        raise ValueError(f"unsupported featured selection mode {mode!r}")
+
+    candidates = [
+        r for r in records
+        if r.get("contentClass") == "report" and r.get("status") == "final"
+    ]
+    report_classes = selection.get("reportClasses")
+    if report_classes:
+        candidates = [r for r in candidates if r.get("reportClass") in report_classes]
+    audiences = selection.get("audiences")
+    if audiences:
+        candidates = [r for r in candidates if set(r.get("audience", [])) & set(audiences)]
+    if not candidates:
+        raise ValueError("featured selection did not match a final report")
+    return max(candidates, key=sort_key)
+
+
+def automatic_featured(records, selection):
+    record = select_featured_record(records, selection)
+    report_class = record.get("reportClass", "report").upper()
+    key_audiences = [
+        name for name in ("shareholder", "partner", "stakeholder", "public")
+        if name in record.get("audience", [])
+    ]
+    audience_label = " & ".join(name.title() for name in key_audiences[:2])
+    label = f"Latest {report_class}"
+    if audience_label:
+        label += f" · {audience_label} Update"
+
+    period_label = format_period(record.get("period")) or format_day(record["issuedAt"])
+    return {
+        "label": label,
+        "title": record["title"],
+        "summary": record["summary"],
+        "href": urlparse(record["canonicalUrl"]).path or "/",
+        "stats": [
+            {"value": period_label, "label": "Coverage window"},
+            {"value": format_day(record["issuedAt"]), "label": "Issued"},
+            {"value": str(len(record.get("files", []))), "label": "Registered assets"},
+            {"value": record["status"].title(), "label": "Registry status"},
+        ],
+        "tags": " ".join(record.get("tags", [])),
+    }, record
+
+
 def generate_catalog(records):
     if not PRESENTATION.is_file():
         return
@@ -489,6 +559,14 @@ def generate_catalog(records):
             out.setdefault("summary", r["summary"])
             out["tags"] = " ".join(r.get("tags",[]))
         return out
+
+    featured_cfg = cfg.get("featured")
+    selected = None
+    if isinstance(featured_cfg, dict) and isinstance(featured_cfg.get("selection"), dict):
+        featured, selected = automatic_featured(records, featured_cfg["selection"])
+        cfg["featured"] = featured
+    if cfg.get("updated") == "auto":
+        cfg["updated"] = selected["issuedAt"] if selected else max(r["issuedAt"] for r in records)
 
     write_json(CATALOG_OUT, hydrate(cfg))
 
