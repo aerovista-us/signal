@@ -71,6 +71,28 @@ class RegistryV2ValidationTests(unittest.TestCase):
                 checked += 1
         self.assertGreater(checked, 0, "expected at least one registered HTML redirect")
 
+    def test_featured_selection_uses_latest_final_report(self):
+        featured = registry.select_featured_record(
+            self.records, {"mode": "latest-final-report"}
+        )
+        self.assertEqual(featured["id"], "AV-RPT-EOD-2026-09-13")
+
+    def test_featured_selection_can_filter_report_classes(self):
+        featured = registry.select_featured_record(
+            self.records,
+            {"mode": "latest-final-report", "reportClasses": ["eow"]},
+        )
+        self.assertEqual(featured["id"], "AV-RPT-EOW-2026-09-07")
+
+    def test_automatic_featured_uses_canonical_registry_metadata(self):
+        featured, record = registry.automatic_featured(
+            self.records, {"mode": "latest-final-report"}
+        )
+        self.assertEqual(featured["title"], record["title"])
+        self.assertEqual(featured["summary"], record["summary"])
+        self.assertEqual(featured["href"], "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/")
+        self.assertEqual(featured["stats"][0]["value"], "Sep 11–13")
+
 
 if __name__ == "__main__":
     unittest.main()
