@@ -11,7 +11,7 @@ One registry system, multiple content classes:
 - `dispatch` — short operational or topical update.
 - `media` — standalone media only. Companion ByteCast/audio stays attached to its parent record.
 
-The registry records are authoritative. `registry/presentation/signals-catalog.json` holds presentation choices tied to registry `recordId` values, and `js/signals-catalog.json` is generated from those choices plus canonical registry metadata.
+The registry records are authoritative. `registry/presentation/signals-catalog.json` holds presentation policy and ordered discovery choices tied to registry `recordId` values, and `js/signals-catalog.json` is generated from those choices plus canonical registry metadata. The homepage featured slot uses `latest-final-report`, so a newly published final report becomes featured without a second manual catalog edit.
 
 ## Layout
 
@@ -63,6 +63,12 @@ python scripts/registry_v2.py check
 - `build` regenerates indexes and the UI catalog.
 - `check` validates and regenerates generated views so CI can detect drift.
 
+After GitHub Pages completes a successful `main` deployment, the production smoke gate compares the live catalog with the deployed revision, opens the selected report, verifies its canonical path, and confirms the featured entry is the newest final report in the live current index. It can also be run manually:
+
+```bash
+python scripts/smoke_production.py --base-url https://thesignal.aerovista.us/
+```
+
 ## Migration rule
 
 Do not move legacy live files merely to register them. Register current canonical and legacy paths first. Physical normalization can happen later with redirects preserving live URLs and registry references recording every legacy asset that must be handled.
@@ -91,4 +97,3 @@ Every prior public HTML location is retained as a direct redirect, and legacy di
 Folder normalization is complete for governed reports and publications. Every formal report and publication record uses a strict, portable directory package. Legacy live HTML URLs are retained as registered redirects to canonical packages, and legacy media aliases remain registered as referenced assets when direct media URLs must stay available.
 
 Mutable `current` dispatch views remain dispatch aliases by design. Standalone media records, such as EP02, are not forced into report-package semantics.
-
