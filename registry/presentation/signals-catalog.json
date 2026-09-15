@@ -1,29 +1,9 @@
 {
-  "updated": "2026-09-13",
+  "updated": "auto",
   "featured": {
-    "label": "Latest EOD · Shareholder & Partner Update",
-    "title": "48 Hours of Forward Motion",
-    "summary": "September 11–13 shareholder and partner briefing: clear operating progress across LotScope and Pondy Flats, Cindy Santi commerce, Northline, The Last Normal Night, infrastructure, risk management, and the next priorities.",
-    "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
-    "stats": [
-      {
-        "value": "Sep 11–13",
-        "label": "Coverage window"
-      },
-      {
-        "value": "6",
-        "label": "Operating lanes"
-      },
-      {
-        "value": "48 hr",
-        "label": "Decision horizon"
-      },
-      {
-        "value": "Next",
-        "label": "Priorities defined"
-      }
-    ],
-    "recordId": "AV-RPT-EOD-2026-09-13"
+    "selection": {
+      "mode": "latest-final-report"
+    }
   },
   "now": [
     {
