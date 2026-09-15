@@ -1,9 +1,9 @@
 name: Production smoke gate
 
 on:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
+  push:
+    branches: [main]
+  deployment_status:
   workflow_dispatch:
     inputs:
       base_url:
@@ -21,16 +21,17 @@ concurrency:
 jobs:
   smoke-production:
     if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.head_branch == 'main')
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       (github.event.deployment.environment == 'Production' ||
+        github.event.deployment.environment == 'github-pages'))
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
       - name: Check out deployed revision
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.event.deployment.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
