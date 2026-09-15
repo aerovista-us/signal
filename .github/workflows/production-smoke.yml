@@ -1,0 +1,40 @@
+name: Production smoke gate
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Production origin to verify
+        required: false
+        default: https://thesignal.aerovista.us/
+
+permissions:
+  contents: read
+
+concurrency:
+  group: signal-production-smoke
+  cancel-in-progress: true
+
+jobs:
+  smoke-production:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out deployed revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify production matches governed catalog
+        env:
+          SIGNAL_BASE_URL: ${{ inputs.base_url || 'https://thesignal.aerovista.us/' }}
+        run: python scripts/smoke_production.py --base-url "$SIGNAL_BASE_URL"
