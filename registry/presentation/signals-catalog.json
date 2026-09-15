@@ -1,29 +1,29 @@
 {
   "updated": "2026-09-13",
   "featured": {
-    "label": "Latest EOW + ByteCast",
-    "title": "From Convergence to Proof",
-    "summary": "September 1–7 internal briefing with a 14:47 plain-language ByteCast — the first week of September turned August's convergence thesis into operating proof across AVCC, source control, releases, productization, and endpoint operations.",
-    "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
+    "label": "Latest EOD · Shareholder & Partner Update",
+    "title": "48 Hours of Forward Motion",
+    "summary": "September 11–13 shareholder and partner briefing: clear operating progress across LotScope and Pondy Flats, Cindy Santi commerce, Northline, The Last Normal Night, infrastructure, risk management, and the next priorities.",
+    "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
     "stats": [
       {
-        "value": "Sep 1–7",
+        "value": "Sep 11–13",
         "label": "Coverage window"
       },
       {
-        "value": "101",
-        "label": "Fleet baseline"
+        "value": "6",
+        "label": "Operating lanes"
       },
       {
-        "value": "$180",
-        "label": "Commercial proof"
+        "value": "48 hr",
+        "label": "Decision horizon"
       },
       {
-        "value": "0.12.8",
-        "label": "Phase foundation"
+        "value": "Next",
+        "label": "Priorities defined"
       }
     ],
-    "recordId": "AV-RPT-EOW-2026-09-07"
+    "recordId": "AV-RPT-EOD-2026-09-13"
   },
   "now": [
     {
