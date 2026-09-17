@@ -28,7 +28,10 @@ CLASSES = {"report","publication","dispatch","media"}
 STATUSES = {"draft","review","final","superseded","withdrawn"}
 RELATIONSHIPS = {"owned","referenced"}
 REPORT_CLASSES = {"eod","eow","mtd","eom","quarterly","annual","milestone","incident","audit","compliance","release-readiness","production-validation","investigation","risk-review","special"}
-AUDIENCES = {"internal","executive","operations","staff","stakeholder","shareholder","advisor","partner","public","client","community"}
+AUDIENCES = {"internal","executive","operations","staff","stakeholder","shareholder","advisor","partner","public","client","creator","collaborator","community"}
+ACCESS_MODES = {"public","authenticated","entitled"}
+ACCOUNT_ROLES = {"founder","admin","staff","client","creator","collaborator","guest"}
+ACCESS_FIELDS = {"mode","capabilities","accountRoles","entitlements","agreementRequirements","notes"}
 ROLES = {"primary","report-section","audio","video","image","document","transcript","source","data","metadata","style","script","readme","redirect","evidence","attachment","other"}
 PACKAGE_MODES = {"directory","legacy-flat","external"}
 ID_RE = re.compile(r"^AV-[A-Z]+-[A-Z0-9-]+$")
@@ -226,6 +229,46 @@ def validate_period(record, rp, errors):
         except Exception:
             errors.append(f"{rp}: period.effectiveAt must be ISO-8601 date-time")
 
+def validate_access(record, rp, errors):
+    if "access" not in record:
+        return
+
+    access = record["access"]
+    if not isinstance(access, dict):
+        errors.append(f"{rp}: access must be an object")
+        return
+
+    extras = sorted(set(access) - ACCESS_FIELDS)
+    if extras:
+        errors.append(f"{rp}: invalid access fields {extras}")
+
+    mode = access.get("mode")
+    if mode not in ACCESS_MODES:
+        errors.append(f"{rp}: invalid access.mode {mode!r}")
+
+    for field in ("capabilities", "entitlements", "agreementRequirements"):
+        values = access.get(field)
+        if values is None:
+            continue
+        if (
+            not isinstance(values, list)
+            or len(values) != len(set(values))
+            or any(not isinstance(value, str) or not value.strip() for value in values)
+        ):
+            errors.append(f"{rp}: access.{field} must be a unique non-empty string array")
+
+    roles = access.get("accountRoles")
+    if roles is not None:
+        if not isinstance(roles, list) or len(roles) != len(set(roles)):
+            errors.append(f"{rp}: access.accountRoles must be a unique array")
+        else:
+            unknown_roles = sorted(set(roles) - ACCOUNT_ROLES)
+            if unknown_roles:
+                errors.append(f"{rp}: invalid access.accountRoles values {unknown_roles}")
+
+    if "notes" in access and not isinstance(access["notes"], str):
+        errors.append(f"{rp}: access.notes must be a string")
+
 def validate(records):
     errors = []
     ids = set()
@@ -275,6 +318,8 @@ def validate(records):
             unknown = sorted(set(audience) - AUDIENCES)
             if unknown:
                 errors.append(f"{rp}: invalid audience values {unknown}")
+
+        validate_access(r, rp, errors)
 
         formats = r.get("formats")
         if not isinstance(formats,list) or not formats or len(formats) != len(set(formats)) or any(not isinstance(x,str) or not x for x in formats):

@@ -2,17 +2,6 @@ name: Registry v2 validation
 
 on:
   pull_request:
-    paths:
-      - "registry/**"
-      - "scripts/registry_v2.py"
-      - "scripts/test_registry_v2.py"
-      - "scripts/smoke_production.py"
-      - "scripts/test_smoke_production.py"
-      - ".github/workflows/production-smoke.yml"
-      - "js/signals-catalog.json"
-      - "newsletters/**"
-      - "dispatches/**"
-      - "publications/**"
   push:
     branches: [main]
     paths:
