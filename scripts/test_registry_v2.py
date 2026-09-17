@@ -55,6 +55,52 @@ class RegistryV2ValidationTests(unittest.TestCase):
         self.assertTrue(any("invalid or missing reportClass" in e for e in errors), errors)
         self.assertTrue(any("invalid audience" in e for e in errors), errors)
 
+    def test_creator_and_collaborator_audiences_are_valid(self):
+        record = copy.deepcopy(self.small_report)
+        record["audience"] = ["creator", "collaborator"]
+        self.assertEqual(registry.validate([record]), [])
+
+    def test_public_access_metadata_is_valid(self):
+        record = copy.deepcopy(self.small_report)
+        record["access"] = {"mode": "public"}
+        self.assertEqual(registry.validate([record]), [])
+
+    def test_entitled_access_metadata_is_valid(self):
+        record = copy.deepcopy(self.small_report)
+        record["access"] = {
+            "mode": "entitled",
+            "capabilities": ["signal.read.creator"],
+            "accountRoles": ["creator", "collaborator"],
+            "entitlements": ["signal.creator.edition"],
+            "agreementRequirements": ["creator-agreement@1"],
+            "notes": "Declarative only until protected delivery is implemented.",
+        }
+        self.assertEqual(registry.validate([record]), [])
+
+    def test_invalid_access_mode_and_field_fail(self):
+        record = copy.deepcopy(self.small_report)
+        record["access"] = {"mode": "nonsense", "capabilites": ["typo"]}
+        errors = registry.validate([record])
+        self.assertTrue(any("invalid access.mode" in e for e in errors), errors)
+        self.assertTrue(any("invalid access fields" in e for e in errors), errors)
+
+    def test_invalid_access_arrays_and_roles_fail(self):
+        record = copy.deepcopy(self.small_report)
+        record["access"] = {
+            "mode": "entitled",
+            "capabilities": ["signal.read", "signal.read"],
+            "accountRoles": ["mystery"],
+            "entitlements": "not-an-array",
+            "agreementRequirements": [""],
+            "notes": ["not", "a", "string"],
+        }
+        errors = registry.validate([record])
+        self.assertTrue(any("access.capabilities" in e for e in errors), errors)
+        self.assertTrue(any("access.entitlements" in e for e in errors), errors)
+        self.assertTrue(any("access.agreementRequirements" in e for e in errors), errors)
+        self.assertTrue(any("invalid access.accountRoles" in e for e in errors), errors)
+        self.assertTrue(any("access.notes" in e for e in errors), errors)
+
     def test_registered_html_redirects_target_canonical_url(self):
         checked = 0
         for record in self.records:
