@@ -10,9 +10,15 @@ on:
         description: Production origin to verify
         required: false
         default: https://thesignal.aerovista.us/
+      force_failure:
+        description: Trigger a controlled incident-routing test
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
   group: signal-production-smoke
@@ -29,13 +35,157 @@ jobs:
     timeout-minutes: 8
     steps:
       - name: Check out deployed revision
+        id: checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.deployment.sha || github.sha }}
-      - uses: actions/setup-python@v5
+
+      - name: Set up Python
+        id: setup_python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Verify production matches governed catalog
+        id: smoke
+        continue-on-error: true
         env:
           SIGNAL_BASE_URL: ${{ inputs.base_url || 'https://thesignal.aerovista.us/' }}
-        run: python scripts/smoke_production.py --base-url "$SIGNAL_BASE_URL"
+          FORCE_CONTROLLED_FAILURE: ${{ inputs.force_failure || 'false' }}
+        shell: bash
+        run: |
+          set -o pipefail
+          {
+            if [[ "$FORCE_CONTROLLED_FAILURE" == "true" || -f .github/CONTROLLED_SMOKE_FAILURE ]]; then
+              echo "CONTROLLED_FAILURE: Signal production smoke incident-routing test."
+              exit 42
+            fi
+            python scripts/smoke_production.py --base-url "$SIGNAL_BASE_URL"
+          } 2>&1 | tee smoke-output.txt
+
+      - name: Open or update production-smoke incident
+        if: >-
+          always() &&
+          (steps.checkout.outcome == 'failure' ||
+           steps.setup_python.outcome == 'failure' ||
+           steps.smoke.outcome == 'failure')
+        uses: actions/github-script@v7
+        env:
+          SIGNAL_BASE_URL: ${{ inputs.base_url || 'https://thesignal.aerovista.us/' }}
+          TESTED_SHA: ${{ github.event.deployment.sha || github.sha }}
+          CHECKOUT_OUTCOME: ${{ steps.checkout.outcome }}
+          SETUP_OUTCOME: ${{ steps.setup_python.outcome }}
+          SMOKE_OUTCOME: ${{ steps.smoke.outcome }}
+        with:
+          script: |
+            const fs = require('fs');
+            const title = '[Incident] Signal production smoke failure';
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const rawOutput = fs.existsSync('smoke-output.txt')
+              ? fs.readFileSync('smoke-output.txt', 'utf8')
+              : 'Smoke output was unavailable; inspect the workflow jobs and steps.';
+            const assertion = rawOutput.replaceAll('```', "'''").slice(-6000);
+            const eventOrigin = context.eventName;
+            const failureStages = [
+              ['checkout', process.env.CHECKOUT_OUTCOME],
+              ['setup-python', process.env.SETUP_OUTCOME],
+              ['production-smoke', process.env.SMOKE_OUTCOME],
+            ].filter(([, outcome]) => outcome === 'failure').map(([stage]) => stage).join(', ') || 'unknown';
+
+            const evidence = [
+              '## Production smoke failure',
+              '',
+              `- **Workflow run:** [${context.runId}](${runUrl})`,
+              `- **Tested SHA:** \`${process.env.TESTED_SHA}\``,
+              `- **Production origin:** ${process.env.SIGNAL_BASE_URL}`,
+              `- **Trigger:** \`${eventOrigin}\``,
+              `- **Failed stage:** \`${failureStages}\``,
+              `- **Observed:** ${new Date().toISOString()}`,
+              '- **Primary owner:** @aerovista-us',
+              '- **Backup:** AeroVista founder/operator (single-maintainer fallback)',
+              '- **Acknowledge target:** 4 hours',
+              '- **Restore target:** 24 hours',
+              '',
+              '### Failed assertion / output',
+              '',
+              '```text',
+              assertion,
+              '```',
+              '',
+              'This issue is updated for repeated failures and automatically closed after a successful production-smoke run.',
+            ].join('\n');
+
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              per_page: 100,
+            });
+            const existing = openIssues.find(
+              issue => !issue.pull_request && issue.title === title
+            );
+
+            if (existing) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: existing.number,
+                body: evidence,
+              });
+              core.notice(`Updated production-smoke incident #${existing.number}`);
+            } else {
+              const { data: created } = await github.rest.issues.create({
+                ...context.repo,
+                title,
+                body: evidence,
+                assignees: ['aerovista-us'],
+              });
+              core.notice(`Created production-smoke incident #${created.number}`);
+            }
+
+      - name: Resolve recovered production-smoke incident
+        if: always() && steps.smoke.outcome == 'success'
+        uses: actions/github-script@v7
+        env:
+          SIGNAL_BASE_URL: ${{ inputs.base_url || 'https://thesignal.aerovista.us/' }}
+          TESTED_SHA: ${{ github.event.deployment.sha || github.sha }}
+        with:
+          script: |
+            const title = '[Incident] Signal production smoke failure';
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              per_page: 100,
+            });
+            const incidents = openIssues.filter(
+              issue => !issue.pull_request && issue.title === title
+            );
+
+            for (const incident of incidents) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: incident.number,
+                body: [
+                  '## Production smoke restored',
+                  '',
+                  `- **Passing workflow:** [${context.runId}](${runUrl})`,
+                  `- **Verified SHA:** \`${process.env.TESTED_SHA}\``,
+                  `- **Production origin:** ${process.env.SIGNAL_BASE_URL}`,
+                  `- **Restored:** ${new Date().toISOString()}`,
+                ].join('\n'),
+              });
+              await github.rest.issues.update({
+                ...context.repo,
+                issue_number: incident.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+              core.notice(`Closed recovered production-smoke incident #${incident.number}`);
+            }
+
+      - name: Fail after incident routing
+        if: >-
+          always() &&
+          (steps.checkout.outcome == 'failure' ||
+           steps.setup_python.outcome == 'failure' ||
+           steps.smoke.outcome == 'failure')
+        run: exit 1
