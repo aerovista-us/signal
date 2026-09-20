@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>From Recovery to Repeatability · AeroVista Signal EOW · Sep 20, 2026</title>
+  <meta name="description" content="AeroVista LLC end-of-week Signal for September 20, 2026: closed milestones, active execution gates, portfolio risks, and the shift from recovery to repeatability." />
+  <style>
+    :root{
+      --bg:#080b10;--panel:#0e141c;--panel2:#111a25;--ink:#edf2f7;--muted:#8f9baa;
+      --line:#223041;--cyan:#68d5ff;--gold:#d8b56a;--green:#82e5aa;--amber:#f4c96a;--red:#ff8c8c;
+      --shadow:0 24px 80px rgba(0,0,0,.38);--radius:20px;--max:1180px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:
+      radial-gradient(circle at 14% -5%,rgba(104,213,255,.11),transparent 30rem),
+      radial-gradient(circle at 90% 2%,rgba(216,181,106,.09),transparent 30rem),var(--bg);
+      color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.62}
+    a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px 90px}.topbar{position:sticky;top:0;z-index:30;
+      background:rgba(8,11,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .topbar-in{max-width:var(--max);margin:auto;padding:13px 24px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{font-weight:850;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}.brand span{color:var(--cyan)}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{text-decoration:none;color:var(--muted);font-size:.83rem;padding:7px 10px;border-radius:999px;border:1px solid transparent}.nav a:hover{color:var(--ink);border-color:var(--line)}
+    .hero{padding:82px 0 38px;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:end}
+    .eyebrow{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--cyan);font-weight:800}.hero h1{font-size:clamp(3.05rem,8vw,6.9rem);line-height:.89;letter-spacing:-.065em;margin:14px 0 22px;max-width:900px}.hero .dek{font-size:clamp(1.05rem,2vw,1.34rem);max-width:780px;color:#b8c3cf}.hero aside{border-left:1px solid var(--line);padding-left:26px;color:var(--muted)}
+    .hero aside strong{color:var(--ink);display:block;font-size:1.4rem;margin-bottom:6px}.hero aside small{display:block;margin-top:20px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold)}
+    .rule{margin-top:28px;padding:18px 20px;border:1px solid rgba(104,213,255,.22);border-radius:14px;background:rgba(104,213,255,.05);font-weight:760}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 42px}.metric{padding:20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}.metric b{display:block;font-size:2.05rem;line-height:1;color:var(--ink);margin-bottom:8px}.metric span{color:var(--muted);font-size:.83rem}.metric.good b{color:var(--green)}
+    .player{border:1px solid rgba(216,181,106,.27);background:linear-gradient(145deg,rgba(216,181,106,.07),rgba(104,213,255,.025));border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:8px 0 54px}
+    .player-head{display:flex;gap:20px;justify-content:space-between;align-items:flex-start;margin-bottom:18px}.player-title{margin:0;font-size:1.45rem}.player-sub{color:var(--muted);margin:5px 0 0;font-size:.94rem}.audio-state{font-size:.74rem;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap}.audio-state.ready{color:var(--green);border-color:rgba(130,229,170,.35)}
+    .now-playing{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:18px;border-radius:14px;background:#090e14;border:1px solid var(--line)}.now-playing h3{margin:0 0 4px;font-size:1.15rem}.now-playing p{margin:0;color:var(--muted);font-size:.9rem}.track-link{font-size:.82rem;text-decoration:none;color:var(--cyan)}audio{width:100%;margin-top:14px;filter:saturate(.8)}
+    .playlist{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.track{appearance:none;text-align:left;color:var(--ink);font:inherit;cursor:pointer;padding:15px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);transition:.18s}.track:hover{border-color:#3a526c;transform:translateY(-1px)}.track.active{border-color:rgba(104,213,255,.55);background:rgba(104,213,255,.08)}.track.unavailable{opacity:.58}.track small{display:block;color:var(--muted);margin-top:5px}.track .num{font-size:.72rem;color:var(--gold);font-weight:800;letter-spacing:.11em}
+    .note{color:var(--muted);font-size:.83rem;margin:13px 2px 0}.note strong{color:#cfd7e0}
+    section{margin:58px 0}.section-kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:.73rem;font-weight:850}.section-title{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.045em;line-height:1.04;margin:8px 0 18px}.lead{font-size:1.16rem;color:#bcc6d1;max-width:880px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}.card{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}.card h3{margin:0 0 9px;font-size:1.12rem}.card p{margin:0;color:#aab6c3}.card .impact{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);font-size:.88rem;color:#c7d0d9}.tag{display:inline-flex;margin-bottom:12px;border-radius:999px;padding:5px 9px;font-size:.7rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;border:1px solid var(--line);color:var(--muted)}.tag.closed{color:var(--green);border-color:rgba(130,229,170,.27)}.tag.p0{color:#ffb8b8;border-color:rgba(255,140,140,.27)}.tag.p1{color:var(--amber);border-color:rgba(244,201,106,.27)}.tag.p2{color:var(--cyan);border-color:rgba(104,213,255,.27)}
+    .portfolio{display:grid;gap:10px;margin-top:20px}.lane{border:1px solid var(--line);border-radius:15px;padding:17px 18px;background:rgba(255,255,255,.022);display:grid;grid-template-columns:108px 1fr 1.15fr;gap:18px;align-items:start}.lane strong{font-size:.94rem}.lane p{margin:0;color:var(--muted);font-size:.9rem}.lane .next{color:#cbd3dc}.lane .next b{color:var(--ink);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-right:5px}
+    .sequence{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;counter-reset:steps;margin-top:24px}.step{counter-increment:steps;border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--panel)}.step:before{content:counter(steps,decimal-leading-zero);display:block;color:var(--cyan);font-size:.76rem;font-weight:900;letter-spacing:.13em;margin-bottom:12px}.step h3{margin:0 0 7px}.step p{margin:0;color:var(--muted);font-size:.91rem}
+    .architecture{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.node{padding:18px;border:1px solid var(--line);border-radius:14px;background:#0c1219}.node b{display:block;color:var(--cyan);margin-bottom:4px}.node span{color:var(--muted);font-size:.87rem}
+    .quote{font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.2;letter-spacing:-.035em;margin:38px 0;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .footer{margin-top:76px;border-top:1px solid var(--line);padding-top:28px;color:var(--muted);font-size:.84rem;display:flex;justify-content:space-between;gap:20px}.footer strong{color:var(--ink)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.hero aside{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.metrics{grid-template-columns:repeat(2,1fr)}.playlist,.sequence,.architecture{grid-template-columns:1fr 1fr}.lane{grid-template-columns:90px 1fr}.lane .next{grid-column:2}.cards{grid-template-columns:1fr}}
+    @media(max-width:620px){.shell,.topbar-in{padding-left:16px;padding-right:16px}.nav{display:none}.hero{padding-top:52px}.hero h1{font-size:3.35rem}.metrics,.playlist,.sequence,.architecture{grid-template-columns:1fr}.now-playing{grid-template-columns:1fr}.lane{grid-template-columns:1fr}.lane .next{grid-column:auto}.footer{display:block}}
+    @media print{.topbar,.player{display:none}body{background:white;color:#111}.card,.lane,.step,.node{background:white;border-color:#ccc}.hero .dek,.lead,.card p,.lane p,.step p,.node span,.footer{color:#444}.shell{max-width:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="brand">AeroVista <span>Signal</span></div>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#listen">Listen</a><a href="#changed">Changed</a><a href="#portfolio">Portfolio</a><a href="#next">Next week</a><a href="#architecture">Architecture</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">End of Week · September 14–20, 2026</div>
+        <h1>From Recovery<br>to Repeatability</h1>
+        <p class="dek">AeroVista is moving beyond recovering systems and proving isolated applications. The next phase is turning the common platform into repeatable experiences for employees, customers, applications, storefronts, and real-world decisions.</p>
+        <div class="rule">Working platforms create technical capability. <span style="color:var(--cyan)">Repeatable platforms create organizational leverage.</span></div>
+      </div>
+      <aside>
+        <strong>Week-end thesis</strong>
+        The foundation increasingly works. Progress now depends on whether people and products that did not build it can use it reliably.
+        <small>Canonical rule</small>
+        Source state ≠ deployed runtime ≠ accepted behavior.
+      </aside>
+    </div>
+
+    <div class="metrics" aria-label="Executive metrics">
+      <div class="metric"><b>27</b><span>governed current lineages</span></div>
+      <div class="metric"><b>10</b><span>lineages signaling Attention</span></div>
+      <div class="metric"><b>14</b><span>lineages signaling Needs Proof</span></div>
+      <div class="metric good"><b>0</b><span>pending governed inbox items</span></div>
+    </div>
+
+    <section id="listen" class="player" aria-labelledby="player-heading">
+      <div class="player-head">
+        <div><h2 class="player-title" id="player-heading">ByteCast · multi-track EOW</h2><p class="player-sub">One player, three focused companion briefings. Audio masters can be replaced without changing the page.</p></div>
+        <span class="audio-state" id="audioState">Checking audio…</span>
+      </div>
+      <div class="now-playing">
+        <div><h3 id="nowTitle">Executive Brief</h3><p id="nowDesc">What changed this week and why the shift to repeatability matters.</p></div>
+        <a class="track-link" id="transcriptLink" href="bytecasts/01-executive-brief.md">Transcript ↗</a>
+      </div>
+      <audio id="audio" controls preload="metadata" aria-label="ByteCast player"></audio>
+      <div class="playlist" role="list" aria-label="ByteCast tracks">
+        <button class="track active" type="button" data-index="0"><span class="num">TRACK 01</span><strong>Executive Brief</strong><small>What changed + business meaning</small></button>
+        <button class="track" type="button" data-index="1"><span class="num">TRACK 02</span><strong>Operating Proof</strong><small>Closed milestones + active gates</small></button>
+        <button class="track" type="button" data-index="2"><span class="num">TRACK 03</span><strong>Next-Week Focus</strong><small>Execution sequence + portfolio risks</small></button>
+      </div>
+      <p class="note" id="audioNote"><strong>Audio-safe publishing:</strong> if an MP3 master is not present, the report and transcript remain available and the player marks that track unavailable instead of presenting a broken control.</p>
+    </section>
+
+    <section id="changed">
+      <div class="section-kicker">01 · What changed</div><h2 class="section-title">Several gates moved out of WIP.</h2>
+      <p class="lead">The most important portfolio improvement this week was not a new application. It was the removal of solved engineering gates from the active queue and a cleaner handoff into human, device, professional, and transactional validation.</p>
+      <div class="cards">
+        <article class="card"><span class="tag closed">Closed milestone</span><h3>AeroVista Operates · 0.5.0 accepted</h3><p>Slice C and the operator UI are accepted. AVCC Registry/status/audit persistence and safety behavior were proven; recovery evidence was retained.</p><div class="impact"><strong>Why it matters:</strong> governed operational visibility replaces remembered commands as the normal interface.</div></article>
+        <article class="card"><span class="tag closed">Architecture converged</span><h3>Identity · repeatable lanes</h3><p>AV Account is the human doorway, Identity Gateway / AVCC is authority, App Adapter is the user-facing broker lane, and Connector Kit is the machine/service lane.</p><div class="impact"><strong>Why it matters:</strong> future apps can inherit identity instead of rebuilding signup and access control.</div></article>
+        <article class="card"><span class="tag closed">Foundation hardened</span><h3>Signal · identity becomes the work</h3><p>Registry validation, branch governance, automatic featured selection, production smoke, incident routing, and recovery proof are complete foundation milestones.</p><div class="impact"><strong>Why it matters:</strong> Signal can become a role-aware information layer without creating another auth store.</div></article>
+        <article class="card"><span class="tag closed">Boundary crossed</span><h3>LotScope / Pondy · off-code proof next</h3><p>Pondy Design 4 repository/package QA is complete. LotScope's candidate lifecycle and revalidation capabilities remain active product work.</p><div class="impact"><strong>Why it matters:</strong> Pondy's uncertainty is now professional/site/AHJ validation, not repository correctness.</div></article>
+        <article class="card"><span class="tag closed">Commerce operational</span><h3>Cindy Santi · checkout path closed</h3><p>The five-product collection, 36 sellable size variations, server-authoritative $68 pricing, CORS/preflight, Square checkout, and Printful mappings are established.</p><div class="impact"><strong>Why it matters:</strong> remaining work is production-art governance, not rebuilding payments.</div></article>
+        <article class="card"><span class="tag closed">Memory became product</span><h3>Handoff Centralized · live front door</h3><p>Governed intake reconciled new evidence and returned the inbox to README-only. The Control Center presents canonical Markdown as a private, fail-closed operating surface.</p><div class="impact"><strong>Why it matters:</strong> continuity becomes browsable instead of depending on conversation history or one person's memory.</div></article>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-kicker">02 · Active portfolio</div><h2 class="section-title">What remains open has a clearer reason to be open.</h2>
+      <div class="portfolio">
+        <div class="lane"><span class="tag p0">P0</span><div><strong>AV Account / Identity productization</strong><p>Broker plumbing exists; human profile/setup is the missing reusable product layer.</p></div><div class="next"><b>Next:</b> Profile Contract v1 → create/edit setup → private-by-default fields → application return proof.</div></div>
+        <div class="lane"><span class="tag p0">P0</span><div><strong>Aleah / real employee onboarding</strong><p>The workstation is largely built. The product test is whether a new employee can enter without founder-level knowledge.</p></div><div class="next"><b>Next:</b> real first-day path, Collab auth, Gate 3 retest, identity-scoped evidence, reboot/persistence proof.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>Shared Commerce v1</strong><p>One backend can govern pricing, mappings, checkout, correlation, and fulfillment across storefronts.</p></div><div class="next"><b>Next:</b> fail-closed deploy → catalog/mapping proof → one-store-at-a-time admission → webhook/fulfillment proof.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>Signal identity / My Signal</strong><p>Publishing governance is mature enough to consume canonical identity state.</p></div><div class="next"><b>Next:</b> server-enforced capability delivery first; personalization after the contract is proven.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>LotScope Workbench</strong><p>Candidate lifecycle, intervention editing, direct manipulation, and revalidation remain reusable product work.</p></div><div class="next"><b>Next:</b> make assumptions/confidence clearer and strengthen public-to-Workbench/customer package handoff.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>Pondy Flats</strong><p>Software/package gate complete.</p></div><div class="next"><b>Next:</b> professional design review, site/access/maneuver validation, applicable AHJ confirmation.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>RydeSync</strong><p>Recent failures exposed real-device acceptance problems rather than a need for another architecture rewrite.</p></div><div class="next"><b>Next:</b> prove sign-in, touch/navigation, map behavior, and remaining device/field matrix on affected devices.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>Cindy Santi production assets</strong><p>Store and fulfillment are live; production artwork governance is the remaining gap.</p></div><div class="next"><b>Next:</b> high-resolution print masters, canonical binary bundle/manifest, final production QC.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>Work Log governance recovery</strong><p>Canonical revision 10 remains unrecovered.</p></div><div class="next"><b>Next:</b> recover and validate r10+ before creating the next complete revision; preserve deltas in the meantime.</div></div>
+        <div class="lane"><span class="tag p1">P1</span><div><strong>AeroVista Creative Fellowship</strong><p>Formation and ownership-transfer packages remain drafts.</p></div><div class="next"><b>Next:</b> governance decision + qualified Idaho nonprofit/corporate and federal tax review before filing/execution.</div></div>
+        <div class="lane"><span class="tag p2">P1/P2</span><div><strong>B Street / 1011 N B Street</strong><p>The digital package is mature; the next proofs are transactional and professional.</p></div><div class="next"><b>Next:</b> neighbor/frontage path → title → survey → City confirmation → valuation → lender/utilities/professional review.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">03 · Keep the queue honest</div><h2 class="section-title">Closed work should stop making AeroVista look unfinished.</h2>
+      <p class="lead">Operates 0.5.0 acceptance, Signal's branch/smoke/incident foundation, Pondy Design 4 repository QA, Cindy checkout/CORS/Square/Printful integration, AVCC/ACOS recovery as a recovery project, the NXCore startup-hardening baseline, and intentionally paused Art Localized AVCC machine integration belong in history—not active WIP.</p>
+      <div class="quote">Good portfolio management is not only knowing what remains open. It is refusing to keep solved problems artificially alive.</div>
+      <p class="lead">Conversation-stage ideas remain visible without competing with P0/P1 execution. Promotion should require a defined name, owner, repository or canonical artifact, current boundary, and next gate.</p>
+    </section>
+
+    <section id="next">
+      <div class="section-kicker">04 · Next-week execution thesis</div><h2 class="section-title">Measure reuse, not project count.</h2>
+      <p class="lead">The next week should be measured by how many existing platform capabilities become usable without founder-level intervention.</p>
+      <div class="sequence">
+        <article class="step"><h3>Human identity contract</h3><p>Ship Profile Contract v1 and the first coherent AV Account profile/setup flow.</p></article>
+        <article class="step"><h3>Real employee onboarding</h3><p>Put Aleah through the actual first-day path and treat friction as product data.</p></article>
+        <article class="step"><h3>Controlled Commerce rollout</h3><p>Bring the shared backend up fail-closed and admit storefronts deliberately.</p></article>
+        <article class="step"><h3>Pondy into the real world</h3><p>Move proof toward professional review, physical/site validation, and AHJ reality.</p></article>
+        <article class="step"><h3>Signal identity consumption</h3><p>Connect publishing to canonical AV Account/AVCC state; do not create another auth layer.</p></article>
+        <article class="step"><h3>Acceptance closeouts</h3><p>Finish Cindy print-master governance and RydeSync real-device acceptance.</p></article>
+      </div>
+      <p class="note"><strong>Parallel governance:</strong> Work Log r10 recovery and Handoff Centralized intake continue alongside the execution sequence.</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">05 · Portfolio risks</div><h2 class="section-title">The risk profile is changing too.</h2>
+      <div class="cards">
+        <article class="card"><h3>Stale work appearing active</h3><p>Completed gates that remain visible distort portfolio health and invite repeated effort.</p></article>
+        <article class="card"><h3>Engineering past the actual gate</h3><p>Aleah, RydeSync, Pondy, and B Street now require people, devices, professionals, agencies, or transactions—not simply more code.</p></article>
+        <article class="card"><h3>Source/runtime/acceptance flattening</h3><p>Source ahead of runtime is normal. The failure would be pretending one version number proves every layer.</p></article>
+        <article class="card"><h3>Project sprawl</h3><p>Exploration can stay inexpensive until a concept earns promotion into governed WIP.</p></article>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="section-kicker">06 · Why the architecture matters</div><h2 class="section-title">The portfolio is beginning to compound.</h2>
+      <p class="lead">AeroVista increasingly behaves like a platform instead of a set of unrelated applications. Each common layer should reduce the friction and cost of the next employee, client, storefront, application, and decision.</p>
+      <div class="architecture">
+        <div class="node"><b>AV Account</b><span>Human entry point and setup.</span></div>
+        <div class="node"><b>Identity Gateway / AVCC</b><span>Identity and authorization authority.</span></div>
+        <div class="node"><b>App Adapter</b><span>User-facing broker path.</span></div>
+        <div class="node"><b>Connector Kit</b><span>Machine and service integration.</span></div>
+        <div class="node"><b>Commerce</b><span>Shared selling, checkout, correlation, fulfillment.</span></div>
+        <div class="node"><b>Signal</b><span>Publishing and personalized information delivery.</span></div>
+        <div class="node"><b>Operates</b><span>Governed operational visibility.</span></div>
+        <div class="node"><b>LotScope</b><span>AI-assisted professional decision workflow.</span></div>
+        <div class="node"><b>Handoff Centralized</b><span>Organizational memory and execution continuity.</span></div>
+      </div>
+      <div class="quote">The first application needs foundational infrastructure. The tenth should inherit it. The first employee needs an onboarding path invented. The tenth should simply enter it.</div>
+    </section>
+
+    <section>
+      <div class="section-kicker">Week-end conclusion</div><h2 class="section-title">The foundation increasingly works. Now prove that it repeats.</h2>
+      <p class="lead">The near-term sequence is intentionally narrow: <strong style="color:var(--ink)">AV Account and Profile Contract → Aleah real-user onboarding → controlled Commerce rollout → Pondy professional validation → Signal identity consumption → Cindy production-art closeout → RydeSync real-device acceptance</strong>, with Work Log recovery and Handoff Centralized governance running in parallel.</p>
+      <div class="quote">This is the transition from building AeroVista projects to building the AeroVista operating system.</div>
+    </section>
+
+    <footer class="footer"><div><strong>AeroVista Signal · EOW snapshot</strong><br>Week ending September 20, 2026</div><div>Use canonical <code>CURRENT_STATE.md</code> and owning <code>CURRENT.md</code> files for live operating truth.</div></footer>
+  </main>
+  <script>
+    const tracks = [
+      {title:'Executive Brief', desc:'What changed this week and why the shift to repeatability matters.', src:'audio/01-executive-brief.mp3', transcript:'bytecasts/01-executive-brief.md'},
+      {title:'Operating Proof', desc:'Closed milestones, active portfolio gates, and why each remaining lane is still open.', src:'audio/02-operating-proof.mp3', transcript:'bytecasts/02-operating-proof.md'},
+      {title:'Next-Week Focus', desc:'The execution thesis, sequencing, and portfolio risks that matter next.', src:'audio/03-next-week-focus.mp3', transcript:'bytecasts/03-next-week-focus.md'}
+    ];
+    const audio = document.querySelector('#audio');
+    const buttons = [...document.querySelectorAll('.track')];
+    const title = document.querySelector('#nowTitle');
+    const desc = document.querySelector('#nowDesc');
+    const transcript = document.querySelector('#transcriptLink');
+    const state = document.querySelector('#audioState');
+    const note = document.querySelector('#audioNote');
+    let active = 0, available = new Array(tracks.length).fill(false);
+
+    async function probe(src){
+      try { const r = await fetch(src,{method:'HEAD',cache:'no-store'}); return r.ok && Number(r.headers.get('content-length')||1) > 1000; }
+      catch { return false; }
+    }
+    function select(i, autoplay=false){
+      active=i; const t=tracks[i];
+      buttons.forEach((b,n)=>b.classList.toggle('active',n===i));
+      title.textContent=t.title; desc.textContent=t.desc; transcript.href=t.transcript;
+      if(available[i]){ audio.src=t.src; audio.removeAttribute('aria-disabled'); if(autoplay) audio.play().catch(()=>{}); }
+      else { audio.removeAttribute('src'); audio.load(); audio.setAttribute('aria-disabled','true'); }
+    }
+    buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i,true)));
+    audio.addEventListener('ended',()=>{ for(let n=1;n<=tracks.length;n++){const i=(active+n)%tracks.length;if(available[i]){select(i,true);break;}} });
+
+    Promise.all(tracks.map(t=>probe(t.src))).then(results=>{
+      available=results; let count=results.filter(Boolean).length;
+      buttons.forEach((b,i)=>{ b.classList.toggle('unavailable',!results[i]); b.setAttribute('aria-label', results[i] ? `Play ${tracks[i].title}` : `${tracks[i].title}; audio master not yet available`); });
+      state.textContent = count ? `${count} of ${tracks.length} audio masters live` : 'Audio masters pending';
+      state.classList.toggle('ready',count===tracks.length);
+      if(count){ const first=results.findIndex(Boolean); select(first,false); note.innerHTML='<strong>Playlist ready:</strong> select any available track; the player auto-advances to the next available segment.'; }
+      else { select(0,false); }
+    });
+  </script>
+  <script defer src="/js/site-analytics.js"></script>
+</body>
+</html>
