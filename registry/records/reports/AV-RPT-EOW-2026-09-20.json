@@ -63,8 +63,8 @@
       "name": "README.txt",
       "fileType": "txt",
       "mediaType": "text/plain",
-      "sizeBytes": 606,
-      "integrity": {"gitBlobSha1": "2b97e19d900c9b66367bd7a2044bc9d82be8cfce", "sha256": "9161c41c33fbe6319afe4d820965ce2fe3641072d90e1cc354432614a23ec0c0"}
+      "sizeBytes": 757,
+      "integrity": {"gitBlobSha1": "6f8741d7a5f9e4134aed8967438d383524ed6ff1", "sha256": "bf987aa6173fc38a91aed96c64c2653749476dbcc716d35c2532958188cfcef9"}
     },
     {
       "id": "audio-01-executive-brief-mp3",
