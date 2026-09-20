@@ -1,21 +1,21 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-20",
   "featured": {
-    "label": "Latest EOD · Shareholder & Partner Update",
-    "title": "48-Hour Shareholder & Partner Update",
-    "summary": "Plain-language 48-hour AeroVista operating update covering LotScope/Pondy progress, Cindy Connect apparel and storefront work, Northline collection/commerce work, The Last Normal Night original IP production, infrastructure maturity, risks, and the next execution sequence.",
-    "href": "/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/",
+    "label": "Latest EOW · Shareholder & Stakeholder Update",
+    "title": "From Recovery to Repeatability",
+    "summary": "September 14–20 formal EOW: closed engineering gates leave active WIP while AV Account identity, real-user onboarding, shared commerce, professional validation, Signal identity consumption, production-art governance, and real-device acceptance become the next proofs.",
+    "href": "/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
     "stats": [
       {
-        "value": "Sep 11–13",
+        "value": "Sep 14–20",
         "label": "Coverage window"
       },
       {
-        "value": "Sep 13",
+        "value": "Sep 20",
         "label": "Issued"
       },
       {
-        "value": "2",
+        "value": "7",
         "label": "Registered assets"
       },
       {
@@ -23,9 +23,22 @@
         "label": "Registry status"
       }
     ],
-    "tags": "september-2026 eod 48-hour-update shareholder partner lotscope pondy-flats cindy-connect northline the-last-normal-night portfolio"
+    "tags": "september-2026 eow weekly recovery-to-repeatability av-account identity aleah commerce signal lotscope pondy rydesync cindy-santi handoff-centralized audio-ready"
   },
   "now": [
+    {
+      "id": "weekly-2026-09-20",
+      "typeLabel": "Latest EOW · Audio-ready",
+      "title": "Sep 20 — From Recovery to Repeatability",
+      "summary": "Formal September 14–20 EOW with a three-track audio-ready companion: what closed, what remains active, and the next execution sequence as AeroVista shifts from recovery toward repeatable human and product adoption.",
+      "href": "/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
+      "types": [
+        "eow",
+        "internal",
+        "shareholder"
+      ],
+      "tags": "september-2026 eow weekly recovery-to-repeatability av-account identity aleah commerce signal lotscope pondy rydesync cindy-santi handoff-centralized audio-ready"
+    },
     {
       "id": "eod-2026-09-13-shareholder-partner-update",
       "typeLabel": "Latest EOD",
@@ -42,7 +55,7 @@
     },
     {
       "id": "weekly-2026-09-07",
-      "typeLabel": "Latest EOW + ByteCast",
+      "typeLabel": "EOW + ByteCast",
       "title": "Sep 7 — From Convergence to Proof",
       "summary": "Formal internal EOW with a 14:47 plain-language ByteCast: commercial proof, source discipline, release gates, Phase productization, governed creative distribution, and staff endpoint operations.",
       "href": "/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/",
@@ -120,20 +133,34 @@
         "eod"
       ],
       "tags": "current eod operating-note dispatch"
-    },
-    {
-      "id": "eow-current",
-      "typeLabel": "Weekly EOW",
-      "title": "Sep 7 — From Convergence to Proof",
-      "summary": "Current EOW summary: August's convergence thesis became operating proof across commercial workflow, source control, product releases, and endpoint operations.",
-      "href": "/dispatches/eow/current-stakeholder-update.html",
-      "types": [
-        "eow"
-      ],
-      "tags": "current eow stakeholder-update september-2026 convergence-to-proof dispatch"
     }
   ],
   "editions": [
+    {
+      "id": "weekly-2026-09-20",
+      "section": "weekly",
+      "title": "From Recovery to Repeatability",
+      "badges": [
+        {
+          "type": "eow",
+          "label": "EOW"
+        },
+        {
+          "type": "internal",
+          "label": "Audio-ready"
+        }
+      ],
+      "dateEm": "Sep 20",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
+      "types": [
+        "eow",
+        "internal",
+        "shareholder"
+      ],
+      "tags": "september-2026 eow weekly recovery-to-repeatability av-account identity aleah commerce signal lotscope pondy rydesync cindy-santi handoff-centralized audio-ready",
+      "summary": "September 14–20 formal EOW — closed engineering gates leave active WIP while identity, real-user onboarding, shared commerce, professional validation, production-art governance, and real-device acceptance become the next proofs."
+    },
     {
       "id": "eod-2026-09-13-shareholder-partner-update",
       "section": "eod",
@@ -289,25 +316,6 @@
       ],
       "tags": "current eod operating-note dispatch",
       "summary": "Daily template: what moved, what needs review, risks, and next moves."
-    },
-    {
-      "id": "eow-current",
-      "section": "weekly",
-      "title": "Current stakeholder update",
-      "badges": [
-        {
-          "type": "eow",
-          "label": "EOW"
-        }
-      ],
-      "dateEm": "Current",
-      "dateYear": "EOW",
-      "href": "/dispatches/eow/current-stakeholder-update.html",
-      "types": [
-        "eow"
-      ],
-      "tags": "current eow stakeholder-update september-2026 convergence-to-proof dispatch",
-      "summary": "Current EOW summary — September 1–7: from convergence to proof across AVCC, source discipline, product releases, and endpoint operations."
     },
     {
       "id": "eow-2026-06-28-summary",
