@@ -1,7 +1,38 @@
 {
   "schemaVersion": "2.0",
-  "count": 28,
+  "count": 29,
   "records": [
+    {
+      "id": "AV-RPT-EOW-2026-09-20",
+      "reportId": "AV-RPT-EOW-2026-09-20",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-09-20.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "From Recovery to Repeatability",
+      "status": "final",
+      "issuedAt": "2026-09-20",
+      "period": {
+        "start": "2026-09-14",
+        "end": "2026-09-20"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
+      "formats": [
+        "interactive-html",
+        "transcript",
+        "evidence-ledger",
+        "audio-ready-playlist"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "operations",
+        "staff",
+        "stakeholder",
+        "shareholder"
+      ],
+      "fileCount": 7
+    },
     {
       "id": "AV-RPT-EOD-2026-09-13",
       "reportId": "AV-RPT-EOD-2026-09-13",
