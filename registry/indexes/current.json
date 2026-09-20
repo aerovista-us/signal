@@ -1,6 +1,18 @@
 {
   "schemaVersion": "2.0",
   "reports": {
+    "eow": {
+      "id": "AV-RPT-EOW-2026-09-20",
+      "reportId": "AV-RPT-EOW-2026-09-20",
+      "title": "From Recovery to Repeatability",
+      "issuedAt": "2026-09-20",
+      "period": {
+        "start": "2026-09-14",
+        "end": "2026-09-20"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/"
+    },
     "eod": {
       "id": "AV-RPT-EOD-2026-09-13",
       "reportId": "AV-RPT-EOD-2026-09-13",
@@ -12,18 +24,6 @@
       },
       "canonicalPath": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/"
-    },
-    "eow": {
-      "id": "AV-RPT-EOW-2026-09-07",
-      "reportId": "AV-RPT-EOW-2026-09-07",
-      "title": "From Convergence to Proof",
-      "issuedAt": "2026-09-08",
-      "period": {
-        "start": "2026-09-01",
-        "end": "2026-09-07"
-      },
-      "canonicalPath": "newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/index.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-07-from-convergence-to-proof/"
     },
     "eom": {
       "id": "AV-RPT-EOM-2026-08",
