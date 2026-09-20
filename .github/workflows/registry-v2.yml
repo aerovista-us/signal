@@ -17,13 +17,15 @@ on:
       - "publications/**"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate-registry:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -31,5 +33,17 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate and regenerate Registry v2
         run: python scripts/registry_v2.py check
+      - name: Commit refreshed generated views
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git add registry/indexes js/signals-catalog.json
+          if git diff --cached --quiet; then
+            echo "Generated views already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh Registry v2 generated views"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
       - name: Fail if generated views are stale
         run: git diff --exit-code -- registry/indexes js/signals-catalog.json
