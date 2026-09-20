@@ -1,0 +1,35 @@
+{
+  "reportId": "AV-RPT-EOW-2026-09-20",
+  "title": "From Recovery to Repeatability",
+  "reportClass": "eow",
+  "period": {"start": "2026-09-14", "end": "2026-09-20"},
+  "issuedAt": "2026-09-20",
+  "status": "final",
+  "audience": ["internal", "executive", "operations", "staff", "stakeholder", "shareholder"],
+  "arc": {
+    "previous": "From Convergence to Proof",
+    "current": "From Recovery to Repeatability",
+    "next": "Repeatability to Adoption"
+  },
+  "thesis": "AeroVista is moving beyond recovery and isolated engineering proof toward repeatable human adoption, shared platform reuse, real-device acceptance, and professional or transactional validation where software proof ends.",
+  "keyProofs": [
+    "AeroVista Operates 0.5.0 live accepted",
+    "Signal publishing-governance foundation hardened",
+    "Pondy Design 4 repository and package QA complete",
+    "Cindy Santi commerce path operational",
+    "Handoff Centralized live as a private fail-closed operating front door"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
+  "formats": ["interactive-html", "transcript", "evidence-ledger", "audio-ready-playlist"],
+  "bytecast": {
+    "mode": "playlist",
+    "trackCount": 3,
+    "audioStatus": "masters-pending",
+    "tracks": [
+      {"id": "01", "title": "Executive Brief", "audio": "audio/01-executive-brief.mp3", "transcript": "bytecasts/01-executive-brief.md"},
+      {"id": "02", "title": "Operating Proof", "audio": "audio/02-operating-proof.mp3", "transcript": "bytecasts/02-operating-proof.md"},
+      {"id": "03", "title": "Next-Week Focus", "audio": "audio/03-next-week-focus.mp3", "transcript": "bytecasts/03-next-week-focus.md"}
+    ]
+  },
+  "sourceNote": "This edition is a presentation layer over the September 20 governed EOW snapshot. CURRENT_STATE.md and each owning CURRENT.md remain authoritative for live operating truth."
+}
