@@ -41,8 +41,8 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 1946,
-      "integrity": {"gitBlobSha1": "8110990b625b96e253d65fb502876f9699d00349", "sha256": "0a0243c38db7db5444f15c10c76f6a8e3e1c87dfa1da2b10e5937d477dacd8de"}
+      "sizeBytes": 2367,
+      "integrity": {"gitBlobSha1": "f9363194f1f4a106d03ece56243f9e9c28319980", "sha256": "f39606f5a0ae258d6d036fa11a4a09eba6ffae412ce1b08b0065334cac37030c"}
     },
     {
       "id": "evidence-json",
@@ -65,6 +65,39 @@
       "mediaType": "text/plain",
       "sizeBytes": 606,
       "integrity": {"gitBlobSha1": "2b97e19d900c9b66367bd7a2044bc9d82be8cfce", "sha256": "9161c41c33fbe6319afe4d820965ce2fe3641072d90e1cc354432614a23ec0c0"}
+    },
+    {
+      "id": "audio-01-executive-brief-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/01-executive-brief.mp3",
+      "name": "01-executive-brief.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 8699472,
+      "integrity": {"gitBlobSha1": "dfb0efbb6a0bd244727379111f4880f05e330c2b", "sha256": "4f6b0dfb76f8a2e3e9f9b98becdf3d560a039f09daf8f382ec6d05d08cbde7b4"}
+    },
+    {
+      "id": "audio-02-operating-proof-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/02-operating-proof.mp3",
+      "name": "02-operating-proof.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 16110480,
+      "integrity": {"gitBlobSha1": "37c2fb4caf332fd7958c74529ac0ab4fb533c3e9", "sha256": "1ccd7318b979aa388610aa7c52a360140230c69984e109f18aab271db1d01c4e"}
+    },
+    {
+      "id": "audio-03-next-week-focus-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/03-next-week-focus.mp3",
+      "name": "03-next-week-focus.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 14158200,
+      "integrity": {"gitBlobSha1": "6b76e2016f50d6886fe0bf9e0e9b0bcb8096426f", "sha256": "0240130e77b9a145ab276b04316876177c7bb195f7064d334403c4a5c2d1e37f"}
     },
     {
       "id": "bytecasts-01-executive-brief-md",
