@@ -8,7 +8,13 @@ The HTML player expects these MP3 masters:
 Transcripts/scripts live one level up in ../bytecasts/.
 The player probes each MP3 before enabling playback, so the edition remains functional while masters are absent or replaced.
 
-When masters are added:
+Current master status:
+- Executive Brief — 12:46
+- Operating Proof — 21:01
+- Next-Week Focus — 18:30
+- Total runtime — 52:17
+
+When masters are replaced in the future:
 1. Update meta.json bytecast.audioStatus and runtimes.
 2. Run: python scripts/registry_v2.py refresh
 3. Run: python scripts/test_registry_v2.py
