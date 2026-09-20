@@ -1,0 +1,25 @@
+{
+  "reportId": "AV-RPT-EOW-2026-09-20",
+  "evidenceClass": "week-end-snapshot",
+  "asOf": "2026-09-20",
+  "sourceRule": "Canonical CURRENT_STATE.md and owning CURRENT.md files remain authoritative; source, runtime, and acceptance are separate claims.",
+  "portfolioPulse": {"currentLineages": 27, "attentionSignals": 10, "needsProofSignals": 14, "pendingInboxItems": 0},
+  "closedOrMateriallyAdvanced": [
+    "AeroVista Operates 0.5.0 live accepted",
+    "AVCC / ACOS / AeroCore Identity architecture converged further",
+    "Signal governance foundation hardened; identity consumption becomes the next phase",
+    "Pondy Design 4 repository/package QA complete; professional/site/AHJ validation remains",
+    "Cindy Santi checkout, CORS, Square, and Printful path operational",
+    "Handoff Centralized governed intake and Control Center operational"
+  ],
+  "nextWeekSequence": [
+    "Profile Contract v1 and AV Account setup",
+    "Aleah real-user first-day onboarding",
+    "Controlled Commerce v1 rollout",
+    "Pondy professional/site/AHJ validation",
+    "Signal identity consumption",
+    "Cindy production-art closeout",
+    "RydeSync real-device acceptance"
+  ],
+  "parallelGovernance": ["Work Log revision 10 recovery", "Handoff Centralized governed intake"]
+}
