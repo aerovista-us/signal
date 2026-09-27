@@ -1,0 +1,11 @@
+# Keep Vercel's static deployment payload to public SIGNAL content.
+.github/
+docker/
+docker-compose.yml
+docs/
+README_UPDATE_LINKS.txt
+
+# Preserved internal intake/orphan evidence is retained in Git but is not part
+# of the public publication surface. Current editions/dispatches remain deployable.
+archive/shipping-intake/
+archive/orphans/
