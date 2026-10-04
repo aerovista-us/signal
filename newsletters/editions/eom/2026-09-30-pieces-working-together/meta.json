@@ -39,5 +39,31 @@
     "format": "mp3",
     "runtime": "19:34",
     "runtimeSeconds": 1174
-  }
+  },
+  "audienceVariants": [
+    {
+      "audience": "shareholder",
+      "label": "Shareholder EOM",
+      "path": "index.html",
+      "canonical": true
+    },
+    {
+      "audience": "invested-team",
+      "label": "Invested Team Edition",
+      "path": "audiences/invested-team/index.html"
+    },
+    {
+      "audience": "client-direct",
+      "client": "Cindy Santi",
+      "label": "Cindy Santi Client Signal",
+      "path": "audiences/cindy-santi/index.html"
+    },
+    {
+      "audience": "client-direct",
+      "client": "Isaiah Williams / 1011 N B Street",
+      "label": "B Street Client Signal",
+      "path": "audiences/isaiah-williams-bstreet/index.html"
+    }
+  ],
+  "audienceIndex": "audiences/index.html"
 }
