@@ -5,7 +5,7 @@
   "contentClass": "report",
   "reportClass": "eom",
   "title": "The Pieces Start Working Together",
-  "summary": "September 2026 end-of-month shareholder briefing and 22:11 ByteCast on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
+  "summary": "September 2026 end-of-month shareholder briefing and 19:34 ByteCast on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
   "status": "final",
   "owner": "AeroVista LLC",
   "audience": [
@@ -42,17 +42,17 @@
   "supersedes": null,
   "files": [
     {
-      "id": "audio-sept2026eom-aac",
+      "id": "audio-sept2026eom-mp3",
       "role": "audio",
       "relationship": "owned",
-      "path": "newsletters/editions/eom/2026-09-30-pieces-working-together/audio/sept2026eom.aac",
-      "name": "sept2026eom.aac",
-      "fileType": "aac",
-      "mediaType": "audio/aac",
-      "sizeBytes": 8908531,
+      "path": "newsletters/editions/eom/2026-09-30-pieces-working-together/audio/sept2026eom.mp3",
+      "name": "sept2026eom.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 13351920,
       "integrity": {
-        "gitBlobSha1": "2d738ce8daffba79a4c741aebb9a371f8bf6a000",
-        "sha256": "ea67547f907ab91224c654bd3b08b31265b6b660cf747cb663668309089c3002"
+        "gitBlobSha1": "642cee094ea84f6e2f5e2d6d093cb5628b28f06c",
+        "sha256": "0befc8832961d05dac87fb74e0919166cc0c3f14d819340299902e04fe9c8be9"
       }
     },
     {
@@ -77,10 +77,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 21313,
+      "sizeBytes": 21314,
       "integrity": {
-        "gitBlobSha1": "64e88a78f5120e031e553af743a10a3ffc59d436",
-        "sha256": "36fb7ea5e14b5c0458c3ac67b0345c4df699f85443ffd4b4909dc4856a271aaa"
+        "gitBlobSha1": "289d000fca860ce59ac1b13eff18177bdef5525b",
+        "sha256": "307afa1db7d2d536cb9dac048265c9c7f489b13acbc91ebc92ae27880abbeeac"
       }
     },
     {
@@ -93,8 +93,8 @@
       "mediaType": "application/json",
       "sizeBytes": 1809,
       "integrity": {
-        "gitBlobSha1": "256f20ed8f93eb254037434cfc1b9c16447d2100",
-        "sha256": "f25f713476dd775585989a3c06d6bc364a37f14db9fb1b1c7ae2d65404a20c2d"
+        "gitBlobSha1": "72bdd55968e98bfd4a02a78a58b8d9b30e27a1ac",
+        "sha256": "71678f3c9b667f6d39e9ae3ab0b5622fb35dc04ceffe324b1d57ee8905659e69"
       }
     }
   ],
