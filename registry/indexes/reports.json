@@ -20,7 +20,7 @@
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/",
       "formats": [
         "interactive-html",
-        "bytecast-script"
+        "bytecast"
       ],
       "audience": [
         "internal",
@@ -28,7 +28,7 @@
         "shareholder",
         "stakeholder"
       ],
-      "fileCount": 3
+      "fileCount": 4
     },
     {
       "id": "AV-RPT-EOW-2026-09-20",
