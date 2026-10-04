@@ -8,9 +8,9 @@
   "now": [
     {
       "id": "eom-2026-09-30-pieces-working-together",
-      "typeLabel": "September EOM · Shareholder",
+      "typeLabel": "September EOM · ByteCast",
       "title": "Sep 30 — The Pieces Start Working Together",
-      "summary": "September end-of-month shareholder briefing: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
+      "summary": "September end-of-month shareholder briefing + 22:11 ByteCast: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
       "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
       "types": [
         "eom",
@@ -19,7 +19,7 @@
         "bytecast"
       ],
       "tags": [
-        "september 2026 end of month eom shareholder bytecast recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
+        "september 2026 end of month eom shareholder bytecast 22 11 recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
       ],
       "recordId": "AV-RPT-EOM-2026-09"
     },
@@ -173,7 +173,7 @@
         },
         {
           "type": "bytecast",
-          "label": "Shareholder"
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 30",
@@ -186,9 +186,9 @@
         "bytecast"
       ],
       "tags": [
-        "september 2026 end of month eom shareholder bytecast recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
+        "september 2026 end of month eom shareholder bytecast 22 11 recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
       ],
-      "summary": "September shareholder rollup — the month AeroVista's shared systems began behaving more like a connected operating model, with real-world proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates.",
+      "summary": "September shareholder rollup + 22:11 ByteCast — shared systems behave more like a connected operating model, with field proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates.",
       "recordId": "AV-RPT-EOM-2026-09"
     },
     {

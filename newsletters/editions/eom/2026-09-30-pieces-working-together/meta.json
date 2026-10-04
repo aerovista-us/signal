@@ -31,7 +31,13 @@
   "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/",
   "formats": [
     "interactive-html",
-    "bytecast-script"
+    "bytecast"
   ],
-  "sourceNote": "This edition is a nontechnical shareholder presentation over the September 2026 evidence set. Current operating truth remains with each owning component and later dated handoffs; October completions are not back-credited into September."
+  "sourceNote": "This edition is a nontechnical shareholder presentation over the September 2026 evidence set. Current operating truth remains with each owning component and later dated handoffs; October completions are not back-credited into September.",
+  "bytecast": {
+    "audio": "audio/sept2026eom.aac",
+    "format": "aac",
+    "runtime": "22:11",
+    "runtimeSeconds": 1331
+  }
 }

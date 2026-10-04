@@ -3,7 +3,7 @@
   "featured": {
     "label": "Latest EOM · Shareholder & Stakeholder Update",
     "title": "The Pieces Start Working Together",
-    "summary": "September 2026 end-of-month shareholder briefing on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
+    "summary": "September 2026 end-of-month shareholder briefing and 22:11 ByteCast on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
     "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
     "stats": [
       {
@@ -15,7 +15,7 @@
         "label": "Issued"
       },
       {
-        "value": "3",
+        "value": "4",
         "label": "Registered assets"
       },
       {
@@ -28,9 +28,9 @@
   "now": [
     {
       "id": "eom-2026-09-30-pieces-working-together",
-      "typeLabel": "September EOM · Shareholder",
+      "typeLabel": "September EOM · ByteCast",
       "title": "Sep 30 — The Pieces Start Working Together",
-      "summary": "September end-of-month shareholder briefing: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
+      "summary": "September end-of-month shareholder briefing + 22:11 ByteCast: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
       "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
       "types": [
         "eom",
@@ -161,7 +161,7 @@
         },
         {
           "type": "bytecast",
-          "label": "Shareholder"
+          "label": "ByteCast"
         }
       ],
       "dateEm": "Sep 30",
@@ -174,7 +174,7 @@
         "bytecast"
       ],
       "tags": "september-2026 eom shareholder bytecast repeatability internal-signal",
-      "summary": "September shareholder rollup — the month AeroVista's shared systems began behaving more like a connected operating model, with real-world proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates."
+      "summary": "September shareholder rollup + 22:11 ByteCast — shared systems behave more like a connected operating model, with field proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates."
     },
     {
       "id": "weekly-2026-09-20",
