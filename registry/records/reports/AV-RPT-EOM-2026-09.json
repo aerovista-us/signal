@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOM-2026-09",
+  "reportId": "AV-RPT-EOM-2026-09",
+  "contentClass": "report",
+  "reportClass": "eom",
+  "title": "The Pieces Start Working Together",
+  "summary": "September 2026 end-of-month shareholder briefing on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "executive",
+    "shareholder",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "bytecast-script"
+  ],
+  "period": {
+    "start": "2026-09-01",
+    "end": "2026-09-30"
+  },
+  "issuedAt": "2026-10-04",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+  "canonicalPath": "newsletters/editions/eom/2026-09-30-pieces-working-together/index.html",
+  "tags": [
+    "september-2026",
+    "eom",
+    "shareholder",
+    "bytecast",
+    "repeatability",
+    "internal-signal"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eom/2026-09-30-pieces-working-together",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "edition-css",
+      "role": "style",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-09-30-pieces-working-together/edition.css",
+      "name": "edition.css",
+      "fileType": "css",
+      "mediaType": "text/css",
+      "sizeBytes": 2547,
+      "integrity": {
+        "gitBlobSha1": "c6a2205a18692ac9191e479010307cb36b924584",
+        "sha256": "a3b88b4cc713c2167f2758acc05a0f5f63dbd194281ce56d100d94c600440b13"
+      }
+    },
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-09-30-pieces-working-together/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 9285,
+      "integrity": {
+        "gitBlobSha1": "d56f0360cd95be5631b49d16e31f04619fd929af",
+        "sha256": "a1788c27a2d696a83adad62a34caad072d2b76c60ceb6a3b13bea9f8a41efa41"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-09-30-pieces-working-together/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 1685,
+      "integrity": {
+        "gitBlobSha1": "a2e2b9d622fb7004420461e2c9fb78dfc7a017f0",
+        "sha256": "f2bceae9331da944b30d98c20112212aef89c87255d1c83b8e2ffb4e1bc90336"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source-draft",
+      "value": "draft/eom-september-2026-audience-editions@0002ccc49adcc268785ce20f99a15bb105022d1d",
+      "description": "Approved shareholder audience draft promoted into the governed September EOM package."
+    }
+  ]
+}

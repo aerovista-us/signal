@@ -1,21 +1,21 @@
 {
-  "updated": "2026-09-20",
+  "updated": "2026-10-04",
   "featured": {
-    "label": "Latest EOW · Shareholder & Stakeholder Update",
-    "title": "From Recovery to Repeatability",
-    "summary": "September 14–20 formal EOW: closed engineering gates leave active WIP while AV Account identity, real-user onboarding, shared commerce, professional validation, Signal identity consumption, production-art governance, and real-device acceptance become the next proofs.",
-    "href": "/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
+    "label": "Latest EOM · Shareholder & Stakeholder Update",
+    "title": "The Pieces Start Working Together",
+    "summary": "September 2026 end-of-month shareholder briefing on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
+    "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
     "stats": [
       {
-        "value": "Sep 14–20",
+        "value": "Sep 1–30",
         "label": "Coverage window"
       },
       {
-        "value": "Sep 20",
+        "value": "Oct 4",
         "label": "Issued"
       },
       {
-        "value": "10",
+        "value": "3",
         "label": "Registered assets"
       },
       {
@@ -23,9 +23,23 @@
         "label": "Registry status"
       }
     ],
-    "tags": "september-2026 eow weekly recovery-to-repeatability av-account identity aleah commerce signal lotscope pondy rydesync cindy-santi handoff-centralized audio-ready"
+    "tags": "september-2026 eom shareholder bytecast repeatability internal-signal"
   },
   "now": [
+    {
+      "id": "eom-2026-09-30-pieces-working-together",
+      "typeLabel": "September EOM · Shareholder",
+      "title": "Sep 30 — The Pieces Start Working Together",
+      "summary": "September end-of-month shareholder briefing: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
+      "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder",
+        "bytecast"
+      ],
+      "tags": "september-2026 eom shareholder bytecast repeatability internal-signal"
+    },
     {
       "id": "weekly-2026-09-20",
       "typeLabel": "Latest EOW · Audio-ready",
@@ -136,6 +150,32 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-09-30-pieces-working-together",
+      "section": "eom",
+      "title": "The Pieces Start Working Together",
+      "badges": [
+        {
+          "type": "eom",
+          "label": "EOM"
+        },
+        {
+          "type": "bytecast",
+          "label": "Shareholder"
+        }
+      ],
+      "dateEm": "Sep 30",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder",
+        "bytecast"
+      ],
+      "tags": "september-2026 eom shareholder bytecast repeatability internal-signal",
+      "summary": "September shareholder rollup — the month AeroVista's shared systems began behaving more like a connected operating model, with real-world proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates."
+    },
     {
       "id": "weekly-2026-09-20",
       "section": "weekly",
