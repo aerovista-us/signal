@@ -7,6 +7,23 @@
   },
   "now": [
     {
+      "id": "eom-2026-09-30-pieces-working-together",
+      "typeLabel": "September EOM · Shareholder",
+      "title": "Sep 30 — The Pieces Start Working Together",
+      "summary": "September end-of-month shareholder briefing: shared AeroVista capabilities increasingly support multiple products, people, brands, and client outcomes while proof and acceptance gates remain explicit.",
+      "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder",
+        "bytecast"
+      ],
+      "tags": [
+        "september 2026 end of month eom shareholder bytecast recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
+      ],
+      "recordId": "AV-RPT-EOM-2026-09"
+    },
+    {
       "id": "weekly-2026-09-20",
       "typeLabel": "Latest EOW · Audio-ready",
       "title": "Sep 20 — From Recovery to Repeatability",
@@ -145,6 +162,35 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-09-30-pieces-working-together",
+      "section": "eom",
+      "title": "The Pieces Start Working Together",
+      "badges": [
+        {
+          "type": "eom",
+          "label": "EOM"
+        },
+        {
+          "type": "bytecast",
+          "label": "Shareholder"
+        }
+      ],
+      "dateEm": "Sep 30",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder",
+        "bytecast"
+      ],
+      "tags": [
+        "september 2026 end of month eom shareholder bytecast recovery repeatability identity rydesync operates signal commerce lotscope pondy governance"
+      ],
+      "summary": "September shareholder rollup — the month AeroVista's shared systems began behaving more like a connected operating model, with real-world proof, reusable commerce, stricter evidence boundaries, and clear October acceptance gates.",
+      "recordId": "AV-RPT-EOM-2026-09"
+    },
     {
       "id": "weekly-2026-09-20",
       "section": "weekly",

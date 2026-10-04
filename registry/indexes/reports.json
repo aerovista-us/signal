@@ -1,8 +1,35 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "report",
-  "count": 13,
+  "count": 14,
   "records": [
+    {
+      "id": "AV-RPT-EOM-2026-09",
+      "reportId": "AV-RPT-EOM-2026-09",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-09.json",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "The Pieces Start Working Together",
+      "status": "final",
+      "issuedAt": "2026-10-04",
+      "period": {
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "canonicalPath": "newsletters/editions/eom/2026-09-30-pieces-working-together/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+      "formats": [
+        "interactive-html",
+        "bytecast-script"
+      ],
+      "audience": [
+        "internal",
+        "executive",
+        "shareholder",
+        "stakeholder"
+      ],
+      "fileCount": 3
+    },
     {
       "id": "AV-RPT-EOW-2026-09-20",
       "reportId": "AV-RPT-EOW-2026-09-20",

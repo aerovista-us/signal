@@ -1,6 +1,18 @@
 {
   "schemaVersion": "2.0",
   "reports": {
+    "eom": {
+      "id": "AV-RPT-EOM-2026-09",
+      "reportId": "AV-RPT-EOM-2026-09",
+      "title": "The Pieces Start Working Together",
+      "issuedAt": "2026-10-04",
+      "period": {
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "canonicalPath": "newsletters/editions/eom/2026-09-30-pieces-working-together/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/"
+    },
     "eow": {
       "id": "AV-RPT-EOW-2026-09-20",
       "reportId": "AV-RPT-EOW-2026-09-20",
@@ -24,18 +36,6 @@
       },
       "canonicalPath": "newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eod/2026-09-13-48-hour-shareholder-partner-update/"
-    },
-    "eom": {
-      "id": "AV-RPT-EOM-2026-08",
-      "reportId": "AV-RPT-EOM-2026-08",
-      "title": "From Building Pieces to Building a Company",
-      "issuedAt": "2026-09-02",
-      "period": {
-        "start": "2026-08-01",
-        "end": "2026-08-31"
-      },
-      "canonicalPath": "newsletters/editions/eom/2026-08-31-building-a-company/index.html",
-      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-08-31-building-a-company/"
     },
     "mtd": {
       "id": "AV-RPT-MTD-2026-08-14",

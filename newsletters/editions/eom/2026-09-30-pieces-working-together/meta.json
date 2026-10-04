@@ -1,0 +1,37 @@
+{
+  "reportId": "AV-RPT-EOM-2026-09",
+  "title": "The Pieces Start Working Together",
+  "reportClass": "eom",
+  "period": {
+    "start": "2026-09-01",
+    "end": "2026-09-30"
+  },
+  "issuedAt": "2026-10-04",
+  "status": "final",
+  "audience": [
+    "internal",
+    "executive",
+    "shareholder",
+    "stakeholder"
+  ],
+  "arc": {
+    "previous": "From Recovery to Repeatability",
+    "current": "The Pieces Start Working Together",
+    "next": "Repeatability to Leverage"
+  },
+  "thesis": "September showed growing evidence that AeroVista's shared capabilities can support multiple products, people, brands, and client outcomes while source, deployment, runtime acceptance, human acceptance, and professional authority remain separate proof gates.",
+  "keyProofs": [
+    "Identity Priority 1 September source blocker closed",
+    "AeroVista Operates 0.5.0 live accepted",
+    "Signal September 20 governed EOW and ByteCast package published",
+    "Northline commerce pattern reused for Cindy Santi checkout and fulfillment",
+    "RydeSync field proof exercised account handoff, room presence, cellular voice, and TURN reachability",
+    "LotScope and Pondy advanced evidence-aware feasibility while preserving professional and AHJ boundaries"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+  "formats": [
+    "interactive-html",
+    "bytecast-script"
+  ],
+  "sourceNote": "This edition is a nontechnical shareholder presentation over the September 2026 evidence set. Current operating truth remains with each owning component and later dated handoffs; October completions are not back-credited into September."
+}
