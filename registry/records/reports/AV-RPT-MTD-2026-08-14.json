@@ -47,10 +47,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 12310940,
+      "sizeBytes": 7493,
       "integrity": {
-        "gitBlobSha1": "e7cdaad9aef6314995942e3c0a9cbd069fef5f25",
-        "sha256": "1d2d78beaf4f1d3b07feb442778f56cf3a3ace134042be6fa2fd3e1010cf4d4a"
+        "gitBlobSha1": "d75f4a76bf6c9a068f1aaa75bcc7fb0ed3052571",
+        "sha256": "dc9c4d9491060078729a7ea4d4de9711939eb99078d89bdd8b7b3ae099c98085"
       }
     },
     {
@@ -77,6 +77,18 @@
     {
       "type": "legacy-url",
       "value": "/newsletters/AeroVista_August_2026_MTD_Interactive_Report_with_ByteCast.html"
+    },
+    {
+      "type": "protected-package",
+      "value": "mag-auth:AV-RPT-MTD-2026-08-14",
+      "description": "Private byte-identical protected report package; pre-migration SHA-256 retained in the private runtime manifest."
     }
-  ]
+  ],
+  "access": {
+    "mode": "entitled",
+    "capabilities": [
+      "publication.issue.read"
+    ],
+    "notes": "Public Signal delivery exposes only the Account entitlement gate and legacy redirect. The full report is delivered by mag-auth after AeroVista Account session validation and resource-scoped publication.issue.read authorization for publication_issue:AV-RPT-MTD-2026-08-14."
+  }
 }
