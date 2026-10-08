@@ -8,13 +8,44 @@
   "summary": "September 14–20 formal EOW: closed engineering gates leave active WIP while AV Account identity, real-user onboarding, shared commerce, professional validation, Signal identity consumption, production-art governance, and real-device acceptance become the next proofs.",
   "owner": "AeroVista LLC",
   "status": "final",
-  "audience": ["internal", "executive", "operations", "staff", "stakeholder", "shareholder"],
-  "formats": ["interactive-html", "transcript", "evidence-ledger", "audio-ready-playlist"],
+  "audience": [
+    "internal",
+    "executive",
+    "operations",
+    "staff",
+    "stakeholder",
+    "shareholder"
+  ],
+  "formats": [
+    "interactive-html",
+    "transcript",
+    "evidence-ledger",
+    "audio-ready-playlist"
+  ],
   "issuedAt": "2026-09-20",
-  "period": {"start": "2026-09-14", "end": "2026-09-20"},
+  "period": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
   "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/",
   "canonicalPath": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/index.html",
-  "tags": ["september-2026", "eow", "weekly", "recovery-to-repeatability", "av-account", "identity", "aleah", "commerce", "signal", "lotscope", "pondy", "rydesync", "cindy-santi", "handoff-centralized", "audio-ready"],
+  "tags": [
+    "september-2026",
+    "eow",
+    "weekly",
+    "recovery-to-repeatability",
+    "av-account",
+    "identity",
+    "aleah",
+    "commerce",
+    "signal",
+    "lotscope",
+    "pondy",
+    "rydesync",
+    "cindy-santi",
+    "handoff-centralized",
+    "audio-ready"
+  ],
   "package": {
     "mode": "directory",
     "root": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability",
@@ -31,7 +62,10 @@
       "fileType": "html",
       "mediaType": "text/html",
       "sizeBytes": 27913,
-      "integrity": {"gitBlobSha1": "9af3c270bb64e58305ec982fa4c1d56a9c810a6d", "sha256": "47a08056345a3caf9c5eed69f441efad2a9b083b129d7979cdbd8e4d8fd6ed2d"}
+      "integrity": {
+        "gitBlobSha1": "9af3c270bb64e58305ec982fa4c1d56a9c810a6d",
+        "sha256": "47a08056345a3caf9c5eed69f441efad2a9b083b129d7979cdbd8e4d8fd6ed2d"
+      }
     },
     {
       "id": "meta-json",
@@ -42,98 +76,29 @@
       "fileType": "json",
       "mediaType": "application/json",
       "sizeBytes": 2367,
-      "integrity": {"gitBlobSha1": "f9363194f1f4a106d03ece56243f9e9c28319980", "sha256": "f39606f5a0ae258d6d036fa11a4a09eba6ffae412ce1b08b0065334cac37030c"}
-    },
-    {
-      "id": "evidence-json",
-      "role": "data",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/evidence.json",
-      "name": "evidence.json",
-      "fileType": "json",
-      "mediaType": "application/json",
-      "sizeBytes": 1272,
-      "integrity": {"gitBlobSha1": "2e2180c38d095cfcec56be3433c08b725ea78446", "sha256": "2194ecb239c28bb7f09e215323d1575e06706ab0c4e700f811963e86a3ba26bd"}
-    },
-    {
-      "id": "audio-readme-txt",
-      "role": "readme",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/README.txt",
-      "name": "README.txt",
-      "fileType": "txt",
-      "mediaType": "text/plain",
-      "sizeBytes": 757,
-      "integrity": {"gitBlobSha1": "6f8741d7a5f9e4134aed8967438d383524ed6ff1", "sha256": "bf987aa6173fc38a91aed96c64c2653749476dbcc716d35c2532958188cfcef9"}
-    },
-    {
-      "id": "audio-01-executive-brief-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/01-executive-brief.mp3",
-      "name": "01-executive-brief.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 8699472,
-      "integrity": {"gitBlobSha1": "dfb0efbb6a0bd244727379111f4880f05e330c2b", "sha256": "4f6b0dfb76f8a2e3e9f9b98becdf3d560a039f09daf8f382ec6d05d08cbde7b4"}
-    },
-    {
-      "id": "audio-02-operating-proof-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/02-operating-proof.mp3",
-      "name": "02-operating-proof.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 16110480,
-      "integrity": {"gitBlobSha1": "37c2fb4caf332fd7958c74529ac0ab4fb533c3e9", "sha256": "1ccd7318b979aa388610aa7c52a360140230c69984e109f18aab271db1d01c4e"}
-    },
-    {
-      "id": "audio-03-next-week-focus-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/audio/03-next-week-focus.mp3",
-      "name": "03-next-week-focus.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 14158200,
-      "integrity": {"gitBlobSha1": "6b76e2016f50d6886fe0bf9e0e9b0bcb8096426f", "sha256": "0240130e77b9a145ab276b04316876177c7bb195f7064d334403c4a5c2d1e37f"}
-    },
-    {
-      "id": "bytecasts-01-executive-brief-md",
-      "role": "transcript",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/bytecasts/01-executive-brief.md",
-      "name": "01-executive-brief.md",
-      "fileType": "md",
-      "mediaType": "text/markdown",
-      "sizeBytes": 3257,
-      "integrity": {"gitBlobSha1": "1680446666161f30203c4e091ed1677fbf4c7dfa", "sha256": "43ce26c48be5c1c8a75eba3b3e7c7b50147618ca68a6b2349886d5f60819076f"}
-    },
-    {
-      "id": "bytecasts-02-operating-proof-md",
-      "role": "transcript",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/bytecasts/02-operating-proof.md",
-      "name": "02-operating-proof.md",
-      "fileType": "md",
-      "mediaType": "text/markdown",
-      "sizeBytes": 5958,
-      "integrity": {"gitBlobSha1": "23455b3aa9d17df382e809ee7834e00e0752f73f", "sha256": "9a5267ba548e901643d012f66a97e306eaaeb09ccddad2d4ef9e1d8c3bb04861"}
-    },
-    {
-      "id": "bytecasts-03-next-week-focus-md",
-      "role": "transcript",
-      "relationship": "owned",
-      "path": "newsletters/editions/weekly/2026-09-20-from-recovery-to-repeatability/bytecasts/03-next-week-focus.md",
-      "name": "03-next-week-focus.md",
-      "fileType": "md",
-      "mediaType": "text/markdown",
-      "sizeBytes": 4310,
-      "integrity": {"gitBlobSha1": "9a4a798d829940aff67071cf20ce3beb8b402203", "sha256": "7eec76c93268508e83d1108455d4b67b1f2ccdd8e5dfaf8bfaccfce6a853c705"}
+      "integrity": {
+        "gitBlobSha1": "f9363194f1f4a106d03ece56243f9e9c28319980",
+        "sha256": "f39606f5a0ae258d6d036fa11a4a09eba6ffae412ce1b08b0065334cac37030c"
+      }
     }
   ],
   "references": [
-    {"type": "predecessor", "id": "AV-RPT-EOW-2026-09-07", "note": "Prior formal weekly Signal edition."}
-  ]
+    {
+      "type": "predecessor",
+      "id": "AV-RPT-EOW-2026-09-07",
+      "note": "Prior formal weekly Signal edition."
+    },
+    {
+      "type": "protected-package",
+      "value": "mag-auth:AV-RPT-EOW-2026-09-20",
+      "description": "Private preserved report package."
+    }
+  ],
+  "access": {
+    "mode": "entitled",
+    "capabilities": [
+      "publication.issue.read"
+    ],
+    "notes": "Public delivery exposes only the Account entitlement gate and metadata. Full report, audio, transcripts, and evidence are delivered by mag-auth with resource-scoped authorization."
+  }
 }
