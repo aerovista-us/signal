@@ -35,34 +35,6 @@
   "supersedes": null,
   "files": [
     {
-      "id": "assets-audio-legacy-navada-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio-legacy-navada.mp3",
-      "name": "audio-legacy-navada.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 2529480,
-      "integrity": {
-        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
-        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
-      }
-    },
-    {
-      "id": "assets-audio-mp3",
-      "role": "audio",
-      "relationship": "owned",
-      "path": "newsletters/editions/shareholder/2026-07-08-seeing-the-system/assets/audio.mp3",
-      "name": "audio.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 2529480,
-      "integrity": {
-        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
-        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
-      }
-    },
-    {
       "id": "index-html",
       "role": "primary",
       "relationship": "owned",
@@ -70,10 +42,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 8468773,
+      "sizeBytes": 6229,
       "integrity": {
-        "gitBlobSha1": "616cb9a459ff50a84ef04a4494abad6c5b74f83a",
-        "sha256": "69b69a2e23f1595cb25ef077df93e5c264a1a530f32869bed3ef3c1a6b364bbe"
+        "gitBlobSha1": "52437dee50ea97109943110c3223a6fa49e84969",
+        "sha256": "798b06f883e03c9f07e4c64cfe6e9e838f143005bba0d27326a04faca681171d"
       }
     },
     {
@@ -104,57 +76,24 @@
         "sha256": "7c0daef2ba1930996cb5cfbca9a1ba8a36f850f018cd6270405a08320e68fa8e"
       },
       "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
-    },
-    {
-      "id": "legacy-newsletters-bytecast-build-nevada-mp3",
-      "role": "audio",
-      "relationship": "referenced",
-      "path": "newsletters/bytecast-build-nevada.mp3",
-      "name": "bytecast-build-nevada.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 2529480,
-      "integrity": {
-        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
-        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
-      },
-      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
-    },
-    {
-      "id": "legacy-newsletters-bytecast-build-navada-mp3",
-      "role": "audio",
-      "relationship": "referenced",
-      "path": "newsletters/bytecast-build_navada.mp3",
-      "name": "bytecast-build_navada.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 2529480,
-      "integrity": {
-        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
-        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
-      },
-      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
-    },
-    {
-      "id": "legacy-newsletters-bytecast-positioning-build-navada-mp3",
-      "role": "audio",
-      "relationship": "referenced",
-      "path": "newsletters/bytecast-positioning-build_navada.mp3",
-      "name": "bytecast-positioning-build_navada.mp3",
-      "fileType": "mp3",
-      "mediaType": "audio/mpeg",
-      "sizeBytes": 2529480,
-      "integrity": {
-        "gitBlobSha1": "9784878a27708f279df60a83ee1d1be1ae51ab10",
-        "sha256": "fa6a7727c0f9e867536fa9847593eda73c1f01978dce99bd7c45b22425d99ca4"
-      },
-      "description": "Legacy local alias or duplicate retained for compatibility; preserve or redirect during migration."
     }
   ],
   "references": [
     {
       "type": "legacy-catalog-id",
       "value": "shareholder-2026-07-08"
+    },
+    {
+      "type": "protected-package",
+      "value": "mag-auth:AV-PUB-SHAREHOLDER-2026-07-08",
+      "description": "Private byte-identical shareholder package; pre-migration hashes retained in the private runtime manifest."
     }
-  ]
+  ],
+  "access": {
+    "mode": "entitled",
+    "capabilities": [
+      "publication.issue.read"
+    ],
+    "notes": "Public Signal delivery exposes only the Account entitlement gate, metadata, and legacy redirect. The full shareholder publication and audio are delivered by mag-auth after AeroVista Account session validation and resource-scoped publication.issue.read authorization for publication_issue:AV-PUB-SHAREHOLDER-2026-07-08."
+  }
 }
