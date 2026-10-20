@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-10-07",
+  "reportId": "AV-RPT-EOW-2026-10-07",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "From Integration to Execution",
+  "summary": "AeroVista retrospective public weekly report for October 01–07, 2026, documenting progress and remaining verification gates.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "period": {
+    "start": "2026-10-01",
+    "end": "2026-10-07"
+  },
+  "issuedAt": "2026-10-20",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-07-from-integration-to-execution/",
+  "canonicalPath": "newsletters/editions/weekly/2026-10-07-from-integration-to-execution/index.html",
+  "tags": [
+    "october-2026",
+    "eow",
+    "public",
+    "retrospective"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-10-07-from-integration-to-execution",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-07-from-integration-to-execution/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 16818,
+      "integrity": {
+        "gitBlobSha1": "a40d0b4dfa2c2c5ccf5f032edd82aeb5c2898a4b",
+        "sha256": "cb55cd4a276e0e643914175442243b8aef635acfd10e24631388df7e685f662e"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-07-from-integration-to-execution/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 586,
+      "integrity": {
+        "gitBlobSha1": "735ec5535bc9be90fdf6a072f91b5a58fa2945be",
+        "sha256": "63304de9275b9da8a8cdfec751f7357ac2a685c356e6a4c8ed979d5bb66b6601"
+      }
+    }
+  ],
+  "references": []
+}

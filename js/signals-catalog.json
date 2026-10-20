@@ -1,21 +1,21 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-20",
   "featured": {
-    "label": "Latest EOM · Shareholder & Stakeholder Update",
-    "title": "The Pieces Start Working Together",
-    "summary": "September 2026 end-of-month shareholder briefing and 19:34 ByteCast on AeroVista's shift from recovery toward repeatability across identity, field proof, operations, publishing, commerce, property planning, governance, and the next acceptance gates.",
-    "href": "/newsletters/editions/eom/2026-09-30-pieces-working-together/",
+    "label": "Latest EOW · Stakeholder & Public Update",
+    "title": "From Execution to Acceptance",
+    "summary": "AeroVista retrospective public weekly report for October 08–14, 2026, documenting progress and remaining verification gates.",
+    "href": "/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
     "stats": [
       {
-        "value": "Sep 1–30",
+        "value": "Oct 8–14",
         "label": "Coverage window"
       },
       {
-        "value": "Oct 4",
+        "value": "Oct 20",
         "label": "Issued"
       },
       {
-        "value": "9",
+        "value": "2",
         "label": "Registered assets"
       },
       {
@@ -23,9 +23,35 @@
         "label": "Registry status"
       }
     ],
-    "tags": "september-2026 eom shareholder bytecast repeatability internal-signal"
+    "tags": "october-2026 eow public retrospective"
   },
   "now": [
+    {
+      "id": "weekly-2026-10-14-from-execution-to-acceptance",
+      "typeLabel": "October EOW · Retrospective",
+      "title": "Oct 14 — From Execution to Acceptance",
+      "summary": "October 8–14, 2026: public AeroVista progress, product improvements and outstanding acceptance gates.",
+      "href": "/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
+      "types": [
+        "eow",
+        "public",
+        "stakeholder"
+      ],
+      "tags": "october-2026 eow public retrospective"
+    },
+    {
+      "id": "weekly-2026-10-07-from-integration-to-execution",
+      "typeLabel": "October EOW · Retrospective",
+      "title": "Oct 7 — From Integration to Execution",
+      "summary": "October 1–7, 2026: public AeroVista progress, product improvements and outstanding acceptance gates.",
+      "href": "/newsletters/editions/weekly/2026-10-07-from-integration-to-execution/",
+      "types": [
+        "eow",
+        "public",
+        "stakeholder"
+      ],
+      "tags": "october-2026 eow public retrospective"
+    },
     {
       "id": "eom-2026-09-30-pieces-working-together",
       "typeLabel": "September EOM · ByteCast",

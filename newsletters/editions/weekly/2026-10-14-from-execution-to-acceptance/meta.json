@@ -1,0 +1,20 @@
+{
+  "reportId": "AV-RPT-EOW-2026-10-14",
+  "title": "From Execution to Acceptance",
+  "reportClass": "eow",
+  "period": {
+    "start": "2026-10-08",
+    "end": "2026-10-14"
+  },
+  "issuedAt": "2026-10-20",
+  "status": "final",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
+  "publicationNote": "Retrospective publication. Week-ending date describes reporting period; actual issue date is October 20, 2026."
+}
