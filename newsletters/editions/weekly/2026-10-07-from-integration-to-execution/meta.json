@@ -1,0 +1,20 @@
+{
+  "reportId": "AV-RPT-EOW-2026-10-07",
+  "title": "From Integration to Execution",
+  "reportClass": "eow",
+  "period": {
+    "start": "2026-10-01",
+    "end": "2026-10-07"
+  },
+  "issuedAt": "2026-10-20",
+  "status": "final",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-07-from-integration-to-execution/",
+  "publicationNote": "Retrospective publication. Week-ending date describes the reporting period; actual issue date is October 20, 2026."
+}
