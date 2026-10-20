@@ -1,8 +1,56 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "report",
-  "count": 14,
+  "count": 16,
   "records": [
+    {
+      "id": "AV-RPT-EOW-2026-10-14",
+      "reportId": "AV-RPT-EOW-2026-10-14",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-10-14.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "From Execution to Acceptance",
+      "status": "final",
+      "issuedAt": "2026-10-20",
+      "period": {
+        "start": "2026-10-08",
+        "end": "2026-10-14"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
+      "formats": [
+        "interactive-html"
+      ],
+      "audience": [
+        "public",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "AV-RPT-EOW-2026-10-07",
+      "reportId": "AV-RPT-EOW-2026-10-07",
+      "recordPath": "registry/records/reports/AV-RPT-EOW-2026-10-07.json",
+      "contentClass": "report",
+      "reportClass": "eow",
+      "title": "From Integration to Execution",
+      "status": "final",
+      "issuedAt": "2026-10-20",
+      "period": {
+        "start": "2026-10-01",
+        "end": "2026-10-07"
+      },
+      "canonicalPath": "newsletters/editions/weekly/2026-10-07-from-integration-to-execution/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-07-from-integration-to-execution/",
+      "formats": [
+        "interactive-html"
+      ],
+      "audience": [
+        "public",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
     {
       "id": "AV-RPT-EOM-2026-09",
       "reportId": "AV-RPT-EOM-2026-09",

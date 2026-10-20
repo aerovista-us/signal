@@ -121,14 +121,14 @@ class RegistryV2ValidationTests(unittest.TestCase):
         featured = registry.select_featured_record(
             self.records, {"mode": "latest-final-report"}
         )
-        self.assertEqual(featured["id"], "AV-RPT-EOM-2026-09")
+        self.assertEqual(featured["id"], "AV-RPT-EOW-2026-10-14")
 
     def test_featured_selection_can_filter_report_classes(self):
         featured = registry.select_featured_record(
             self.records,
             {"mode": "latest-final-report", "reportClasses": ["eow"]},
         )
-        self.assertEqual(featured["id"], "AV-RPT-EOW-2026-09-20")
+        self.assertEqual(featured["id"], "AV-RPT-EOW-2026-10-14")
 
     def test_automatic_featured_uses_canonical_registry_metadata(self):
         featured, record = registry.automatic_featured(
@@ -136,8 +136,8 @@ class RegistryV2ValidationTests(unittest.TestCase):
         )
         self.assertEqual(featured["title"], record["title"])
         self.assertEqual(featured["summary"], record["summary"])
-        self.assertEqual(featured["href"], "/newsletters/editions/eom/2026-09-30-pieces-working-together/")
-        self.assertEqual(featured["stats"][0]["value"], "Sep 1–30")
+        self.assertEqual(featured["href"], "/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/")
+        self.assertEqual(featured["stats"][0]["value"], "Oct 8–14")
 
 
 if __name__ == "__main__":
