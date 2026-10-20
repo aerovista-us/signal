@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-10-14",
+  "reportId": "AV-RPT-EOW-2026-10-14",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "From Execution to Acceptance",
+  "summary": "AeroVista retrospective public weekly report for October 08–14, 2026, documenting progress and remaining verification gates.",
+  "status": "final",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "period": {
+    "start": "2026-10-08",
+    "end": "2026-10-14"
+  },
+  "issuedAt": "2026-10-20",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
+  "canonicalPath": "newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/index.html",
+  "tags": [
+    "october-2026",
+    "eow",
+    "public",
+    "retrospective"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [],
+  "references": []
+}
