@@ -37,6 +37,20 @@
   "supersedes": null,
   "files": [
     {
+      "id": "assets-bytecast-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/assets/bytecast.mp3",
+      "name": "bytecast.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3078168,
+      "integrity": {
+        "gitBlobSha1": "ac48e5ed2f3371a2fa0a95377e5737d17a554baa",
+        "sha256": "3440c2c55603d3911c96ef0e1bf30c7c28089bc4472660a3340de03fe94a2529"
+      }
+    },
+    {
       "id": "index-html",
       "role": "primary",
       "relationship": "owned",
@@ -44,10 +58,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 15614,
+      "sizeBytes": 16744,
       "integrity": {
-        "gitBlobSha1": "1713e2e72d057bde98c0fae698cdbcba6c42d3c9",
-        "sha256": "57e6724cc1b272a4455afd7d430b1889dc38d7429cb0dab30e193b93157c98b9"
+        "gitBlobSha1": "d20326a310493a1824d1aca6a95a0b6194686ff1",
+        "sha256": "c17944ed9d927f1f1d7ee23814fa8901b7c81df76d418faa9759c36e33eb1675"
       }
     },
     {
@@ -58,10 +72,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 580,
+      "sizeBytes": 591,
       "integrity": {
-        "gitBlobSha1": "afa2ebc19a73f725e31e63aff72b4877080b0138",
-        "sha256": "e5e9845357caebd92cf75d7a8027ddb3a5e833b25e40c9cdef80d79c634efebc"
+        "gitBlobSha1": "174bfd225c61df088e8a8fec06bdfcf44ecedf5e",
+        "sha256": "dbe5bdfeba6f054a7998862049e842403b922379a207b991bcdc790ba5907b6e"
       }
     }
   ],
