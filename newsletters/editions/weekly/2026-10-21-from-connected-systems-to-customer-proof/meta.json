@@ -13,7 +13,8 @@
     "stakeholder"
   ],
   "formats": [
-    "interactive-html"
+    "interactive-html",
+    "mp3"
   ],
   "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/",
   "publicationNote": "Retrospective edition; source merges and staged QA are distinguished from production acceptance."

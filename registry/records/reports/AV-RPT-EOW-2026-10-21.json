@@ -37,6 +37,20 @@
   "supersedes": null,
   "files": [
     {
+      "id": "assets-bytecast-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/assets/bytecast.mp3",
+      "name": "bytecast.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 3468744,
+      "integrity": {
+        "gitBlobSha1": "299856be642f09ee0a0865d84ad8ef73bb0db666",
+        "sha256": "12d901d6a783c8b4f5c042da2625f01d034ab9ca757da7b5485bf8299d0ee42d"
+      }
+    },
+    {
       "id": "index-html",
       "role": "primary",
       "relationship": "owned",
@@ -44,10 +58,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 16718,
+      "sizeBytes": 17825,
       "integrity": {
-        "gitBlobSha1": "6db010aa6c861e9e9e0f56cedbb516a89af4a477",
-        "sha256": "b582a7ea10cd7b8fde0580c78842378c4377e0df9ea2330ea82ecbcd4e2347d4"
+        "gitBlobSha1": "50612f3e0e383a50027282b708d84fdf9544a072",
+        "sha256": "c366a1164e99d0a7fd64125fdeeb6661d6e1eaec4508e8d40dbf3d445848b34f"
       }
     },
     {
@@ -58,10 +72,10 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 591,
+      "sizeBytes": 602,
       "integrity": {
-        "gitBlobSha1": "33b1ef4f3e9aa431cfd42dd7d83a603364fbcf1b",
-        "sha256": "2091cd54615e5a23f5bbc0776e7caf606c899ad4e4c164e2cdc2d228b2d7775b"
+        "gitBlobSha1": "0519aab00d354da0b015564b6380aacecfb220d5",
+        "sha256": "4d56c1c12167b1f38288551d891be9cdc37e1e3275b61d892004e5b5fd5d1f12"
       }
     }
   ],
