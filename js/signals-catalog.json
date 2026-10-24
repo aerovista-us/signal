@@ -27,6 +27,19 @@
   },
   "now": [
     {
+      "id": "weekly-2026-10-21-from-connected-systems-to-customer-proof",
+      "typeLabel": "October EOW · Retrospective",
+      "title": "From Connected Systems to Customer Proof",
+      "summary": "October 15–21, 2026: public AeroVista progress, product improvements and outstanding acceptance gates.",
+      "href": "/newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/",
+      "types": [
+        "eow",
+        "public",
+        "stakeholder"
+      ],
+      "tags": "october-2026 eow public retrospective"
+    },
+    {
       "id": "weekly-2026-10-14-from-execution-to-acceptance",
       "typeLabel": "October EOW · Retrospective",
       "title": "Oct 14 — From Execution to Acceptance",

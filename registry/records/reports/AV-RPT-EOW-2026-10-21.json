@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOW-2026-10-21",
+  "reportId": "AV-RPT-EOW-2026-10-21",
+  "contentClass": "report",
+  "reportClass": "eow",
+  "title": "From Connected Systems to Customer Proof",
+  "summary": "AeroVista October 15–21, 2026: identity continuity, LotScope report readiness, AutoBench evidence-first capture, Apparel authority, Phase tests and Signal publication, with explicit acceptance limits.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "period": {
+    "start": "2026-10-15",
+    "end": "2026-10-21"
+  },
+  "issuedAt": "2026-10-23",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/",
+  "canonicalPath": "newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/index.html",
+  "tags": [
+    "october-2026",
+    "eow",
+    "public",
+    "retrospective"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 16718,
+      "integrity": {
+        "gitBlobSha1": "6db010aa6c861e9e9e0f56cedbb516a89af4a477",
+        "sha256": "b582a7ea10cd7b8fde0580c78842378c4377e0df9ea2330ea82ecbcd4e2347d4"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 591,
+      "integrity": {
+        "gitBlobSha1": "33b1ef4f3e9aa431cfd42dd7d83a603364fbcf1b",
+        "sha256": "2091cd54615e5a23f5bbc0776e7caf606c899ad4e4c164e2cdc2d228b2d7775b"
+      }
+    }
+  ],
+  "references": []
+}
