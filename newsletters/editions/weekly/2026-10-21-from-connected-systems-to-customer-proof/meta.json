@@ -1,0 +1,20 @@
+{
+  "reportId": "AV-RPT-EOW-2026-10-21",
+  "title": "From Connected Systems to Customer Proof",
+  "reportClass": "eow",
+  "period": {
+    "start": "2026-10-15",
+    "end": "2026-10-21"
+  },
+  "issuedAt": "2026-10-23",
+  "status": "review",
+  "audience": [
+    "public",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/weekly/2026-10-21-from-connected-systems-to-customer-proof/",
+  "publicationNote": "Retrospective edition; source merges and staged QA are distinguished from production acceptance."
+}
