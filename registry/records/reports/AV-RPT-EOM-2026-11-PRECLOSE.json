@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0",
+  "id": "AV-RPT-EOM-2026-11-PRECLOSE",
+  "reportId": "AV-RPT-EOM-2026-11-PRECLOSE",
+  "contentClass": "report",
+  "reportClass": "eom",
+  "title": "From Connected to Useful — November Pre-close",
+  "summary": "November 1–25 AeroVista pre-close: connected systems evolve toward useful rooms, workspaces, dependable releases and real-world acceptance.",
+  "status": "review",
+  "owner": "AeroVista LLC",
+  "audience": [
+    "internal",
+    "shareholder",
+    "stakeholder"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "period": {
+    "start": "2026-11-01",
+    "end": "2026-11-25"
+  },
+  "issuedAt": "2026-11-25",
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+  "canonicalPath": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/index.html",
+  "tags": [
+    "november-2026",
+    "eom",
+    "preclose",
+    "workspaces",
+    "messenger",
+    "portfolio"
+  ],
+  "package": {
+    "mode": "directory",
+    "root": "newsletters/editions/eom/2026-11-25-from-connected-to-useful",
+    "strict": true,
+    "portable": true
+  },
+  "supersedes": null,
+  "files": [
+    {
+      "id": "index-html",
+      "role": "primary",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/index.html",
+      "name": "index.html",
+      "fileType": "html",
+      "mediaType": "text/html",
+      "sizeBytes": 15635,
+      "integrity": {
+        "gitBlobSha1": "54c431bd2e069986d438deef1cd32db227ca1933"
+      }
+    },
+    {
+      "id": "meta-json",
+      "role": "metadata",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/meta.json",
+      "name": "meta.json",
+      "fileType": "json",
+      "mediaType": "application/json",
+      "sizeBytes": 645,
+      "integrity": {
+        "gitBlobSha1": "c319e69c97f0109488b2ff9201ff3da5bcd108cb"
+      }
+    }
+  ],
+  "references": []
+}
