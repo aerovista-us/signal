@@ -1,11 +1,47 @@
 {
-  "updated": "auto",
+  "updated": "2026-11-25",
   "featured": {
-    "selection": {
-      "mode": "latest-final-report"
-    }
+    "label": "November EOM · Pre-close",
+    "title": "From Connected to Useful",
+    "summary": "The foundation is connecting. Now we test the human workflow: one sign-in, one room, one workspace, one complete result. Issued November 25; final month-end remains open.",
+    "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+    "stats": [
+      {
+        "value": "Nov 1–25",
+        "label": "Coverage"
+      },
+      {
+        "value": "Pre-close",
+        "label": "Status"
+      },
+      {
+        "value": "12",
+        "label": "Portfolio lanes"
+      },
+      {
+        "value": "4",
+        "label": "Next wins"
+      }
+    ],
+    "tags": "november-2026 eom preclose workspaces messenger portfolio"
   },
   "now": [
+    {
+      "id": "eom-2026-11-25-from-connected-to-useful",
+      "typeLabel": "November EOM · Pre-close",
+      "title": "Nov 25 — From Connected to Useful",
+      "summary": "November 1–25 pre-close: the journey from connected systems to human-ready rooms, workspaces, reliable releases and evidence-backed delivery. Not a final November close.",
+      "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder"
+      ],
+      "tags": [
+        "november-2026 eom preclose workspaces messenger portfolio"
+      ],
+      "recordId": "AV-RPT-EOM-2026-11-PRECLOSE"
+    },
     {
       "id": "weekly-2026-10-21-from-connected-systems-to-customer-proof",
       "typeLabel": "October EOW · Retrospective",
@@ -210,6 +246,34 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-11-25-from-connected-to-useful",
+      "section": "eom",
+      "title": "From Connected to Useful — November Pre-close",
+      "badges": [
+        {
+          "type": "eom",
+          "label": "EOM"
+        },
+        {
+          "type": "internal",
+          "label": "Pre-close"
+        }
+      ],
+      "dateEm": "Nov 25",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder"
+      ],
+      "tags": [
+        "november-2026 eom preclose workspaces messenger portfolio"
+      ],
+      "summary": "November 1–25 pre-close: the journey from connected systems to human-ready rooms, workspaces, reliable releases and evidence-backed delivery. Not a final November close.",
+      "recordId": "AV-RPT-EOM-2026-11-PRECLOSE"
+    },
     {
       "id": "eom-2026-09-30-pieces-working-together",
       "section": "eom",
