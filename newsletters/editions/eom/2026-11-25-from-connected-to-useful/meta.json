@@ -14,9 +14,10 @@
     "team"
   ],
   "formats": [
-    "interactive-html"
+    "interactive-html",
+    "bytecast"
   ],
   "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
   "previous": "The Pieces Start Working Together",
-  "sourceNote": "Narrative pre-close report; unverified deployment or field journeys remain pending. No new ByteCast audio is claimed."
+  "sourceNote": "Narrative pre-close report with supplied ByteCast audio; unverified deployment or field journeys remain pending."
 }

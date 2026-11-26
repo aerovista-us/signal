@@ -19,14 +19,15 @@
       "canonicalPath": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/index.html",
       "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
       "formats": [
-        "interactive-html"
+        "interactive-html",
+        "bytecast"
       ],
       "audience": [
         "internal",
         "shareholder",
         "stakeholder"
       ],
-      "fileCount": 2
+      "fileCount": 3
     },
     {
       "id": "AV-RPT-EOW-2026-10-21",

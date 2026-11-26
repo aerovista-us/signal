@@ -14,7 +14,8 @@
     "stakeholder"
   ],
   "formats": [
-    "interactive-html"
+    "interactive-html",
+    "bytecast"
   ],
   "period": {
     "start": "2026-11-01",
@@ -47,9 +48,10 @@
       "name": "index.html",
       "fileType": "html",
       "mediaType": "text/html",
-      "sizeBytes": 30576,
+      "sizeBytes": 32420,
       "integrity": {
-        "gitBlobSha1": "8cfb8861d988e97308197fea605514d5afee0e60"
+        "gitBlobSha1": "a0b0b506132b317accfa62c13580cf7ec16fbf36",
+        "sha256": "507eea025f3abbb6c5d00f2336360eefb4409e03babd11a2820b6bab6c45a680"
       }
     },
     {
@@ -60,9 +62,24 @@
       "name": "meta.json",
       "fileType": "json",
       "mediaType": "application/json",
-      "sizeBytes": 645,
+      "sizeBytes": 657,
       "integrity": {
-        "gitBlobSha1": "c319e69c97f0109488b2ff9201ff3da5bcd108cb"
+        "gitBlobSha1": "0f240762ef6437e6c34efe64598076fab6b8c9ba",
+        "sha256": "0c602d888b25962ba5da9d1d5484f76be74f81d84df454396fac8cca8bd0ba76"
+      }
+    },
+    {
+      "id": "audio-november-2026-eom-mp3",
+      "role": "audio",
+      "relationship": "owned",
+      "path": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/audio/november-2026-eom.mp3",
+      "name": "november-2026-eom.mp3",
+      "fileType": "mp3",
+      "mediaType": "audio/mpeg",
+      "sizeBytes": 16940294,
+      "integrity": {
+        "gitBlobSha1": "60498a233861fb93c5ab124b45a328cf0d59446c",
+        "sha256": "1a9f35be7e1181f3641e995d6625a1887a6bd5fc5c8d0979147d96a316fb2dd4"
       }
     }
   ],
