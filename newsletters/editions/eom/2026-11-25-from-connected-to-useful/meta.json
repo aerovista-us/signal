@@ -1,0 +1,22 @@
+{
+  "reportId": "AV-RPT-EOM-2026-11-PRECLOSE",
+  "title": "From Connected to Useful",
+  "reportClass": "eom",
+  "period": {
+    "start": "2026-11-01",
+    "end": "2026-11-25"
+  },
+  "issuedAt": "2026-11-25",
+  "status": "pre-close",
+  "audience": [
+    "internal",
+    "shareholder",
+    "team"
+  ],
+  "formats": [
+    "interactive-html"
+  ],
+  "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+  "previous": "The Pieces Start Working Together",
+  "sourceNote": "Narrative pre-close report; unverified deployment or field journeys remain pending. No new ByteCast audio is claimed."
+}
