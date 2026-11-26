@@ -1,31 +1,44 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-11-25",
   "featured": {
-    "label": "Latest EOW · Stakeholder & Public Update",
-    "title": "From Execution to Acceptance",
-    "summary": "AeroVista retrospective public weekly report for October 08–14, 2026, documenting progress and remaining verification gates.",
-    "href": "/newsletters/editions/weekly/2026-10-14-from-execution-to-acceptance/",
+    "label": "November EOM · Pre-close",
+    "title": "From Connected to Useful",
+    "summary": "The foundation is connecting. Now we test the human workflow: one sign-in, one room, one workspace, one complete result. Issued November 25; final month-end remains open.",
+    "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
     "stats": [
       {
-        "value": "Oct 8–14",
-        "label": "Coverage window"
+        "value": "Nov 1–25",
+        "label": "Coverage"
       },
       {
-        "value": "Oct 20",
-        "label": "Issued"
+        "value": "Pre-close",
+        "label": "Status"
       },
       {
-        "value": "3",
-        "label": "Registered assets"
+        "value": "12",
+        "label": "Portfolio lanes"
       },
       {
-        "value": "Final",
-        "label": "Registry status"
+        "value": "4",
+        "label": "Next wins"
       }
     ],
-    "tags": "october-2026 eow public retrospective"
+    "tags": "november-2026 eom preclose workspaces messenger portfolio"
   },
   "now": [
+    {
+      "id": "eom-2026-11-25-from-connected-to-useful",
+      "typeLabel": "November EOM · Pre-close",
+      "title": "Nov 25 — From Connected to Useful",
+      "summary": "November 1–25 pre-close: the journey from connected systems to human-ready rooms, workspaces, reliable releases and evidence-backed delivery. Not a final November close.",
+      "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder"
+      ],
+      "tags": "november-2026 eom preclose workspaces messenger portfolio"
+    },
     {
       "id": "weekly-2026-10-21-from-connected-systems-to-customer-proof",
       "typeLabel": "October EOW · Retrospective",
@@ -189,6 +202,31 @@
     }
   ],
   "editions": [
+    {
+      "id": "eom-2026-11-25-from-connected-to-useful",
+      "section": "eom",
+      "title": "From Connected to Useful — November Pre-close",
+      "badges": [
+        {
+          "type": "eom",
+          "label": "EOM"
+        },
+        {
+          "type": "internal",
+          "label": "Pre-close"
+        }
+      ],
+      "dateEm": "Nov 25",
+      "dateYear": "2026",
+      "href": "/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+      "types": [
+        "eom",
+        "internal",
+        "shareholder"
+      ],
+      "tags": "november-2026 eom preclose workspaces messenger portfolio",
+      "summary": "November 1–25 pre-close: the journey from connected systems to human-ready rooms, workspaces, reliable releases and evidence-backed delivery. Not a final November close."
+    },
     {
       "id": "eom-2026-09-30-pieces-working-together",
       "section": "eom",

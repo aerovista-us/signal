@@ -1,8 +1,33 @@
 {
   "schemaVersion": "2.0",
   "contentClass": "report",
-  "count": 17,
+  "count": 18,
   "records": [
+    {
+      "id": "AV-RPT-EOM-2026-11-PRECLOSE",
+      "reportId": "AV-RPT-EOM-2026-11-PRECLOSE",
+      "recordPath": "registry/records/reports/AV-RPT-EOM-2026-11-PRECLOSE.json",
+      "contentClass": "report",
+      "reportClass": "eom",
+      "title": "From Connected to Useful — November Pre-close",
+      "status": "review",
+      "issuedAt": "2026-11-25",
+      "period": {
+        "start": "2026-11-01",
+        "end": "2026-11-25"
+      },
+      "canonicalPath": "newsletters/editions/eom/2026-11-25-from-connected-to-useful/index.html",
+      "canonicalUrl": "https://thesignal.aerovista.us/newsletters/editions/eom/2026-11-25-from-connected-to-useful/",
+      "formats": [
+        "interactive-html"
+      ],
+      "audience": [
+        "internal",
+        "shareholder",
+        "stakeholder"
+      ],
+      "fileCount": 2
+    },
     {
       "id": "AV-RPT-EOW-2026-10-21",
       "reportId": "AV-RPT-EOW-2026-10-21",
